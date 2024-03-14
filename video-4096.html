@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LCBM</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  p {
+    line-height: 1.6;
+    color: #666;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .write-up {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot</h1>
+    <p><a href="https://aclanthology.org/2023.emnlp-main.608/" target="_blank">[paper link]</a></p>
+  </header>
+  <section>
+    <p>Multimedia content, such as advertisements and story videos, exhibit a rich blend of creativity and multiple modalities. They incorporate elements like text, visuals, audio, and storytelling techniques, employing devices like emotions, symbolism, and slogans to convey meaning. There is a dearth of large annotated training datasets in the multimedia domain hindering the development of supervised learning models with satisfactory performance for real-world applications. On the other hand, the rise of large language models (LLMs) has witnessed remarkable zero-shot performance in various natural language processing (NLP) tasks, such as emotion classification, question answering, and topic classification. To leverage such advanced techniques to bridge this performance gap in multimedia understanding, we propose verbalizing long videos to generate their descriptions in natural language, followed by performing video-understanding tasks on the generated story as opposed to the original video. Through extensive experiments on fifteen video-understanding tasks, we demonstrate that our method, despite being zero-shot, achieves significantly better results than supervised baselines for video understanding. Furthermore, to alleviate a lack of story understanding benchmarks, we publicly release the first dataset on a crucial task in computational social science on persuasion strategy identification.</p>
+    <img src="images/fig1-lcbm-1.png" alt="Image">
+  </section>
+  <div class="write-up">
+    Dataset coming soon...
+  </div>
+  <p>Contact yamank@iiitd.ac.in for questions and suggestions.</p>
+</div>
+</body>
+</html>
