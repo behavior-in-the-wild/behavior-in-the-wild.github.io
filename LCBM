@@ -1,10 +1,69 @@
-Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior
-ICLR 2024
-https://arxiv.org/abs/2309.00359
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LCBM</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  section {
+    margin-bottom: 20px;
+  }
+  p {
+    line-height: 1.6;
+    color: #666;
+  }
+  img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 5px;
+  }
+  .write-up {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>LCBM</h1>
+    <p><a href="https://openreview.net/forum?id=TrKq4Wlwcz" target="_blank">[paper link]</a></p>
+  </header>
+  <section>
+    <h2>Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior</h2>
+    <p>Shannon and Weaver's seminal information theory divides communication into three levels: technical, semantic, and effectiveness. While the technical level deals with the accurate reconstruction of transmitted symbols, the semantic and effectiveness levels deal with the inferred meaning and its effect on the receiver. Large Language Models (LLMs), with their wide generalisability, make some progress towards the second level. However, LLMs and other communication models are not conventionally designed for predicting and optimising communication for desired receiver behaviours and intents. As a result, the effectiveness level remains largely untouched by modern communication systems. In this paper, we introduce the receivers' "behavior tokens", such as shares, likes, clicks, purchases, and retweets, in the LLM's training corpora to optimize content for the receivers and predict their behaviors. Our trained models, other than showing similar performance to LLMs on content understanding tasks, show generalization capabilities on the behavior dimension for behavior simulation, content simulation, behavior understanding, and behavior domain adaptation. Using a wide range of tasks on three corpora, we show results on all these capabilities. We call these models Large Content and Behavior Models (LCBMs). Further, to spur more research on LCBMs, we release our new Content Behavior Corpus (CBC), a repository containing communicator, message, and corresponding receiver behavior.</p>
+    <img src="" alt="Image">
+  </section>
+  <div class="write-up">
+    Dataset coming soon...
+  </div>
+</div>
+</body>
+</html>
 
-Abstract:
-Shannon and Weaver's seminal information theory divides communication into three levels: technical, semantic, and effectiveness. While the technical level deals with the accurate reconstruction of transmitted symbols, the semantic and effectiveness levels deal with the inferred meaning and its effect on the receiver. Large Language Models (LLMs), with their wide generalisability, make some progress towards the second level. However, LLMs and other communication models are not conventionally designed for predicting and optimising communication for desired receiver behaviours and intents. As a result, the effectiveness level remains largely untouched by modern communication systems. In this paper, we introduce the receivers' "behavior tokens", such as shares, likes, clicks, purchases, and retweets, in the LLM's training corpora to optimize content for the receivers and predict their behaviors.
-Our trained models, other than showing similar performance to LLMs on content understanding tasks, show generalization capabilities on the behavior dimension for behavior simulation, content simulation, behavior understanding, and behavior domain adaptation. Using a wide range of tasks on three corpora, we show results on all these capabilities. We call these models Large Content and Behavior Models (LCBMs). Further, to spur more research on LCBMs, we release our new Content Behavior Corpus (CBC), a repository containing communicator, message, and corresponding receiver behavior.
-
-<h2> Dataset Coming Soon </h2>
-Contact yamank@iiitd.ac.in for questions and suggestions.
