@@ -30,7 +30,7 @@ Therefore, from the above five modalities, we can get the following problems:
 - [LLaVA Finds Free Lunch: Teaching Human Behavior Improves Content Understanding Abilities Of LLMs](https://arxiv.org/abs/2405.00942)
 
 ---
-
 <ol id="footnotes">
-  <li id="footnote1">A *modality* is defined in terms of information, such that a modality is a medium through which information is conveyed [[7]](https://arxiv.org/abs/2209.03430), [[8]](https://www.google.co.in/books/edition/Multimodal_Human_Computer_Interaction_and/O8CqMtIKSWwC), [[9]](https://www.researchgate.net/publication/228933425_On_the_annotation_of_the_multimodal_behavior_and_computation_of_cooperation_between_modalities). Similarly, a multimodal distribution is defined as having more than one peak in the probability distribution describing the nature of information.</li>
+    <li id="footnote1">A <em>modality</em> is defined in terms of information, such that a modality is a medium through which information is conveyed <a href="https://arxiv.org/abs/2209.03430">[7]</a>, <a href="https://www.google.co.in/books/edition/Multimodal_Human_Computer_Interaction_and/O8CqMtIKSWwC">[8]</a>, <a href="https://www.researchgate.net/publication/228933425_On_the_annotation_of_the_multimodal_behavior_and_computation_of_cooperation_between_modalities">[9]</a>. Similarly, a multimodal distribution is defined as having more than one peak in the probability distribution describing the nature of information.</li>
+  </ol>
 </ol>
