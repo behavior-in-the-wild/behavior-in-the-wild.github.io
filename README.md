@@ -19,6 +19,7 @@ Therefore, from the above seven modalities, we can get the following problems:
 - Audience Optimization: Who should a message be sent to in order to get a certain effect?
 - Sender Optimization: Who should send a message to get a certain effect?
 - Time Optimization: What time and what frequency should a message be sent so that it gets a certain effect?
+- Ultimately, how much free will is there with humans when making decisions?
 - ....
 
 A motivation of why we are work on the behavior modality is captured in a small [blog](https://sites.google.com/view/yaman-kumar/blog/from-peas-to-people-why-we-need-to-solve-the-human-behavior-puzzle) by [Yaman](https://sites.google.com/view/yaman-kumar/).
