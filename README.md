@@ -1,6 +1,6 @@
 Website: https://behavior-in-the-wild.github.io
 
-# Behavior In The Wild
+# The Behavior Modality: Studying Human Behavior In The Wild
 
 *"Nothing in Nature is random. A thing appears random only through the incompleteness of our knowledge."* - Baruch Spinoza
 
