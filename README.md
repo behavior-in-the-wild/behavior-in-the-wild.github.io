@@ -20,6 +20,9 @@ Therefore, from the above five modalities, we can get the following problems:
 - Time Optimization: What time and what frequency should a message be sent so that it gets a certain effect?
 - ....
 
+A motivation of why we are work on the behavior modality is captured in a [[blog]](https://sites.google.com/view/yaman-kumar/blog/from-peas-to-people-why-we-need-to-solve-the-human-behavior-puzzle) by [[Yaman]](https://sites.google.com/view/yaman-kumar/).
+
+
 **Our Contributions:**
 - [LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior](./LCBM.html)
 - [BOIG: Behavior Optimized Image Generation](https://arxiv.org/abs/2311.10995)
