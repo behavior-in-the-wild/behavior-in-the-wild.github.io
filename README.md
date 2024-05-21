@@ -14,11 +14,12 @@ Communication is composed of five modalities (shown in the diagram below (Fig. 1
 ![Human Behavior - Factors of Communication](./images/Human-Behavior.png)
 
 Therefore, from the above seven modalities, we can get the following problems:
-- Behavior Simulation: How will a certain audience behave for a certain message sent by a certain sender at a sender time over a certain channel?
-- Customer Behavior Optimization with content as hook: How should a message be constructed such that it gets a certain behavior from a certain audience?
-- Audience Optimization: Who should a message be sent to in order to get a certain effect?
-- Sender Optimization: Who should send a message to get a certain effect?
-- Time Optimization: What time and what frequency should a message be sent so that it gets a certain effect?
+- **Behavior Simulation**: How will a certain audience behave for a certain message sent by a certain sender at a sender time over a certain channel?
+- **Personalization or Customer Behavior Optimization with content as hook**: How should a message be constructed such that it gets a certain behavior from a certain audience?
+- **Targeting or Audience Optimization**: Who should a message be sent to in order to get a certain effect?
+- **Transsuasion**: How to transfer low-performing content to high-performing one for a certain audience and speaker (advertiser/marketer)?
+- **Sender Optimization**: Who should send a message to get a certain effect?
+- **Time Optimization**: What time and what frequency should a message be sent so that it gets a certain effect?
 - Ultimately, how much free will is there with humans when making decisions?
 - ....
 
