@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Transsuasion: Introducing And Measuring Behavior Transfer Capabilities">
+  <meta name="keywords" content="transsuasion, behavior, persuasion, language model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Transsuasion</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    .medal {
+        font-size: 1.2em;
+    }
+    .gold { color: gold; }
+    .silver { color: silver; }
+    .bronze { color: #cd7f32; }    
+</style>
+<body>
+    <div class="container mt-6">
+        <h1 class="text-center">Persuasion Arena: ELO</h1>
+        <p>Select your task to view ELO for the task, default is average, for a detailed description of the tasks check <a href="./transsuasion.html#Dataset" target="_blank">Transuasion Dataset</a></p>
+        <div class="form-group">
+            <select id="taskFilter" class="form-control">
+                <!-- Options will be dynamically added here -->
+            </select>
+        </div>
+        <table class="table table-striped table-bordered mt-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Model</th>
+                    <th>Training</th>
+                    <th id="scoreHeader">ELO (AVG)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <script src="./static/js/persuasionLeaderBoardScores.js"></script>
+    <script src="./static/js/leaderboard.js"></script>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-desktop content">
+          <h2 class="title">BibTeX</h2>
+      <pre><code>@online{singlapersuasion2024,
+    author = {Yaman Kumar Singla, Somesh Singh, Balaji Krishnamurthy},
+    title = {PersuasionBench and PersuasionArena: An Open Platform For Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models},
+    date = {2024-04-09},
+    year = {2024},
+    url = {http://behavior-in-the-wild.github.io/PersuasionArena}}</code></pre>
+        </div>
+        
+      </section>    
+      <section class="section" id="Acknowledgement">
+        <div class="container is-max-desktop content">
+          <h2 class="title">Acknowledgement</h2>
+          <p>
+            We thank Adobe for their generous sponsorship.
+            <br>
+            This website is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.  We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
+          </p>
+          <p>
+          <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
+          </a><a href="./index.html">Related Work</a>
+          </p>    
+        </div>
+      </section>
+</body>
+</html>
