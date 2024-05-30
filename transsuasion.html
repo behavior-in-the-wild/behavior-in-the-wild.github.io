@@ -121,15 +121,20 @@
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-centered">
+          🔥<span style="color: #ff3860">[NEW!]</span>We introduce the task of transsuasion, the task of transferring content from one behavior to another while holding the other conditions like meaning, speaker, and time constant. 
+          <br>
           🔥<span style="color: #ff3860">[NEW!]</span>We exhibit better or similar 0-shot and few shot abilities than GPT4 on transcreation, seo, and modelling human preference with a 13B model! 
           <br>
           🔥<span style="color: #ff3860">[NEW!]</span>We release the <a href="./PersuasionArena.html" target="_blank">Persuasion Leaderboard</a> and you can also participate in the persuasion <a href="./humaneval.html" target="_blank">Human-Eval</a>
           <br><br>
-          Trans-suasion explores transforming non-persuasive text into persuasive text using LLMs. By analyzing tweet pairs with similar meanings but different engagement, it determines which version is more appealing and enhances the less popular one. Remarkably, even smaller LLMs can be trained to exceed larger ones in persuasive ability.
+           We develop an instruction fine-tuning regime to show that smaller LLMs can also surpass the persuasion capabilities of much larger LLMs. We compare the contributions of various types of instructions in developing persuasion capabilities. 
+          <br><br>
+          Further, we show that training on synthetically generated explanations of why a tweet might perform better than another tweet further helps increase the persuasion capability of LLMs beyond just the ground-truth instruction data.
         </h4>
       </div>
     </div>
   </section>
+  
   <section class="section"  style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -152,6 +157,9 @@
     </div>
   </section>
 
+
+A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet.
+ <img id="transsuasion-generated-examples" width="100%" src="images/transsuasion-generated-examples.jpeg", alt="A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet."> 
 
   
 <section id="Dataset" class="section">
@@ -437,12 +445,11 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-  <pre><code>@online{singlapersuasion2024,
-author = {Yaman Kumar Singla, Somesh Singh, Balaji Krishnamurthy},
-title = {PersuasionBench and PersuasionArena: An Open Platform For Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models},
-date = {2024-04-09},
+  <pre><code>@online{singhtranssuasion2024,
+author = {Somesh Singh, Yaman K Singla, Harini SI, Balaji Krishnamurthy},
+title = {Transsuasion: Measuring and Improving Behavior-Transfer and Persuasion Abilities of Generative Models},
 year = {2024},
-url = {http://behavior-in-the-wild.github.io/PersuasionArena}}</code></pre>
+url = {http://behavior-in-the-wild.github.io/transsuasion.html}}</code></pre>
     </div>
     
   </section>
@@ -465,9 +472,9 @@ url = {http://behavior-in-the-wild.github.io/PersuasionArena}}</code></pre>
       <p>
         We thank Adobe for their generous sponsorship.
         <br>
-        This website is adapted from <a
-        href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-        Commons Attribution-ShareAlike 4.0 International License</a>.  We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
+        We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
+        This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
       </p>
       <p>
       <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
