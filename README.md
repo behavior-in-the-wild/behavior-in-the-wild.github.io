@@ -2,6 +2,7 @@ Website: https://behavior-in-the-wild.github.io
 
 # The Behavior Modality: Studying Human Behavior In The Wild
 *"Nothing in Nature is random. A thing appears random only through the incompleteness of our knowledge."* - Baruch Spinoza
+
 Email: behavior-in-the-wild@googlegroups.com
 
 Our aim is to explore the Behavior Modality. This involves explaining, predicting, and optimizing human behavior in the real world, especially, from the context of marketing, advertising, and computational social science.
