@@ -1,8 +1,8 @@
 Website: https://behavior-in-the-wild.github.io
 
 # The Behavior Modality: Studying Human Behavior In The Wild
-
 *"Nothing in Nature is random. A thing appears random only through the incompleteness of our knowledge."* - Baruch Spinoza
+Email: behavior-in-the-wild@googlegroups.com
 
 Our aim is to explore the Behavior Modality. This involves explaining, predicting, and optimizing human behavior in the real world, especially, from the context of marketing, advertising, and computational social science.
 
@@ -37,6 +37,8 @@ A motivation of why we are work on the behavior modality is captured in a small 
 - [Transsuasion: Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models](https://behavior-in-the-wild.github.io/transsuasion.html)
 
 ---
+Contact behavior-in-the-wild@googlegroups.com for questions and suggestions
+
 <ol id="footnotes">
     <li id="footnote1">A <em>modality</em> is defined in terms of information, such that a modality is a medium through which information is conveyed <a href="https://arxiv.org/abs/2209.03430">[7]</a>, <a href="https://www.google.co.in/books/edition/Multimodal_Human_Computer_Interaction_and/O8CqMtIKSWwC">[8]</a>, <a href="https://www.researchgate.net/publication/228933425_On_the_annotation_of_the_multimodal_behavior_and_computation_of_cooperation_between_modalities">[9]</a>. Similarly, a multimodal distribution is defined as having more than one peak in the probability distribution describing the nature of information.</li>
   </ol>
