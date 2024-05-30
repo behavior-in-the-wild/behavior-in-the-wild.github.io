@@ -34,6 +34,7 @@ A motivation of why we are work on the behavior modality is captured in a small 
 - [Synthesizing Human Gaze Feedback for Improved NLP Performance](https://aclanthology.org/2023.eacl-main.139/)
 - [A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot](./video-4096.html)
 - [LLaVA Finds Free Lunch: Teaching Human Behavior Improves Content Understanding Abilities Of LLMs](https://arxiv.org/abs/2405.00942)
+- [Transsuasion: Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models](https://behavior-in-the-wild.github.io/transsuasion.html)
 
 ---
 <ol id="footnotes">
