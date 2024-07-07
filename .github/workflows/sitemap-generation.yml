@@ -36,7 +36,5 @@ jobs:
           the [generate-sitemap](https://github.com/cicirello/generate-sitemap) 
           GitHub action.  
         commit-message: "Automated sitemap update."
-        author: Yaman K Singla <yamanksingla@users.noreply.github.com>
-        committer: Yaman K Singla <yamanksingla@users.noreply.github.com>
         branch: create-pull-request/sitemap
         delete-branch: true
