@@ -28,12 +28,12 @@ A motivation of why we are work on the behavior modality is captured in a small 
 
 
 **Our Contributions:**
-- [LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior](./LCBM.html)
+- [LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior](https://behavior-in-the-wild.github.io/LCBM)
 - [BOIG: Behavior Optimized Image Generation](https://arxiv.org/abs/2311.10995)
-- [Long-Term Ad Memorability: Understanding and Generating Memorable Ads](https://arxiv.org/abs/2309.00378)
+- [Long-Term Ad Memorability: Understanding and Generating Memorable Ads](https://behavior-in-the-wild.github.io/memorability.html)
 - [Persuasion Strategies in Advertisements](https://midas-research.github.io/persuasion-advertisements/)
 - [Synthesizing Human Gaze Feedback for Improved NLP Performance](https://aclanthology.org/2023.eacl-main.139/)
-- [A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot](./video-4096.html)
+- [A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot](https://behavior-in-the-wild.github.io/video-4096.html)
 - [LLaVA Finds Free Lunch: Teaching Human Behavior Improves Content Understanding Abilities Of LLMs](https://arxiv.org/abs/2405.00942)
 - [Transsuasion: Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models](https://behavior-in-the-wild.github.io/transsuasion.html)
 
