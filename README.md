@@ -28,7 +28,7 @@ A motivation of why we are work on the behavior modality is captured in a small 
 
 
 **Our Contributions:**
-- [LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior](https://behavior-in-the-wild.github.io/LCBM.html)
+- [LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior](https://behavior-in-the-wild.github.io/LCBM)
 - [BOIG: Behavior Optimized Image Generation](https://arxiv.org/abs/2311.10995)
 - [Long-Term Ad Memorability: Understanding and Generating Memorable Ads](https://behavior-in-the-wild.github.io/memorability.html)
 - [Persuasion Strategies in Advertisements](https://midas-research.github.io/persuasion-advertisements/)
