@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CultureQuest: AI's Adventure in Video Ad Analysis</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: #ffffff;
+        }
+        .hero {
+            background-color: #ffffff;
+            color: black;
+        }
+        .hero .title {
+            color: black;
+        }
+        .hero .subtitle {
+            color: #ff3860;
+        }
+        .author-block a {
+            color: #f68946;
+            font-weight: normal;
+        }
+        .organization a {
+            color: #3273dc;
+            font-weight: normal;
+        }
+        .node {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .node:hover {
+            background-color: #e8e8e8;
+        }
+        .node.active {
+            background-color: #3273dc;
+            color: white;
+        }
+        .window {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        #explore-dataset, #explore-categories {
+            margin-top: 20px;
+            display: none;
+        }
+        .example-node {
+            margin-left: 20px;
+        }
+        .country-node {
+            margin-left: 40px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            <span class="is-size-2"><span class="is-size-1">C</span>ulture<span class="is-size-1">Q</span>uest</span>
+                        </h1>
+                        <h3 class="title is-3 publication-title">Exploring the Depths of Cultural Contexts in Video Ads</h3>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#">Author 1<sup>*</sup></a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#">Author 2<sup>*</sup></a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#">Author 3<sup>*</sup></a>,    
+                            </span>
+                            <span class="author-block">
+                                <a href="#">Author 4</a>,
+                            </span>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="organization">
+                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="#" target="_blank">IIIT Delhi</a>,
+                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="#" target="_blank">Adobe, Media and Data Science Research (MDSR) Lab</a>
+                            </span>
+                        </div>
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                        </div>
+                        <p>Contact <a href="mailto:info@culturaldatabase.com">info@culturaldatabase.com</a> for questions and suggestions</p>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="ai ai-arxiv"></i></span>
+                                        <span>Open Source</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fab fa-github"></i></span>
+                                        <span>GitHub</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark" id="dataset-link">
+                                        <span class="icon"><i class="fas fa-database"></i></span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#ffffff">
+        <div class="container is-max-desktop">
+            <div class="columns">
+                <div class="column is-half">
+                    <h3 class="title is-4">Select Country</h3>
+                    <div id="country-window" class="window"></div>
+                </div>
+                <div class="column is-half">
+                    <h3 class="title is-4">Select Category</h3>
+                    <div id="category-window" class="window"></div>
+                </div>
+            </div>
+            <div class="has-text-centered">
+                <button class="button is-primary" id="explore-categories-button" onclick="showSubcategories()">Explore Categories</button>
+                <button class="button is-primary" id="explore-dataset-button" onclick="exploreDataset()">Explore Dataset</button>
+            </div>
+            <div id="explore-categories" class="window">
+                <div id="subcategories"></div>
+                <div id="examples"></div>
+                <div id="countries"></div>
+            </div>
+            <div id="explore-dataset" class="window">
+                <p id="dataset-info">Select a country and category to explore the dataset.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2024 Cultural Database Project. Open source on GitHub.</p>
+            <p>Licensed under the MIT License.</p>
+        </div>
+    </footer>
+
+    <script>
+        const culturalData = {
+            "root": ["Countries", "Categories"],
+            "Countries": ["United States", "Japan", "India", "Brazil"],
+            "Categories": ["Clothing", "Food", "Sports", "Behaviors", "Traditions", "Arts", "Languages", "Music"],
+            "United States": ["Clothing", "Food", "Sports", "Behaviors"],
+            "Japan": ["Traditions", "Food", "Arts", "Technology"],
+            "India": ["Festivals", "Clothing", "Food", "Languages"],
+            "Brazil": ["Music", "Dance", "Sports", "Food"],
+            "Clothing": ["Dresses", "Jewellery", "Accessories", "Shoes"],
+            "Food": ["Plating Style", "Eating Style", "Food"],
+            "Sports": ["Popular Sports", "Traditional Games", "Sporting Events"],
+            "Behaviors": ["Greetings", "Social Norms", "Taboos"],
+            "Traditions": ["Holidays", "Ceremonies", "Rituals"],
+            "Arts": ["Visual Arts", "Performing Arts", "Literature"],
+            "Languages": ["Official Languages", "Dialects", "Language Families"],
+            "Music": ["Traditional Music", "Contemporary Genres", "Instruments"],
+            "Dresses": ["Sari", "Kimono", "Jeans", "Dress"],
+            "Jewellery": ["Necklace", "Earrings", "Bracelet"],
+            "Accessories": ["Hat", "Scarf", "Belt"],
+            "Shoes": ["Sandals", "Sneakers", "Boots"],
+            "Food": ["Plating Style", "Eating Style", "Food Items"],
+            "Food Items": ["Curry", "Sushi", "Pizza", "Dosa", "Chicken Tikka Masala", "Samosa"],
+            "Plating Style": ["Garnishing", "Arranging"],
+            "Eating Style": ["With Hands", "With Cutlery"],
+            // Add more subcategories and their examples here as needed
+        };
+
+        const exampleCountries = {
+            "Sari": ["India"],
+            "Kimono": ["Japan"],
+            "Jeans": ["United States"],
+            "Dress": ["United States", "Brazil"],
+            "Necklace": ["India", "Brazil"],
+            "Earrings": ["India", "Japan"],
+            "Bracelet": ["Brazil"],
+            "Hat": ["United States", "Brazil"],
+            "Scarf": ["India", "Japan"],
+            "Belt": ["United States"],
+            "Sandals": ["Brazil", "Japan"],
+            "Sneakers": ["United States"],
+            "Boots": ["United States", "Brazil"],
+            "Garnishing": ["Japan"],
+            "Arranging": ["India"],
+            "With Hands": ["India"],
+            "With Cutlery": ["United States"],
+            "Curry": ["India"],
+            "Sushi": ["Japan"],
+            "Pizza": ["United States"],
+            "Dosa": ["India"],
+            "Chicken Tikka Masala": ["India"],
+            "Samosa": ["India"],
+            // Add more examples and their countries here as needed
+        };
+
+        const datasetLinks = {
+            "United States_Clothing": "https://example.com/us_clothing",
+            "United States_Food": "https://example.com/us_food",
+            "United States_Sports": "https://example.com/us_sports",
+            "United States_Behaviors": "https://example.com/us_behaviors",
+            "Japan_Traditions": "https://example.com/japan_traditions",
+            "Japan_Food": "https://example.com/japan_food",
+            "Japan_Arts": "https://example.com/japan_arts",
+            "Japan_Technology": "https://example.com/japan_technology",
+            "India_Festivals": "https://example.com/india_festivals",
+            "India_Clothing": "https://example.com/india_clothing",
+            "India_Food": "https://hub.zenoml.com/project/c31a7423-0c8f-4906-b42d-ec59d15ecc2c/India-Food",
+            "India_Languages": "https://example.com/india_languages",
+            "Brazil_Music": "https://example.com/brazil_music",
+            "Brazil_Dance": "https://example.com/brazil_dance",
+            "Brazil_Sports": "https://example.com/brazil_sports",
+            "Brazil_Food": "https://example.com/brazil_food"
+        };
+
+        const countryWindow = document.getElementById('country-window');
+        const categoryWindow = document.getElementById('category-window');
+        const subcategoriesDiv = document.getElementById('subcategories');
+        const examplesDiv = document.getElementById('examples');
+        const countriesDiv = document.getElementById('countries');
+        const exploreCategoriesDiv = document.getElementById('explore-categories');
+        const exploreDatasetDiv = document.getElementById('explore-dataset');
+        const datasetInfo = document.getElementById('dataset-info');
+        let currentCountry = null;
+        let currentCategory = null;
+        let currentSubcategory = null;
+
+        function updateWindows() {
+            countryWindow.innerHTML = '';
+            categoryWindow.innerHTML = '';
+
+            culturalData["Countries"].forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'node country-node';
+                div.textContent = item;
+                div.addEventListener('click', () => {
+                    currentCountry = item;
+                    updateSelection(div, 'country-node');
+                });
+                countryWindow.appendChild(div);
+            });
+
+            culturalData["Categories"].forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'node category-node';
+                div.textContent = item;
+                div.addEventListener('click', () => {
+                    currentCategory = item;
+                    updateSelection(div, 'category-node');
+                });
+                categoryWindow.appendChild(div);
+            });
+        }
+
+        function updateSelection(selectedNode, type) {
+            const nodes = document.querySelectorAll('.' + type);
+            nodes.forEach(node => {
+                node.classList.remove('active');
+            });
+            selectedNode.classList.add('active');
+        }
+
+        function showSubcategories() {
+            if (currentCategory) {
+                exploreCategoriesDiv.style.display = 'block';
+                subcategoriesDiv.innerHTML = '';
+                examplesDiv.innerHTML = '';
+                countriesDiv.innerHTML = '';
+
+                const subcategories = culturalData[currentCategory] || [];
+                subcategories.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = 'node subcategory-node';
+                    div.textContent = item;
+                    div.addEventListener('click', () => {
+                        currentSubcategory = item;
+                        showExamples(item);
+                    });
+                    subcategoriesDiv.appendChild(div);
+                });
+            } else {
+                alert('Please select a category.');
+            }
+        }
+
+        function showExamples(subcategory) {
+            examplesDiv.innerHTML = '';
+
+            const examples = culturalData[subcategory] || [];
+            examples.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'node example-node';
+                div.textContent = item;
+                div.addEventListener('click', () => {
+                    showCountryForExample(item);
+                });
+                examplesDiv.appendChild(div);
+            });
+        }
+
+        function showCountryForExample(example) {
+            countriesDiv.innerHTML = '';
+
+            const countries = exampleCountries[example] || [];
+            countries.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'node country-node';
+                div.textContent = item;
+                countriesDiv.appendChild(div);
+            });
+        }
+
+        function exploreDataset() {
+            if (currentCountry && currentCategory) {
+                const datasetKey = `${currentCountry}_${currentCategory}`;
+                const datasetURL = datasetLinks[datasetKey] || '#';
+                window.open(datasetURL, '_blank');
+            } else {
+                alert('Please select both a country and a category.');
+            }
+        }
+
+        // Initialize the windows
+        updateWindows();
+    </script>
+</body>
+</html>
