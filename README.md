@@ -36,6 +36,7 @@ A motivation of why we are work on the behavior modality is captured in a small 
 - [A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot](https://behavior-in-the-wild.github.io/video-4096.html)
 - [LLaVA Finds Free Lunch: Teaching Human Behavior Improves Content Understanding Abilities Of LLMs](https://arxiv.org/abs/2405.00942)
 - [Transsuasion: Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models](https://behavior-in-the-wild.github.io/transsuasion.html)
+- [Learning Behavior Helps LLMs Predict Human Opinions](https://behavior-in-the-wild.github.io/cultural-alignment)
 
 ---
 Contact behavior-in-the-wild@googlegroups.com for questions and suggestions
