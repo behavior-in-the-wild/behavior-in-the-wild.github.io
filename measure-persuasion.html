@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Measuring And Improving Persuasive Abilities Of Generative Models">
+  <meta name="keywords" content="transsuasion, behavior, persuasion, large language models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Measuring And Improving Persuasive Abilities Of Generative Models</title>
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/measure-persuasion">
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/measure-persuasion">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">   Measuring And Improving Persuasive Abilities Of Generative Models </h1>
+            <!--<h3 class="title is-3 publication-title">Measuring And Improving Persuasive Abilities Of Generative Models</h3>!-->
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://someshsingh22.github.io" style="color:#f68946;font-weight:normal;">Somesh Singh<sup>*</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar<sup>*</sup></a>,
+              </span>
+              <span class="author-block">
+                <a href="https://harini-si.github.io/" style="color:#f68946;font-weight:normal;">S I Harini<sup>*</sup></a>,    
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=n8iUBg8AAAAJ" style="color:#f68946;font-weight:normal;">Balaji Krishnamurthy</a>,
+              </span>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><img src="images/adobe-logo.png" alt="Adobe Logo" style="width:30px;height:30px;margin-right:5px;"><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank">Media and Data Science Research (MDSR) Lab, Adobe</a></b></span>
+            </div>
+
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
+            </div>
+
+            <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> for questions and suggestions</p>
+              
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://openreview.net/forum?id=2bgokLJTtX" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>openreview</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./index.html" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="./PersuasionArena.html" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-trophy"></i>
+                    </span>
+                    <span>Arena</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                    <a href="#Dataset"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Dataset</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                  <a href="#Experiment"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-flask"></i>
+                    </span>
+                    <span>Experiment</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                    <a href="#Examples"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-images "></i>
+                      </span>
+                      <span>Examples</span>
+                    </a>
+                  </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <h4 class="subtitle has-text-centered">
+          🔥<span style="color: #ff3860">[NEW!]</span>We introduce the task of transsuasion, the task of transferring content from one behavior to another while holding the other conditions like meaning, speaker, and time constant. 
+          <br>
+          🔥<span style="color: #ff3860">[NEW!]</span>We exhibit better or similar 0-shot and few shot abilities than GPT4 on transcreation, seo, and modelling human preference with a 13B model! 
+          <br>
+          🔥<span style="color: #ff3860">[NEW!]</span>We release the <a href="./PersuasionArena.html" target="_blank">Persuasion Leaderboard</a> and you can also participate in the persuasion <a href="./humaneval.html" target="_blank">Human-Eval</a>
+          <br><br>
+           We develop an instruction fine-tuning regime to show that smaller LLMs can also surpass the persuasion capabilities of much larger LLMs. We compare the contributions of various types of instructions in developing persuasion capabilities. 
+          <br><br>
+          Further, we show that training on synthetically generated explanations of why a tweet might perform better than another tweet further helps increase the persuasion capability of LLMs beyond just the ground-truth instruction data.
+        </h4>
+      </div>
+    </div>
+  </section>
+
+A few samples showing Transsuasion. While the account, time, and meaning of the samples remain similar, the behavior over the samples varies significantly. 
+  <img id="transsuasion-ground-truth" width="100%" src="images/transsuasion-headline-image.jpeg", alt="A few samples showing Transsuasion. While the account, time, and meaning of the samples remain similar, the behavior over the samples varies significantly."> 
+
+  <br><br>
+
+
+
+  
+  <section class="section"  style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Crafting a message to elicit a desired response can be time-consuming. While prior research has explored content generation and popularity prediction, the impact of wording on behavior change has been underexplored. We introduce the concept of <b>transsuasion</b> (trans = carrying across, suasion = the act of persuading, transsuasion = the act of carrying across text from non-persuasive to persuasive).
+              <ol type="1">
+                <li><b>Data Generation</b>. <span style="font-size: 95%;">We utilize pairs of tweets by the same user with similar meanings but varying wording and likes to study transsuasion. </span></li>
+                <li><b>LLM Persuasion</b>. <span style="font-size: 95%;">Our research shows that larger language models (LLMs) are more effective at identifying which tweet versions attract more likes and can transform low-performing versions into high-performing ones.</span></li>
+                <li><b>Model Efficiency</b>. <span style="font-size: 95%;">We demonstrate that smaller LLMs can be optimized to surpass larger LLMs in persuasion abilities.</span></li>
+                <li><b>Resources</b>. <span style="font-size: 95%;">We introduce <i><b>PersuasionBench</b></i> and <i><b>PersuasionArena</b></i>, providing a benchmark and a suite of tasks for evaluating and enhancing persuasion in text. Our benchmarks and models are publicly available.</span></li>
+              </ol>  
+            </p>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<br><br>
+
+A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet.
+ <img id="transsuasion-generated-examples" width="100%" src="images/transsuasion-generated-examples.jpeg", alt="A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet."> 
+<br><br>
+  
+<section id="Dataset" class="section">
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5886/5886212.png">Transsuasion Data</h2>
+    </div>
+  </div>   
+<div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+    <div class="column is-full-width">
+      <div class="content has-text-justified">
+        We are releasing our test dataset in the huggingface format<a href="TODO"> [HuggingFace Dataset]</a>.
+
+<div class="column is-six-fifths" width="80%">
+  <table class="TranssuasionTable">
+    <thead>
+      <tr>
+        <th>Case</th>
+        <th>Username</th>
+        <th>Media Filter</th>
+        <th>Link Match</th>
+        <th>Text</th>
+        <th>Edit</th>
+        <th>Likes %</th>
+        <th>Input</th>
+        <th>Output</th>
+        <th>#Samples</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Refine text (<strong>Ref</strong>)</td>
+        <td>Same</td>
+        <td>No Images</td>
+        <td>No</td>
+        <td>>0.8</td>
+        <td>-</td>
+        <td>40</td>
+        <td>T1</td>
+        <td>T2</td>
+        <td>265k</td>
+      </tr>
+      <tr>
+        <td>Paraphrase (<strong>Parap</strong>)</td>
+        <td>Same</td>
+        <td>No Images</td>
+        <td>No</td>
+        <td>>0.6</td>
+        <td>>0.6</td>
+        <td>40</td>
+        <td>T1</td>
+        <td>T2</td>
+        <td>163K</td>
+      </tr>
+      <tr>
+        <td><div style="width: 150px;">Transsuade and Add Image (<strong>AddImg</strong>)</div></td>
+        <td>Same</td>
+        <td><div style="width: 150px;">Image only on o/p side</div></td>
+        <td>No</td>
+        <td>>0.6</td>
+        <td>>0.6</td>
+        <td>40</td>
+        <td>T1</td>
+        <td>T2, I2</td>
+        <td>48k</td>
+      </tr>
+      <tr>
+        <td><div style="width: 180px;">Free-form refine with text and optionally visual content (<strong>FFRef</strong>)</div></td>
+        <td>Same</td>
+        <td><div style="width: 150px;">Image on either or both sides</div></td>
+        <td>No</td>
+        <td>>0.8</td>
+        <td>-</td>
+        <td>40</td>
+        <td>T1,<i>I1</i></td>
+        <td>T2,<i>I2</i></td>
+        <td>701k</td>
+      </tr>
+      <tr>
+        <td><div style="width: 180px;">Free-form paraphrase with text and optionally visual content (<strong>FFPara</strong>)</div></td>
+        <td>Same</td>
+        <td><div style="width: 150px;">Image on either or both sides</div></td>
+        <td>No</td>
+        <td>>0.6</td>
+        <td>>0.6</td>
+        <td>40</td>
+        <td>T1,<i>I1</i></td>
+        <td>T2,<i>I2</i></td>
+        <td>24k</td>
+      </tr>
+      <tr>
+        <td><div style="width: 180px;">Transsuade Visual Only (<strong>VisOnly</strong>)</div></td>
+        <td>Same</td>
+        <td>Image similarity > 0.7</td>
+        <td>No</td>
+        <td>-</td>
+        <td>-</td>
+        <td>40</td>
+        <td>T1,I1,T2</td>
+        <td>I2</td>
+        <td>68k</td>
+      </tr>
+      <tr>
+        <td><div style="width: 180px;">Transsuade Text Only (<strong>TextOnly</strong>)</div></td>
+        <td>Same</td>
+        <td><div style="width: 150px;">Image on o/p side or both sides</div></td>
+        <td>No</td>
+        <td>>0.8</td>
+        <td>-</td>
+        <td>40</td>
+        <td>T1,<i>I1</i>,I2</td>
+        <td>T2</td>
+        <td>69k</td>
+      </tr>
+      <tr>
+        <td><div style="width: 180px;">Highlight Different Aspects of Context (<strong>Hilight</strong>)</div></td>
+        <td>Same</td>
+        <td>Images Ignored</td>
+        <td>Yes</td>
+        <td>>0.6</td>
+        <td>>0.6</td>
+        <td>40</td>
+        <td>T1,Con1,<i>I1</i></td>
+        <td>T2,<i>I2</i></td>
+        <td>241k</td>
+      </tr>
+      <tr>
+        <td><div style="width: 180px;">Transcreation (<strong>Transc</strong>)</div></td>
+        <td>Brand</td>
+        <td>Images Ignored</td>
+        <td>Ignored</td>
+        <td>>0.8</td>
+        <td>>-</td>
+        <td>20</td>
+        <td>T1,U1<i>I1</i></td>
+        <td>T2,U2<i>I2</i></td>
+        <td>131k</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <!-- Codes by Quackit.com -->
+
+      <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">  
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_50.png">  
+          <figcaption>
+            Instruction: Conversation [<a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_instruction_verb_noun_50.html">50</a>]
+          </figcaption>
+        </figure>
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/detail_23k_instruction_verb_noun_0.png">  
+          <figcaption>
+            Instruction: Detailed Description  [<a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_instruction_verb_noun_0.html">0</a>]
+          </figcaption>
+        </figure>
+        <figure style="text-align: center;">
+          <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_50.png">  
+          <figcaption>
+            Instruction: Complex Reasoning   [<a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_instruction_verb_noun_50.html">50</a>]
+          </figcaption>
+        </figure>
+      </div>
+      </div>   -->
+
+      <!-- TODO: EXAMPLES -->
+
+      <!-- <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">  
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_50.png">  
+            <figcaption>
+              Response: Conversation [<a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/conversation_58k_response_verb_noun_50.html">50</a>]
+            </figcaption>
+          </figure>
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_50.png">  
+            <figcaption>
+              Response: Detailed Description  [<a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/detail_23k_response_verb_noun_50.html">50</a>]
+            </figcaption>
+          </figure>
+          <figure style="text-align: center;">
+            <img id="teaser" width="100%" src="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_50.png">  
+            <figcaption>
+              Response: Complex Reasoning   [<a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_0.html">0</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_20.html">20</a>, <a href="images/LLaVA-Instruct-150K_noun_verb/complex_reasoning_77k_response_verb_noun_50.html">50</a>]
+            </figcaption>
+          </figure>
+        </div>
+        </div>      
+
+    </div>
+  </div> -->
+
+
+</section>
+
+<section class="section" id="Experiment">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Human Eval</h2>
+        <p>To participate in the Human Eval fill the following <a href="TODO" target="_blank">form</a></p>
+        <p>You need to accept the <a href="#TermsOfService">Terms of Service</a> beforehand</p>
+      </div>
+    </div>
+  </section>
+
+<section class="section" id="Examples">
+
+  <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <h2 class="title is-3"> Examples on Transsuasion</h2>
+    </div>
+  </div>
+
+    <!-- <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+         <h2 class="title is-4">Visual Reasoning on two examples from <a href="https://arxiv.org/abs/2303.08774">OpenAI GPT-4 Technical Report</a></h2>
+      </div>
+      </div>  
+
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths">
+      <img id="teaser" width="35%" src="images/cmp_ironing.png">
+      <img id="teaser" width="38%" src="images/cmp_chicken_nugget.png">
+    </div>
+    </div>  
+
+  
+
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+         <h2 class="title is-4">Optical character recognition (OCR)</a></h2>
+      </div>
+      </div>  
+
+    <div class="columns is-centered has-text-centered">
+    <div class="column is-six-fifths" style="display: flex; align-items: flex-start; justify-content: center;">
+        <img id="teaser" width="32%" src="images/ocr/llava_example_cvpr2023.png">
+        <img id="teaser" width="32%" src="images/ocr/llava_example_cvinw_logo.png">
+        <img id="teaser" width="32%" src="images/ocr/example_llava_exmaple.png">
+    </div>
+    </div>   -->
+
+
+  <!-- <div class="container mt-5"> -->
+    <!-- <h2 class="text-center mb-5">Who's GPT-4's favorite? Battles between State-of-the-Art Chatbots</h2> -->
+    <!-- Selection -->
+    <!-- <div class="form-row" style="justify-content: flex-end;">
+      <div class="form-group col-md-1">
+        <div class="col-md-2" style="width: 100%"><label>&nbsp;</label></div>
+        <div class="btn-group" role="group" aria-label="Left and Right Controller"
+          style="width: 100%;align-items: flex-end;justify-content: center;flex-direction: row;display: flex;">
+          <button type="button" class="form-control btn btn-primary" id="prev-question"><i
+              class="material-icons">keyboard_arrow_left</i></button>
+          <button type="button" class="form-control btn btn-primary" id="next-question"><i
+              class="material-icons">keyboard_arrow_right</i></button>
+
+        </div>
+      </div>
+    </div> -->
+
+    <!-- TODO: EXAMPLES Question Card -->
+    <!-- <div style="display: flex; justify-content: center; align-items: center;">
+      <div class="card mb-4" style="width: 100%; display: flex; align-items: center;"> -->
+        <!-- <p><b>Description:</b> Monalisa is a famous painting by Leonardo da Vinci. </p> -->
+<!-- 
+        <div class="card-body" id="selected-question" style="display: flex; height: 80vh;">
+          <div class="chat-history"> -->
+            <!-- Add your chat messages here -->
+          <!-- </div>
+
+        </div>
+      </div>
+    </div> -->
+
+  </div>
+</section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+  <pre><code>@online{singhmeasuring2024,
+author = {Somesh Singh, Yaman K Singla, Harini SI, Balaji Krishnamurthy},
+title = {Measuring and Improving Persuasive Abilities of Generative Models},
+year = {2024},
+url = {https://behavior-in-the-wild.github.io/measure-persuasion}}</code></pre>
+    </div>
+    
+  </section>
+  
+  <section class="section" id="TermsOfService">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Terms Of Service</h2>
+      <p>
+        Users are required to agree to the following terms before using the service
+        <br>The service is a research preview. It only provides limited safety measures and may generate offensive content. It must not be used for any illegal, harmful, violent, racist, or sexual purposes. Please do not upload any private information. The service collects user dialogue data, including both text and images, and reserves the right to distribute it under a Creative Commons Attribution (CC-BY) or a similar license.
+        <br>They are also restricted to uses that follow the license agreement of Twitter, and LLaMA
+      </p>
+    </div>
+  </section>
+
+
+  <section class="section" id="Acknowledgement">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgement</h2>
+      <p>
+        We thank Adobe for their generous sponsorship.
+        <br>
+        We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
+        This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+        Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+      <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
+      </a><a href="./index.html">Related Work</a>
+      </p>    
+    </div>
+  </section>
