@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>http://behavior-in-the-wild.github.io/</loc>
-<lastmod>2024-07-20T23:09:12+05:30</lastmod>
+<lastmod>2024-07-21T16:37:12+05:30</lastmod>
 </url>
 <url>
 <loc>http://behavior-in-the-wild.github.io/LCBM.html</loc>
@@ -10,7 +10,7 @@
 </url>
 <url>
 <loc>http://behavior-in-the-wild.github.io/PersuasionArena.html</loc>
-<lastmod>2024-05-27T17:41:41+05:30</lastmod>
+<lastmod>2024-07-21T16:37:12+05:30</lastmod>
 </url>
 <url>
 <loc>http://behavior-in-the-wild.github.io/cultural-alignment.html</loc>
@@ -22,7 +22,7 @@
 </url>
 <url>
 <loc>http://behavior-in-the-wild.github.io/measure-persuasion.html</loc>
-<lastmod>2024-07-20T23:24:52+05:30</lastmod>
+<lastmod>2024-07-21T17:10:06+05:30</lastmod>
 </url>
 <url>
 <loc>http://behavior-in-the-wild.github.io/memorability.html</loc>
@@ -31,5 +31,9 @@
 <url>
 <loc>http://behavior-in-the-wild.github.io/video-4096.html</loc>
 <lastmod>2024-03-14T15:04:43-04:00</lastmod>
+</url>
+<url>
+<loc>http://behavior-in-the-wild.github.io/static/pdf/Transsuasion__Measuring_and_Improving_Behavior_Transfer_And_Persuasion_Abilities_Of_Generative_Models.pdf</loc>
+<lastmod>2024-07-21T17:10:06+05:30</lastmod>
 </url>
 </urlset>
