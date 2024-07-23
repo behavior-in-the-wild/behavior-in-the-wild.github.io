@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Culture Repository</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+            background-color: #ffffff;
+        }
+        .hero {
+            background-color: #ffffff;
+            color: black;
+        }
+        .hero .title {
+            color: black;
+        }
+        .hero .subtitle {
+            color: #ff3860;
+        }
+        .author-block a {
+            color: #f68946;
+            font-weight: normal;
+        }
+        .organization a {
+            color: #3273dc;
+            font-weight: normal;
+        }
+        .node {
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 5px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+        }
+        .node:hover {
+            background-color: #e8e8e8;
+            transform: translateY(-2px);
+        }
+        .node.active {
+            background-color: #3273dc;
+            color: white;
+        }
+        .window {
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            overflow-x: auto;
+        }
+        .window > div {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        #explore-dataset, #explore-categories {
+            margin-top: 20px;
+            display: none;
+        }
+        .example-node {
+            margin-left: 20px;
+        }
+        .country-node {
+            margin-left: 40px;
+        }
+        .image-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .image-gallery img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        max-height: 200px; /* Adjust this value as needed */
+    }
+    .compare-container {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 10px;
+        height: 100%;
+    }
+    .compare-container h3 {
+        margin-bottom: 20px;
+    }
+        .image-gallery .placeholder {
+            margin: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+            height: 150px;
+            display: inline-block;
+            background-color: #f0f0f0;
+            text-align: center;
+            line-height: 150px;
+            color: #bbb;
+            font-size: 14px;
+        }
+        .level {
+            margin-bottom: 30px;
+        }
+        /* .compare-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 10px;
+        }
+        .compare-container h3 {
+            margin-bottom: 20px;
+        } */
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">
+                            <span class="is-size-2"><span class="is-size-1">The Culture Repository</span>
+                        </h1>
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block">
+                                <a href="#">Ritika Jha<sup>*1</sup></a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#">Aniketh Garikaparthi<sup>*1</sup></a>,
+                            </span>
+                            <span class="author-block">
+                                <a href="#">Aanisha Bhattacharya<sup>*2</sup></a>,    
+                            </span>
+                            <span class="author-block">
+                                <a href="https://sites.google.com/view/yaman-kumar/" target="_blank">Yaman Kumar<sup>*1,2</sup></a></a>
+                            </span>
+                        </div>
+                        <div class="is-size-5 publication-authors">
+                            <span class="organization">
+                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://www.iiitd.ac.in/" target="_blank"><sup>1 </sup>IIIT Delhi</a></a>,
+                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank"><sup>2 </sup>Adobe, Media and Data Science Research (MDSR) Lab</a></a>
+                            </span>
+                        </div>
+                        <div class="is-size-6 publication-authors">
+                            <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                        </div>
+                        <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> </p>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="ai ai-arxiv"></i></span>
+                                        <span>Open Source</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://github.com/behavior-in-the-wild/cultural-repository" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fab fa-github"></i></span>
+                                        <span>GitHub</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="#" class="external-link button is-normal is-rounded is-dark" id="dataset-link">
+                                        <span class="icon"><i class="fas fa-database"></i></span>
+                                        <span>Dataset</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                        <div id="category-container" class="window level"><div></div></div>
+                        <div id="subcategory-container" class="window level"><div></div></div>
+                        <div id="subsubcategory-container" class="window level"><div></div></div>
+                        <div id="compare-cultures-container" class="has-text-centered" style="display: none; margin-top: 20px;">
+                            <button id="compare-cultures-button" class="button is-primary">Compare Cultures</button>
+                        </div>
+                        <div class="columns is-centered">
+                            <div class="column compare-container" id="country-selection-container-1" style="display: none;">
+                                <h3>Select Country 1</h3>
+                                <div id="country-selection-1" class="window level"><div></div></div>
+                                <div id="country-1-results">
+                                    <div id="country-1-images" class="image-gallery"></div>
+                                    <ul id="country-1-examples"></ul>
+                                </div>
+                            </div>
+                            <div class="column compare-container" id="country-selection-container-2" style="display: none;">
+                                <h3>Select Country 2</h3>
+                                <div id="country-selection-2" class="window level"><div></div></div>
+                                <div id="country-2-results">
+                                    <div id="country-2-images" class="image-gallery"></div>
+                                    <ul id="country-2-examples"></ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="comparison-results" style="display: none;">
+                            <div class="columns is-centered">
+                                <div class="column has-text-centered" id="country-1-results">
+                                    <h3>Country 1 Results</h3>
+                                    <div id="country-1-images" class="image-gallery"></div>
+                                    <ul id="country-1-examples">
+                                        <li>Example point 1</li>
+                                        <li>Example point 2</li>
+                                    </ul>
+                                </div>
+                                <div class="column has-text-centered" id="country-2-results">
+                                    <h3>Country 2 Results</h3>
+                                    <div id="country-2-images" class="image-gallery"></div>
+                                    <ul id="country-2-examples">
+                                        <li>Example point 1</li>
+                                        <li>Example point 2</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="image-gallery" class="image-gallery"></div>
+                        <ul id="image-gallery-examples"></ul> <!-- Add this line -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <script>
+        const schema = {
+            "Regular Practices": {
+                "Language and Communication": [
+                    "Idioms, slang, and common phrases",
+                    "Gestures and Body language"
+                ],
+                "Food and Dining": [
+                    "Cuisine and Traditional dishes",
+                    "Cooking methods",
+                    "Dining etiquettes",
+                    "Kitchen Design",
+                    "Cutlery"
+                ],
+                "Clothing and Fashion": [
+                    "Traditional clothing",
+                    "Dress codes for different occasions",
+                    "Hair and Beard types",
+                    "Accessories and Jewelleries"
+                ],
+                "Home Design and Decoration": {
+                    "Exterior Styles": [
+                        "Roof design",
+                        "Entrance"
+                    ],
+                    "Functional Elements": [],
+                    "Interior Design": [
+                        "Furniture Styles",
+                        "Antique or vintage pieces",
+                        "Wall coverings"
+                    ]
+                },
+                "Celebrations": [
+                    "Festival",
+                    "Ceremonies such as birth/wedding",
+                    "Decorations"
+                ],
+                "Religion and Spirituality": [
+                    "Religious practices",
+                    "Religious icons",
+                    "Places of worship/Religious buildings",
+                    "Mythical creatures or heroes"
+                ]
+            },
+            "Creative Expressions": {
+                "Art and Music": [
+                    "Traditional and contemporary music",
+                    "Visual arts (painting)",
+                    "Murals, graffiti, sculptures",
+                    "Performing arts, such as dance and theater"
+                ],
+                "Entertainment and Leisure": [
+                    "Popular sports",
+                    "Recreational activities",
+                    "Movies/Shows/Books",
+                    "Hobbies"
+                ]
+            },
+            "Social Structure": {
+                "Family and Society": [
+                    "Parenting Styles",
+                    "Family roles and responsibilities"
+                ],
+                "Legends or Inspirational people": [],
+                "Education and Work": [
+                    "Work ethics",
+                    "Type of work/employment",
+                    "Educational system",
+                    "Attitude towards hierarchy"
+                ]
+            },
+            "Environment and Public Life": {
+                "Public Spaces": [
+                    "Urban design",
+                    "Architecture and Buildings",
+                    "Historic Monuments and Statues",
+                    "Transportation"
+                ],
+                "Natural Environment": [
+                    "Vegetation / Plants/ Trees",
+                    "Animals and Wildlife",
+                    "Agricultural Elements",
+                    "Sacred Plants and Animal"
+                ],
+                "Signage, Symbols and Flags": [
+                    "Script",
+                    "Multilingual signs",
+                    "National emblems",
+                    "Flags",
+                    "National color schemes"
+                ]
+            }
+        };
+
+        const countries = ["India", "China", "USA", "Brazil", "Nigeria", "France", "Japan"];
+        let currentPath = [];
+        let imageDirectory;
+
+        const fallbackImageDirectory = {
+            "Regular Practices": {
+                "Language and Communication": {
+                    "Gestures and Body language": {
+                        "India": ["ID_0001.png", "ID_0002.png", "ID_0003.png"],
+                        "China": ["ID_0001.png", "ID_0002.png"],
+                        "USA": ["ID_0001.png", "ID_0002.png", "ID_0003.png", "ID_0004.png"]
+                    },
+                    "Idioms, slang, and common phrases": {
+                        "France": ["ID_0001.png", "ID_0002.png"],
+                        "Japan": ["ID_0001.png"]
+                    }
+                },
+                "Food and Dining": {
+                    "Cuisine and Traditional dishes": {
+                        "Brazil": ["ID_0001.png", "ID_0002.png", "ID_0003.png"],
+                        "Nigeria": ["ID_0001.png"]
+                    }
+                }
+            }
+        };
+
+        function createNode(name, containerId, level, parentNode) {
+    const node = document.createElement('div');
+    node.className = 'node';
+    node.textContent = name;
+    node.addEventListener('click', function() {
+        handleNodeClick(name, containerId, level, this, parentNode, false);
+    });
+    document.getElementById(containerId).querySelector('div').appendChild(node);
+}
+
+function handleNodeClick(name, containerId, level, element, parentNode, isPreselect = false) {
+    $(element).addClass('active').siblings().removeClass('active');
+
+    const containers = ['category-container', 'subcategory-container', 'subsubcategory-container', 'country-container', 'country-selection-1', 'country-selection-2'];
+    let currentIndex = containers.indexOf(containerId);
+    
+    if (currentIndex === -1) {
+        if (containerId === 'country-selection-1' || containerId === 'country-selection-2') {
+            currentIndex = containers.indexOf('country-container');
+        }
+    }
+    
+    if (!isPreselect) {
+        for (let i = currentIndex + 1; i < containers.length - 2; i++) {
+            $(`#${containers[i]} > div`).empty();
+        }
+        $('#image-gallery').empty();
+    }
+
+    if (containerId !== 'country-selection-1' && containerId !== 'country-selection-2') {
+        updateCurrentPath(name, currentIndex);
+    }
+    
+    for (let i = currentIndex + 1; i < containers.length - 2; i++) {
+        $(`#${containers[i]} > div`).empty();
+    }
+    $('#image-gallery').empty();
+
+    if (containerId !== 'country-selection-1' && containerId !== 'country-selection-2') {
+        updateCurrentPath(name, currentIndex);
+    }
+
+    let currentSchema = schema;
+    for (let i = 0; i < currentPath.length; i++) {
+        if (currentSchema && typeof currentSchema === 'object' && !Array.isArray(currentSchema) && currentSchema[currentPath[i]]) {
+            currentSchema = currentSchema[currentPath[i]];
+        } else {
+            console.log(currentSchema);
+            console.log('Schema path not found:', currentPath.slice(0, i + 1).join(' > '));
+            currentSchema = undefined;
+            break;
+        }
+    }
+
+    if (currentSchema === undefined) {
+        console.log('End of schema reached or invalid path');
+        if (level.startsWith('subcategory')) {
+            showCompareButton();
+        }
+        return;
+    }
+
+    if (typeof currentSchema === 'object' && !Array.isArray(currentSchema)) {
+        for (const subcategory in currentSchema) {
+            createNode(subcategory, containers[currentIndex + 1], `subcategory-${currentIndex + 1}`, name);
+        }
+    } else if (Array.isArray(currentSchema)) {
+        if (currentSchema.length === 0) {
+            showCompareButton();
+        } else {
+            for (const item of currentSchema) {
+                createNode(item, containers[currentIndex + 1], `subcategory-${currentIndex + 1}`, name);
+            }
+        }
+    } else if (level.startsWith('subcategory')) {
+        showCompareButton();
+    }
+}
+
+function updateCurrentPath(name, index) {
+    currentPath = currentPath.slice(0, index);
+    currentPath.push(name);
+    console.log(currentPath);
+}
+
+function showCompareButton() {
+    $('#compare-cultures-container').show();
+}
+
+$(document).ready(function() {
+    const isLocal = window.location.protocol === 'file:';
+    
+    if (isLocal) {
+        console.log('Running locally, using fallback image directory');
+        imageDirectory = fallbackImageDirectory;
+        initializePage();
+    } else {
+        $.getJSON('image_directory.json', function(data) {
+            imageDirectory = data;
+            initializePage();
+        }).fail(function() {
+            console.log('Failed to load image directory structure, using fallback');
+            imageDirectory = fallbackImageDirectory;
+            initializePage();
+        });
+    }
+
+    $('#compare-cultures-button').click(function() {
+        $('#country-selection-container-1').show();
+        $('#country-selection-container-2').show();
+        if ($('#country-selection-1 .node').length === 0) {
+            showCountries('country-selection-1');
+        }
+        if ($('#country-selection-2 .node').length === 0) {
+            showCountries('country-selection-2');
+        }
+    });
+
+    $(document).on('click', '#country-selection-1 .node, #country-selection-2 .node', function() {
+    $(this).addClass('active').siblings().removeClass('active');
+    const countryName = $(this).text();
+    const containerId = $(this).closest('.compare-container').attr('id').includes('1') ? 'country-1' : 'country-2';
+    showSampleImages(`${containerId}-images`, currentPath.concat(countryName));
+    showExamplePoints(`${containerId}-examples`);
+});
+});
+
+function showCountries(containerId) {
+    for (const country of countries) {
+        createNode(country, containerId, 'country');
+    }
+}
+
+function showSampleImages(containerId, path) {
+    const $container = $(`#${containerId}`);
+    $container.empty().show();
+    console.log(`Container ${containerId} emptied and shown`);
+    const imagePath = path.join('/');
+    console.log('Image Path:', imagePath);
+
+    let currentDirectory = imageDirectory;
+    for (const pathPart of path) {
+        if (currentDirectory[pathPart]) {
+            currentDirectory = currentDirectory[pathPart];
+        } else {
+            console.log('No images found for this path');
+            displayPlaceholderImages(containerId);
+            return;
+        }
+    }
+
+    const appendImage = (imageSrc, index) => {
+        console.log('Appending Image:', imageSrc); // Log the image source being appended
+        const img = $('<img>')
+            .attr('src', imageSrc)
+            .attr('alt', `Sample Image ${index + 1}`)
+            .on('error', function() {
+                $(this).replaceWith('<div class="placeholder">No Image</div>');
+                console.log('Failed to load image:', imageSrc); // Log the failed image load
+            })
+            .on('load', function() {
+                console.log('Image loaded successfully:', imageSrc); // Log successful image load
+            });
+        $(`#${containerId}`).append(img);
+    };
+
+    if (currentDirectory instanceof Array) {
+        if (currentDirectory.length === 0) {
+            displayPlaceholderImages(containerId);
+        } else {
+            currentDirectory.forEach((image, index) => {
+                const imageSrc = `images/advertisement_frames/${imagePath}/${image}`;
+                appendImage(imageSrc, index);
+            });
+        }
+    } else if (currentDirectory && typeof currentDirectory === 'object') {
+        if (currentDirectory[countries[path[path.length - 1]]]) {
+            currentDirectory[countries[path[path.length - 1]]].forEach((image, index) => {
+                const imageSrc = `images/advertisement_frames/${imagePath}/${image}`;
+                appendImage(imageSrc, index);
+            });
+        } else {
+            displayPlaceholderImages(containerId);
+        }
+    } else {
+        displayPlaceholderImages(containerId);
+    }
+
+    // Call the showExamplePoints function to display bullet points
+    showExamplePoints(containerId + '-examples');
+}
+
+function displayPlaceholderImages(containerId) {
+    console.log('Displaying placeholder images'); // Log placeholder display
+    for (let i = 0; i < 3; i++) {
+        const placeholder = $('<div>').addClass('placeholder').text('No Image');
+        $(`#${containerId}`).append(placeholder);
+    }
+}
+
+function showExamplePoints(containerId) {
+    const $container = $(`#${containerId}`);
+    $container.empty().show();
+    const examplePoints = [
+        '<li>Example point 1</li>',
+        '<li>Example point 2</li>'
+    ];
+    $container.append(examplePoints.join(''));
+}
+
+function initializePage() {
+    for (const category in schema) {
+        createNode(category, 'category-container', 'category');
+    }
+    
+    // Pre-select "Regular Practices"
+    const regularPracticesNode = $('#category-container .node:contains("Regular Practices")')[0];
+    handleNodeClick('Regular Practices', 'category-container', 'category', regularPracticesNode, null, true);
+    
+    // Wait for subcategories to be created, then pre-select "Language and Communication"
+    setTimeout(() => {
+        const languageNode = $('#subcategory-container .node:contains("Language and Communication")')[0];
+        handleNodeClick('Language and Communication', 'subcategory-container', 'subcategory-1', languageNode, 'Regular Practices', true);
+        
+        // Wait for sub-subcategories to be created, then pre-select "Gestures and Body language"
+        setTimeout(() => {
+            const gesturesNode = $('#subsubcategory-container .node:contains("Gestures and Body language")')[0];
+            handleNodeClick('Gestures and Body language', 'subsubcategory-container', 'subcategory-2', gesturesNode, 'Language and Communication', true);
+        }, 300);
+    }, 300);
+}
+
+
+    </script>
+</body>
+</html>
