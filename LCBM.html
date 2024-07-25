@@ -1,73 +1,208 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LCBM</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
-  .container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  header {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  h1 {
-    font-size: 36px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  section {
-    margin-bottom: 20px;
-  }
-  p {
-    line-height: 1.6;
-    color: #666;
-  }
-  img {
-    display: block;
-    max-width: 100%;
-    margin: 0 auto;
-    border-radius: 5px;
-  }
-  .write-up {
-    text-align: center;
-    color: #999;
-    font-style: italic;
-    margin-top: 20px;
-  }
-</style>
-</head>
-<body>
-<div class="container">
-  <header>
-    <h1>LCBM</h1>
-    <p><a href="https://openreview.net/forum?id=TrKq4Wlwcz" target="_blank">[paper link]</a></p>
-  </header>
-  <section>
-    <h2>Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior</h2>
-    <p>Shannon and Weaver's seminal information theory divides communication into three levels: technical, semantic, and effectiveness. While the technical level deals with the accurate reconstruction of transmitted symbols, the semantic and effectiveness levels deal with the inferred meaning and its effect on the receiver. Large Language Models (LLMs), with their wide generalisability, make some progress towards the second level. However, LLMs and other communication models are not conventionally designed for predicting and optimising communication for desired receiver behaviours and intents. As a result, the effectiveness level remains largely untouched by modern communication systems. In this paper, we introduce the receivers' "behavior tokens", such as shares, likes, clicks, purchases, and retweets, in the LLM's training corpora to optimize content for the receivers and predict their behaviors. Our trained models, other than showing similar performance to LLMs on content understanding tasks, show generalization capabilities on the behavior dimension for behavior simulation, content simulation, behavior understanding, and behavior domain adaptation. Using a wide range of tasks on three corpora, we show results on all these capabilities. We call these models Large Content and Behavior Models (LCBMs). Further, to spur more research on LCBMs, we release our new Content Behavior Corpus (CBC), a repository containing communicator, message, and corresponding receiver behavior.</p>
-    <img src="images/fig1-lcbm-1.png" alt="Image">
-  </section>
-  <div class="write-up">
-    <p><a href="https://huggingface.co/datasets/behavior-in-the-wild/content-behavior-corpus" target="_blank">Content Behavior Corpus Dataset</a></p>
-  </div>
-  <div class="write-up">
-    <p>For training code, clone the <a href="https://github.com/haotian-liu/LLaVA" target="_blank">LLaVA</a> library.</p>
-  </div>
-  <p>Contact yamank@iiitd.ac.in for questions and suggestions.</p>
-</div>
-</body>
-</html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior">
+        <meta name="keywords" content="large content and behavior models, lcbm, advertisements, large language models, llm, behavioral science, computational marketing">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url" content="https://behavior-in-the-wild.github.io/LCBM">
+        <title>Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="./static/css/base.css">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+        <style>
+            body {
+                font-family: 'Noto Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            .container {
+                padding: 20px;
+            }
+            .video-panel {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .video-item {
+                text-align: center;
+            }
+            .video-caption {
+                margin-top: 10px;
+                font-size: 18px;
+            }
+            .examples {
+                margin-top: 40px;
+            }
+            .example-item {
+                margin-bottom: 20px;
+            }
+            .memorable-trends-list {
+                font-size: 1.25em; /* Increase this value as needed */
+                line-height: 1.6;
+            }
+            
+            .memorable-trends-list li {
+                margin-bottom: 10px;
+            }
+            
+        </style>
+    </head>
 
+    <body>
+
+
+        <section class="hero">
+            <div class="hero-body">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior</h1>
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank">Media and Data Science Research (MDSR) Lab Adobe</a></b></span>
+                    </div>
+                    <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> for questions and suggestions</p>
+                    <div class="column has-text-centered">
+                      <div class="publication-links">
+                     
+                     
+                      <span class="link-block">
+                        <a href="https://openreview.net/forum?id=TrKq4Wlwcz" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>Openreview</span>
+                        </a>
+                      </span>
+
+                      <span class="link-block">
+                        <a href="https://github.com/haotian-liu/LLaVA" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code</span>
+                        </a>
+                      </span>
+                      
+                      <span class="link-block">
+                          <a href="https://huggingface.co/datasets/behavior-in-the-wild/content-behavior-corpus"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-database"></i>
+                            </span>
+                            <span>Content Behavior Corpus</span>
+                          </a>
+                      </span>
+                    
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        
+      
+        
+
+        
+        
+        
+        
+        <section class="section"  style="background-color:#efeff081">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-six-fifths">
+                <img src="images/fig1-lcbm-1.png" alt="LCBM">
+                <figcaption><i>Encoding and predicting content (images, videos, and text) and behavior in the language space. Large Content Behavior Models (LCBMs), once trained, can enable a host of different applications, including behavior simulation, content understanding, content-behavior optimization, and content-behavior understanding.</i></figcaption>
+                <br><br><br><br>
+                
+
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    Shannon and Weaver's seminal information theory divides communication into three levels: technical, semantic, and effectiveness. While the technical level deals with the accurate reconstruction of transmitted symbols, the semantic and effectiveness levels deal with the inferred meaning and its effect on the receiver. Large Language Models (LLMs), with their wide generalisability, make some progress towards the second level. However, LLMs and other communication models are not conventionally designed for predicting and optimising communication for desired receiver behaviours and intents. As a result, the effectiveness level remains largely untouched by modern communication systems. In this paper, we introduce the receivers' "behavior tokens", such as shares, likes, clicks, purchases, and retweets, in the LLM's training corpora to optimize content for the receivers and predict their behaviors. Our trained models, other than showing similar performance to LLMs on content understanding tasks, show generalization capabilities on the behavior dimension for behavior simulation, content simulation, behavior understanding, and behavior domain adaptation. Using a wide range of tasks on three corpora, we show results on all these capabilities. We call these models Large Content and Behavior Models (LCBMs). Further, to spur more research on LCBMs, we release our new Content Behavior Corpus (CBC), a repository containing communicator, message, and corresponding receiver behavior.                    
+                  </p>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      <br><br>
+      
+    
+      
+        <section class="section" id="BibTeX">
+          <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+        <pre><code>@inproceedings{
+            khandelwal2024large,
+                title={Large Content And Behavior Models To Understand, Simulate, And Optimize Content And Behavior},
+                author={Ashmit Khandelwal and Aditya Agrawal and Aanisha Bhattacharyya and Yaman Kumar and Somesh Singh and Uttaran Bhattacharya and Ishita Dasgupta and Stefano Petrangeli and Rajiv Ratn Shah and Changyou Chen and Balaji Krishnamurthy},
+                booktitle={The Twelfth International Conference on Learning Representations},
+                year={2024},
+                url={https://openreview.net/forum?id=TrKq4Wlwcz}
+            }
+        </code></pre>
+          </div>
+          
+        </section>
+        
+        <section class="section" id="TermsOfService">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Terms Of Service</h2>
+            <p>
+                Content Behavior Corpus (CBC) is sourced from brand videos available on YouTube, Facebook Ads, and CommonCrawl. The dataset annotations and video links for CBC will be released under the MIT License. The videos themselves are subject to the original creators' licenses. This dataset do not reveal any identities of the annotators or specific individuals. While the videos originate from brands, some brand content may be perceived as offensive by certain individuals.
+            </p>
+          </div>
+        </section>
+      
+      
+        <section class="section" id="Acknowledgement">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Acknowledgement</h2>
+            <p>
+              We thank Adobe for their generous sponsorship.
+              <br>
+              We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
+              This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+            <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
+            </a>
+            </p>    
+          </div>
+        </section>
+      
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Large Content and Behavior Models</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+              The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </footer>
+
+    </body>
+</html>
