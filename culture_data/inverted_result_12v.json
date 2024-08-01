@@ -1,0 +1,2359 @@
+{
+    "Script": {
+        "samsung-brazil": {
+            "temp-0": "Portuguese",
+            "temp-2": "Portuguese",
+            "temp-4": "Portuguese",
+            "temp-6": "Portuguese",
+            "temp-11": "Spanish",
+            "temp-17": "French",
+            "temp-28": "Portuguese"
+        },
+        "samsung-usa": {
+            "temp-4": "English",
+            "temp-11": "English",
+            "temp-13": "English text",
+            "temp-16": "English",
+            "temp-32": "English text"
+        },
+        "nike-india": {
+            "temp-21": "English",
+            "temp-34": "English phrases"
+        },
+        "samsung-india": {
+            "temp-4": "Hindi",
+            "temp-26": "Devanagari",
+            "temp-31": "Local Indian language",
+            "temp-32": "Local script",
+            "temp-33": "Bilingual"
+        },
+        "coca-cola-brazil": {
+            "temp-10": "English",
+            "temp-25": "Portuguese",
+            "temp-27": "Portuguese",
+            "temp-28": "Portuguese",
+            "temp-31": "Portuguese text",
+            "temp-34": "Portuguese"
+        },
+        "coca-cola-usa": {
+            "temp-4": "Cursive script",
+            "temp-10": "English script",
+            "temp-17": "Classic script",
+            "temp-21": "English script",
+            "temp-34": "Classic"
+        },
+        "coca-cola-india": {
+            "temp-2": "English",
+            "temp-6": "Hindi",
+            "temp-7": "Hindi",
+            "temp-11": "Devanagari",
+            "temp-12": "Hindi",
+            "temp-13": "Hindi text",
+            "temp-15": "Hindi",
+            "temp-16": "Devanagari",
+            "temp-17": "Hindi script",
+            "temp-18": "Hindi",
+            "temp-19": "Hindi",
+            "temp-20": "Devanagari",
+            "temp-21": "Hindi",
+            "temp-22": "Hindi",
+            "temp-23": "Hindi script",
+            "temp-25": "Devanagari",
+            "temp-26": "Hindi",
+            "temp-27": "Hindi",
+            "temp-30": "Devanagari",
+            "temp-31": "Devanagari",
+            "temp-32": "Hindi",
+            "temp-33": "Hindi"
+        },
+        "nike-brazil": {
+            "temp-15": "Portuguese"
+        },
+        "coca-cola-japan": {
+            "temp-1": "English",
+            "temp-2": "Japanese",
+            "temp-4": "Classic",
+            "temp-6": "Japanese characters",
+            "temp-7": "Japanese kanji",
+            "temp-9": "Japanese characters",
+            "temp-10": "Japanese script",
+            "temp-12": "Japanese text",
+            "temp-13": "Japanese",
+            "temp-14": "Japanese text",
+            "temp-16": "Japanese script",
+            "temp-22": "Japanese",
+            "temp-24": "Classic script",
+            "temp-27": "Japanese text",
+            "temp-29": "Japanese",
+            "temp-31": "English",
+            "temp-33": "Japanese script",
+            "temp-34": "Japanese script"
+        },
+        "samsung-japan": {
+            "temp-3": "English",
+            "temp-4": "English Alphabet",
+            "temp-9": "Japanese text",
+            "temp-11": "Japanese",
+            "temp-12": "Japanese text",
+            "temp-19": "Japanese",
+            "temp-20": "Japanese text",
+            "temp-21": "Japanese characters",
+            "temp-22": "Japanese language",
+            "temp-28": "Japanese text",
+            "temp-29": "Japanese language",
+            "temp-30": "Japanese",
+            "temp-31": "Japanese text",
+            "temp-32": "English text"
+        },
+        "nike-japan": {
+            "temp-5": "English text",
+            "temp-6": "English",
+            "temp-10": "English",
+            "temp-12": "English",
+            "temp-14": "English",
+            "temp-24": "English text",
+            "temp-27": "Japanese signage",
+            "temp-28": "English"
+        },
+        "nike-usa": {
+            "temp-28": "English language",
+            "temp-31": "English"
+        }
+    },
+    "National color schemes": {
+        "samsung-brazil": {
+            "temp-0": "Vibrant colors",
+            "temp-9": "Bright colors",
+            "temp-12": "Bright colors",
+            "temp-21": "Bright colors"
+        },
+        "samsung-usa": {
+            "temp-2": "Blue Tones",
+            "temp-3": "Soft pink, purple hues",
+            "temp-5": "Pastel colors",
+            "temp-8": "Purple hue",
+            "temp-9": "Pink",
+            "temp-10": "Cool blues, purples",
+            "temp-11": "Vibrant Pink",
+            "temp-13": "Cool blue tones",
+            "temp-14": "Blue Purple",
+            "temp-17": "Red, pink hues",
+            "temp-19": "Blue, Pink",
+            "temp-20": "Vibrant purple",
+            "temp-21": "Purple, blue, red, pink",
+            "temp-27": "Muted colors",
+            "temp-28": "Black, purple",
+            "temp-30": "dark hues",
+            "temp-33": "Bright colors"
+        },
+        "nike-india": {
+            "temp-1": "Earthy tones",
+            "temp-2": "White",
+            "temp-3": "orange",
+            "temp-5": "Earthy tones",
+            "temp-7": "Bright red",
+            "temp-9": "black-and-white",
+            "temp-10": "Bright colors",
+            "temp-21": "Earthy tones",
+            "temp-24": "Regional colors",
+            "temp-31": "Earthy tones",
+            "temp-34": "Vibrant colors"
+        },
+        "samsung-india": {
+            "temp-6": "Earthy tones",
+            "temp-17": "Earthy tones",
+            "temp-18": "Warm tones",
+            "temp-21": "Bold colors",
+            "temp-22": "Vibrant colors",
+            "temp-23": "Vibrant colors",
+            "temp-28": "Vibrant colors",
+            "temp-30": "Neutral colors",
+            "temp-31": "Orange and red"
+        },
+        "coca-cola-brazil": {
+            "temp-1": "Green and yellow",
+            "temp-3": "red",
+            "temp-6": "Green",
+            "temp-10": "blue",
+            "temp-12": "bright colors",
+            "temp-15": "green and red",
+            "temp-17": "vibrant colors",
+            "temp-18": "warm orange",
+            "temp-19": "Blue, green, white",
+            "temp-21": "Brazilian colors",
+            "temp-22": "vibrant colors",
+            "temp-23": "Vibrant colors",
+            "temp-25": "Brazilian",
+            "temp-28": "Bright warm",
+            "temp-31": "Vibrant colors"
+        },
+        "coca-cola-usa": {
+            "temp-4": "Red color",
+            "temp-5": "Bright colors",
+            "temp-13": "Warm tones",
+            "temp-32": "bright colors",
+            "temp-34": "Red"
+        },
+        "coca-cola-india": {
+            "temp-5": "earthy tones",
+            "temp-6": "Red",
+            "temp-12": "Red"
+        },
+        "nike-brazil": {
+            "temp-2": "Yellow, green, blue",
+            "temp-3": "Yellow and green",
+            "temp-4": "yellow and blue",
+            "temp-5": "Yellow and green",
+            "temp-8": "vibrant colors",
+            "temp-11": "Yellow and green",
+            "temp-15": "Green, yellow, blue, white",
+            "temp-16": "yellow and green",
+            "temp-17": "Yellow, green",
+            "temp-19": "muted tones",
+            "temp-21": "Vibrant colors",
+            "temp-23": "Yellow, green, and blue",
+            "temp-24": "Yellow",
+            "temp-25": "Yellow and blue",
+            "temp-26": "yellow, green",
+            "temp-27": "Yellow and green",
+            "temp-33": "Yellow and green",
+            "temp-34": "Yellow and green"
+        },
+        "coca-cola-japan": {
+            "temp-2": "Red and White",
+            "temp-3": "Vibrant colors",
+            "temp-4": "Vibrant",
+            "temp-5": "Red, white, blue",
+            "temp-6": "Red color",
+            "temp-8": "Red Yellow Blue",
+            "temp-9": "Red and white",
+            "temp-10": "Red color",
+            "temp-13": "Red",
+            "temp-14": "Red color",
+            "temp-18": "Japanese color",
+            "temp-33": "Red and white"
+        },
+        "samsung-japan": {
+            "temp-8": "Bright colors",
+            "temp-20": "Subtle colors",
+            "temp-24": "blue"
+        },
+        "nike-japan": {
+            "temp-1": "Neutral colors",
+            "temp-5": "Bright colors",
+            "temp-16": "Bright Green"
+        },
+        "nike-usa": {
+            "temp-0": "Purple Gold",
+            "temp-1": "Purple and Gold",
+            "temp-2": "Regional colors",
+            "temp-3": "Purple, Gold",
+            "temp-4": "Team colors",
+            "temp-5": "Purple, Gold",
+            "temp-6": "Purple and gold",
+            "temp-7": "Purple and Gold",
+            "temp-10": "Purple and gold",
+            "temp-11": "Purple and gold",
+            "temp-13": "Purple, gold",
+            "temp-15": "purple and gold",
+            "temp-17": "Purple and Gold",
+            "temp-18": "Purple Gold",
+            "temp-19": "Purple and Gold",
+            "temp-20": "Purple, yellow",
+            "temp-21": "Purple, Gold",
+            "temp-22": "purple and gold",
+            "temp-23": "Purple and Gold",
+            "temp-25": "Purple, Gold",
+            "temp-27": "team colors",
+            "temp-28": "Bold and vibrant colors",
+            "temp-31": "yellow",
+            "temp-32": "Bright Yellow"
+        }
+    },
+    "Idioms, slang, and common phrases": {
+        "samsung-brazil": {
+            "temp-1": "Portuguese language",
+            "temp-4": "Conversational style",
+            "temp-11": "\u00bfPuedo jugar?",
+            "temp-13": "Im sorry",
+            "temp-33": "Im sorry",
+            "temp-34": "A pr\u00f3xima grande novidade \u00e9 voc\u00ea"
+        },
+        "samsung-usa": {
+            "temp-4": "American English",
+            "temp-11": "Shes gone",
+            "temp-16": "Colloquial American English",
+            "temp-18": "American English",
+            "temp-24": "Im sorry",
+            "temp-26": "Colloquial American English",
+            "temp-29": "Im sorry",
+            "temp-30": "clear and concise language",
+            "temp-33": "American English",
+            "temp-34": "Holidays open up"
+        },
+        "nike-india": {
+            "temp-25": "I am sorry",
+            "temp-26": "Indian slang",
+            "temp-31": "MAKE EVERY YARD COUNT"
+        },
+        "samsung-india": {
+            "temp-1": "Apologizing",
+            "temp-24": "Im sorry"
+        },
+        "coca-cola-brazil": {
+            "temp-0": "Apologizing",
+            "temp-4": "kkkk",
+            "temp-5": "Im sorry",
+            "temp-8": "Im sorry",
+            "temp-10": "surf",
+            "temp-11": "Brazilian Portuguese",
+            "temp-16": "Im sorry",
+            "temp-25": "Portuguese",
+            "temp-29": "Exportado do Brasil para os Brasileiros",
+            "temp-33": "Im sorry"
+        },
+        "coca-cola-usa": {
+            "temp-2": "Im sorry",
+            "temp-6": "larger than life",
+            "temp-7": "Taking the bull by the horns",
+            "temp-9": "Im sorry",
+            "temp-14": "larger than life",
+            "temp-17": "American English",
+            "temp-24": "Im sorry",
+            "temp-33": "The Real Thing"
+        },
+        "coca-cola-india": {
+            "temp-3": "Im sorry",
+            "temp-4": "Im sorry",
+            "temp-8": "Hindi phrases",
+            "temp-14": "Im sorry",
+            "temp-17": "Hindi language",
+            "temp-18": "common conversational phrases",
+            "temp-24": "Im sorry",
+            "temp-25": "Hindi",
+            "temp-28": "Hindi",
+            "temp-32": "Iss baar gale milke kaho Happy Diwali"
+        },
+        "nike-brazil": {
+            "temp-10": "Im sorry",
+            "temp-12": "Im sorry",
+            "temp-17": "golazo, joga bonito",
+            "temp-20": "Apologizing",
+            "temp-26": "jogo bonito"
+        },
+        "coca-cola-japan": {
+            "temp-7": "Japanese idioms",
+            "temp-9": "Japanese language",
+            "temp-10": "Switch ON everyday",
+            "temp-11": "Im sorry",
+            "temp-15": "Taste the Feeling",
+            "temp-18": "Japanese slang",
+            "temp-21": "Im sorry",
+            "temp-23": "TASTE THE FEELING"
+        },
+        "samsung-japan": {
+            "temp-0": "Japanese idioms",
+            "temp-11": "Japanese",
+            "temp-13": "Japanese language",
+            "temp-19": "Japanese expressions",
+            "temp-22": "Japanese text",
+            "temp-29": "Japanese everyday speech"
+        },
+        "nike-japan": {
+            "temp-4": "Im sorry",
+            "temp-7": "Make today another day of listening to others",
+            "temp-9": "Im sorry",
+            "temp-11": "Im sorry",
+            "temp-13": "Im sorry",
+            "temp-18": "Universal message",
+            "temp-24": "English phrases",
+            "temp-25": "Choose your future early",
+            "temp-29": "Japanese idiom",
+            "temp-33": "Im sorry",
+            "temp-34": "Im sorry"
+        },
+        "nike-usa": {
+            "temp-1": "Just Do It",
+            "temp-6": "American sports uniforms",
+            "temp-10": "Just Do It",
+            "temp-19": "Just Do It",
+            "temp-28": "WINNING ISN'T FOR EVERYONE",
+            "temp-29": "WINNING ISN\u2019T FOR EVERYONE",
+            "temp-30": "Competitive ethos",
+            "temp-31": "WINNING ISNT FOR EVERYONE.",
+            "temp-33": "Im sorry",
+            "temp-34": "Im sorry"
+        }
+    },
+    "Kitchen Design": {
+        "samsung-brazil": {
+            "temp-1": "Modern aesthetic",
+            "temp-28": "Countertop",
+            "temp-32": "Open kitchen"
+        },
+        "samsung-usa": {
+            "temp-2": "Modern Aesthetic",
+            "temp-17": "Modern interior",
+            "temp-21": "Modern style",
+            "temp-25": "Modern",
+            "temp-26": "Contemporary interior design"
+        },
+        "samsung-india": {
+            "temp-2": "Simple Design",
+            "temp-3": "open shelving",
+            "temp-5": "Rustic wooden table",
+            "temp-6": "Open and rustic",
+            "temp-7": "Open shelves",
+            "temp-8": "Traditional Indian",
+            "temp-9": "Functional Open Layout",
+            "temp-10": "Utilitarian shelves",
+            "temp-11": "Open shelving"
+        },
+        "coca-cola-brazil": {
+            "temp-13": "Casual, homey",
+            "temp-28": "Functional",
+            "temp-29": "Natural materials"
+        },
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-7": "Modern kitchen"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-25": "Minimalism"
+        },
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Traditional clothing": {
+        "samsung-brazil": {
+            "temp-1": "Casual dress",
+            "temp-2": "Casual, long-sleeved sweater",
+            "temp-4": "Casual blue shirt",
+            "temp-7": "Casual, contemporary",
+            "temp-8": "Casual and sporty",
+            "temp-9": "Sporty attire",
+            "temp-10": "Casual style",
+            "temp-11": "Casual hoodie",
+            "temp-12": "Casual and comfortable",
+            "temp-16": "Casual attire",
+            "temp-19": "Casual, Comfortable",
+            "temp-21": "Casual wear",
+            "temp-22": "Light casual",
+            "temp-23": "Casual",
+            "temp-24": "football jersey",
+            "temp-27": "Streetwear",
+            "temp-29": "Casual wear",
+            "temp-31": "Leather jacket",
+            "temp-32": "Casual shirt",
+            "temp-34": "Casual attire"
+        },
+        "samsung-usa": {
+            "temp-0": "Winter clothing",
+            "temp-1": "Winter clothing",
+            "temp-3": "Winter coat",
+            "temp-4": "Warm jacket",
+            "temp-6": "Modern urban coats",
+            "temp-31": "Casual sweater",
+            "temp-32": "Casual layered outfit",
+            "temp-34": "Dyed purple hair"
+        },
+        "nike-india": {
+            "temp-2": "Sports Jersey",
+            "temp-3": "dhotis, saris, kurtas",
+            "temp-4": "Western sportswear",
+            "temp-5": "Contemporary style",
+            "temp-6": "Cricket attire",
+            "temp-8": "sleeveless top",
+            "temp-9": "casual, short-sleeved black shirt",
+            "temp-10": "Contemporary casual",
+            "temp-11": "athletic wear",
+            "temp-12": "Western-style clothing",
+            "temp-13": "Casual sportswear",
+            "temp-16": "sarees, kurta-pajamas",
+            "temp-17": "Cricket whites",
+            "temp-18": "cricket whites",
+            "temp-21": "Casual contemporary",
+            "temp-22": "Kurta with trousers",
+            "temp-23": "Contemporary",
+            "temp-26": "Loose-fitting casual wear",
+            "temp-28": "Western-style",
+            "temp-29": "cricket whites",
+            "temp-30": "Cricket whites",
+            "temp-32": "Indian attire",
+            "temp-33": "Kurta",
+            "temp-34": "Casual sports outfit"
+        },
+        "samsung-india": {
+            "temp-3": "kurta or salwar",
+            "temp-5": "Traditional Indian attire",
+            "temp-6": "Sari",
+            "temp-7": "Indian sari",
+            "temp-8": "Kurta shirts",
+            "temp-9": "Casual Semi-Formal",
+            "temp-10": "Saree",
+            "temp-11": "Saree",
+            "temp-12": "Kurta",
+            "temp-13": "Casual and contemporary",
+            "temp-14": "Salwar Kameez",
+            "temp-15": "salwar kameez",
+            "temp-16": "Kurti, Dupatta",
+            "temp-17": "Salwar kameez",
+            "temp-18": "Checkered shirt",
+            "temp-19": "Salwar Kameez",
+            "temp-20": "middle-class attire",
+            "temp-21": "Saree, Salwar Kameez",
+            "temp-22": "Salwar Kameez",
+            "temp-23": "Salwar kameez",
+            "temp-25": "Salwar kameez",
+            "temp-26": "Saree",
+            "temp-27": "Casual, Semi-formal",
+            "temp-28": "Casual, modern",
+            "temp-29": "Plaid shirt",
+            "temp-30": "Button-up shirt",
+            "temp-33": "Saris",
+            "temp-34": "Sarees, kurtis"
+        },
+        "coca-cola-brazil": {
+            "temp-6": "Red garment",
+            "temp-14": "Modern sweater",
+            "temp-15": "casual attire",
+            "temp-18": "casual style",
+            "temp-20": "Casual and comfortable",
+            "temp-31": "Casual attire"
+        },
+        "coca-cola-usa": {
+            "temp-10": "Casual dress",
+            "temp-13": "Vest, casual",
+            "temp-15": "Sleeveless vest",
+            "temp-16": "Western fashion",
+            "temp-18": "Casual semi-formal",
+            "temp-20": "Casual attire",
+            "temp-29": "Western attire"
+        },
+        "coca-cola-india": {
+            "temp-0": "Casual attire",
+            "temp-5": "layered clothing",
+            "temp-8": "Sarees, Kurta-pajamas",
+            "temp-10": "Western business casual",
+            "temp-12": "Formal Footwear",
+            "temp-15": "Kurta, Saree",
+            "temp-17": "Modern attire",
+            "temp-19": "Casual modern",
+            "temp-20": "Cricket jersey",
+            "temp-21": "Modern attire",
+            "temp-29": "Sarees, Kurta-pajamas",
+            "temp-30": "kurta",
+            "temp-31": "Kurta",
+            "temp-32": "Sarees and kurtas",
+            "temp-33": "Indian garments",
+            "temp-34": "Kurta, Saree"
+        },
+        "nike-brazil": {
+            "temp-1": "team jerseys",
+            "temp-2": "Yellow jerseys",
+            "temp-3": "Football jersey",
+            "temp-6": "Historical style",
+            "temp-7": "Light, breathable",
+            "temp-8": "casual comfortable",
+            "temp-9": "Casual attire",
+            "temp-13": "Short-sleeved shirts",
+            "temp-14": "Football kits",
+            "temp-15": "Team jerseys",
+            "temp-16": "yellow and green clothing",
+            "temp-18": "Football attire",
+            "temp-19": "rugby attire",
+            "temp-21": "Sportswear",
+            "temp-23": "Yellow, green, and blue",
+            "temp-26": "football jerseys",
+            "temp-27": "Soccer jerseys",
+            "temp-28": "Casual beachwear",
+            "temp-29": "Casual and sporty",
+            "temp-30": "Casual sportswear",
+            "temp-31": "Sportswear",
+            "temp-33": "Football jerseys"
+        },
+        "coca-cola-japan": {
+            "temp-3": "Modern take on classic styles",
+            "temp-4": "Casual",
+            "temp-6": "Casual outfit",
+            "temp-7": "Contemporary hairstyle",
+            "temp-10": "Casual hoodie",
+            "temp-18": "Traditional patterns",
+            "temp-26": "modern casual clothing",
+            "temp-27": "Kimono",
+            "temp-32": "Westernized",
+            "temp-34": "Modern clothing"
+        },
+        "samsung-japan": {
+            "temp-0": "Kimono",
+            "temp-1": "School uniforms",
+            "temp-2": "School uniforms",
+            "temp-3": "School uniforms",
+            "temp-4": "School Uniforms",
+            "temp-5": "Japanese school uniforms",
+            "temp-6": "School Uniform",
+            "temp-7": "School uniforms",
+            "temp-8": "School uniform",
+            "temp-9": "Japanese school uniform",
+            "temp-10": "Japanese school uniform",
+            "temp-11": "School uniforms",
+            "temp-12": "Japanese school uniforms",
+            "temp-13": "School uniforms",
+            "temp-14": "School Uniforms",
+            "temp-15": "school uniforms",
+            "temp-16": "Seifuku",
+            "temp-17": "Seifuku uniform",
+            "temp-18": "School Uniforms",
+            "temp-20": "Seifuku",
+            "temp-21": "Contemporary attire",
+            "temp-22": "School uniform",
+            "temp-23": "Seifuku",
+            "temp-24": "seifuku",
+            "temp-25": "Seifuku",
+            "temp-26": "School Uniform",
+            "temp-27": "Seifuku",
+            "temp-28": "Seifuku uniforms",
+            "temp-29": "Seifuku uniform",
+            "temp-30": "Seifuku",
+            "temp-31": "Japanese school uniform",
+            "temp-32": "School uniform"
+        },
+        "nike-japan": {
+            "temp-1": "School uniforms",
+            "temp-2": "Casual sporty attire",
+            "temp-3": "Kimono",
+            "temp-7": "Suits",
+            "temp-8": "Kimonos or yukatas",
+            "temp-10": "Sports attire",
+            "temp-12": "Kimono/Happi",
+            "temp-14": "sportswear",
+            "temp-15": "Athletic gear",
+            "temp-19": "Activewear",
+            "temp-20": "Modern athletic wear",
+            "temp-21": "Kimono, Yukata",
+            "temp-22": "Sportswear",
+            "temp-23": "School uniforms",
+            "temp-24": "Modern sportswear",
+            "temp-25": "Casual and sporty",
+            "temp-26": "Formal suit",
+            "temp-28": "Sports tank top",
+            "temp-29": "Athletic gear",
+            "temp-30": "Formal business attire",
+            "temp-32": "Modern athletic attire"
+        },
+        "nike-usa": {
+            "temp-2": "Sports jerseys",
+            "temp-4": "Jersey",
+            "temp-8": "basketball jersey",
+            "temp-9": "Sports uniforms",
+            "temp-10": "Basketball uniform",
+            "temp-11": "Sports team attire",
+            "temp-12": "Sports apparel",
+            "temp-13": "Sports jerseys",
+            "temp-15": "basketball jersey",
+            "temp-16": "Los Angeles Lakers",
+            "temp-20": "Sports jersey",
+            "temp-22": "sports jersey",
+            "temp-23": "Sports Jersey",
+            "temp-24": "Basketball uniform",
+            "temp-26": "Basketball jersey",
+            "temp-27": "basketball uniform",
+            "temp-28": "Athletic clothing",
+            "temp-29": "athletic wear",
+            "temp-30": "Sports jerseys"
+        }
+    },
+    "Dress codes for different occasions": {
+        "samsung-brazil": {
+            "temp-2": "Relaxed, informal",
+            "temp-20": "Casual attire",
+            "temp-32": "Relaxed dress",
+            "temp-34": "Informal dress code"
+        },
+        "samsung-usa": {
+            "temp-22": "Modern fashion",
+            "temp-34": "Layered clothing"
+        },
+        "nike-india": {
+            "temp-4": "Casual sportswear",
+            "temp-17": "Cricket attire"
+        },
+        "samsung-india": {
+            "temp-5": "Modern and traditional",
+            "temp-8": "Casual traditional",
+            "temp-20": "office workers dress code",
+            "temp-26": "Casual wear",
+            "temp-29": "Kurta for men"
+        },
+        "coca-cola-brazil": {
+            "temp-24": "Casual"
+        },
+        "coca-cola-usa": {
+            "temp-10": "Casual dress",
+            "temp-16": "Casual dress",
+            "temp-18": "Versatile dress codes",
+            "temp-19": "Smart casual",
+            "temp-29": "Casual semi-formal"
+        },
+        "coca-cola-india": {
+            "temp-32": "Traditional",
+            "temp-33": "festive attire",
+            "temp-34": "Festive Occasions"
+        },
+        "nike-brazil": {
+            "temp-14": "Casual athletic wear",
+            "temp-15": "Casual attire",
+            "temp-29": "Beachwear",
+            "temp-34": "Soccer uniforms"
+        },
+        "coca-cola-japan": {
+            "temp-25": "Casual wear"
+        },
+        "samsung-japan": {
+            "temp-17": "School uniforms"
+        },
+        "nike-japan": {
+            "temp-7": "Formal",
+            "temp-23": "Formal",
+            "temp-26": "Formal business attire",
+            "temp-30": "Formal business attire"
+        },
+        "nike-usa": {
+            "temp-5": "Modest attire",
+            "temp-10": "Sports attire",
+            "temp-29": "sporty, casual fashion"
+        }
+    },
+    "Gestures and Body language": {
+        "samsung-brazil": {
+            "temp-4": "Expressive gestures",
+            "temp-5": "Collaborative effort",
+            "temp-7": "Skateboarding",
+            "temp-8": "Friendly and open",
+            "temp-9": "Expressive hand movements",
+            "temp-11": "Holding phone",
+            "temp-12": "Warm and friendly",
+            "temp-14": "Warmth and friendliness",
+            "temp-20": "Joyful interaction",
+            "temp-21": "Social interaction",
+            "temp-22": "Dynamic expressions",
+            "temp-24": "relaxed posture",
+            "temp-27": "Street dance",
+            "temp-28": "Sharing content",
+            "temp-31": "Raised arm",
+            "temp-34": "Relaxed postures"
+        },
+        "samsung-usa": {
+            "temp-28": "Subtle interaction"
+        },
+        "nike-india": {
+            "temp-4": "Relaxed posture",
+            "temp-5": "Recreational activities",
+            "temp-7": "Purposeful stride",
+            "temp-9": "forward-leaning posture",
+            "temp-11": "physical activity",
+            "temp-12": "Energetic jumping",
+            "temp-13": "Active engagement",
+            "temp-14": "exuberance and freedom",
+            "temp-18": "athletic stance",
+            "temp-22": "Playing cricket",
+            "temp-26": "Cricket batting stance",
+            "temp-28": "Active interaction",
+            "temp-29": "cricket action",
+            "temp-33": "Running",
+            "temp-34": "Powerful stride"
+        },
+        "samsung-india": {
+            "temp-7": "Traditional gender roles",
+            "temp-10": "Casual posture",
+            "temp-12": "Formal conversation",
+            "temp-15": "casual stance",
+            "temp-17": "Relaxed demeanor",
+            "temp-20": "anticipation or eagerness",
+            "temp-22": "Camaraderie",
+            "temp-23": "Seated close",
+            "temp-25": "Relaxed pose",
+            "temp-26": "Less personal space",
+            "temp-27": "Hand gestures",
+            "temp-28": "Close physical proximity",
+            "temp-29": "Head nod",
+            "temp-30": "Holding phone",
+            "temp-34": "Physical contact"
+        },
+        "coca-cola-brazil": {
+            "temp-12": "cherishing moments",
+            "temp-14": "Hand gestures",
+            "temp-15": "playfulness and joy",
+            "temp-17": "attentive grip",
+            "temp-18": "relaxed posture",
+            "temp-20": "Holding can with both hands",
+            "temp-21": "Open hand gesture",
+            "temp-22": "hand gesture",
+            "temp-24": "Universal",
+            "temp-27": "Sharing drinks"
+        },
+        "coca-cola-usa": {
+            "temp-3": "Reaching in excitement",
+            "temp-10": "American gestures",
+            "temp-13": "Focused task",
+            "temp-15": "Active posture",
+            "temp-18": "Casual posture",
+            "temp-21": "Fist held high",
+            "temp-23": "Dynamic interaction",
+            "temp-25": "Action, dynamism",
+            "temp-29": "Playful movement",
+            "temp-33": "Relaxed posture"
+        },
+        "coca-cola-india": {
+            "temp-0": "Focused on work",
+            "temp-5": "offering gesture",
+            "temp-8": "Namaste greeting",
+            "temp-10": "Dedication to work",
+            "temp-11": "Universal gesture",
+            "temp-17": "Raised hand",
+            "temp-19": "Expressive body",
+            "temp-23": "Dynamic stance",
+            "temp-30": "hugs",
+            "temp-31": "display of affection",
+            "temp-32": "Hug",
+            "temp-33": "hug"
+        },
+        "nike-brazil": {
+            "temp-1": "raising arms",
+            "temp-3": "Confident stance",
+            "temp-4": "expressive gestures",
+            "temp-5": "Intense poses",
+            "temp-6": "Communal joy",
+            "temp-7": "Dynamic movement",
+            "temp-8": "playful expression",
+            "temp-9": "Expressive gestures",
+            "temp-11": "Brazilian football",
+            "temp-13": "Friendly wave",
+            "temp-14": "Brazilian non-verbal",
+            "temp-15": "Celebratory actions",
+            "temp-16": "running and active engagement",
+            "temp-17": "raised arms, embraces",
+            "temp-18": "Expressive",
+            "temp-19": "intensity and focus",
+            "temp-23": "Action and dynamism",
+            "temp-24": "Passionate and expressive",
+            "temp-25": "Brazilian soccer gestures",
+            "temp-26": "intense, engaged, athletic",
+            "temp-27": "Teamwork",
+            "temp-28": "Dynamic poses",
+            "temp-29": "Dynamic and expressive",
+            "temp-30": "Dynamic poses",
+            "temp-33": "Raised arms",
+            "temp-34": "Hugging each other"
+        },
+        "coca-cola-japan": {
+            "temp-3": "Neutral body language",
+            "temp-5": "Hand gesture",
+            "temp-7": "Japanese gestures",
+            "temp-18": "Dance moves",
+            "temp-20": "Casual posture",
+            "temp-25": "Toast",
+            "temp-26": "relaxed posture",
+            "temp-27": "Physical touch",
+            "temp-32": "Raising drinks",
+            "temp-33": "Intimate gesture"
+        },
+        "samsung-japan": {
+            "temp-0": "Bowing",
+            "temp-3": "Dynamic movement",
+            "temp-5": "Respect, diligence",
+            "temp-7": "Personal space",
+            "temp-10": "Youthful movement",
+            "temp-12": "Leaning in",
+            "temp-13": "Closeness and huddle",
+            "temp-15": "social harmony",
+            "temp-16": "Neatness and presentation",
+            "temp-17": "Japanese visual culture",
+            "temp-19": "Fast-paced lifestyle",
+            "temp-24": "spontaneity",
+            "temp-25": "Energy, freedom, modernity",
+            "temp-29": "Social harmony",
+            "temp-30": "Open body language",
+            "temp-31": "Holding up phone"
+        },
+        "nike-japan": {
+            "temp-2": "Dynamic pose",
+            "temp-7": "Reserved and formal",
+            "temp-8": "Discipline and focus",
+            "temp-12": "Team unity",
+            "temp-14": "determination and resilience",
+            "temp-20": "Discipline and harmony",
+            "temp-21": "Universal soccer gestures",
+            "temp-22": "Harmony",
+            "temp-25": "Dynamic movement",
+            "temp-26": "Open gesture",
+            "temp-28": "Tense muscles, dynamic pose",
+            "temp-29": "Determination and focus",
+            "temp-30": "Relaxed posture",
+            "temp-31": "Focused expressions"
+        },
+        "nike-usa": {
+            "temp-2": "Competitive spirit",
+            "temp-4": "Confident posture",
+            "temp-8": "posture and form",
+            "temp-10": "Action and determination",
+            "temp-11": "Determination and focus",
+            "temp-13": "Dynamic posture",
+            "temp-15": "athletic posture",
+            "temp-16": "Dynamism and determination",
+            "temp-22": "athletic posture",
+            "temp-24": "Posture of athlete",
+            "temp-26": "Athleticism",
+            "temp-27": "raising fists",
+            "temp-28": "Raised arms and exuberant facial expression",
+            "temp-29": "raised arms and cheering crowd",
+            "temp-30": "Posture of triumph"
+        }
+    },
+    "Furniture Styles": {
+        "samsung-brazil": {
+            "temp-5": "Contemporary design",
+            "temp-29": "Traditional design",
+            "temp-32": "Contemporary furniture"
+        },
+        "samsung-usa": {
+            "temp-10": "Modern",
+            "temp-15": "Modern Style",
+            "temp-16": "Minimalistic",
+            "temp-17": "Modern aesthetic",
+            "temp-18": "Minimalistic",
+            "temp-21": "Minimalist",
+            "temp-23": "Modern minimalist",
+            "temp-31": "Bookshelf",
+            "temp-32": "Modern eclectic",
+            "temp-33": "Modern"
+        },
+        "samsung-india": {
+            "temp-3": "wooden furniture",
+            "temp-9": "Wooden Furniture",
+            "temp-14": "Wooden Swing",
+            "temp-16": "Patterned sofa"
+        },
+        "coca-cola-brazil": {
+            "temp-9": "Wooden table"
+        },
+        "coca-cola-usa": {
+            "temp-18": "Contemporary furniture",
+            "temp-19": "Contemporary furniture"
+        },
+        "coca-cola-india": {
+            "temp-0": "Contemporary design",
+            "temp-7": "Contemporary",
+            "temp-9": "Moderately furnished",
+            "temp-10": "Standard office furniture",
+            "temp-27": "Rustic"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-7": "Minimalist furniture",
+            "temp-20": "Modern style",
+            "temp-26": "minimalistic elements",
+            "temp-27": "Minimalistic"
+        },
+        "samsung-japan": {
+            "temp-0": "Minimalist",
+            "temp-19": "Simple lines"
+        },
+        "nike-japan": {}
+    },
+    "Cuisine and Traditional dishes": {
+        "samsung-brazil": {
+            "temp-6": "Brazilian cuisine"
+        },
+        "samsung-india": {
+            "temp-2": "Chapati or Roti",
+            "temp-5": "Traditional Indian meal",
+            "temp-6": "Indian cuisine",
+            "temp-7": "Indian thali",
+            "temp-9": "Indian Brass Thali",
+            "temp-29": "Street food"
+        },
+        "coca-cola-brazil": {
+            "temp-9": "Churrasco",
+            "temp-11": "Bread/Pastry",
+            "temp-17": "seafood",
+            "temp-30": "Brazilian cuisine",
+            "temp-31": "Tropical fruits",
+            "temp-32": "Brazilian cuisine"
+        },
+        "coca-cola-usa": {
+            "temp-33": "Burgers and fries"
+        },
+        "coca-cola-india": {
+            "temp-8": "Traditional Indian dishes",
+            "temp-29": "Indian cuisine"
+        },
+        "nike-brazil": {
+            "temp-1": "past\u00e9is, p\u00e3o de queijo"
+        },
+        "coca-cola-japan": {
+            "temp-7": "Japanese cuisine"
+        },
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-27": "Japanese cuisine"
+        }
+    },
+    "Dining etiquettes": {
+        "samsung-brazil": {
+            "temp-6": "Brazilian dining etiquette",
+            "temp-34": "Communal eating"
+        },
+        "samsung-usa": {
+            "temp-15": "Formal Setting",
+            "temp-25": "Western"
+        },
+        "samsung-india": {
+            "temp-2": "Communal Activity",
+            "temp-3": "sitting on floor",
+            "temp-5": "Dining with bare hands",
+            "temp-6": "Eating with hands",
+            "temp-7": "Metal utensils",
+            "temp-8": "Traditional Indian",
+            "temp-9": "Shared Family Dining",
+            "temp-11": "Home-cooked meals"
+        },
+        "coca-cola-brazil": {
+            "temp-9": "Western-style",
+            "temp-14": "Communal dining",
+            "temp-17": "festive dining",
+            "temp-20": "Sharing cold drinks",
+            "temp-23": "Casual drinking",
+            "temp-27": "Sharing food",
+            "temp-28": "Casual refined",
+            "temp-29": "Personal coffee experience",
+            "temp-30": "Formal yet comfortable",
+            "temp-32": "Relaxed and social"
+        },
+        "coca-cola-usa": {
+            "temp-5": "Casual dining",
+            "temp-11": "Regional variations",
+            "temp-18": "Formal table setting",
+            "temp-19": "Formal dining"
+        },
+        "coca-cola-india": {
+            "temp-8": "Eating with hands",
+            "temp-20": "Sharing food and drinks",
+            "temp-27": "Traditional",
+            "temp-28": "Communal dining",
+            "temp-29": "Communal dining",
+            "temp-30": "communal eating",
+            "temp-33": "sharing beverage"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-0": "Convenience-oriented",
+            "temp-4": "Convenience",
+            "temp-12": "Cold drinks",
+            "temp-14": "Cold beverage",
+            "temp-16": "Casual drinking",
+            "temp-23": "Sensory experience",
+            "temp-25": "Casual dining",
+            "temp-26": "handling dishes with care",
+            "temp-27": "Drinking etiquette",
+            "temp-30": "Sharing drinks",
+            "temp-31": "Universal appeal",
+            "temp-34": "Casual manner"
+        },
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-27": "Intimate dining"
+        }
+    },
+    "Roof design": {
+        "samsung-brazil": {
+            "temp-6": "Terracotta roofing"
+        },
+        "nike-india": {
+            "temp-1": "Traditional",
+            "temp-14": "Mughal or Indo-Islamic",
+            "temp-33": "Parapet walls"
+        },
+        "coca-cola-brazil": {
+            "temp-3": "car roof"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-21": "Traditional Japanese",
+            "temp-30": "Tiled roofs"
+        },
+        "nike-japan": {}
+    },
+    "Festival": {
+        "samsung-brazil": {
+            "temp-6": "Carnival",
+            "temp-27": "Carnival"
+        },
+        "samsung-usa": {
+            "temp-0": "Christmas",
+            "temp-9": "Valentine Day",
+            "temp-21": "Valentine's Day",
+            "temp-25": "Local",
+            "temp-34": "Holiday celebrations"
+        },
+        "samsung-india": {
+            "temp-16": "Diwali, Eid, Christmas, Pongal",
+            "temp-34": "Diwali, Holi, Eid"
+        },
+        "coca-cola-brazil": {
+            "temp-6": "Carnaval",
+            "temp-12": "Carnaval",
+            "temp-15": "Carnival",
+            "temp-19": "Carnival festivities",
+            "temp-20": "Festive occasions",
+            "temp-23": "Carnaval",
+            "temp-31": "Brazilian celebrations",
+            "temp-32": "Brazilian festivals"
+        },
+        "coca-cola-usa": {
+            "temp-3": "Thanksgiving Parade",
+            "temp-4": "Thanksgiving Day",
+            "temp-5": "Thanksgiving",
+            "temp-7": "Parade",
+            "temp-8": "Parade culture",
+            "temp-10": "American festivals",
+            "temp-11": "Thanksgiving",
+            "temp-33": "Thanksgiving"
+        },
+        "coca-cola-india": {
+            "temp-2": "Diwali",
+            "temp-8": "Diwali, Holi",
+            "temp-10": "Festive lights",
+            "temp-15": "Diwali, Holi, Eid",
+            "temp-19": "Diwali",
+            "temp-20": "Diwali or wedding",
+            "temp-21": "Diwali",
+            "temp-22": "Fireworks",
+            "temp-26": "Diwali",
+            "temp-27": "Diwali",
+            "temp-28": "Diwali",
+            "temp-29": "Diwali",
+            "temp-30": "Indian festivals",
+            "temp-32": "Diwali",
+            "temp-33": "Diwali",
+            "temp-34": "Diwali"
+        },
+        "nike-brazil": {
+            "temp-15": "Carnival",
+            "temp-16": "football festivals",
+            "temp-24": "Carnivals",
+            "temp-28": "Carnival"
+        },
+        "coca-cola-japan": {
+            "temp-7": "Hanami, Tanabata",
+            "temp-14": "Summer festivals",
+            "temp-16": "Outdoor gatherings"
+        },
+        "samsung-japan": {
+            "temp-0": "Cherry Blossom",
+            "temp-10": "School festivals"
+        },
+        "nike-japan": {
+            "temp-15": "Shinto belief"
+        }
+    },
+    "Recreational activities": {
+        "samsung-brazil": {
+            "temp-6": "Outdoor living",
+            "temp-7": "Outdoor activities",
+            "temp-8": "Outdoor activities",
+            "temp-9": "Outdoor activities",
+            "temp-10": "Outdoor lifestyle",
+            "temp-14": "Social interactions",
+            "temp-16": "Outdoor activities",
+            "temp-19": "Outdoor activities",
+            "temp-20": "Outdoor activities",
+            "temp-21": "Outdoor activities",
+            "temp-22": "Outdoor activities",
+            "temp-23": "Outdoor activities"
+        },
+        "samsung-usa": {
+            "temp-6": "Evening social activities",
+            "temp-22": "Fitness tracking"
+        },
+        "nike-india": {
+            "temp-1": "Outdoor sports",
+            "temp-5": "Outdoor activities",
+            "temp-8": "outdoor activities",
+            "temp-10": "Outdoor sports",
+            "temp-11": "community sports",
+            "temp-12": "Playing sports",
+            "temp-16": "outdoor activities",
+            "temp-22": "Playing sports",
+            "temp-26": "Playing in open grounds",
+            "temp-33": "Running",
+            "temp-34": "Running"
+        },
+        "samsung-india": {
+            "temp-19": "Social gatherings"
+        },
+        "coca-cola-brazil": {
+            "temp-3": "cycling",
+            "temp-10": "beach activities",
+            "temp-15": "outdoor activities",
+            "temp-19": "Beach outings",
+            "temp-20": "Social gatherings",
+            "temp-21": "Swimming",
+            "temp-22": "barbecues",
+            "temp-23": "Outdoor living",
+            "temp-32": "Outdoor gatherings"
+        },
+        "coca-cola-usa": {
+            "temp-5": "Outdoor activities",
+            "temp-15": "Outdoor activities",
+            "temp-25": "Adventure, escapism",
+            "temp-29": "Outdoor activities"
+        },
+        "coca-cola-india": {
+            "temp-5": "evening social gatherings",
+            "temp-23": "Outdoor activities"
+        },
+        "nike-brazil": {
+            "temp-7": "Playing soccer",
+            "temp-8": "outdoor gatherings",
+            "temp-9": "Street football",
+            "temp-14": "Football gatherings",
+            "temp-28": "Beach activities",
+            "temp-29": "Beach activities",
+            "temp-30": "Beach activities"
+        },
+        "coca-cola-japan": {
+            "temp-15": "Beach activities",
+            "temp-34": "Outdoor gatherings"
+        },
+        "samsung-japan": {
+            "temp-2": "Running",
+            "temp-4": "Group Dynamics",
+            "temp-17": "Outdoor photoshoot",
+            "temp-21": "Photography"
+        },
+        "nike-japan": {
+            "temp-1": "Sports",
+            "temp-2": "Fitness activities",
+            "temp-8": "Running",
+            "temp-16": "Outdoor Activities",
+            "temp-20": "Physical fitness",
+            "temp-22": "Night sports"
+        },
+        "nike-usa": {
+            "temp-3": "Sports events"
+        }
+    },
+    "Decorations": {
+        "samsung-brazil": {
+            "temp-7": "Natural elements",
+            "temp-29": "Muted colors",
+            "temp-32": "Neutral tones"
+        },
+        "samsung-usa": {
+            "temp-31": "Soft lighting",
+            "temp-33": "Wall art",
+            "temp-34": "Abstract painting"
+        },
+        "samsung-india": {
+            "temp-3": "warm colors",
+            "temp-4": "Traditional Indian designs",
+            "temp-5": "Floral-patterned tablecloth",
+            "temp-7": "Floral tablecloth",
+            "temp-9": "Patterned Tablecloth",
+            "temp-15": "traditional wall art",
+            "temp-16": "Ethnic prints",
+            "temp-18": "Traditional pattern",
+            "temp-20": "simple curtain"
+        },
+        "coca-cola-brazil": {
+            "temp-4": "floral pattern",
+            "temp-32": "Vibrant colors"
+        },
+        "coca-cola-usa": {
+            "temp-10": "Colorful balloons",
+            "temp-13": "Flower arrangements",
+            "temp-18": "Celebratory atmosphere",
+            "temp-32": "balloons"
+        },
+        "coca-cola-india": {
+            "temp-10": "Faint lights",
+            "temp-15": "Lights, Traditional colors",
+            "temp-19": "Festive lighting",
+            "temp-20": "Fireworks and festive lighting",
+            "temp-26": "Lights",
+            "temp-27": "Hanging lanterns",
+            "temp-28": "Lanterns",
+            "temp-29": "Hanging lanterns",
+            "temp-30": "paper lanterns",
+            "temp-33": "Diwali decorations",
+            "temp-34": "Lights, Lanterns"
+        },
+        "nike-brazil": {
+            "temp-15": "Festive decorations",
+            "temp-28": "Festive decorations"
+        },
+        "coca-cola-japan": {
+            "temp-0": "Vibrant colors",
+            "temp-4": "Bright colors"
+        },
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Popular sports": {
+        "samsung-brazil": {
+            "temp-7": "Skateboarding",
+            "temp-8": "Football and basketball",
+            "temp-9": "Basketball",
+            "temp-16": "Soccer game",
+            "temp-18": "Football",
+            "temp-22": "Soccer/Beach football",
+            "temp-23": "Skateboarding",
+            "temp-24": "football",
+            "temp-30": "Football"
+        },
+        "samsung-usa": {
+            "temp-19": "Skiing"
+        },
+        "nike-india": {
+            "temp-1": "Cricket Football",
+            "temp-2": "Cricket",
+            "temp-5": "Cricket or football",
+            "temp-6": "Cricket",
+            "temp-8": "running",
+            "temp-9": "running",
+            "temp-10": "Cricket football",
+            "temp-12": "Cricket",
+            "temp-13": "Cricket",
+            "temp-14": "sports and outdoor",
+            "temp-16": "cricket",
+            "temp-17": "Cricket",
+            "temp-18": "cricket",
+            "temp-21": "Running",
+            "temp-22": "Cricket",
+            "temp-24": "Cricket",
+            "temp-26": "Cricket",
+            "temp-27": "Cricket",
+            "temp-28": "Cricket",
+            "temp-29": "cricket",
+            "temp-30": "Cricket",
+            "temp-31": "Cricket",
+            "temp-32": "Running",
+            "temp-34": "Cricket"
+        },
+        "coca-cola-brazil": {
+            "temp-1": "Football",
+            "temp-10": "surfing",
+            "temp-15": "soccer",
+            "temp-23": "Football"
+        },
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-20": "Cricket"
+        },
+        "nike-brazil": {
+            "temp-1": "football",
+            "temp-2": "Football",
+            "temp-3": "Football",
+            "temp-4": "football",
+            "temp-5": "Football",
+            "temp-6": "Running",
+            "temp-7": "Soccer",
+            "temp-8": "football",
+            "temp-9": "Football",
+            "temp-11": "Football",
+            "temp-14": "Football",
+            "temp-15": "Football",
+            "temp-16": "football",
+            "temp-17": "Soccer",
+            "temp-18": "Football",
+            "temp-19": "football (soccer)",
+            "temp-21": "Football",
+            "temp-23": "Soccer",
+            "temp-24": "Football",
+            "temp-25": "Soccer",
+            "temp-26": "football",
+            "temp-27": "Soccer",
+            "temp-28": "Football",
+            "temp-29": "Soccer",
+            "temp-30": "Soccer",
+            "temp-31": "Beach soccer",
+            "temp-33": "Football",
+            "temp-34": "Soccer"
+        },
+        "coca-cola-japan": {
+            "temp-30": "Watching sports"
+        },
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-10": "Soccer",
+            "temp-12": "Soccer",
+            "temp-15": "Running",
+            "temp-16": "Sports and Fitness",
+            "temp-17": "Soccer",
+            "temp-18": "Soccer",
+            "temp-20": "Yoga",
+            "temp-21": "Soccer",
+            "temp-22": "Team sports",
+            "temp-25": "Athleticism",
+            "temp-29": "Sports",
+            "temp-31": "Running"
+        },
+        "nike-usa": {
+            "temp-0": "Basketball",
+            "temp-1": "Basketball",
+            "temp-2": "Basketball",
+            "temp-3": "Basketball",
+            "temp-4": "Basketball",
+            "temp-5": "Basketball",
+            "temp-6": "Basketball, Soccer",
+            "temp-7": "Basketball",
+            "temp-8": "basketball",
+            "temp-9": "Basketball",
+            "temp-10": "Basketball",
+            "temp-11": "Basketball",
+            "temp-12": "American sports",
+            "temp-13": "Basketball",
+            "temp-14": "Basketball",
+            "temp-15": "basketball",
+            "temp-16": "Basketball",
+            "temp-17": "Basketball",
+            "temp-18": "Basketball",
+            "temp-19": "Basketball",
+            "temp-20": "Basketball",
+            "temp-21": "Basketball",
+            "temp-22": "basketball",
+            "temp-23": "Basketball",
+            "temp-24": "Basketball",
+            "temp-25": "Basketball",
+            "temp-26": "Basketball",
+            "temp-27": "basketball",
+            "temp-29": "basketball",
+            "temp-30": "Basketball",
+            "temp-31": "basketball, football",
+            "temp-32": "Sports Arena"
+        }
+    },
+    "Urban design": {
+        "samsung-brazil": {
+            "temp-7": "Suburban neighborhood",
+            "temp-8": "Urban park setting",
+            "temp-12": "Open spaces",
+            "temp-14": "Modern and progressive",
+            "temp-16": "Apartment buildings",
+            "temp-17": "Cityscape",
+            "temp-20": "Urban landscapes",
+            "temp-22": "High-rise apartments",
+            "temp-23": "Green spaces",
+            "temp-24": "contemporary"
+        },
+        "samsung-usa": {
+            "temp-0": "Upscale urban",
+            "temp-1": "Urban lifestyle",
+            "temp-4": "Suburban",
+            "temp-6": "Contemporary architecture",
+            "temp-7": "Modern",
+            "temp-10": "Upscale commercial",
+            "temp-13": "Modern cityscape",
+            "temp-15": "Contemporary Style",
+            "temp-27": "Modern",
+            "temp-28": "Minimalistic"
+        },
+        "nike-india": {
+            "temp-1": "Local playing fields",
+            "temp-4": "Narrow streets",
+            "temp-5": "Open dusty field",
+            "temp-8": "suburban setting",
+            "temp-12": "Public park",
+            "temp-13": "Open spaces",
+            "temp-16": "residential areas",
+            "temp-21": "Urban alley",
+            "temp-23": "Indian urban",
+            "temp-28": "Rustic urban",
+            "temp-33": "Densely packed residential buildings"
+        },
+        "samsung-india": {
+            "temp-13": "Rustic architecture",
+            "temp-16": "Compact spaces",
+            "temp-17": "Indian streetscape",
+            "temp-26": "Crowded streets",
+            "temp-27": "Urban setting",
+            "temp-28": "Busy bus station",
+            "temp-29": "Bustling street",
+            "temp-30": "Bustling street scene",
+            "temp-31": "Indian street scene",
+            "temp-32": "Indian street scenario",
+            "temp-33": "Busy market"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-1": "Central Park",
+            "temp-3": "Urban lifestyle",
+            "temp-6": "metropolitan setting",
+            "temp-7": "Neoclassical architecture",
+            "temp-10": "Urban architecture",
+            "temp-11": "City streets",
+            "temp-12": "Cityscape",
+            "temp-13": "Busy street",
+            "temp-14": "high-rise buildings",
+            "temp-16": "American cities",
+            "temp-17": "Metropolitan",
+            "temp-18": "Urban high-rises",
+            "temp-19": "Modern urban",
+            "temp-20": "High-rise buildings",
+            "temp-21": "American cityscape",
+            "temp-22": "Taxi Cabs",
+            "temp-23": "Cityscape",
+            "temp-25": "Modern urban landscape",
+            "temp-27": "Skyscraper",
+            "temp-28": "Water towers",
+            "temp-30": "Street lamp",
+            "temp-31": "Cityscape",
+            "temp-32": "city skyline",
+            "temp-33": "Cityscape"
+        },
+        "coca-cola-india": {
+            "temp-12": "Modern Flooring",
+            "temp-15": "Exposed brick walls",
+            "temp-16": "Indian cities",
+            "temp-17": "Bustling city life",
+            "temp-19": "Modern urban",
+            "temp-20": "Multi-story building"
+        },
+        "nike-brazil": {
+            "temp-6": "Historic districts",
+            "temp-7": "Historical architecture",
+            "temp-8": "communal spaces",
+            "temp-9": "Traditional urban",
+            "temp-11": "Brazilian neighborhoods",
+            "temp-13": "Modest neighborhood",
+            "temp-19": "urban landscapes",
+            "temp-26": "stadiums"
+        },
+        "coca-cola-japan": {
+            "temp-3": "Abstract urban life",
+            "temp-4": "Public spaces",
+            "temp-6": "Japanese cityscapes",
+            "temp-18": "Tokyo street culture"
+        },
+        "samsung-japan": {
+            "temp-1": "Japanese towns",
+            "temp-2": "Densely populated",
+            "temp-3": "Modern urban landscape",
+            "temp-4": "Public Spaces",
+            "temp-7": "Modern cityscape",
+            "temp-10": "Urban Japan",
+            "temp-16": "Urban lifestyle",
+            "temp-17": "Japanese neighborhood",
+            "temp-18": "Densely Packed Houses",
+            "temp-19": "Clean lines",
+            "temp-22": "Urban setting",
+            "temp-24": "cityscape",
+            "temp-26": "Compact Housing",
+            "temp-27": "Residential buildings",
+            "temp-28": "Suburban area",
+            "temp-29": "Structured environment"
+        },
+        "nike-japan": {
+            "temp-2": "Dense urban landscape",
+            "temp-3": "Japanese cityscape",
+            "temp-5": "Urban culture",
+            "temp-6": "minimalistic design",
+            "temp-7": "Modern architecture",
+            "temp-16": "Parks and Sports Grounds",
+            "temp-17": "Multi-purpose",
+            "temp-23": "City environment",
+            "temp-25": "Contemporary architecture",
+            "temp-26": "Modern architecture",
+            "temp-27": "Narrow alleys",
+            "temp-30": "Clean, modern urban design",
+            "temp-31": "Densely populated",
+            "temp-32": "Urban night scene"
+        },
+        "nike-usa": {
+            "temp-3": "Sports arena",
+            "temp-31": "sports arena"
+        }
+    },
+    "Vegetation / Plants/ Trees": {
+        "samsung-brazil": {
+            "temp-7": "Hedges",
+            "temp-8": "Greenery",
+            "temp-21": "Tropical climate",
+            "temp-23": "Lush green trees",
+            "temp-24": "greenery",
+            "temp-34": "Well-maintained greenery"
+        },
+        "nike-india": {
+            "temp-6": "Palm trees",
+            "temp-7": "Dry grass, trees",
+            "temp-8": "sparse foliage",
+            "temp-11": "greenery",
+            "temp-12": "Greenery",
+            "temp-26": "Trees",
+            "temp-32": "Well-maintained lawn",
+            "temp-34": "Grassy field"
+        },
+        "samsung-india": {
+            "temp-28": "Trees in background"
+        },
+        "coca-cola-brazil": {
+            "temp-3": "landscape",
+            "temp-15": "lush landscapes",
+            "temp-22": "tropical climate",
+            "temp-32": "Tropical produce"
+        },
+        "coca-cola-usa": {
+            "temp-1": "Autumn",
+            "temp-4": "Autumn foliage",
+            "temp-13": "Flowers",
+            "temp-15": "Greenery",
+            "temp-16": "Leafy streets",
+            "temp-30": "Leafless trees"
+        },
+        "coca-cola-india": {
+            "temp-23": "Dense foliage",
+            "temp-34": "Trees"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-28": "Greenery"
+        },
+        "nike-japan": {
+            "temp-15": "Forest",
+            "temp-29": "Green space"
+        }
+    },
+    "Accessories and Jewelry": {
+        "samsung-brazil": {
+            "temp-10": "Ring"
+        },
+        "samsung-usa": {
+            "temp-1": "Practical accessories",
+            "temp-22": "Smartwatches",
+            "temp-31": "Layered necklaces",
+            "temp-32": "Chunky necklace",
+            "temp-33": "Chunky chain"
+        },
+        "samsung-india": {
+            "temp-12": "Wristwatch",
+            "temp-18": "Wristwatch",
+            "temp-19": "Dupatta",
+            "temp-20": "wristwatch"
+        },
+        "coca-cola-brazil": {
+            "temp-6": "Green gemstone earring",
+            "temp-19": "Bottle cap necklace"
+        },
+        "coca-cola-usa": {
+            "temp-15": "Bandana/scarf"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-16": "Traditional bracelet"
+        },
+        "samsung-japan": {},
+        "nike-japan": {},
+        "nike-usa": {
+            "temp-16": "Tattoos",
+            "temp-30": "Sneakers"
+        }
+    },
+    "Historic Monuments and Statues": {
+        "samsung-brazil": {
+            "temp-11": "Historic structure"
+        },
+        "nike-india": {
+            "temp-20": "India Gate",
+            "temp-32": "Aged historical building"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-10": "Historical buildings",
+            "temp-33": "Empire State Building"
+        },
+        "coca-cola-india": {
+            "temp-21": "Traditional architecture"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Multilingual signs": {
+        "samsung-brazil": {
+            "temp-17": "French"
+        },
+        "samsung-india": {
+            "temp-21": "English, Hindi",
+            "temp-32": "English and local"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-6": "English and Japanese",
+            "temp-8": "English",
+            "temp-10": "English and Japanese",
+            "temp-23": "English phrases"
+        },
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-15": "English text",
+            "temp-19": "English text",
+            "temp-22": "English"
+        }
+    },
+    "Family roles and responsibilities": {
+        "samsung-brazil": {
+            "temp-19": "Intergenerational"
+        },
+        "samsung-india": {
+            "temp-5": "Traditional gender roles",
+            "temp-14": "Joint Families",
+            "temp-34": "Family values"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-2": "Close-knit family"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Dance": {
+        "samsung-brazil": {
+            "temp-27": "Frevo/Samba"
+        },
+        "coca-cola-brazil": {
+            "temp-1": "Brazilian dance"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Ceremonies such as birth/wedding": {
+        "samsung-brazil": {
+            "temp-28": "Recording moments"
+        },
+        "samsung-usa": {
+            "temp-25": "Wedding"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-19": "Wedding season",
+            "temp-20": "Wedding celebration",
+            "temp-21": "Wedding celebration",
+            "temp-27": "Family celebration",
+            "temp-28": "Wedding celebration",
+            "temp-29": "Wedding ceremony",
+            "temp-34": "Weddings"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-0": "Traditional weddings"
+        },
+        "nike-japan": {}
+    },
+    "Functional Elements": {
+        "samsung-brazil": {
+            "temp-29": "Practical furniture",
+            "temp-32": "Lamp, seating"
+        },
+        "samsung-usa": {
+            "temp-6": "Smart home device"
+        },
+        "nike-india": {
+            "temp-4": "Modest buildings",
+            "temp-11": "open outdoor space",
+            "temp-33": "Clotheslines, water tanks"
+        },
+        "samsung-india": {
+            "temp-5": "Open shelving",
+            "temp-9": "Open Shelves"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-1": "Modern Office",
+            "temp-13": "Dormitory doors"
+        },
+        "nike-brazil": {
+            "temp-7": "Ornate street lamps",
+            "temp-13": "Barred windows"
+        },
+        "coca-cola-japan": {
+            "temp-10": "Vending machine"
+        },
+        "samsung-japan": {
+            "temp-17": "Compact and efficient space"
+        },
+        "nike-japan": {
+            "temp-0": "Lockers",
+            "temp-20": "Minimalist design"
+        }
+    },
+    "Cooking methods": {
+        "samsung-brazil": {
+            "temp-32": "Social cooking"
+        },
+        "samsung-india": {
+            "temp-2": "Using Tawa",
+            "temp-6": "Slow-cooked",
+            "temp-7": "Grinding stone",
+            "temp-11": "Frying, saut\u00e9ing"
+        },
+        "coca-cola-brazil": {
+            "temp-9": "Grilled meats",
+            "temp-28": "French press",
+            "temp-29": "French press"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Work ethics": {
+        "samsung-usa": {
+            "temp-1": "Practicality",
+            "temp-6": "Direct communication",
+            "temp-20": "Efficiency-oriented",
+            "temp-22": "Personal efficiency",
+            "temp-33": "Practicality"
+        },
+        "nike-india": {
+            "temp-7": "Progress, self-improvement",
+            "temp-31": "Hard work",
+            "temp-33": "Perseverance, progress",
+            "temp-34": "Progress and determination"
+        },
+        "samsung-india": {
+            "temp-4": "Practical approach",
+            "temp-12": "Professionalism",
+            "temp-18": "Punctuality",
+            "temp-20": "punctuality and responsibility",
+            "temp-33": "Resourcefulness"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-13": "Pride in work"
+        },
+        "coca-cola-india": {
+            "temp-0": "Focused on work",
+            "temp-1": "Long working hours",
+            "temp-10": "Hard work"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-0": "Convenience-oriented",
+            "temp-4": "Efficiency"
+        },
+        "samsung-japan": {
+            "temp-2": "Collectivism",
+            "temp-15": "group identity",
+            "temp-16": "Self-discipline"
+        },
+        "nike-japan": {
+            "temp-0": "Discipline",
+            "temp-2": "Hard work",
+            "temp-7": "Professional",
+            "temp-8": "Dedication and self-improvement",
+            "temp-14": "hard work",
+            "temp-15": "Perseverance",
+            "temp-16": "Discipline and Dedication",
+            "temp-17": "Discipline",
+            "temp-18": "Perseverance",
+            "temp-23": "Early decision-making",
+            "temp-25": "Planning and diligence",
+            "temp-26": "Formality and professionalism",
+            "temp-28": "Discipline, dedication",
+            "temp-29": "Perseverance",
+            "temp-30": "Formality and professionalism",
+            "temp-31": "Perseverance"
+        },
+        "nike-usa": {
+            "temp-8": "competitiveness",
+            "temp-13": "Ambition, hard work",
+            "temp-16": "Hard work",
+            "temp-28": "Competitive and individualistic",
+            "temp-30": "Meritocracy",
+            "temp-31": "hard work, determination",
+            "temp-32": "Hard Work"
+        }
+    },
+    "Type of work/employment": {
+        "samsung-usa": {
+            "temp-1": "Working professionals"
+        },
+        "samsung-india": {
+            "temp-12": "Young adults",
+            "temp-20": "office workers",
+            "temp-27": "Working class",
+            "temp-30": "Working class"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-13": "Manual work"
+        },
+        "coca-cola-india": {
+            "temp-1": "Office work",
+            "temp-10": "Professional life",
+            "temp-12": "Urban workforce"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-7": "Corporate workers",
+            "temp-30": "Salaried workers"
+        }
+    },
+    "Religious practices": {
+        "samsung-usa": {
+            "temp-6": "Secular approach"
+        },
+        "nike-india": {
+            "temp-8": "secular approach",
+            "temp-24": "Cricket as quasi-religion"
+        },
+        "samsung-india": {
+            "temp-6": "Communal eating",
+            "temp-29": "Community-centric"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-29": "Secular approach",
+            "temp-31": "Secular approach"
+        },
+        "coca-cola-india": {
+            "temp-8": "Spiritual aspect",
+            "temp-29": "Spiritual gatherings"
+        },
+        "nike-brazil": {
+            "temp-27": "Crossing themselves"
+        },
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-0": "Shinto",
+            "temp-13": "Secular"
+        },
+        "nike-japan": {
+            "temp-15": "Sacred nature"
+        }
+    },
+    "Traditional and contemporary music": {
+        "samsung-usa": {
+            "temp-12": "Music Application"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {
+            "temp-4": "samba dance",
+            "temp-9": "Rhythmic atmosphere"
+        },
+        "coca-cola-japan": {
+            "temp-18": "J-pop tracks"
+        },
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-6": "hip-hop culture",
+            "temp-30": "Hip-hop culture"
+        }
+    },
+    "Entrance": {
+        "samsung-usa": {
+            "temp-15": "Glass Facade"
+        },
+        "nike-india": {
+            "temp-32": "Arched doorways"
+        },
+        "samsung-india": {
+            "temp-25": "Arched gateway"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-15": "school staircase",
+            "temp-17": "Narrow staircase",
+            "temp-28": "Traditional gate",
+            "temp-30": "Neatly designed"
+        },
+        "nike-japan": {}
+    },
+    "Hair and Beard types": {
+        "samsung-usa": {
+            "temp-32": "Bold hair color",
+            "temp-34": "Dyed purple hair"
+        },
+        "coca-cola-brazil": {
+            "temp-19": "Braided hair"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {
+            "temp-19": "short or tied-back hair"
+        },
+        "coca-cola-japan": {
+            "temp-7": "Contemporary hairstyle"
+        },
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-16": "Bright Green Hair",
+            "temp-19": "Bright green hairstyle"
+        }
+    },
+    "Hobbies": {
+        "samsung-usa": {
+            "temp-32": "Reading"
+        },
+        "nike-india": {
+            "temp-8": "fitness"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Painting": {
+        "samsung-usa": {
+            "temp-34": "Abstract painting"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {
+            "temp-19": "comic book illustrations",
+            "temp-21": "Graffiti art"
+        },
+        "coca-cola-japan": {
+            "temp-0": "Bold aesthetic"
+        },
+        "samsung-japan": {
+            "temp-26": "Anime Artwork"
+        },
+        "nike-japan": {}
+    },
+    "National emblems": {
+        "nike-india": {
+            "temp-0": "Nike"
+        },
+        "coca-cola-brazil": {
+            "temp-1": "Brazilian flag",
+            "temp-19": "Brazilian flag",
+            "temp-21": "Brazilian flag"
+        },
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-22": "Peacock"
+        },
+        "nike-brazil": {
+            "temp-11": "Brazilian flag",
+            "temp-15": "Brazilian flag",
+            "temp-16": "Brazilian flag",
+            "temp-24": "Yellow jersey",
+            "temp-25": "Brazilian flag",
+            "temp-34": "Brazilian flag"
+        },
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Flags": {
+        "nike-india": {
+            "temp-3": "Indian flag"
+        },
+        "coca-cola-brazil": {
+            "temp-1": "Brazilian flag",
+            "temp-19": "Brazilian flag",
+            "temp-21": "Brazilian flag"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {
+            "temp-2": "Brazilian flag",
+            "temp-4": "Brazilian flag",
+            "temp-5": "Brazilian flag",
+            "temp-11": "Brazilian flag",
+            "temp-15": "Brazilian flag",
+            "temp-16": "Brazilian flag",
+            "temp-17": "Brazilian flag",
+            "temp-23": "Brazilian flag",
+            "temp-25": "Brazilian flag",
+            "temp-34": "Brazilian flag"
+        },
+        "coca-cola-japan": {
+            "temp-5": "Japanese flag"
+        },
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Animals and Wildlife": {
+        "nike-india": {
+            "temp-15": "ball",
+            "temp-19": "Birds"
+        },
+        "coca-cola-brazil": {
+            "temp-2": "Car",
+            "temp-13": "Pet animals"
+        },
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-22": "Peacock"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Antique or vintage pieces": {
+        "nike-india": {
+            "temp-21": "Heritage buildings"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-23": "Classic bottle"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {
+            "temp-30": "Boombox"
+        }
+    },
+    "Agricultural Elements": {
+        "nike-india": {
+            "temp-26": "Water tank or well"
+        },
+        "samsung-india": {
+            "temp-25": "Bicycles"
+        },
+        "coca-cola-brazil": {
+            "temp-28": "Coffee",
+            "temp-29": "Coffee plants"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Places of worship/Religious buildings": {
+        "nike-india": {
+            "temp-32": "Historical building"
+        },
+        "samsung-india": {
+            "temp-19": "Temples",
+            "temp-23": "Traditional building"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-0": "Shinto shrines",
+            "temp-21": "Temple"
+        },
+        "nike-japan": {}
+    },
+    "Cutlery": {
+        "samsung-india": {
+            "temp-2": "No Utensils",
+            "temp-3": "stainless steel",
+            "temp-5": "Metal thali",
+            "temp-6": "Traditional cookware",
+            "temp-8": "No cutlery",
+            "temp-10": "Stainless steel utensils",
+            "temp-11": "Steel or copper utensils"
+        },
+        "coca-cola-brazil": {
+            "temp-9": "Fork and knife",
+            "temp-13": "Mug",
+            "temp-28": "Mug",
+            "temp-30": "Forks and knives"
+        },
+        "coca-cola-usa": {
+            "temp-18": "Multiple plates",
+            "temp-19": "Multiple cutlery"
+        },
+        "coca-cola-india": {
+            "temp-29": "Metallic dishes"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Attitude towards hierarchy": {
+        "samsung-india": {
+            "temp-12": "Respect"
+        },
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-14": "Collectivism"
+        },
+        "nike-japan": {
+            "temp-1": "Respect teachers",
+            "temp-27": "Social harmony",
+            "temp-30": "Conformity and individuality"
+        },
+        "nike-usa": {
+            "temp-32": "Individualistic"
+        }
+    },
+    "Religious icons": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-15": "Ashoka Chakra, Lotus flower",
+            "temp-22": "Peacock"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-7": "Torii gate, koi fish"
+        },
+        "samsung-japan": {
+            "temp-0": "Daruma doll",
+            "temp-21": "Temple"
+        },
+        "nike-japan": {}
+    },
+    "Mythical creatures or heroes": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-21": "Superhero",
+            "temp-23": "Superhero theme",
+            "temp-25": "Superheroes",
+            "temp-32": "animated character",
+            "temp-33": "Charlie Brown"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-7": "Japanese folklore"
+        },
+        "samsung-japan": {},
+        "nike-japan": {},
+        "nike-usa": {
+            "temp-4": "Athlete legacy"
+        }
+    },
+    "Murals, graffiti, sculptures": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {
+            "temp-19": "street art",
+            "temp-21": "Pixa\u00e7\u00e3o"
+        },
+        "coca-cola-japan": {
+            "temp-8": "Manga Anime"
+        },
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Theater": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Movies/Shows/Books": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {
+            "temp-17": "Family Guy",
+            "temp-21": "Animated entertainment",
+            "temp-23": "American cartoons",
+            "temp-31": "American cartoons",
+            "temp-33": "Peanuts comic strip"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {
+            "temp-5": "Anime, manga"
+        },
+        "samsung-japan": {
+            "temp-8": "Anime",
+            "temp-9": "Anime",
+            "temp-26": "Anime"
+        },
+        "nike-japan": {}
+    },
+    "Parenting Styles": {
+        "coca-cola-brazil": {
+            "temp-30": "Family-oriented"
+        },
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    },
+    "Legends or Inspirational people": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {
+            "temp-14": "Brazilian football heroes"
+        },
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {},
+        "nike-usa": {
+            "temp-3": "Kobe Bryant",
+            "temp-20": "Athletes"
+        }
+    },
+    "Educational system": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {
+            "temp-1": "Japanese education",
+            "temp-2": "Uniform traditions",
+            "temp-4": "School Life",
+            "temp-5": "Formal, disciplined",
+            "temp-6": "School Life",
+            "temp-7": "High-tech education",
+            "temp-9": "Japanese school",
+            "temp-10": "School setting",
+            "temp-11": "Youth education",
+            "temp-15": "group cohesion",
+            "temp-16": "Education",
+            "temp-17": "Japanese schools",
+            "temp-22": "Youth education",
+            "temp-27": "School uniform",
+            "temp-28": "School life"
+        },
+        "nike-japan": {
+            "temp-0": "Japanese school",
+            "temp-1": "School discipline",
+            "temp-23": "Formal education",
+            "temp-26": "Importance of education"
+        }
+    },
+    "Sacred Plants and Animals": {
+        "coca-cola-brazil": {},
+        "coca-cola-usa": {},
+        "coca-cola-india": {
+            "temp-22": "Peacock"
+        },
+        "nike-brazil": {},
+        "coca-cola-japan": {},
+        "samsung-japan": {},
+        "nike-japan": {}
+    }
+}
