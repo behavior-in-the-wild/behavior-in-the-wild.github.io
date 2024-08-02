@@ -323,7 +323,7 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="https://groups.google.com/g/behavior-in-the-wild" target="_blank" class="button is-normal is-rounded is-dark">
+                                    <a href="https://mailto:behavior-in-the-wild@googlegroups.com" target="_blank" class="button is-normal is-rounded is-dark">
                                         <span class="icon"><i class="fas fa-users"></i></span>
                                         <span>Google Group</span>
                                     </a>
@@ -513,6 +513,12 @@
 
         const countries = ["India", "China", "USA", "Brazil", "Nigeria", "France", "Japan"];
         let currentPath = [];
+        let preselectedValues = {
+            category: null,
+            subcategory: null,
+            subsubcategory: null,
+            country: null
+        };
 
         function createNode(name, containerId, level, parentNode) {
             const node = document.createElement('div');
@@ -579,6 +585,8 @@
             } else if (level.startsWith('subcategory')) {
                 showExploreButton();
             }
+
+            storeSelectedValues();
         }
 
         function updateCurrentPath(name, index) {
@@ -588,6 +596,34 @@
 
         function showExploreButton() {
             $('#explore-culture-container').show();
+        }
+
+        function storeSelectedValues() {
+            preselectedValues.category = currentPath[0] || null;
+            preselectedValues.subcategory = currentPath[1] || null;
+            preselectedValues.subsubcategory = currentPath[2] || null;
+            preselectedValues.country = $('#country-selection .node.active').text() || null;
+        }
+        
+        function populateFields() {
+            if (preselectedValues.category) {
+                handleNodeClick(preselectedValues.category, 'category-container', 'category', null, true);
+            }
+            if (preselectedValues.subcategory) {
+                handleNodeClick(preselectedValues.subcategory, 'subcategory-container', 'subcategory-0', null, true);
+            }
+            if (preselectedValues.subsubcategory) {
+                handleNodeClick(preselectedValues.subsubcategory, 'subsubcategory-container', 'subcategory-1', null, true);
+            }
+            if (preselectedValues.country) {
+                $('#country-selection .node').each(function () {
+                    if ($(this).text() === preselectedValues.country) {
+                        $(this).addClass('active');
+                    }
+                });
+                showSampleImages(currentPath.concat(preselectedValues.country));
+                $('#suggest-changes-container').show();
+            }
         }
 
         let jsonData;
@@ -626,15 +662,17 @@
             $('#other').change(function() {
                 toggleAdditionalInput(this, '#other-reason-input');
             });
-                });
 
-                function toggleAdditionalInput(checkbox, inputId) {
-                if ($(checkbox).is(':checked')) {
-                    $(inputId).addClass('show');
-                } else {
-                    $(inputId).removeClass('show');
-                }
+            populateFields();
+        });
+
+        function toggleAdditionalInput(checkbox, inputId) {
+            if ($(checkbox).is(':checked')) {
+                $(inputId).addClass('show');
+            } else {
+                $(inputId).removeClass('show');
             }
+        }
 
         function loadJSONData() {
             $.getJSON('culture_data/inverted_result_12v.json', function (data) {
@@ -693,15 +731,18 @@
         }
 
         function openSuggestChangesForm() {
-            const currentCategory = currentPath[0];
-            const currentSubcategory = currentPath[1];
-            const currentSubsubcategory = currentPath[2];
-            const selectedCountry = $('#country-selection .node.active').text();
+            const currentCategory = currentPath[0] || '';
+            const currentSubcategory = currentPath[1] || '';
+            const currentSubsubcategory = currentPath[2] || '';
+            const selectedCountry = $('#country-selection .node.active').text() || '';
 
             $('#category').val(currentCategory);
             $('#subcategory').val(currentSubcategory);
             $('#subsubcategory').val(currentSubsubcategory);
             $('#country').val(selectedCountry);
+
+            const selectedOptionsText = `${currentCategory} -> ${currentSubcategory} -> ${currentSubsubcategory} -> ${selectedCountry}`;
+            $('#additional-explanation').val(selectedOptionsText);
 
             $('#suggest-form').fadeIn(300);
         }
