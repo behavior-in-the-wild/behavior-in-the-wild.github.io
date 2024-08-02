@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,73 +8,90 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
     <style>
         body {
             font-family: 'Google Sans', sans-serif;
-            background-color: #ffffff;
+            background-color: #f4f4f9;
         }
+
         .hero {
             background-color: #ffffff;
             color: black;
+            padding: 20px;
         }
+
         .hero .title {
             color: black;
         }
+
         .hero .subtitle {
             color: #ff3860;
         }
+
         .author-block a {
             color: #f68946;
             font-weight: normal;
         }
+
         .organization a {
             color: #3273dc;
             font-weight: normal;
         }
+
         .node {
-            background-color: #f5f5f5;
+            background-color: #ffffff;
             border-radius: 8px;
-            padding: 10px;
-            margin: 5px;
+            padding: 10px 20px;
+            margin: 10px;
             display: inline-block;
             cursor: pointer;
             transition: background-color 0.3s, transform 0.3s;
             text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+
         .node:hover {
             background-color: #e8e8e8;
             transform: translateY(-2px);
         }
+
         .node.active {
             background-color: #3273dc;
             color: white;
         }
+
         .window {
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin: 20px 0;
             text-align: center;
             display: flex;
             justify-content: center;
             overflow-x: auto;
         }
-        .window > div {
+
+        .window>div {
             display: flex;
             flex-wrap: nowrap;
             justify-content: center;
         }
-        #explore-dataset, #explore-categories {
+
+        #explore-dataset,
+        #explore-categories {
             margin-top: 20px;
             display: none;
+            background-color: #f68946;
+            border-color: #f68946;
         }
+
         .example-node {
             margin-left: 20px;
         }
+
         .country-node {
             margin-left: 40px;
         }
+
         .image-gallery {
             display: flex;
             flex-wrap: wrap;
@@ -81,22 +99,29 @@
             gap: 10px;
             margin-top: 20px;
         }
+
         .image-gallery img {
             max-width: 100%;
             height: auto;
             object-fit: contain;
-            max-height: 200px; /* Adjust this value as needed */
+            max-height: 200px;
         }
+
         .compare-container {
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 20px;
             margin: 20px 10px;
             height: 100%;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* border-radius: 30px; */
         }
+
         .compare-container h3 {
             margin-bottom: 20px;
         }
+
         .image-gallery .placeholder {
             margin: 5px;
             border: 1px solid #ddd;
@@ -111,20 +136,24 @@
             color: #bbb;
             font-size: 14px;
         }
+
         .level {
             margin-bottom: 30px;
         }
+
         .collaborators-text {
             background-color: #f9f9f9;
             border-left: 4px solid #3273dc;
             padding: 10px 15px;
             margin: 20px 0;
-            color: #0d47a1; /* Dark blue color */
+            color: #0d47a1;
             border-radius: 8px;
         }
+
         .collaborators-text h2 {
             margin-top: 0;
         }
+
         .citation {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
@@ -132,14 +161,17 @@
             padding: 20px;
             margin: 20px 0;
         }
+
         .citation h2 {
             margin-top: 0;
         }
+
         .citation pre {
             margin: 0;
             white-space: pre-wrap;
             word-wrap: break-word;
         }
+
         .country-section {
             display: flex;
             justify-content: center;
@@ -147,17 +179,104 @@
             gap: 20px;
             margin-top: 20px;
         }
+
         .country-section .image-gallery {
             flex: 1;
         }
+
         .country-section .country-examples {
             flex: 1;
             list-style-type: disc;
             padding-left: 20px;
             margin: 0;
         }
+
+        #suggest-changes-container {
+            margin-top: 20px;
+            display: none;
+            text-align: center;
+        }
+
+        #suggest-form {
+            margin-top: 20px;
+            display: none;
+            text-align: left;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .suggestion-heading {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .additional-input {
+            margin-top: 10px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .additional-input.show {
+            max-height: 100px;
+        }
+
+        .form-group input[type="text"],
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-group button {
+            background-color: #3273dc;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .form-group button:hover {
+            background-color: #2258a8;
+        }
+
     </style>
 </head>
+
 <body>
     <section class="hero">
         <div class="hero-body">
@@ -165,7 +284,7 @@
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">
-                            <span class="is-size-2"><span class="is-size-1">The Culture Repository</span>
+                            <span class="is-size-2"><span class="is-size-1">The Culture Repository</span></span>
                         </h1>
                         <div class="is-size-5 publication-authors">
                             <span class="author-block">
@@ -175,7 +294,7 @@
                                 <a href="#">Aniketh Garikaparthi<sup>*1</sup></a>,
                             </span>
                             <span class="author-block">
-                                <a href="#">Aanisha Bhattacharyya<sup>*2</sup></a>,    
+                                <a href="#">Aanisha Bhattacharyya<sup>*2</sup></a>,
                             </span>
                             <span class="author-block">
                                 <a href="https://sites.google.com/view/yaman-kumar/" target="_blank">Yaman Kumar<sup>*1,2</sup></a></a>
@@ -183,8 +302,8 @@
                         </div>
                         <div class="is-size-5 publication-authors">
                             <span class="organization">
-                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://www.iiitd.ac.in/" target="_blank"><sup>1 </sup>IIIT Delhi</a></a>,
-                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank"><sup>2 </sup>Adobe, Media and Data Science Research (MDSR) Lab</a></a>
+                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://www.iiitd.ac.in/" target="_blank"><sup>1 </sup>IIIT Delhi</a>,
+                                <b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank"><sup>2 </sup>Adobe, Media and Data Science Research (MDSR) Lab</a>
                             </span>
                         </div>
                         <div class="is-size-6 publication-authors">
@@ -192,17 +311,11 @@
                         </div>
                         <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
                         <div class="collaborators-text">
-                            <h2>Looking for Collaborators!</h2>
-                            <p>If you want to submit your unique videos, corrections, or vocabulary expansions, email us at <a href="mailto:behavior-in-the-wild@googlegroups.com" style="color: #3273dc;">behavior-in-the-wild@googlegroups.com</a>.</p>
+                            <h2>Looking for Contributors!</h2>
+                            <p>If you want to submit your unique videos, corrections, or vocabulary expansions, please submit your contributions to our Google Group or raise a Pull Request on our GitHub repository.</p>
                         </div>
                         <div class="column has-text-centered">
                             <div class="publication-links">
-                                <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon"><i class="ai ai-arxiv"></i></span>
-                                        <span>Open Source</span>
-                                    </a>
-                                </span>
                                 <span class="link-block">
                                     <a href="https://github.com/behavior-in-the-wild/cultural-repository" target="_blank" class="external-link button is-normal is-rounded is-dark">
                                         <span class="icon"><i class="fab fa-github"></i></span>
@@ -210,37 +323,93 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="#" class="external-link button is-normal is-rounded is-dark" id="dataset-link">
+                                    <a href="https://groups.google.com/g/behavior-in-the-wild" target="_blank" class="button is-normal is-rounded is-dark">
+                                        <span class="icon"><i class="fas fa-users"></i></span>
+                                        <span>Google Group</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://drive.google.com/drive/folders/1mQFCZtDWeV-H3TdqObF3QoBDKR8KIc_a?usp=drive_link" target="_blank" class="external-link button is-normal is-rounded is-dark" id="dataset-link">
                                         <span class="icon"><i class="fas fa-database"></i></span>
                                         <span>Dataset</span>
                                     </a>
                                 </span>
-                                <span class="link-block">
-                                    <a href="https://github.com/behavior-in-the-wild/cultural-repository/issues" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                                        <span class="icon"><i class="fas fa-exclamation-circle"></i></span>
-                                        <span>Report Issue</span>
-                                    </a>
-                                </span>
                             </div>
                         </div>
-                        <div id="category-container" class="window level"><div></div></div>
-                        <div id="subcategory-container" class="window level"><div></div></div>
-                        <div id="subsubcategory-container" class="window level"><div></div></div>
+                        <div id="category-container" class="window level">
+                            <div></div>
+                        </div>
+                        <div id="subcategory-container" class="window level">
+                            <div></div>
+                        </div>
+                        <div id="subsubcategory-container" class="window level">
+                            <div></div>
+                        </div>
                         <div id="explore-culture-container" class="has-text-centered" style="display: none; margin-top: 20px;">
                             <button id="explore-culture-button" class="button is-primary">Explore Culture</button>
                         </div>
                         <div class="columns is-centered" style="margin-top: 20px;">
                             <div class="column compare-container" id="country-selection-container" style="display: none;">
                                 <h3>Select Country</h3>
-                                <div id="country-selection" class="window level"><div></div></div>
-                                <div id="country-results" class="country-section">
-                                    <div id="country-images" class="image-gallery"></div>
-                                    <ul id="country-examples" class="country-examples"></ul>
+                                <div id="country-selection" class="window level">
+                                    <div></div>
                                 </div>
+                                <div id="image-gallery" class="image-gallery"></div>
                             </div>
                         </div>
-                        <div id="image-gallery" class="image-gallery"></div>
-                        <ul id="image-gallery-examples"></ul>
+                        <div id="suggest-changes-container">
+                            <button id="suggest-changes-button" class="button is-normal is-rounded">Suggest Changes</button>
+                        </div>
+                        <div id="suggest-form">
+                            <div class="form-group">
+                                <label class="suggestion-heading">Reason for Suggestion</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="inappropriate" value="Inappropriate annotation">
+                                        <label for="inappropriate">Inappropriate annotation</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="irrelevant" value="Irrelevant content">
+                                        <label for="irrelevant">Irrelevant content</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="wrong-country" value="Wrong country">
+                                        <label for="wrong-country">Wrong country</label>
+                                    </div>
+                                    <div class="additional-input" id="correct-country-input">
+                                        <input type="text" id="correct-country" placeholder="Enter correct country">
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="mislabelled" value="Mislabelled">
+                                        <label for="mislabelled">Mislabelled</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="missing-details" value="Missing details">
+                                        <label for="missing-details">Missing details</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="other" value="Other">
+                                        <label for="other">Other</label>
+                                    </div>
+                                    <div class="additional-input" id="other-reason-input">
+                                        <input type="text" id="other-reason" placeholder="Specify other reason">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="additional-explanation" class="suggestion-heading">Additional Explanation</label>
+                                <textarea id="additional-explanation" placeholder="Provide additional explanation"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button id="submit-suggestion-button">Submit Suggestion</button>
+                            </div>
+                            <!-- Hidden Fields -->
+                            <input type="hidden" id="video-link" value="https://youtube.com">
+                            <input type="hidden" id="category">
+                            <input type="hidden" id="subcategory">
+                            <input type="hidden" id="subsubcategory">
+                            <input type="hidden" id="country">
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -344,35 +513,12 @@
 
         const countries = ["India", "China", "USA", "Brazil", "Nigeria", "France", "Japan"];
         let currentPath = [];
-        let imageDirectory;
-
-        const fallbackImageDirectory = {
-            "Regular Practices": {
-                "Language and Communication": {
-                    "Gestures and Body language": {
-                        "India": ["ID_0001.png", "ID_0002.png", "ID_0003.png"],
-                        "China": ["ID_0001.png", "ID_0002.png"],
-                        "USA": ["ID_0001.png", "ID_0002.png", "ID_0003.png", "ID_0004.png"]
-                    },
-                    "Idioms, slang, and common phrases": {
-                        "France": ["ID_0001.png", "ID_0002.png"],
-                        "Japan": ["ID_0001.png"]
-                    }
-                },
-                "Food and Dining": {
-                    "Cuisine and Traditional dishes": {
-                        "Brazil": ["ID_0001.png", "ID_0002.png", "ID_0003.png"],
-                        "Nigeria": ["ID_0001.png"]
-                    }
-                }
-            }
-        };
 
         function createNode(name, containerId, level, parentNode) {
             const node = document.createElement('div');
             node.className = 'node';
             node.textContent = name;
-            node.addEventListener('click', function() {
+            node.addEventListener('click', function () {
                 handleNodeClick(name, containerId, level, this, parentNode, false);
             });
             document.getElementById(containerId).querySelector('div').appendChild(node);
@@ -381,30 +527,21 @@
         function handleNodeClick(name, containerId, level, element, parentNode, isPreselect = false) {
             $(element).addClass('active').siblings().removeClass('active');
 
-            const containers = ['category-container', 'subcategory-container', 'subsubcategory-container', 'country-container', 'country-selection-1', 'country-selection-2'];
+            const containers = ['category-container', 'subcategory-container', 'subsubcategory-container', 'country-container', 'country-selection'];
             let currentIndex = containers.indexOf(containerId);
 
             if (currentIndex === -1) {
-                if (containerId === 'country-selection' || containerId === 'country-selection') {
+                if (containerId === 'country-selection') {
                     currentIndex = containers.indexOf('country-container');
                 }
             }
 
             if (!isPreselect) {
-                for (let i = currentIndex + 1; i < containers.length - 2; i++) {
+                for (let i = currentIndex + 1; i < containers.length - 1; i++) {
                     $(`#${containers[i]} > div`).empty();
                 }
                 $('#image-gallery').empty();
             }
-
-            if (containerId !== 'country-selection') {
-                updateCurrentPath(name, currentIndex);
-            }
-
-            for (let i = currentIndex + 1; i < containers.length - 2; i++) {
-                $(`#${containers[i]} > div`).empty();
-            }
-            $('#image-gallery').empty();
 
             if (containerId !== 'country-selection') {
                 updateCurrentPath(name, currentIndex);
@@ -415,15 +552,12 @@
                 if (currentSchema && typeof currentSchema === 'object' && !Array.isArray(currentSchema) && currentSchema[currentPath[i]]) {
                     currentSchema = currentSchema[currentPath[i]];
                 } else {
-                    console.log(currentSchema);
-                    console.log('Schema path not found:', currentPath.slice(0, i + 1).join(' > '));
                     currentSchema = undefined;
                     break;
                 }
             }
 
             if (currentSchema === undefined) {
-                console.log('End of schema reached or invalid path');
                 if (level.startsWith('subcategory')) {
                     showExploreButton();
                 }
@@ -450,46 +584,66 @@
         function updateCurrentPath(name, index) {
             currentPath = currentPath.slice(0, index);
             currentPath.push(name);
-            console.log(currentPath);
         }
 
         function showExploreButton() {
             $('#explore-culture-container').show();
         }
 
-        $(document).ready(function() {
+        let jsonData;
+
+        $(document).ready(function () {
             const isLocal = window.location.protocol === 'file:';
 
-            if (isLocal) {
-                console.log('Running locally, using fallback image directory');
-                imageDirectory = fallbackImageDirectory;
-                initializePage();
-            } else {
-                $.getJSON('image_directory.json', function(data) {
-                    imageDirectory = data;
-                    initializePage();
-                }).fail(function() {
-                    console.log('Failed to load image directory structure, using fallback');
-                    imageDirectory = fallbackImageDirectory;
-                    initializePage();
-                });
-            }
+            loadJSONData();
 
-            $('#explore-culture-button').click(function() {
+            $('#explore-culture-button').click(function () {
                 $('#country-selection-container').show();
                 if ($('#country-selection .node').length === 0) {
                     showCountries('country-selection');
                 }
             });
 
-            $(document).on('click', '#country-selection .node', function() {
+            $(document).on('click', '#country-selection .node', function () {
                 $(this).addClass('active').siblings().removeClass('active');
                 const countryName = $(this).text();
-                const containerId = 'country';
-                showSampleImages(`${containerId}-images`, currentPath.concat(countryName));
-                showExamplePoints(`${containerId}-examples`);
+                showSampleImages(currentPath.concat(countryName));
+                $('#suggest-changes-container').show();
             });
-        });
+
+            $('#suggest-changes-button').click(function () {
+                openSuggestChangesForm();
+            });
+
+            $('#submit-suggestion-button').click(function () {
+                submitSuggestion();
+            });
+
+            $('#wrong-country').change(function() {
+                toggleAdditionalInput(this, '#correct-country-input');
+            });
+
+            $('#other').change(function() {
+                toggleAdditionalInput(this, '#other-reason-input');
+            });
+                });
+
+                function toggleAdditionalInput(checkbox, inputId) {
+                if ($(checkbox).is(':checked')) {
+                    $(inputId).addClass('show');
+                } else {
+                    $(inputId).removeClass('show');
+                }
+            }
+
+        function loadJSONData() {
+            $.getJSON('culture_data/inverted_result_12v.json', function (data) {
+                jsonData = data;
+                initializePage();
+            }).fail(function () {
+                console.log('Failed to load JSON data');
+            });
+        }
 
         function showCountries(containerId) {
             for (const country of countries) {
@@ -497,81 +651,107 @@
             }
         }
 
-        function showSampleImages(containerId, path) {
-            const $container = $(`#${containerId}`);
+        function showSampleImages(path) {
+            const $container = $('#image-gallery');
             $container.empty().show();
-            console.log(`Container ${containerId} emptied and shown`);
-            const imagePath = path.join('/');
-            console.log('Image Path:', imagePath);
 
-            let currentDirectory = imageDirectory;
-            for (const pathPart of path) {
-                if (currentDirectory[pathPart]) {
-                    currentDirectory = currentDirectory[pathPart];
-                } else {
-                    console.log('No images found for this path');
-                    displayPlaceholderImages(containerId);
-                    return;
+            const selectedCountry = path[path.length - 1].toLowerCase();
+            const selectedCategory = currentPath[currentPath.length - 1];
+
+            let companyCountryKey = null;
+            for (const key in jsonData[selectedCategory]) {
+                if (key.endsWith(`-${selectedCountry}`)) {
+                    companyCountryKey = key;
+                    break;
                 }
             }
 
-            const appendImage = (imageSrc, index) => {
-                console.log('Appending Image:', imageSrc); // Log the image source being appended
-                const img = $('<img>')
-                    .attr('src', imageSrc)
-                    .attr('alt', `Sample Image ${index + 1}`)
-                    .on('error', function() {
-                        $(this).replaceWith('<div class="placeholder">No Image</div>');
-                        console.log('Failed to load image:', imageSrc); // Log the failed image load
-                    })
-                    .on('load', function() {
-                        console.log('Image loaded successfully:', imageSrc); // Log successful image load
-                    });
-                $(`#${containerId}`).append(img);
-            };
+            if (companyCountryKey && jsonData[selectedCategory][companyCountryKey]) {
+                const images = jsonData[selectedCategory][companyCountryKey];
+                const imageKeys = Object.keys(images).slice(0, 5);
 
-            if (currentDirectory instanceof Array) {
-                if (currentDirectory.length === 0) {
-                    displayPlaceholderImages(containerId);
-                } else {
-                    currentDirectory.forEach((image, index) => {
-                        const imageSrc = `images/advertisement_frames/${imagePath}/${image}`;
-                        appendImage(imageSrc, index);
-                    });
-                }
-            } else if (currentDirectory && typeof currentDirectory === 'object') {
-                if (currentDirectory[countries[path[path.length - 1]]]) {
-                    currentDirectory[countries[path[path.length - 1]]].forEach((image, index) => {
-                        const imageSrc = `images/advertisement_frames/${imagePath}/${image}`;
-                        appendImage(imageSrc, index);
+                if (imageKeys.length > 0) {
+                    imageKeys.forEach(imageKey => {
+                        const imgElement = $('<img>').attr('src', `culture_data/frames/${companyCountryKey}/${imageKey}.jpg`).attr('alt', 'Sample Image');
+                        const textElement = $('<div>').text(images[imageKey]);
+                        const containerElement = $('<div>').append(imgElement).append(textElement);
+                        $container.append(containerElement);
                     });
                 } else {
-                    displayPlaceholderImages(containerId);
+                    displayPlaceholderImages($container);
                 }
             } else {
-                displayPlaceholderImages(containerId);
+                displayPlaceholderImages($container);
             }
-
-            // Call the showExamplePoints function to display bullet points
-            showExamplePoints(containerId + '-examples');
         }
 
-        function displayPlaceholderImages(containerId) {
-            console.log('Displaying placeholder images'); // Log placeholder display
+        function displayPlaceholderImages($container) {
             for (let i = 0; i < 3; i++) {
                 const placeholder = $('<div>').addClass('placeholder').text('No Image');
-                $(`#${containerId}`).append(placeholder);
+                $container.append(placeholder);
             }
         }
 
-        function showExamplePoints(containerId) {
-            const $container = $(`#${containerId}`);
-            $container.empty().show();
-            const examplePoints = [
-                '<li>Example point 1</li>',
-                '<li>Example point 2</li>'
-            ];
-            $container.append(examplePoints.join(''));
+        function openSuggestChangesForm() {
+            const currentCategory = currentPath[0];
+            const currentSubcategory = currentPath[1];
+            const currentSubsubcategory = currentPath[2];
+            const selectedCountry = $('#country-selection .node.active').text();
+
+            $('#category').val(currentCategory);
+            $('#subcategory').val(currentSubcategory);
+            $('#subsubcategory').val(currentSubsubcategory);
+            $('#country').val(selectedCountry);
+
+            $('#suggest-form').fadeIn(300);
+        }
+
+        function submitSuggestion() {
+            const videoLink = $('#video-link').val();
+            const category = $('#category').val();
+            const subcategory = $('#subcategory').val();
+            const subsubcategory = $('#subsubcategory').val();
+            const country = $('#country').val();
+            const reasons = [];
+            
+            $('.checkbox-item input[type="checkbox"]:checked').each(function() {
+                let reason = $(this).val();
+                if (reason === "Wrong country") {
+                    reason += ` (Correct country: ${$('#correct-country').val()})`;
+                } else if (reason === "Other") {
+                    reason += ` (Reason: ${$('#other-reason').val()})`;
+                }
+                reasons.push(reason);
+            });
+
+            const additionalExplanation = $('#additional-explanation').val();
+
+            const issueTitle = `Suggestion for ${category} - ${subcategory} - ${subsubcategory} (${country})`;
+
+            const issueBody = `
+        **Video Link:** ${videoLink}
+
+        **Category:** ${category}
+        **Subcategory:** ${subcategory}
+        **Subsubcategory:** ${subsubcategory}
+        **Country:** ${country}
+
+        **Reason for Suggestion:**
+        ${reasons.map(reason => `- [ ] ${reason}`).join('\n')}
+
+        **Additional Explanation:**
+
+        ${additionalExplanation}
+            `;
+
+            const issueUrl = `https://github.com/behavior-in-the-wild/cultural-repository/issues/new?title=${encodeURIComponent(issueTitle)}&body=${encodeURIComponent(issueBody)}`;
+
+            window.open(issueUrl, '_blank');
+            
+            // Reset form after submission
+            $('#suggest-form')[0].reset();
+            $('.additional-input').removeClass('show');
+            $('#suggest-form').fadeOut(300);
         }
 
         function initializePage() {
@@ -579,35 +759,33 @@
                 createNode(category, 'category-container', 'category');
             }
 
-            // Pre-select "Regular Practices"
             const regularPracticesNode = $('#category-container .node:contains("Regular Practices")')[0];
             handleNodeClick('Regular Practices', 'category-container', 'category', regularPracticesNode, null, true);
 
-            // Wait for subcategories to be created, then pre-select "Language and Communication"
             setTimeout(() => {
                 const languageNode = $('#subcategory-container .node:contains("Language and Communication")')[0];
                 handleNodeClick('Language and Communication', 'subcategory-container', 'subcategory-1', languageNode, 'Regular Practices', true);
 
-                // Wait for sub-subcategories to be created, then pre-select "Gestures and Body language"
                 setTimeout(() => {
                     const gesturesNode = $('#subsubcategory-container .node:contains("Gestures and Body language")')[0];
                     handleNodeClick('Gestures and Body language', 'subsubcategory-container', 'subcategory-2', gesturesNode, 'Language and Communication', true);
                 }, 300);
             }, 300);
         }
-
     </script>
     <section class="citation">
         <div class="container">
             <h2>BibTex</h2>
             <pre>
-                @online{theculturerepository2024,
-                    author = {Ritika Jha, Aniketh Garikaparthi, Aanisha Bhattacharyya, Yaman Kumar},
+                @online{jha2024culture,
+                    author = {Jha, Ritika and Garikaparthi, Aniketh and Bhattacharyya, Aanisha and Kumar, Yaman},
                     title = {The Culture Repository},
                     year = {2024},
-                    url = {https://behavior-in-the-wild.github.io/The%20Culture%20Repository.html}}
+                    url = {https://behavior-in-the-wild.github.io/The%20Culture%20Repository.html}
+                }
             </pre>
         </div>
     </section>
 </body>
+
 </html>
