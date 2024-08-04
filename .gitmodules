@@ -1,0 +1,3 @@
+[submodule "cultural-repository"]
+	path = cultural-repository
+	url = https://github.com/Anikethh/cultural-repository.git
