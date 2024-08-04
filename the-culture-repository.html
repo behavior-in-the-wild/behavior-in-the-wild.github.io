@@ -312,7 +312,7 @@
                         <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
                         <div class="collaborators-text">
                             <h2>Looking for Contributors!</h2>
-                            <p>If you want to submit your unique videos, corrections, or vocabulary expansions, please submit your contributions to our Google Group or raise a Pull Request on our GitHub repository.</p>
+                            <p>If you want to submit your unique videos, corrections, or vocabulary expansions, please contribute directly to our Google Group or raise a Pull Request on our GitHub repository.</p>
                         </div>
                         <div class="column has-text-centered">
                             <div class="publication-links">
@@ -323,7 +323,7 @@
                                     </a>
                                 </span>
                                 <span class="link-block">
-                                    <a href="https://mailto:behavior-in-the-wild@googlegroups.com" target="_blank" class="button is-normal is-rounded is-dark">
+                                    <a href="https://groups.google.com/g/behavior-in-the-wild" target="_blank" class="button is-normal is-rounded is-dark">
                                         <span class="icon"><i class="fas fa-users"></i></span>
                                         <span>Google Group</span>
                                     </a>
@@ -675,7 +675,7 @@
         }
 
         function loadJSONData() {
-            $.getJSON('culture_data/inverted_result_12v.json', function (data) {
+            $.getJSON('cultural-repository/culture_data/inverted_result_12v.json', function (data) {
                 jsonData = data;
                 initializePage();
             }).fail(function () {
@@ -710,7 +710,7 @@
 
                 if (imageKeys.length > 0) {
                     imageKeys.forEach(imageKey => {
-                        const imgElement = $('<img>').attr('src', `culture_data/frames/${companyCountryKey}/${imageKey}.jpg`).attr('alt', 'Sample Image');
+                        const imgElement = $('<img>').attr('src', `cultural-repository/culture_data/frames/${companyCountryKey}/${imageKey}.jpg`).attr('alt', 'Sample Image');
                         const textElement = $('<div>').text(images[imageKey]);
                         const containerElement = $('<div>').append(imgElement).append(textElement);
                         $container.append(containerElement);
@@ -741,7 +741,7 @@
             $('#subsubcategory').val(currentSubsubcategory);
             $('#country').val(selectedCountry);
 
-            const selectedOptionsText = `${currentCategory} -> ${currentSubcategory} -> ${currentSubsubcategory} -> ${selectedCountry}`;
+            const selectedOptionsText = `Selected Options: ${currentCategory} -> ${currentSubcategory} -> ${currentSubsubcategory} -> ${selectedCountry}`;
             $('#additional-explanation').val(selectedOptionsText);
 
             $('#suggest-form').fadeIn(300);
