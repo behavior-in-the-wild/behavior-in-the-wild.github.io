@@ -35,10 +35,12 @@ A motivation of why we are work on the behavior modality is captured in a small 
 - [Synthesizing Human Gaze Feedback for Improved NLP Performance](https://aclanthology.org/2023.eacl-main.139/)
 - [A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot](https://behavior-in-the-wild.github.io/video-4096.html)
 - [LLaVA Finds Free Lunch: Teaching Human Behavior Improves Content Understanding Abilities Of LLMs](https://arxiv.org/abs/2405.00942)
-- [Transsuasion: Measuring Behavior-Transfer And Persuasion Abilities Of Generative Models](https://behavior-in-the-wild.github.io/transsuasion.html)
+- [Measuring And Improving Persuasiveness Of Generative Models](https://behavior-in-the-wild.github.io/measure-persuasion.html)
+- [Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot](https://behavior-in-the-wild.github.io/align-via-actions)
+- [The Cultural Repository](https://behavior-in-the-wild.github.io/the-culture-repository.html)
 
 ---
-Contact behavior-in-the-wild@googlegroups.com for questions and suggestions
+Get in touch with us at behavior-in-the-wild@googlegroups.com
 
 <ol id="footnotes">
     <li id="footnote1">A <em>modality</em> is defined in terms of information, such that a modality is a medium through which information is conveyed <a href="https://arxiv.org/abs/2209.03430">[7]</a>, <a href="https://www.google.co.in/books/edition/Multimodal_Human_Computer_Interaction_and/O8CqMtIKSWwC">[8]</a>, <a href="https://www.researchgate.net/publication/228933425_On_the_annotation_of_the_multimodal_behavior_and_computation_of_cooperation_between_modalities">[9]</a>. Similarly, a multimodal distribution is defined as having more than one peak in the probability distribution describing the nature of information.</li>

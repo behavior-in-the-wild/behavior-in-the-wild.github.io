@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot">
+        <meta name="keywords" content="advertisements, large language models, opinion alignment, llm alignment, culture alignment">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url" content="https://behavior-in-the-wild.github.io/align-via-actions">
+        <title>Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="./static/css/base.css">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+        <style>
+            body {
+                font-family: 'Noto Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }   
+            th {
+              padding: 6px;
+            }
+            td {
+              padding: 1px;
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            .container {
+                padding: 20px;
+            }
+            .video-panel {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .video-item {
+                text-align: center;
+            }
+            .video-caption {
+                margin-top: 10px;
+                font-size: 18px;
+            }
+            .examples {
+                margin-top: 40px;
+            }
+            .example-item {
+                margin-bottom: 20px;
+            }
+            .memorable-trends-list {
+                font-size: 1.25em; /* Increase this value as needed */
+                line-height: 1.6;
+            }
+            
+            .memorable-trends-list li {
+                margin-bottom: 10px;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+
+
+        <section class="hero">
+            <div class="hero-body">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot</h1>
+                    <div class="is-size-4 publication-authors">
+                      <span class="author-block">
+                        <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/" style="color:#f68946;font-weight:normal;">Aanisha Bhattacharyya<sup>*</sup></a>,
+                      </span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=dwx-5E0AAAAJ&hl=en" style="color:#f68946;font-weight:normal;">Susmit Agrawal<sup>*</sup></a>,
+                      </span>
+                      <span class="author-block">
+                        <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman K Singla<sup>*</sup></a>,
+                      </span>
+                      <br>
+                      <span class="author-block">
+                        <a href="https://www.linkedin.com/in/tarun-ram-menta-50b4121b9/" style="color:#f68946;font-weight:normal;">Tarun Menta</a>,
+                      </span>
+                      
+                      <span class="author-block">
+                        <a href="https://www.linkedin.com/in/nikitha-sr-ba2081144/" style="color:#f68946;font-weight:normal;">Nikitha S R</a>,
+                      </span>
+                      <span class="author-block">
+                        <a href="https://scholar.google.com/citations?user=n8iUBg8AAAAJ" style="color:#f68946;font-weight:normal;">Balaji Krishnamurthy</a>,
+                      </span>
+                    </div>
+                    <div class="is-size-6 publication-authors">
+                      <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><img src="images/adobe-logo.png" alt="Adobe Logo" style="width:30px;height:30px;margin-right:15px;"><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank">Adobe, Media and Data Science Research (MDSR) Lab</a></b></span>
+                    </div>
+                    <div class="is-size-6 publication-authors">
+                      <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                    </div>
+                    <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> for questions and suggestions</p>
+                    <div class="column has-text-centered">
+                      <div class="publication-links">
+                     
+                     
+                      <span class="link-block">
+                        <a href="./static/pdf/Aligning_LLMs_With_Human_Opinions_By_Teaching_Them_Human_Behavior.pdf" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>Access Paper</span>
+                        </a>
+                      </span>
+
+                      <span class="link-block">
+                        <a href="https://github.com/behavior-in-the-wild/AlignViaActions50M" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code</span>
+                        </a>
+                      </span>
+                      
+                      <span class="link-block">
+                          <a href="https://github.com/behavior-in-the-wild/AlignViaActions50M"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-database"></i>
+                            </span>
+                            <span>Dataset</span>
+                          </a>
+                      </span>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <h4 class="subtitle has-text-centered">
+                🔥<span style="color: #ff3860">[NEW!]</span> Introducing AVA (AlignViaActions) dataset consisting of 50 million instruction pairs. AVA can be used to align any LLM with societal opinions, and also for teaching tasks such as transcreation, behavior simulation, ad generation, and audience selection. <br>
+                🔥<span style="color: #ff3860">[NEW!]</span> We show that even with the sparse signals about opinions present in the behavioral data in AVA, the models trained on behavioral data in zero-shot outperform models trained on expert annotations or opinion surveys. We show this across four datasets: OpinionQA, GlobalOpinionQA, CultureBench, and CultureNLI.<br>
+                <br>
+                🔥<span style="color: #ff3860">[NEW!] </span> We expand the OpinionsQA dataset, which is used to evaluate human-LLM opinion alignment based on PEW survey results, from 1498 questions to more than 14,000 questions. While the original dataset uses only 15 surveys, we used the complete set of 117 surveys in our updated version.
+                <br>
+                
+              </h4>
+            </div>
+          </div>
+        </section>
+        
+        <section class="section" id="Examples">
+
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-six-fifths">
+        
+        <img id="align-via-actions" width="70%" src="images/align-via-actions-headline-fig.jpg", alt="Behavior and Opinions are strongly correlated. The behavioral data, which contains the ad content, the audience, and the behavior that the audience showed towards the ad, helps in understanding the audience. While behavior is already being collected at scale, it is conventionally not used to train large language models. We use these sparse in-the-wild behavioral signals to train our model on transcreation, transsuasion, and behavior and content simulation tasks and find that this helps in aligning LLMs with opinions.", align="center"> 
+
+        <br><br><br>
+        
+        <img id="align-via-actions" width="70%" src="images/ava_ad_sample.jpg", alt="A sample advertisement from the Meta Ad Library", align="center">
+        
+        </div>
+        </div>
+        </section>
+        
+        
+        
+        <section class="section"  style="background-color:#efeff081">
+          <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-six-fifths">
+                <h2 class="title is-3">Abstract</h2>
+                <div class="content has-text-justified">
+                  <p>
+                    <i>"Only in actions can you fully recognize the forces operative in social behavior"</i> - Milgram, 1974.<br>
+                    Large language models (LLMs) have become ubiquitous in various applications, but aligning them with societal expectations remains challenging. To align LLMs with humans, current alignment methods rely heavily on human-annotated datasets, which are expensive, difficult to scale, and often biased toward specific demographic subgroups. We introduce a novel approach for LLM alignment by training on behavioral data. Our approach is based on the maxim in psychology that actions (behavior) have a strong consistency with opinions. Leveraging this insight, we developed AlignViaActions (AVA50M) comprising over 50 million samples derived from 1.5 million advertisements, including content and demographic viewing behaviors. We train LLMs on AVA50M, demonstrating significant improvements over existing alignment techniques across multiple societal and cultural alignment benchmarks, including GlobalOpinionQA, OpinionQA, CultureNLI, and CultureBank. Through this, we demonstrate that by observing and learning from behavior, LLMs can infer the underlying opinions and cultural norms. This approach addresses key limitations of current methods, offering improved scalability, demographic representation, and adaptability to evolving societal views. Our results suggest the potential for behavioral data to replace or complement traditional expert-annotation-based alignment techniques.  
+                  </p>
+        
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      
+      <br><br>
+      
+    
+<section class="section" id="tabular-results">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-six-fifths">
+        <h2 class="title is-3">Results</h2>
+        <table border="1" cellpadding="50 px" cellspacing="20 px">
+          <thead>
+            <tr>
+              <th rowspan="2"><b>Model (zero-shot)</b></th>
+              <th colspan="2"><b>OpinionQA-XL</b></th>
+              <th colspan="2"><b>OpinionQA</b></th>
+              <th colspan="2"><b>GlobalOpinionQA</b></th>
+              <th colspan="2"><b>CultureBank</b></th>
+              <th colspan="2"><b>CultureNLI</b></th>
+            </tr>
+            <tr>
+              <th>Representativeness (↑)</th>
+              <th>Steerability (↑)</th>
+              <th>Representativeness (↑)</th>
+              <th>Steerability (↑)</th>
+              <th>Avg Sim (↑)</th>
+              <th>Skew (↓)</th>
+              <th>Reddit (↑)</th>
+              <th>Tik-Tok (↑)</th>
+              <th>US (↑)</th>
+              <th>IN (↑)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Llama-2-7B-chat</td>
+              <td>83.61</td>
+              <td>79.09</td>
+              <td>86.18</td>
+              <td>79.18</td>
+              <td>83.6</td>
+              <td>2.2</td>
+              <td>85.93</td>
+              <td>92.08</td>
+              <td>39.2</td>
+              <td>39.5</td>
+            </tr>
+            <tr>
+              <td>Mistral-7B-Instruct</td>
+              <td>82.56</td>
+              <td>80.10</td>
+              <td>84.69</td>
+              <td>80.37</td>
+              <td>79.3</td>
+              <td>3.2</td>
+              <td>70.02</td>
+              <td>67.23</td>
+              <td>42.5</td>
+              <td>43.8</td>
+            </tr>
+            <tr>
+              <td>Vicuna-7B-v1.5</td>
+              <td>72.26</td>
+              <td>77.55</td>
+              <td>77.63</td>
+              <td>77.68</td>
+              <td>84.94</td>
+              <td>1.92</td>
+              <td>64.88</td>
+              <td>55.02</td>
+              <td><b>55.72</b></td>
+              <td><b>56.15</b></td>
+            </tr>
+            <tr>
+              <td>Llama-2-7B-SFT-CultureBank</td>
+              <td>82.70</td>
+              <td>78.46</td>
+              <td>84.94</td>
+              <td>78.55</td>
+              <td>85.4</td>
+              <td>1.5</td>
+              <td>85.93</td>
+              <td>92.08</td>
+              <td>39.2</td>
+              <td>39.6</td>
+            </tr>
+            <tr>
+              <td><b>Behavior Finetuned LLama-2-7B-chat</b></td>
+              <td><b>85.15</b></td>
+              <td><b>81.95</b></td>
+              <td><b>88.43</b></td>
+              <td><b>81.98</b></td>
+              <td><b>86.69</b></td>
+              <td><b>1.43</b></td>
+              <td><b>92.39</b></td>
+              <td><b>95.87</b></td>
+              <td>47.14</td>
+              <td>43.92</td>
+            </tr>
+            <tr>
+              <td>LLama-2-13B-base</td>
+              <td>80.45</td>
+              <td>79.03</td>
+              <td>83.03</td>
+              <td>79.14</td>
+              <td>83.13</td>
+              <td><b>1.45</b></td>
+              <td>73.19</td>
+              <td>89.02</td>
+              <td>53.34</td>
+              <td>49.48</td>
+            </tr>
+            <tr>
+              <td>Llama-2-13B-chat</td>
+              <td>81.18</td>
+              <td>81.11</td>
+              <td>84.29</td>
+              <td>81.35</td>
+              <td>84.03</td>
+              <td>1.96</td>
+              <td>86.17</td>
+              <td><b>92.34</b></td>
+              <td>60.08</td>
+              <td>61.73</td>
+            </tr>
+            <tr>
+              <td>Vicuna-13B</td>
+              <td>79.06</td>
+              <td>78.73</td>
+              <td>83.44</td>
+              <td>78.85</td>
+              <td>86.99</td>
+              <td>1.91</td>
+              <td>85.93</td>
+              <td>92.08</td>
+              <td>52.07</td>
+              <td>40.23</td>
+            </tr>
+            <tr>
+              <td><b>Behavior Finetuned LLama-2-13B-chat</b></td>
+              <td><b>85.76</b></td>
+              <td><b>83.54</b></td>
+              <td><b>89.44</b></td>
+              <td><b>83.53</b></td>
+              <td><b>87.31</b></td>
+              <td>1.49</td>
+              <td><b>86.28</b></td>
+              <td>92.25</td>
+              <td><b>62.26</b></td>
+              <td><b>66.44</b></td>
+            </tr>
+            <tr>
+              <td>Mixtral-8x7B-Instruct</td>
+              <td>84.96</td>
+              <td>82.31</td>
+              <td>88.39</td>
+              <td>82.25</td>
+              <td>79.5</td>
+              <td>2.7</td>
+              <td>87.35</td>
+              <td>88.59</td>
+              <td>59.90</td>
+              <td>60.80</td>
+            </tr>
+            <tr>
+              <td>Mixtral-8X7B-SFT-CultureBank</td>
+              <td>84.40</td>
+              <td>79.66</td>
+              <td>78.69</td>
+              <td>79.67</td>
+              <td>81.80</td>
+              <td>2.80</td>
+              <td>86.19</td>
+              <td>92.08</td>
+              <td>61.50</td>
+              <td>61.30</td>
+            </tr>
+            <tr>
+              <td>Mixtral-8x7B-DPO-CultureBank</td>
+              <td>82.70</td>
+              <td>80.22</td>
+              <td>78.79</td>
+              <td>80.90</td>
+              <td>80.50</td>
+              <td>2.60</td>
+              <td>86.19</td>
+              <td>91.74</td>
+              <td>56.30</td>
+              <td>55.40</td>
+            </tr>
+            <tr>
+              <td>Llama-2-70B-chat</td>
+              <td>85.08</td>
+              <td>82.40</td>
+              <td>88.83</td>
+              <td>82.28</td>
+              <td>83.6</td>
+              <td>2.2</td>
+              <td>87.17</td>
+              <td>92.76</td>
+              <td>69.70</td>
+              <td>68.90</td>
+            </tr>
+            <tr>
+              <td><b>Behavior Finetuned LLama-2-70B-chat</b></td>
+              <td><b>86.65</b></td>
+              <td><b>83.23</b></td>
+              <td><b>89.95</b></td>
+              <td><b>83.31</b></td>
+              <td><b>86.31</b></td>
+              <td><b>1.67</b></td>
+              <td><b>88.48</b></td>
+              <td><b>92.65</b></td>
+              <td><b>73.87</b></td>
+              <td><b>73.67</b></td>
+            </tr>
+          </tbody>
+          <caption>Table-1: Comparison of all the models across Opinion and Culture tasks shows that our models trained
+            on sparse in-the-wild behaviour signals, despite being zero-shot, outperforms models in opinion alignment
+            and comes close to cultural alignment tasks. Furthermore, the model shows strong results beating even
+            larger models trained on clean annotated data. We train variants of Llama-2</caption>
+        </table>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+      
+        <section class="section" id="BibTeX">
+          <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+        <pre><code>
+        @online{bhattacharyya2024align,
+              title={Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot}, 
+              author={Bhattacharyya, Aanisha and Agrawal, Susmit and Singla, Yaman K and SR, Nikitha and Menta, Tarun Ram and Krishnamurthy, Balaji},
+              year={2024},
+              url={https://behavior-in-the-wild.github.io/align-via-actions}
+            }
+        </code></pre>
+          </div>
+          
+        </section>
+        
+        <section class="section" id="TermsOfService">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Terms Of Service</h2>
+            <p>
+                AVA is sourced from Meta Ads Archive (https://www.facebook.com/ads/library/). The dataset annotations and video links for AVA are released under the MIT License. The videos, transcripts, captions, etc. are subject to the license described in the Meta Ads Archive. AVA being sourced from Meta Ads, may contain noisier content. While the videos originate from brands, some brand content may be perceived as offensive by certain individuals.
+            </p>
+          </div>
+        </section>
+      
+      
+        <section class="section" id="Acknowledgement">
+          <div class="container is-max-desktop content">
+            <h2 class="title">Acknowledgement</h2>
+            <p>
+              We thank Adobe for their generous sponsorship.
+            </p>
+            <p>
+            <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%" src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
+            </a>
+            </p>    
+          </div>
+        </section>
+      
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Align Via Actions: Learning Behavior Aligns LLMs with Human Opinions in Zero-Shot</strong> by <a href="https://behavior-in-the-wild.github.io/">Behavior in the Wild</a>. The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+          </footer>
+
+    </body>
+</html>
