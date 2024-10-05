@@ -58,7 +58,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="./static/pdf/Transsuasion__Measuring_and_Improving_Behavior_Transfer_And_Persuasion_Abilities_Of_Generative_Models.pdf" 
+                  <a href="https://arxiv.org/abs/2410.02653" 
                     class="external-link button is-normal is-rounded is-dark" target="_blank">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -118,26 +118,95 @@
       </div>
     </div>
   </section>
-
+  
   <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
         <h4 class="subtitle has-text-centered">
-          🔥<span style="color: #ff3860">[NEW!]</span>We introduce the task of transsuasion, the task of transferring content from one behavior to another while holding the other conditions like meaning, speaker, and time constant. 
+          🔥<span style="color: #ff3860">[NEW!]</span><b>Introducing PersuasionBench and PersuasionArena</b> - First large-scale automated benchmark and arena to measure the persuasive abilities of generative models.
           <br>
-          🔥<span style="color: #ff3860">[NEW!]</span>We exhibit better or similar 0-shot and few shot abilities than GPT4 on transcreation, seo, and modelling human preference with a 13B model! 
+          🔥<span style="color: #ff3860">[NEW!]</span>We introduce the task of transsuasion, the task of transferring content from one behavior to another while holding the other conditions like meaning, speaker, and time constant.
+          <br>
+          🔥<span style="color: #ff3860">[NEW!]</span> <b>Challenging Scale Assumptions</b> - Smaller models can outperform larger ones in persuasion when trained on targeted datasets. 
+          <br>
+          🔥<span style="color: #ff3860">[NEW!]</span><b>Policy Implications</b> - Current regulations like SB-1047 and EU AI law fail to capture the full impact of AI on society, highlighting the need for more comprehensive measures.
           <br>
           🔥<span style="color: #ff3860">[NEW!]</span>We release the <a href="./PersuasionArena.html" target="_blank">Persuasion Leaderboard</a> and you can also participate in the persuasion <a href="./humaneval.html" target="_blank">Human-Eval</a>
-          <br><br>
-           We develop an instruction fine-tuning regime to show that smaller LLMs can also surpass the persuasion capabilities of much larger LLMs. We compare the contributions of various types of instructions in developing persuasion capabilities. 
-          <br><br>
-          Further, we show that training on synthetically generated explanations of why a tweet might perform better than another tweet further helps increase the persuasion capability of LLMs beyond just the ground-truth instruction data.
         </h4>
       </div>
     </div>
   </section>
 
+  <section class="section" id="Leaderboard">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Persuasion Leaderboard</h2>
+          <p>Here are the results of our models on the Persuasion Leaderboard. The leaderboard is based on the <a href="https://arxiv.org/abs/2410.02653">paper</a> and the <a href="./PersuasionArena.html">PersuasionArena</a> website.</p>
+        </div>
+      </div>
+    </div>
 
+  <table border="1", class="LeaderboardTable", style="width: 80%", align="center">
+    <thead>
+      <tr style="background-color:#f68946;color:white;", align="center">
+        <th>Model</th>
+        <th>Avg. Elo</th>
+      </tr>
+    </thead>
+    <tbody align="center", style="background-color:#f8f8f8;">
+      <tr>
+        <td>Topline (T2) 🥇</td>
+        <td>1357</td>
+      </tr>
+      <tr>
+        <td>Ours (13B) 🥈</td>
+        <td>1293</td>
+      </tr>
+      <tr>
+        <td>Ours-Instruct (13B) 🥉</td>
+        <td>1304</td>
+      </tr>
+      <tr>
+        <td>Ours (CS+BS) (13B)</td>
+        <td>1299</td>
+      </tr>
+      <tr>
+        <td>Vicuna-1.5-13B</td>
+        <td>1195</td>
+      </tr>
+      <tr>
+        <td>LLaMA3-70B</td>
+        <td>1099</td>
+      </tr>
+      <tr>
+        <td>GPT-3.5</td>
+        <td>877</td>
+      </tr>
+      <tr>
+        <td>GPT-4o</td>
+        <td>1187</td>
+      </tr>
+      <tr>
+        <td>GPT-4</td>
+        <td>1092</td>
+      </tr>
+      <tr>
+        <td>Baseline (T1)</td>
+        <td>1251</td>
+      </tr>
+      <tr>
+        <td>GPT-4</td>
+        <td>1213</td>
+      </tr>
+      <tr>
+        <td>Baseline (T1)</td>
+        <td>979</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  </section>
 
 <section class="section" id="Examples">
 
@@ -146,18 +215,21 @@
       <h2 class="title is-3"> Transsuasion Examples</h2>
 
       A few samples showing Transsuasion. While the account, time, and meaning of the samples remain similar, the behavior over the samples varies significantly. 
-      <img id="transsuasion-ground-truth" width="100%" src="images/transsuasion-headline-image.jpeg", alt="A few samples showing Transsuasion. While the account, time, and meaning of the samples remain similar, the behavior over the samples varies significantly."> 
+      <img id="transsuasion-ground-truth" width="80%" src="images/transsuasion-samples-ground-truth-1.jpg", alt="A few samples showing Transsuasion. While the account, time, and meaning of the samples remain similar, the behavior over the samples varies significantly."> 
+      <br><br>
+      <img id="transsuasion-ground-truth" width="80%" src="images/transsuasion-headline-image.jpeg", alt="A few samples showing Transsuasion. While the account, time, and meaning of the samples remain similar, the behavior over the samples varies significantly."> 
     
       <br><br>
     
 
 A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet.
- <img id="transsuasion-generated-examples" width="100%" src="images/transsuasion-generated-examples.jpeg", alt="A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet."> 
+<img id="transsuasion-generated-examples" width="80%" src="images/transsuasion-samples-generated.jpg", alt="A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet."> 
+<br><br>
+<img id="transsuasion-generated-examples" width="80%" src="images/transsuasion-generated-examples.jpeg", alt="A few samples showing Transsuasion using our model. The left part contains original low-liked tweet, and the right contains the transsuaded version of the tweet."> 
 <br><br>
   
 </div>
 </div>
-
 
 
 
@@ -465,13 +537,12 @@ A few samples showing Transsuasion using our model. The left part contains origi
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>
-       @online{singh2024measuring,
-              author = {Singh, Somesh and Singla, Yaman K and SI, Harini and Krishnamurthy, Balaji},
-              title = {Measuring and Improving Persuasive Abilities of Generative Models},
-              year = {2024},
-              url = {https://behavior-in-the-wild.github.io/measure-persuasion}
-            }
-
+        @article{singh2024measuring,
+          title={Measuring and Improving Persuasiveness of Generative Models},
+          author={Somesh Singh and Yaman K Singla and Harini SI and Balaji Krishnamurthy},
+          year={2024},
+          journal={arXiv preprint arXiv:2410.02653}
+      }
       </code></pre>
     </div>
     
