@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Measuring And Improving Persuasiveness Of Generative Models">
+  <meta name="keywords" content="transsuasion, behavior, persuasion, large language models, behavioral science">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Measuring And Improving Persuasiveness Of Generative Models</title>
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/measure-persuasion">
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/measure-persuasion">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+</head>
+
+<body>
+
+  <header class="header", style="background-color:#ff0202; height: 50px; width: 100%; position: fixed; top: 0; z-index: 1000;">
+    <nav class="navbar", role="navigation", aria-label="main navigation", style="background-color:#ff0202;", align="center">
+      <a href="./index.html" class="navbar-item" style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
+        <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild" style="width:20px;height:20px;margin-right:5px;"><b style="color:white;font-weight:bold;height:20px;font-size: 20px;">Behavior in the Wild</b>
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">How Persuasive are LLMs Exactly? Can They Be Made More Persuasive?</h1>
+            <h3 class="title is-2 publication-title"><i>The Opportunities and Risks of Automated Persuasion</i></h3>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla
+                </a>
+              </span>
+
+            <div class="is-size-5 publication-authors">
+                Research Scientist, <br> <span class="author-block"><img src="images/adobe-logo.png" alt="Adobe Logo" style="width:30px;height:30px;margin-right:5px;">Adobe Media and Data Science Research (MDSR)</b></span>
+            </div>
+
+            <p>✉️ <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> </p>
+              
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2410.02653" 
+                    class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Access Paper</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+   
+  <!-- Main content of the blog. Start blog template -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p class="is-size-5">
+              <b>Abstract:</b> Large language models (LLMs) have shown remarkable capabilities in generating human-like text. However, the persuasiveness of the generated text remains largely unexplored. In this work, we propose a novel framework to measure the persuasiveness of LLMs. We show that LLMs can be used to generate persuasive text, and that the persuasiveness of the generated text can be measured using human evaluations
+              and automated metrics. We find that LLMs can generate text that is as persuasive as human-written text, and that the persuasiveness of the generated text can be improved by fine-tuning the LLMs on a small amount of labeled data. Our work highlights the opportunities and risks of automated persuasion, and suggests that LLMs can be used to generate persuasive text for a wide range of applications.
+            </p>
+
+            <h2 class="title is-4">Introduction</h2>
+            <p class="is-size-5">
+              Large language models (LLMs) have shown remarkable capabilities in generating human-like text. However, the persuasiveness of the generated text remains largely unexplored. In this work, we propose a novel framework to measure the persuasiveness of LLMs. We show that LLMs can be used to generate persuasive text, and that the persuasiveness of the generated text can be measured using human evaluations
+              and automated metrics. We find that LLMs can generate text that is as persuasive as human-written text, and that the persuasiveness of the generated text can be improved by fine-tuning the LLMs on a small amount of labeled data. Our work highlights the opportunities and risks of automated persuasion, and suggests that LLMs can be used to generate persuasive text for a wide range of applications.
+            </p>
+
+            <h2 class="title is-4">Persuasiveness of LLMs</h2>
+            <p class="is-size-5">
+              We propose a novel framework to measure the persuasiveness of LLMs. We show that LLMs can be used to generate persuasive text, and that the persuasiveness of the generated text can be measured using human evaluations
+              and automated metrics. We find that LLMs can generate text that is as persuasive as human-written text, and that the persuasiveness of the generated text can be improved by fine-tuning the LLMs on a small amount of labeled data. Our work highlights the opportunities and risks of automated persuasion, and suggests that LLMs can be used to generate persuasive text for a wide range of applications.
+            </p>
+
+            <h2 class="title is-4">Persuasiveness of LLMs</h2>
+            <p class="is-size-5">
+              We propose a novel framework to measure the persuasiveness of LLMs. We show that LLMs can be used to generate persuasive text, and that the persuasiveness of the generated text can be measured using human evaluations
+              and automated metrics. We find that LLMs can generate text that is as persuasive as human-written text, and that the persuasiveness of the generated text can be improved by fine-tuning the LLMs on a small amount of labeled data. Our work highlights the opportunities and risks of automated persuasion, and suggests that LLMs can be used to generate persuasive text for a wide range of applications.
+
+            </p>
+
+            <h2 class="title is-4">Conclusion</h2>
+            <p class="is-size-5">
+              We propose a novel framework to measure the persuasiveness of LLMs. We show that LLMs can be used to generate persuasive text, and that the persuasiveness of the generated text can be measured using human evaluations
+              and automated metrics. We find that LLMs can generate text that is as persuasive as human-written text, and that the persuasiveness of the generated text can be improved by fine-tuning the LLMs on a small amount of labeled data. Our work highlights the opportunities and risks of automated persuasion, and suggests that LLMs can be used to generate persuasive text for a wide range of applications.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End blog template -->  
+
+
+
+ 
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Behavior in the Wild</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+      </p>
+    </div>
+
+    </footer>
+
+</body>
+</html>
