@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Measuring And Improving Engagement of Text-to-Image Generation Models">
+        <meta name="keywords" content="image generation models, text to image models, LLM-as-a-Judge Vision-Language Models, image engagement, stable diffusion, dalle, persuasion, engagement, behavioral science, human behavior, behavior in the wild">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url" content="https://behavior-in-the-wild.github.io/ScanTextGAN">
+        <title>Measuring And Improving Engagement of Text-to-Image Generation Models</title>
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+        <link rel="stylesheet" href="./static/css/base.css">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+        <style>
+            body {
+                font-family: 'Noto Sans', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 20px;
+                text-align: center;
+            }
+            .container {
+                padding: 20px;
+            }
+            .video-panel {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            .video-item {
+                text-align: center;
+            }
+            .video-caption {
+                margin-top: 10px;
+                font-size: 18px;
+            }
+            .examples {
+                margin-top: 40px;
+            }
+            .example-item {
+                margin-bottom: 20px;
+            }
+            .memorable-trends-list {
+                font-size: 1.25em; /* Increase this value as needed */
+                line-height: 1.6;
+            }
+            
+            .memorable-trends-list li {
+                margin-bottom: 10px;
+            }
+
+
+
+            .image-container-compact {
+              width: 50%; /* Set the width of the image and caption */
+              margin: 0 auto; /* Center the figure */
+              text-align: center; /* Center-align the caption text */
+            }
+            .image-container-compact img {
+              width: 100%; /* Make the image fill the container width */
+              display: block; /* Remove any inline spacing below the image */
+            }
+            .image-container-compact figcaption {
+              font-size: 14px; /* Adjust caption font size */
+              color: #555; /* Subtle gray for the caption text */
+              margin-top: 8px; /* Space between image and caption */
+              word-wrap: break-word; /* Allow long words to wrap properly */
+              line-height: 1.5; /* Improve readability for multi-line text */
+            }
+            .image-container {
+              width: 100%; /* Set the width of the image and caption */
+              margin: 0 auto; /* Center the figure */
+              text-align: center; /* Center-align the caption text */
+            }
+            .image-container img {
+              width: 100%; /* Make the image fill the container width */
+              display: block; /* Remove any inline spacing below the image */
+            }
+            .image-container figcaption {
+              font-size: 14px; /* Adjust caption font size */
+              color: #555; /* Subtle gray for the caption text */
+              margin-top: 8px; /* Space between image and caption */
+              word-wrap: break-word; /* Allow long words to wrap properly */
+              line-height: 1.5; /* Improve readability for multi-line text */
+            }
+            
+        </style>
+    </head>
+
+    <body>
+      <header class="header", style="background-color:#ff0202;">
+          <nav class="navbar", role="navigation", aria-label="main navigation", style="background-color:#ff0202;", align="center">
+            <a href="./index.html" class="navbar-item" style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
+                  <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild" style="width:20px;height:20px;margin-right:5px;">
+              <b style="color:white;font-weight:bold;">Behavior in the Wild</b>
+            </a>
+          </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-body">
+              <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                  <div class="column has-text-centered">
+                    <h1 class="title is-1 publication-title">Measuring And Improving Engagement of Text-to-Image Generation Models</h1>
+                    
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block">
+                        <img src="images/adobe-logo.png" alt="Varun Logo" style="width:20px;height:20px;margin-right:5px;">
+                        <a href="https://www.linkedin.com/in/kvarun07/" style="color:#f68946;font-weight:normal;">Varun Khurana<sup>*</sup></a>,
+                      </span>
+                      <span class="author-block">
+                        <img src="images/adobe-logo.png" alt="Yaman Logo" style="width:20px;height:20px;margin-right:5px;">
+                        <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla<sup>*</sup></a>,
+                      </span>
+                      <span class="author-block">
+                        <img src="images/adobe-logo.png" alt="Jayakumar Logo" style="width:20px;height:20px;margin-right:5px;">
+                        <a href="https://www.linkedin.com/in/jayakumar-subramanian-9198954/" style="color:#f68946;font-weight:normal;">Jayakumar Subramanian</a>,
+                      </span>
+                      <span class="author-block">
+                        <img src="images/ub-logo.png" alt="Changyou Logo" style="width:20px;height:20px;margin-right:5px;">
+                        <a href="https://www.linkedin.com/in/changyou-chen-945a3537/" style="color:#f68946;font-weight:normal;">Changyou Chen</a>,
+                      </span>
+                      <span class="author-block">
+                        <img src="images/iiitd-logo.png" alt="Rajiv Logo" style="width:30px;height:20px;margin-right:5px;">
+                        <a href="https://www.linkedin.com/in/rajivratn//" style="color:#f68946;font-weight:normal;">Rajiv Ratn Shah</a>,
+                      </span>
+                      <span class="author-block">
+                        <img src="images/mbzuai-logo.png" alt="Zhiqiang Logo" style="width:20px;height:20px;margin-right:5px;">
+                        <a href="https://www.linkedin.com/in/zhiqiang-xu-51140840/" style="color:#f68946;font-weight:normal;">Zhiqiang Xu</a>,
+                      </span>
+                      <span class="author-block">
+                        <img src="images/adobe-logo.png" alt="Balaji Logo" style="width:20px;height:20px;margin-right:5px;">
+                        <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695/" style="color:#f68946;font-weight:normal;">Balaji Krishnamurthy</a>,
+                      </span>
+                    </div>
+
+                    <div class="is-size-5 publication-authors">
+                      <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank">Media and Data Science Research (MDSR) Lab, Adobe</a></b></span>
+                    </div>
+                    <div class="is-size-6 publication-authors">
+                      <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                    </div>
+                    <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> for questions and suggestions</p>
+                    <h3>ICLR 2025</h3>
+                    <div class="column has-text-centered">
+                      <div class="publication-links">
+                     
+                     <!-- Paper -->
+                      <span class="link-block">
+                        <a href="https://openreview.net/forum?id=TmCcNuo03f" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                             <i class="fas fa-file-alt"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+
+                        <!-- Code -->
+                        <span class="link-block">
+                          <a href="#code"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fab fa-github"></i>
+                            </span>
+                            <span>Code</span>
+                          </a>
+                        </span>
+
+                        <!-- Dataset -->
+                        <span class="link-block">
+                          <a href="#dataset"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-database"></i>
+                            </span>
+                            <span>Dataset</span>
+                          </a>
+                        </span>
+
+                        <!-- EngagementArena -->
+                        <span class="link-block">
+                          <a href="#arena"
+                            class="external-link button is-normal is-rounded is-dark">
+                            <span class="icon">
+                              <i class="fas fa-trophy"></i>
+                            </span>
+                            <span>EngagementArena</span>
+                          </a>
+                        </span>
+                      
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="hero teaser">
+          <div class="container is-max-desktop">
+            <div class="hero-body">
+              <h4 class="subtitle has-text-centered">
+                📌 <b>Engagement-Optimized Image Generation</b>: We introduce the task of generating images optimized for user engagement, crucial in domains like advertising, fashion, and e-commerce. <br><br>
+
+                📂 <b>EngagingImageNet Dataset</b>: A large-scale dataset with 168M tweets from 10,135 enterprise accounts (2007–2023), capturing image engagement metrics. <br><br>
+
+                🖼️ <b>EngageNet Model</b>: A vision-language model trained to predict user engagement over images, outperforming common metrics like FID and aesthetics. <br><br>
+
+                🏆 <b>Engagement Arena</b>: The first automated benchmarking platform for ranking text-to-image models based on engaging image generation. <br><br>
+
+                🎯 <b>Methods for Engagement Optimization of Text-to-Image Models</b>: We optimize image generation for engagement via prompt conditioning, supervised fine-tuning, and RL-based alignment with EngageNet rewards.<br><br>
+              </h4>
+            </div>
+          </div>
+        </section>
+      
+        <section class="section" id="code">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-six-fifths">
+                        <h2 class="title is-3">Code <i class="fab fa-github"></i></h2>
+                        <div class="content has-text-centered">
+                            <p class="is-size-6">
+                                <i class="fas fa-clock"></i> Coming Soon...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="dataset">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                    <div class="column is-six-fifths">
+                        <h2 class="title is-3">EngagingImageNet Dataset <i class="fas fa-database"></i></h2>
+                        <div class="content has-text-centered">
+                            <p class="is-size-6">
+                                <i class="fas fa-clock"></i> Coming Soon...
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      
+      
+        <section class="section" id="arena">
+            <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-six-fifths">
+
+                <h2 class="title is-3">Engagement Arena <i class="fas fa-trophy"></i></h2>
+                <figure class="image-container">
+                    <img src="images/image-engagement/image_engagement_arena.png" alt="engagement arena">
+                    <figcaption>
+                    Rankings and Elo ratings of various text-to-image models in the proposed Engagement Arena.
+                    </figcaption>
+                </figure>
+
+                </div>
+            </div> 
+            </div>
+        </section>
+    
+
+        <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre style="position: relative;">
+                <code id="bibtex-content">
+            @inproceedings{
+                khurana2025measuring,
+                title={Measuring And Improving Engagement of Text-to-Image Generation Models},
+                author={Varun Khurana and Yaman Kumar Singla and Jayakumar Subramanian and Changyou Chen and Rajiv Ratn Shah and zhiqiang xu and Balaji Krishnamurthy},
+                booktitle={The Thirteenth International Conference on Learning Representations},
+                year={2025},
+                url={https://openreview.net/forum?id=TmCcNuo03f}
+                }
+                </code>
+                <button onclick="copyBibtex()" style="position: absolute; top: 5px; right: 5px; padding: 0px; width: 20px; height: 20px; background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center;">
+                    <i class="far fa-copy" style="font-size: 12px;"></i>
+                </button>
+            </pre>
+            <script>
+                function copyBibtex() {
+                    const bibtexContent = document.getElementById('bibtex-content').textContent;
+                    navigator.clipboard.writeText(bibtexContent.trim()).then(() => {
+                        alert('BibTeX copied to clipboard!');
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                    });
+                }
+            </script>
+            </div>
+        </section>
+
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              <strong>Measuring And Improving Engagement of Text-to-Image Generation Models</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+            </p>
+          </div>
+        </footer>
+
+    </body>
+</html>
+
