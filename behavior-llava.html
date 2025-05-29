@@ -17,7 +17,95 @@
   <link rel="stylesheet" href="./static/css/base.css">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    /* General Page Spacing */
+    body {
+      padding-top: 70px; /* Header height (50px) + 20px extra */
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    section.section {
+      margin-top: 30px;
+      margin-bottom: 30px;
+      padding-top: 2rem; /* Bulma default is 3rem, reducing slightly if needed or can keep */
+      padding-bottom: 2rem;
+    }
+
+    h1.title,
+    h2.title,
+    h3.title {
+      margin-bottom: 1.5rem; /* More space after titles */
+    }
+
+    p {
+      margin-bottom: 1.25rem; /* Standard space after paragraphs */
+    }
+    
+    .publication-title {
+        margin-bottom: 1.5rem !important; /* Ensure space below main title */
+    }
+
+    .content p:not(:last-child) {
+        margin-bottom: 1.25rem; /* Specific to Bulma content class if used extensively */
+    }
+
+    /* Carousel Indicator Styling */
+    .carousel-indicators li {
+      background-color: #888; /* Darker grey for inactive dots */
+      opacity: 0.8;
+      border-radius: 50%; /* Make them circular */
+      width: 12px; /* Slightly larger dots */
+      height: 12px;
+      margin-left: 7px;
+      margin-right: 7px;
+      border: 1px solid #555; /* Add a border for better definition */
+    }
+    .carousel-indicators .active {
+      background-color: #333; /* Even darker for active dot */
+      opacity: 1;
+    }
+
+    /* Carousel Control (Prev/Next Arrows) Styling */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+      border-radius: 50%;
+      width: 45px;  /* Fixed size for the circular background */
+      height: 45px; /* Fixed size for the circular background */
+      background-size: 50% 50%; /* Adjust size of the arrow SVG inside */
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .carousel-control-prev {
+        left: 5px; /* Adjust position to be slightly less intrusive */
+    }
+    .carousel-control-next {
+        right: 5px; /* Adjust position */
+    }
+
+    /* Carousel Item Content Area Styling */
+    .carousel-item > .container {
+      padding-bottom: 80px; /* Generous padding for indicators and to avoid control overlap with slide caption */
+      padding-left: 20px; 
+      padding-right: 20px;
+    }
+
+    /* Styling for the main caption within each slide */
+    .carousel-item .figure-caption {
+        font-size: 0.9rem;
+        color: #444; /* Darker text for caption */
+        margin-top: 15px; 
+    }
+
+    /* Spacing below the entire carousel */
+    #examplesCarousel {
+      margin-bottom: 30px;
+    }
+  </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
 </head>
@@ -87,11 +175,11 @@
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>Access Paper</span>
+                    <span>OpenReview</span>
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="./index.html" target="_blank"
+                  <a href="https://github.com/behavior-in-the-wild/ad-memorability" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -108,15 +196,6 @@
                       </span>
                       <span>Dataset</span>
                     </a>
-                </span>
-                <span class="link-block">
-                  <a href="#Experiment"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-flask"></i>
-                    </span>
-                    <span>Experiment</span>
-                  </a>
                 </span>
                 <span class="link-block">
                     <a href="#Examples"
@@ -249,17 +328,157 @@
     <div class="column is-six-fifths">
       <h2 class="title is-3">Free Lunch from Receiver Behavior</h2>
 
-      <p>Examples showing how receiver behavior provides rich content understanding signals:</p>
-      <img id="behavior-example-1" width="80%" src="[IMAGE PLACEHOLDER - YOUTUBE COMMENTS]" alt="Example showing how YouTube comments provide temporal, cognitive, character, and context information about a video."> 
-      <br><br>
-      <img id="behavior-example-2" width="80%" src="[IMAGE PLACEHOLDER - LIKES PATTERN]" alt="Example showing how like patterns correspond to emotional content in videos."> 
-    
-      <br><br>
-    
-      <p>Performance comparison on downstream tasks:</p>
-      <img id="comparison-example-1" width="80%" src="[IMAGE PLACEHOLDER - PERFORMANCE COMPARISON]" alt="Comparison of models trained with and without behavior data on emotion recognition tasks."> 
-      <br><br>
-      <img id="comparison-example-2" width="80%" src="[IMAGE PLACEHOLDER - ZERO-SHOT PERFORMANCE]" alt="Zero-shot performance improvements across 26 benchmark datasets."> 
+      <p>Below are qualitative examples demonstrating Behavior-LLaVA's understanding of aesthetics, characters, world knowledge, emotion, and spatial relationships. The <span style="color: red;">red text</span> in the descriptions highlights these key aspects captured by the model.</p>
+
+      <div id="examplesCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+        <ol class="carousel-indicators">
+          <li data-target="#examplesCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#examplesCarousel" data-slide-to="1"></li>
+          <li data-target="#examplesCarousel" data-slide-to="2"></li>
+          <li data-target="#examplesCarousel" data-slide-to="3"></li>
+          <li data-target="#examplesCarousel" data-slide-to="4"></li>
+          <li data-target="#examplesCarousel" data-slide-to="5"></li>
+        </ol>
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                  <img src="images/bllava/volks.png" class="img-fluid" alt="Volkswagen Ad Example" style="max-height: 350px; margin: auto;">
+                </div>
+                <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                  <p>The Volkswagen ad titled begins with a group of three women seated excitedly in a Volkswagen Jetta, the driver sporting a wide smile as she grips the steering wheel. <span style="color: red;">The voiceover sets a nostalgic tone, likening the Jetta to unforgettable first experiences like a first kiss or hearing indie rock for the first time—a symbol of newfound freedom and excitement</span>.</p>
+                  <p>As the scenes unfold, the camera captures the trio cruising down winding roads, their <span style="color: red;">laughter blending with the music and the wind tousling their hair. The atmosphere inside the car is one of camaraderie and adventure, with the Jetta serving as the backdrop to their shared moments of joy and spontaneity.</span></p>
+                  <p>Transitioning to a wider shot of the Jetta gliding along a scenic highway, surrounded by lush greenery, <span style="color: red;">the ad evokes a sense of exploration and the open road. The visuals seamlessly blend modern-day cruising with vintage footage of classic Volkswagen vehicles, reflecting on the brand's 75-year history in America, starting with the beloved Beetle.</span></p>
+                  <p>The ad concludes with the Volkswagen logo and <span style="color: red;">the tagline  "An American Love Story", encapsulating the enduring relationship between Volkswagen and its drivers across generations</span>. This phrase serves as a tribute to Volkswagen's 75-year history in America, beginning with the iconic Type 1 vehicles fondly known as "The Beetle" Through its nostalgic narrative and captivating visuals, the teaser promises viewers an immersive journey into the essence of Volkswagen—a timeless icon that has been a part of <span style="color: red;">countless cherished memories on the American road.</span></p>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center figure-caption">
+                  <p><em>Dense caption generated by Behavior-LLaVA for the video of a Volkswagen ad. Original video: youtube.com/watch?v=kyuGXPNr-T0.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                  <img src="images/bllava/tree-qualitative.jpg" class="img-fluid" alt="Artistic Tree Example" style="max-height: 350px; margin: auto;">
+                </div>
+                <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                  <p>In this captivating painting, <span style="color: red;">a majestic tree takes center stage against a stunning backdrop. The sky above is a poetic split between night and day</span>—a deep, starry blue on one side with a crescent moon, and a warm, radiant blend of yellows and pinks on the other, suggesting either a sunrise or sunset. <span style="color: red;">The tree itself embodies the essence of transition</span>, with one side adorned in lush green foliage and the other stripped bare, <span style="color: red;">symbolizing the timeless dance of seasons and life\'s perpetual transformations</span>.</p>
+                  <p>This artwork not only captures the eye but also speaks to deeper truths. It invites us <span style="color: red;">to contemplate the delicate balance between light and darkness, growth and dormancy, woven into the fabric of existence</span>. The artist\'s brushstrokes, rendered with a serene palette and gentle abstraction, evoke <span style="color: red;">a sense of tranquility and introspection</span>. This painting beautifully <span style="color: red;">reminds us to embrace the fleeting beauty of each passing moment, whether bathed in daylight or cloaked in the quiet mystery of night</span>.</p>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center figure-caption">
+                  <p><em>Dense caption generated by Behavior-LLaVA for an artistic drawing of a tree.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                  <img src="images/bllava/nike-qualitative.jpeg" class="img-fluid" alt="Nike Ad Example" style="max-height: 350px; margin: auto;">
+                </div>
+                <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                  <p>The image features a pair of Nike Air Force 1 sneakers, which are a classic and iconic design. The sneakers are positioned in the center of the image, with <span style="color: red;">the left shoe slightly in front of the right one, giving a sense of depth</span>. They are predominantly white with green accents, <span style="color: red;">including the Nike swoosh logo on the side and the outsole</span>. The laces are white, and <span style="color: red;">the midsole appears to be a light beige color</span>.</p>
+                  <p><span style="color: red;">The background is a plain, light color, which contrasts with the sneakers and makes them stand out</span>. Overlaid on the image is a stylized text that reads "JUST DO IT" in a cursive, flowing script. The text is in a light green color that matches the accents on the sneakers, creating a cohesive color scheme. Below the main text, there is a smaller line of text that says "New collection," indicating that these sneakers are part of a new line or series from Nike.</p>
+                  <p><span style="color: red;">The overall style of the image is clean and modern, with a focus on the product</span>. The use of the "JUST DO IT" slogan, which is a well-known tagline for Nike, adds a layer of branding and recognition to the image. The text is designed to be eye-catching and to <span style="color: red;">draw attention to the sneakers, which are the main subject of the image. The composition is balanced, with the sneakers centrally placed and the text evenly distributed around them</span>.</p>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center figure-caption">
+                  <p><em>Dense caption generated by Behavior-LLaVA for a Nike ad.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                  <img src="images/bllava/reddead.png" class="img-fluid" alt="Red Dead Redemption Trailer Example" style="max-height: 350px; margin: auto;">
+                </div>
+                <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                  <p>In a heart-pounding and visually stunning trailer for Red Dead Redemption, <span style="color: red;">we are thrust into the gritty world of the American frontier</span>. The trailer opens with a voiceover, a chilling warning delivered with calm certainty: "Listen to me, we don't want to kill any of you... But trust me, we will."</p>
+                  <p>Scenes flash by in quick succession, each more intense than the last. <span style="color: red;">We see a lone figure, silhouetted against a setting sun, riding a magnificent horse through a sprawling, golden field. The rugged beauty of the landscape contrasts sharply with the impending sense of danger.</span></p>
+                  <p><span style="color: red;">Cut to a dimly lit saloon where a group of hardened men sit around a table, cards in hand, tension thick in the air</span>. The voiceover continues, "This whole thing is pretty much done. We're more ghosts than people."</p>
+                  <p>A flurry of action unfolds: a quick draw in a darkened room, <span style="color: red;">bullets slicing through the air with deadly precision</span>. The voiceover reminisces, "Good old Dutch, my best friend... You know how we met? A pair of hucksters trying to rob each other... Back in '78 or thereabouts."</p>
+                  <p>The visuals intensify as we witness a robbery in progress, <span style="color: red;">chaos erupting as masked figures burst into a bank</span>. "Ladies and gentlemen, this is a robbery," declares one of the outlaws, setting the stage for a clash between lawlessness and order.</p>
+                  <p>Amidst the chaos, snippets of camaraderie emerge: "Sons of Dutch. Makes us brothers." But looming shadows of betrayal and regret cast doubt on these bonds. "Sometimes, brothers make mistakes," acknowledges the voiceover, acknowledging the complexities of loyalty and survival in this unforgiving world.</p>
+                  <p><span style="color: red;">The trailer crescendos with a crescendo of gunfights, horseback chases, and impassioned speeches</span>. "You'll never change. I know that," declares a voice, capturing the immutable nature of the human spirit amidst adversity.</p>
+                  <p>Throughout, a thematic motif resonates: "You have to love yourself a fire." <span style="color: red;">The elemental symbolism underscores the primal nature of existence in a land where survival demands courage and cunning.</span></p>
+                  <p>As the trailer draws to a close, we're left with the haunting refrain: "Stay strong. Stay with me." The screen fades to black, leaving us hungry for more of this epic tale set against the backdrop of the untamed West.</p>
+                  <p>With breathtaking visuals and evocative storytelling, <span style="color: red;">this Red Dead Redemption trailer promises an unforgettable journey through a world where danger lurks around every corner, and the line between hero and outlaw blurs in the dust and shadows of the frontier.</span></p>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center figure-caption">
+                  <p><em>Dense caption generated by Behavior-LLaVA for the video of the official trailer of the game Red Dead Redemption 2. Original video: youtube.com/watch?v=eaW0tYpxyp0.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                  <img src="images/bllava/fifa.png" class="img-fluid" alt="Argentina vs France FIFA World Cup Example" style="max-height: 350px; margin: auto;">
+                </div>
+                <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                  <p>The scene is set at a packed stadium buzzing with excitement, the <span style="color: red;">air thick with anticipation as Argentina and France face off in what promises to be an epic World Cup final</span>. Lionel Messi steps up confidently to take a crucial penalty early in the match, the tension palpable as he eyes the goal. The commentator's voice echoes through the stadium, "He's got the ground, he's got a penalty! A heart beats... And Messi!" <span style="color: red;">The crowd holds its breath as Messi strikes the ball cleanly, sending it into the back of the net.</span> The stadium erupts with cheers as Argentina takes the lead, setting the stage for a thrilling encounter.</p>
+                  <p>As the game unfolds, both teams showcase their attacking prowess. Argentina's Angel Di Maria emerges as a standout, capitalizing on a swift counterattack to score a spectacular goal. "Alvarez, here's McAllister, Di Maria is the spare man, and how Di Maria! Glorious goal! Argentine gold!" The Argentine fans go wild, waving their flags and chanting passionately. However, <span style="color: red;">France fights back fiercely, earning a penalty of their own which they duly convert.</span></p>
+                  <p>The drama intensifies in the second half as France<span style="color: red;">'s Kylian Mbappé dazzles with his speed and skill, scoring a breathtaking equalizer.</span> "Mbappé, to Lamp, Mbappé! Oh wow!" The match swings back and forth, with both teams pushing for victory. In the dying moments of extra time, the score is deadlocked at 3-3 when Argentina's goalkeeper makes a crucial save, denying France a late winner. <span style="color: red;">The match heads to a nail-biting penalty shootout. With nerves of steel, Argentina's players step up and convert their penalties flawlessly, culminating in a decisive save by the goalkeeper.</span> "Argentina, champions of the world!" The stadium erupts once more, as <span style="color: red;">Messi lifts the World Cup trophy amidst a sea of jubilant fans</span>, marking a historic and unforgettable victory for Argentina</p>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center figure-caption">
+                  <p><em>Dense caption generated by Behavior-LLaVA for the video of Argentina vs France FIFA World Cup Qatar 2022 Highlights. Original video: youtube.com/watch?v=zhEWqfP6V_w.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-4 text-center">
+                  <img src="images/bllava/soldier-qualitative.jpg" class="img-fluid" alt="Soldier Painting Example" style="max-height: 350px; margin: auto;">
+                </div>
+                <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                  <p>The composition of the image presents <span style="color: red;">a compelling narrative of a soldier immersed in a war-torn landscape</span>. Positioned amidst a backdrop of explosive chaos and dense foliage, the soldier, adorned in traditional military gear, <span style="color: red;">gazes directly at the viewer with a resolute demeanor</span>. The soldier's face is camouflaged, blending seamlessly with the olive-green helmet—a hallmark of battlefield attire.</p>
+                  <p>Surrounding this central figure, a tableau of activity unfolds: a tank looms in the background, its barrel skyward, suggesting recent action. Other soldiers, alert and vigilant, navigate the dense jungle terrain, underscoring the high stakes of the conflict. <span style="color: red;">The foliage, lush yet foreboding, heightens the palpable tension of the scene</span>.</p>
+                  <p>Foregrounded by the silhouette of another soldier's helmeted head, <span style="color: red;">the viewer is drawn into the heart of the action, evoking a sense of shared experience amid the perils of warfare. The realism of the depiction accentuates the emotional weight of the moment, capturing the essence of human resilience amidst the ravages of battle.</span></p>
+                  <p>Overall, the image transcends mere representation, offering <span style="color: red;">a poignant reflection on the individual's role in the broader narrative of war—imbued with suspense, authenticity, and a profound exploration of the human condition within conflict.</span></p>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col-12 text-center figure-caption">
+                  <p><em>Dense caption generated by Behavior-LLaVA for a painting of a soldier. The model captures many qualitative aspects that are usually missed in common captioning tasks.</em></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <a class="carousel-control-prev" href="#examplesCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#examplesCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
       <br><br>
     </div>
   </div>
@@ -276,99 +495,17 @@
   <div class="columns is-centered">
     <div class="column is-full-width">
       <div class="content has-text-justified">
-        <p>We are releasing our BLIFT dataset in huggingface format<a href="#"> [HuggingFace Dataset]</a>. The dataset comprises 730k images and videos with their receiver behavior collected from multiple platforms.</p>
-
-<div class="column is-six-fifths" width="80%">
-  <table class="DatasetTable">
-    <thead>
-      <tr>
-        <th>Behavior Type</th>
-        <th>Description</th>
-        <th>Source</th>
-        <th>Samples</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Likes</td>
-        <td>Content that received varying levels of like engagement</td>
-        <td>Social media platforms</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Comments</td>
-        <td>User comments containing insights about content</td>
-        <td>YouTube, social media</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Replay Graphs</td>
-        <td>Information about how users engage with video content over time</td>
-        <td>Video platforms</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Audience Retention</td>
-        <td>Data on viewer retention patterns</td>
-        <td>Streaming platforms</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Sharing Patterns</td>
-        <td>How content spreads across platforms</td>
-        <td>Cross-platform analysis</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>User Reactions</td>
-        <td>Emotional responses to content</td>
-        <td>Reaction data</td>
-        <td>[Number]</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-        <div class="content has-text-justified">
-          <p>The BLIFT dataset is unique because it leverages data that is collected by default on internet platforms, requiring no additional human annotation effort. This "free lunch" data contains rich signals that help models better understand content context, emotional impact, and semantic meaning.</p>
-        </div>
+        <p>We are releasing our dataset, <a href="https://huggingface.co/datasets/behavior-in-the-wild/BLIFT">BLIFT</a> on HuggingFace. The dataset comprises 730k images and videos with their receiver behavior collected from multiple platforms.</p>
+        <iframe
+  src="https://huggingface.co/datasets/behavior-in-the-wild/BLIFT/embed/viewer/default/train"
+  frameborder="0"
+  width="100%"
+  height="560px"
+></iframe>
       </div>
     </div>
   </div>
-</div>
 </section>
-
-<section class="section" id="Experiment">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Methodology</h2>
-        
-        <h3 class="title is-4">Model Architecture</h3>
-        <img id="model-architecture" width="80%" src="[IMAGE PLACEHOLDER - MODEL ARCHITECTURE]" alt="Architecture diagram of Behavior-LLaVA showing how the model is trained on receiver behavior signals.">
-        
-        <p>We build on the LLaVA architecture, training the model to predict receiver behavior from content. This enables the model to learn rich representations that capture subtle aspects of content that elicit specific behaviors.</p>
-        
-        <h3 class="title is-4">Training Approach</h3>
-        <p>Our training approach involves two key phases:</p>
-        <ol>
-          <li><b>Behavior Prediction Training:</b> The model is trained to predict receiver behaviors (likes, comments, etc.) from content.</li>
-          <li><b>Knowledge Transfer:</b> The learned representations are leveraged for downstream content understanding tasks.</li>
-        </ol>
-        
-        <h3 class="title is-4">Evaluation Protocol</h3>
-        <p>We evaluate across 46 different tasks on 26 benchmark datasets, covering both zero-shot and fine-tuning scenarios. Tasks span multiple modalities including image, video, text, and audio understanding.</p>
-        
-        <h3 class="title is-4">Key Findings</h3>
-        <img id="evaluation-results" width="80%" src="[IMAGE PLACEHOLDER - KEY FINDINGS]" alt="Charts showing how training on behavior data improves performance across diverse tasks.">
-        <ul>
-          <li>Behavior data provides a "free lunch" for improving content understanding</li>
-          <li>Performance improvements are consistent across modalities</li>
-          <li>Even small amounts of behavior data can yield significant improvements</li>
-          <li>Different types of behavior (likes vs. comments vs. replay patterns) contribute differently to various tasks</li>
-        </ul>
-      </div>
-    </div>
-  </section>
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
