@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models">
+  <meta name="keywords" content="Personalization, ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/SDR-Bench">
+  <title>SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 20px;
+      text-align: center;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .video-panel {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .video-item {
+      text-align: center;
+    }
+
+    .video-caption {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .examples {
+      margin-top: 40px;
+    }
+
+    .example-item {
+      margin-bottom: 20px;
+    }
+
+    .memorable-trends-list {
+      font-size: 1.25em;
+      /* Increase this value as needed */
+      line-height: 1.6;
+    }
+
+    .memorable-trends-list li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" , style="background-color:#ff0202;">
+    <nav class="navbar" , role="navigation" , aria-label="main navigation" , style="background-color:#ff0202;" ,
+      align="center">
+      <a href="./index.html" class="navbar-item"
+        style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
+        <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild"
+          style="width:20px;height:20px;margin-right:5px;">
+        <b style="color:white;font-weight:bold;">Behavior in the Wild</b>
+      </a>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SDR-Bench: Benchmarking the Personalization Capabilities of Large
+              Language Models</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://h4shk4t.github.io/" style="color:#f68946;font-weight:normal;">Ashutosh
+                  Srivastava</a>,
+              </span>
+              <span class="author-block">
+                <a href="" style="color:#f68946;font-weight:normal;">Siddharth Yedlapati</a>,
+              </span>
+              <span class="author-block">
+                <a href="" style="color:#f68946;font-weight:normal;">Vinay Aggarwal</a>,
+              </span>
+              <span class="author-block">
+                <a href="" style="color:#f68946;font-weight:normal;">Shashwat Dixit</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman
+                  Kumar Singla</a>,
+              </span>
+              <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><a
+                  href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab
+                  Adobe</a></b></span>
+            </div>
+            <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a>
+              for questions and suggestions</p>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+
+                <span class="link-block">
+                  <a href="https://openreview.net/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Openreview</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/behavior-in-the-wild/SDR-Bench"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>SDR-Bench</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-trophy"></i>
+                    </span>
+                    <span>SDR-Arena</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <section class="section" style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <img src="images/SDR-Bench/fig1_paper.png" alt="SDR-Arena">
+          <figcaption><i>Figure 1: Overview of SDR-Arena showcasing how LLM generated output is compared with artifacts
+              like
+              Sales
+              Emails, Transcripts & Success Stories to benchmark their personalization capability.</i></figcaption>
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Personalization serves as the bridge between generic information and high-impact engagement, yet the
+              manual effort required to craft tailored content has historically precluded its use at scale. The
+              emergence of Large Language Models (LLMs) represents a paradigm shift toward "Generative Personalization
+              at Scale", offering profound opportunities in domains such as marketing, sales, and education. While
+              existing research has discussed the potential of generative AI for personalization, they have mostly
+              relied on small scale human studies to present their findings, leaving it unproven whether LLM
+              personalization has reached a level of maturity viable for high-stakes business operations or not. To
+              address this substantial gap, we develop SDR-Arena - the first framework that enables a scalable way for
+              automated personalization benchmarking. We adapt the Bayesian Persuasion model to formally define
+              personalization. We select sales as our primary case study due to its direct economic utility and
+              rigorously test our framework by curating a dual-layered dataset consisting of proprietary outreach emails
+              sent by real sales people and public scale data comprising of 6,279 articles spanning over 20 industries.
+              We benchmark the ability of frontier LLMs in translating these complex business contexts into personalized
+              value propositions for individual prospects. We find that even though the current models demonstrate
+              progress in personalization, a substantial gap remains before achieving the human-level proficiency
+              required to reliably drive revenue. We publicly release our framework and datasets to facilitate
+              reproducible research in autonomous personalization.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" style="background-color:#ffffffcc">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">SDR-Arena</h2>
+          <div class="content has-text-justified">
+            <div class="content has-text-justified">
+              <p>
+                Figure 1 provides an overview of <b>SDR-Arena</b>, the first framework to systematically benchmark the
+                generative personalization capabilities of LLMs. SDR-Arena utilizes a high-fidelity dataset from the
+                domain of sales capturing human-generated personalized content, including historical sales emails, sales
+                call transcripts, and customer success stories, to evaluate an agent's ability to drive revenue via
+                generating personalized value propositions (pitch points) tailored according for the recipient. The
+                dataset is built on three pillars to ensure comprehensive benchmarking: the proprietary sales emails and
+                transcripts provide an internal view of how the sales people in a company utilize personalization to
+                drive
+                revenue. Second, we curate <b>SDR-Bench</b>, a scalable corpus of publicly documented success stories
+                that
+                detail how sellers' products addressed specific customer needs. Spanning a diverse array of industries,
+                geographies, and use cases, SDR-Bench provides a comprehensive and scalable testbed for evaluating
+                generative personalization capabilities of LLMs.
+              </p>
+            </div>
+            <img src="images/SDR-Bench/figure2.png" alt="Sales Journey">
+            <figcaption><i>Figure 2: Sales Journey: From Prospecting to Outreach to Call and eventual Deal Closure
+                leading to
+                Success Story publication</i></figcaption>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br>
+
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{
+            }
+        </code></pre>
+    </div>
+
+  </section>
+
+  <section class="section" id="TermsOfService">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Terms Of Service</h2>
+      <p>
+        Content Behavior Corpus (CBC) is sourced from brand videos available on YouTube, Facebook Ads, and CommonCrawl.
+        The dataset annotations and video links for CBC will be released under the MIT License. The videos themselves
+        are subject to the original creators' licenses. This dataset do not reveal any identities of the annotators or
+        specific individuals. While the videos originate from brands, some brand content may be perceived as offensive
+        by certain individuals.
+      </p>
+    </div>
+  </section>
+
+
+  <section class="section" id="Acknowledgement">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Acknowledgement</h2>
+      <p>
+        We thank Adobe for their generous sponsorship.
+        <br>
+        This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under
+        a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+      <p>
+        <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%"
+            src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>SDR-Arena</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior
+          in the Wild</a>.
+        The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website
+        content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+          Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
+    </div>
+  </footer>
+
+</body>
+
+</html>
