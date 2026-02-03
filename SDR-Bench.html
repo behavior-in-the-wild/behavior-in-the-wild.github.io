@@ -70,6 +70,48 @@
     .memorable-trends-list li {
       margin-bottom: 10px;
     }
+
+    .sdr-leaderboard {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      font-size: 0.9em;
+      font-family: 'Noto Sans', sans-serif;
+      border-top: 2px solid #363636;
+      border-bottom: 2px solid #363636;
+    }
+
+    .sdr-leaderboard thead tr {
+      background-color: #ffffff;
+      color: #363636;
+      text-align: center;
+    }
+
+    /* Distinct bottom border for the header section */
+    .sdr-leaderboard thead tr:last-child th {
+      border-bottom: 2px solid #363636;
+    }
+
+    .sdr-leaderboard th,
+    .sdr-leaderboard td {
+      padding: 10px 12px;
+      text-align: center;
+      border: 1px solid #e0e0e0;
+    }
+
+    .sdr-leaderboard tbody tr {
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .sdr-leaderboard tbody tr:nth-of-type(even) {
+      background-color: #fafafa;
+    }
+
+    .sdr-leaderboard tbody tr:hover {
+      background-color: #f5f5f5;
+      color: #363636;
+      font-weight: bold;
+    }
   </style>
 </head>
 
@@ -96,95 +138,96 @@
               Language Models</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://h4shk4t.github.io/" style="color:#f68946;font-weight:normal;">Ashutosh
-                  Srivastava</a>,
+                <a href="https://h4shk4t.github.io" style="color:#f68946;font-weight:normal;">Ashutosh
+                  Srivastava<sup>*</sup></a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;">Siddharth Yedlapati</a>,
+                <a href="https://www.linkedin.com/in/siddharthyedlapati/"
+                  style="color:#f68946;font-weight:normal;">Siddharth
+                  Yedlapati<sup>*</sup></a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;">Vinay Aggarwal</a>,
+                <a href="https://scholar.google.co.in/citations?user=o4rExGkAAAAJ&hl=en"
+                  style="color:#f68946;font-weight:normal;">Vinay Aggarwal<sup>*</sup></a>,
               </span>
               <span class="author-block">
-                <a href="" style="color:#f68946;font-weight:normal;">Shashwat Dixit</a>,
+                <a href="https://www.linkedin.com/in/shashwatdixit3112/"
+                  style="color:#f68946;font-weight:normal;">Shashwat Dixit</a>,
               </span>
               <span class="author-block">
                 <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman
-                  Kumar Singla</a>,
+                  Kumar Singla</a>
               </span>
-              <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><a
-                  href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab
-                  Adobe</a></b></span>
-            </div>
-            <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a>
-              for questions and suggestions</p>
-            <div class="column has-text-centered">
-              <div class="publication-links">
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><img src="images/adobe-logo.png" alt="Adobe Logo"
+                    style="width:30px;height:30px;margin-right:5px;"><a href="https://adobe.mdsr.live/"
+                    target="_blank">Media and Data Science Research (MDSR), Adobe</a></b></span>
+              </div>
+
+              <div class="is-size-6 publication-authors">
+                <span class="author-block"><sup>*</sup>Equal Contribution</span>
+              </div>
+              <p>Contact <a
+                  href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a>
+                for questions and suggestions</p>
+              <div class="column has-text-centered">
+                <div class="publication-links">
 
 
-                <span class="link-block">
-                  <a href="https://openreview.net/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>Openreview</span>
-                  </a>
-                </span>
+                  <!-- <span class="link-block">
+                    <a href="https://openreview.net/" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>Openreview</span>
+                    </a>
+                  </span> -->
 
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="https://github.com/" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+                  <!-- <span class="link-block">
+                    <a href="https://arxiv.org/abs/" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span> -->
+                  <!-- <span class="link-block">
+                    <a href="https://github.com/" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span> -->
 
-                <span class="link-block">
-                  <a href="https://huggingface.co/datasets/behavior-in-the-wild/SDR-Bench"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-database"></i>
-                    </span>
-                    <span>SDR-Bench</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="" class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-trophy"></i>
-                    </span>
-                    <span>SDR-Arena</span>
-                  </a>
-                </span>
+                  <span class="link-block">
+                    <a href="https://huggingface.co/datasets/behavior-in-the-wild/SDR-Bench"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>SDR-Bench</span>
+                    </a>
+                  </span>
+                  <!-- <span class="link-block">
+                    <a href="" class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-trophy"></i>
+                      </span>
+                      <span>SDR-Arena</span>
+                    </a>
+                  </span> -->
 
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
-
-
-
-
-
-
-
-
-
   <section class="section" style="background-color:#efeff081">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -216,6 +259,126 @@
               reproducible research in autonomous personalization.
             </p>
 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#ffffffcc">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-full">
+          <h2 class="title is-3">SDR-Leaderboard</h2>
+          <div class="content">
+            <p>Values reported as Coverage Percentage</p>
+            <div class="table-container">
+              <table class="table sdr-leaderboard">
+                <thead>
+                  <tr>
+                    <th rowspan="3" style="vertical-align: middle;">Model</th>
+                    <th colspan="5" style="text-align: center;">Ground Truth Artifacts</th>
+                    <th colspan="6" style="text-align: center;">Success Stories</th>
+                  </tr>
+                  <tr>
+                    <th colspan="2" style="text-align: center;">Healthcare (&lt;1B)</th>
+                    <th colspan="2" style="text-align: center;">Tech (&gt;10B)</th>
+                    <th style="text-align: center;">Other</th>
+                    <th style="text-align: center;">Tech.</th>
+                    <th style="text-align: center;">Mfg.</th>
+                    <th style="text-align: center;">Energy</th>
+                    <th style="text-align: center;">IT</th>
+                    <th style="text-align: center;">Agg.</th>
+                    <th style="text-align: center;">Subset</th>
+                  </tr>
+                  <tr>
+                    <th>Unsucc<br>(50)</th>
+                    <th>Succ<br>(50)</th>
+                    <th>Unsucc<br>(50)</th>
+                    <th>Succ<br>(50)</th>
+                    <th>Sales Trans.</th>
+                    <th>(30)</th>
+                    <th>(30)</th>
+                    <th>(30)</th>
+                    <th>(30)</th>
+                    <th>(180)</th>
+                    <th>(25)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>STORM-QWEN-2.5</td>
+                    <td>22.46</td>
+                    <td>32.27</td>
+                    <td>43.15</td>
+                    <td>39.24</td>
+                    <td><b>30.43</b></td>
+                    <td><b>43.40</b></td>
+                    <td><b>41.59</b></td>
+                    <td><b>39.24</b></td>
+                    <td><b>44.60</b></td>
+                    <td><b>42.51</b></td>
+                    <td>41.54</td>
+                  </tr>
+                  <tr>
+                    <td>ODR-QWEN-2.5</td>
+                    <td>15.40</td>
+                    <td>30.41</td>
+                    <td>38.51</td>
+                    <td>39.82</td>
+                    <td>22.55</td>
+                    <td>30.16</td>
+                    <td>30.95</td>
+                    <td>35.28</td>
+                    <td>35.33</td>
+                    <td>33.53</td>
+                    <td>31.20</td>
+                  </tr>
+                  <tr>
+                    <td>QWEN2.5-72B (WEB)</td>
+                    <td>32.11</td>
+                    <td>36.72</td>
+                    <td>39.53</td>
+                    <td>36.43</td>
+                    <td>25.34</td>
+                    <td>32.09</td>
+                    <td>36.75</td>
+                    <td>37.04</td>
+                    <td>38.21</td>
+                    <td>36.84</td>
+                    <td>37.84</td>
+                  </tr>
+                  <tr>
+                    <td>GPT-4o (WEB)</td>
+                    <td>33.70</td>
+                    <td>39.17</td>
+                    <td>42.01</td>
+                    <td>44.61</td>
+                    <td>23.5</td>
+                    <td>30.73</td>
+                    <td>39.77</td>
+                    <td>32.42</td>
+                    <td>35.85</td>
+                    <td>36.38</td>
+                    <td>32.70</td>
+                  </tr>
+                  <tr>
+                    <td>GEMINI-2.5-PRO-DR</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td>--</td>
+                    <td><b>62.63</b></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
@@ -255,55 +418,92 @@
   </section>
 
   <br><br>
+  <section class="section" style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Results</h2>
+          <div class="content has-text-justified">
+            <ul>
+              <li><b>STORM-QWEN-2.5</b> achieves the highest aggregate scores on SDR-Bench.</li>
+              <li>Deep research agents excel in <em>Healthcare</em>; a "personalization plateau" exists in
+                <em>Tech</em> when compared against e-mails as ground truth.
+              </li>
+              <li><b>GEMINI-2.5-PRO-DR</b> scores highest on the subset but risks data leakage.</li>
+              <li>Deep research agents offer superior resolution but at significantly higher inference costs.</li>
+            </ul>
+            <p>
+              The experimental results across various ground truth artifacts reveal distinct performance patterns
+              between standard LLMs and deep research agents. <b>STORM-QWEN-2.5</b> emerged as the most robust
+              performer for the <b>SDR-Bench</b> testbed, achieving an aggregate Weighted Coverage Score (WCS) of
+              <b>42.51</b> for success stories and <b>30.43</b> for sales transcripts (proprietary data). This
+              suggests that multi-turn, search-augmented research workflows are particularly effective at synthesizing
+              the strategic alignment necessary to reconstruct the logic of complex, real-world deal closures. We
+              observe the trend remains consistent across different industries, suggesting that multi-turn research
+              workflows are uniquely capable of reconstructing the complex logic of real-world deal closures. Notably,
+              for a public dataset, we find a narrow performance margin between <b>GPT-4o with web-search</b>
+              (<b>39.77</b>) and <b>STORM</b> (<b>41.59</b>). Despite this small delta in strategic coverage,
+              GPT-4o required a significantly lower token budget. For enterprise scale deployments, where latency and
+              cost are critical—leveraging high-performing LLMs with direct tool-calling represents a more
+              computationally efficient frontier than the marginal gains offered by high-overhead research
+              agents.
+            </p>
+            <p>
+              When analyzing the Enterprise Sales Email dataset (SDR-Leaderboard), a
+              notable divergence appears between industry sectors. In the <em>Healthcare</em> cohort, deep research
+              agents
+              like <b>STORM</b> and <b>ODR</b> demonstrated a significant performance delta, scoring notably higher
+              on successful outreach emails (e.g., STORM at <b>32.27</b>) compared to unsuccessful outreach emails
+              (<b>22.46</b>). This indicates that these agents are proficient at capturing the specific
+              personalization cues that drive engagement in specialized, high-stakes sectors.
+            </p>
+            <p>
+              Conversely, in the Tech cohort, performance scores remained relatively uniform across all models
+              and outcomes. This exhibit a "personalization plateau", showing no statistically significant performance
+              difference between successful and unsuccessful outreach sets. This suggests that while models generate
+              coherent content, there remains a critical gap in their ability to produce the strategic depth required to
+              drive real-world revenue in highly competitive markets.
+            </p>
+            <p>
+              While <b>GEMINI-2.5-PRO-DR</b> achieved the highest score on the 25-story subset (<b>62.63</b>), it is
+              critical to note that this model was evaluated outside the strict enforcement of the
+              <em>SDR-Playground's</em> historical internet constraints. Consequently, the risk of "future data
+              leakage", where the model accesses post-hoc analyses or the success story itself, is substantially
+              higher. This underscores the necessity of our time-restricted simulation (<i>W<sub>t</sub></i>) for valid
+              benchmarking.
+              Finally, while deep research agents provide superior strategic resolution, they involve a significant
+              computational trade-off. The iterative nature of STORM and ODR requires substantially higher
+              inference costs compared to standard LLM-plus-web-search configurations, presenting a clear bottleneck for
+              personalization at enterprise scale.
+            </p>
 
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@inproceedings{
-            }
+      <pre><code>@misc{sdrbench2026,
+  author = {Srivastava, Ashutosh and Yedlapati, Siddharth and Aggarwal, Vinay and Dixit, Shashwat and Singla, Yaman Kumar},
+  title = {SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models},
+  year = {2026},
+  publisher = {Behavior in the Wild},
+  howpublished = {\url{https://behavior-in-the-wild.github.io/SDR-Bench.html}},
+}
         </code></pre>
     </div>
 
   </section>
 
-  <section class="section" id="TermsOfService">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Terms Of Service</h2>
-      <p>
-        Content Behavior Corpus (CBC) is sourced from brand videos available on YouTube, Facebook Ads, and CommonCrawl.
-        The dataset annotations and video links for CBC will be released under the MIT License. The videos themselves
-        are subject to the original creators' licenses. This dataset do not reveal any identities of the annotators or
-        specific individuals. While the videos originate from brands, some brand content may be perceived as offensive
-        by certain individuals.
-      </p>
-    </div>
-  </section>
-
-
-  <section class="section" id="Acknowledgement">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Acknowledgement</h2>
-      <p>
-        We thank Adobe for their generous sponsorship.
-        <br>
-        This website is adapted from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>, licensed under
-        a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-          Commons Attribution-ShareAlike 4.0 International License</a>.
-      </p>
-      <p>
-        <a href='https://github.com/behavior-in-the-wild'><img id="painting_icon" width="10%"
-            src="https://avatars.githubusercontent.com/u/476009?s=200&v=4">
-        </a>
-      </p>
-    </div>
-  </section>
 
   <footer class="footer">
     <div class="content has-text-centered">
       <p>
-        <strong>SDR-Arena</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior
+        <strong>SDR-Bench</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior
           in the Wild</a>.
         The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website
         content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
