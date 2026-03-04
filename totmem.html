@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="description"
+      content="Unsupervised Memorability Modeling from Tip-of-the-Tongue Retrieval Queries"
+    >
+    <meta
+      name="keywords"
+      content="memorability, tip-of-the-tongue retrieval, visual content, large language models"
+    >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      property="og:url"
+      content="https://behavior-in-the-wild.github.io/totmem.html"
+    >
+    <meta property="og:title" content="Unsupervised Memorability Modeling from Tip-of-the-Tongue Retrieval Queries">
+    <meta property="og:description" content="ToT2MeM: a large-scale dataset and models for descriptive recall generation and multimodal tip-of-the-tongue retrieval.">
+    <title>Unsupervised Memorability Modeling</title>
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/totmem.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    >
+    <link rel="stylesheet" href="./static/css/base.css">
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/954/954591.png"
+    >
+    <style>
+      body {
+        font-family: 'Noto Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+      }
+
+      .hero-teaser-callout {
+        color: #363636;
+      }
+
+      .dataset-table th,
+      .dataset-table td {
+        padding: 12px;
+        border: 1px solid #e0e0e0;
+        text-align: left;
+      }
+
+      .dataset-table th {
+        background-color: #f68946;
+        color: #fff;
+      }
+
+      .dataset-table tbody tr:nth-child(odd) {
+        background-color: #fafafa;
+      }
+
+      .task-card {
+        border: 1px solid #f4f3f1;
+        border-radius: 6px;
+        padding: 20px;
+        background-color: #fff;
+        height: 100%;
+      }
+
+      .highlight-list li {
+        margin-bottom: 10px;
+      }
+
+      @media (max-width: 900px) {
+        .columns .column {
+          margin-bottom: 12px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header" style="background-color: #ff0202;">
+      <nav
+        class="navbar"
+        role="navigation"
+        aria-label="main navigation"
+        style="background-color: #ff0202;"
+        align="center"
+      >
+        <a
+          href="./index.html"
+          class="navbar-item"
+          style="font-weight: bold; text-decoration: none; background-color: transparent;"
+          align="center"
+        >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/954/954591.png"
+            alt="Behavior in the Wild"
+            style="width: 20px; height: 20px; margin-right: 5px;"
+          >
+          <b style="color: white; font-weight: bold;">Behavior in the Wild</b>
+        </a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">
+                Unsupervised Memorability Modeling from Tip-of-the-Tongue Retrieval Queries
+              </h1>
+              <h3 class="title is-3 publication-title">
+                Modeling descriptive memorability signals without explicit human annotation
+              </h3>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a
+                    href="https://scholar.google.com/citations?hl=en&user=Acpq0MwAAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #f68946; font-weight: normal;"
+                    >Sree Bhattacharyya</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://sites.google.com/view/yaman-kumar/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #f68946; font-weight: normal;"
+                    >Yaman Kumar Singla</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://scholar.google.com/citations?hl=en&user=uxJVFCIAAAAJ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #f68946; font-weight: normal;"
+                    >Sudhir Yarram</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://someshsingh22.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #f68946; font-weight: normal;"
+                    >Somesh Kumar Singh</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://harini-si.github.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #f68946; font-weight: normal;"
+                    >S I Harini</a
+                  >,
+                </span>
+                <span class="author-block">
+                  <a
+                    href="https://ist.psu.edu/directory/jzw11"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style="color: #f68946; font-weight: normal;"
+                    >James Z. Wang</a
+                  >
+                </span>
+              </div>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"
+                  ><img
+                    src="images/adobe-logo.png"
+                    alt="Adobe Logo"
+                    style="width: 30px; height: 30px; margin-right: 5px;"
+                  ><a
+                    href="https://adobe.mdsr.live/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Media and Data Science Research (MDSR), Adobe</a
+                  ></span
+                >
+              </div>
+              <div class="is-size-6 publication-authors">
+                <span class="author-block">Accepted at WACV 2026</span>
+              </div>
+              <p>
+                Contact
+                <a href="mailto:behavior-in-the-wild@googlegroups.com"
+                  >behavior-in-the-wild@googlegroups.com</a
+                >
+              </p>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a
+                      href="https://arxiv.org/abs/2511.20854"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://huggingface.co/datasets/behavior-in-the-wild/web_scale_memorability_all"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fas fa-database"></i>
+                      </span>
+                      <span>Dataset</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a
+                      href="https://github.com/behavior-in-the-wild/unsupervised-memorability"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="external-link button is-normal is-rounded is-dark"
+                    >
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <h4 class="subtitle has-text-centered hero-teaser-callout">
+            [NEW] ToT2MeM is the first large-scale unsupervised dataset for descriptive
+            memorability, curated from tip-of-the-tongue retrieval threads on Reddit.
+            <br>
+            [NEW] ToT2MeM-Video pairs over 82,000 videos with open-ended recall descriptions,
+            supporting rich multimodal modeling.
+            <br>
+            [NEW] ToT2MeM-Recall beats GPT-4o on open-ended memorability descriptions, and
+            ToT2MeM-Retrieval delivers the first multimodal ToT retrieval system.
+            <br>
+            [NEW] All datasets, prompts, and models will be released for reproducible research.
+          </h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="PaperFigures">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Empirical Signals of What Sticks in Memory</h2>
+        <div class="content has-text-justified">
+          <p>
+            If you are new to memorability research, think of these plots as a map of what people
+            struggle to remember and how communities help recover those memories. Instead of asking
+            people in a lab to memorize clips, this dataset observes real recall attempts from
+            tip-of-the-tongue posts in the wild.
+          </p>
+          <p>
+            The two groups below answer beginner-friendly questions: Which kinds of content trigger
+            more memory-search requests? Which kinds are solved quickly or slowly? And how does this
+            behavior change with genre and time since release?
+          </p>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 1rem;">Popularity, Retrieval Friction, and Search Demand</h3>
+        <div class="content has-text-justified">
+          <p>
+            This first set compares three signals: how popular content is outside Reddit, how often
+            it is searched in ToT forums, and how long it takes before someone posts the right
+            answer. A simple way to read these plots is to treat each point as one content item and
+            look for broad trends instead of perfect lines.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <figure>
+              <img
+                src="images/totmem/figure2a.png"
+                alt="External popularity versus Reddit search frequency."
+                loading="lazy"
+                decoding="async"
+                style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
+              >
+              <figcaption style="margin-top: 8px;">
+                Higher external popularity generally aligns with more tip-of-the-tongue searches.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column">
+            <figure>
+              <img
+                src="images/totmem/figure2b.png"
+                alt="External popularity versus response time."
+                loading="lazy"
+                decoding="async"
+                style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
+              >
+              <figcaption style="margin-top: 8px;">
+                More popular content tends to be resolved faster, indicating lower retrieval
+                friction.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column">
+            <figure>
+              <img
+                src="images/totmem/figure2c.png"
+                alt="Genre popularity versus number of searches."
+                loading="lazy"
+                decoding="async"
+                style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
+              >
+              <figcaption style="margin-top: 8px;">
+                Genre-level search demand does not simply mirror broad market popularity.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              Popularity increases memorability exposure, but not necessarily perfect recall;
+              users still need community signals to recover exact identifiers.
+            </li>
+            <li>
+              Faster resolution for popular items suggests lower retrieval friction in collective
+              memory ecosystems.
+            </li>
+            <li>
+              Genre effects indicate that memorability is shaped by semantic and narrative factors,
+              not only by broad market reach.
+            </li>
+          </ul>
+          <p>
+            In short, popularity helps people remember enough details to search, but not always
+            enough details to recover the exact title without help.
+          </p>
+        </div>
+
+        <h3 class="title is-4" style="margin-top: 1rem;">Temporal and Genre Dynamics of Memory Search</h3>
+        <div class="content has-text-justified">
+          <p>
+            The second set focuses on time. One plot compares average solve time across genres. The
+            other shows when people search relative to the original release date, which is useful
+            for understanding long-term memory rather than short-term recognition.
+          </p>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <figure>
+              <img
+                src="images/totmem/figure3a.png"
+                alt="Average response time by genre."
+                loading="lazy"
+                decoding="async"
+                style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
+              >
+              <figcaption style="margin-top: 8px;">
+                Average solve time differs by genre, revealing differences in retrievability of
+                recalled cues.
+              </figcaption>
+            </figure>
+          </div>
+          <div class="column">
+            <figure>
+              <img
+                src="images/totmem/figure3b.png"
+                alt="Search activity by genre over time since release."
+                loading="lazy"
+                decoding="async"
+                style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
+              >
+              <figcaption style="margin-top: 8px;">
+                Searches persist long after release, with distinct temporal patterns across genres.
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="content has-text-justified">
+          <ul>
+            <li>
+              Longer average solve times for some genres point to higher ambiguity in verbalized
+              memory traces.
+            </li>
+            <li>
+              The time-lag distributions support long-horizon memorability modeling rather than
+              only short-term recognition.
+            </li>
+            <li>
+              Collectively, these trends justify ToT2MeM as a realistic substrate for descriptive
+              recall generation and multimodal ToT retrieval.
+            </li>
+          </ul>
+          <p>
+            For beginners: these patterns show why ToT2MeM is more than a large dataset. It
+            captures realistic memory behavior over long time spans, which is exactly what recall
+            generation and ToT retrieval models need.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background-color: #efeff081;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-six-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+                Visual content memorability has intrigued the scientific community for decades,
+                with applications ranging widely, from understanding nuanced aspects of human
+                memory to enhancing content design. A significant challenge in progressing the
+                field lies in the expensive process of collecting memorability annotations from
+                humans. This limits the diversity and scalability of datasets for modeling visual
+                content memorability. Most existing datasets are limited to collecting aggregate
+                memorability scores for visual content, not capturing the nuanced memorability
+                signals present in natural, open-ended recall descriptions. In this work, we
+                introduce the first large-scale unsupervised dataset designed explicitly for
+                modeling visual memorability signals, containing over 82,000 videos, accompanied by
+                descriptive recall data. We leverage tip-of-the-tongue (ToT) retrieval queries from
+                online platforms such as Reddit. We demonstrate that our unsupervised dataset
+                provides rich signals for two memorability-related tasks: recall generation and ToT
+                retrieval. Large vision-language models fine-tuned on our dataset outperform
+                state-of-the-art models such as GPT-4o in generating open-ended memorability
+                descriptions for visual content. We also employ a contrastive training strategy to
+                create the first model capable of performing multimodal ToT retrieval. Our dataset
+                and models present a novel direction, facilitating progress in visual content
+                memorability research.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Why ToT2MeM?</h2>
+        <ul class="highlight-list">
+          <li>
+            Covers 470K solved tip-of-the-tongue posts, guaranteeing high-quality descriptive
+            recall signals without expensive human annotation campaigns.
+          </li>
+          <li>
+            Includes 82K publicly available videos, each paired with structured scene crops,
+            speech-to-text, and textual overlays for multimodal reasoning.
+          </li>
+          <li>
+            Demonstrates strong alignment between recall descriptions and memorability outcomes,
+            surfacing influential attributes such as genre, pacing, and emotional tonality.
+          </li>
+          <li>
+            Enables two new tasks—Descriptive Recall Generation and Multimodal ToT Retrieval—with
+            ready-to-use models (ToT2MeM-Recall and ToT2MeM-Retrieval).
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="TeaserFigure">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3">Procedure Diagram</h2>
+        <figure>
+          <img
+            src="images/totmem/full_pipeline.png"
+            alt="Complete ToT2MeM data collection and task pipeline from Reddit tip-of-the-tongue posts to recall generation and multimodal retrieval models."
+            loading="lazy"
+            decoding="async"
+            style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
+          >
+          <figcaption style="margin-top: 10px;">
+            End-to-end ToT2MeM pipeline illustrating how Reddit recall threads are filtered into
+            descriptive datasets, paired with video scenes, and used to train recall-generation and
+            ToT retrieval models.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Dataset Snapshot</h2>
+        <div class="table-container">
+          <table class="dataset-table" style="width: 100%;">
+            <thead>
+              <tr>
+                <th>Subset</th>
+                <th>What it contains</th>
+                <th>Scale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ToT2MeM</td>
+                <td>
+                  470K solved Reddit posts linking vivid recall descriptions to the ground-truth
+                  media they were searching for.
+                </td>
+                <td>470,000 content-recall pairs</td>
+              </tr>
+              <tr>
+                <td>ToT2MeM-Video</td>
+                <td>
+                  Video subset with scene crops, audio transcripts, OCR, and metadata, filtered to
+                  clips shorter than 10 minutes.
+                </td>
+                <td>82,000 videos (with ~3.1M scene snippets)</td>
+              </tr>
+              <tr>
+                <td>External Factors</td>
+                <td>
+                  Emotion, genre, pacing, and popularity indicators derived from open data sources
+                  to study cross-factor memorability correlates.
+                </td>
+                <td>20+ high-level descriptors per content item</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="Tasks">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Tasks Introduced</h2>
+        <div class="columns">
+          <div class="column">
+            <div class="task-card">
+              <h3 class="title is-4">Descriptive Recall Generation</h3>
+              <p>
+                Train ToT2MeM-Recall to produce rich, human-like descriptions that capture what
+                makes an item memorable. The model leverages vision-language cues, scene context,
+                and ToT-style prompts to outperform GPT-4o in open-ended memorability narration.
+              </p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="task-card">
+              <h3 class="title is-4">Multimodal ToT Retrieval</h3>
+              <p>
+                Use contrastive training over recall descriptions and content embeddings to solve
+                ToT-style search queries end-to-end. ToT2MeM-Retrieval is the first model to align
+                descriptive cues with the exact video, audio, and textual evidence users recall.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="Highlights" style="background-color: #efeff081;">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Evaluation Highlights</h2>
+        <ul class="highlight-list">
+          <li>
+            ToT2MeM-Recall surpasses GPT-4o and other large models on human evaluations for
+            open-ended memorability descriptions, especially for niche content like archived
+            commercials and episodic TV.
+          </li>
+          <li>
+            Contrastive ToT2MeM-Retrieval delivers the first multimodal pipeline that can recover
+            the right video purely from a free-form recall paragraph.
+          </li>
+          <li>
+            Ablation studies show that scene-level OCR and ASR cues boost recall fidelity by more
+            than 6% absolute over text-only variants.
+          </li>
+          <li>
+            Qualitative analyses reveal that fast pacing, high emotional variance, and dialog-heavy
+            soundtracks significantly impact long-term memorability.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="Resources">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Resources</h2>
+        <p>
+          The paper is available on <a href="https://arxiv.org/abs/2511.20854" target="_blank" rel="noopener noreferrer">arXiv</a>.
+          The ToT2MeM dataset (web-scale memorability) can be accessed on Hugging Face:
+          <a
+            href="https://huggingface.co/datasets/behavior-in-the-wild/web_scale_memorability_all"
+            target="_blank"
+            rel="noopener noreferrer"
+          >behavior-in-the-wild/web_scale_memorability_all</a>. Code, data loaders, and training
+          utilities are maintained in the GitHub repository:
+          <a
+            href="https://github.com/behavior-in-the-wild/unsupervised-memorability"
+            target="_blank"
+            rel="noopener noreferrer"
+          >behavior-in-the-wild/unsupervised-memorability</a>. Reach out via
+          <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a>
+          for collaboration discussions.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{bhattacharyya2025unsupervised,
+  title={Unsupervised Memorability Modeling from Tip-of-the-Tongue Retrieval Queries},
+  author={Bhattacharyya, Sree and Singla, Yaman Kumar and Yarram, Sudhir and Singh, Somesh Kumar and Harini, S I and Wang, James Z},
+  journal={arXiv preprint arXiv:2511.20854},
+  year={2025}
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="section" id="TermsOfService">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Terms Of Service</h2>
+        <p>
+          ToT2MeM data is collected from public Reddit communities and publicly available video
+          links. We remove private or deleted media, NSFW tags, and bot-generated threads. The
+          dataset does not expose usernames or personal identifiers. Please ensure your usage
+          complies with the Reddit API terms and the licenses of the linked media. Access requires
+          agreeing to our acceptable use policy that prohibits abusive, offensive, or discriminatory
+          deployments.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="Acknowledgement">
+      <div class="container is-max-desktop content">
+        <h2 class="title">Acknowledgement</h2>
+        <p>
+          We thank Adobe for sponsoring this research and the Reddit community for making the
+          discussions publicly available. We also acknowledge the LLaMA and VLM ecosystems for
+          releasing high-quality open models that accelerated our experimentation.
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p>
+          <strong>Unsupervised Memorability Modeling</strong> by
+          <a href="https://behavior-in-the-wild.github.io" target="_blank" rel="noopener noreferrer">Behavior in the Wild</a>.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
