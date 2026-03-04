@@ -38,7 +38,7 @@ A motivation of why we are work on the behavior modality is captured in a small 
 - [Measuring And Improving Persuasiveness Of Generative Models](https://behavior-in-the-wild.github.io/measure-persuasion.html)
 - [Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot](https://behavior-in-the-wild.github.io/align-via-actions)
 - [The Cultural Repository](https://behavior-in-the-wild.github.io/the-culture-repository.html)
-
+- [Social Agents: Collective Intelligence Improves LLM Predictions](https://behavior-in-the-wild.github.io/social-agents.html)
 ---
 Get in touch with us at behavior-in-the-wild@googlegroups.com
 
