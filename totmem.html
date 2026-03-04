@@ -284,13 +284,12 @@
         <h2 class="title is-3 has-text-centered">Empirical Signals of What Sticks in Memory</h2>
         <div class="content has-text-justified">
           <p>
-            If you are new to memorability research, think of these plots as a map of what people
-            struggle to remember and how communities help recover those memories. Instead of asking
-            people in a lab to memorize clips, this dataset observes real recall attempts from
-            tip-of-the-tongue posts in the wild.
+            These plots summarize how real recall attempts behave in tip-of-the-tongue forums.
+            Instead of lab-based memory tasks, the signals come from natural search behavior in the
+            wild.
           </p>
           <p>
-            The two groups below answer beginner-friendly questions: Which kinds of content trigger
+            The two groups below answer the following questions: Which kinds of content trigger
             more memory-search requests? Which kinds are solved quickly or slowly? And how does this
             behavior change with genre and time since release?
           </p>
@@ -316,7 +315,12 @@
                 style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
               >
               <figcaption style="margin-top: 8px;">
-                Higher external popularity generally aligns with more tip-of-the-tongue searches.
+                x-axis: number of tip-of-the-tongue searches on Reddit. y-axis: external popularity
+                (YouTube views, log scale). The upward trend indicates that content seen by larger
+                audiences also appears more frequently in memory-retrieval forums. This suggests that wide
+                exposure increases both memorability and the absolute number of recall attempts.
+                Correlation strengthens with higher-search groups (r=0.09 for 2-10, r=0.15 for
+                10-100, and r=0.34 for >100 searches).
               </figcaption>
             </figure>
           </div>
@@ -330,8 +334,12 @@
                 style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
               >
               <figcaption style="margin-top: 8px;">
-                More popular content tends to be resolved faster, indicating lower retrieval
-                friction.
+                x-axis: response time (time between post creation and the correct answer). y-axis:
+                external popularity (YouTube views, log scale). The weak downward trend shows that more
+                popular content is generally solved faster. A practical interpretation is that
+                collective familiarity reduces retrieval friction even when the original query is
+                vague. In the >1000-hour band, average log-views decline from about 5.2 near
+                ~1,000 hours to about 3.6 near ~17,000 hours.
               </figcaption>
             </figure>
           </div>
@@ -345,7 +353,13 @@
                 style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
               >
               <figcaption style="margin-top: 8px;">
-                Genre-level search demand does not simply mirror broad market popularity.
+                x-axis: number of ToT posts for each genre. y-axis: genre-level popularity (average
+                box office, in 10M USD). The spread across genres shows that search demand does not map
+                one-to-one with revenue popularity. This indicates that narrative style and cue
+                distinctiveness also influence what users later try to recover from memory. For
+                example, Drama has the highest search volume (~45k posts) with moderate box office
+                (~3.8k in 10M USD units), while Adventure/Fantasy has fewer posts (~31k) but much
+                higher box office (~6.8k).
               </figcaption>
             </figure>
           </div>
@@ -353,21 +367,31 @@
         <div class="content has-text-justified">
           <ul>
             <li>
-              Popularity increases memorability exposure, but not necessarily perfect recall;
-              users still need community signals to recover exact identifiers.
+              In the popularity-versus-search plot, high-view items generate many more ToT queries,
+              but there is still substantial spread at similar view counts, showing that visibility
+              alone does not determine recall behavior. The strongest trend is in the high-search
+              segment (r=0.34), where views rise from roughly 7.0 to 8.2 log-scale as search count
+              moves from ~100 to ~240.
             </li>
             <li>
-              Faster resolution for popular items suggests lower retrieval friction in collective
-              memory ecosystems.
+              In the popularity-versus-response-time plot, the trend is negative but weak: popular
+              items are often solved faster, yet some still take long to resolve, indicating that
+              ambiguous wording can offset familiarity. The >1000-hour curve drops by about 1.6 log
+              units in views across the x-range, but confidence bands remain wide and correlations
+              in the legend are small (r from -0.05 to -0.09).
             </li>
             <li>
-              Genre effects indicate that memorability is shaped by semantic and narrative factors,
-              not only by broad market reach.
+              In the genre-popularity-versus-search plot, genres with strong search demand are not
+              always the ones with the highest box-office signal, suggesting that narrative
+              distinctiveness can drive long-term recall demand. Drama (~45k posts) and Horror
+              (~34k) are searched heavily despite lower box-office levels than Adventure/Fantasy and
+              Action.
             </li>
           </ul>
           <p>
-            In short, popularity helps people remember enough details to search, but not always
-            enough details to recover the exact title without help.
+            Together, these three plots suggest a two-step effect: broad exposure increases how
+            often content enters memory search, while cue quality and genre characteristics determine
+            how easily that memory can be resolved.
           </p>
         </div>
 
@@ -390,8 +414,12 @@
                 style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
               >
               <figcaption style="margin-top: 8px;">
-                Average solve time differs by genre, revealing differences in retrievability of
-                recalled cues.
+                x-axis: average response time in hours. y-axis: genre. Solve time differs by genre,
+                revealing differences in retrievability of recalled cues. Genres with longer solve
+                times likely produce more ambiguous recall descriptions, while shorter times suggest
+                more distinctive and easily matched memory traces. Documentary is the longest at
+                20.3h, while Thriller is the shortest at 6.0h; most other genres cluster near
+                8.7-11.8h.
               </figcaption>
             </figure>
           </div>
@@ -405,7 +433,12 @@
                 style="width: 100%; border-radius: 6px; border: 1px solid #f4f3f1;"
               >
               <figcaption style="margin-top: 8px;">
-                Searches persist long after release, with distinct temporal patterns across genres.
+                x-axis: time since release (days). y-axis: number of searches, broken down by
+                genre. Searches persist long after release with distinct temporal patterns for
+                different genres. This shows that memorability and retrieval needs can remain active
+                for years, not only near the original release window. Peaks are concentrated late:
+                Adventure reaches ~22% at 4000-4999 days, Horror reaches ~22% at 5000-5999 days,
+                and Drama peaks around ~21% at 4000-4999 days.
               </figcaption>
             </figure>
           </div>
@@ -413,22 +446,25 @@
         <div class="content has-text-justified">
           <ul>
             <li>
-              Longer average solve times for some genres point to higher ambiguity in verbalized
-              memory traces.
+              In the genre-versus-average-response-time plot, the gap between fast and slow genres
+              indicates that retrieval difficulty is not uniform across content categories. The span
+              is large: 20.3h (Documentary) versus 6.0h (Thriller), a difference of 14.3 hours.
             </li>
             <li>
-              The time-lag distributions support long-horizon memorability modeling rather than
-              only short-term recognition.
+              In the time-since-release plot, many searches happen years after release, showing that
+              unresolved memory traces remain active long after initial exposure. The highest points
+              for major genres occur in 4000-5999 days, not in the earliest bins.
             </li>
             <li>
-              Collectively, these trends justify ToT2MeM as a realistic substrate for descriptive
-              recall generation and multimodal ToT retrieval.
+              Genre-specific temporal curves imply that some content types stay discoverable for
+              longer periods, while others peak earlier, which matters for retrieval model
+              evaluation over time. Documentary remains near zero across bins, while Adventure,
+              Horror, and Drama exhibit strong late peaks between ~17% and ~22%.
             </li>
           </ul>
           <p>
-            For beginners: these patterns show why ToT2MeM is more than a large dataset. It
-            captures realistic memory behavior over long time spans, which is exactly what recall
-            generation and ToT retrieval models need.
+            These temporal observations reinforce that ToT2MeM captures realistic long-horizon
+            retrieval conditions, not only immediate post-release recognition.
           </p>
         </div>
       </div>
