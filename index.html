@@ -153,37 +153,18 @@
     }
 
     .contributions li {
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
-    .contrib-section {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1000px;
-      max-width: 94vw;
+    .contrib-group h3 {
+      font-size: 1.02rem;
+      margin: 24px 0 4px;
+      color: #1a1a1a;
     }
-
-    .contributions .tag {
-      font-size: 0.68rem;
-      font-weight: 600;
-      letter-spacing: 0.02em;
-      text-transform: uppercase;
-      margin-left: 4px;
-      vertical-align: middle;
-      white-space: nowrap;
-    }
-
-    .tag-explain   { color: #5a7099; }
-    .tag-predict   { color: #5f8a62; }
-    .tag-optimize  { color: #a8765f; }
-    .tag-understand{ color: #8a6fb0; }
-    .tag-learn     { color: #7a6a3f; }
 
     .contributions .venue-year {
-      color: #666;
+      color: #777;
       font-size: 0.85rem;
-      font-weight: 500;
       white-space: nowrap;
     }
 
@@ -255,34 +236,51 @@
 
   <p>A motivation for why we work on the behavior modality is captured in a <a href="https://sites.google.com/view/yaman-kumar/blog/from-peas-to-people-why-we-need-to-solve-the-human-behavior-puzzle">blog post</a> by <a href="https://sites.google.com/view/yaman-kumar/">Yaman</a>.</p>
 
-  <div class="contrib-section">
   <h2>Our Contributions</h2>
 
-  <p>Each paper is tagged by the role behavior plays in it &mdash; <span class="tag tag-explain">Explaining Behavior</span> <span class="tag tag-predict">Predicting Behavior</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span> <span class="tag tag-understand">Using Behavior To Understand Other Modalities Better</span> <span class="tag tag-learn">Learning from Human Digital Traces</span>. Some papers carry more than one tag.</p>
+  <p>Our work spans four directions, organized by the role behavior plays. Some papers appear under more than one theme.</p>
 
-  <ul class="contributions">
-    <li><a href="./fest.html">Bridging Expert Knowledge and Automated Feature Engineering via Self-Evolution</a> <span class="venue-year">— Preprint</span> <span class="tag tag-learn">Predicting Behaviour</span> <span class="tag tag-optimize">Explaining Behavior</span></li>
-    <li><a href="./social-agents.html">Social Agents: Collective Intelligence Improves LLM Predictions</a> <span class="venue-year">— ICLR 2026</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="./align-via-actions.html">ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models</a> <span class="venue-year">— AAAI 2026</span> <span class="tag tag-predict">Predicting Behavior</span></li>
-    <li><a href="./totmem.html">Unsupervised Memorability Modeling from Tip-of-the-Tongue Retrieval Queries</a> <span class="venue-year">— WACV 2026</span> <span class="tag tag-predict">Predicting Behavior</span></li>
-    <li><a href="./brandfusion.html">BrandFusion: Aligning Image Generation with Brand Styles</a> <span class="venue-year">— WACV 2026</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./SDR-Bench.html">SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models</a> <span class="venue-year">— Preprint</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="./memento.html">MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains</a> <span class="venue-year">— Preprint</span> <span class="tag tag-learn">Learning from Human Digital Traces</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./the-culture-repository.html">The Culture Repository</a> <span class="venue-year">— Preprint</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="./experigen.html">Accelerating Social Science Research via Agentic Hypothesization and Experimentation</a> <span class="venue-year">— Preprint</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="./llm-personality.html">How Well Do Large Language Models Capture Human Personality?</a> <span class="venue-year">— Preprint</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="https://arxiv.org/abs/2311.10995">BOIG: Behavior Optimized Image Generation</a> <span class="venue-year">— Preprint</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./spro-improving-image-generation-via-self-play.html">SPRO: Improving Image Generation via Self-Play</a> <span class="venue-year">— NeurIPS 2025</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./image-engagement.html">Measuring and Improving Engagement of Text-to-Image Generation Models</a> <span class="venue-year">— ICLR 2025</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./measure-persuasion.html">Measuring And Improving Persuasiveness Of Generative Models</a> <span class="venue-year">— ICLR 2025</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="behavior-llava.html">Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</a> <span class="venue-year">— ICLR 2025</span> <span class="tag tag-understand">Using Behavior To Understand Other Modalities Better</span></li>
-    <li><a href="./memorability.html">Long-Term Ad Memorability: Understanding and Generating Memorable Ads</a> <span class="venue-year">— WACV 2025</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./LCBM.html">LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior</a> <span class="venue-year">— ICLR 2024</span> <span class="award">· Best Paper Nominee 🏆</span> <span class="tag tag-predict">Predicting Behavior</span> <span class="tag tag-optimize">Interventions to Optimize Behavior</span></li>
-    <li><a href="./video-4096.html">A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot</a> <span class="venue-year">— EMNLP 2023</span> <span class="award">· Best Paper Nominee 🏆</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="https://aclanthology.org/2023.eacl-main.139/">Synthesizing Human Gaze Feedback for Improved NLP Performance</a> <span class="venue-year">— EACL 2023</span> <span class="tag tag-understand">Using Behavior To Understand Other Modalities Better</span></li>
-    <li><a href="https://midas-research.github.io/persuasion-advertisements/">Persuasion Strategies in Advertisements</a> <span class="venue-year">— AAAI 2023</span> <span class="tag tag-explain">Explaining Behavior</span></li>
-    <li><a href="https://yamanksingla.github.io/PhD-thesis/">Behavior As A Modality: A Framework To Enable Automated Persuasion</a> <span class="venue-year">— PhD Thesis</span> <span class="award">· Best Thesis Award (SUNY Buffalo) · Outstanding Thesis Award (IIIT Delhi) 🏆🏆</span> <span class="tag tag-predict">Predicting Behavior</span></li>
-  </ul>
+  <div class="contrib-group">
+    <h3>Explaining Human Behavior</h3>
+    <ul class="contributions">
+      <li><a href="./social-agents.html">Social Agents: Collective Intelligence Improves LLM Predictions</a> <span class="venue-year">— ICLR 2026</span></li>
+      <li><a href="./SDR-Bench.html">SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models</a> <span class="venue-year">— Upcoming submission</span></li>
+      <li><a href="./the-culture-repository.html">The Culture Repository</a> <span class="venue-year">— Preprint</span></li>
+      <li><a href="./experigen.html">Accelerating Social Science Research via Agentic Hypothesization and Experimentation</a> <span class="venue-year">— Preprint</span></li>
+      <li><a href="./llm-personality.html">How Well Do Large Language Models Capture Human Personality?</a> <span class="venue-year">— Preprint</span></li>
+      <li><a href="./video-4096.html">A Video Is Worth 4096 Tokens: Verbalize Videos To Understand Them In Zero Shot</a> <span class="venue-year">— EMNLP 2023</span> <span class="award">· Best Paper Nominee 🏆</span></li>
+      <li><a href="https://midas-research.github.io/persuasion-advertisements/">Persuasion Strategies in Advertisements</a> <span class="venue-year">— AAAI 2023</span></li>
+    </ul>
+  </div>
+
+  <div class="contrib-group">
+    <h3>Predicting Human Behavior</h3>
+    <ul class="contributions">
+      <li><a href="./align-via-actions.html">ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models</a> <span class="venue-year">— AAAI 2026</span></li>
+      <li><a href="./totmem.html">Unsupervised Memorability Modeling from Tip-of-the-Tongue Retrieval Queries</a> <span class="venue-year">— WACV 2026</span></li>
+      <li><a href="./LCBM.html">LCBM: Large Content and Behavior Models to Understand, Simulate, and Optimize Content and Behavior</a> <span class="venue-year">— ICLR 2024</span> <span class="award">· Best Paper Nominee 🏆</span></li>
+      <li><a href="https://yamanksingla.github.io/PhD-thesis/">Behavior As A Modality: A Framework To Enable Automated Persuasion</a> <span class="venue-year">— PhD Thesis</span></li>
+    </ul>
+  </div>
+
+  <div class="contrib-group">
+    <h3>Generating Behavior-Optimized Content</h3>
+    <ul class="contributions">
+      <li><a href="./brandfusion.html">BrandFusion: Aligning Image Generation with Brand Styles</a> <span class="venue-year">— WACV 2026</span></li>
+      <li><a href="./spro-improving-image-generation-via-self-play.html">SPRO: Improving Image Generation via Self-Play</a> <span class="venue-year">— NeurIPS 2025</span></li>
+      <li><a href="./image-engagement.html">Measuring and Improving Engagement of Text-to-Image Generation Models</a> <span class="venue-year">— ICLR 2025</span></li>
+      <li><a href="./measure-persuasion.html">Measuring And Improving Persuasiveness Of Generative Models</a> <span class="venue-year">— ICLR 2025</span></li>
+      <li><a href="./memorability.html">Long-Term Ad Memorability: Understanding and Generating Memorable Ads</a> <span class="venue-year">— WACV 2025</span></li>
+      <li><a href="https://arxiv.org/abs/2311.10995">BOIG: Behavior Optimized Image Generation</a> <span class="venue-year">— Preprint</span></li>
+    </ul>
+  </div>
+
+  <div class="contrib-group">
+    <h3>Improving Content Understanding in terms of Behavior</h3>
+    <ul class="contributions">
+      <li><a href="behavior-llava.html">Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</a> <span class="venue-year">— ICLR 2025</span></li>
+      <li><a href="https://aclanthology.org/2023.eacl-main.139/">Synthesizing Human Gaze Feedback for Improved NLP Performance</a> <span class="venue-year">— EACL 2023</span></li>
+    </ul>
   </div>
 
   <footer>
