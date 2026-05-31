@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Synthesizing Human Gaze Feedback for Improved NLP Performance">
+        <meta name="description" content="ScanTextGAN synthesizes human gaze (scanpath) feedback to improve NLP models — using cognitively grounded human behavior signals for better language understanding.">
         <meta name="keywords" content="psycholinguistics, cognitive NLP, human gaze patterns, eyetracking, scanpaths, generative adversarial network, GAN">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:url" content="https://behavior-in-the-wild.github.io/ScanTextGAN">
@@ -10,282 +10,283 @@
         <meta property="og:description" content="ScanTextGAN synthesizes human gaze feedback to improve NLP performance with cognitively informed signals.">
         <title>Synthesizing Human Gaze Feedback for Improved NLP Performance</title>
         <link rel="canonical" href="https://behavior-in-the-wild.github.io/ScanTextGAN">
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        <link rel="stylesheet" href="./static/css/base.css">
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
-        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+        <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Synthesizing Human Gaze Feedback for Improved NLP Performance">
+        <meta name="twitter:description" content="ScanTextGAN synthesizes human gaze feedback to improve NLP performance with cognitively informed signals.">
+        <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "Synthesizing Human Gaze Feedback for Improved NLP Performance",
+  "url": "https://behavior-in-the-wild.github.io/ScanTextGAN",
+  "description": "ScanTextGAN synthesizes human gaze feedback to improve NLP performance with cognitively informed signals.",
+  "keywords": [
+    "psycholinguistics",
+    "human gaze",
+    "eyetracking",
+    "NLP",
+    "GAN"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+        </script>
+
         <style>
             body {
-                font-family: 'Noto Sans', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: 17px;
+              line-height: 1.7;
+              color: #1a1a1a;
+              background: #fff;
             }
-            header {
-                background-color: #333;
-                color: #fff;
-                padding: 10px 20px;
-                text-align: center;
+            .site-nav {
+              border-bottom: 1px solid #ddd;
+              padding: 11px 24px;
+              font-size: 0.875rem;
             }
-            .container {
-                padding: 20px;
+            .site-nav a { color: #0645ad; text-decoration: none; }
+            .site-nav a:hover { text-decoration: underline; }
+            .page {
+              max-width: 780px;
+              margin: 0 auto;
+              padding: 48px 24px 96px;
             }
-            .video-panel {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+            h1 {
+              font-size: 1.65rem;
+              font-weight: bold;
+              line-height: 1.35;
+              color: #111;
+              margin: 0 0 18px;
             }
-            .video-item {
-                text-align: center;
+            h2 {
+              font-size: 1.1rem;
+              font-weight: bold;
+              color: #111;
+              margin: 44px 0 10px;
+              padding-bottom: 4px;
+              border-bottom: 1px solid #ccc;
             }
-            .video-caption {
-                margin-top: 10px;
-                font-size: 18px;
+            p { margin: 14px 0; }
+            a { color: #0645ad; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .authors {
+              font-size: 1rem;
+              margin: 4px 0 3px;
+              line-height: 1.65;
             }
-            .examples {
-                margin-top: 40px;
+            .equal-contrib {
+              font-size: 0.8rem;
+              color: #777;
+              font-style: italic;
+              margin: 2px 0 8px;
             }
-            .example-item {
-                margin-bottom: 20px;
+            .affiliation {
+              font-size: 0.9rem;
+              color: #444;
+              margin: 4px 0 14px;
+              display: flex;
+              align-items: center;
+              gap: 7px;
             }
-            .memorable-trends-list {
-                font-size: 1.25em; /* Increase this value as needed */
-                line-height: 1.6;
+            .affiliation img {
+              width: 22px;
+              height: 22px;
+              object-fit: contain;
             }
-            
-            .memorable-trends-list li {
-                margin-bottom: 10px;
+            .paper-links {
+              margin: 14px 0 6px;
             }
-
-
-
+            .paper-links a {
+              display: inline-block;
+              padding: 4px 14px;
+              border: 1px solid #0645ad;
+              border-radius: 3px;
+              font-size: 0.875rem;
+              color: #0645ad;
+              margin-right: 8px;
+              font-family: Georgia, serif;
+            }
+            .paper-links a:hover {
+              background: #0645ad;
+              color: #fff;
+              text-decoration: none;
+            }
+            ul {
+              padding-left: 1.4em;
+              margin: 12px 0;
+            }
+            ul li {
+              margin-bottom: 8px;
+              line-height: 1.65;
+            }
+            pre {
+              background: #f6f6f6;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              padding: 16px;
+              font-size: 0.8rem;
+              line-height: 1.5;
+              overflow-x: auto;
+              font-family: 'Courier New', monospace;
+            }
+            figure {
+              margin: 32px 0;
+              text-align: center;
+            }
+            figure img {
+              max-width: 90%;
+              border: 1px solid #ddd;
+            }
+            figcaption {
+              margin-top: 8px;
+              font-size: 0.875rem;
+              color: #666;
+              font-style: italic;
+            }
             .image-container-compact {
-              width: 50%; /* Set the width of the image and caption */
-              margin: 0 auto; /* Center the figure */
-              text-align: center; /* Center-align the caption text */
+              width: 50%;
+              margin: 32px auto;
+              text-align: center;
             }
             .image-container-compact img {
-              width: 100%; /* Make the image fill the container width */
-              display: block; /* Remove any inline spacing below the image */
+              width: 100%;
+              display: block;
+              border: 1px solid #ddd;
             }
             .image-container-compact figcaption {
-              font-size: 14px; /* Adjust caption font size */
-              color: #555; /* Subtle gray for the caption text */
-              margin-top: 8px; /* Space between image and caption */
-              word-wrap: break-word; /* Allow long words to wrap properly */
-              line-height: 1.5; /* Improve readability for multi-line text */
+              font-size: 0.875rem;
+              color: #666;
+              margin-top: 8px;
+              font-style: italic;
             }
             .image-container {
-              width: 100%; /* Set the width of the image and caption */
-              margin: 0 auto; /* Center the figure */
-              text-align: center; /* Center-align the caption text */
+              width: 100%;
+              margin: 32px auto;
+              text-align: center;
             }
             .image-container img {
-              width: 100%; /* Make the image fill the container width */
-              display: block; /* Remove any inline spacing below the image */
+              width: 100%;
+              display: block;
+              border: 1px solid #ddd;
             }
             .image-container figcaption {
-              font-size: 14px; /* Adjust caption font size */
-              color: #555; /* Subtle gray for the caption text */
-              margin-top: 8px; /* Space between image and caption */
-              word-wrap: break-word; /* Allow long words to wrap properly */
-              line-height: 1.5; /* Improve readability for multi-line text */
+              font-size: 0.875rem;
+              color: #666;
+              margin-top: 8px;
+              font-style: italic;
             }
-            
+            hr {
+              border: none;
+              border-top: 1px solid #ddd;
+              margin: 48px 0 0;
+            }
+            footer {
+              font-size: 0.85rem;
+              color: #555;
+              margin-top: 16px;
+            }
+            @media (max-width: 600px) {
+              .page { padding: 28px 16px 64px; }
+              h1 { font-size: 1.35rem; }
+            }
         </style>
     </head>
 
     <body>
-      <header class="header", style="background-color:#ff0202;">
-          <nav class="navbar", role="navigation", aria-label="main navigation", style="background-color:#ff0202;", align="center">
-            <a href="./index.html" class="navbar-item" style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
-                  <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild" style="width:20px;height:20px;margin-right:5px;">
-              <b style="color:white;font-weight:bold;">Behavior in the Wild</b>
-            </a>
-          </nav>
-        </header>
 
-        <section class="hero">
-            <div class="hero-body">
-              <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                  <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">Synthesizing Human Gaze Feedback for Improved NLP Performance</h1>
-                    
-                    <div class="is-size-5 publication-authors">
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Varun Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://www.linkedin.com/in/kvarun07/" style="color:#f68946;font-weight:normal;">Varun Khurana<sup>*</sup></a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Yaman Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla<sup>*</sup></a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/univ-copenhagen.svg" alt="Nora Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://scholar.google.co.uk/citations?user=vxvmkskAAAAJ" style="color:#f68946;font-weight:normal;">Nora Hollenstein</a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/bucknell-logo.png" alt="Rajesh Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://sites.google.com/view/kumar7/" style="color:#f68946;font-weight:normal;">Rajesh Kumar</a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Balaji Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695" style="color:#f68946;font-weight:normal;">Balaji Krishnamurthy</a>,
-                      </span>
-                    </div>
+      <nav class="site-nav">
+        <a href="./index.html">← Behavior in the Wild</a>
+      </nav>
 
-                    <div class="is-size-5 publication-authors">
-                      <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab Adobe</a></b></span>
-                    </div>
-                    <div class="is-size-6 publication-authors">
-                      <span class="author-block"><sup>*</sup>Equal Contribution</span>
-                    </div>
-                    <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> for questions and suggestions</p>
-                    <div class="column has-text-centered">
-                      <div class="publication-links">
-                     
-                     
-                      <span class="link-block">
-                        <a href="https://aclanthology.org/2023.eacl-main.139/" target="_blank"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon">
-                             <i class="fas fa-file-alt"></i>
-                          </span>
-                          <span>Paper</span>
-                        </a>
-                      </span>
+      <div class="page">
 
-                      <span class="link-block">
-                        <a href="https://aclanthology.org/2023.eacl-main.139.mp4" target="_blank"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon">
-                            <i class="fas fa-video"></i>
-                          </span>
-                          <span>Video</span>
-                        </a>
-                      </span>
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <h1>Synthesizing Human Gaze Feedback for Improved NLP Performance</h1>
 
-        <section class="hero teaser">
-          <div class="container is-max-desktop">
-            <div class="hero-body">
-              <h4 class="subtitle has-text-centered">
-                🔥<span style="color: #ff3860"></span> We introduce ScanTextGAN, the first scanpath generation model over text, integrating a cognitive reading model with a data-driven approach to address the scarcity of human gaze data on text. <br><br>
-                🔥<span style="color: #ff3860"></span> We demonstrate that ScanTextGAN-generated scanpaths can approximate meaningful cognitive signals in human gaze patterns. Leveraging synthetically generated scanpaths lead to significant performance gains across six NLP datasets.<br>
-                <br>
-              </h4>
-            </div>
-          </div>
-        </section>
-      
-        <section class="section"  style="background-color:#efeff081">
-          <div class="container is-max-desktop">
-            <div class="columns is-centered has-text-centered">
-              <div class="column is-six-fifths">
-                <figure class="image-container-compact">
-                  <img src="images/scantextgan/scanpath_sample.jpg" alt="scanpath sample">
-                  <figcaption>
-                    Generated scanpaths over text samples taken from various natural language processing (NLP) tasks. The green circles denote the important words characteristic of that task. The circles’ size denotes the fixation duration, and the arrows depict the saccadic movements. Regressions (word revisits) also appear in the examples. As can be seen, linguistically important words often have a higher fixation duration and revisits.
-                  </figcaption>
-                </figure>
-
-                <br><br><br><br>
-
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                  <p>
-                    Integrating human feedback in models can improve the performance of natural language processing (NLP) models. Feedback can be either explicit (e.g. ranking used in training language models) or implicit (e.g. using human cognitive signals in the form of eyetracking). Prior eye tracking and NLP research reveal that cognitive processes, such as human scanpaths, gleaned from human gaze patterns aid in the understanding and performance of NLP models. However, the collection of real eyetracking data for NLP tasks is challenging due to the requirement of expensive and precise equipment coupled with privacy invasion issues. To address this challenge, we propose <b>ScanTextGAN</b>, a novel model for generating human scanpaths over text. We show that <b>ScanTextGAN</b>-generated scanpaths can approximate meaningful cognitive signals in human gaze patterns. We include synthetically generated scanpaths in four popular NLP tasks spanning six different datasets as proof of concept and show that the models augmented with generated scanpaths improve the performance of all downstream NLP tasks.                   
-                  </p>
-        
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      
-      <br><br>
-
-      
-      
-      <section class="section">
-        <div class="container is-max-desktop">
-          <div class="columns is-centered has-text-centered">
-            <div class="column is-six-fifths">
-
-              <h2 class="title is-3">ScanTextGAN Model</h2>
-              <figure class="image-container">
-                <img src="images/scantextgan/scanpath_model.jpg" alt="scanpath sample">
-                <figcaption>
-                  Architecture of the proposed <b>ScanTextGAN</b> model. The model consists of a conditional generator and a discriminator playing a zero-sum game. The generator is trained by two cognitively inspired losses: text content reconstruction and scanpath content reconstruction.
-                </figcaption>
-              </figure>
-
-              <br><br>
-
-              <h2 class="title is-3">Application to NLP Tasks</h2>
-
-
-              <div class="content has-text-justified">
-                <b>Intent-Aware Scanpaths</b>: Further finetuning of the ScanTextGAN generation module by back-propagating gradients from the downstream natural language task biases the generator towards words more pertinent to that task. The generator conditioned on the downstream natural language task yields <b>intent-aware scanpaths</b> scanpaths. Augmenting NLP models with these scanpaths leads to higher performance gains. 
-              </div>
-
-            </div>
-          </div> 
+        <div class="authors">
+          <a href="https://www.linkedin.com/in/kvarun07/">Varun Khurana<sup>*</sup></a>,
+          <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla<sup>*</sup></a>,
+          <a href="https://scholar.google.co.uk/citations?user=vxvmkskAAAAJ">Nora Hollenstein</a>,
+          <a href="https://sites.google.com/view/kumar7/">Rajesh Kumar</a>,
+          <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
         </div>
-      </section>
-    
-    
-      <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-          <h2 class="title">BibTeX</h2>
-          <pre>
-            <code>
-              @inproceedings{khurana2023synthesizing,
-              title={Synthesizing Human Gaze Feedback for Improved NLP Performance},
-              author={Khurana, Varun and Kumar, Yaman and Hollenstein, Nora and Kumar, Rajesh and Krishnamurthy, Balaji},
-              booktitle={Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics},
-              pages={1895--1908},
-              year={2023}
-            }
-            </code>
-          </pre>
+        <div class="equal-contrib">* Equal Contribution</div>
+        <div class="affiliation">
+          <img src="images/adobe-logo.png" alt="Adobe">
+          <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab Adobe</a>
         </div>
-      </section>
-      
-      <section class="section" id="Acknowledgement">
-        <div class="container is-max-desktop content">
-          <h2 class="title">Acknowledgement</h2>
-          <p>
-            We thank Adobe for their generous sponsorship.
-          </p>    
-        </div>
-      </section>
-      
 
-        <footer class="footer">
-          <div class="content has-text-centered">
-            <p>
-              <strong>Synthesizing Human Gaze Feedback for Improved NLP Performance</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
-            </p>
-          </div>
+        <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+        <div class="paper-links">
+          <a href="https://aclanthology.org/2023.eacl-main.139/" target="_blank">Paper</a>
+          <a href="https://aclanthology.org/2023.eacl-main.139.mp4" target="_blank">Video</a>
+        </div>
+
+        <p>
+          We introduce ScanTextGAN, the first scanpath generation model over text, integrating a cognitive reading model with a data-driven approach to address the scarcity of human gaze data on text.
+          We demonstrate that ScanTextGAN-generated scanpaths can approximate meaningful cognitive signals in human gaze patterns. Leveraging synthetically generated scanpaths lead to significant performance gains across six NLP datasets.
+        </p>
+
+        <figure class="image-container-compact">
+          <img src="images/scantextgan/scanpath_sample.jpg" alt="scanpath sample">
+          <figcaption>
+            Generated scanpaths over text samples taken from various natural language processing (NLP) tasks. The green circles denote the important words characteristic of that task. The circles' size denotes the fixation duration, and the arrows depict the saccadic movements. Regressions (word revisits) also appear in the examples. As can be seen, linguistically important words often have a higher fixation duration and revisits.
+          </figcaption>
+        </figure>
+
+        <h2>Abstract</h2>
+
+        <p>
+          Integrating human feedback in models can improve the performance of natural language processing (NLP) models. Feedback can be either explicit (e.g. ranking used in training language models) or implicit (e.g. using human cognitive signals in the form of eyetracking). Prior eye tracking and NLP research reveal that cognitive processes, such as human scanpaths, gleaned from human gaze patterns aid in the understanding and performance of NLP models. However, the collection of real eyetracking data for NLP tasks is challenging due to the requirement of expensive and precise equipment coupled with privacy invasion issues. To address this challenge, we propose <b>ScanTextGAN</b>, a novel model for generating human scanpaths over text. We show that <b>ScanTextGAN</b>-generated scanpaths can approximate meaningful cognitive signals in human gaze patterns. We include synthetically generated scanpaths in four popular NLP tasks spanning six different datasets as proof of concept and show that the models augmented with generated scanpaths improve the performance of all downstream NLP tasks.
+        </p>
+
+        <h2>ScanTextGAN Model</h2>
+
+        <figure class="image-container">
+          <img src="images/scantextgan/scanpath_model.jpg" alt="ScanTextGAN model architecture">
+          <figcaption>
+            Architecture of the proposed <b>ScanTextGAN</b> model. The model consists of a conditional generator and a discriminator playing a zero-sum game. The generator is trained by two cognitively inspired losses: text content reconstruction and scanpath content reconstruction.
+          </figcaption>
+        </figure>
+
+        <h2>Application to NLP Tasks</h2>
+
+        <p><b>Intent-Aware Scanpaths</b>: Further finetuning of the ScanTextGAN generation module by back-propagating gradients from the downstream natural language task biases the generator towards words more pertinent to that task. The generator conditioned on the downstream natural language task yields <b>intent-aware scanpaths</b> scanpaths. Augmenting NLP models with these scanpaths leads to higher performance gains.</p>
+
+        <h2>BibTeX</h2>
+
+        <pre><code>@inproceedings{khurana2023synthesizing,
+  title={Synthesizing Human Gaze Feedback for Improved NLP Performance},
+  author={Khurana, Varun and Kumar, Yaman and Hollenstein, Nora and Kumar, Rajesh and Krishnamurthy, Balaji},
+  booktitle={Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics},
+  pages={1895--1908},
+  year={2023}
+}</code></pre>
+
+        <h2>Acknowledgement</h2>
+
+        <p>We thank Adobe for their generous sponsorship.</p>
+
+        <hr>
+        <footer>
+          <strong>Synthesizing Human Gaze Feedback for Improved NLP Performance</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
         </footer>
 
+      </div>
     </body>
 </html>
-

@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="The Culture Repository curates culturally grounded visual concepts and examples for behavior-aware multimodal research.">
+  <meta name="keywords" content="culture, visual concepts, cultural alignment, multimodal, behavioral research, dataset">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="https://behavior-in-the-wild.github.io/the-culture-repository.html">
+    <meta property="og:url" content="https://behavior-in-the-wild.github.io/the-culture-repository">
     <meta property="og:title" content="The Culture Repository">
     <meta property="og:description" content="A repository of culturally grounded concepts and examples for studying behavior in multimodal systems.">
     <title>The Culture Repository</title>
-    <link rel="canonical" href="https://behavior-in-the-wild.github.io/the-culture-repository.html">
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/the-culture-repository">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -17,9 +18,17 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
     <style>
         body {
-            font-family: 'Google Sans', sans-serif;
-            background-color: #f4f4f9;
+            font-family: Georgia, 'Times New Roman', serif;
+            background-color: #fff;
+            color: #1a1a1a;
         }
+        .site-nav {
+            border-bottom: 1px solid #ddd;
+            padding: 11px 24px;
+            font-size: 0.875rem;
+        }
+        .site-nav a { color: #0645ad; text-decoration: none; }
+        .site-nav a:hover { text-decoration: underline; }
 
         .hero {
             background-color: #ffffff;
@@ -280,16 +289,44 @@
         }
 
     </style>
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Culture Repository">
+  <meta name="twitter:description" content="A repository of culturally grounded concepts and examples for studying behavior in multimodal systems.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "The Culture Repository",
+  "url": "https://behavior-in-the-wild.github.io/the-culture-repository",
+  "description": "A repository of culturally grounded visual concepts and examples for studying behavior in multimodal systems.",
+  "keywords": [
+    "culture",
+    "visual concepts",
+    "cultural alignment",
+    "multimodal",
+    "dataset"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+  </script>
 </head>
 
 <body>
-    <header class="header", style="background-color:#ff0202; height: 50px; width: 100%; position: fixed; top: 0; z-index: 1000;">
-        <nav class="navbar", role="navigation", aria-label="main navigation", style="background-color:#ff0202;", align="center">
-          <a href="./index.html" class="navbar-item" style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
-            <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild" style="width:20px;height:20px;margin-right:5px;"><b style="color:white;font-weight:bold;height:20px;font-size: 20px;">Behavior in the Wild</b>
-          </a>
-        </nav>
-      </header>
+    <nav class="site-nav">
+      <a href="./index.html">← Behavior in the Wild</a>
+    </nav>
     <section class="hero">
         <div class="hero-body">
             <div class="container is-max-desktop">

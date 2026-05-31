@@ -1,158 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="BrandFusion aligns text-to-image generation with brand style characteristics for scalable, interpretable on-brand creative generation.">
+    <meta name="keywords" content="brand alignment, image generation, text-to-image, brand style, diffusion models, WACV">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="https://behavior-in-the-wild.github.io/brandfusion.html">
+    <meta property="og:url" content="https://behavior-in-the-wild.github.io/brandfusion">
     <meta property="og:title" content="BrandFusion: Aligning Image Generation with Brand Styles">
     <meta property="og:description" content="BrandFusion decouples brand style learning from generation to produce scalable, brand-aligned promotional images.">
     <title>BrandFusion: Aligning Image Generation with Brand Styles</title>
-    <link rel="canonical" href="https://behavior-in-the-wild.github.io/brandfusion.html">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
-    <!-- Bulma CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <!-- Favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/brandfusion">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="BrandFusion: Aligning Image Generation with Brand Styles">
+    <meta name="twitter:description" content="BrandFusion decouples brand style learning from generation to produce scalable, brand-aligned promotional images.">
+    <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "BrandFusion: Aligning Image Generation with Brand Styles",
+  "url": "https://behavior-in-the-wild.github.io/brandfusion",
+  "description": "BrandFusion decouples brand style learning from generation to produce scalable, brand-aligned promotional images.",
+  "keywords": [
+    "brand alignment",
+    "image generation",
+    "text-to-image",
+    "brand style",
+    "diffusion models"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+    </script>
+
     <style>
         body {
-            font-family: 'Google Sans', sans-serif;
-            background-color: #f4f4f9;
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #1a1a1a;
+          background: #fff;
         }
-
-        .hero {
-            background-color: #ffffff;
-            color: black;
-            padding: 20px;
+        .site-nav {
+          border-bottom: 1px solid #ddd;
+          padding: 11px 24px;
+          font-size: 0.875rem;
         }
-
-        .hero .title {
-            color: black;
+        .site-nav a { color: #0645ad; text-decoration: none; }
+        .site-nav a:hover { text-decoration: underline; }
+        .page {
+          max-width: 780px;
+          margin: 0 auto;
+          padding: 48px 24px 96px;
         }
-
-        .hero .subtitle {
-            color: #ff3860;
+        h1 {
+          font-size: 1.65rem;
+          font-weight: bold;
+          line-height: 1.35;
+          color: #111;
+          margin: 0 0 18px;
         }
-
-        .author-block a {
-            color: #f68946;
-            font-weight: normal;
+        h2 {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 44px 0 10px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #ccc;
         }
-
-        .organization a {
-            color: #3273dc;
-            font-weight: normal;
+        p { margin: 14px 0; }
+        a { color: #0645ad; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .authors {
+          font-size: 1rem;
+          margin: 4px 0 3px;
+          line-height: 1.65;
         }
-
-        .collaborators-text {
-            background-color: #f9f9f9;
-            border-left: 4px solid #3273dc;
-            padding: 10px 15px;
-            margin: 20px 0;
-            color: #0d47a1;
-            border-radius: 8px;
+        .equal-contrib {
+          font-size: 0.8rem;
+          color: #777;
+          font-style: italic;
+          margin: 2px 0 8px;
         }
-
-        .collaborators-text h2 {
-            margin-top: 0;
+        .affiliation {
+          font-size: 0.9rem;
+          color: #444;
+          margin: 4px 0 14px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
         }
-
-        .link-block {
-            margin: 5px;
+        .affiliation img {
+          width: 22px;
+          height: 22px;
+          object-fit: contain;
+        }
+        .paper-links {
+          margin: 14px 0 6px;
+        }
+        .paper-links a {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #0645ad;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #0645ad;
+          margin-right: 8px;
+          font-family: Georgia, serif;
+        }
+        .paper-links a:hover {
+          background: #0645ad;
+          color: #fff;
+          text-decoration: none;
+        }
+        pre {
+          background: #f6f6f6;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          padding: 16px;
+          font-size: 0.8rem;
+          line-height: 1.5;
+          overflow-x: auto;
+          font-family: 'Courier New', monospace;
+        }
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 48px 0 0;
+        }
+        footer {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 16px;
+        }
+        @media (max-width: 600px) {
+          .page { padding: 28px 16px 64px; }
+          h1 { font-size: 1.35rem; }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="header" style="background-color:#ff0202; height:50px; width:100%; position:fixed; top:0; z-index:1000;">
-        <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:#ff0202;">
-            <a href="./index.html" class="navbar-item"
-                style="font-weight:bold; text-decoration:none; background-color:transparent;">
-                <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild"
-                    style="width:20px; height:20px; margin-right:5px;">
-                <b style="color:white; font-weight:bold; font-size:20px;">Behavior in the Wild</b>
-            </a>
-        </nav>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" style="margin-top:60px;">
-        <div class="hero-body">
-            <div class="container is-max-desktop has-text-centered">
-                <h1 class="title is-1 publication-title">
-                    BrandFusion: Aligning Image Generation with Brand Styles
-                </h1>
+  <nav class="site-nav">
+    <a href="./index.html">← Behavior in the Wild</a>
+  </nav>
 
-                <!-- Authors -->
-                <div class="is-size-5 publication-authors">
-                    <span class="author-block">
-                        <a href="https://www.linkedin.com/in/parulgpt/" target="_blank">Parul Gupta<sup>1,2</sup></a>,
-                    </span>
-                    <span class="author-block">
-                        <a href="https://www.linkedin.com/in/varunkhurana07/" target="_blank">Varun Khurana<sup>2</sup></a>,
-                    </span>
-                    <span class="author-block">
-                        <a href="https://sites.google.com/view/yaman-kumar/" target="_blank">Yaman Kumar Singla<sup>2</sup></a>,
-                    </span>
-                    <span class="author-block">
-                        <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695" target="_blank">Balaji Krishnamurthy<sup>2</sup></a>,
-                    </span>
-                    <span class="author-block">
-                        <a href="https://research.monash.edu/en/persons/abhinav-dhall/" target="_blank">Abhinav Dhall<sup>1</sup></a>,
-                    </span>
-                </div>
+  <div class="page">
 
-                <!-- Organizations -->
-                <div class="is-size-5 publication-authors">
-                    <span class="organization">
-                        <b style="color:#f68946;">&#x25B6 </b><a href="https://www.monash.edu/it" target="_blank"><sup>1</sup>Monash University</a>,
-                        <b style="color:#f68946;">&#x25B6 </b><a href="https://adobe.mdsr.live/" target="_blank"><sup>2</sup>Adobe MDSR Lab</a>,
-                    </span>
-                </div>
+    <h1>BrandFusion: Aligning Image Generation with Brand Styles</h1>
 
-                <div class="is-size-5 publication-authors" style="margin-top: 10px;">
-                    <span class="author-block">
-                        <a href="https://wacv.thecvf.com/" target="_blank" style="color:#f68946;font-weight:bold;">WACV 2026</a>
-                    </span>
-                </div>
+    <div class="authors">
+      <a href="https://www.linkedin.com/in/parulgpt/" target="_blank">Parul Gupta<sup>1,2</sup></a>,
+      <a href="https://www.linkedin.com/in/varunkhurana07/" target="_blank">Varun Khurana<sup>2</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/" target="_blank">Yaman Kumar Singla<sup>2</sup></a>,
+      <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695" target="_blank">Balaji Krishnamurthy<sup>2</sup></a>,
+      <a href="https://research.monash.edu/en/persons/abhinav-dhall/" target="_blank">Abhinav Dhall<sup>1</sup></a>
+    </div>
 
-                <p>Contact: <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+    <div class="affiliation">
+      <sup>1</sup><a href="https://www.monash.edu/it" target="_blank">Monash University</a>
+      &nbsp;&nbsp;
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <sup>2</sup><a href="https://adobe.mdsr.live/" target="_blank">Adobe MDSR Lab</a>
+    </div>
 
-                <!-- Abstract -->
-                <div class="collaborators-text">
-                    <h2>Abstract</h2>
-                    <p>While recent text-to-image models excel at generating realistic content, they struggle to capture the nuanced visual characteristics that define a brand's distinctive style—such as lighting preferences, photography genres, color palettes, and compositional choices. This work introduces BrandFusion, a novel framework that automatically generates brand-aligned promotional images by decoupling brand style learning from image generation. Our approach consists of two components: a Brand-aware Vision-Language Model (BrandVLM) that predicts brand-relevant style characteristics and corresponding visual embeddings from marketer-provided contextual information, and a Brand-aware Diffusion Model (BrandDM) that generates images conditioned on these learned style representations. Unlike existing personalization methods that require separate fine-tuning for each brand, BrandFusion maintains scalability while preserving interpretability through textual style characteristics. Our method generalizes effectively to unseen brands by leveraging common industry sector-level visual patterns. Extensive evaluation demonstrates consistent improvements over existing approaches across multiple brand alignment metrics, with a 66.11% preference rate in human evaluation study. This work paves the way for AI-assisted on-brand content creation in marketing workflows.</p>
-                </div>
+    <p>Accepted at <strong><a href="https://wacv.thecvf.com/" target="_blank">WACV 2026</a></strong></p>
 
-                <!-- Links -->
-                <div class="publication-links">
-                    <span class="link-block">
-                        <a href="./static/pdf/BrandFusion_WACV2026.pdf"
-                            class="button is-normal is-rounded is-dark" target="_blank">
-                            <span class="icon"><i class="fas fa-file-pdf"></i></span>
-                            <span>Paper</span>
-                        </a>
-                    </span>
-                    <span class="link-block">
-                        <a href="mailto:behavior-in-the-wild@googlegroups.com"
-                            class="button is-normal is-rounded is-dark">
-                            <span class="icon"><i class="fas fa-envelope"></i></span>
-                            <span>Email</span>
-                        </a>
-                    </span>
-                </div>
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
 
-            </div>
-        </div>
-    </section>
+    <div class="paper-links">
+      <a href="./static/pdf/BrandFusion_WACV2026.pdf" target="_blank">Paper</a>
+    </div>
 
-    <!-- Font Awesome -->
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+    <h2>Abstract</h2>
+
+    <p>
+      While recent text-to-image models excel at generating realistic content, they struggle to capture the nuanced visual characteristics that define a brand's distinctive style—such as lighting preferences, photography genres, color palettes, and compositional choices. This work introduces <strong>BrandFusion</strong>, a novel framework that automatically generates brand-aligned promotional images by decoupling brand style learning from image generation. Our approach consists of two components: a Brand-aware Vision-Language Model (BrandVLM) that predicts brand-relevant style characteristics and corresponding visual embeddings from marketer-provided contextual information, and a Brand-aware Diffusion Model (BrandDM) that generates images conditioned on these learned style representations. Unlike existing personalization methods that require separate fine-tuning for each brand, BrandFusion maintains scalability while preserving interpretability through textual style characteristics. Our method generalizes effectively to unseen brands by leveraging common industry sector-level visual patterns. Extensive evaluation demonstrates consistent improvements over existing approaches across multiple brand alignment metrics, with a 66.11% preference rate in human evaluation study. This work paves the way for AI-assisted on-brand content creation in marketing workflows.
+    </p>
+
+    <h2>BibTeX</h2>
+
+    <pre><code>@inproceedings{gupta2026brandfusion,
+  title={BrandFusion: Aligning Image Generation with Brand Styles},
+  author={Gupta, Parul and Khurana, Varun and Singla, Yaman Kumar and Krishnamurthy, Balaji and Dhall, Abhinav},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
+  year={2026}
+}</code></pre>
+
+    <h2>Acknowledgement</h2>
+
+    <p>We thank Adobe for their generous sponsorship.</p>
+
+    <hr>
+    <footer>
+      <strong>BrandFusion: Aligning Image Generation with Brand Styles</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+    </footer>
+
+  </div>
 </body>
 </html>
