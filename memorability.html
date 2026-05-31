@@ -2,214 +2,270 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="Long-Term Ad Memorability: Understanding and Generating Memorable Ads">
+        <meta name="description" content="Understanding and generating memorable advertisements with multimodal LLMs — modeling long-term human memory and behavior to predict and optimize ad memorability.">
         <meta name="keywords" content="memorability, advertisements, large language models">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:url" content="https://behavior-in-the-wild.github.io/memorability">
-        <meta property="og:title" content="Long-Term Ad Memorability">
+        <meta property="og:title" content="Long-Term Ad Memorability: Understanding and Generating Memorable Ads">
         <meta property="og:description" content="Understanding and generating memorable advertisements with behavior-centric multimodal methods.">
-        <title>Long-Term Ad Memorability</title>
+        <title>Long-Term Ad Memorability: Understanding and Generating Memorable Ads</title>
         <link rel="canonical" href="https://behavior-in-the-wild.github.io/memorability">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-        <link rel="stylesheet" href="./static/css/base.css">
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
-        <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+        <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Long-Term Ad Memorability: Understanding and Generating Memorable Ads">
+        <meta name="twitter:description" content="Understanding and generating memorable advertisements with behavior-centric multimodal methods.">
+        <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["ScholarlyArticle", "Dataset"],
+  "name": "Long-Term Ad Memorability: Understanding and Generating Memorable Ads",
+  "url": "https://behavior-in-the-wild.github.io/memorability",
+  "description": "Understanding and generating memorable advertisements with behavior-centric multimodal methods.",
+  "keywords": [
+    "memorability",
+    "advertisements",
+    "LLM",
+    "multimodal",
+    "ad generation"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+        </script>
+
         <style>
             body {
-                font-family: 'Noto Sans', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
+              margin: 0;
+              padding: 0;
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: 17px;
+              line-height: 1.7;
+              color: #1a1a1a;
+              background: #fff;
             }
-            header {
-                background-color: #333;
-                color: #fff;
-                padding: 10px 20px;
-                text-align: center;
+            .site-nav {
+              border-bottom: 1px solid #ddd;
+              padding: 11px 24px;
+              font-size: 0.875rem;
             }
-            .container {
-                padding: 20px;
+            .site-nav a { color: #0645ad; text-decoration: none; }
+            .site-nav a:hover { text-decoration: underline; }
+            .page {
+              max-width: 780px;
+              margin: 0 auto;
+              padding: 48px 24px 96px;
+            }
+            h1 {
+              font-size: 1.65rem;
+              font-weight: bold;
+              line-height: 1.35;
+              color: #111;
+              margin: 0 0 18px;
+            }
+            h2 {
+              font-size: 1.1rem;
+              font-weight: bold;
+              color: #111;
+              margin: 44px 0 10px;
+              padding-bottom: 4px;
+              border-bottom: 1px solid #ccc;
+            }
+            p { margin: 14px 0; }
+            a { color: #0645ad; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .authors {
+              font-size: 1rem;
+              margin: 4px 0 3px;
+              line-height: 1.65;
+            }
+            .equal-contrib {
+              font-size: 0.8rem;
+              color: #777;
+              font-style: italic;
+              margin: 2px 0 8px;
+            }
+            .affiliation {
+              font-size: 0.9rem;
+              color: #444;
+              margin: 4px 0 14px;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            }
+            .affiliation img {
+              width: 22px;
+              height: 22px;
+              object-fit: contain;
+            }
+            .paper-links {
+              margin: 14px 0 6px;
+            }
+            .paper-links a {
+              display: inline-block;
+              padding: 4px 14px;
+              border: 1px solid #0645ad;
+              border-radius: 3px;
+              font-size: 0.875rem;
+              color: #0645ad;
+              margin-right: 8px;
+              font-family: Georgia, serif;
+            }
+            .paper-links a:hover {
+              background: #0645ad;
+              color: #fff;
+              text-decoration: none;
+            }
+            ul { padding-left: 1.4em; margin: 12px 0; }
+            ul li { margin-bottom: 8px; line-height: 1.65; }
+            figure {
+              margin: 32px 0;
+              text-align: center;
+            }
+            figure img {
+              max-width: 100%;
+              border: 1px solid #ddd;
+            }
+            figcaption {
+              margin-top: 8px;
+              font-size: 0.875rem;
+              color: #666;
+              font-style: italic;
+            }
+            pre {
+              background: #f6f6f6;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              padding: 16px;
+              font-size: 0.8rem;
+              line-height: 1.5;
+              overflow-x: auto;
+              font-family: 'Courier New', monospace;
             }
             .video-panel {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+              display: grid;
+              grid-template-columns: repeat(3, 1fr);
+              gap: 20px;
+              margin: 24px 0;
             }
             .video-item {
-                text-align: center;
+              text-align: center;
             }
             .video-caption {
-                margin-top: 10px;
-                font-size: 18px;
+              margin-top: 8px;
+              font-size: 0.9rem;
+              color: #555;
             }
-            .examples {
-                margin-top: 40px;
+            .ad-gen-grid {
+              display: flex;
+              gap: 24px;
+              justify-content: center;
+              flex-wrap: wrap;
+              margin: 24px 0;
             }
-            .example-item {
-                margin-bottom: 20px;
+            .ad-gen-item {
+              width: 340px;
+              text-align: center;
             }
-            .memorable-trends-list {
-                font-size: 1.25em; /* Increase this value as needed */
-                line-height: 1.6;
+            .ad-gen-item video {
+              width: 100%;
+              height: 300px;
+              object-fit: cover;
             }
-            
-            .memorable-trends-list li {
-                margin-bottom: 10px;
+            .ad-gen-item textarea {
+              width: 100%;
+              height: 180px;
+              border: 1px solid #ddd;
+              background: #f8f8f8;
+              font-family: 'Courier New', monospace;
+              font-size: 0.75rem;
+              border-radius: 3px;
+              padding: 8px;
+              resize: vertical;
+              margin-top: 8px;
             }
-            
+            hr {
+              border: none;
+              border-top: 1px solid #ddd;
+              margin: 48px 0 0;
+            }
+            footer {
+              font-size: 0.85rem;
+              color: #555;
+              margin-top: 16px;
+            }
+            @media (max-width: 600px) {
+              .page { padding: 28px 16px 64px; }
+              h1 { font-size: 1.35rem; }
+              .video-panel { grid-template-columns: 1fr; }
+              .ad-gen-grid { flex-direction: column; align-items: center; }
+            }
         </style>
     </head>
 
     <body>
-      <header class="header", style="background-color:#ff0202;">
-          <nav class="navbar", role="navigation", aria-label="main navigation", style="background-color:#ff0202;", align="center">
-            <a href="./index.html" class="navbar-item" style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
-                  <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild" style="width:20px;height:20px;margin-right:5px;">
-              <b style="color:white;font-weight:bold;">Behavior in the Wild</b>
-            </a>
-          </nav>
-        </header>
 
-        <section class="hero">
-            <div class="hero-body">
-              <div class="container is-max-desktop">
-                <div class="columns is-centered">
-                  <div class="column has-text-centered">
-                    <h1 class="title is-1 publication-title">Long-Term Ad Memorability</h1>
-                    <h3 class="title is-3 publication-title">Understanding and Generating Memorable Ads</h3>
-                    <div class="is-size-5 publication-authors">
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Harini Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://harini-si.github.io/" style="color:#f68946;font-weight:normal;">S I Harini<sup>*</sup></a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Somesh Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://someshsingh22.github.io" style="color:#f68946;font-weight:normal;">Somesh Singh<sup>*</sup></a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Yaman Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla<sup>*</sup></a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Aanisha Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/" style="color:#f68946;font-weight:normal;">Aanisha Bhattacharyya</a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/BITS_Pilani-Logo.png" alt="Veeky Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://www.bits-pilani.ac.in/goa/veeky-baths/" style="color:#f68946;font-weight:normal;">Veeky Baths</a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/ub-logo.png" alt="Changyou Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://cse.buffalo.edu/~changyou/" style="color:#f68946;font-weight:normal;">Changyou Chen</a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/iiitd-logo.png" alt="Rajiv Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://www.linkedin.com/in/rajivratn" style="color:#f68946;font-weight:normal;">Rajiv Ratn Shah</a>,
-                      </span>
-                      <span class="author-block">
-                        <img src="images/adobe-logo.png" alt="Balaji Logo" style="width:20px;height:20px;margin-right:5px;">
-                        <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695" style="color:#f68946;font-weight:normal;">Balaji Krishnamurthy</a>,
-                      </span>
-                    </div>
-                    <div class="is-size-5 publication-authors">
-                      <span class="author-block"><b style="color:#f68946; font-weight:normal">&#x25B6 </b><a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab Adobe</a></b></span>
-                    </div>
-                    <div class="is-size-6 publication-authors">
-                      <span class="author-block"><sup>*</sup>Equal Contribution</span>
-                    </div>
-                    <p>Contact <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> for questions and suggestions</p>
-                    <div class="column has-text-centered">
-                      <div class="publication-links">
-                     
-                     
-                      <span class="link-block">
-                        <a href="https://arxiv.org/abs/2309.00378" target="_blank"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon">
-                            <i class="ai ai-arxiv"></i>
-                          </span>
-                          <span>arxiv</span>
-                        </a>
-                      </span>
+      <nav class="site-nav">
+        <a href="./index.html">← Behavior in the Wild</a>
+      </nav>
 
-                      <span class="link-block">
-                        <a href="https://github.com/behavior-in-the-wild/ad-memorability" target="_blank"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon">
-                            <i class="fab fa-github"></i>
-                          </span>
-                          <span>Code</span>
-                        </a>
-                      </span>
-                      
-                      <span class="link-block">
-                          <a href="https://huggingface.co/datasets/behavior-in-the-wild/LAMBDA"
-                            class="external-link button is-normal is-rounded is-dark">
-                            <span class="icon">
-                              <i class="fas fa-database"></i>
-                            </span>
-                            <span>LAMBDA Dataset</span>
-                          </a>
-                      </span>
-                      <span class="link-block">
-                        <a href="https://huggingface.co/datasets/behavior-in-the-wild/UltraLAMBDA"
-                          class="external-link button is-normal is-rounded is-dark">
-                          <span class="icon">
-                            <i class="fas fa-database"></i>
-                          </span>
-                          <span>UltraLAMBDA Dataset</span>
-                        </a>
-                    </span>
-                    
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      
-        <section class="hero teaser">
-          <div class="container is-max-desktop">
-            <div class="hero-body">
-              <h4 class="subtitle has-text-centered">
-                
-                🔥<span style="color: #ff3860">[NEW!] </span>We release the first-ever long term ad memorability dataset, LAMDBA, featuring data from 1749 participants and 2205 ads across 276 brands.                <br>
-                🔥<span style="color: #ff3860">[NEW!] </span>Introducing Henry, our novel model for predicting content memorability. Henry achieves state-of-the-art performance across major memorability datasets and demonstrates superior generalization in zero-shot scenarios on unseen datasets. 
-                <br>
-                🔥<span style="color: #ff3860">[NEW!] </span>We develop SEED (Self rEwarding mEmorability Modeling), a scalable method to generate high-quality memorable ads using automatically annotated data. Ads generated by our method show a 44% higher memorability score than the original ads.<br>
-                <br>
-                
-              </h4>
-            </div>
-          </div>
-        </section>
-        
-        
-        
-        <div style="text-align: center;">
-            <h5>Take a look at some ad generations by Henry, visualized by <a href="https://www.adobe.com/products/firefly.html" target="_blank">FireFly</a></h5>
+      <div class="page">
 
-            <h5>The raw ads generated in text are given in the textblock below each ad.</h5>
-        
-            <div style="display: flex; justify-content: center;">
-                <figure style="margin: 0 10px; width: 500px;">
-                    <video height="500" width="500" autoplay="" loop="" muted="" playsinline="" class="w-full object-cover" poster="">
-                        <source type="video/mp4" src="images/maytag-2.mp4">
-                    </video>
-                    <figcaption><i>"Maytag Overnight Wash and Dry" for the brand Costco</i></figcaption>
-                    <div style="text-align: center; margin-top: 10px;">
-                        <br>
-                        <h5>Raw generation</h5>
-                        <textarea style="width: 100%; height: 200px; border: 1px solid #f4f3f1; background-color: #f8f8f8; font-family: Arial, sans-serif; border-radius: 5px; text-align: left;" readonly>
-Input Title: "Maytag Overnight Wash and Dry" for the brand Costco
+        <h1>Long-Term Ad Memorability: Understanding and Generating Memorable Ads</h1>
+
+        <div class="authors">
+          <a href="https://harini-si.github.io/">S I Harini<sup>*</sup></a>,
+          <a href="https://someshsingh22.github.io">Somesh Singh<sup>*</sup></a>,
+          <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla<sup>*</sup></a>,
+          <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/">Aanisha Bhattacharyya</a>,
+          <a href="https://www.bits-pilani.ac.in/goa/veeky-baths/">Veeky Baths</a>,
+          <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen</a>,
+          <a href="https://www.linkedin.com/in/rajivratn">Rajiv Ratn Shah</a>,
+          <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
+        </div>
+        <div class="equal-contrib">* Equal Contribution</div>
+        <div class="affiliation">
+          <img src="images/adobe-logo.png" alt="Adobe">
+          <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab Adobe</a>
+        </div>
+
+        <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+        <div class="paper-links">
+          <a href="https://arxiv.org/abs/2309.00378" target="_blank">Paper</a>
+          <a href="https://github.com/behavior-in-the-wild/ad-memorability" target="_blank">Code</a>
+          <a href="https://huggingface.co/datasets/behavior-in-the-wild/LAMBDA" target="_blank">LAMBDA Dataset</a>
+          <a href="https://huggingface.co/datasets/behavior-in-the-wild/UltraLAMBDA" target="_blank">UltraLAMBDA Dataset</a>
+        </div>
+
+        <ul>
+          <li>We release the first-ever long term ad memorability dataset, <strong>LAMBDA</strong>, featuring data from 1749 participants and 2205 ads across 276 brands.</li>
+          <li>Introducing <strong>Henry</strong>, our novel model for predicting content memorability. Henry achieves state-of-the-art performance across major memorability datasets and demonstrates superior generalization in zero-shot scenarios on unseen datasets.</li>
+          <li>We develop <strong>SEED (Self rEwarding mEmorability Modeling)</strong>, a scalable method to generate high-quality memorable ads using automatically annotated data. Ads generated by our method show a 44% higher memorability score than the original ads.</li>
+        </ul>
+
+        <h2>Ad Generations by Henry</h2>
+
+        <p>Take a look at some ad generations by Henry, visualized by <a href="https://www.adobe.com/products/firefly.html" target="_blank">Adobe Firefly</a>. The raw ads generated in text are given in the textblock below each ad.</p>
+
+        <div class="ad-gen-grid">
+          <div class="ad-gen-item">
+            <video autoplay loop muted playsinline>
+              <source type="video/mp4" src="images/maytag-2.mp4">
+            </video>
+            <figcaption><em>"Maytag Overnight Wash and Dry" for the brand Costco</em></figcaption>
+            <h5>Raw generation</h5>
+            <textarea readonly>Input Title: "Maytag Overnight Wash and Dry" for the brand Costco
 
 Generated Ad:
 The ad is shot in landscape orientation, at a medium pace.
@@ -225,8 +281,7 @@ Scene 2:
 The scene shows a person lying on a bed pressing a button on a cell phone.
 Emotions: gift, birthday, holiday
 Tags: button, catch, smartphone, hand
-Voiceover: "Imagine going to bed with dirty clothes and waking up to a fresh, clean load. All without leaving the house. 
-It's like having your own personal laundry assistant."
+Voiceover: "Imagine going to bed with dirty clothes and waking up to a fresh, clean load. All without leaving the house. It's like having your own personal laundry assistant."
 Colors: Gray, Silver, Black, Dark Gray, Dark Brown
 
 Scene 3:
@@ -241,23 +296,16 @@ The scene shows a logo of Maytag.
 Emotions: trust, confidence
 Tags: logo, Maytag
 Voiceover: "Get a Maytag and enjoy the luxury of time."
-Colors: Gray, Off-White, Silver, White, Black, Dark Gray
-                        </textarea>
-                    </div>
-                </figure>
-        
-                <figure style="margin: 0 10px; width: 500px;">
-                    
-                    <video height="500" width="500" autoplay="" loop="" muted="" playsinline="" class="w-full object-cover" poster="">
-                        <source type="video/mp4" src="images/brainly-4.mp4">
-                    </video>
-                    <figcaption><i>"Brainly Keep Learning 30sec Final 16x9" for the brand Brainly</i></figcaption>
+Colors: Gray, Off-White, Silver, White, Black, Dark Gray</textarea>
+          </div>
 
-                    <div style="text-align: center; margin-top: 10px;">
-                        <br>
-                        <h5>Raw generation</h5>
-                        <textarea style="width: 100%; height: 200px; padding: 10px; border: 1px solid #f9f8f6; background-color: #f8f8f8; font-family: Arial, sans-serif; border-radius: 5px; text-align: left;" readonly>
-Input Title: "Brainly Keep Learning 30sec Final 16x9" for the brand Brainly
+          <div class="ad-gen-item">
+            <video autoplay loop muted playsinline>
+              <source type="video/mp4" src="images/brainly-4.mp4">
+            </video>
+            <figcaption><em>"Brainly Keep Learning 30sec Final 16x9" for the brand Brainly</em></figcaption>
+            <h5>Raw generation</h5>
+            <textarea readonly>Input Title: "Brainly Keep Learning 30sec Final 16x9" for the brand Brainly
 
 Generated Ad:
 The ad is shot in landscape orientation, at a medium pace.
@@ -266,7 +314,7 @@ Scene 1:
 The scene shows a girl holding her book.
 Emotions: confused, motivational
 Tags: woman, book, bag, homework
-Voiceover: "What's up? Need help with physics? "          
+Voiceover: "What's up? Need help with physics?"
 Colors: Yellow, Green, Pink, Silver
 
 Scene 2:
@@ -280,7 +328,7 @@ Scene 3:
 The scene shows a man working on his laptop.
 Emotions: togetherness, positive
 Tags: binder, chair, computer, computer desk, table, drawer, laptop, notebook, notepad, pen, pencil, sit, stool,man, write
-Voiceover: "I'll find the information and show you the steps. "
+Voiceover: "I'll find the information and show you the steps."
 Colors: Off-White, White, Gray, Silver
 
 Scene 4:
@@ -302,176 +350,92 @@ The scene shows the Brainly logo with a child.
 Emotions: trust, confidence
 Tags: logo, Brainly
 Voiceover: "I'm here to help you keep learning. Try it out"
-Colors: Off-White, White, Blue
-
-
-                        </textarea>
-                    </div>
-                </figure>
-            </div>
-            <div style="clear: both;"></div>
-        </div>
-        
-        
-        
-      
-
-      
-        
-
-        
-        
-        
-        
-        <section class="section"  style="background-color:#efeff081">
-          <div class="container is-max-desktop">
-            <div class="columns is-centered has-text-centered">
-              <div class="column is-six-fifths">
-                <h2 class="title is-3">Abstract</h2>
-                <div class="content has-text-justified">
-                  <p>
-                    Marketers spend billions of dollars on advertisements, but to what end? At purchase time, if customers cannot recognize the brand for which they
-saw an ad, the money spent on the ad is essentially wasted. Despite its importance in marketing,
-until now, there has been no study on the memorability of ads in the ML literature. All previous
-memorability studies have been conducted on shortterm recall on specific content types like object
-and action videos. On the other hand, the advertising industry only cares about long-term memorability, and ads are almost always highly multimodal. Therefore, we release the first memorability
-dataset, <strong>LAMDBA</strong>, consisting of 1749 participants
-and 2205 ads covering 276 brands. Running statistical tests over different participant subpopulations
-and ad types, we find many interesting insights into
-what makes an ad memorable, e.g., fast-moving
-ads are more memorable than those with slower
-scenes; people who use ad-blockers remember a
-lower number of ads than those who don’t. Next,
-we present a novel model, <strong>Henry</strong>, to predict the
-memorability of a content which achieves state-ofthe-art performance across all prominent literature
-memorability datasets. Henry shows strong generalization performance with better results in 0-shot
-on unseen datasets. Finally, with the intent of memorable ad generation, we present a scalable method
-to build a high-quality memorable ad generation
-model by leveraging automatically annotated data.
-Our approach, <strong>SEED(Self rEwarding mEmorability Modeling)</strong> , starts with a language model trained
-on LAMBDA as seed data and progressively trains
-the LLM to generate more memorable ads. We
-show that the generated advertisements have <strong>44% higher memorability</strong> 
- scores than the original ads.
-Further, we release a large-scale ad dataset, <strong>UltraLAMBDA</strong>, consisting of <strong>5 million ads</strong> with their
-automatically-assigned memorability scores.
-                    
-                  </p>
-        
-                </div>
-              </div>
-            </div>
+Colors: Off-White, White, Blue</textarea>
           </div>
-        </section>
-      
-      <br><br>
-      
-      <section class="section">
-        <div class="container is-max-desktop">
-            <h2 class="title is-3">Interesting Trends in Memorability</h2>
-            <div class="content">
-                <ul class="memorable-trends-list">
-                    <li>Food, entertainment, and tech industries have the most memorable ads.</li>
-                    <li>The length of an ad has minimal impact on its memorability.</li>
-                    <li>Ads with rapid scene transitions are more memorable than slower-paced counterparts.</li>
-                    <li>High-level features like object and scene semantics play a crucial role in ad recall. Ads showcasing human images are significantly more memorable than those featuring objects.</li>
-                    <li>Ads evoking negative emotions tend to stay in memory longer than those with positive sentiments.</li>
-                </ul>
-            </div>
-            <figure>
-                <img src="images/graphs.png" alt="Memorability Trends" style="width: 100%;">
-                <figcaption><i>Correlations between content factors (a-d), interaction factors (e-g), and customer behavior factors (h-j) with memorability
-                  on LAMBDA samples.</i></figcaption>
-
         </div>
-    </section>
-    
-    
-       
-        
-      <section class="section" id="Examples">
-      <div class="container">
-        <h2 class="title is-3">Examples from LAMBDA</h2>
-        The score indicates the memorability of the ad, with 1.0 being the most memorable and 0.0 being the least memorable.<br><br>
+
+        <h2>Abstract</h2>
+
+        <p>
+          Marketers spend billions of dollars on advertisements, but to what end? At purchase time, if customers cannot recognize the brand for which they saw an ad, the money spent on the ad is essentially wasted. Despite its importance in marketing, until now, there has been no study on the memorability of ads in the ML literature. All previous memorability studies have been conducted on short-term recall on specific content types like object and action videos. On the other hand, the advertising industry only cares about long-term memorability, and ads are almost always highly multimodal. Therefore, we release the first memorability dataset, <strong>LAMBDA</strong>, consisting of 1749 participants and 2205 ads covering 276 brands. Running statistical tests over different participant subpopulations and ad types, we find many interesting insights into what makes an ad memorable, e.g., fast-moving ads are more memorable than those with slower scenes; people who use ad-blockers remember a lower number of ads than those who don't. Next, we present a novel model, <strong>Henry</strong>, to predict the memorability of a content which achieves state-of-the-art performance across all prominent literature memorability datasets. Henry shows strong generalization performance with better results in 0-shot on unseen datasets. Finally, with the intent of memorable ad generation, we present a scalable method to build a high-quality memorable ad generation model by leveraging automatically annotated data. Our approach, <strong>SEED (Self rEwarding mEmorability Modeling)</strong>, starts with a language model trained on LAMBDA as seed data and progressively trains the LLM to generate more memorable ads. We show that the generated advertisements have <strong>44% higher memorability</strong> scores than the original ads. Further, we release a large-scale ad dataset, <strong>UltraLAMBDA</strong>, consisting of <strong>5 million ads</strong> with their automatically-assigned memorability scores.
+        </p>
+
+        <h2>Interesting Trends in Memorability</h2>
+
+        <ul>
+          <li>Food, entertainment, and tech industries have the most memorable ads.</li>
+          <li>The length of an ad has minimal impact on its memorability.</li>
+          <li>Ads with rapid scene transitions are more memorable than slower-paced counterparts.</li>
+          <li>High-level features like object and scene semantics play a crucial role in ad recall. Ads showcasing human images are significantly more memorable than those featuring objects.</li>
+          <li>Ads evoking negative emotions tend to stay in memory longer than those with positive sentiments.</li>
+        </ul>
+
+        <figure>
+          <img src="images/graphs.png" alt="Memorability Trends">
+          <figcaption>Correlations between content factors (a-d), interaction factors (e-g), and customer behavior factors (h-j) with memorability on LAMBDA samples.</figcaption>
+        </figure>
+
+        <h2 id="Examples">Examples from LAMBDA</h2>
+
+        <p>The score indicates the memorability of the ad, with 1.0 being the most memorable and 0.0 being the least memorable.</p>
+
         <div class="video-panel">
-            <div class="video-item">
-                <iframe width="350" height="269" src="https://www.youtube.com/embed/xXojnCfcPTc" frameborder="0" allowfullscreen></iframe>
-                <div class="video-caption">Score: 0.85</div>
-            </div>
-            <div class="video-item">
-                <iframe width="350" height="269" src="https://www.youtube.com/embed/2ltpJD5WKvM" frameborder="0" allowfullscreen></iframe>
-                <div class="video-caption">Score: 1.0</div>
-            </div>
-            <div class="video-item">
-                <iframe width="350" height="269" src="https://www.youtube.com/embed/b6Ej0FuVOzw" frameborder="0" allowfullscreen></iframe>
-                <div class="video-caption">Score: 0.71</div>
-            </div>
-
-            <div class="video-item">
-                <iframe width="350" height="269" src="https://www.youtube.com/embed/KgxcWoc6F5k" frameborder="0" allowfullscreen></iframe>
-                <div class="video-caption">Score: 0.57</div>
-            </div>
-
-            <div class="video-item">
-                <iframe width="350" height="269" src="https://www.youtube.com/embed/oAWrnrjAdTc" frameborder="0" allowfullscreen></iframe>
-                <div class="video-caption">Score: 0.33</div>
-            </div>
-
-            <div class="video-item">
-                <iframe width="350" height="269" src="https://www.youtube.com/embed/t8EPhQhNQCU" frameborder="0" allowfullscreen></iframe>
-                <div class="video-caption">Score: 0.16</div>
-            </div>
-            <!-- Add more video items as needed -->
+          <div class="video-item">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/xXojnCfcPTc" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">Score: 0.85</div>
+          </div>
+          <div class="video-item">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/2ltpJD5WKvM" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">Score: 1.0</div>
+          </div>
+          <div class="video-item">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/b6Ej0FuVOzw" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">Score: 0.71</div>
+          </div>
+          <div class="video-item">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/KgxcWoc6F5k" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">Score: 0.57</div>
+          </div>
+          <div class="video-item">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/oAWrnrjAdTc" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">Score: 0.33</div>
+          </div>
+          <div class="video-item">
+            <iframe width="100%" height="200" src="https://www.youtube.com/embed/t8EPhQhNQCU" frameborder="0" allowfullscreen></iframe>
+            <div class="video-caption">Score: 0.16</div>
+          </div>
         </div>
-        </section>
-      
-    
-      
-        <section class="section" id="BibTeX">
-          <div class="container is-max-desktop content">
-            <h2 class="title">BibTeX</h2>
-        <pre><code>@misc{s2024longtermadmemorabilityunderstanding,
-            title={Long-Term Ad Memorability: Understanding and Generating Memorable Ads}, 
-            author={Harini S I au2 and Somesh Singh and Yaman K Singla and Aanisha Bhattacharyya and Veeky Baths and Changyou Chen and Rajiv Ratn Shah and Balaji Krishnamurthy},
-            year={2024},
-            eprint={2309.00378},
-            archivePrefix={arXiv},
-            primaryClass={cs.CL},
-            url={https://arxiv.org/abs/2309.00378}}</code></pre>
-          </div>
-          
-        </section>
-        
-        <section class="section" id="TermsOfService">
-          <div class="container is-max-desktop content">
-            <h2 class="title">Terms Of Service</h2>
-            <p>
-                LAMBDA and UltraLAMBDA are sourced from brand videos available on YouTube, Facebook Ads, and CommonCrawl. The dataset annotations and video links for both LAMBDA and UltraLAMBDA will be released under the MIT License. The videos themselves are subject to the original creators’ licenses. These datasets do not reveal any identities of the annotators or specific individuals. LAMBDA, being curated manually, ensures that no offensive videos are included; however, UltraLAMBDA, sourced from the internet, may contain noisier content. While the videos originate from brands, some brand content may be perceived as offensive by certain individuals.
-            </p>
-          </div>
-        </section>
-      
-      
-        <section class="section" id="Acknowledgement">
-          <div class="container is-max-desktop content">
-            <h2 class="title">Acknowledgement</h2>
-            <p>
-              We thank Adobe for their generous sponsorship.
-              <br>
-              We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
-            </p>    
-          </div>
-        </section>
-      
 
-        <footer class="footer">
-          <div class="content has-text-centered">
-            <p>
-              <strong>Long-Term Ad Memorability</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
-            </p>
-          </div>
+        <h2 id="BibTeX">BibTeX</h2>
+
+        <pre><code>@misc{s2024longtermadmemorabilityunderstanding,
+  title={Long-Term Ad Memorability: Understanding and Generating Memorable Ads},
+  author={Harini S I au2 and Somesh Singh and Yaman K Singla and Aanisha Bhattacharyya and Veeky Baths and Changyou Chen and Rajiv Ratn Shah and Balaji Krishnamurthy},
+  year={2024},
+  eprint={2309.00378},
+  archivePrefix={arXiv},
+  primaryClass={cs.CL},
+  url={https://arxiv.org/abs/2309.00378}
+}</code></pre>
+
+        <h2 id="TermsOfService">Terms Of Service</h2>
+
+        <p>
+          LAMBDA and UltraLAMBDA are sourced from brand videos available on YouTube, Facebook Ads, and CommonCrawl. The dataset annotations and video links for both LAMBDA and UltraLAMBDA will be released under the MIT License. The videos themselves are subject to the original creators' licenses. These datasets do not reveal any identities of the annotators or specific individuals. LAMBDA, being curated manually, ensures that no offensive videos are included; however, UltraLAMBDA, sourced from the internet, may contain noisier content. While the videos originate from brands, some brand content may be perceived as offensive by certain individuals.
+        </p>
+
+        <h2>Acknowledgement</h2>
+
+        <p>
+          We thank Adobe for their generous sponsorship.
+          We thank the LLaMA team for giving us access to their models, and open-source projects, including Vicuna.
+        </p>
+
+        <hr>
+        <footer>
+          <strong>Long-Term Ad Memorability</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
         </footer>
 
+      </div>
     </body>
 </html>
-
