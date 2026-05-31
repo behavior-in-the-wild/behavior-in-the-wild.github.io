@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="How Well Do Large Language Models Capture Human Personality? Investigating persona manifold collapse in LLM-based human simulation.">
+  <meta name="keywords" content="LLM, Personality, Persona, Human Simulation, Behavior, Persona Manifold Collapse">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/llm-personality">
+  <meta property="og:title" content="How Well Do Large Language Models Capture Human Personality?">
+  <meta property="og:description" content="We identify persona manifold collapse — where increasingly expressive persona specifications lead to systematic contraction of representational and behavioral diversity in LLMs.">
+  <title>How Well Do Large Language Models Capture Human Personality?</title>
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/llm-personality">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/base.css">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <style>
+    body {
+      font-family: 'Noto Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .hero {
+      background-color: #ffffff;
+      color: black;
+      padding: 20px;
+    }
+
+    .hero .title {
+      color: black;
+    }
+
+    .author-block a {
+      color: #f68946;
+      font-weight: normal;
+    }
+
+    .organization a {
+      color: #3273dc;
+      font-weight: normal;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header" style="background-color:#ff0202;">
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:#ff0202;" align="center">
+      <a href="./index.html" class="navbar-item"
+        style="font-weight: bold; text-decoration: none; background-color: transparent;" align="center">
+        <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild"
+          style="width:20px;height:20px;margin-right:5px;">
+        <b style="color:white;font-weight:bold;">Behavior in the Wild</b>
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">How Well Do Large Language Models Capture Human Personality?</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.com/search?q=Aanisha+Bhattacharyya" style="color:#f68946;font-weight:normal;">Aanisha Bhattacharyya</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/search?q=Rajiv+Ratn+Shah" style="color:#f68946;font-weight:normal;">Rajiv Ratn Shah</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/search?q=Changyou+Chen" style="color:#f68946;font-weight:normal;">Changyou Chen</a>,
+              </span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/search?q=Jitendra+Ajmera" style="color:#f68946;font-weight:normal;">Jitendra Ajmera</a>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors" style="margin-top:10px;">
+              <span class="author-block">
+                <img src="images/adobe-logo.png" alt="Adobe Logo"
+                  style="width:30px;height:30px;margin-right:5px;vertical-align:middle;">
+                <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR), Adobe</a>
+              </span>
+            </div>
+
+            <p style="margin-top:10px;">Contact <a
+                href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a>
+              for questions and suggestions</p>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://www.researchgate.net/publication/405480733_How_Well_Do_Large_Language_Models_Capture_Human_Personality"
+                    target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-alt"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#efeff081">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Large language models (LLMs) are increasingly used to simulate human populations via persona prompting,
+              often under the assumptions that richer persona descriptions improve behavioral fidelity, similarly sized
+              attribute combinations are equally simulatable, and persona definitions generalize across tasks. In this
+              work, we formalize these assumptions and systematically evaluate them across multiple architectures,
+              scales, and simulation settings. We identify a fundamental limitation we term <b>persona manifold
+              collapse</b>, where increasingly expressive persona specifications lead to systematic contraction of
+              representational and behavioral diversity. Across models, increasing persona complexity consistently
+              reduces inter-persona separation in latent space and weakens behavioral differentiation in downstream
+              simulation tasks. These effects persist across multiple analyses as richer personas fail to preserve human
+              subgroup disagreement, performance varies across attribute combinations of similar size, and adding
+              descriptive detail often degrades rather than improves simulation fidelity. Surprisingly, simple
+              Age-Gender personas consistently outperform richly specified Ideal Customer Profiles (ICPs) across
+              industries, achieving substantially higher downstream prediction accuracy. We find that collapse is not
+              uniform across attributes. Certain combinations remain behaviorally stable and preserve stronger alignment
+              with human responses, forming localized regions we term <b>alignment bridges</b>. Together, our results
+              provide empirical and conceptual foundations for understanding the limits of persona-conditioned
+              simulation, highlighting the need for representation-aware persona construction rather than increasing
+              persona expressivity alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background-color:#ffffffcc">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-six-fifths">
+          <h2 class="title is-3">Key Findings</h2>
+          <div class="content has-text-justified">
+            <ul>
+              <li><b>Persona Manifold Collapse:</b> Increasing persona complexity systematically reduces inter-persona separation in latent space and weakens behavioral differentiation in downstream simulation tasks.</li>
+              <li><b>Simplicity Wins:</b> Simple Age-Gender personas consistently outperform richly specified Ideal Customer Profiles (ICPs) across industries in downstream prediction accuracy.</li>
+              <li><b>Alignment Bridges:</b> Certain attribute combinations remain behaviorally stable and preserve stronger alignment with human responses, forming localized regions of reliable simulation.</li>
+              <li><b>Richer ≠ Better:</b> Adding descriptive detail to personas often degrades rather than improves simulation fidelity, challenging common assumptions in persona-based LLM research.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <br><br>
+
+</body>
+</html>
