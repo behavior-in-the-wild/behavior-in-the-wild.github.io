@@ -47,6 +47,39 @@
       font-weight: normal;
     }
   </style>
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Well Do Large Language Models Capture Human Personality?">
+  <meta name="twitter:description" content="We identify persona manifold collapse — where increasingly expressive persona specifications lead to systematic contraction of representational and behavioral diversity in LLMs.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "How Well Do Large Language Models Capture Human Personality?",
+  "url": "https://behavior-in-the-wild.github.io/llm-personality",
+  "description": "Investigating persona manifold collapse in LLM-based human simulation.",
+  "keywords": [
+    "LLM",
+    "personality",
+    "persona",
+    "human simulation",
+    "behavior",
+    "persona manifold collapse"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+  </script>
 </head>
 
 <body>
@@ -69,20 +102,23 @@
             <h1 class="title is-1 publication-title">How Well Do Large Language Models Capture Human Personality?</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href="https://scholar.google.com/search?q=Aanisha+Bhattacharyya" style="color:#f68946;font-weight:normal;">Aanisha Bhattacharyya</a>,
+                <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/" style="color:#f68946;font-weight:normal;">Aanisha Bhattacharyya<sup>*</sup></a>,
               </span>
               <span class="author-block">
-                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla</a>,
+                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman Kumar Singla<sup>*</sup></a>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/search?q=Rajiv+Ratn+Shah" style="color:#f68946;font-weight:normal;">Rajiv Ratn Shah</a>,
+                <a href="https://www.linkedin.com/in/rajivratn" style="color:#f68946;font-weight:normal;">Rajiv Ratn Shah</a>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/search?q=Changyou+Chen" style="color:#f68946;font-weight:normal;">Changyou Chen</a>,
+                <a href="https://cse.buffalo.edu/~changyou/" style="color:#f68946;font-weight:normal;">Changyou Chen</a>,
               </span>
               <span class="author-block">
-                <a href="https://scholar.google.com/search?q=Jitendra+Ajmera" style="color:#f68946;font-weight:normal;">Jitendra Ajmera</a>
+                <a href="https://scholar.google.com/citations?hl=en&user=u7NNClAAAAAJ&view_op=list_works&sortby=pubdate" style="color:#f68946;font-weight:normal;">Jitendra Ajmera</a>
               </span>
+            </div>
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>*</sup>Equal Contribution</span>
             </div>
 
             <div class="is-size-5 publication-authors" style="margin-top:10px;">
@@ -153,17 +189,56 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
-          <h2 class="title is-3">Key Findings</h2>
+          <h2 class="title is-3">Key Results</h2>
           <div class="content has-text-justified">
             <ul>
-              <li><b>Persona Manifold Collapse:</b> Increasing persona complexity systematically reduces inter-persona separation in latent space and weakens behavioral differentiation in downstream simulation tasks.</li>
-              <li><b>Simplicity Wins:</b> Simple Age-Gender personas consistently outperform richly specified Ideal Customer Profiles (ICPs) across industries in downstream prediction accuracy.</li>
-              <li><b>Alignment Bridges:</b> Certain attribute combinations remain behaviorally stable and preserve stronger alignment with human responses, forming localized regions of reliable simulation.</li>
-              <li><b>Richer ≠ Better:</b> Adding descriptive detail to personas often degrades rather than improves simulation fidelity, challenging common assumptions in persona-based LLM research.</li>
+              <li>
+                <b>Persona Manifold Collapse is model-agnostic:</b> Increasing persona complexity
+                consistently contracts the representation manifold across all tested architectures and scales.
+                The magnitude of collapse ranges from <b>22.90%</b> on Qwen3-8B-Base to <b>58.93%</b> on
+                Qwen-72B-Vision-Instruct. On Qwen-72B-Vision-Instruct, mean persona distance drops from
+                14.38 at Level 1 (Age–Gender) to 5.90 at the richest configuration — a reduction of nearly 60%.
+              </li>
+              <li>
+                <b>Alignment amplifies collapse:</b> Instruction-tuned models exhibit substantially
+                stronger collapse than their base counterparts — increasing from ~35% to 59% in Qwen-72B and
+                from ~29% to 55% in LLaMA-3.2-90B.
+              </li>
+              <li>
+                <b>LLMs fail to preserve human behavioral variation:</b> Human–LLM correlations remain
+                consistently weak or negative across socio-political opinion (<b>OpinionQA</b>), moral
+                reasoning (<b>Moral Machine</b>), and aesthetic preference (<b>Website Likability</b>) tasks.
+                For example, GPT-4o reaches <b>−0.37</b> on Website Likability, and LLaMA-3.2-90B-Vision-Instruct
+                reaches <b>−0.30</b> on Moral Machine.
+              </li>
+              <li>
+                <b>Simple Age–Gender personas outperform rich ICPs:</b> In email CTR prediction, Age–Gender
+                personas achieve <b>70.00%</b> accuracy vs. <b>58.57%</b> for auto-generated ICP agents and
+                <b>50.74%</b> for expert-defined brand ICPs. This trend holds across all tweet engagement
+                domains (technology, airlines, fashion).
+              </li>
+              <li>
+                <b>Alignment Bridges:</b> Collapse is not uniform. Certain attribute combinations —
+                such as Education + Gender and Gender + Religious — remain behaviorally stable and preserve
+                stronger alignment with human responses. These stable configurations (alignment bridges) exhibit
+                inter-persona distances of up to 15.78 vs. 5.88 for collapse-prone personas on Qwen-72B-VL.
+              </li>
             </ul>
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX" style="background-color:#efeff081">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{bhattacharyya2025llmpersonality,
+  title={How Well Do Large Language Models Capture Human Personality?},
+  author={Bhattacharyya, Aanisha and Singla, Yaman Kumar and Shah, Rajiv Ratn and Chen, Changyou and Ajmera, Jitendra},
+  year={2025},
+  url={https://www.researchgate.net/publication/405480733_How_Well_Do_Large_Language_Models_Capture_Human_Personality}
+}</code></pre>
     </div>
   </section>
 
