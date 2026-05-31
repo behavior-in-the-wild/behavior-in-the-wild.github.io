@@ -7,14 +7,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:url" content="https://behavior-in-the-wild.github.io/align-via-actions">
         <meta property="og:type" content="article">
-        <meta property="og:title" content="Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot">
+        <meta property="og:title" content="ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models">
         <meta property="og:description" content="Align Via Actions studies behavior-driven alignment to better match LLM outputs with human opinions in zero-shot settings.">
-        <title>Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot</title>
+        <title>ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models</title>
         <link rel="canonical" href="https://behavior-in-the-wild.github.io/align-via-actions">
         <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
         <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot">
+        <meta name="twitter:title" content="ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models">
         <meta name="twitter:description" content="Align Via Actions studies behavior-driven alignment to better match LLM outputs with human opinions in zero-shot settings.">
         <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
 
@@ -22,9 +22,9 @@
 {
   "@context": "https://schema.org",
   "@type": "ScholarlyArticle",
-  "author": [{ "@type": "Person", "name": "Aanisha Bhattacharyya" },{ "@type": "Person", "name": "Susmit Agrawal" },{ "@type": "Person", "name": "Yaman K Singla" },{ "@type": "Person", "name": "Nikitha SR" },{ "@type": "Person", "name": "Tarun Ram Menta" },{ "@type": "Person", "name": "Balaji Krishnamurthy" }],
+  "author": [{ "@type": "Person", "name": "Aanisha Bhattacharyya" },{ "@type": "Person", "name": "Susmit Agrawal" },{ "@type": "Person", "name": "Yaman K Singla" },{ "@type": "Person", "name": "Tarun Ram Menta" },{ "@type": "Person", "name": "Nikitha SR" },{ "@type": "Person", "name": "Rajiv Ratn Shah" },{ "@type": "Person", "name": "Changyou Chen" },{ "@type": "Person", "name": "Balaji Krishnamurthy" }],
   "datePublished": "2026",
-  "name": "Align Via Actions: Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot",
+  "name": "ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models",
   "url": "https://behavior-in-the-wild.github.io/align-via-actions",
   "description": "Behavior-driven alignment to better match LLM outputs with human opinions in zero-shot settings.",
   "keywords": [
@@ -186,12 +186,14 @@
               h1 { font-size: 1.35rem; }
             }
         </style>
-      <meta name="citation_title" content="Align Via Actions: Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot">
+      <meta name="citation_title" content="ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models">
   <meta name="citation_author" content="Aanisha Bhattacharyya">
   <meta name="citation_author" content="Susmit Agrawal">
   <meta name="citation_author" content="Yaman K Singla">
-  <meta name="citation_author" content="Nikitha SR">
   <meta name="citation_author" content="Tarun Ram Menta">
+  <meta name="citation_author" content="Nikitha SR">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Changyou Chen">
   <meta name="citation_author" content="Balaji Krishnamurthy">
   <meta name="citation_publication_date" content="2026">
   <meta name="citation_conference_title" content="AAAI Conference on Artificial Intelligence">
@@ -206,20 +208,28 @@
 
       <div class="page">
 
-        <h1>Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot</h1>
+        <h1>ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models</h1>
 
         <div class="authors">
-          <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/">Aanisha Bhattacharyya<sup>*</sup></a>,
-          <a href="https://scholar.google.com/citations?user=dwx-5E0AAAAJ&hl=en">Susmit Agrawal<sup>*</sup></a>,
-          <a href="https://sites.google.com/view/yaman-kumar/">Yaman K Singla<sup>*</sup></a>,
-          <a href="https://www.linkedin.com/in/tarun-ram-menta-50b4121b9/">Tarun Menta</a>,
-          <a href="https://www.linkedin.com/in/nikitha-sr-ba2081144/">Nikitha S R</a>,
-          <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
+          <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/">Aanisha Bhattacharyya<sup>*,1</sup></a>,
+          <a href="https://scholar.google.com/citations?user=dwx-5E0AAAAJ&hl=en">Susmit Agrawal<sup>*,1</sup></a>,
+          <a href="https://sites.google.com/view/yaman-kumar/">Yaman K Singla<sup>*,1</sup></a>,
+          <a href="https://www.linkedin.com/in/tarun-ram-menta-50b4121b9/">Tarun Menta<sup>1</sup></a>,
+          <a href="https://www.linkedin.com/in/nikitha-sr-ba2081144/">Nikitha S R<sup>1</sup></a>,
+          <a href="https://www.linkedin.com/in/rajivratn">Rajiv Ratn Shah<sup>2</sup></a>,
+          <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen<sup>3</sup></a>,
+          <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy<sup>1</sup></a>
         </div>
         <div class="equal-contrib">* Equal Contribution</div>
         <div class="affiliation">
           <img src="images/adobe-logo.png" alt="Adobe">
-          <a href="https://adobe.mdsr.live/" target="_blank">Adobe, Media and Data Science Research (MDSR) Lab</a>
+          <sup>1</sup><a href="https://adobe.mdsr.live/" target="_blank">Adobe, Media and Data Science Research (MDSR) Lab</a>
+          &nbsp;&nbsp;
+          <img src="images/iiitd-logo.png" alt="IIIT Delhi">
+          <sup>2</sup><a href="https://www.iiitd.ac.in/" target="_blank">IIIT Delhi</a>
+          &nbsp;&nbsp;
+          <img src="images/ub-logo.png" alt="SUNY Buffalo">
+          <sup>3</sup><a href="https://www.buffalo.edu/" target="_blank">SUNY at Buffalo</a>
         </div>
 
         <p class="venue">AAAI 2026</p>
@@ -361,11 +371,16 @@
 
         <h2>BibTeX</h2>
 
-        <pre><code>@online{bhattacharyya2024align,
-  title={Align Via Actions : Learning Behavior Aligns LLMs With Human Opinions in Zero-Shot},
-  author={Bhattacharyya, Aanisha and Agrawal, Susmit and Singla, Yaman K and SR, Nikitha and Menta, Tarun Ram and Krishnamurthy, Balaji},
-  year={2024},
-  url={https://behavior-in-the-wild.github.io/align-via-actions}
+        <pre><code>@inproceedings{bhattacharyya2026alpha,
+  title={ALPHA: Action-Based Learning for Pluralistic Human Alignment in Large Language Models},
+  author={Bhattacharyya, Aanisha and Agrawal, Susmit and Singla, Yaman Kumar and Menta, Tarun Ram and Sr, Nikitha and Shah, Rajiv Ratn and Chen, Changyou and Krishnamurthy, Balaji},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={40},
+  number={44},
+  pages={37249--37258},
+  year={2026},
+  doi={10.1609/aaai.v40i44.41056},
+  url={https://ojs.aaai.org/index.php/AAAI/article/view/41056}
 }</code></pre>
 
         <h2>Terms Of Service</h2>
