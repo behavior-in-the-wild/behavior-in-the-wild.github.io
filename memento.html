@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="MEMENTO: a framework that treats the web as a learning signal for low-data professional domains, enabling agents to accumulate domain knowledge and research strategy across sessions without model fine-tuning.">
+  <meta name="keywords" content="web as learning signal, low-data learning, adaptive exploration, memory-augmented agents, sales automation, legal research, LLM agents">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/memento">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains">
+  <meta property="og:description" content="MEMENTO uses the open web as a cross-session learning signal, enabling agents to develop domain expertise in data-scarce settings without model fine-tuning.">
+  <title>MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains</title>
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/memento">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains">
+  <meta name="twitter:description" content="MEMENTO uses the open web as a cross-session learning signal, enabling agents to develop domain expertise in data-scarce settings without model fine-tuning.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    { "@type": "Person", "name": "Ashutosh Ojha" },
+    { "@type": "Person", "name": "Vinay Aggarwal" },
+    { "@type": "Person", "name": "Ashutosh Srivastava" },
+    { "@type": "Person", "name": "Siddharth Yedlapati" },
+    { "@type": "Person", "name": "Yaman K Singla" },
+    { "@type": "Person", "name": "Jitendra Ajmera" }
+  ],
+  "datePublished": "2026",
+  "name": "MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains",
+  "url": "https://behavior-in-the-wild.github.io/memento",
+  "description": "MEMENTO uses the open web as a cross-session learning signal, enabling agents to develop domain expertise in data-scarce settings without model fine-tuning.",
+  "keywords": [
+    "web as learning signal",
+    "low-data learning",
+    "adaptive exploration",
+    "memory-augmented agents",
+    "sales automation",
+    "legal research"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    .site-nav {
+      border-bottom: 1px solid #ddd;
+      padding: 11px 24px;
+      font-size: 0.875rem;
+    }
+    .site-nav a { color: #0645ad; text-decoration: none; }
+    .site-nav a:hover { text-decoration: underline; }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: bold;
+      line-height: 1.35;
+      color: #111;
+      margin: 0 0 18px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 44px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ccc;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 28px 0 8px;
+    }
+    p { margin: 14px 0; }
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .authors {
+      font-size: 1rem;
+      margin: 4px 0 3px;
+      line-height: 1.65;
+    }
+    .affiliation {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 4px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .affiliation img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+    .paper-links {
+      margin: 14px 0 6px;
+    }
+    .paper-links a {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid #0645ad;
+      border-radius: 3px;
+      font-size: 0.875rem;
+      color: #0645ad;
+      margin-right: 8px;
+      font-family: Georgia, serif;
+    }
+    .paper-links a:hover {
+      background: #0645ad;
+      color: #fff;
+      text-decoration: none;
+    }
+    ul {
+      padding-left: 1.4em;
+      margin: 12px 0;
+    }
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+    pre {
+      background: #f6f6f6;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 16px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+    }
+    figure {
+      margin: 32px 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 90%;
+      border: 1px solid #ddd;
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 0.875rem;
+      color: #666;
+      font-style: italic;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 16px 0; }
+    th, td { border: 1px solid #ddd; padding: 7px 10px; text-align: left; }
+    th { background: #f5f5f5; font-weight: bold; }
+    tr:nth-child(even) { background: #fafafa; }
+    .component-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 16px 0;
+    }
+    .component-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px;
+      background: #fff;
+    }
+    .component-card h3 { margin-top: 0; }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 48px 0 0;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 16px;
+    }
+    @media (max-width: 600px) {
+      .page { padding: 28px 16px 64px; }
+      h1 { font-size: 1.35rem; }
+      .component-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+  <meta name="citation_title" content="MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains">
+  <meta name="citation_author" content="Ashutosh Ojha">
+  <meta name="citation_author" content="Vinay Aggarwal">
+  <meta name="citation_author" content="Ashutosh Srivastava">
+  <meta name="citation_author" content="Siddharth Yedlapati">
+  <meta name="citation_author" content="Yaman K Singla">
+  <meta name="citation_author" content="Jitendra Ajmera">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2605.29795">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">← Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains</h1>
+
+    <div class="authors">
+      Ashutosh Ojha,
+      <a href="https://scholar.google.co.in/citations?user=o4rExGkAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Vinay Aggarwal</a>,
+      <a href="https://h4shk4t.github.io" target="_blank" rel="noopener noreferrer">Ashutosh Srivastava</a>,
+      <a href="https://www.linkedin.com/in/siddharthyedlapati/" target="_blank" rel="noopener noreferrer">Siddharth Yedlapati</a>,
+      <a href="https://sites.google.com/view/yaman-kumar/" target="_blank" rel="noopener noreferrer">Yaman K Singla</a>,
+      Jitendra Ajmera
+    </div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <a href="https://adobe.mdsr.live/" target="_blank" rel="noopener noreferrer">Media and Data Science Research (MDSR), Adobe</a>
+    </div>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2605.29795" target="_blank" rel="noopener noreferrer">Paper</a>
+    </div>
+
+    <figure>
+      <img src="images/memento/memento_pipeline.png" alt="Overview of the MEMENTO framework" loading="lazy">
+      <figcaption>Figure 1: Overview of MEMENTO for a single training sample. Given a research question, the agent consults procedural memory for question decomposition, decomposes it into an Adaptive Exploration Tree of sub-questions, checks declarative memory before issuing web searches, and updates both memory modules with learnings at the end of each session.</figcaption>
+    </figure>
+
+    <h2>Abstract</h2>
+
+    <p>
+      Real-world tasks often lack large labeled datasets, motivating extensive work on learning in low-data regimes. However, existing approaches such as few-shot prompting, instruction tuning, and synthetic data generation, continue to treat labeled or pseudo-labeled data as the primary learning signal. In contrast, human practitioners acquire expertise through repeated, self-directed interaction with the open web, progressively refining both domain knowledge and search strategies. We propose <strong>MEMENTO</strong>, a framework that treats the web as a learning signal rather than a stateless retrieval interface. MEMENTO operates at two levels: within each session, it conducts iterative web exploration via an <strong>Adaptive Exploration Tree (AET)</strong> that decomposes tasks into evolving questions and reflects on intermediate findings; across sessions, it accumulates experience through dual-channel memory, separating <strong>declarative knowledge</strong> (facts) from <strong>procedural knowledge</strong> (search strategies). This design enables agents to learn reusable research strategies and domain expertise from trajectories of web interaction without additional model training. We evaluate MEMENTO on two low-data professional domains: sales automation and legal research. Our empirical results show consistent improvements in performance over ReAct-based baselines (+25.6% on sales automation and +36.5% on legal research), demonstrating that the web can serve as a scalable learning source for acquiring task-specific expertise in data-scarce settings.
+    </p>
+
+    <h2>Key Contributions</h2>
+
+    <ul>
+      <li><strong>Web as a Learning Signal in Low-Data Regimes:</strong> To the best of our knowledge, the first framework to propose the open web as a learning signal for craft acquisition in domains where labeled supervision is scarce. MEMENTO uses research trajectories and accumulated factual knowledge to perform cross-session optimization, enabling agents to develop domain expertise without model fine-tuning.</li>
+      <li><strong>Adaptive Exploration Tree (AET):</strong> A within-session search architecture that decomposes research tasks into dynamic question trees, iteratively reflecting on discovered information to identify gaps and restructure search paths under a fixed budget, producing trajectories that are directed, self-correcting, and informative as cross-session learning signals.</li>
+      <li><strong>Dual-Channel Cross-Session Memory:</strong> Grounded in the declarative/procedural distinction from the integrated theory of mind, MEMENTO maintains two independent persistent memory stores. Procedural Memory distills query strategies, source credibility heuristics, and domain-specific search playbooks from prior trajectories; Declarative Memory persists verified facts and contextual knowledge across sessions.</li>
+      <li><strong>Empirical Validation:</strong> Consistent improvements over ReAct-based baselines on two structurally distinct low-data professional domains — +25.6% on sales automation and +36.5% on legal research — with ablations confirming that the AET and each memory channel contribute independently to the gains.</li>
+    </ul>
+
+    <h2>Architecture</h2>
+
+    <div class="component-cards">
+      <div class="component-card">
+        <h3>Adaptive Exploration Tree (AET)</h3>
+        <p>Within each session, the AET decomposes a research task into an initial set of sub-questions (Wave 1), answers each via web search, then reflects on accumulated findings to identify gaps and generates a new wave of queries. This cycle repeats under a fixed budget, building a session memory of discovered information that each reflective step can build upon.</p>
+      </div>
+      <div class="component-card">
+        <h3>Dual-Channel Cross-Session Memory</h3>
+        <p><strong>Declarative Memory</strong> stores verified facts and contextual knowledge from prior sessions, allowing future tasks to build on established foundations. <strong>Procedural Memory</strong> distills high-utility query strategies, source credibility heuristics, and domain-specific research playbooks from prior trajectories — capturing <em>how</em> to approach a domain, not just <em>what</em> is known about it.</p>
+      </div>
+    </div>
+
+    <h2>Results</h2>
+
+    <p>MEMENTO is evaluated on two low-data professional domains using ReAct-based agents as baselines:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Sales Automation (Qwen)</th>
+          <th>Legal Research (Qwen)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>ReAct (baseline)</td>
+          <td>0.461</td>
+          <td>0.592</td>
+        </tr>
+        <tr>
+          <td>AET only</td>
+          <td>0.552 (+19.7%)</td>
+          <td>0.767 (+29.6%)</td>
+        </tr>
+        <tr>
+          <td><strong>MEMENTO (full)</strong></td>
+          <td><strong>0.579 (+25.6%)</strong></td>
+          <td><strong>0.808 (+36.5%)</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>The AET contributes independently of cross-session memory — the largest single jump comes from replacing the flat ReAct loop with the hierarchical, reflective AET.</li>
+      <li>Adding cross-session memory on top of the AET yields further gains: +4.9% on sales automation and +5.3% on legal research, confirming each component's independent contribution.</li>
+      <li>Gains hold across two different backbone models (Qwen3-35B-A3B and GPT-5-mini), indicating that improvements stem from the cross-session learning architecture rather than the choice of underlying model.</li>
+    </ul>
+
+    <h2>BibTeX</h2>
+
+    <pre><code>@misc{memento2026,
+  author = {Ojha, Ashutosh and Aggarwal, Vinay and Srivastava, Ashutosh and Yedlapati, Siddharth and Singla, Yaman K and Ajmera, Jitendra},
+  title = {MEMENTO: Leveraging Web as a Learning Signal for Low-Data Domains},
+  year = {2026},
+  publisher = {Behavior in the Wild},
+  howpublished = {\url{https://behavior-in-the-wild.github.io/memento.html}},
+}</code></pre>
+
+    <hr>
+    <footer>
+      <strong>MEMENTO</strong> by <a href="https://behavior-in-the-wild.github.io" target="_blank" rel="noopener noreferrer">Behavior in the Wild</a>.
+      The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </footer>
+
+  </div>
+</body>
+</html>
