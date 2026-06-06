@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="FEST: an iterative framework that combines dual-stream feature generation, semantic deduplication, and tree-guided evolution to discover interpretable features from unstructured data, aligned with expert knowledge.">
+  <meta name="keywords" content="feature engineering, automated feature discovery, LLM feature generation, interpretable machine learning, brand classification, expert alignment, decision trees">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/fest">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="FEST: Feature Engineering with Self-evolving Trees">
+  <meta property="og:description" content="FEST combines dual-stream feature generation, semantic deduplication, and tree-guided evolution to discover interpretable features from unstructured data, achieving 60-80% coverage of expert-designed features.">
+  <title>FEST: Feature Engineering with Self-evolving Trees</title>
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/fest">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/fest_pipeline.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FEST: Feature Engineering with Self-evolving Trees">
+  <meta name="twitter:description" content="FEST combines dual-stream feature generation, semantic deduplication, and tree-guided evolution to discover interpretable features from unstructured data, achieving 60-80% coverage of expert-designed features.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/fest_pipeline.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    { "@type": "Person", "name": "Varun Khurana" },
+    { "@type": "Person", "name": "Vijval Ekbote" },
+    { "@type": "Person", "name": "Vashu Chauhan" },
+    { "@type": "Person", "name": "Yaman K Singla" },
+    { "@type": "Person", "name": "Rajiv Ratn Shah" },
+    { "@type": "Person", "name": "Balaji Krishnamurthy" }
+  ],
+  "datePublished": "2026",
+  "name": "FEST: Feature Engineering with Self-evolving Trees",
+  "url": "https://behavior-in-the-wild.github.io/fest",
+  "description": "FEST combines dual-stream feature generation, semantic deduplication, and tree-guided evolution to discover interpretable features from unstructured data, achieving 60-80% coverage of expert-designed features.",
+  "keywords": [
+    "feature engineering",
+    "automated feature discovery",
+    "LLM feature generation",
+    "interpretable machine learning",
+    "brand classification",
+    "expert alignment",
+    "decision trees"
+  ],
+  "isPartOf": {
+    "@type": "Website",
+    "url": "https://behavior-in-the-wild.github.io",
+    "name": "Behavior In The Wild"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    .site-nav {
+      border-bottom: 1px solid #ddd;
+      padding: 11px 24px;
+      font-size: 0.875rem;
+    }
+    .site-nav a { color: #0645ad; text-decoration: none; }
+    .site-nav a:hover { text-decoration: underline; }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: bold;
+      line-height: 1.35;
+      color: #111;
+      margin: 0 0 18px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 44px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ccc;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 28px 0 8px;
+    }
+    p { margin: 14px 0; }
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .authors {
+      font-size: 1rem;
+      margin: 4px 0 3px;
+      line-height: 1.65;
+    }
+    .affiliation {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 4px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    .affiliation img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+    .paper-links {
+      margin: 14px 0 6px;
+    }
+    .paper-links a {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid #0645ad;
+      border-radius: 3px;
+      font-size: 0.875rem;
+      color: #0645ad;
+      margin-right: 8px;
+      font-family: Georgia, serif;
+    }
+    .paper-links a:hover {
+      background: #0645ad;
+      color: #fff;
+      text-decoration: none;
+    }
+    ul {
+      padding-left: 1.4em;
+      margin: 12px 0;
+    }
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+    pre {
+      background: #f6f6f6;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 16px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+    }
+    figure {
+      margin: 32px 0;
+      text-align: center;
+    }
+    figure img {
+      max-width: 90%;
+      border: 1px solid #ddd;
+    }
+    figcaption {
+      margin-top: 8px;
+      font-size: 0.875rem;
+      color: #666;
+      font-style: italic;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 16px 0; }
+    th, td { border: 1px solid #ddd; padding: 7px 10px; text-align: left; }
+    th { background: #f5f5f5; font-weight: bold; }
+    tr:nth-child(even) { background: #fafafa; }
+    tr.fest-row { font-weight: bold; background: #f0f4ff !important; }
+    .component-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin: 16px 0;
+    }
+    .component-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 20px;
+      background: #fff;
+    }
+    .component-card h3 { margin-top: 0; }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 48px 0 0;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 16px;
+    }
+    @media (max-width: 600px) {
+      .page { padding: 28px 16px 64px; }
+      h1 { font-size: 1.35rem; }
+      .component-cards { grid-template-columns: 1fr; }
+    }
+  </style>
+  <meta name="citation_title" content="FEST: Feature Engineering with Self-evolving Trees">
+  <meta name="citation_author" content="Varun Khurana">
+  <meta name="citation_author" content="Vijval Ekbote">
+  <meta name="citation_author" content="Vashu Chauhan">
+  <meta name="citation_author" content="Yaman K Singla">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_pdf_url" content="https://behavior-in-the-wild.github.io/fest">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">&larr; Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>FEST: Feature Engineering with Self-evolving Trees</h1>
+
+    <div class="authors">
+      <a href="https://adobe.mdsr.live/people/varun-khurana/" target="_blank" rel="noopener noreferrer">Varun Khurana<sup>1</sup></a>,
+      <a href="https://in.linkedin.com/in/vijval-ekbote-55454b280">Vijval Ekbote<sup>2</sup></a>,
+      <a href="https://in.linkedin.com/in/vashu-chauhan-318b4121a">Vashu Chauhan<sup>2</sup></a>,
+      <a href="https://adobe.mdsr.live/people/yaman-kumar-singla/" target="_blank" rel="noopener noreferrer">Yaman K Singla<sup>1</sup></a>,
+      <a href="https://home.cse.iitd.ac.in/~rrs/" target="_blank" rel="noopener noreferrer">Rajiv Ratn Shah<sup>2</sup></a>,
+      <a href="https://in.linkedin.com/in/balaji-krishnamurthy-4241695" target="_blank" rel="noopener noreferrer">Balaji Krishnamurthy<sup>1</sup></a>
+    </div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <sup>1</sup><a href="https://adobe.mdsr.live/" target="_blank">Adobe Media and Data Science Research (MDSR) Lab</a>
+      &nbsp;&nbsp;
+      <img src="images/iiitd-logo.png" alt="IIIT Delhi">
+      <sup>2</sup><a href="https://www.iiitd.ac.in/" target="_blank">IIIT Delhi</a>
+    </div>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <a href="https://behavior-in-the-wild.github.io/fest" target="_blank" rel="noopener noreferrer">Paper</a>
+    </div>
+
+    <figure>
+      <img src="images/fest/fest_pipeline.png" alt="Overview of the FEST framework" loading="lazy">
+      <figcaption>Overview of the FEST algorithm</figcaption>
+    </figure>
+
+    <h2>Abstract</h2>
+
+    <p>
+      In high-stakes settings such as brand compliance, clinical care, and content moderation, machine learning cannot be deployed as opaque oracles: practitioners must be able to inspect the features driving model decisions, and models must be able to leverage the expert documentation already governing these domains. This requires features discovered from raw text and images to be interpretable, discriminative, and aligned with what experts consider important. Existing methods fall short: they target tabular inputs, lack demonstrated expert alignment, and cannot operationalize qualitative criteria such as &ldquo;maintain professional tone&rdquo; into precise features. To address these challenges, we present <strong>FEST</strong> (Feature Engineering with Self-evolving Trees), which combines dual-stream feature generation (semantic and deterministic), semantic deduplication, and tree-guided iterative evolution to discover features directly from unstructured data. FEST leads in 17 of 20 classifier-task combinations across brand classification (text and images), content authenticity detection, and stress detection, with a mean gain of 4.2 pp over the strongest baseline across five classifiers. An LLM-as-judge evaluation shows FEST achieves 60&ndash;80% coverage of expert-designed brand features at strict semantic-alignment thresholds, corroborated by a human expert study rating FEST features highly on relevance, clarity, and actionability. When seeded with expert guidelines, FEST refines qualitative criteria into precise, operational features, improving downstream accuracy by 6&ndash;12 pp on average across brands. To enable systematic evaluation of expert alignment in automated feature engineering, we release <strong>BrandGuide</strong>, the first dataset pairing expert-designed features with 1M+ assets across 2,683 brands. By grounding automated feature engineering in expert knowledge, FEST opens a practical pathway for deploying interpretable ML in domains that demand human oversight and accountability.
+    </p>
+
+    <h2>Key Contributions</h2>
+
+    <ul>
+      <li><strong>Problem Formalization:</strong> We formalize a deployment-critical problem: producing interpretable features from unstructured data that domain experts recognize as meaningful, and operationalizing expert documentation when available. We bring this problem to the community and propose expert alignment as a measurable objective for automated feature engineering.</li>
+      <li><strong>BrandGuide Dataset:</strong> To enable systematic evaluation of expert alignment in automated feature engineering, we release BrandGuide, the first dataset pairing expert-designed features with unstructured content: 1M+ assets across 2,683 brands, 80 sectors, and 103 regions.</li>
+      <li><strong>FEST Framework:</strong> We propose FEST, combining dual-stream feature generation (semantic and deterministic), semantic deduplication via conditional embeddings and clustering, and tree-guided iterative evolution using importance-based pruning. FEST leads in 17 of 20 classifier-task combinations across five classifiers (mean gain 4.2 pp), while maintaining interpretability.</li>
+      <li><strong>Expert Alignment:</strong> FEST achieves 60&ndash;80% coverage of expert features under strict LLM-as-judge thresholds. A human expert study corroborates this (above 3.8/5 on relevance, clarity, actionability).</li>
+      <li><strong>Expert Operationalization:</strong> With expert seeds, FEST operationalizes qualitative criteria into more precise features, improving accuracy by 6&ndash;12 pp on average across brands.</li>
+    </ul>
+
+    <h2 id="results">Results</h2>
+
+    <p>FEST is evaluated across brand classification (text and images), content authenticity detection, and stress detection using five classifiers (DT, LR, RF, MLP, XGB). Accuracy below is averaged across all five classifiers; per-classifier breakdowns in Appendix E.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>Brand Cl. (Text)</th>
+          <th>Brand Cl. (Images)</th>
+          <th>Content Auth.</th>
+          <th>Stress Det.</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Zero-Shot LLM</td>
+          <td>75.6</td>
+          <td>70.6</td>
+          <td>79.8</td>
+          <td>73.3</td>
+        </tr>
+        <tr>
+          <td>Few-Shot LLM</td>
+          <td>77.8</td>
+          <td>74.7</td>
+          <td>73.9</td>
+          <td>72.8</td>
+        </tr>
+        <tr>
+          <td>Felix</td>
+          <td>78.1</td>
+          <td>69.7</td>
+          <td>87.5</td>
+          <td>79.1</td>
+        </tr>
+        <tr class="fest-row">
+          <td>FEST (Ours)</td>
+          <td>82.9</td>
+          <td>79.3</td>
+          <td>91.0</td>
+          <td>80.5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <ul>
+      <li>FEST also achieves 60&ndash;80% coverage of expert brand features under strict LLM-as-judge evaluation (threshold &ge;7)</li>
+    </ul>
+
+    <h2 id="expert-refinement">Expert Knowledge Operationalization</h2>
+
+    <p>Using brand style guidelines as seed features, FEST operationalizes qualitative criteria into precise, measurable features and discovers complementary patterns. The chart below disentangles the contributions of refinement and augmentation across three brands, averaged over DT, LR, RF, and LLM classifiers.</p>
+    <figure>
+      <img src="images/fest/fest_refinement.png" alt="Overview of the FEST framework" loading="lazy">
+      <figcaption>FEST transforms expert guidelines into more discriminative, operationalizable features, and achieves the highest accuracy in brand voice classification (text-based)</figcaption>
+    </figure>
+
+    <figure>
+      <img src="images/fest/fest_example_refinement.png" alt="Overview of FEST refinement" loading="lazy">
+      <figcaption>An example showing FEST's ability to refine and augment existing expert-crafted guidelines.</figcaption>
+    </figure>
+
+    <h2 id="BibTeX">BibTeX</h2>
+
+    <pre><code>@misc{fest2026,
+  author = {Khurana, Varun and Ekbote, Vijval and Chauhan, Vashu and Singla, Yaman K and Shah, Rajiv Ratn and Krishnamurthy, Balaji},
+  title = {FEST: Feature Engineering with Self-evolving Trees},
+  year = {2026},
+  publisher = {Behavior in the Wild},
+  howpublished = {\url{https://behavior-in-the-wild.github.io/fest.html}},
+}</code></pre>
+
+    <hr>
+    <footer>
+      <strong>FEST</strong> by <a href="https://behavior-in-the-wild.github.io" target="_blank" rel="noopener noreferrer">Behavior in the Wild</a>.
+      The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+    </footer>
+
+  </div>
+</body>
+</html>
