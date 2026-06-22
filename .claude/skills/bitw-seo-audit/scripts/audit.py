@@ -14,25 +14,59 @@ import sys
 
 BASE_URL = "https://behavior-in-the-wild.github.io"
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
-PUBLISHER = {
-    "@type": "Organization",
-    "name": "Behavior In The Wild Research Group",
-    "url": BASE_URL,
-}
-DATACATALOG = {
-    "@type": "DataCatalog",
-    "name": "Behavior In The Wild",
-    "url": BASE_URL,
-}
+BITW_ORG = {"@type": "Organization", "name": "Behavior In The Wild Research Group",
+            "url": BASE_URL}
+ARXIV_ORG = {"@type": "Organization", "name": "arXiv", "url": "https://arxiv.org"}
+DATACATALOG = {"@type": "DataCatalog", "name": "Behavior In The Wild", "url": BASE_URL}
 
 SKIP_PAGES = {"cultural-alignment.html", "transsuasion.html"}
 SKIP_PATTERN = re.compile(r"^google[0-9a-f]+\.html$")
-
-# Highwire citation tags not expected on these pages
 NO_CITATION_PAGES = {"index.html", "PersuasionArena.html", "the-culture-repository.html"}
-
-# og:type should be "website" (not "article") for these
 OG_WEBSITE_PAGES = {"index.html", "PersuasionArena.html", "the-culture-repository.html"}
+
+# Venue fragment → (abbreviation, publisher name)
+CONF_MAP = {
+    "International Conference on Learning Representations": {
+        "abbrev": "ICLR",
+        "publisher": "International Conference on Learning Representations",
+        "publisher_url": "https://iclr.cc",
+    },
+    "AAAI Conference on Artificial Intelligence": {
+        "abbrev": "AAAI",
+        "publisher": "AAAI Press",
+        "publisher_url": "https://aaai.org",
+    },
+    "IEEE/CVF Winter Conference on Applications of Computer Vision": {
+        "abbrev": "WACV",
+        "publisher": "IEEE",
+        "publisher_url": "https://ieeexplore.ieee.org",
+    },
+    "IEEE/CVF Conference on Computer Vision and Pattern Recognition": {
+        "abbrev": "CVPR",
+        "publisher": "IEEE",
+        "publisher_url": "https://ieeexplore.ieee.org",
+    },
+    "Advances in Neural Information Processing Systems": {
+        "abbrev": "NeurIPS",
+        "publisher": "Neural Information Processing Systems Foundation",
+        "publisher_url": "https://nips.cc",
+    },
+    "Conference on Empirical Methods in Natural Language Processing": {
+        "abbrev": "EMNLP",
+        "publisher": "Association for Computational Linguistics",
+        "publisher_url": "https://aclanthology.org",
+    },
+    "European Chapter of the Association for Computational Linguistics": {
+        "abbrev": "EACL",
+        "publisher": "Association for Computational Linguistics",
+        "publisher_url": "https://aclanthology.org",
+    },
+    "European Conference on Computer Vision": {
+        "abbrev": "ECCV",
+        "publisher": "Springer Nature",
+        "publisher_url": "https://www.springer.com",
+    },
+}
 
 
 def is_skip(fname):
@@ -47,6 +81,27 @@ def get_meta(content, name):
     pat = r'<meta\s+name=["\']' + re.escape(name) + r'["\'][^>]+content=["\']([^"\']+)["\']'
     m = re.search(pat, content, re.I)
     return m.group(1).strip() if m else None
+
+
+def get_prop(content, prop):
+    pat = r'<meta\s+property=["\']' + re.escape(prop) + r'["\'][^>]+content=["\']([^"\']+)["\']'
+    m = re.search(pat, content, re.I)
+    return m.group(1).strip() if m else None
+
+
+def match_conf(conf_title):
+    if not conf_title:
+        return None, None, None
+    for key, val in CONF_MAP.items():
+        if key.lower() in conf_title.lower():
+            return val["abbrev"], val["publisher"], val["publisher_url"]
+    return None, None, None
+
+
+def build_proceedings(conf_title, abbrev, year):
+    if not abbrev or f"({abbrev})" in conf_title or abbrev in conf_title:
+        return f"Proceedings of the {conf_title} {year}"
+    return f"Proceedings of the {conf_title} ({abbrev}) {year}"
 
 
 def check_meta(content, fname):
@@ -92,37 +147,25 @@ def check_meta(content, fname):
     return issues
 
 
-def parse_jsonld_blocks(content):
-    raw_blocks = re.findall(
-        r'<script\s+type=["\']application/ld\+json["\']>(.*?)</script>',
-        content, re.DOTALL | re.I
-    )
-    parsed = []
-    for raw in raw_blocks:
-        try:
-            parsed.append((raw, json.loads(raw.strip())))
-        except json.JSONDecodeError:
-            parsed.append((raw, None))
-    return parsed
-
-
 def check_jsonld(blocks, fname, content):
     issues = []
     if not blocks:
         issues.append("no JSON-LD block found")
         return issues
 
-    venue = get_meta(content, "citation_conference_title") or get_meta(content, "citation_journal_title")
+    conf_title = get_meta(content, "citation_conference_title") or \
+                 get_meta(content, "citation_journal_title")
     arxiv_id = get_meta(content, "citation_arxiv_id")
+    year = get_meta(content, "citation_publication_date") or "2025"
+    abbrev, expected_publisher, _ = match_conf(conf_title)
 
-    for raw, d in blocks:
+    for _, d in blocks:
         if d is None:
             issues.append("JSON-LD parse error")
             continue
 
         t = d.get("@type", "")
         types = t if isinstance(t, list) else [t]
-
         if all(x in ("WebSite", "SearchAction", "Organization", "Person") for x in types):
             continue
 
@@ -134,130 +177,73 @@ def check_jsonld(blocks, fname, content):
         if "license" not in d:
             issues.append(f"JSON-LD ({t}): missing 'license'")
 
+        # headline on ScholarlyArticle
+        if is_scholarly and "headline" not in d:
+            issues.append(f"JSON-LD ({t}): missing 'headline' (should equal 'name')")
+
+        # image
+        if is_scholarly and "image" not in d:
+            issues.append(f"JSON-LD ({t}): missing 'image'")
+
         # publisher
         pub = d.get("publisher", {})
-        if isinstance(pub, dict) and pub.get("name") != "Behavior In The Wild Research Group":
-            issues.append(f"JSON-LD ({t}): publisher name should be 'Behavior In The Wild Research Group', got {pub.get('name')!r}")
-        elif "publisher" not in d:
+        pub_name = pub.get("name", "") if isinstance(pub, dict) else ""
+        if "publisher" not in d:
             issues.append(f"JSON-LD ({t}): missing 'publisher'")
+        elif is_scholarly:
+            if conf_title and expected_publisher:
+                if pub_name != expected_publisher:
+                    issues.append(f"JSON-LD ({t}): publisher should be {expected_publisher!r} for this venue, got {pub_name!r}")
+            elif arxiv_id:
+                if pub_name != "arXiv":
+                    issues.append(f"JSON-LD ({t}): preprint with arXiv should use publisher='arXiv', got {pub_name!r}")
+            else:
+                if pub_name != "Behavior In The Wild Research Group":
+                    issues.append(f"JSON-LD ({t}): preprint without arXiv should use BITW publisher, got {pub_name!r}")
 
-        # sameAs — required when arxiv_id is present
+        # sameAs
         if arxiv_id and is_scholarly:
             expected_same = f"https://arxiv.org/abs/{arxiv_id}"
             if d.get("sameAs") != expected_same:
-                issues.append(f"JSON-LD ({t}): missing sameAs={expected_same!r} (arxiv_id found in Highwire tags)")
+                issues.append(f"JSON-LD ({t}): missing sameAs={expected_same!r}")
 
-        # isPartOf rules
+        # isPartOf
         ip = d.get("isPartOf")
         ip_type = ip.get("@type", "") if isinstance(ip, dict) else ""
 
         if is_scholarly and not is_dataset:
-            if venue:
-                # Published paper: must have isPartOf Periodical with correct name
+            if conf_title:
                 if not ip:
-                    issues.append(f"JSON-LD ({t}): published paper missing isPartOf Periodical (venue: {venue!r})")
-                elif ip_type != "Periodical":
-                    issues.append(f"JSON-LD ({t}): isPartOf @type={ip_type!r} should be 'Periodical' for published paper")
-                elif ip.get("name") != venue:
-                    issues.append(f"JSON-LD ({t}): isPartOf name mismatch: got {ip.get('name')!r}, expected {venue!r}")
+                    issues.append(f"JSON-LD ({t}): published paper missing isPartOf CreativeWork")
+                elif ip_type != "CreativeWork":
+                    issues.append(f"JSON-LD ({t}): isPartOf @type={ip_type!r} should be 'CreativeWork' for proceedings")
+                else:
+                    expected_proc = build_proceedings(conf_title, abbrev, year)
+                    if ip.get("name") != expected_proc:
+                        issues.append(f"JSON-LD ({t}): isPartOf name mismatch:\n    got:      {ip.get('name')!r}\n    expected: {expected_proc!r}")
             else:
-                # Preprint: isPartOf must be absent
                 if ip:
-                    issues.append(f"JSON-LD ({t}): preprint should not have isPartOf (no venue in Highwire tags)")
+                    issues.append(f"JSON-LD ({t}): preprint should have no isPartOf")
+        elif is_dataset:
+            if not ip:
+                issues.append(f"JSON-LD ({t}): Dataset missing isPartOf DataCatalog")
+            elif ip_type != "DataCatalog":
+                issues.append(f"JSON-LD ({t}): Dataset isPartOf should be DataCatalog, got {ip_type!r}")
+        elif is_software:
+            if ip:
+                issues.append(f"JSON-LD ({t}): SoftwareApplication should not have isPartOf")
 
-        elif is_dataset or is_software:
-            if is_software:
-                if ip:
-                    issues.append(f"JSON-LD ({t}): SoftwareApplication should not have isPartOf")
-            elif is_dataset:
-                if not ip:
-                    issues.append(f"JSON-LD ({t}): Dataset missing isPartOf DataCatalog")
-                elif ip_type != "DataCatalog":
-                    issues.append(f"JSON-LD ({t}): Dataset isPartOf @type={ip_type!r} should be 'DataCatalog'")
+        # publication event on published scholarly
+        if is_scholarly and conf_title and "publication" not in d:
+            issues.append(f"JSON-LD ({t}): published paper missing 'publication' PublicationEvent")
 
-        # author on ScholarlyArticle
+        # author/creator
         if is_scholarly and "author" not in d:
             issues.append(f"JSON-LD ({t}): ScholarlyArticle missing 'author'")
-
-        # creator on Dataset
         if is_dataset and "creator" not in d:
             issues.append(f"JSON-LD ({t}): Dataset missing 'creator'")
 
     return issues
-
-
-def fix_block(d, venue, arxiv_id):
-    types = d.get("@type", "")
-    typelist = types if isinstance(types, list) else [types]
-    is_scholarly = "ScholarlyArticle" in typelist
-    is_dataset = "Dataset" in typelist
-    is_software = "SoftwareApplication" in typelist
-
-    out = {}
-    for k, v in d.items():
-        if k == "author":
-            out[k] = v
-            if is_dataset and "creator" not in d:
-                out["creator"] = v
-        elif k == "isPartOf":
-            if is_scholarly and not is_dataset:
-                if venue:
-                    out[k] = {"@type": "Periodical", "name": venue}
-                # else preprint: omit
-            elif is_software:
-                pass  # remove
-            elif is_dataset:
-                if isinstance(v, dict) and v.get("@type") == "DataCatalog":
-                    out[k] = v
-                else:
-                    out[k] = DATACATALOG
-        elif k == "publisher":
-            if arxiv_id and is_scholarly and "sameAs" not in d:
-                out["sameAs"] = "https://arxiv.org/abs/" + arxiv_id
-            out[k] = v
-        else:
-            out[k] = v
-
-    # Add isPartOf for published scholarly-only if absent
-    if is_scholarly and not is_dataset and "isPartOf" not in out and venue:
-        out["isPartOf"] = {"@type": "Periodical", "name": venue}
-
-    # Add DataCatalog for Dataset-only if absent
-    if is_dataset and not is_scholarly and "isPartOf" not in out:
-        out["isPartOf"] = DATACATALOG
-
-    # Ensure license
-    if "license" not in out:
-        out["license"] = LICENSE_URL
-
-    # Ensure sameAs if arxiv and no publisher triggered it
-    if arxiv_id and is_scholarly and "sameAs" not in out:
-        out["sameAs"] = "https://arxiv.org/abs/" + arxiv_id
-
-    return out
-
-
-def fix_content(content):
-    venue = get_meta(content, "citation_conference_title") or get_meta(content, "citation_journal_title")
-    arxiv_id = get_meta(content, "citation_arxiv_id")
-
-    def replacer(m):
-        raw = m.group(1)
-        try:
-            d = json.loads(raw.strip())
-        except json.JSONDecodeError:
-            return m.group(0)
-        t = d.get("@type", "")
-        tl = t if isinstance(t, list) else [t]
-        if all(x in ("WebSite", "SearchAction", "Organization", "Person") for x in tl):
-            return m.group(0)
-        d2 = fix_block(d, venue, arxiv_id)
-        return '<script type="application/ld+json">\n' + json.dumps(d2, indent=2, ensure_ascii=False) + "\n</script>"
-
-    return re.sub(
-        r'<script\s+type=["\']application/ld\+json["\']>(.*?)</script>',
-        replacer, content, flags=re.DOTALL | re.I
-    )
 
 
 def audit_file(path, fix=False):
@@ -265,37 +251,40 @@ def audit_file(path, fix=False):
     with open(path) as fh:
         content = fh.read()
 
+    blocks = []
+    for raw in re.findall(r'<script\s+type=["\']application/ld\+json["\']>(.*?)</script>',
+                           content, re.DOTALL | re.I):
+        try:
+            blocks.append((raw, json.loads(raw.strip())))
+        except json.JSONDecodeError:
+            blocks.append((raw, None))
+
     meta_issues = check_meta(content, fname)
-    jsonld_blocks = parse_jsonld_blocks(content)
-    jsonld_issues = check_jsonld(jsonld_blocks, fname, content)
-    all_issues = meta_issues + jsonld_issues
-
-    fixed = False
-    if fix and jsonld_issues:
-        new_content = fix_content(content)
-        if new_content != content:
-            with open(path, "w") as fh:
-                fh.write(new_content)
-            fixed = True
-
-    return all_issues, fixed
+    jsonld_issues = check_jsonld(blocks, fname, content)
+    return meta_issues + jsonld_issues, False  # fix path not updated here (use fix_schema_full.py)
 
 
 def main():
     parser = argparse.ArgumentParser(description="BITW SEO & JSON-LD audit")
     parser.add_argument("--repo", default=os.path.expanduser("~/git/behavior-in-the-wild.github.io"))
-    parser.add_argument("--fix", action="store_true", help="Auto-fix JSON-LD issues")
+    parser.add_argument("--fix", action="store_true",
+                        help="Run fix_schema_full.py for auto-fixable JSON-LD issues")
     args = parser.parse_args()
+
+    if args.fix:
+        script = os.path.join(os.path.dirname(__file__), "fix_schema.py")
+        if os.path.exists(script):
+            os.system(f"python3 {script} --repo {args.repo}")
+        else:
+            print("fix_schema.py not found; run it manually", file=sys.stderr)
 
     html_files = sorted(glob.glob(os.path.join(args.repo, "*.html")))
     if not html_files:
         print(f"No HTML files found in {args.repo}", file=sys.stderr)
         sys.exit(1)
 
-    total_issues = 0
-    fixed_files = []
-
-    print(f"\n{'PAGE':<55} {'ISSUES'}")
+    total = 0
+    print(f"\n{'PAGE':<55} ISSUES")
     print("-" * 85)
 
     for path in html_files:
@@ -303,31 +292,23 @@ def main():
         if is_skip(fname):
             print(f"{fname:<55} (redirect — skipped)")
             continue
-
-        issues, fixed = audit_file(path, fix=args.fix)
-
+        issues, _ = audit_file(path)
         if not issues:
             print(f"{fname:<55} OK")
         else:
             for i, issue in enumerate(issues):
                 prefix = f"{fname:<55}" if i == 0 else " " * 55
-                marker = "FIXED" if fixed else "ISSUE"
-                print(f"{prefix} [{marker}] {issue}")
-            total_issues += len(issues)
-            if fixed:
-                fixed_files.append(fname)
+                print(f"{prefix} [ISSUE] {issue}")
+            total += len(issues)
 
     print("-" * 85)
-    if total_issues == 0:
-        print("All pages pass. No issues found.")
+    if total == 0:
+        print("All pages pass.")
     else:
-        print(f"\n{total_issues} issue(s) across {len([f for f in html_files if not is_skip(os.path.basename(f))])} pages.")
-        if fixed_files:
-            print(f"Auto-fixed: {', '.join(fixed_files)}")
+        print(f"\n{total} issue(s) found.")
         if not args.fix:
             print("Re-run with --fix to auto-fix JSON-LD issues.")
-
-    sys.exit(0 if total_issues == 0 else 1)
+    sys.exit(0 if total == 0 else 1)
 
 
 if __name__ == "__main__":

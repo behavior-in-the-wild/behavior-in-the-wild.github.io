@@ -3,7 +3,7 @@ name: bitw-seo-audit
 description: Audit and fix SEO, meta-tag, and structured-data completeness for the behavior-in-the-wild.github.io academic website. Also the canonical reference for everything needed when adding a new page. Use when adding new pages, reviewing PRs, or running a full site health check.
 metadata:
   author: Yaman Kumar
-  version: 3.0.0
+  version: 4.0.0
   tags: [seo, structured-data, json-ld, academic, bitw]
 compatibility:
   agents: [claude-code]
@@ -46,7 +46,23 @@ python3 scripts/audit.py --repo ~/git/behavior-in-the-wild.github.io --fix
 | `the-culture-repository.html` | `Dataset` | website | No |
 | Redirect pages (`cultural-alignment.html`, `transsuasion.html`) | — | — | Skip entirely |
 
-**Publisher (all pages):** `{"@type": "Organization", "name": "Behavior In The Wild Research Group", "url": "https://behavior-in-the-wild.github.io"}` — this is the entity making *this HTML representation* available. Do not change to a conference/journal publisher.
+**Publisher — per venue rule:**
+
+| Paper type | `publisher` value |
+|---|---|
+| Published at a known conference (ICLR, AAAI, WACV, CVPR, NeurIPS, EMNLP, EACL, ECCV) | Use the actual academic publisher for that venue (see CONF_MAP in `audit.py`) |
+| Preprint with arXiv ID | `{"@type": "Organization", "name": "arXiv", "url": "https://arxiv.org"}` |
+| Preprint/tool with no venue and no arXiv | `{"@type": "Organization", "name": "Behavior In The Wild Research Group", "url": "https://behavior-in-the-wild.github.io"}` |
+
+Conference→publisher mapping:
+- ICLR → "International Conference on Learning Representations" (https://iclr.cc)
+- AAAI → "AAAI Press" (https://aaai.org)
+- WACV / CVPR → "IEEE" (https://ieeexplore.ieee.org)
+- NeurIPS → "Neural Information Processing Systems Foundation" (https://nips.cc)
+- EMNLP / EACL → "Association for Computational Linguistics" (https://aclanthology.org)
+- ECCV → "Springer Nature" (https://www.springer.com)
+
+Add new venues to `CONF_MAP` in both `scripts/audit.py` and `scripts/fix_schema.py` (or `/tmp/fix_schema_full.py`).
 
 **Canonical URL format:** `https://behavior-in-the-wild.github.io/{PageNameNoExtension}` (case-preserved, no trailing slash). Exception: `index.html` → `https://behavior-in-the-wild.github.io/`.
 
@@ -183,8 +199,8 @@ Minimum complete example for a published `ScholarlyArticle`:
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "publisher": {
     "@type": "Organization",
-    "name": "Behavior In The Wild Research Group",
-    "url": "https://behavior-in-the-wild.github.io"
+    "name": "International Conference on Learning Representations",
+    "url": "https://iclr.cc"
   }
 }
 ```
@@ -199,7 +215,7 @@ Minimum complete example for a published `ScholarlyArticle`:
 - `publication`: `PublicationEvent` captures the actual conference event for semantic search; use the same full name as `isPartOf`
 - `sameAs`: arXiv canonical URL — required when arXiv ID is known; signals authoritative source to Google
 - `license`: always CC BY 4.0
-- `publisher`: always "Behavior In The Wild Research Group"
+- `publisher`: per-venue (see Publisher rule above) — actual academic publisher for conference papers, arXiv for preprints with arXiv ID, BITW Research Group for everything else
 
 For **Dataset** pages, replace `author` with `creator`. For **dual-type** `["ScholarlyArticle","Dataset"]`, include both `author` and `creator` (same people), and use `DataCatalog` for `isPartOf` (Google Dataset Search requires it).
 
@@ -260,11 +276,14 @@ Update `<lastmod>` to today's date for any page you touch.
 | 7 | `og:type` | `article` for papers; `website` for home/tool/dataset-only pages |
 | 8 | JSON-LD present | At least one `<script type="application/ld+json">` block |
 | 9 | JSON-LD `license` | CC BY 4.0 on every non-WebSite block |
-| 10 | JSON-LD `isPartOf` | See rules above |
-| 11 | JSON-LD `author` | Required on ScholarlyArticle |
-| 12 | JSON-LD `creator` | Required on Dataset |
-| 13 | JSON-LD `publisher` | Must be "Behavior In The Wild Research Group" |
-| 14 | JSON-LD `sameAs` | Required when `citation_arxiv_id` Highwire tag is present |
+| 10 | JSON-LD `headline` | Required on ScholarlyArticle (same value as `name`) |
+| 11 | JSON-LD `image` | Required on ScholarlyArticle |
+| 12 | JSON-LD `isPartOf` | `CreativeWork` for published paper, `DataCatalog` for Dataset, absent for preprints |
+| 13 | JSON-LD `publication` | `PublicationEvent` required on published ScholarlyArticle |
+| 14 | JSON-LD `author` | Required on ScholarlyArticle |
+| 15 | JSON-LD `creator` | Required on Dataset |
+| 16 | JSON-LD `publisher` | Per-venue: conference publisher, arXiv for arXiv preprints, BITW for others |
+| 17 | JSON-LD `sameAs` | Required when `citation_arxiv_id` Highwire tag is present |
 
 ### Paper/benchmark pages only
 
@@ -274,18 +293,23 @@ Update `<lastmod>` to today's date for any page you touch.
 | 16 | `citation_author` | At least one Highwire author tag |
 | 17 | `citation_publication_date` | Highwire date tag required |
 
-## What Is Auto-Fixed (`--fix`)
+## What Is Auto-Fixed (`--fix` / `fix_schema_full.py`)
 
 - Missing `license` → inserts CC BY 4.0
-- `isPartOf: Website` on ScholarlyArticle → replaced with `CreativeWork` (from Highwire venue tag) or removed (preprint)
-- `isPartOf: Website` on Dataset → replaced with `DataCatalog`
-- Missing `creator` on Dataset/dual-type → copied from `author`
+- `isPartOf: Periodical/Website` on ScholarlyArticle → replaced with `CreativeWork` (from Highwire venue tag) or removed (preprint)
+- `isPartOf` on Dataset → replaced with `DataCatalog`
+- Missing `headline` on ScholarlyArticle → set to `name` value
+- Missing `image` → set from `og:image` meta tag
+- Missing `author[].url` → matched from `<div class="authors">` link tags in page body
+- Missing `publication: PublicationEvent` on published ScholarlyArticle → added
+- Wrong `publisher` → replaced with per-venue publisher (CONF_MAP lookup)
 - Missing `sameAs` when `citation_arxiv_id` present → adds arXiv URL
+- Missing `creator` on Dataset/dual-type → copied from `author`
 
 **Not auto-fixed** (require per-page content knowledge):
 - Missing/thin meta description, title, OG/Twitter tags, twitter:image
 - Missing Highwire citation tags or `citation_pdf_url`
-- Missing `headline`, `image`, `author[].url`, `publication` in JSON-LD
+- Author URL mismatches (name in JSON-LD differs from HTML body link text)
 - Wrong `og:type`, missing `lang="en"`, missing BibTeX section
 
 ---
