@@ -1,0 +1,321 @@
+{
+  "llmScores": [
+    {
+      "model": "Qwen3-8B",
+      "family": "open-source",
+      "imageAlign": { "without": 0.61, "with": 0.63 },
+      "clipScore": { "without": 0.60, "with": 0.62 }
+    },
+    {
+      "model": "Qwen3-32B",
+      "family": "open-source",
+      "imageAlign": { "without": 0.62, "with": 0.73 },
+      "clipScore": { "without": 0.61, "with": 0.69 }
+    },
+    {
+      "model": "Qwen3-30B-A3B",
+      "family": "open-source",
+      "imageAlign": { "without": 0.59, "with": 0.61 },
+      "clipScore": { "without": 0.58, "with": 0.61 }
+    },
+    {
+      "model": "Qwen3-235B-A22B",
+      "family": "open-source",
+      "imageAlign": { "without": 0.62, "with": 0.69 },
+      "clipScore": { "without": 0.61, "with": 0.67 }
+    },
+    {
+      "model": "GPT-4o",
+      "family": "frontier",
+      "imageAlign": { "without": 0.63, "with": 0.69 },
+      "clipScore": { "without": 0.62, "with": 0.69 }
+    },
+    {
+      "model": "GPT-4.1",
+      "family": "frontier",
+      "imageAlign": { "without": 0.63, "with": 0.67 },
+      "clipScore": { "without": 0.62, "with": 0.67 }
+    },
+    {
+      "model": "GPT-5-chat",
+      "family": "frontier",
+      "imageAlign": { "without": 0.61, "with": 0.74 },
+      "clipScore": { "without": 0.62, "with": 0.72 }
+    },
+    {
+      "model": "Claude-3-Opus",
+      "family": "frontier",
+      "imageAlign": { "without": 0.62, "with": 0.73 },
+      "clipScore": { "without": 0.62, "with": 0.71 }
+    },
+    {
+      "model": "Claude-Sonnet-3.7",
+      "family": "frontier",
+      "imageAlign": { "without": 0.63, "with": 0.70 },
+      "clipScore": { "without": 0.62, "with": 0.70 }
+    },
+    {
+      "model": "Claude-Sonnet-4",
+      "family": "frontier",
+      "imageAlign": { "without": 0.61, "with": 0.76 },
+      "clipScore": { "without": 0.63, "with": 0.74 }
+    },
+    {
+      "model": "DeepSeek-V3",
+      "family": "open-source",
+      "imageAlign": { "without": 0.61, "with": 0.68 },
+      "clipScore": { "without": 0.62, "with": 0.66 }
+    },
+    {
+      "model": "DeepSeek-V3.2-Exp",
+      "family": "open-source",
+      "imageAlign": { "without": 0.62, "with": 0.70 },
+      "clipScore": { "without": 0.62, "with": 0.67 }
+    },
+    {
+      "model": "Gemini 2.5 Flash",
+      "family": "frontier",
+      "imageAlign": { "without": 0.61, "with": 0.64 },
+      "clipScore": { "without": 0.61, "with": 0.66 }
+    },
+    {
+      "model": "Gemini 2.5 Pro",
+      "family": "frontier",
+      "imageAlign": { "without": 0.62, "with": 0.67 },
+      "clipScore": { "without": 0.62, "with": 0.68 }
+    }
+  ],
+  "zipBench": [
+    {
+      "method": "Baseline",
+      "train": "--",
+      "clipScore": 0.59,
+      "imageAlign": 0.62,
+      "rouge": 0.36,
+      "requirement": "No user personalization signal"
+    },
+    {
+      "method": "Tailored Visions (TV)",
+      "train": "5-shot",
+      "clipScore": 0.62,
+      "imageAlign": 0.66,
+      "rouge": 0.41,
+      "requirement": "Retrieval over <= 3 historical prompts"
+    },
+    {
+      "method": "DrUM",
+      "train": "FT",
+      "clipScore": 0.63,
+      "imageAlign": 0.65,
+      "rouge": null,
+      "requirement": "100+ user prompts + per-user adapter (~10 GPU-hrs/user)"
+    },
+    {
+      "method": "ZIPP (0-shot)",
+      "train": "0-shot",
+      "clipScore": 0.62,
+      "imageAlign": 0.64,
+      "rouge": 0.32,
+      "requirement": "Persona-only zero-shot prompt rewriting"
+    },
+    {
+      "method": "ZIPP (5-shot)",
+      "train": "5-shot",
+      "clipScore": 0.68,
+      "imageAlign": 0.71,
+      "rouge": 0.51,
+      "requirement": "Persona + small example set"
+    },
+    {
+      "method": "ZIPP (LoRA)",
+      "train": "LoRA",
+      "clipScore": 0.74,
+      "imageAlign": 0.77,
+      "rouge": 0.55,
+      "requirement": "Persona pipeline + lightweight adapter training"
+    }
+  ],
+  "pipTransfer": [
+    { "method": "Baseline", "imageAlign": 0.63 },
+    { "method": "FABRIC", "imageAlign": 0.65 },
+    { "method": "TV (3-shot)", "imageAlign": 0.66 },
+    { "method": "DrUM (FT)", "imageAlign": 0.67 },
+    { "method": "ZIPP (0-shot)", "imageAlign": 0.64 },
+    { "method": "ZIPP (5-shot)", "imageAlign": 0.70 },
+    { "method": "ZIPP (LoRA)", "imageAlign": 0.75 }
+  ],
+  "graphAblation": [
+    {
+      "method": "TF-IDF",
+      "bliftPerplexity": 9.97,
+      "postingAcc": 55,
+      "zipLift": 5.1
+    },
+    {
+      "method": "TF-IDF + NMI",
+      "bliftPerplexity": 10.22,
+      "postingAcc": 57,
+      "zipLift": 5.3
+    },
+    {
+      "method": "LightGCN",
+      "bliftPerplexity": 7.91,
+      "postingAcc": 59,
+      "zipLift": 6.2
+    },
+    {
+      "method": "LightGCN + ImageAlign",
+      "bliftPerplexity": 7.33,
+      "postingAcc": 62,
+      "zipLift": 9.1
+    },
+    {
+      "method": "GraphSAGE",
+      "bliftPerplexity": 8.01,
+      "postingAcc": 63,
+      "zipLift": 8.5
+    },
+    {
+      "method": "GraphSAGE + ImageAlign",
+      "bliftPerplexity": 7.21,
+      "postingAcc": 67,
+      "zipLift": 10.2
+    },
+    {
+      "method": "GAT",
+      "bliftPerplexity": 7.13,
+      "postingAcc": 62,
+      "zipLift": 11.8
+    },
+    {
+      "method": "GAT + ImageAlign",
+      "bliftPerplexity": 5.21,
+      "postingAcc": 73,
+      "zipLift": 17.7
+    }
+  ],
+  "tokenCallouts": [
+    "Gains increase sharply with persona context up to around 2K tokens, then most models begin saturating.",
+    "Full personas (subreddits + comment snippets) outperform subreddit-only cues by roughly 10% to 15% at the same token budget.",
+    "Very long persona contexts (>8K) can induce hallucinated details in some models, motivating a practical 4K budget cap."
+  ],
+  "attentionBreakdown": [
+    {
+      "personaName": "Persona A (illustrative)",
+      "personaText": "Film-leaning visual profile with strong emphasis on natural light, documentary framing, and street atmosphere.",
+      "subreddits": [
+        {
+          "name": "r/Photography",
+          "weight": 0.34,
+          "evidence": "Comments emphasize framing, documentary style, and authentic POV shots."
+        },
+        {
+          "name": "r/itookapicture",
+          "weight": 0.24,
+          "evidence": "Recurring reactions to composition, texture, and lighting realism."
+        },
+        {
+          "name": "r/Nature",
+          "weight": 0.19,
+          "evidence": "Preference for natural scenes with calm tonal palettes."
+        },
+        {
+          "name": "r/Travel",
+          "weight": 0.13,
+          "evidence": "Location-centric posts and context-rich environmental details."
+        },
+        {
+          "name": "r/analog",
+          "weight": 0.1,
+          "evidence": "Mentions of grain, vintage tonality, and film aesthetics."
+        }
+      ]
+    },
+    {
+      "personaName": "Persona B (illustrative)",
+      "personaText": "Anime-influenced digital illustrator with a preference for clean lines, subtle colors, and soft emotional tone.",
+      "subreddits": [
+        {
+          "name": "r/Anime",
+          "weight": 0.29,
+          "evidence": "Strong affinity for character-centric composition and stylized visuals."
+        },
+        {
+          "name": "r/ArtHistory",
+          "weight": 0.23,
+          "evidence": "Frequent discussion of historical references and symbolic motifs."
+        },
+        {
+          "name": "r/Illustration",
+          "weight": 0.2,
+          "evidence": "Focus on sketch process, line quality, and palette harmony."
+        },
+        {
+          "name": "r/Literature",
+          "weight": 0.16,
+          "evidence": "Narrative and mood cues tied to introspective storytelling."
+        },
+        {
+          "name": "r/Design",
+          "weight": 0.12,
+          "evidence": "Preference for minimalist composition and visual balance."
+        }
+      ]
+    }
+  ],
+  "samePromptExamples": [
+    {
+      "label": "Sao Paulo Photographer",
+      "basePrompt": "a narrow street lined with colorful buildings",
+      "persona": "Photographer from Sao Paulo with a vibrant, documentary street aesthetic and high-energy mood.",
+      "rewrittenPrompt": "A lively narrow street lined with colorful buildings in a documentary style, saturated tones, dynamic framing, and candid urban atmosphere.",
+      "overlay": { "top": "10%", "height": "24%" }
+    },
+    {
+      "label": "Kyoto Student",
+      "basePrompt": "a narrow street lined with colorful buildings",
+      "persona": "Digital illustrator from Kyoto blending anime stylization with calm composition and soft color harmony.",
+      "rewrittenPrompt": "A narrow street lined with colorful buildings, illustrated with clean anime-influenced lines, subtle pastel balance, and a calm reflective mood.",
+      "overlay": { "top": "36%", "height": "24%" }
+    },
+    {
+      "label": "Florence Historian",
+      "basePrompt": "a narrow street lined with colorful buildings",
+      "persona": "Art historian from Florence favoring classical references, warm textures, and painterly detail.",
+      "rewrittenPrompt": "A narrow street lined with colorful buildings rendered with warm painterly textures, classical composition, and a nostalgic old-world ambiance.",
+      "overlay": { "top": "62%", "height": "24%" }
+    }
+  ],
+  "methodRequirements": [
+    {
+      "method": "Baseline",
+      "summary": "Generic prompt enhancement without user context.",
+      "historyNeed": 5,
+      "computeNeed": 5
+    },
+    {
+      "method": "TV",
+      "summary": "Prompt retrieval from a small personalized history.",
+      "historyNeed": 45,
+      "computeNeed": 35
+    },
+    {
+      "method": "DrUM",
+      "summary": "Large user history plus per-user adapter training.",
+      "historyNeed": 90,
+      "computeNeed": 92
+    },
+    {
+      "method": "ZIPP",
+      "summary": "Persona-only zero-shot path; optional few-shot/LoRA variants.",
+      "historyNeed": 18,
+      "computeNeed": 20
+    }
+  ],
+  "userStudy": {
+    "personaVsNoPersona": 79,
+    "ownPersonaVsOtherPersona": 64,
+    "expertAvgRating": 4.1,
+    "cohensKappa": 0.64
+  }
+}

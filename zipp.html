@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="ZIPP: Zero-shot Image Personalization from Personas. Conditioning text-to-image diffusion on natural-language personas for personalization without user-specific data or fine-tuning.">
+    <meta name="keywords"
+        content="Image Personalization, Diffusion Models, Personas, Zero-shot, Graph Neural Networks, ZIPBench">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://behavior-in-the-wild.github.io/zipp">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="ZIPP: Zero-shot Image Personalization from Personas">
+    <meta property="og:description"
+        content="Conditioning image generation on natural-language personas, without any user-specific data or weight updates.">
+    <meta property="og:image" content="https://behavior-in-the-wild.github.io/zipp/assets/img/teaser_panel.png">
+    <title>ZIPP: Zero-shot Image Personalization from Personas</title>
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/zipp">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZIPP: Zero-shot Image Personalization from Personas">
+    <meta name="twitter:description"
+        content="Conditioning image generation on natural-language personas, without any user-specific data or weight updates.">
+    <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/zipp/assets/img/teaser_panel.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    { "@type": "Person", "name": "S I Harini" },
+    { "@type": "Person", "name": "Somesh Singh" },
+    { "@type": "Person", "name": "Yaman Kumar Singla" },
+    { "@type": "Person", "name": "David Doermann" },
+    { "@type": "Person", "name": "Rajiv Ratn Shah" }
+  ],
+  "datePublished": "2026",
+  "name": "ZIPP: Zero-shot Image Personalization from Personas",
+  "url": "https://behavior-in-the-wild.github.io/zipp",
+  "description": "Conditioning image generation on natural-language personas, without any user-specific data or weight updates.",
+  "keywords": [
+    "image personalization",
+    "diffusion models",
+    "personas",
+    "zero-shot",
+    "graph neural networks"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #1a1a1a;
+          background: #fff;
+        }
+        .site-nav {
+          border-bottom: 1px solid #ddd;
+          padding: 11px 24px;
+          font-size: 0.875rem;
+        }
+        .site-nav a { color: #0645ad; text-decoration: none; }
+        .site-nav a:hover { text-decoration: underline; }
+        .page {
+          max-width: 920px;
+          margin: 0 auto;
+          padding: 48px 24px 96px;
+        }
+        h1 {
+          font-size: 1.65rem;
+          font-weight: bold;
+          line-height: 1.35;
+          color: #111;
+          margin: 0 0 18px;
+        }
+        h2 {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 44px 0 10px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #ccc;
+        }
+        h3 {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 28px 0 8px;
+        }
+        p { margin: 14px 0; }
+        a { color: #0645ad; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .authors {
+          font-size: 1rem;
+          margin: 4px 0 3px;
+          line-height: 1.65;
+        }
+        .authors a { color: #0645ad; }
+        .equal-contrib {
+          font-size: 0.8rem;
+          color: #777;
+          font-style: italic;
+          margin: 2px 0 8px;
+        }
+        .venue {
+          font-size: 0.95rem;
+          font-weight: bold;
+          color: #b31b1b;
+          margin: 6px 0 14px;
+        }
+        .paper-links {
+          margin: 14px 0 6px;
+        }
+        .paper-links a {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #0645ad;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #0645ad;
+          margin: 0 8px 8px 0;
+          font-family: Georgia, serif;
+        }
+        .paper-links a:hover {
+          background: #0645ad;
+          color: #fff;
+          text-decoration: none;
+        }
+        .paper-links span.disabled {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #bbb;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #999;
+          margin: 0 8px 8px 0;
+          font-family: Georgia, serif;
+          cursor: not-allowed;
+        }
+        ul.highlights {
+          list-style: none;
+          padding-left: 0;
+          margin: 16px 0;
+        }
+        ul.highlights li {
+          padding: 8px 0 8px 16px;
+          border-left: 3px solid #b31b1b;
+          margin-bottom: 10px;
+          font-size: 0.95rem;
+        }
+        ul.method-list { padding-left: 1.4em; margin: 12px 0; }
+        ul.method-list li { margin-bottom: 8px; line-height: 1.65; }
+        figure {
+          margin: 32px 0;
+          text-align: center;
+        }
+        figure img {
+          max-width: 100%;
+          border: 1px solid #ddd;
+        }
+        figcaption {
+          margin-top: 8px;
+          font-size: 0.875rem;
+          color: #666;
+          font-style: italic;
+        }
+        pre {
+          background: #f6f6f6;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          padding: 16px;
+          font-size: 0.8rem;
+          line-height: 1.5;
+          overflow-x: auto;
+          font-family: 'Courier New', monospace;
+        }
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 48px 0 0;
+        }
+        footer {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 16px;
+        }
+
+        /* Tab switcher (shared with other Behavior-in-the-Wild pages) */
+        .results-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background: #eee;
+            border-radius: 10px 10px 4px 4px;
+            padding: 4px;
+            margin: 16px 0 0;
+            gap: 4px;
+        }
+        .results-tab-panel > p:first-child {
+            margin-top: 12px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+        .results-tab-btn {
+            padding: 9px 22px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: transparent;
+            color: #777;
+            transition: all 0.25s ease;
+            letter-spacing: 0.2px;
+            font-family: Georgia, serif;
+        }
+        .results-tab-btn:hover { color: #333; background: rgba(255, 255, 255, 0.5); }
+        .results-tab-btn.active {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+        }
+        .results-tab-panel { display: none; animation: tabFadeIn 0.3s ease; }
+        .results-tab-panel.active { display: block; }
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Result tables */
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.92rem;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .results-table thead th {
+            background: #b31b1b;
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 15px;
+            text-align: center;
+            border: none;
+            font-size: 0.82rem;
+            text-transform: none;
+            letter-spacing: 0.2px;
+        }
+        .results-table thead tr:first-child th { background: #9c1717; }
+        .results-table thead tr:nth-child(2) th {
+            background: #bd3838;
+            font-size: 0.74rem;
+            font-weight: 600;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            color: #ffeaea;
+        }
+        .results-table thead th[colspan] {
+            border-left: 2px solid rgba(255, 255, 255, 0.22);
+            font-weight: 700;
+            letter-spacing: 0.3px;
+        }
+        .results-table thead th:first-child { text-align: left; padding-left: 22px; }
+        .results-table tbody td {
+            padding: 13px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ebebeb;
+            transition: background 0.2s;
+            font-variant-numeric: tabular-nums;
+            color: #555;
+        }
+        .results-table tbody td:first-child {
+            text-align: left;
+            font-weight: 600;
+            padding-left: 22px;
+            color: #333;
+        }
+        .results-table tbody tr:hover { background: #fdf3f3 !important; }
+        .results-table tbody tr:last-child td { border-bottom: none; }
+        .results-table tbody tr:nth-child(even) { background: #fafafa; }
+        .results-table tbody tr.highlight-row { background: linear-gradient(90deg, #fdeaea 0%, #fbdede 100%); }
+        .results-table tbody tr.highlight-row:hover { background: linear-gradient(90deg, #fbe2e2 0%, #f8d2d2 100%) !important; }
+        .results-table tbody tr.highlight-row td { font-weight: 700; color: #333; }
+        .results-table .best-val {
+            background: #d42020;
+            color: #fff;
+            border-radius: 6px;
+            padding: 3px 9px;
+            font-weight: 800;
+            display: inline-block;
+            min-width: 38px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+        .results-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d42020, #a01515);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 6px;
+            vertical-align: middle;
+            letter-spacing: 0.3px;
+        }
+        .lift-pos { color: #1b8a3a; font-weight: 700; }
+        .results-caption {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.5;
+        }
+        .results-caption a {
+            color: #d42020;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px dashed #d99;
+            transition: border-bottom 0.2s;
+        }
+        .results-caption a:hover { border-bottom: 1.5px solid #d42020; }
+
+        /* Stat cards */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 14px;
+        }
+        .stat-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 26px 18px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+            border-top: 4px solid #d42020;
+            text-align: center;
+        }
+        .stat-card .stat-num { font-size: 2.3rem; font-weight: 800; color: #d42020; line-height: 1; }
+        .stat-card .stat-label { margin-top: 10px; font-size: 0.9rem; color: #555; }
+
+        /* Method steps */
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .method-step {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+            border-left: 4px solid #f68946;
+        }
+        .method-step .step-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #d42020, #a01515);
+            color: #fff;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .method-step h4 { font-weight: 700; color: #333; margin: 0 0 6px; font-size: 1rem; }
+        .method-step p { color: #666; font-size: 0.92rem; line-height: 1.5; margin: 0; }
+
+        /* Persona-rewrite content boxes */
+        .prompt-box { border-radius: 10px; padding: 16px 18px; font-size: 0.95rem; line-height: 1.5; margin-bottom: 14px; }
+        .prompt-base { background: #f4f4f6; border: 1px solid #e2e0da; color: #555; }
+        .prompt-rewritten { background: #fdf3f0; border: 1px solid #f6c9b3; color: #333; }
+        .prompt-label {
+            display: block;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 6px;
+            color: #999;
+        }
+        .persona-chip {
+            background: #f5eef8;
+            border-left: 4px solid #9b59b6;
+            border-radius: 0 8px 8px 0;
+            padding: 12px 16px;
+            color: #5a2d6e;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+        }
+
+        /* Viz frame + galleries */
+        .viz-frame {
+            width: 100%;
+            border: 1px solid #e2e0da;
+            border-radius: 12px;
+            background: #fff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        }
+        .viz-caption {
+            margin-top: 10px;
+            font-size: 0.875rem;
+            color: #666;
+            font-style: italic;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            margin-top: 14px;
+        }
+        .gallery-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.07);
+        }
+        .gallery-card img { width: 100%; display: block; }
+        .gallery-card .gallery-cap { padding: 12px 14px; font-size: 0.85rem; color: #666; text-align: left; line-height: 1.45; }
+
+        /* Compact wide table (Unified Results) - fits 920px without scroll */
+        .results-table-compact { font-size: 0.78rem; }
+        .results-table-compact thead th { padding: 9px 7px; font-size: 0.72rem; }
+        .results-table-compact thead tr:nth-child(2) th { font-size: 0.68rem; padding: 6px 7px; }
+        .results-table-compact tbody td { padding: 9px 7px; }
+        .results-table-compact thead th:first-child,
+        .results-table-compact tbody td:first-child { padding-left: 14px; }
+        .results-table-compact tbody td:nth-child(2n) { border-left: 1px solid #efefef; }
+        .results-table-compact thead th[colspan] { border-left: 2px solid rgba(255, 255, 255, 0.22); }
+        .results-table-compact .best-val { padding: 2px 5px; min-width: 0; font-size: 0.76rem; }
+        .results-table-compact .cmmd { padding: 2px 5px; min-width: 0; font-size: 0.76rem; }
+
+        /* CMMD lower-is-better colour scale (green = best, red = worst) */
+        .cmmd { display: inline-block; border-radius: 6px; padding: 3px 9px; font-weight: 700; min-width: 40px; }
+        .cmmd-best { background: #1b8a3a; color: #fff; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12); }
+        .cmmd-good { background: #d7f0dd; color: #1b6b30; }
+        .cmmd-mid { background: #fde6c8; color: #9a6a12; }
+        .cmmd-poor { background: #fbd9cf; color: #b8430f; }
+        .cmmd-worst { background: #f3b7ab; color: #8a1f0a; }
+        .cmmd-legend { margin-top: 10px; font-size: 0.82rem; color: #888; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .cmmd-legend .swatch { display: inline-flex; align-items: center; gap: 5px; }
+        .cmmd-legend .swatch i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+
+        /* Pluralism stat grid - communicate lower-is-better */
+        .cmmd-grid .stat-card {
+            border-top: 4px solid #ccc;
+            text-align: left;
+            padding: 20px 18px;
+        }
+        .cmmd-grid .stat-card .stat-num { font-size: 1.95rem; color: #555; }
+        .cmmd-grid .stat-card .stat-label { margin-top: 8px; }
+        .cmmd-grid .cmmd-bar { height: 8px; border-radius: 4px; background: #eee; margin-top: 14px; overflow: hidden; }
+        .cmmd-grid .cmmd-bar > span { display: block; height: 100%; border-radius: 4px; }
+        .cmmd-grid .stat-card.is-winner { border-top-color: #1b8a3a; background: #f3fbf5; }
+        .cmmd-grid .stat-card.is-winner .stat-num { color: #1b8a3a; }
+        .cmmd-grid .stat-card.is-worst { border-top-color: #c0392b; }
+        .cmmd-grid .stat-card.is-worst .stat-num { color: #c0392b; }
+        .cmmd-grid .winner-tag {
+            display: inline-block; background: #1b8a3a; color: #fff; font-size: 0.66rem;
+            font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+            padding: 2px 9px; border-radius: 20px; margin-bottom: 8px;
+        }
+        .lower-better-note { font-size: 0.85rem; color: #777; margin-top: 14px; font-style: italic; }
+
+        /* Human evaluation: figure + results side by side */
+        .human-eval-layout { display: flex; gap: 28px; align-items: flex-start; margin-top: 14px; }
+        .human-eval-layout > figure { flex: 1 1 0; margin: 0; min-width: 0; }
+        .human-eval-layout > .he-results { flex: 1 1 0; min-width: 0; }
+        .human-eval-layout .he-results .results-table-wrapper { margin-top: 0; }
+        .winrate-table tbody td:first-child { white-space: nowrap; }
+        .winrate-table tbody td.win-cell { text-align: left; white-space: nowrap; }
+        .win-bar { display: inline-block; vertical-align: middle; width: 48px; height: 9px; background: #e6f4ea; border-radius: 5px; overflow: hidden; margin-right: 8px; flex-shrink: 0; }
+        .win-bar > span { display: block; height: 100%; background: linear-gradient(90deg, #2aa14f, #1b8a3a); }
+        .win-cell b { color: #1b8a3a; font-variant-numeric: tabular-nums; }
+        @media (max-width: 760px) { .human-eval-layout { flex-direction: column; } }
+
+        /* Same-individual paired story (Reddit history -> persona -> pluralistic preferences) */
+        .same-person {
+            border: 1px solid #eee;
+            border-radius: 14px;
+            padding: 8px 22px 24px;
+            margin-top: 22px;
+            background: #fcfbfa;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        .same-person .sp-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #d42020, #a01515);
+            color: #fff; font-size: 0.72rem; font-weight: 700;
+            letter-spacing: 0.5px; text-transform: uppercase;
+            padding: 4px 12px; border-radius: 20px; margin-top: 18px;
+        }
+        .same-person .sp-fig { margin: 18px 0 6px; text-align: center; }
+        .same-person .sp-fig img { max-width: 100%; border: 1px solid #ddd; }
+        .same-person .sp-fig figcaption { margin-top: 8px; font-size: 0.875rem; color: #666; font-style: italic; text-align: left; }
+        .same-person .sp-connector { text-align: center; color: #a01515; font-weight: 600; font-size: 0.92rem; margin: 14px 0 2px; }
+
+        /* Persona-rewrite carousel */
+        .example-carousel { position: relative; margin-top: 18px; }
+        .example-viewport { overflow: hidden; border-radius: 14px; }
+        .example-slide {
+            display: none;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 22px 28px 28px;
+            text-align: left;
+            animation: tabFadeIn 0.3s ease;
+        }
+        .example-slide.active { display: block; }
+        .example-slide .slide-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+        .example-slide .slide-label { font-size: 1.05rem; font-weight: 700; color: #333; }
+        .example-slide .slide-badge {
+            display: inline-block; background: #f0eeea; color: #a01515;
+            font-size: 0.72rem; font-weight: 700; padding: 3px 12px;
+            border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase;
+        }
+        .example-controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 18px; }
+        .example-nav {
+            display: inline-flex; align-items: center; justify-content: center;
+            width: 42px; height: 42px; border-radius: 50%;
+            border: none; cursor: pointer; font-size: 1.1rem;
+            background: linear-gradient(135deg, #d42020, #a01515); color: #fff;
+            box-shadow: 0 3px 10px rgba(212, 32, 32, 0.3); transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .example-nav:hover { transform: translateY(-1px); box-shadow: 0 5px 14px rgba(212, 32, 32, 0.4); }
+        .example-dots { display: flex; gap: 9px; align-items: center; }
+        .example-dot { width: 10px; height: 10px; border-radius: 50%; border: none; background: #d9d2d2; cursor: pointer; padding: 0; transition: background 0.2s, transform 0.2s; }
+        .example-dot.active { background: #d42020; transform: scale(1.25); }
+        .example-counter { text-align: center; font-size: 0.82rem; color: #999; margin-top: 10px; }
+
+        @media (max-width: 600px) {
+          .page { padding: 28px 16px 64px; }
+          h1 { font-size: 1.35rem; }
+        }
+    </style>
+  <meta name="citation_title" content="ZIPP: Zero-shot Image Personalization from Personas">
+  <meta name="citation_author" content="S I Harini">
+  <meta name="citation_author" content="Somesh Singh">
+  <meta name="citation_author" content="Yaman Kumar Singla">
+  <meta name="citation_author" content="David Doermann">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="European Conference on Computer Vision (ECCV)">
+  <meta name="citation_arxiv_id" content="2606.08841">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2606.08841">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">&larr; Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>ZIPP: Zero-shot Image Personalization from Personas</h1>
+
+    <div class="authors">
+      <a href="https://harini-si.github.io/" target="_blank">S I Harini<sup>*</sup></a>,
+      <a href="https://someshsingh22.github.io/" target="_blank">Somesh Singh<sup>*</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/" target="_blank">Yaman Kumar Singla</a>,
+      <a href="https://cse.buffalo.edu/~doermann/" target="_blank">David Doermann</a>,
+      <a href="https://www.iiitd.edu.in/~rajivratn/" target="_blank">Rajiv Ratn Shah</a>
+    </div>
+    <div class="equal-contrib">* Equal Contribution</div>
+
+    <p class="venue">ECCV 2026</p>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2606.08841" target="_blank">Paper</a>
+      <span class="disabled" title="Coming soon">Code (Coming Soon)</span>
+      <span class="disabled" title="Coming soon">Dataset (Coming Soon)</span>
+      <a href="#Method">Method</a>
+      <a href="#Examples">Examples</a>
+    </div>
+
+    <figure>
+      <img src="zipp/assets/img/teaser_panel.png" alt="ZIPP overview: persona discovery, verbalization, and persona-conditioned prompt rewriting">
+      <figcaption><b>Overview of the zero-shot personalization framework.</b> A graph attention network trained on the
+        user&ndash;subreddit bipartite graph ranks subreddits by attention score to build natural-language
+        <b>persona verbalizations</b> encoding demographic attributes, interests, and affective traits. These personas
+        condition an LLM to rewrite base prompts, so the same instruction (a street, a forest path, a cat, a portrait)
+        yields visibly different, taste-aligned images for a S&atilde;o Paulo photographer, a Kyoto student, and a
+        Florence historian.</figcaption>
+    </figure>
+
+    <h2>Abstract</h2>
+
+    <p>
+      Text-to-image diffusion models are increasingly deployed in creative contexts, yet remain impersonal &mdash;
+      optimized for aggregate aesthetics rather than individual taste. Human preferences are also pluralistic: the same
+      person may want muted, nostalgic portraits but vibrant, saturated street photography. Existing methods need dense
+      interaction histories or per-user fine-tuning, fail in cold-start settings, and collapse each user's
+      context-dependent preferences into one static style. We introduce <b>zero-shot image personalization from personas
+      (ZIPP)</b>, which conditions generation on natural-language <b>personas</b> &mdash; concise descriptors of a user's
+      identity, interests, and aesthetic sensibilities &mdash; with no user-specific data and no weight updates. An LLM
+      roleplays the persona to rewrite prompts, steering a frozen diffusion model toward taste-aligned outputs.
+    </p>
+    <ol>
+      <li><b>Zero-shot persona conditioning.</b> Prepending a verbalized persona and rewriting the prompt personalizes
+        any frozen diffusion model, with no per-user adapters or interaction history.</li>
+      <li><b>Persona mining at scale.</b> An inductive Graph Attention Network over a 23M-user Reddit interaction graph,
+        trained with dual contrastive objectives that align graph structure with users' visual behavior, is verbalized
+        by an MLLM into coherent natural-language personas.</li>
+      <li><b>ZIPBench.</b> The first zero-shot image-personalization benchmark, pairing 1.5K users with graph-mined
+        personas and 40K generated images.</li>
+      <li><b>Consistent gains.</b> Across four benchmarks and 14 LLMs from five families, persona conditioning improves
+        personalization by <b>13&ndash;20%</b>, with frontier models gaining most; few-shot ZIPP matches or exceeds
+        fine-tuned baselines trained on 100+ examples per user.</li>
+      <li><b>Pluralism and equity.</b> ZIPP best preserves intra-user preference diversity (lowest CMMD,
+        <b>0.16 vs. 0.55</b>), and IPF-normalized evaluation against global population marginals shows it substantially
+        reduces the subpopulation bias baked into existing methods.</li>
+      <li><b>Human preference.</b> Raters prefer ZIPP <b>79%</b> of the time over generic generation and over every
+        fine-tuned baseline, with no user-specific training.</li>
+    </ol>
+
+    <h2 id="Method">Method</h2>
+
+    <p>
+      ZIPP turns large-scale behavior into reusable, interpretable personas, then uses them to steer any diffusion model
+      through prompt rewriting.
+    </p>
+
+    <figure>
+      <img src="zipp/assets/img/method1.png" alt="ZIPP methodology: user-subreddit graph, GATv2 persona creation, persona-conditioned rewriting, personalized generation">
+      <figcaption>The ZIPP pipeline: an edge-aware GATv2 encoder over the user&ndash;subreddit graph (trained with link
+        prediction and an <em>ImageAlign</em> contrastive loss), attention-guided persona verbalization, persona-conditioned
+        prompt rewriting, and personalized generation by a frozen diffusion model.</figcaption>
+    </figure>
+
+    <div class="method-steps">
+      <div class="method-step">
+        <div class="step-num">1</div>
+        <h4>Graph &amp; alignment</h4>
+        <p>A user&ndash;subreddit bipartite graph is built from Reddit. A two-layer GATv2 encoder is trained with link
+          prediction and an <em>ImageAlign</em> contrastive objective that ties graph structure to users' visual posting
+          behavior.</p>
+      </div>
+      <div class="method-step">
+        <div class="step-num">2</div>
+        <h4>Attention ranking</h4>
+        <p>Learned attention weights rank each user's subreddits by behavioral salience, allocating a fixed token budget
+          to the communities and comment snippets that most characterize their interests.</p>
+      </div>
+      <div class="method-step">
+        <div class="step-num">3</div>
+        <h4>Persona verbalization</h4>
+        <p>An MLLM verbalizes the attention-guided evidence into a rich, editable natural-language persona capturing
+          demographics, interests, and affective traits.</p>
+      </div>
+      <div class="method-step">
+        <div class="step-num">4</div>
+        <h4>Roleplay rewriting</h4>
+        <p>The persona is prepended as a first-person roleplay instruction; an LLM rewrites the prompt from that
+          perspective, conditioning a frozen diffusion model to generate personalized images.</p>
+      </div>
+    </div>
+
+    <h2 id="KeyResults">Key Results</h2>
+
+    <p>
+      We evaluate ZIPP across four benchmarks &mdash; <b>ZIPBench</b> and <b>PIP</b> (historical generations),
+      <b>MovieLens</b> and <b>RapidData</b> (preference pairs) &mdash; against zero-shot, few-shot, and fine-tuned
+      baselines. We report <b>CLIPScore (CS)</b> and <b>PIGReward (PIG)</b> for personalization quality, a
+      demographically <b>IPF-normalized</b> aggregate, and <b>CMMD</b> for pluralistic diversity (lower is better).
+    </p>
+
+    <div class="results-tabs">
+      <button class="results-tab-btn active" onclick="switchResultsTab('zipbench', this)">Unified Results</button>
+      <button class="results-tab-btn" onclick="switchResultsTab('llm', this)">Persona Gains by LLM</button>
+      <button class="results-tab-btn" onclick="switchResultsTab('graph', this)">Persona-Mining Ablation</button>
+      <button class="results-tab-btn" onclick="switchResultsTab('transfer', this)">Demographic (IPF)</button>
+    </div>
+
+    <div id="panel-zipbench" class="results-tab-panel active">
+      <p>
+        Unified evaluation across all benchmarks, demographic alignment, and pluralism. <b>CS</b> = CLIPScore,
+        <b>PIG</b> = PIGReward (both &times;100, higher is better); <b>CMMD</b> &darr; measures distributional divergence
+        from the user's true preference space. All prompt-rewriting methods use GPT-4o as the underlying LLM.
+      </p>
+      <div class="results-table-wrapper">
+        <table class="results-table results-table-compact">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="2">ZIPBench</th>
+              <th colspan="2">PIP</th>
+              <th colspan="2">MovieLens</th>
+              <th colspan="2">RapidData</th>
+              <th colspan="2">Demog.</th>
+              <th rowspan="2">CMMD&darr;</th>
+            </tr>
+            <tr>
+              <th>CS</th><th>PIG</th>
+              <th>CS</th><th>PIG</th>
+              <th>CS</th><th>PIG</th>
+              <th>CS</th><th>PIG</th>
+              <th>CS</th><th>PIG</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>GPT-4o <span style="font-weight:400;color:#999;">(0-shot)</span></td>
+              <td>59.1</td><td>65.3</td><td>57.7</td><td>61.4</td><td>73.7</td><td>58.5</td><td>67.3</td><td>56.0</td><td>66.9</td><td>55.1</td><td>0.49</td>
+            </tr>
+            <tr>
+              <td>ZIPP <span style="font-weight:400;color:#999;">(0-shot)</span></td>
+              <td>61.8</td><td>73.4</td><td>60.2</td><td>67.3</td><td>76.4</td><td>64.2</td><td>73.9</td><td>61.5</td><td>72.8</td><td>60.9</td><td>0.42</td>
+            </tr>
+            <tr>
+              <td>FABRIC <span style="font-weight:400;color:#999;">(1-shot)</span></td>
+              <td>&mdash;</td><td>&mdash;</td><td>63.7</td><td>&mdash;</td><td>75.1</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+            </tr>
+            <tr>
+              <td>TV <span style="font-weight:400;color:#999;">(3-shot)</span></td>
+              <td>62.4</td><td>72.0</td><td>63.1</td><td>66.5</td><td>80.1</td><td>68.7</td><td>77.4</td><td>65.3</td><td>73.8</td><td>60.1</td><td>0.25</td>
+            </tr>
+            <tr>
+              <td>ZIPP <span style="font-weight:400;color:#999;">(3-shot)</span></td>
+              <td>66.7</td><td>77.5</td><td>65.2</td><td>69.9</td><td>80.4</td><td>71.4</td><td>77.9</td><td>68.2</td><td>76.8</td><td>67.0</td><td>0.19</td>
+            </tr>
+            <tr>
+              <td>DrUM <span style="font-weight:400;color:#999;">(FT)</span></td>
+              <td>65.6</td><td>74.4</td><td><span class="best-val">66.9</span></td><td>68.0</td><td>72.8</td><td>66.2</td><td>70.3</td><td>63.5</td><td>64.7</td><td>56.8</td><td>0.31</td>
+            </tr>
+            <tr>
+              <td>ViPer <span style="font-weight:400;color:#999;">(FT)</span></td>
+              <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>76.1</td><td>70.5</td><td>74.1</td><td>63.1</td><td>73.7</td><td>60.8</td><td>0.55</td>
+            </tr>
+            <tr class="highlight-row">
+              <td>ZIPP <span class="results-badge">5-shot</span></td>
+              <td><span class="best-val">68.5</span></td><td><span class="best-val">82.8</span></td>
+              <td>66.3</td><td><span class="best-val">72.1</span></td>
+              <td><span class="best-val">80.9</span></td><td><span class="best-val">77.9</span></td>
+              <td><span class="best-val">78.3</span></td><td><span class="best-val">74.0</span></td>
+              <td><span class="best-val">77.4</span></td><td><span class="best-val">73.0</span></td>
+              <td><span class="best-val">0.16</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="results-caption">
+        Even zero-shot, ZIPP surpasses the fine-tuned DrUM baseline on three of four benchmarks; few-shot ZIPP leads
+        across all benchmarks on both metrics while achieving the lowest CMMD (0.16) &mdash; simultaneous personalization
+        quality, demographic equity, and pluralistic diversity.
+        <a href="https://arxiv.org/abs/2606.08841" target="_blank">See full results in the paper &rarr;</a>
+      </p>
+
+      <figure style="margin-top:34px;">
+        <img src="zipp/assets/img/few_shot_shots.png" alt="Few-shot personalization vs. number of in-context shots" style="max-width:680px;">
+        <figcaption>Personalization rises with in-context persona examples. Open-source models saturate by ~3 shots,
+          while frontier models (GPT-5, Claude-Sonnet-4, Gemini 2.5 Pro) keep improving; a persona-conditioned model at
+          0 shots often matches a non-persona model at 3 shots.</figcaption>
+      </figure>
+    </div>
+
+    <div id="panel-llm" class="results-tab-panel">
+      <p>
+        Zero-shot <b>CLIPScore</b> on ZIPBench without vs. with persona conditioning across 14 LLMs from five families.
+        Persona conditioning helps every model (+3% to +20%), with frontier models gaining the most.
+      </p>
+
+      <figure style="margin-top:6px;">
+        <img src="zipp/assets/img/cs1_clipscore_family.png" alt="CLIPScores by model family with and without persona conditioning">
+        <figcaption>Stacked bars show the baseline (blue) and the additive improvement from persona conditioning (red),
+          grouped by model family. Frontier models reach 13&ndash;20% gains; open-source models gain 3&ndash;13%.</figcaption>
+      </figure>
+
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Family</th>
+              <th>Without Persona</th>
+              <th>With Persona</th>
+              <th>Lift</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td>Claude-Sonnet-4</td><td>Frontier</td><td>0.63</td>
+              <td><span class="best-val">0.76</span></td><td><span class="lift-pos">+20%</span></td>
+            </tr>
+            <tr><td>GPT-5-chat</td><td>Frontier</td><td>0.62</td><td>0.72</td><td><span class="lift-pos">+16%</span></td></tr>
+            <tr><td>Claude-3-Opus</td><td>Frontier</td><td>0.62</td><td>0.72</td><td><span class="lift-pos">+16%</span></td></tr>
+            <tr><td>Qwen3-32B</td><td>Open-source</td><td>0.61</td><td>0.69</td><td><span class="lift-pos">+13%</span></td></tr>
+            <tr><td>Claude-Sonnet-3.7</td><td>Frontier</td><td>0.62</td><td>0.70</td><td><span class="lift-pos">+13%</span></td></tr>
+            <tr><td>GPT-4o</td><td>Frontier</td><td>0.62</td><td>0.69</td><td><span class="lift-pos">+11%</span></td></tr>
+            <tr><td>Qwen3-235B-A22B</td><td>Open-source</td><td>0.61</td><td>0.67</td><td><span class="lift-pos">+10%</span></td></tr>
+            <tr><td>Gemini 2.5 Pro</td><td>Frontier</td><td>0.62</td><td>0.68</td><td><span class="lift-pos">+10%</span></td></tr>
+            <tr><td>GPT-4.1</td><td>Frontier</td><td>0.62</td><td>0.67</td><td><span class="lift-pos">+8%</span></td></tr>
+            <tr><td>DeepSeek-V3.2-Exp</td><td>Open-source</td><td>0.62</td><td>0.67</td><td><span class="lift-pos">+8%</span></td></tr>
+            <tr><td>Gemini 2.5 Flash</td><td>Frontier</td><td>0.61</td><td>0.66</td><td><span class="lift-pos">+8%</span></td></tr>
+            <tr><td>DeepSeek-V3</td><td>Open-source</td><td>0.62</td><td>0.66</td><td><span class="lift-pos">+6%</span></td></tr>
+            <tr><td>Qwen3-30B-A3B</td><td>Open-source</td><td>0.58</td><td>0.61</td><td><span class="lift-pos">+5%</span></td></tr>
+            <tr><td>Qwen3-8B</td><td>Open-source</td><td>0.60</td><td>0.62</td><td><span class="lift-pos">+3%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="results-caption">
+        Persona conditioning is a consistent, training-free win across model families. Frontier models benefit most,
+        consistent with their stronger instruction-following and roleplay ability.
+        <a href="https://arxiv.org/abs/2606.08841" target="_blank">See full results in the paper &rarr;</a>
+      </p>
+    </div>
+
+    <div id="panel-graph" class="results-tab-panel">
+      <p>
+        Persona-mining encoder ablation (all paired with GPT-4o). <b>Posting accuracy</b> measures how well learned
+        embeddings predict held-out user&ndash;subreddit links; <b>ZIP Lift</b> is the downstream zero-shot
+        personalization gain. The <b>GAT + ImageAlign</b> objective produces the most behavior-predictive personas.
+      </p>
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Encoder</th>
+              <th>Posting Acc &uarr;</th>
+              <th>ZIP Lift &uarr;</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>TF-IDF</td><td>55%</td><td>+5.1%</td></tr>
+            <tr><td>TF-IDF + NMI</td><td>57%</td><td>+5.3%</td></tr>
+            <tr><td>LightGCN</td><td>59%</td><td>+6.2%</td></tr>
+            <tr><td>LightGCN + ImageAlign</td><td>62%</td><td>+9.1%</td></tr>
+            <tr><td>GraphSAGE</td><td>63%</td><td>+8.5%</td></tr>
+            <tr><td>GraphSAGE + ImageAlign</td><td>67%</td><td>+10.2%</td></tr>
+            <tr><td>GAT</td><td>62%</td><td>+11.8%</td></tr>
+            <tr class="highlight-row">
+              <td>GAT + ImageAlign <span class="results-badge">Ours</span></td>
+              <td><span class="best-val">73%</span></td>
+              <td><span class="best-val">+17.7%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="results-caption">
+        Attention beats TF-IDF heuristics, and the auxiliary ImageAlign objective improves every architecture by
+        3&ndash;11% ZIP Lift &mdash; grounding embeddings in visual posting behavior captures persona signal unavailable
+        from graph structure alone.
+        <a href="https://arxiv.org/abs/2606.08841" target="_blank">See full results in the paper &rarr;</a>
+      </p>
+    </div>
+
+    <div id="panel-transfer" class="results-tab-panel">
+      <p>
+        Demographic equity on <b>RapidData</b> (the only benchmark with anonymized group-level demographics). We compare
+        the raw aggregate against an <b>IPF-reweighted</b> aggregate that matches UN World Population Prospects 2024
+        marginals over age, gender, country, language, and profession. A small &Delta; means the method serves
+        underrepresented subgroups equitably; a large drop means performance concentrates on the majority.
+      </p>
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th rowspan="2">Method</th>
+              <th colspan="3">CLIPScore</th>
+              <th colspan="3">PIGReward</th>
+            </tr>
+            <tr>
+              <th>Raw</th><th>IPF</th><th>&Delta;%</th>
+              <th>Raw</th><th>IPF</th><th>&Delta;%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>LLM <span style="font-weight:400;color:#999;">(0-shot)</span></td><td>67.3</td><td>66.9</td><td>&minus;0.6</td><td>56.0</td><td>55.1</td><td>&minus;1.6</td></tr>
+            <tr><td>TV <span style="font-weight:400;color:#999;">(3-shot)</span></td><td>77.4</td><td>73.8</td><td>&minus;4.7</td><td>65.3</td><td>60.1</td><td>&minus;8.0</td></tr>
+            <tr><td>DrUM <span style="font-weight:400;color:#999;">(FT)</span></td><td>70.3</td><td>64.7</td><td style="color:#c0392b;font-weight:700;">&minus;8.0</td><td>63.5</td><td>56.8</td><td style="color:#c0392b;font-weight:700;">&minus;10.6</td></tr>
+            <tr><td>ViPer <span style="font-weight:400;color:#999;">(FT)</span></td><td>74.1</td><td>73.7</td><td>&minus;0.5</td><td>63.1</td><td>60.8</td><td>&minus;3.6</td></tr>
+            <tr><td>ZIPP <span style="font-weight:400;color:#999;">(0-shot)</span></td><td>73.9</td><td>72.8</td><td>&minus;1.5</td><td>61.5</td><td>60.9</td><td>&minus;1.0</td></tr>
+            <tr class="highlight-row">
+              <td>ZIPP <span class="results-badge">5-shot</span></td>
+              <td><span class="best-val">78.3</span></td><td><span class="best-val">77.4</span></td><td>&minus;1.1</td>
+              <td><span class="best-val">74.0</span></td><td><span class="best-val">73.0</span></td><td>&minus;1.4</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="results-caption">
+        DrUM degrades the most after IPF normalization (&minus;8.0% CS, &minus;10.6% PIG) &mdash; its adapter absorbs the
+        majority-skewed biases of its training data, collapsing on older, African, Latin American, and manual-trade
+        users. ZIPP stays nearly flat, serving underrepresented groups equitably without any per-user training.
+        <a href="https://arxiv.org/abs/2606.08841" target="_blank">See full results in the paper &rarr;</a>
+      </p>
+    </div>
+
+    <h2 id="Pluralism">Pluralistic Preference Alignment</h2>
+    <p>
+      Effective personalization must capture not only <em>what</em> a user prefers on average, but also <em>how</em>
+      their preferences vary across contexts. Someone who likes muted, animated portraits may want bright, saturated
+      street photography &mdash; they should not get the same look for every prompt. We formalize this as
+      <b>pluralistic alignment</b>: a method should achieve high average personalization <em>while preserving</em> the
+      distributional spread of a user's true visual preference space, measured by <b>CMMD</b> (CLIP Maximum Mean
+      Discrepancy) between reference and generated images.
+    </p>
+
+    <p>
+      To make this concrete, we follow a single individual end to end &mdash; from her raw Reddit activity, to the
+      persona ZIPP mines, to the pluralistic visual preferences that persona predicts.
+    </p>
+
+    <div class="same-person">
+      <figure class="sp-fig">
+        <img src="zipp/assets/img/reddit_history2.png" alt="Persona inferred from a user's Reddit activity across communities">
+        <figcaption><b>Step 1 &mdash; Reddit history to persona.</b> Aggregating her posts and comments across
+          communities (r/MovingtoLA, r/midjourney, r/collapse, r/movies, r/Maine, r/Equality), weighted by graph
+          attention, yields a structured persona: a middle-aged woman in Los Angeles, originally from coastal Maine,
+          working in a psychiatric hospital and exploring AI art.</figcaption>
+      </figure>
+      <div class="sp-connector">Her mined persona shapes how she sees every prompt &darr;</div>
+      <figure class="sp-fig">
+        <img src="zipp/assets/img/pluralism.png" alt="The same user's pluralistic visual preferences across four distinct aesthetics">
+        <figcaption><b>Step 2 &mdash; persona to pluralistic preferences.</b> The same persona maps to
+          <b>dark surrealist fantasy</b> (her collapse-oriented worldview), <b>impressionist coastal landscapes</b>
+          (her Maine upbringing), <b>retro-futuristic psychedelic design</b> (her speculative art interests), and
+          <b>flat-vector companion animals</b> (her pet dog) &mdash; one persona, several context-dependent tastes.</figcaption>
+      </figure>
+    </div>
+
+    <p>
+      Methods that collapse a user into a fixed style are the most susceptible to pluralistic misalignment. <b>ViPer</b>
+      reuses the same style attributes across all prompts (worst CMMD, 0.55); <b>DrUM</b> anchors generation around a
+      narrow slice of history (0.31); retrieval-based <b>TV</b> (0.25) collapses when the prompt pool is small. ZIPP
+      achieves the <b>lowest CMMD (0.16)</b> while maintaining the highest alignment, because personas encode
+      multi-faceted preference priors &mdash; aesthetics, topics, culture, and affect &mdash; that modulate generation
+      contextually rather than anchoring on a fixed reference set.
+    </p>
+
+    <div class="stat-grid cmmd-grid" style="margin-top:20px;">
+      <div class="stat-card is-winner">
+        <span class="winner-tag">Best</span>
+        <div class="stat-num">0.16</div>
+        <div class="stat-label">ZIPP (5-shot) &mdash; lowest CMMD, best diversity preservation</div>
+        <div class="cmmd-bar"><span style="width:29%;background:#1b8a3a;"></span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">0.25</div>
+        <div class="stat-label">TV (3-shot) &mdash; retrieval diversity, small-pool collapse</div>
+        <div class="cmmd-bar"><span style="width:45%;background:#9bc34a;"></span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">0.31</div>
+        <div class="stat-label">DrUM (fine-tuned) &mdash; coreset anchoring</div>
+        <div class="cmmd-bar"><span style="width:56%;background:#e1a93a;"></span></div>
+      </div>
+      <div class="stat-card is-worst">
+        <div class="stat-num">0.55</div>
+        <div class="stat-label">ViPer (fine-tuned) &mdash; single static style per user</div>
+        <div class="cmmd-bar"><span style="width:100%;background:#c0392b;"></span></div>
+      </div>
+    </div>
+    <p class="lower-better-note">Lower CMMD = better: closer to the user's true spread of visual preferences. ZIPP
+      (0.16) is the clear winner; ViPer (0.55) is the worst.</p>
+
+    <h2 id="Demographics">Demographic Alignment</h2>
+    <p>
+      Preference datasets have historically over-sampled WEIRD (Western, Educated, Industrialized, Rich, Democratic)
+      populations &mdash; up to 96% of behavioral-science participants, representing only ~12% of the global population.
+      The same bias has crept into image-personalization benchmarks: most (PIP, HPD, Pick-a-Pic) do not even report
+      demographic distributions, making bias impossible to audit. We use <b>RapidData</b>, where each preference pair is
+      tagged with anonymized group-level demographics, and apply <b>Iterative Proportional Fitting (IPF / raking)</b> to
+      reweight per-subgroup scores so the aggregate reflects true UN population marginals rather than the
+      majority-skewed sample.
+    </p>
+    <p>
+      Because the evaluation itself is skewed, methods that maximize aggregate scores are the most exposed. Under IPF
+      normalization, <b>DrUM drops the most</b> &mdash; collapsing from 75.0 (N. America) to 58.0 (Africa), a 22.7%
+      regional gap, and degrading sharply for older (55+), Latin American, Middle Eastern, and manual-trade users. ZIPP
+      stays within ~1% of its raw score and maintains &ge;76.5 CLIPScore across <em>every</em> region, because the LLM
+      reads age- and culture-relevant context directly from the persona regardless of training-data representation. Even
+      zero-shot ZIPP matches or beats trained baselines on underrepresented subgroups. See the <b>Demographic (IPF)</b>
+      tab above for the full raw-vs-IPF breakdown.
+    </p>
+
+    <h2 id="HumanEval">Human Evaluation</h2>
+    <p>
+      We ran a controlled study with 50 demographically diverse participants, building each person's natural-language
+      persona from a short intake survey on demographics, profession, and hobbies (never visual preferences). Each
+      participant made pairwise A/B choices over 20 prompts, yielding 1,000 annotations. Annotators consistently
+      preferred persona-conditioned generations, and a separate expert study confirmed the quality of mined personas.
+    </p>
+
+    <div class="human-eval-layout">
+      <figure>
+        <img src="zipp/assets/img/user_study_interface.png" alt="Pairwise A/B image personalization study interface">
+        <figcaption>The pairwise A/B interface: participants enter a prompt and pick the image (order randomized, method
+          labels hidden) that better matches their taste.</figcaption>
+      </figure>
+      <div class="he-results">
+        <div class="results-table-wrapper">
+          <table class="results-table winrate-table" style="font-size:0.82rem;">
+            <thead>
+              <tr><th>ZIPP vs. baseline</th><th>ZIPP win %</th><th>n</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>ZIPP (0-shot) vs. No-Persona</td><td class="win-cell"><span class="win-bar"><span style="width:79%;"></span></span><b>79%</b></td><td>250</td></tr>
+              <tr><td>ZIPP (3-shot) vs. TV (3-shot)</td><td class="win-cell"><span class="win-bar"><span style="width:78%;"></span></span><b>78%</b></td><td>125</td></tr>
+              <tr><td>ZIPP (3-shot) vs. ViPer (FT)</td><td class="win-cell"><span class="win-bar"><span style="width:65%;"></span></span><b>65%</b></td><td>250</td></tr>
+              <tr><td>ZIPP (3-shot) vs. DrUM (FT)</td><td class="win-cell"><span class="win-bar"><span style="width:58%;"></span></span><b>58%</b></td><td>250</td></tr>
+              <tr><td>ZIPP (0-shot) vs. TV (3-shot)</td><td class="win-cell"><span class="win-bar"><span style="width:56%;"></span></span><b>56%</b></td><td>125</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="results-caption">
+          Every comparison exceeds 50% &mdash; <b>ZIPP wins against all baselines</b>, including methods that need
+          per-user fine-tuning or 100+ historical prompts. All conditions are significant (p &lt; 0.01, binomial test).
+        </p>
+      </div>
+    </div>
+
+    <h3>Persona quality assessment</h3>
+    <p>
+      In a second study, three independent expert annotators rated 100 mined personas (~1,000 annotations) on a 1&ndash;5
+      scale. Personas were judged accurate and coherent, with substantial inter-annotator agreement
+      (Cohen's &kappa; = 0.64).
+    </p>
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-num">4.1 / 5</div>
+        <div class="stat-label">average expert rating across all criteria (&kappa; = 0.64)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4.3 / 5</div>
+        <div class="stat-label">demographic accuracy (inferred age, location, profession)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">4.1 / 5</div>
+        <div class="stat-label">overall coherence as a plausible individual</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3.9 / 5</div>
+        <div class="stat-label">interest completeness (coverage of behavioral interests)</div>
+      </div>
+    </div>
+
+    <h2 id="Examples">Examples</h2>
+    <p>
+      ZIPP rewrites a single base prompt from each persona's perspective, steering the diffusion model toward
+      taste-aligned outputs. Browse the examples below to see the persona, the base prompt, and the rewritten prompt.
+    </p>
+
+    <figure>
+      <img src="zipp/assets/img/qualitative_comparison.png" alt="Qualitative comparison of ZIPP against ViPer, DrUM, and TV for two personas">
+      <figcaption>Qualitative comparison against baselines for a S&atilde;o Paulo photographer (top) and a Kyoto
+        student/illustrator (bottom). ZIPP (3-shot) tracks each persona's taste across diverse prompts &mdash; energetic
+        Brazilian street life vs. calm, retrospective anime &mdash; while ViPer applies one fixed style per user and
+        DrUM/TV drift toward generic or mismatched aesthetics.</figcaption>
+    </figure>
+
+    <div class="example-carousel" id="example-carousel">
+      <div class="example-viewport">
+        <div class="example-slide active">
+          <div class="slide-head">
+            <span class="slide-label">Documentary street style</span>
+            <span class="slide-badge">Persona Rewrite</span>
+          </div>
+          <div class="persona-chip"><strong>Persona:</strong> Sao Paulo photographer with energetic urban documentary preferences.</div>
+          <div class="prompt-box prompt-base"><span class="prompt-label">Base prompt</span>a narrow street lined with colorful buildings</div>
+          <div class="prompt-box prompt-rewritten"><span class="prompt-label">ZIPP rewrite</span>a lively narrow street lined with colorful buildings, captured in documentary street-photography style with saturated tones, candid movement, and expressive urban texture</div>
+        </div>
+
+        <div class="example-slide">
+          <div class="slide-head">
+            <span class="slide-label">Calm anime reinterpretation</span>
+            <span class="slide-badge">Persona Rewrite</span>
+          </div>
+          <div class="persona-chip"><strong>Persona:</strong> Kyoto student who prefers subtle anime-inspired visuals and soft palettes.</div>
+          <div class="prompt-box prompt-base"><span class="prompt-label">Base prompt</span>a cat resting by a window</div>
+          <div class="prompt-box prompt-rewritten"><span class="prompt-label">ZIPP rewrite</span>a cat resting by a window, drawn with clean anime lines, gentle pastel lighting, minimal interior detail, and a calm introspective tone</div>
+        </div>
+
+        <div class="example-slide">
+          <div class="slide-head">
+            <span class="slide-label">Classical portrait treatment</span>
+            <span class="slide-badge">Persona Rewrite</span>
+          </div>
+          <div class="persona-chip"><strong>Persona:</strong> Florence art historian focused on classical mood and painterly detail.</div>
+          <div class="prompt-box prompt-base"><span class="prompt-label">Base prompt</span>portrait of a woman</div>
+          <div class="prompt-box prompt-rewritten"><span class="prompt-label">ZIPP rewrite</span>portrait of a woman in warm painterly tones, classical framing, textured brushwork, and subtle Renaissance-inspired lighting</div>
+        </div>
+
+        <div class="example-slide">
+          <div class="slide-head">
+            <span class="slide-label">Tech-forward visual language</span>
+            <span class="slide-badge">Persona Rewrite</span>
+          </div>
+          <div class="persona-chip"><strong>Persona:</strong> Network engineer interested in cyber themes and geometric composition.</div>
+          <div class="prompt-box prompt-base"><span class="prompt-label">Base prompt</span>a city skyline at night</div>
+          <div class="prompt-box prompt-rewritten"><span class="prompt-label">ZIPP rewrite</span>a city skyline at night with neon circuitry motifs, geometric composition, high-contrast reflections, and clean futuristic structure</div>
+        </div>
+
+        <div class="example-slide">
+          <div class="slide-head">
+            <span class="slide-label">Nature-driven mood adaptation</span>
+            <span class="slide-badge">Persona Rewrite</span>
+          </div>
+          <div class="persona-chip"><strong>Persona:</strong> Outdoor traveler with preference for atmospheric nature photography.</div>
+          <div class="prompt-box prompt-base"><span class="prompt-label">Base prompt</span>a bowl of ramen on a table</div>
+          <div class="prompt-box prompt-rewritten"><span class="prompt-label">ZIPP rewrite</span>a bowl of ramen on a rustic table, photographed with natural window light, shallow depth, earthy tones, and cinematic atmosphere</div>
+        </div>
+
+        <div class="example-slide">
+          <div class="slide-head">
+            <span class="slide-label">Historical-fantasy rewrite</span>
+            <span class="slide-badge">Persona Rewrite</span>
+          </div>
+          <div class="persona-chip"><strong>Persona:</strong> Mythology enthusiast with existential themes and symbolic visual cues.</div>
+          <div class="prompt-box prompt-base"><span class="prompt-label">Base prompt</span>solitary figure in a mythic landscape</div>
+          <div class="prompt-box prompt-rewritten"><span class="prompt-label">ZIPP rewrite</span>solitary figure in a mythic landscape with weathered ruins, symbolic iconography, dramatic sky gradients, and contemplative storytelling tone</div>
+        </div>
+      </div>
+
+      <div class="example-controls">
+        <button class="example-nav" type="button" aria-label="Previous example" onclick="moveExample(-1)">&#8249;</button>
+        <div class="example-dots" id="example-dots"></div>
+        <button class="example-nav" type="button" aria-label="Next example" onclick="moveExample(1)">&#8250;</button>
+      </div>
+      <div class="example-counter" id="example-counter"></div>
+    </div>
+
+    <h2 id="Data">Exploring the Reddit Behavior Graph</h2>
+    <p>
+      Personas are mined from a Reddit interaction graph spanning <b>23M users</b>, <b>40K subreddits</b>, and
+      <b>682M posts and comments</b> (2015&ndash;2022). Below: interactive views of where and who the activity comes
+      from, and how persona attributes map to visual interests.
+    </p>
+
+    <div class="results-tabs" id="viz-tabs">
+      <button class="results-tab-btn active" onclick="switchVizTab('world', this)">World Activity</button>
+      <button class="results-tab-btn" onclick="switchVizTab('us', this)">US Activity</button>
+      <button class="results-tab-btn" onclick="switchVizTab('demo', this)">Age &amp; Gender</button>
+      <button class="results-tab-btn" onclick="switchVizTab('heatmap', this)">Persona &times; Interest</button>
+    </div>
+
+    <div id="viz-world" class="results-tab-panel active">
+      <iframe class="viz-frame" style="height:520px;" src="zipp/assets/viz/world_reddit_activity_interest_map.html"
+        loading="lazy" title="World Reddit activity and interest map"></iframe>
+      <p class="viz-caption">World map of relative Reddit activity, colored by region and annotated with each region's top visual interest.</p>
+    </div>
+    <div id="viz-us" class="results-tab-panel">
+      <iframe class="viz-frame" style="height:520px;" src="zipp/assets/viz/us_reddit_activity_interest_map.html"
+        loading="lazy" title="US Reddit activity and interest map"></iframe>
+      <p class="viz-caption">US state-level activity with per-state top visual interests; hover for the full interest ranking.</p>
+    </div>
+    <div id="viz-demo" class="results-tab-panel">
+      <iframe class="viz-frame" style="height:520px;" src="zipp/assets/viz/reddit_age_gender_bars.html"
+        loading="lazy" title="Reddit age and gender distribution"></iframe>
+      <p class="viz-caption">Age and gender distribution of the inferred user population behind the persona graph.</p>
+    </div>
+    <div id="viz-heatmap" class="results-tab-panel">
+      <iframe class="viz-frame" style="height:760px;" src="zipp/assets/viz/persona_attribute_vs_visual_interest_heatmap.html"
+        loading="lazy" title="Persona attribute vs visual interest heatmap"></iframe>
+      <p class="viz-caption">Heatmap relating persona attributes to visual interests, surfacing the strongest taste associations.</p>
+    </div>
+
+    <div class="gallery-grid" style="margin-top: 30px;">
+      <div class="gallery-card">
+        <img src="zipp/assets/img/degree_users.png" alt="User degree distribution">
+        <div class="gallery-cap">Heavy-tailed user degree distribution (number of subreddits per user), log-log scale.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="zipp/assets/img/degree_subreddits.png" alt="Subreddit degree distribution">
+        <div class="gallery-cap">Subreddit degree distribution (number of users per subreddit), log-log scale.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="zipp/assets/img/persona_wordcloud.png" alt="Persona word cloud">
+        <div class="gallery-cap">Word cloud of mined persona descriptors spanning interests, locations, and aesthetics.</div>
+      </div>
+    </div>
+
+    <figure>
+      <img src="zipp/assets/img/token_budget2.png" alt="Zero-shot persona performance vs. token budget" style="max-width:640px;">
+      <figcaption>Zero-shot CLIPScore vs. persona token budget across five models. Gains rise sharply up to ~2K tokens,
+        then most models saturate; GPT-4o begins hallucinating persona details beyond 8K tokens, motivating the
+        4,096-token budget cap used throughout.</figcaption>
+    </figure>
+
+    <h2 id="BibTeX">BibTeX</h2>
+
+    <pre><code>@inproceedings{si2026zipp,
+  title={ZIPP: Zero-shot Image Personalization from Personas},
+  author={S I, Harini and Singh, Somesh and Singla, Yaman Kumar and Doermann, David and Shah, Rajiv Ratn},
+  booktitle={European Conference on Computer Vision (ECCV)},
+  year={2026}
+}</code></pre>
+
+    <hr>
+    <footer>
+      <strong>ZIPP: Zero-shot Image Personalization from Personas</strong> by
+      <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+    </footer>
+
+  </div>
+
+  <script>
+    function switchResultsTab(tabId, btnEl) {
+      document.querySelectorAll('#panel-zipbench, #panel-llm, #panel-graph, #panel-transfer').forEach(function (panel) {
+        panel.classList.remove('active');
+      });
+      btnEl.parentElement.querySelectorAll('.results-tab-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById('panel-' + tabId).classList.add('active');
+      btnEl.classList.add('active');
+    }
+
+    function switchVizTab(tabId, btnEl) {
+      document.querySelectorAll('#viz-world, #viz-us, #viz-demo, #viz-heatmap').forEach(function (panel) {
+        panel.classList.remove('active');
+      });
+      document.querySelectorAll('#viz-tabs .results-tab-btn').forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+      document.getElementById('viz-' + tabId).classList.add('active');
+      btnEl.classList.add('active');
+    }
+
+    var exampleIndex = 0;
+    var exampleSlides = document.querySelectorAll('#example-carousel .example-slide');
+
+    function renderExample() {
+      var total = exampleSlides.length;
+      exampleSlides.forEach(function (slide, i) {
+        slide.classList.toggle('active', i === exampleIndex);
+      });
+      document.querySelectorAll('#example-dots .example-dot').forEach(function (dot, i) {
+        dot.classList.toggle('active', i === exampleIndex);
+      });
+      var counter = document.getElementById('example-counter');
+      if (counter) { counter.textContent = (exampleIndex + 1) + ' / ' + total; }
+    }
+
+    function showExample(i) {
+      var total = exampleSlides.length;
+      exampleIndex = (i + total) % total;
+      renderExample();
+    }
+
+    function moveExample(dir) {
+      showExample(exampleIndex + dir);
+    }
+
+    (function initExampleCarousel() {
+      if (!exampleSlides.length) { return; }
+      var dots = document.getElementById('example-dots');
+      exampleSlides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'example-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to example ' + (i + 1));
+        dot.addEventListener('click', function () { showExample(i); });
+        dots.appendChild(dot);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { moveExample(-1); }
+        else if (e.key === 'ArrowRight') { moveExample(1); }
+      });
+      renderExample();
+    })();
+  </script>
+
+</body>
+
+</html>
