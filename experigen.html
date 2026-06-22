@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="ExperiGen: agentic AI for computational social science — using LLM agents to automate hypothesis generation and experimentation to study human behavior at scale.">
+    <meta name="keywords" content="LLM application, Hypothesis Generation, Computational Social Science">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Accelerating Social Science Research via Agentic Hypothesization and Experimentation</title>
+    <meta property="og:url" content="https://behavior-in-the-wild.github.io/experigen">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Accelerating Social Science Research via Agentic Hypothesization and Experimentation">
+    <meta property="og:description" content="ExperiGen uses agentic hypothesization and experimentation to accelerate computational social science research.">
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/experigen">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Accelerating Social Science Research via Agentic Hypothesization and Experimentation">
+    <meta name="twitter:description" content="ExperiGen uses agentic hypothesization and experimentation to accelerate computational social science research.">
+    <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jishu Sen Gupta"
+    },
+    {
+      "@type": "Person",
+      "name": "Harini SI"
+    },
+    {
+      "@type": "Person",
+      "name": "Somesh Singh"
+    },
+    {
+      "@type": "Person",
+      "name": "Syed Mohamad Tawseeq"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaman K Singla"
+    },
+    {
+      "@type": "Person",
+      "name": "David Doermann"
+    },
+    {
+      "@type": "Person",
+      "name": "Rajiv Ratn Shah"
+    },
+    {
+      "@type": "Person",
+      "name": "Balaji Krishnamurthy"
+    }
+  ],
+  "datePublished": "2026",
+  "name": "Accelerating Social Science Research via Agentic Hypothesization and Experimentation",
+  "url": "https://behavior-in-the-wild.github.io/experigen",
+  "description": "ExperiGen uses agentic hypothesization and experimentation to accelerate computational social science research.",
+  "keywords": [
+    "LLM application",
+    "hypothesis generation",
+    "computational social science",
+    "agentic AI"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #1a1a1a;
+          background: #fff;
+        }
+        .site-nav {
+          border-bottom: 1px solid #ddd;
+          padding: 11px 24px;
+          font-size: 0.875rem;
+        }
+        .site-nav a { color: #0645ad; text-decoration: none; }
+        .site-nav a:hover { text-decoration: underline; }
+        .page {
+          max-width: 780px;
+          margin: 0 auto;
+          padding: 48px 24px 96px;
+        }
+        h1 {
+          font-size: 1.65rem;
+          font-weight: bold;
+          line-height: 1.35;
+          color: #111;
+          margin: 0 0 18px;
+        }
+        h2 {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 44px 0 10px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #ccc;
+        }
+        p { margin: 14px 0; }
+        a { color: #0645ad; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .authors {
+          font-size: 1rem;
+          margin: 4px 0 3px;
+          line-height: 1.65;
+        }
+        .equal-contrib {
+          font-size: 0.8rem;
+          color: #777;
+          font-style: italic;
+          margin: 2px 0 8px;
+        }
+        .affiliation {
+          font-size: 0.9rem;
+          color: #444;
+          margin: 4px 0 14px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+        }
+        .affiliation img {
+          width: 22px;
+          height: 22px;
+          object-fit: contain;
+        }
+        .paper-links {
+          margin: 14px 0 6px;
+        }
+        .paper-links a {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #0645ad;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #0645ad;
+          margin-right: 8px;
+          font-family: Georgia, serif;
+        }
+        .paper-links a:hover {
+          background: #0645ad;
+          color: #fff;
+          text-decoration: none;
+        }
+        figure {
+          margin: 32px 0;
+          text-align: center;
+        }
+        figure img {
+          max-width: 100%;
+          border: 1px solid #ddd;
+        }
+        figcaption {
+          margin-top: 8px;
+          font-size: 0.875rem;
+          color: #666;
+          font-style: italic;
+        }
+        pre {
+          background: #f6f6f6;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          padding: 16px;
+          font-size: 0.8rem;
+          line-height: 1.5;
+          overflow-x: auto;
+          font-family: 'Courier New', monospace;
+        }
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 48px 0 0;
+        }
+        footer {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 16px;
+        }
+        @media (max-width: 600px) {
+          .page { padding: 28px 16px 64px; }
+          h1 { font-size: 1.35rem; }
+        }
+
+        /* ── Tab Switcher ── */
+        .results-tabs {
+            display: inline-flex;
+            background: #eee;
+            border-radius: 10px;
+            padding: 4px;
+            margin-bottom: 22px;
+            gap: 4px;
+        }
+        .results-tab-btn {
+            padding: 9px 22px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: transparent;
+            color: #777;
+            transition: all 0.25s ease;
+            letter-spacing: 0.2px;
+        }
+        .results-tab-btn:hover {
+            color: #333;
+            background: rgba(255, 255, 255, 0.5);
+        }
+        .results-tab-btn.active {
+            background: #fff;
+            color: #333;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+        }
+        .results-tab-panel {
+            display: none;
+            animation: tabFadeIn 0.3s ease;
+        }
+        .results-tab-panel.active {
+            display: block;
+        }
+        @keyframes tabFadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Results Table ── */
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.95rem;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .results-table thead th {
+            background: linear-gradient(135deg, #5a5a5a 0%, #484848 100%);
+            color: #fff;
+            font-weight: 600;
+            padding: 14px 15px;
+            text-align: center;
+            border: none;
+            font-size: 0.88rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .results-table thead th:first-child {
+            text-align: left;
+            padding-left: 22px;
+        }
+        .results-table thead tr.sub-header th {
+            background: linear-gradient(135deg, #6e6e6e 0%, #5a5a5a 100%);
+            font-weight: 600;
+            font-size: 0.80rem;
+            padding: 7px 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        .results-table tbody td {
+            padding: 13px 15px;
+            text-align: center;
+            border-bottom: 1px solid #ebebeb;
+            transition: background 0.2s;
+            font-variant-numeric: tabular-nums;
+            color: #555;
+        }
+        .results-table tbody td:first-child {
+            text-align: left;
+            font-weight: 600;
+            padding-left: 22px;
+            color: #333;
+        }
+        .results-table tbody tr:hover { background: #f7f7f7 !important; }
+        .results-table tbody tr:last-child td { border-bottom: none; }
+        .results-table tbody tr:nth-child(even) { background: #fafafa; }
+        .results-table tbody tr.highlight-row {
+            background: linear-gradient(90deg, #f4f4f4 0%, #eeeeee 100%);
+        }
+        .results-table tbody tr.highlight-row:hover {
+            background: linear-gradient(90deg, #efefef 0%, #e8e8e8 100%) !important;
+        }
+        .results-table tbody tr.highlight-row td {
+            font-weight: 700;
+            color: #333;
+        }
+        .results-table tbody tr.highlight-row td:first-child { color: #333; }
+        .results-table .best-val {
+            background: #555;
+            color: #fff;
+            border-radius: 6px;
+            padding: 3px 9px;
+            font-weight: 800;
+            display: inline-block;
+            min-width: 38px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+        .results-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #777, #555);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 6px;
+            vertical-align: middle;
+            letter-spacing: 0.3px;
+        }
+        .results-caption {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.5;
+        }
+        .results-caption a {
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px dashed #999;
+            transition: border-bottom 0.2s;
+        }
+        .results-caption a:hover { border-bottom: 1.5px solid #333; }
+
+        /* ── Example Accordion ── */
+        .example-accordion { margin-bottom: 16px; }
+        .example-accordion details {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), 0 1px 6px rgba(0, 0, 0, 0.04);
+            transition: box-shadow 0.3s;
+            overflow: hidden;
+        }
+        .example-accordion details:hover {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .example-accordion details[open] {
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        .example-accordion summary {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 18px 28px;
+            cursor: pointer;
+            list-style: none;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .example-accordion summary::-webkit-details-marker { display: none; }
+        .example-accordion summary:hover { background: #fafafa; }
+        .example-accordion summary .accordion-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #5a5a5a, #484848);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 0.85rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+        }
+        .example-accordion details[open] summary .accordion-icon { transform: rotate(90deg); }
+        .example-accordion summary .accordion-label {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #333;
+            letter-spacing: 0.2px;
+        }
+        .example-accordion summary .accordion-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #5a5a5a, #484848);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 3px 12px;
+            border-radius: 20px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .example-accordion .accordion-content { padding: 8px 32px 32px; text-align: left; }
+        .example-accordion .headline-pair { display: flex; gap: 16px; margin-bottom: 16px; }
+        .example-accordion .headline-box {
+            flex: 1;
+            padding: 18px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        .example-accordion .headline-winning {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            color: #2e7d32;
+        }
+        .example-accordion .headline-losing {
+            background: #ffebee;
+            border: 2px solid #ef5350;
+            color: #c62828;
+        }
+        .example-accordion .headline-box .kw-highlight {
+            background: rgba(76, 175, 80, 0.25);
+            padding: 1px 4px;
+            border-radius: 4px;
+            text-decoration: underline;
+            text-decoration-color: #2e7d32;
+            text-underline-offset: 3px;
+        }
+        .example-accordion .headline-losing .kw-highlight {
+            background: transparent;
+            text-decoration: none;
+        }
+        .example-accordion .hypothesis-text {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+        .example-accordion .hypothesis-text em { font-style: italic; color: #333; }
+        .example-accordion hr { border: none; border-top: 1px solid #eee; margin: 20px 0; }
+        .example-accordion .reddit-post {
+            background: #fafafa;
+            border-left: 4px solid #888;
+            padding: 18px 22px;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: #444;
+            line-height: 1.65;
+            margin-bottom: 20px;
+            font-size: 0.93rem;
+        }
+        .example-accordion .reddit-post .highlight-blue {
+            color: #1976d2; font-weight: 600;
+            text-decoration: underline; text-decoration-color: #1976d2; text-underline-offset: 3px;
+        }
+        .example-accordion .reddit-post .highlight-red {
+            color: #d32f2f; font-weight: 600;
+            text-decoration: underline; text-decoration-color: #d32f2f; text-underline-offset: 3px;
+        }
+        .example-accordion .reddit-post .highlight-orange {
+            color: #e65100; font-weight: 600;
+            text-decoration: underline; text-decoration-color: #e65100; text-underline-offset: 3px;
+        }
+        .example-accordion .reddit-post .highlight-teal {
+            color: #00796b; font-weight: 600;
+            text-decoration: underline; text-decoration-color: #00796b; text-underline-offset: 3px;
+        }
+        @media (max-width: 768px) {
+            .example-accordion .headline-pair { flex-direction: column; }
+        }
+    </style>
+  <meta name="citation_title" content="Accelerating Social Science Research via Agentic Hypothesization and Experimentation">
+  <meta name="citation_author" content="Jishu Sen Gupta">
+  <meta name="citation_author" content="Harini SI">
+  <meta name="citation_author" content="Somesh Singh">
+  <meta name="citation_author" content="Syed Mohamad Tawseeq">
+  <meta name="citation_author" content="Yaman K Singla">
+  <meta name="citation_author" content="David Doermann">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_arxiv_id" content="2602.07983">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2602.07983">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">← Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>Accelerating Social Science Research via Agentic Hypothesization and Experimentation</h1>
+
+    <div class="authors">
+      <a href="https://in.linkedin.com/in/jishu-sengupta-949444258">Jishu Sen Gupta<sup>*</sup></a>,
+      <a href="https://harini-si.github.io/">S I Harini<sup>*</sup></a>,
+      <a href="https://someshsingh22.github.io/">Somesh Singh<sup>*</sup></a>,
+      <a href="https://tawseeq1.github.io/">Syed Mohamad Tawseeq<sup>*</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla</a>,
+      <a href="https://cse.buffalo.edu/~doermann/">David Doermann</a>,
+      <a href="https://www.iiitd.edu.in/~rajivratn/">Rajiv Ratn Shah</a>,
+      <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
+    </div>
+    <div class="equal-contrib">* Equal Contribution</div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR), Adobe</a>
+    </div>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <a href="https://arxiv.org/abs/2602.07983" target="_blank">Paper</a>
+      <a href="#Dataset">Datasets</a>
+      <a href="#Examples">Examples</a>
+    </div>
+
+    <ul>
+      <li><strong>Introducing ExperiGen</strong> — the first agentic AI framework that closes the loop between hypothesis generation and experimental validation over raw, unstructured data, automating a key part of the scientific discovery cycle.</li>
+      <li><strong>Bayesian-Inspired Discovery Loop</strong> — ExperiGen uses a novel two-phase search where a Generator agent proposes testable hypotheses and an Experimenter agent evaluates them statistically with iterative refinement, yielding more reliable discoveries.</li>
+      <li><strong>Stronger, More Actionable Findings</strong> — Across diverse domains, ExperiGen discovers 2–4x more statistically significant hypotheses that are 7–17% more predictive than prior methods, and its outputs are shown to be novel, impactful, and intervention-ready in real A/B tests.</li>
+    </ul>
+
+    <figure>
+      <img src="images/experigen/experigen_overview.jpg" alt="ExperiGen Overview">
+      <figcaption>Overview of the ExperiGen framework for agentic hypothesis generation and experimentation.</figcaption>
+    </figure>
+
+    <h2>Abstract</h2>
+
+    <p>
+      Data-driven social science research is inherently slow, relying on iterative cycles of observation, hypothesis generation, and experimental validation. While recent data-driven methods promise to accelerate parts of this process, they largely fail to support end-to-end scientific discovery. To address this gap, we introduce EXPERIGEN, an agentic framework that operationalizes end-to-end discovery through a Bayesian optimization inspired two-phase search, in which a Generator proposes candidate hypotheses and an Experimenter evaluates them empirically. Across multiple domains, EXPERIGEN consistently discovers 2–4&times; more statistically significant hypotheses that are 7–17 percent more predictive than prior approaches, and naturally extends to complex data regimes including multimodal and relational datasets. Beyond statistical performance, hypotheses must be novel, empirically grounded, and actionable to drive real scientific progress. To evaluate these qualities, we conduct an expert review of machine-generated hypotheses, collecting feedback from senior faculty. Among 25 reviewed hypotheses, 88 percent were rated moderately or strongly novel, 70 percent were deemed impactful and worth pursuing, and most demonstrated rigor comparable to senior graduate-level research. Finally, recognizing that ultimate validation requires real-world evidence, we conduct the first A/B test of LLM-generated hypotheses, observing statistically significant results with p less than 10<sup>-6</sup> and a large effect size of 344 percent.
+    </p>
+
+    <h2 id="KeyResults">Key Results</h2>
+
+    <div style="text-align:center;">
+      <div class="results-tabs">
+        <button class="results-tab-btn active" onclick="switchResultsTab('hypo', this)">Significant Hypotheses</button>
+        <button class="results-tab-btn" onclick="switchResultsTab('accuracy', this)">Predictive Accuracy</button>
+      </div>
+    </div>
+
+    <!-- Panel 1: Significant Hypotheses -->
+    <div id="panel-hypo" class="results-tab-panel active">
+      <p style="color: #666; font-size: 1.0rem; margin-bottom: 18px;">
+        Number of statistically significant hypotheses (<i>p</i> &lt; 0.05, Bonferroni-corrected) using <b>GPT-4o</b>
+      </p>
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th rowspan="2" style="vertical-align: middle;">Method</th>
+              <th colspan="5" style="border-bottom: 2px solid rgba(255,255,255,0.15);">HypoBench</th>
+              <th colspan="5" style="border-left: 2px solid rgba(255,255,255,0.1); border-bottom: 2px solid rgba(255,255,255,0.15);">Cross-Domain</th>
+            </tr>
+            <tr class="sub-header">
+              <th>Decep.</th>
+              <th>News</th>
+              <th>Dread.</th>
+              <th>GPTgc</th>
+              <th>Pers.</th>
+              <th style="border-left: 2px solid rgba(255,255,255,0.1);">Twitter</th>
+              <th>Design</th>
+              <th>LaMem</th>
+              <th>Cong.</th>
+              <th>CMV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td>ExperiGen <span class="results-badge">Ours</span></td>
+              <td><span class="best-val">18</span></td>
+              <td><span class="best-val">21</span></td>
+              <td><span class="best-val">16</span></td>
+              <td><span class="best-val">14</span></td>
+              <td><span class="best-val">17</span></td>
+              <td><span class="best-val">19</span></td>
+              <td><span class="best-val">11</span></td>
+              <td><span class="best-val">5</span></td>
+              <td><span class="best-val">20</span></td>
+              <td><span class="best-val">16</span></td>
+            </tr>
+            <tr>
+              <td>HypoGenic</td>
+              <td>6</td><td>3</td><td>4</td><td>3</td><td>5</td>
+              <td>3</td><td>4</td><td>0</td><td>5</td><td>4</td>
+            </tr>
+            <tr>
+              <td>HypotheSAEs</td>
+              <td>8</td><td>12</td><td>6</td><td>5</td><td>7</td>
+              <td>12</td><td>6</td><td>0</td><td>12</td><td>8</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="results-caption">
+        ExperiGen discovers <b>2–4x more</b> significant hypotheses than baselines. On <b>LaMem</b>, ExperiGen is the <b>only</b> method to discover any significant hypotheses.
+        <a href="https://arxiv.org/abs/2602.07983" target="_blank">See full results in the paper →</a>
+      </p>
+    </div>
+
+    <!-- Panel 2: Predictive Accuracy -->
+    <div id="panel-accuracy" class="results-tab-panel">
+      <p style="color: #666; font-size: 1.0rem; margin-bottom: 18px;">
+        Predictive accuracy (%) on representative benchmarks using <b>GPT-4o</b>
+      </p>
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th rowspan="2" style="vertical-align: middle;">Method</th>
+              <th colspan="3" style="border-bottom: 2px solid rgba(255,255,255,0.15);">HypoBench</th>
+              <th colspan="4" style="border-left: 2px solid rgba(255,255,255,0.1); border-bottom: 2px solid rgba(255,255,255,0.15);">Cross-Domain</th>
+            </tr>
+            <tr class="sub-header">
+              <th>Deception</th>
+              <th>News</th>
+              <th>Persuasion</th>
+              <th style="border-left: 2px solid rgba(255,255,255,0.1);">Twitter</th>
+              <th>Design</th>
+              <th>Congress</th>
+              <th>CMV</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td>ExperiGen <span class="results-badge">Ours</span></td>
+              <td><span class="best-val">78.0</span></td>
+              <td><span class="best-val">70.0</span></td>
+              <td><span class="best-val">94.0</span></td>
+              <td><span class="best-val">67.0</span></td>
+              <td><span class="best-val">88.0</span></td>
+              <td><span class="best-val">79.4</span></td>
+              <td><span class="best-val">77.5</span></td>
+            </tr>
+            <tr>
+              <td>HypoGenic</td>
+              <td>76.0</td><td>63.2</td><td>93.0</td><td>60.3</td><td>84.3</td><td>72.6</td><td>61.0</td>
+            </tr>
+            <tr>
+              <td>HypotheSAEs</td>
+              <td>62.9</td><td>61.9</td><td>87.1</td><td>54.1</td><td>84.3</td><td>73.9</td><td>59.2</td>
+            </tr>
+            <tr>
+              <td>0-shot CoT</td>
+              <td>65.0</td><td>68.2</td><td>83.2</td><td>60.5</td><td>84.8</td><td>73.7</td><td>65.0</td>
+            </tr>
+            <tr>
+              <td>Few-shot CoT</td>
+              <td>64.8</td><td>67.2</td><td>81.0</td><td>58.6</td><td>84.6</td><td>72.6</td><td>69.0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="results-caption">
+        In-domain predictive accuracy (%) with <b>GPT-4o</b> on select benchmarks spanning social media, news, psychology, design, and persuasion.
+        ExperiGen discovers <b>2–4x more</b> statistically significant hypotheses that are <b>7–17% more predictive</b>.
+        <a href="https://arxiv.org/abs/2602.07983" target="_blank">See full results in the paper →</a>
+      </p>
+    </div>
+
+    <script>
+      function switchResultsTab(tabId, btnEl) {
+        document.querySelectorAll('.results-tab-panel').forEach(function(panel) {
+          panel.classList.remove('active');
+        });
+        document.querySelectorAll('.results-tab-btn').forEach(function(btn) {
+          btn.classList.remove('active');
+        });
+        document.getElementById('panel-' + tabId).classList.add('active');
+        btnEl.classList.add('active');
+      }
+    </script>
+
+    <h2 id="Examples">Examples</h2>
+
+    <p style="color: #666; font-size: 1.05rem; margin-bottom: 32px;">
+      Representative hypotheses generated by ExperiGen across diverse domains, along with supporting evidence from the datasets.
+    </p>
+
+    <!-- Example 1: News Headlines -->
+    <div class="example-accordion">
+      <details>
+        <summary>
+          <span class="accordion-icon">&#9654;</span>
+          <span class="accordion-label">News Headlines Popularity</span>
+          <span class="accordion-badge">HypoBench</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="hypothesis-text" style="margin-bottom: 18px;">
+            <strong>Hypothesis:</strong> Headlines using a <em>cause-effect structure</em> (e.g., starting with "Why") are more engaging, as they promise a clear causal explanation.
+          </p>
+          <div class="headline-pair">
+            <div class="headline-box headline-winning">
+              "<span class="kw-highlight">Why</span> There Are So Many Blue Dots On This Map, And <span class="kw-highlight">Why</span> We Should All Care"
+            </div>
+            <div class="headline-box headline-losing">
+              "I Loved The Pretty Dots On This Map … But Upon Further Inspection, I Felt Sick To My Stomach"
+            </div>
+          </div>
+          <hr>
+          <p class="hypothesis-text" style="margin-bottom: 18px;">
+            <strong>Hypothesis:</strong> Headlines that include <em>curiosity-inducing keywords</em> (e.g., 'secret', 'never told', 'shocking') are more likely to be the winning headline, as they trigger the reader's curiosity.
+          </p>
+          <div class="headline-pair">
+            <div class="headline-box headline-winning">
+              "There's A <span class="kw-highlight">Secret</span> That These People Keep Every Day They Go To Work"
+            </div>
+            <div class="headline-box headline-losing">
+              "What One Person Did To Help Others Overcome Bullying In The Workplace"
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Example 2: Dreaddit Stress Detection -->
+    <div class="example-accordion">
+      <details>
+        <summary>
+          <span class="accordion-icon">&#9654;</span>
+          <span class="accordion-label">Dreaddit — Stress Detection</span>
+          <span class="accordion-badge">HypoBench</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="hypothesis-text" style="margin-bottom: 18px;">
+            <strong>Hypothesis:</strong> Posts that exhibit a higher frequency of <em>negated solution descriptors</em> (e.g., "can't fix", "don't know how", "won't help") are more likely to express elevated stress.
+          </p>
+          <div class="reddit-post">
+            I was a severe addict that had 2 overdoses when I was younger and addiction/alcoholism runs on both sides of my family. <span class="highlight-blue">Please tell me the "hijacking" will stop</span> and I will come back into my own person. <span class="highlight-red">I don't want to come out</span> on the other side and be this nervous and uncomfortable person who is unable to have relationships. I don't drink, or take prescriptions, or smoke. I have been thinking of seeing a therapist, <span class="highlight-orange">I don't really have the time or extra money</span>, plus I've been really <span class="highlight-teal">hurt from small intimate AA groups</span>. Ugh… Is there another side of this PTSD mental attrition?
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Example 3: Twitter Image Engagement -->
+    <div class="example-accordion">
+      <details>
+        <summary>
+          <span class="accordion-icon">&#9654;</span>
+          <span class="accordion-label">Twitter Image Engagement</span>
+          <span class="accordion-badge">Cross-Domain</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="hypothesis-text" style="margin-bottom: 24px;">
+            <strong>Hypothesis:</strong> Tweets that include <em>high-resolution images</em> are more likely to receive higher engagement in terms of likes compared to tweets with <em>lower resolution images</em>.
+          </p>
+          <div style="display: flex; gap: 16px; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+            <div style="text-align: center;">
+              <div style="border: 3px solid #4caf50; border-radius: 10px; overflow: hidden; display: inline-block;">
+                <img src="images/experigen/experigen_indigo_pref.png" alt="High engagement tweet" style="display: block; max-height: 250px; width: auto;">
+              </div>
+              <div style="margin-top: 8px;">
+                <span style="background: rgba(76,175,80,0.9); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 12px;">High Engagement</span>
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <div style="border: 3px solid #ef5350; border-radius: 10px; overflow: hidden; display: inline-block;">
+                <img src="images/experigen/experigen_indigo_not_pref.png" alt="Low engagement tweet" style="display: block; max-height: 250px; width: auto;">
+              </div>
+              <div style="margin-top: 8px;">
+                <span style="background: rgba(239,83,80,0.9); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 12px;">Low Engagement</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Example 4: Design Aesthetics -->
+    <div class="example-accordion">
+      <details>
+        <summary>
+          <span class="accordion-icon">&#9654;</span>
+          <span class="accordion-label">Layout Design</span>
+          <span class="accordion-badge">Cross-Domain</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="hypothesis-text" style="margin-bottom: 24px;">
+            <strong>Hypothesis:</strong> Layouts with <em>balanced spacing and margins</em> are more likely to be preferred compared to layouts with <em>unbalanced spacing and margins</em>.
+          </p>
+          <div style="display: flex; gap: 32px; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="text-align: center;">
+                <div style="border: 3px solid #4caf50; border-radius: 10px; overflow: hidden; display: inline-block;">
+                  <img src="images/experigen/experigen_design1_pref.png" alt="Design 1 Preferred" style="display: block; max-height: 220px; width: auto;">
+                </div>
+                <div style="margin-top: 8px;">
+                  <span style="background: rgba(76,175,80,0.9); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 12px;">Preferred</span>
+                </div>
+              </div>
+              <div style="text-align: center;">
+                <div style="border: 3px solid #ef5350; border-radius: 10px; overflow: hidden; display: inline-block;">
+                  <img src="images/experigen/experigen_design1.png" alt="Design 1" style="display: block; max-height: 220px; width: auto;">
+                </div>
+                <div style="margin-top: 8px;">
+                  <span style="background: rgba(239,83,80,0.9); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 12px;">Not Preferred</span>
+                </div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: flex-start;">
+              <div style="text-align: center;">
+                <div style="border: 3px solid #4caf50; border-radius: 10px; overflow: hidden; display: inline-block;">
+                  <img src="images/experigen/experigen_design2_pref.png" alt="Design 2 Preferred" style="display: block; max-height: 220px; width: auto;">
+                </div>
+                <div style="margin-top: 8px;">
+                  <span style="background: rgba(76,175,80,0.9); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 12px;">Preferred</span>
+                </div>
+              </div>
+              <div style="text-align: center;">
+                <div style="border: 3px solid #ef5350; border-radius: 10px; overflow: hidden; display: inline-block;">
+                  <img src="images/experigen/experigen_design2.png" alt="Design 2" style="display: block; max-height: 220px; width: auto;">
+                </div>
+                <div style="margin-top: 8px;">
+                  <span style="background: rgba(239,83,80,0.9); color: #fff; font-size: 0.7rem; font-weight: 700; padding: 2px 10px; border-radius: 12px;">Not Preferred</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Example 5: Lamem -->
+    <div class="example-accordion">
+      <details>
+        <summary>
+          <span class="accordion-icon">&#9654;</span>
+          <span class="accordion-label">Memorability</span>
+          <span class="accordion-badge">Cross-Domain</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="hypothesis-text" style="margin-bottom: 20px;">
+            <strong>Hypothesis:</strong> Higher relative color contrast significantly predicts image preference, with the higher-contrast image being consistently more memorable.
+          </p>
+          <div style="display: flex; gap: 16px; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+            <div style="text-align: center;">
+              <div style="border: 3px solid #4caf50; border-radius: 10px; overflow: hidden; display: inline-block;">
+                <img src="images/experigen/Lamem_more.png" alt="More memorable image" style="display: block; max-height: 250px; width: auto;">
+              </div>
+              <div style="margin-top: 8px;">
+                <span style="background: rgba(76,175,80,0.9); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 12px;">More Memorable</span>
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <div style="border: 3px solid #ef5350; border-radius: 10px; overflow: hidden; display: inline-block;">
+                <img src="images/experigen/Lamem_less.png" alt="Less memorable image" style="display: block; max-height: 250px; width: auto;">
+              </div>
+              <div style="margin-top: 8px;">
+                <span style="background: rgba(239,83,80,0.9); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 12px;">Less Memorable</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <!-- Example 6: Form Conversion -->
+    <div class="example-accordion">
+      <details>
+        <summary>
+          <span class="accordion-icon">&#9654;</span>
+          <span class="accordion-label">Form Conversion</span>
+          <span class="accordion-badge">Cross-Domain</span>
+        </summary>
+        <div class="accordion-content">
+          <p class="hypothesis-text" style="margin-bottom: 24px;">
+            <strong>Hypothesis:</strong> Signup Forms with a <em>soft shadow</em> have higher conversions.
+          </p>
+          <div style="display: flex; gap: 16px; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+            <div style="text-align: center;">
+              <div style="border: 3px solid #4caf50; border-radius: 10px; overflow: hidden; display: inline-block;">
+                <img src="images/experigen/experigen_forms1a_pref.png" alt="High conversion form" style="display: block; max-height: 250px; width: auto;">
+              </div>
+              <div style="margin-top: 8px;">
+                <span style="background: rgba(76,175,80,0.9); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 12px;">High Conversion</span>
+              </div>
+            </div>
+            <div style="text-align: center;">
+              <div style="border: 3px solid #ef5350; border-radius: 10px; overflow: hidden; display: inline-block;">
+                <img src="images/experigen/experigen_forms1b.png" alt="Low conversion form" style="display: block; max-height: 250px; width: auto;">
+              </div>
+              <div style="margin-top: 8px;">
+                <span style="background: rgba(239,83,80,0.9); color: #fff; font-size: 0.75rem; font-weight: 700; padding: 3px 12px; border-radius: 12px;">Low Conversion</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+
+    <h2 id="BibTeX">BibTeX</h2>
+
+    <pre><code>@article{experigen2025,
+  title={Accelerating Social Science Research via Agentic Hypothesization and Experimentation},
+  author={Jishu Sen Gupta and SI Harini and Somesh Singh and Syed Mohamad Tawseeq and Yaman K Singla and David Doermann and Rajiv Ratn Shah and Balaji Krishnamurthy},
+  year={2026},
+  journal={arXiv preprint arXiv:2602.07983}
+}</code></pre>
+
+    <h2>Terms Of Service</h2>
+
+    <p>
+      Users are required to agree to the following terms before using the service. The service is a research preview. It only provides limited safety measures and may generate offensive content. It must not be used for any illegal, harmful, violent, racist, or sexual purposes. Please do not upload any private information. The service collects user dialogue data, including both text and images, and reserves the right to distribute it under a Creative Commons Attribution (CC-BY) or a similar license.
+    </p>
+
+    <h2>Acknowledgement</h2>
+
+    <p>We thank Adobe for their generous sponsorship.</p>
+
+    <hr>
+    <footer>
+      <strong>ExperiGen</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+    </footer>
+
+  </div>
+</body>
+
+</html>

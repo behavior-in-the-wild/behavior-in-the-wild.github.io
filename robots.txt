@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://behavior-in-the-wild.github.io/sitemap.xml

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A behavior-aware benchmark and methods to measure and improve human engagement of text-to-image generation models, modeling audience behavior with AI.">
+        <meta name="keywords" content="image generation models, text to image models, LLM-as-a-Judge Vision-Language Models, image engagement, stable diffusion, dalle, persuasion, engagement, behavioral science, human behavior, behavior in the wild">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:url" content="https://behavior-in-the-wild.github.io/image-engagement">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Measuring And Improving Engagement of Text-to-Image Generation Models">
+        <meta property="og:description" content="Behavior-aware benchmark and methods for measuring and improving engagement in text-to-image generation models.">
+        <title>Measuring And Improving Engagement of Text-to-Image Generation Models</title>
+        <link rel="canonical" href="https://behavior-in-the-wild.github.io/image-engagement">
+        <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+        <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Measuring And Improving Engagement of Text-to-Image Generation Models">
+        <meta name="twitter:description" content="Behavior-aware benchmark and methods for measuring and improving engagement in text-to-image generation models.">
+        <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+        <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Varun Khurana"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaman Kumar Singla"
+    },
+    {
+      "@type": "Person",
+      "name": "Jayakumar Subramanian"
+    },
+    {
+      "@type": "Person",
+      "name": "Changyou Chen"
+    },
+    {
+      "@type": "Person",
+      "name": "Rajiv Ratn Shah"
+    },
+    {
+      "@type": "Person",
+      "name": "Zhiqiang Xu"
+    },
+    {
+      "@type": "Person",
+      "name": "Balaji Krishnamurthy"
+    }
+  ],
+  "datePublished": "2025",
+  "name": "Measuring And Improving Engagement of Text-to-Image Generation Models",
+  "url": "https://behavior-in-the-wild.github.io/image-engagement",
+  "description": "Behavior-aware benchmark and methods for measuring and improving engagement in text-to-image generation models.",
+  "keywords": [
+    "image engagement",
+    "text-to-image",
+    "stable diffusion",
+    "DALL-E",
+    "behavioral science"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+        <style>
+            body {
+              margin: 0;
+              padding: 0;
+              font-family: Georgia, 'Times New Roman', serif;
+              font-size: 17px;
+              line-height: 1.7;
+              color: #1a1a1a;
+              background: #fff;
+            }
+            .site-nav {
+              border-bottom: 1px solid #ddd;
+              padding: 11px 24px;
+              font-size: 0.875rem;
+            }
+            .site-nav a { color: #0645ad; text-decoration: none; }
+            .site-nav a:hover { text-decoration: underline; }
+            .page {
+              max-width: 780px;
+              margin: 0 auto;
+              padding: 48px 24px 96px;
+            }
+            h1 {
+              font-size: 1.65rem;
+              font-weight: bold;
+              line-height: 1.35;
+              color: #111;
+              margin: 0 0 18px;
+            }
+            h2 {
+              font-size: 1.1rem;
+              font-weight: bold;
+              color: #111;
+              margin: 44px 0 10px;
+              padding-bottom: 4px;
+              border-bottom: 1px solid #ccc;
+            }
+            p { margin: 14px 0; }
+            a { color: #0645ad; text-decoration: none; }
+            a:hover { text-decoration: underline; }
+            .authors {
+              font-size: 1rem;
+              margin: 4px 0 3px;
+              line-height: 1.65;
+            }
+            .equal-contrib {
+              font-size: 0.8rem;
+              color: #777;
+              font-style: italic;
+              margin: 2px 0 8px;
+            }
+            .affiliation {
+              font-size: 0.9rem;
+              color: #444;
+              margin: 4px 0 14px;
+              display: flex;
+              align-items: center;
+              gap: 7px;
+            }
+            .affiliation img {
+              width: 22px;
+              height: 22px;
+              object-fit: contain;
+            }
+            .venue {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #b31b1b;
+    margin: 6px 0 14px;
+  }
+  .paper-links {
+              margin: 14px 0 6px;
+            }
+            .paper-links a {
+              display: inline-block;
+              padding: 4px 14px;
+              border: 1px solid #0645ad;
+              border-radius: 3px;
+              font-size: 0.875rem;
+              color: #0645ad;
+              margin-right: 8px;
+              font-family: Georgia, serif;
+            }
+            .paper-links a:hover {
+              background: #0645ad;
+              color: #fff;
+              text-decoration: none;
+            }
+            ul {
+              padding-left: 1.4em;
+              margin: 12px 0;
+            }
+            ul li {
+              margin-bottom: 8px;
+              line-height: 1.65;
+            }
+            figure {
+              margin: 32px 0;
+              text-align: center;
+            }
+            figure img {
+              max-width: 100%;
+              border: 1px solid #ddd;
+            }
+            figcaption {
+              margin-top: 8px;
+              font-size: 0.875rem;
+              color: #666;
+              font-style: italic;
+            }
+            pre {
+              background: #f6f6f6;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              padding: 16px;
+              font-size: 0.8rem;
+              line-height: 1.5;
+              overflow-x: auto;
+              font-family: 'Courier New', monospace;
+              position: relative;
+            }
+            .copy-btn {
+              position: absolute;
+              top: 8px;
+              right: 8px;
+              padding: 3px 8px;
+              font-size: 0.75rem;
+              background: #fff;
+              border: 1px solid #ddd;
+              border-radius: 3px;
+              cursor: pointer;
+              color: #555;
+            }
+            .copy-btn:hover { background: #eee; }
+            hr {
+              border: none;
+              border-top: 1px solid #ddd;
+              margin: 48px 0 0;
+            }
+            footer {
+              font-size: 0.85rem;
+              color: #555;
+              margin-top: 16px;
+            }
+            @media (max-width: 600px) {
+              .page { padding: 28px 16px 64px; }
+              h1 { font-size: 1.35rem; }
+            }
+        </style>
+      <meta name="citation_title" content="Measuring and Improving Engagement of Text-to-Image Generation Models">
+  <meta name="citation_author" content="Varun Khurana">
+  <meta name="citation_author" content="Yaman Kumar Singla">
+  <meta name="citation_author" content="Jayakumar Subramanian">
+  <meta name="citation_author" content="Changyou Chen">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Zhiqiang Xu">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="International Conference on Learning Representations">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=TmCcNuo03f">
+</head>
+
+    <body>
+
+      <nav class="site-nav">
+        <a href="./index.html">← Behavior in the Wild</a>
+      </nav>
+
+      <div class="page">
+
+        <h1>Measuring And Improving Engagement of Text-to-Image Generation Models</h1>
+
+        <div class="authors">
+          <a href="https://varunkhurana07.github.io/">Varun Khurana<sup>*</sup></a>,
+          <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla<sup>*</sup></a>,
+          <a href="https://www.linkedin.com/in/jayakumar-subramanian-9198954/">Jayakumar Subramanian</a>,
+          <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen</a>,
+          <a href="https://www.linkedin.com/in/rajivratn">Rajiv Ratn Shah</a>,
+          <a href="https://www.linkedin.com/in/zhiqiang-xu-51140840/">Zhiqiang Xu</a>,
+          <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
+        </div>
+        <div class="equal-contrib">* Equal Contribution</div>
+        <div class="affiliation">
+          <img src="images/adobe-logo.png" alt="Adobe">
+          <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab, Adobe</a>
+        </div>
+
+        <p class="venue">ICLR 2025</p>
+
+        <p>Accepted at <strong>ICLR 2025</strong></p>
+
+        <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+        <div class="paper-links">
+          <a href="https://openreview.net/forum?id=TmCcNuo03f" target="_blank">Paper</a>
+          <a href="#arena">EngagementArena</a>
+        </div>
+
+        <ul>
+          <li><strong>Engagement-Optimized Image Generation</strong>: We introduce the task of generating images optimized for user engagement, crucial in domains like advertising, fashion, and e-commerce.</li>
+          <li><strong>EngagingImageNet Dataset</strong>: A large-scale dataset with 168M tweets from 10,135 enterprise accounts (2007–2023), capturing image engagement metrics.</li>
+          <li><strong>EngageNet Model</strong>: A vision-language model trained to predict user engagement over images, outperforming common metrics like FID and aesthetics.</li>
+          <li><strong>Engagement Arena</strong>: The first automated benchmarking platform for ranking text-to-image models based on engaging image generation.</li>
+          <li><strong>Methods for Engagement Optimization</strong>: We optimize image generation for engagement via prompt conditioning, supervised fine-tuning, and RL-based alignment with EngageNet rewards.</li>
+        </ul>
+
+        <h2 id="arena">Engagement Arena</h2>
+
+        <figure>
+          <img src="images/image-engagement/image_engagement_arena.png" alt="engagement arena">
+          <figcaption>Rankings and Elo ratings of various text-to-image models in the proposed Engagement Arena.</figcaption>
+        </figure>
+
+        <h2 id="BibTeX">BibTeX</h2>
+
+        <pre><code id="bibtex-content">@inproceedings{
+  khurana2025measuring,
+  title={Measuring And Improving Engagement of Text-to-Image Generation Models},
+  author={Varun Khurana and Yaman Kumar Singla and Jayakumar Subramanian and Changyou Chen and Rajiv Ratn Shah and zhiqiang xu and Balaji Krishnamurthy},
+  booktitle={The Thirteenth International Conference on Learning Representations},
+  year={2025},
+  url={https://openreview.net/forum?id=TmCcNuo03f}
+}</code><button class="copy-btn" onclick="copyBibtex()">Copy</button></pre>
+
+        <script>
+          function copyBibtex() {
+            const bibtexContent = document.getElementById('bibtex-content').textContent;
+            navigator.clipboard.writeText(bibtexContent.trim()).then(() => {
+              alert('BibTeX copied to clipboard!');
+            }).catch(err => {
+              console.error('Failed to copy text: ', err);
+            });
+          }
+        </script>
+
+        <h2>Acknowledgement</h2>
+
+        <p>We thank Adobe for their generous sponsorship.</p>
+
+        <hr>
+        <footer>
+          <strong>Measuring And Improving Engagement of Text-to-Image Generation Models</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+        </footer>
+
+      </div>
+    </body>
+</html>

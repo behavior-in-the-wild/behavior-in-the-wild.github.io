@@ -1,431 +1,536 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Teaching Human Behavior Improves Content Understanding Abilities Of VLMs">
+  <meta name="description" content="Behavior-LLaVA: teaching human behavior signals to vision-language models (VLMs/LLMs) to improve multimodal content understanding through the behavior modality.">
   <meta name="keywords" content="behavior, llava, vision language models, large language models, behavioral science, multimodal, receiver behavior">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</title>
   <meta property="og:url" content="https://behavior-in-the-wild.github.io/behavior-llava">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Teaching Human Behavior Improves Content Understanding Abilities Of VLMs">
+  <meta property="og:description" content="Behavior-LLaVA teaches human behavior signals to improve content understanding in vision-language models.">
+  <title>Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</title>
   <link rel="canonical" href="https://behavior-in-the-wild.github.io/behavior-llava">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="./static/css/base.css">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js"></script>
+  <!-- Bootstrap CSS kept for carousel functionality -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script defer src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script type="module" src="https://gradio.s3-us-west-2.amazonaws.com/4.16.0/gradio.js"></script>
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Teaching Human Behavior Improves Content Understanding Abilities Of VLMs">
+  <meta name="twitter:description" content="Behavior-LLaVA teaches human behavior signals to improve content understanding in vision-language models.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Somesh Singh"
+    },
+    {
+      "@type": "Person",
+      "name": "Harini SI"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaman K Singla"
+    },
+    {
+      "@type": "Person",
+      "name": "Veeky Baths"
+    },
+    {
+      "@type": "Person",
+      "name": "Rajiv Ratn Shah"
+    },
+    {
+      "@type": "Person",
+      "name": "Changyou Chen"
+    },
+    {
+      "@type": "Person",
+      "name": "Balaji Krishnamurthy"
+    }
+  ],
+  "datePublished": "2025",
+  "name": "Teaching Human Behavior Improves Content Understanding Abilities Of VLMs",
+  "url": "https://behavior-in-the-wild.github.io/behavior-llava",
+  "description": "Behavior-LLaVA teaches human behavior signals to improve content understanding in vision-language models.",
+  "keywords": [
+    "behavior",
+    "LLaVA",
+    "vision language models",
+    "multimodal",
+    "behavioral science"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    .site-nav {
+      border-bottom: 1px solid #ddd;
+      padding: 11px 24px;
+      font-size: 0.875rem;
+    }
+    .site-nav a { color: #0645ad; text-decoration: none; }
+    .site-nav a:hover { text-decoration: underline; }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: bold;
+      line-height: 1.35;
+      color: #111;
+      margin: 0 0 18px;
+    }
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 44px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ccc;
+    }
+    p { margin: 14px 0; }
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .authors {
+      font-size: 1rem;
+      margin: 4px 0 3px;
+      line-height: 1.65;
+    }
+    .equal-contrib {
+      font-size: 0.8rem;
+      color: #777;
+      font-style: italic;
+      margin: 2px 0 8px;
+    }
+    .affiliation {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 4px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .affiliation img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+    .venue {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #b31b1b;
+    margin: 6px 0 14px;
+  }
+  .paper-links {
+      margin: 14px 0 6px;
+    }
+    .paper-links a {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid #0645ad;
+      border-radius: 3px;
+      font-size: 0.875rem;
+      color: #0645ad;
+      margin-right: 8px;
+      font-family: Georgia, serif;
+    }
+    .paper-links a:hover {
+      background: #0645ad;
+      color: #fff;
+      text-decoration: none;
+    }
+    ul {
+      padding-left: 1.4em;
+      margin: 12px 0;
+    }
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+    pre {
+      background: #f6f6f6;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 16px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.875rem; margin: 16px 0; }
+    th, td { border: 1px solid #ddd; padding: 7px 10px; text-align: left; }
+    th { background: #f5f5f5; font-weight: bold; }
+    tr:nth-child(even) { background: #fafafa; }
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 48px 0 0;
+    }
+    footer {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 16px;
+    }
+    /* Carousel Indicator Styling */
+    .carousel-indicators li {
+      background-color: #888;
+      opacity: 0.8;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      margin-left: 7px;
+      margin-right: 7px;
+      border: 1px solid #555;
+    }
+    .carousel-indicators .active {
+      background-color: #333;
+      opacity: 1;
+    }
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      background-size: 50% 50%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .carousel-item > .container {
+      padding-bottom: 80px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .carousel-item .figure-caption {
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 15px;
+    }
+    #examplesCarousel {
+      margin-bottom: 30px;
+    }
+    @media (max-width: 600px) {
+      .page { padding: 28px 16px 64px; }
+      h1 { font-size: 1.35rem; }
+    }
+  </style>
+  <meta name="citation_title" content="Teaching Human Behavior Improves Content Understanding Abilities Of LLMs">
+  <meta name="citation_author" content="Somesh Singh">
+  <meta name="citation_author" content="Harini SI">
+  <meta name="citation_author" content="Yaman K Singla">
+  <meta name="citation_author" content="Veeky Baths">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Changyou Chen">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_conference_title" content="International Conference on Learning Representations">
+  <meta name="citation_arxiv_id" content="2405.00942">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=ff2V3UR9sC">
 </head>
 
 <body>
 
-  <header class="header", style="background-color:#ff0202; height: 50px; width: 100%; position: fixed; top: 0; z-index: 1000;">
-    <nav class="navbar", role="navigation", aria-label="main navigation", style="background-color:#ff0202;", align="center">
-      <a href="./index.html" class="navbar-item" style="font-weight: bold; text-decoration: none;background-color:transparent;" align="center">
-        <img src="https://cdn-icons-png.flaticon.com/512/954/954591.png" alt="Behavior in the Wild" style="width:20px;height:20px;margin-right:5px;"><b style="color:white;font-weight:bold;height:20px;font-size: 20px;">Behavior in the Wild</b>
-      </a>
-    </nav>
-  </header>
+  <nav class="site-nav">
+    <a href="./index.html">← Behavior in the Wild</a>
+  </nav>
 
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <img src="images/adobe-logo.png" alt="Somesh Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="https://someshsingh22.github.io" style="color:#f68946;font-weight:normal;">Somesh Singh<sup>*</sup></a>,
-              </span>
-              <span class="author-block">
-                <img src="images/adobe-logo.png" alt="Harini Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="https://harini-si.github.io/" style="color:#f68946;font-weight:normal;">Harini S I<sup>*</sup></a>,    
-              </span>
-              <span class="author-block">
-                <img src="images/adobe-logo.png" alt="Yaman Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="https://sites.google.com/view/yaman-kumar/" style="color:#f68946;font-weight:normal;">Yaman K Singla<sup>*</sup></a>,
-              </span>
-              <span class="author-block">
-                <img src="images/ub-logo.png" alt="Changyou Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="#" style="color:#f68946;font-weight:normal;">Changyou Chen</a>,
-              </span>
-              <span class="author-block">
-                <img src="images/iiitd-logo.png" alt="Rajiv Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="#" style="color:#f68946;font-weight:normal;">Rajiv Ratn Shah</a>,
-              </span>
-              <span class="author-block">
-                <img src="images/BITS_Pilani-Logo.png" alt="Veeky Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="#" style="color:#f68946;font-weight:normal;">Veeky Baths</a>,
-              </span>
-              <span class="author-block">
-                <img src="images/adobe-logo.png" alt="Balaji Logo" style="width:20px;height:20px;margin-right:5px;">
-                <a href="https://scholar.google.com/citations?user=n8iUBg8AAAAJ" style="color:#f68946;font-weight:normal;">Balaji Krishnamurthy</a>
-              </span>
+  <div class="page">
+
+    <h1>Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</h1>
+
+    <div class="authors">
+      <a href="https://someshsingh22.github.io">Somesh Singh<sup>*</sup></a>,
+      <a href="https://harini-si.github.io/">Harini S I<sup>*</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/">Yaman K Singla<sup>*</sup></a>,
+      <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen</a>,
+      <a href="https://www.linkedin.com/in/rajivratn">Rajiv Ratn Shah</a>,
+      <a href="#">Veeky Baths</a>,
+      <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
+    </div>
+    <div class="equal-contrib">* Equal Contribution</div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <a href="https://adobe.mdsr.live/" target="_blank">Adobe Media and Data Science Research (MDSR)</a>, <a href="#">IIITD</a>, <a href="#">SUNY at Buffalo</a>, <a href="#">BITS Pilani</a>
+    </div>
+
+    <p class="venue">ICLR 2025</p>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <a href="https://openreview.net/pdf?id=ff2V3UR9sC" target="_blank">Paper</a>
+      <a href="https://github.com/behavior-in-the-wild/ad-memorability" target="_blank">Code</a>
+      <a href="https://huggingface.co/datasets/behavior-in-the-wild/BLIFT">Dataset</a>
+      <a href="#Examples">Examples</a>
+    </div>
+
+    <ul>
+      <li><b>Free Lunch from Behavior</b> — We show that training VLMs on receiver behavior data (likes, comments, replays) improves their content understanding abilities.</li>
+      <li><b>BLIFT Dataset</b> — We release a new Behaviour-LLaVA IFT dataset comprising 730k images and videos with their receiver behavior.</li>
+      <li><b>Strong Performance</b> — Our approach outperforms many supervised baselines by up to 150% across 46 different tasks on 26 benchmark datasets.</li>
+      <li><b>Zero Human Annotation</b> — Since receiver behavior is collected by default on the internet, the performance improvements come essentially for free.</li>
+    </ul>
+
+    <h2>Abstract</h2>
+
+    <p>
+      Communication is defined as "<i>Who</i> says <i>what</i> to <i>whom</i> with <i><b>what</b> effect</i>." A message from a communicator generates downstream receiver effects, also known as behavior. Receiver behavior, being a downstream effect of the message, carries rich signals about it. Even after carrying signals about the message, the behavior signal is often ignored while training vision language models. We show that training VLMs on receiver behavior can actually help improve their content-understanding abilities. We demonstrate that training VLMs to predict receiver behaviors, such as likes, comments, and replay graphs, which are available at scale, enhances the VLM's performance across a broad range of downstream content understanding tasks. We show this performance increase over 6 types of behavior, 46 different tasks covering image, video, text and audio over 26 benchmark datasets across both 0-shot and fine-tuning settings, outperforming many supervised baselines on diverse tasks ranging from emotion recognition to captioning by upto 150%. We note that since receiver behavior, such as likes, comments, and replay graphs, is collected by default on the internet and does not need any human annotations to be useful, the performance improvement we get after training on this data is essentially free-lunch. We also release BLIFT, our Behaviour-LLaVA IFT dataset comprising of 730k images and videos with their receiver behavior collected from multiple platforms on which we train our models to achieve this.
+    </p>
+
+    <h2>Five Factors of Communication</h2>
+
+    <img id="communication-factors" style="max-width: 100%; border: 1px solid #ddd; display: block; margin: 24px auto;" src="images/Human-Behavior.png" alt="The diagram depicts the five factors of communication in the context of an example YouTube video, showing where the free lunch lies. The receiver effect contains important signals that can help in understanding content.">
+    <p>The diagram shows how receiver behavior (comments, likes, etc.) contains valuable signals about content, including temporal, cognitive, character, context, and user opinion information. This data, which is collected by default on internet platforms, is often ignored during VLM training but can significantly enhance content understanding.</p>
+
+    <h2>Performance Across Content Understanding Tasks</h2>
+
+    <p>Behavior-LLaVA achieves significant improvements across a diverse range of content understanding tasks:</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>0-Shot Improvement over Llama-Vid</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>LVU</td><td>21.49%</td></tr>
+        <tr><td>Video Ad Understanding</td><td>43.18%</td></tr>
+        <tr><td>Video Emotion</td><td>51.85%</td></tr>
+        <tr><td>Image and Video Memorability</td><td>186.4%</td></tr>
+        <tr><td>Video QA</td><td>0.6%</td></tr>
+        <tr><td>Image Emotion</td><td>29.14%</td></tr>
+        <tr><td>Image Dense Captioning</td><td>4.95%</td></tr>
+        <tr><td>HVU</td><td>5.88%</td></tr>
+        <tr><td>Audio Summarization</td><td>30%</td></tr>
+        <tr><td>Sentiment Analysis</td><td>4.73%</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="Examples">Free Lunch from Receiver Behavior</h2>
+
+    <p>Below are qualitative examples demonstrating Behavior-LLaVA's understanding of aesthetics, characters, world knowledge, emotion, and spatial relationships. The <span style="color: red;">red text</span> in the descriptions highlights these key aspects captured by the model.</p>
+
+    <div id="examplesCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+      <ol class="carousel-indicators">
+        <li data-target="#examplesCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#examplesCarousel" data-slide-to="1"></li>
+        <li data-target="#examplesCarousel" data-slide-to="2"></li>
+        <li data-target="#examplesCarousel" data-slide-to="3"></li>
+        <li data-target="#examplesCarousel" data-slide-to="4"></li>
+        <li data-target="#examplesCarousel" data-slide-to="5"></li>
+      </ol>
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <img src="images/bllava/volks.png" class="img-fluid" alt="Volkswagen Ad Example" style="max-height: 350px; margin: auto;">
+              </div>
+              <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                <p>The Volkswagen ad titled begins with a group of three women seated excitedly in a Volkswagen Jetta, the driver sporting a wide smile as she grips the steering wheel. <span style="color: red;">The voiceover sets a nostalgic tone, likening the Jetta to unforgettable first experiences like a first kiss or hearing indie rock for the first time—a symbol of newfound freedom and excitement</span>.</p>
+                <p>As the scenes unfold, the camera captures the trio cruising down winding roads, their <span style="color: red;">laughter blending with the music and the wind tousling their hair. The atmosphere inside the car is one of camaraderie and adventure, with the Jetta serving as the backdrop to their shared moments of joy and spontaneity.</span></p>
+                <p>Transitioning to a wider shot of the Jetta gliding along a scenic highway, surrounded by lush greenery, <span style="color: red;">the ad evokes a sense of exploration and the open road. The visuals seamlessly blend modern-day cruising with vintage footage of classic Volkswagen vehicles, reflecting on the brand's 75-year history in America, starting with the beloved Beetle.</span></p>
+                <p>The ad concludes with the Volkswagen logo and <span style="color: red;">the tagline "An American Love Story", encapsulating the enduring relationship between Volkswagen and its drivers across generations</span>. This phrase serves as a tribute to Volkswagen's 75-year history in America, beginning with the iconic Type 1 vehicles fondly known as "The Beetle" Through its nostalgic narrative and captivating visuals, the teaser promises viewers an immersive journey into the essence of Volkswagen—a timeless icon that has been a part of <span style="color: red;">countless cherished memories on the American road.</span></p>
+              </div>
             </div>
-
-            <div class="is-size-5 publication-authors">
-              <span class="author-block"><img src="images/adobe-logo.png" alt="Adobe Logo" style="width:30px;height:30px;margin-right:5px;"><a href="https://main--dx-portal--adobe.hlx.page/researchers/about" target="_blank">Adobe Media and Data Science Research (MDSR)</a>, <a href="#">IIITD</a>, <a href="#">SUNY at Buffalo</a>, <a href="#">BITS Pilani</a></span>
-            </div>
-
-            <div class="is-size-6 publication-authors">
-              <span class="author-block"><sup>*</sup>Equal Contribution</span>
-            </div>
-
-            <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a> </p>
-              
-            <div class="column has-text-centered">
-              <div class="publication-links">
-                <span class="link-block">
-                  <a href="#" 
-                    class="external-link button is-normal is-rounded is-dark" target="_blank">
-                    <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                    </span>
-                    <span>Access Paper</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="./index.html" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                  <a href="#" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-trophy"></i>
-                    </span>
-                    <span>Demo</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                    <a href="#Dataset"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-database"></i>
-                      </span>
-                      <span>Dataset</span>
-                    </a>
-                </span>
-                <span class="link-block">
-                  <a href="#Experiment"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fas fa-flask"></i>
-                    </span>
-                    <span>Experiment</span>
-                  </a>
-                </span>
-                <span class="link-block">
-                    <a href="#Examples"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-images "></i>
-                      </span>
-                      <span>Examples</span>
-                    </a>
-                  </span>
+            <div class="row mt-2">
+              <div class="col-12 text-center figure-caption">
+                <p><em>Dense caption generated by Behavior-LLaVA for the video of a Volkswagen ad. Original video: youtube.com/watch?v=kyuGXPNr-T0.</em></p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
-        <h4 class="subtitle has-text-centered">
-          🔥<span style="color: #ff3860">[NEW!]</span><b>Free Lunch from Behavior</b> - We show that training VLMs on receiver behavior data (likes, comments, replays) improves their content understanding abilities.
-          <br>
-          🔥<span style="color: #ff3860">[NEW!]</span><b>BLIFT Dataset</b> - We release a new Behaviour-LLaVA IFT dataset comprising 730k images and videos with their receiver behavior.
-          <br>
-          🔥<span style="color: #ff3860">[NEW!]</span> <b>Strong Performance</b> - Our approach outperforms many supervised baselines by up to 150% across 46 different tasks on 26 benchmark datasets.
-          <br>
-          🔥<span style="color: #ff3860">[NEW!]</span><b>Zero Human Annotation</b> - Since receiver behavior is collected by default on the internet, the performance improvements come essentially for free.
-        </h4>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" style="background-color:#efeff081">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-six-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
-            <p>
-              Communication is defined as "<i>Who</i> says <i>what</i> to <i>whom</i> with <i><b>what</b> effect</i>." A message from a communicator generates downstream receiver effects, also known as behavior. Receiver behavior, being a downstream effect of the message, carries rich signals about it. Even after carrying signals about the message, the behavior signal is often ignored while training vision language models. We show that training VLMs on receiver behavior can actually help improve their content-understanding abilities. We demonstrate that training VLMs to predict receiver behaviors, such as likes, comments, and replay graphs, which are available at scale, enhances the VLM's performance across a broad range of downstream content understanding tasks. We show this performance increase over 6 types of behavior, 46 different tasks covering image, video, text and audio over 26 benchmark datasets across both 0-shot and fine-tuning settings, outperforming many supervised baselines on diverse tasks ranging from emotion recognition to captioning by upto 150%. We note that since receiver behavior, such as likes, comments, and replay graphs, is collected by default on the internet and does not need any human annotations to be useful, the performance improvement we get after training on this data is essentially free-lunch. We also release BLIFT, our Behaviour-LLaVA IFT dataset comprising of 730k images and videos with their receiver behavior collected from multiple platforms on which we train our models to achieve this.
-            </p>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <img src="images/bllava/tree-qualitative.jpg" class="img-fluid" alt="Artistic Tree Example" style="max-height: 350px; margin: auto;">
+              </div>
+              <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                <p>In this captivating painting, <span style="color: red;">a majestic tree takes center stage against a stunning backdrop. The sky above is a poetic split between night and day</span>—a deep, starry blue on one side with a crescent moon, and a warm, radiant blend of yellows and pinks on the other, suggesting either a sunrise or sunset. <span style="color: red;">The tree itself embodies the essence of transition</span>, with one side adorned in lush green foliage and the other stripped bare, <span style="color: red;">symbolizing the timeless dance of seasons and life's perpetual transformations</span>.</p>
+                <p>This artwork not only captures the eye but also speaks to deeper truths. It invites us <span style="color: red;">to contemplate the delicate balance between light and darkness, growth and dormancy, woven into the fabric of existence</span>. The artist's brushstrokes, rendered with a serene palette and gentle abstraction, evoke <span style="color: red;">a sense of tranquility and introspection</span>. This painting beautifully <span style="color: red;">reminds us to embrace the fleeting beauty of each passing moment, whether bathed in daylight or cloaked in the quiet mystery of night</span>.</p>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 text-center figure-caption">
+                <p><em>Dense caption generated by Behavior-LLaVA for an artistic drawing of a tree.</em></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="KeyConcept">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-six-fifths">
-          <h2 class="title is-3">Five Factors of Communication</h2>
-          <div class="content has-text-justified">
-            <img id="communication-factors" width="100%" src="images/Human-Behavior.png" alt="The diagram depicts the five factors of communication in the context of an example YouTube video, showing where the free lunch lies. The receiver effect contains important signals that can help in understanding content.">
-            <p>The diagram shows how receiver behavior (comments, likes, etc.) contains valuable signals about content, including temporal, cognitive, character, context, and user opinion information. This data, which is collected by default on internet platforms, is often ignored during VLM training but can significantly enhance content understanding.</p>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <img src="images/bllava/nike-qualitative.jpeg" class="img-fluid" alt="Nike Ad Example" style="max-height: 350px; margin: auto;">
+              </div>
+              <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                <p>The image features a pair of Nike Air Force 1 sneakers, which are a classic and iconic design. The sneakers are positioned in the center of the image, with <span style="color: red;">the left shoe slightly in front of the right one, giving a sense of depth</span>. They are predominantly white with green accents, <span style="color: red;">including the Nike swoosh logo on the side and the outsole</span>. The laces are white, and <span style="color: red;">the midsole appears to be a light beige color</span>.</p>
+                <p><span style="color: red;">The background is a plain, light color, which contrasts with the sneakers and makes them stand out</span>. Overlaid on the image is a stylized text that reads "JUST DO IT" in a cursive, flowing script. The text is in a light green color that matches the accents on the sneakers, creating a cohesive color scheme. Below the main text, there is a smaller line of text that says "New collection," indicating that these sneakers are part of a new line or series from Nike.</p>
+                <p><span style="color: red;">The overall style of the image is clean and modern, with a focus on the product</span>. The use of the "JUST DO IT" slogan, which is a well-known tagline for Nike, adds a layer of branding and recognition to the image. The text is designed to be eye-catching and to <span style="color: red;">draw attention to the sneakers, which are the main subject of the image. The composition is balanced, with the sneakers centrally placed and the text evenly distributed around them</span>.</p>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 text-center figure-caption">
+                <p><em>Dense caption generated by Behavior-LLaVA for a Nike ad.</em></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" id="Leaderboard">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-six-fifths">
-          <h2 class="title is-3">Performance Across Content Understanding Tasks</h2>
-          <p>Behavior-LLaVA achieves significant improvements across a diverse range of content understanding tasks:</p>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <img src="images/bllava/reddead.png" class="img-fluid" alt="Red Dead Redemption Trailer Example" style="max-height: 350px; margin: auto;">
+              </div>
+              <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                <p>In a heart-pounding and visually stunning trailer for Red Dead Redemption, <span style="color: red;">we are thrust into the gritty world of the American frontier</span>. The trailer opens with a voiceover, a chilling warning delivered with calm certainty: "Listen to me, we don't want to kill any of you... But trust me, we will."</p>
+                <p>Scenes flash by in quick succession, each more intense than the last. <span style="color: red;">We see a lone figure, silhouetted against a setting sun, riding a magnificent horse through a sprawling, golden field. The rugged beauty of the landscape contrasts sharply with the impending sense of danger.</span></p>
+                <p><span style="color: red;">Cut to a dimly lit saloon where a group of hardened men sit around a table, cards in hand, tension thick in the air</span>. The voiceover continues, "This whole thing is pretty much done. We're more ghosts than people."</p>
+                <p>A flurry of action unfolds: a quick draw in a darkened room, <span style="color: red;">bullets slicing through the air with deadly precision</span>. The voiceover reminisces, "Good old Dutch, my best friend... You know how we met? A pair of hucksters trying to rob each other... Back in '78 or thereabouts."</p>
+                <p>The visuals intensify as we witness a robbery in progress, <span style="color: red;">chaos erupting as masked figures burst into a bank</span>. "Ladies and gentlemen, this is a robbery," declares one of the outlaws, setting the stage for a clash between lawlessness and order.</p>
+                <p>Amidst the chaos, snippets of camaraderie emerge: "Sons of Dutch. Makes us brothers." But looming shadows of betrayal and regret cast doubt on these bonds. "Sometimes, brothers make mistakes," acknowledges the voiceover, acknowledging the complexities of loyalty and survival in this unforgiving world.</p>
+                <p><span style="color: red;">The trailer crescendos with a crescendo of gunfights, horseback chases, and impassioned speeches</span>. "You'll never change. I know that," declares a voice, capturing the immutable nature of the human spirit amidst adversity.</p>
+                <p>Throughout, a thematic motif resonates: "You have to love yourself a fire." <span style="color: red;">The elemental symbolism underscores the primal nature of existence in a land where survival demands courage and cunning.</span></p>
+                <p>As the trailer draws to a close, we're left with the haunting refrain: "Stay strong. Stay with me." The screen fades to black, leaving us hungry for more of this epic tale set against the backdrop of the untamed West.</p>
+                <p>With breathtaking visuals and evocative storytelling, <span style="color: red;">this Red Dead Redemption trailer promises an unforgettable journey through a world where danger lurks around every corner, and the line between hero and outlaw blurs in the dust and shadows of the frontier.</span></p>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 text-center figure-caption">
+                <p><em>Dense caption generated by Behavior-LLaVA for the video of the official trailer of the game Red Dead Redemption 2. Original video: youtube.com/watch?v=eaW0tYpxyp0.</em></p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-  <table border="1", class="LeaderboardTable", style="width: 80%", align="center">
-    <thead>
-      <tr style="background-color:#f68946;color:white;", align="center">
-        <th>Task</th>
-        <th>0-Shot Improvement over Llama-Vid</th>
-      </tr>
-    </thead>
-    <tbody align="center", style="background-color:#f8f8f8;">
-      <tr>
-        <td>LVU</td>
-        <td>21.49%</td>
-      </tr>
-      <tr>
-        <td>Video Ad Understanding</td>
-        <td>43.18%</td>
-      </tr>
-      <tr>
-        <td>Video Emotion</td>
-        <td>51.85%</td>
-      </tr>
-      <tr>
-        <td>Image and Video Memorability</td>
-        <td>186.4%</td>
-      </tr>
-      <tr>
-        <td>Video QA</td>
-        <td>0.6%</td>
-      </tr>
-      <tr>
-        <td>Image Emotion</td>
-        <td>29.14%</td>
-      </tr>
-      <tr>
-        <td>Image Dense Captioning</td>
-        <td>4.95%</td>
-      </tr>
-      <tr>
-        <td>HVU</td>
-        <td>5.88%</td>
-      </tr>
-      <tr>
-        <td>Audio Summarization</td>
-        <td>30%</td>
-      </tr>
-      <tr>
-        <td>Sentiment Analysis</td>
-        <td>4.73%</td>
-      </tr>
-    </tbody>
-  </table>
-  
-  </section>
-
-<section class="section" id="Examples">
-
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <h2 class="title is-3">Free Lunch from Receiver Behavior</h2>
-
-      <p>Examples showing how receiver behavior provides rich content understanding signals:</p>
-      <img id="behavior-example-1" width="80%" src="[IMAGE PLACEHOLDER - YOUTUBE COMMENTS]" alt="Example showing how YouTube comments provide temporal, cognitive, character, and context information about a video."> 
-      <br><br>
-      <img id="behavior-example-2" width="80%" src="[IMAGE PLACEHOLDER - LIKES PATTERN]" alt="Example showing how like patterns correspond to emotional content in videos."> 
-    
-      <br><br>
-    
-      <p>Performance comparison on downstream tasks:</p>
-      <img id="comparison-example-1" width="80%" src="[IMAGE PLACEHOLDER - PERFORMANCE COMPARISON]" alt="Comparison of models trained with and without behavior data on emotion recognition tasks."> 
-      <br><br>
-      <img id="comparison-example-2" width="80%" src="[IMAGE PLACEHOLDER - ZERO-SHOT PERFORMANCE]" alt="Zero-shot performance improvements across 26 benchmark datasets."> 
-      <br><br>
-    </div>
-  </div>
-</section>
-
-<section id="Dataset" class="section">
-  <div class="columns is-centered has-text-centered">
-    <div class="column is-six-fifths">
-      <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/5886/5886212.png">BLIFT: Behaviour-LLaVA IFT Dataset</h2>
-    </div>
-  </div>   
-<div class="container is-max-desktop">
-
-  <div class="columns is-centered">
-    <div class="column is-full-width">
-      <div class="content has-text-justified">
-        <p>We are releasing our BLIFT dataset in huggingface format<a href="#"> [HuggingFace Dataset]</a>. The dataset comprises 730k images and videos with their receiver behavior collected from multiple platforms.</p>
-
-<div class="column is-six-fifths" width="80%">
-  <table class="DatasetTable">
-    <thead>
-      <tr>
-        <th>Behavior Type</th>
-        <th>Description</th>
-        <th>Source</th>
-        <th>Samples</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Likes</td>
-        <td>Content that received varying levels of like engagement</td>
-        <td>Social media platforms</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Comments</td>
-        <td>User comments containing insights about content</td>
-        <td>YouTube, social media</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Replay Graphs</td>
-        <td>Information about how users engage with video content over time</td>
-        <td>Video platforms</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Audience Retention</td>
-        <td>Data on viewer retention patterns</td>
-        <td>Streaming platforms</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>Sharing Patterns</td>
-        <td>How content spreads across platforms</td>
-        <td>Cross-platform analysis</td>
-        <td>[Number]</td>
-      </tr>
-      <tr>
-        <td>User Reactions</td>
-        <td>Emotional responses to content</td>
-        <td>Reaction data</td>
-        <td>[Number]</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-        <div class="content has-text-justified">
-          <p>The BLIFT dataset is unique because it leverages data that is collected by default on internet platforms, requiring no additional human annotation effort. This "free lunch" data contains rich signals that help models better understand content context, emotional impact, and semantic meaning.</p>
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <img src="images/bllava/fifa.png" class="img-fluid" alt="Argentina vs France FIFA World Cup Example" style="max-height: 350px; margin: auto;">
+              </div>
+              <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                <p>The scene is set at a packed stadium buzzing with excitement, the <span style="color: red;">air thick with anticipation as Argentina and France face off in what promises to be an epic World Cup final</span>. Lionel Messi steps up confidently to take a crucial penalty early in the match, the tension palpable as he eyes the goal. The commentator's voice echoes through the stadium, "He's got the ground, he's got a penalty! A heart beats... And Messi!" <span style="color: red;">The crowd holds its breath as Messi strikes the ball cleanly, sending it into the back of the net.</span> The stadium erupts with cheers as Argentina takes the lead, setting the stage for a thrilling encounter.</p>
+                <p>As the game unfolds, both teams showcase their attacking prowess. Argentina's Angel Di Maria emerges as a standout, capitalizing on a swift counterattack to score a spectacular goal. "Alvarez, here's McAllister, Di Maria is the spare man, and how Di Maria! Glorious goal! Argentine gold!" The Argentine fans go wild, waving their flags and chanting passionately. However, <span style="color: red;">France fights back fiercely, earning a penalty of their own which they duly convert.</span></p>
+                <p>The drama intensifies in the second half as France<span style="color: red;">'s Kylian Mbappé dazzles with his speed and skill, scoring a breathtaking equalizer.</span> "Mbappé, to Lamp, Mbappé! Oh wow!" The match swings back and forth, with both teams pushing for victory. In the dying moments of extra time, the score is deadlocked at 3-3 when Argentina's goalkeeper makes a crucial save, denying France a late winner. <span style="color: red;">The match heads to a nail-biting penalty shootout. With nerves of steel, Argentina's players step up and convert their penalties flawlessly, culminating in a decisive save by the goalkeeper.</span> "Argentina, champions of the world!" The stadium erupts once more, as <span style="color: red;">Messi lifts the World Cup trophy amidst a sea of jubilant fans</span>, marking a historic and unforgettable victory for Argentina</p>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 text-center figure-caption">
+                <p><em>Dense caption generated by Behavior-LLaVA for the video of Argentina vs France FIFA World Cup Qatar 2022 Highlights. Original video: youtube.com/watch?v=zhEWqfP6V_w.</em></p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <div class="carousel-item">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-md-4 text-center">
+                <img src="images/bllava/soldier-qualitative.jpg" class="img-fluid" alt="Soldier Painting Example" style="max-height: 350px; margin: auto;">
+              </div>
+              <div class="col-md-8" style="font-size: 0.8rem; text-align: justify;">
+                <p>The composition of the image presents <span style="color: red;">a compelling narrative of a soldier immersed in a war-torn landscape</span>. Positioned amidst a backdrop of explosive chaos and dense foliage, the soldier, adorned in traditional military gear, <span style="color: red;">gazes directly at the viewer with a resolute demeanor</span>. The soldier's face is camouflaged, blending seamlessly with the olive-green helmet—a hallmark of battlefield attire.</p>
+                <p>Surrounding this central figure, a tableau of activity unfolds: a tank looms in the background, its barrel skyward, suggesting recent action. Other soldiers, alert and vigilant, navigate the dense jungle terrain, underscoring the high stakes of the conflict. <span style="color: red;">The foliage, lush yet foreboding, heightens the palpable tension of the scene</span>.</p>
+                <p>Foregrounded by the silhouette of another soldier's helmeted head, <span style="color: red;">the viewer is drawn into the heart of the action, evoking a sense of shared experience amid the perils of warfare. The realism of the depiction accentuates the emotional weight of the moment, capturing the essence of human resilience amidst the ravages of battle.</span></p>
+                <p>Overall, the image transcends mere representation, offering <span style="color: red;">a poignant reflection on the individual's role in the broader narrative of war—imbued with suspense, authenticity, and a profound exploration of the human condition within conflict.</span></p>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col-12 text-center figure-caption">
+                <p><em>Dense caption generated by Behavior-LLaVA for a painting of a soldier. The model captures many qualitative aspects that are usually missed in common captioning tasks.</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+      <a class="carousel-control-prev" href="#examplesCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#examplesCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
+
+    <h2 id="Dataset">BLIFT: Behaviour-LLaVA IFT Dataset</h2>
+
+    <p>We are releasing our dataset, <a href="https://huggingface.co/datasets/behavior-in-the-wild/BLIFT">BLIFT</a> on HuggingFace. The dataset comprises 730k images and videos with their receiver behavior collected from multiple platforms.</p>
+    <iframe
+      src="https://huggingface.co/datasets/behavior-in-the-wild/BLIFT/embed/viewer/default/train"
+      frameborder="0"
+      width="100%"
+      height="560px"
+    ></iframe>
+
+    <h2>BibTeX</h2>
+
+    <pre><code>@article{singh2024teaching,
+  title={Teaching Human Behavior Improves Content Understanding Abilities Of LLMs},
+  author={Singh, Somesh and SI, Harini and Singla, Yaman K and Baths, Veeky and Shah, Rajiv Ratn and Chen, Changyou and Krishnamurthy, Balaji},
+  journal={arXiv preprint arXiv:2405.00942},
+  year={2024}
+}</code></pre>
+
+    <h2>Terms Of Service</h2>
+
+    <p>
+      Users are required to agree to the following terms before using the service:
+      <br>The service is a research preview. It only provides limited safety measures and may generate offensive content. It must not be used for any illegal, harmful, violent, racist, or sexual purposes. Please do not upload any private information. The service collects user dialogue data, including both text and images, and reserves the right to distribute it under a Creative Commons Attribution (CC-BY) or a similar license.
+      <br>Usage is restricted to research and non-commercial purposes. Users must comply with applicable privacy and data protection laws when uploading any content.
+    </p>
+
+    <h2>Acknowledgement</h2>
+
+    <p>
+      We thank Adobe for their generous sponsorship.
+      <br>
+      We thank the LLaVA team for the foundation model upon which our work is built.
+      <br>
+      We also thank the teams behind all the datasets and benchmarks used in our evaluation.
+    </p>
+
+    <hr>
+    <footer>
+      <strong>Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+    </footer>
+
   </div>
-</div>
-</section>
-
-<section class="section" id="Experiment">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-six-fifths">
-        <h2 class="title is-3"><img id="painting_icon" width="3%" src="https://cdn-icons-png.flaticon.com/512/3515/3515174.png"> Methodology</h2>
-        
-        <h3 class="title is-4">Model Architecture</h3>
-        <img id="model-architecture" width="80%" src="[IMAGE PLACEHOLDER - MODEL ARCHITECTURE]" alt="Architecture diagram of Behavior-LLaVA showing how the model is trained on receiver behavior signals.">
-        
-        <p>We build on the LLaVA architecture, training the model to predict receiver behavior from content. This enables the model to learn rich representations that capture subtle aspects of content that elicit specific behaviors.</p>
-        
-        <h3 class="title is-4">Training Approach</h3>
-        <p>Our training approach involves two key phases:</p>
-        <ol>
-          <li><b>Behavior Prediction Training:</b> The model is trained to predict receiver behaviors (likes, comments, etc.) from content.</li>
-          <li><b>Knowledge Transfer:</b> The learned representations are leveraged for downstream content understanding tasks.</li>
-        </ol>
-        
-        <h3 class="title is-4">Evaluation Protocol</h3>
-        <p>We evaluate across 46 different tasks on 26 benchmark datasets, covering both zero-shot and fine-tuning scenarios. Tasks span multiple modalities including image, video, text, and audio understanding.</p>
-        
-        <h3 class="title is-4">Key Findings</h3>
-        <img id="evaluation-results" width="80%" src="[IMAGE PLACEHOLDER - KEY FINDINGS]" alt="Charts showing how training on behavior data improves performance across diverse tasks.">
-        <ul>
-          <li>Behavior data provides a "free lunch" for improving content understanding</li>
-          <li>Performance improvements are consistent across modalities</li>
-          <li>Even small amounts of behavior data can yield significant improvements</li>
-          <li>Different types of behavior (likes vs. comments vs. replay patterns) contribute differently to various tasks</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>
-        @article{singh2024teaching,
-            title={Teaching Human Behavior Improves Content Understanding Abilities Of LLMs},
-            author={Singh, Somesh and SI, Harini and Singla, Yaman K and Baths, Veeky and Shah, Rajiv Ratn and Chen, Changyou and Krishnamurthy, Balaji},
-            journal={arXiv preprint arXiv:2405.00942},
-            year={2024}
-          }
-      </code></pre>
-    </div>
-    
-  </section>
-  
-  <section class="section" id="TermsOfService">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Terms Of Service</h2>
-      <p>
-        Users are required to agree to the following terms before using the service:
-        <br>The service is a research preview. It only provides limited safety measures and may generate offensive content. It must not be used for any illegal, harmful, violent, racist, or sexual purposes. Please do not upload any private information. The service collects user dialogue data, including both text and images, and reserves the right to distribute it under a Creative Commons Attribution (CC-BY) or a similar license.
-        <br>Usage is restricted to research and non-commercial purposes. Users must comply with applicable privacy and data protection laws when uploading any content.
-      </p>
-    </div>
-  </section>
-
-
-  <section class="section" id="Acknowledgement">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Acknowledgement</h2>
-      <p>
-        We thank Adobe for their generous sponsorship.
-        <br>
-        We thank the LLaVA team for the foundation model upon which our work is built.
-        <br>
-        We also thank the teams behind all the datasets and benchmarks used in our evaluation.
-      </p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        <strong>Teaching Human Behavior Improves Content Understanding Abilities Of VLMs</strong>
-         by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
-      </p>
-    </div>
-  </footer>
-
 </body>
 </html>

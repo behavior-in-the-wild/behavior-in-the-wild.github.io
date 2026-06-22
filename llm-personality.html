@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="How Well Do Large Language Models Capture Human Personality? Investigating persona manifold collapse in LLM-based human simulation.">
+  <meta name="keywords" content="LLM, Personality, Persona, Human Simulation, Behavior, Persona Manifold Collapse">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/llm-personality">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="How Well Do Large Language Models Capture Human Personality?">
+  <meta property="og:description" content="We identify persona manifold collapse — where increasingly expressive persona specifications lead to systematic contraction of representational and behavioral diversity in LLMs.">
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <title>How Well Do Large Language Models Capture Human Personality?</title>
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/llm-personality">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Well Do Large Language Models Capture Human Personality?">
+  <meta name="twitter:description" content="We identify persona manifold collapse — where increasingly expressive persona specifications lead to systematic contraction of representational and behavioral diversity in LLMs.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Aanisha Bhattacharyya"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaman Kumar Singla"
+    },
+    {
+      "@type": "Person",
+      "name": "Rajiv Ratn Shah"
+    },
+    {
+      "@type": "Person",
+      "name": "Changyou Chen"
+    },
+    {
+      "@type": "Person",
+      "name": "Jitendra Ajmera"
+    }
+  ],
+  "datePublished": "2025",
+  "name": "How Well Do Large Language Models Capture Human Personality?",
+  "url": "https://behavior-in-the-wild.github.io/llm-personality",
+  "description": "Investigating persona manifold collapse in LLM-based human simulation.",
+  "keywords": [
+    "LLM",
+    "personality",
+    "persona",
+    "human simulation",
+    "behavior",
+    "persona manifold collapse"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #fff;
+    }
+
+    .site-nav {
+      border-bottom: 1px solid #ddd;
+      padding: 11px 24px;
+      font-size: 0.875rem;
+    }
+    .site-nav a { color: #0645ad; text-decoration: none; }
+    .site-nav a:hover { text-decoration: underline; }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+    }
+
+    h1 {
+      font-size: 1.65rem;
+      font-weight: bold;
+      line-height: 1.35;
+      color: #111;
+      margin: 0 0 18px;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 44px 0 10px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    p { margin: 14px 0; }
+
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .authors {
+      font-size: 1rem;
+      margin: 4px 0 3px;
+      line-height: 1.65;
+    }
+
+    .equal-contrib {
+      font-size: 0.8rem;
+      color: #777;
+      font-style: italic;
+      margin: 2px 0 8px;
+    }
+
+    .affiliation {
+      font-size: 0.9rem;
+      color: #444;
+      margin: 4px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .affiliation img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .paper-links {
+      margin: 14px 0 6px;
+    }
+
+    .paper-links a {
+      display: inline-block;
+      padding: 4px 14px;
+      border: 1px solid #0645ad;
+      border-radius: 3px;
+      font-size: 0.875rem;
+      color: #0645ad;
+      margin-right: 8px;
+      font-family: Georgia, serif;
+    }
+
+    .paper-links a:hover {
+      background: #0645ad;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .contact-note {
+      font-size: 0.875rem;
+      color: #555;
+      margin: 6px 0 0;
+    }
+
+    ul {
+      padding-left: 1.4em;
+      margin: 12px 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      line-height: 1.65;
+    }
+
+    .key-results {
+      font-size: 0.9375rem;
+    }
+
+    .key-results li {
+      margin-bottom: 10px;
+    }
+
+    pre {
+      background: #f6f6f6;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+      padding: 16px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      font-family: 'Courier New', monospace;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 48px 0 0;
+    }
+
+    footer {
+      font-size: 0.85rem;
+      color: #555;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 600px) {
+      .page { padding: 28px 16px 64px; }
+      h1 { font-size: 1.35rem; }
+    }
+  </style>
+  <meta name="citation_title" content="How Well Do Large Language Models Capture Human Personality?">
+  <meta name="citation_author" content="Aanisha Bhattacharyya">
+  <meta name="citation_author" content="Yaman Kumar Singla">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Changyou Chen">
+  <meta name="citation_author" content="Jitendra Ajmera">
+  <meta name="citation_publication_date" content="2025">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">← Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>How Well Do Large Language Models Capture Human Personality?</h1>
+
+    <div class="authors">
+      <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/">Aanisha Bhattacharyya</a><sup>*</sup>,
+      <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla</a><sup>*</sup>,
+      <a href="https://www.linkedin.com/in/rajivratn">Rajiv Ratn Shah</a>,
+      <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen</a>,
+      <a href="https://scholar.google.com/citations?hl=en&user=u7NNClAAAAAJ&view_op=list_works&sortby=pubdate">Jitendra Ajmera</a>
+    </div>
+    <div class="equal-contrib">* Equal contribution</div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR), Adobe</a>
+    </div>
+
+    <div class="paper-links">
+      <a href="https://www.researchgate.net/publication/405480733_How_Well_Do_Large_Language_Models_Capture_Human_Personality" target="_blank">Paper</a>
+    </div>
+
+    <p class="contact-note">Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <h2>Motivation</h2>
+
+    <p>Persona-based simulation with LLMs rests on several foundational assumptions that are rarely questioned but are central to how such systems are designed, interpreted, and deployed:</p>
+
+    <ul>
+      <li><b>Expressivity:</b> Increasing the descriptive richness of a persona — by adding more demographic, psychographic, or behavioral attributes — will improve behavioral fidelity and realism.</li>
+      <li><b>Attribute Fidelity:</b> All combinations of persona attributes of the same size are equally simulatable; the model should handle any set of three attributes as well as any other set of three.</li>
+      <li><b>Specificity:</b> Adding more attributes provides more specific behavioral grounding, improving simulation fidelity rather than degrading it.</li>
+      <li><b>Task Generalization:</b> Persona definitions that work for one task or domain should generalize and remain effective across other tasks and domains.</li>
+    </ul>
+
+    <h2>Research Question</h2>
+
+    <p>Do these core assumptions actually hold in practice? Specifically:</p>
+    <ul>
+      <li>Does increasing persona complexity reliably improve behavioral fidelity and diversity in LLM-based simulation?</li>
+      <li>Are all attribute combinations of the same size equally simulatable?</li>
+      <li>Does adding more attributes always produce more specific and faithful behavioral grounding?</li>
+      <li>Do persona definitions generalize across tasks and domains?</li>
+    </ul>
+
+    <h2>Abstract</h2>
+
+    <p>Large language models (LLMs) are increasingly used to simulate human populations via persona prompting,
+    often under the assumptions that richer persona descriptions improve behavioral fidelity, similarly sized
+    attribute combinations are equally simulatable, and persona definitions generalize across tasks. In this
+    work, we formalize these assumptions and systematically evaluate them across multiple architectures,
+    scales, and simulation settings. We identify a fundamental limitation we term <b>persona manifold
+    collapse</b>, where increasingly expressive persona specifications lead to systematic contraction of
+    representational and behavioral diversity. Across models, increasing persona complexity consistently
+    reduces inter-persona separation in latent space and weakens behavioral differentiation in downstream
+    simulation tasks. These effects persist across multiple analyses as richer personas fail to preserve human
+    subgroup disagreement, performance varies across attribute combinations of similar size, and adding
+    descriptive detail often degrades rather than improves simulation fidelity. Surprisingly, simple
+    Age–Gender personas consistently outperform richly specified Ideal Customer Profiles (ICPs) across
+    industries, achieving substantially higher downstream prediction accuracy. We find that collapse is not
+    uniform across attributes. Certain combinations remain behaviorally stable and preserve stronger alignment
+    with human responses, forming localized regions we term <b>alignment bridges</b>. Together, our results
+    provide empirical and conceptual foundations for understanding the limits of persona-conditioned
+    simulation, highlighting the need for representation-aware persona construction rather than increasing
+    persona expressivity alone.</p>
+
+    <h2>Key Results</h2>
+
+    <ul class="key-results">
+      <li>
+        <b>Persona Manifold Collapse is model-agnostic:</b> Increasing persona complexity
+        consistently contracts the representation manifold across all tested architectures and scales.
+        The magnitude of collapse ranges from <b>22.90%</b> on Qwen3-8B-Base to <b>58.93%</b> on
+        Qwen-72B-Vision-Instruct. On Qwen-72B-Vision-Instruct, mean persona distance drops from
+        14.38 at Level 1 (Age–Gender) to 5.90 at the richest configuration — a reduction of nearly 60%.
+      </li>
+      <li>
+        <b>Alignment amplifies collapse:</b> Instruction-tuned models exhibit substantially
+        stronger collapse than their base counterparts — increasing from ~35% to 59% in Qwen-72B and
+        from ~29% to 55% in LLaMA-3.2-90B.
+      </li>
+      <li>
+        <b>LLMs fail to preserve human behavioral variation:</b> Human–LLM correlations remain
+        consistently weak or negative across socio-political opinion (<b>OpinionQA</b>), moral
+        reasoning (<b>Moral Machine</b>), and aesthetic preference (<b>Website Likability</b>) tasks.
+        For example, GPT-4o reaches <b>−0.37</b> on Website Likability, and LLaMA-3.2-90B-Vision-Instruct
+        reaches <b>−0.30</b> on Moral Machine.
+      </li>
+      <li>
+        <b>Simple Age–Gender personas outperform rich ICPs:</b> In email CTR prediction, Age–Gender
+        personas achieve <b>70.00%</b> accuracy vs. <b>58.57%</b> for auto-generated ICP agents and
+        <b>50.74%</b> for expert-defined brand ICPs. This trend holds across all tweet engagement
+        domains (technology, airlines, fashion).
+      </li>
+      <li>
+        <b>No reliable generalization across tasks:</b> Personas that appear effective in one domain do not consistently transfer to others. Similarly sized attribute combinations can have substantially different simulation fidelity depending on the task, confirming that attribute fidelity and task generalization do not hold as general properties.
+      </li>
+      <li>
+        <b>Alignment Bridges:</b> Collapse is not uniform. Certain attribute combinations —
+        such as Education + Gender and Gender + Religious — remain behaviorally stable and preserve
+        stronger alignment with human responses. These stable configurations exhibit
+        inter-persona distances of up to 15.78 vs. 5.88 for collapse-prone personas on Qwen-72B-VL.
+      </li>
+    </ul>
+
+    <h2>Takeaway</h2>
+
+    <p>The foundational assumptions of persona-based LLM simulation do not generally hold. Richer, more
+    complex personas do not reliably yield better behavioral fidelity or diversity — in fact, they often
+    cause the opposite. Effective persona design depends less on maximizing expressivity and more on
+    identifying behaviorally stable attribute combinations that the model can reliably represent. The field
+    should shift toward <em>representation-aware persona construction</em>, focusing on stable, meaningful
+    attribute combinations rather than increasing narrative detail or attribute count.</p>
+
+    <h2>BibTeX</h2>
+
+    <pre><code>@article{bhattacharyya2025llmpersonality,
+  title={How Well Do Large Language Models Capture Human Personality?},
+  author={Bhattacharyya, Aanisha and Singla, Yaman Kumar and Shah, Rajiv Ratn and Chen, Changyou and Ajmera, Jitendra},
+  year={2025},
+  url={https://www.researchgate.net/publication/405480733_How_Well_Do_Large_Language_Models_Capture_Human_Personality}
+}</code></pre>
+
+    <hr>
+    <footer>
+      Part of the <a href="./index.html">Behavior in the Wild</a> research group.
+    </footer>
+
+  </div>
+</body>
+</html>

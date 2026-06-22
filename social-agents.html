@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Social Agents shows how collective intelligence improves LLM prediction quality through coordinated multi-agent reasoning.">
+    <meta name="keywords" content="social agents, collective intelligence, LLM predictions, multi-agent systems, behavioral science">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://behavior-in-the-wild.github.io/social-agents">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Social Agents: Collective Intelligence Improves LLM Predictions">
+    <meta property="og:description" content="A framework where coordinated social agents improve LLM predictions using collective intelligence.">
+    <title>Social Agents: Collective Intelligence Improves LLM Predictions</title>
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/social-agents">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Social Agents: Collective Intelligence Improves LLM Predictions">
+    <meta name="twitter:description" content="A framework where coordinated social agents improve LLM predictions using collective intelligence.">
+    <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Aanisha Bhattacharyya"
+    },
+    {
+      "@type": "Person",
+      "name": "Abhilekh Borah"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaman Kumar Singla"
+    },
+    {
+      "@type": "Person",
+      "name": "Rajiv Ratn Shah"
+    },
+    {
+      "@type": "Person",
+      "name": "Changyou Chen"
+    },
+    {
+      "@type": "Person",
+      "name": "Balaji Krishnamurthy"
+    }
+  ],
+  "datePublished": "2026",
+  "name": "Social Agents: Collective Intelligence Improves LLM Predictions",
+  "url": "https://behavior-in-the-wild.github.io/social-agents",
+  "description": "A framework where coordinated social agents improve LLM predictions using collective intelligence.",
+  "keywords": [
+    "social agents",
+    "collective intelligence",
+    "multi-agent systems",
+    "LLM",
+    "behavioral science"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #1a1a1a;
+          background: #fff;
+        }
+        .site-nav {
+          border-bottom: 1px solid #ddd;
+          padding: 11px 24px;
+          font-size: 0.875rem;
+        }
+        .site-nav a { color: #0645ad; text-decoration: none; }
+        .site-nav a:hover { text-decoration: underline; }
+        .page {
+          max-width: 780px;
+          margin: 0 auto;
+          padding: 48px 24px 96px;
+        }
+        h1 {
+          font-size: 1.65rem;
+          font-weight: bold;
+          line-height: 1.35;
+          color: #111;
+          margin: 0 0 18px;
+        }
+        h2 {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 44px 0 10px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #ccc;
+        }
+        p { margin: 14px 0; }
+        a { color: #0645ad; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .authors {
+          font-size: 1rem;
+          margin: 4px 0 3px;
+          line-height: 1.65;
+        }
+        .equal-contrib {
+          font-size: 0.8rem;
+          color: #777;
+          font-style: italic;
+          margin: 2px 0 8px;
+        }
+        .affiliation {
+          font-size: 0.9rem;
+          color: #444;
+          margin: 4px 0 14px;
+          display: flex;
+          align-items: center;
+          gap: 7px;
+          flex-wrap: wrap;
+        }
+        .affiliation img {
+          width: 22px;
+          height: 22px;
+          object-fit: contain;
+        }
+        .venue {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #b31b1b;
+    margin: 6px 0 14px;
+  }
+  .paper-links {
+          margin: 14px 0 6px;
+        }
+        .paper-links a {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #0645ad;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #0645ad;
+          margin-right: 8px;
+          font-family: Georgia, serif;
+        }
+        .paper-links a:hover {
+          background: #0645ad;
+          color: #fff;
+          text-decoration: none;
+        }
+        ul { padding-left: 1.4em; margin: 12px 0; }
+        ul li { margin-bottom: 8px; line-height: 1.65; }
+        figure {
+          margin: 32px 0;
+          text-align: center;
+        }
+        figure img {
+          max-width: 100%;
+          border: 1px solid #ddd;
+        }
+        figcaption {
+          margin-top: 8px;
+          font-size: 0.875rem;
+          color: #666;
+          font-style: italic;
+        }
+        blockquote {
+          border-left: 3px solid #ccc;
+          margin: 24px 0;
+          padding: 8px 20px;
+          color: #555;
+          font-style: italic;
+        }
+        pre {
+          background: #f6f6f6;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          padding: 16px;
+          font-size: 0.8rem;
+          line-height: 1.5;
+          overflow-x: auto;
+          font-family: 'Courier New', monospace;
+        }
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 48px 0 0;
+        }
+        footer {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 16px;
+        }
+        @media (max-width: 600px) {
+          .page { padding: 28px 16px 64px; }
+          h1 { font-size: 1.35rem; }
+        }
+    </style>
+  <meta name="citation_title" content="Social Agents: Collective Intelligence Improves LLM Predictions">
+  <meta name="citation_author" content="Aanisha Bhattacharyya">
+  <meta name="citation_author" content="Abhilekh Borah">
+  <meta name="citation_author" content="Yaman Kumar Singla">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="Changyou Chen">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="International Conference on Learning Representations">
+  <meta name="citation_pdf_url" content="https://openreview.net/pdf?id=73J3hsato3">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">← Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>Social Agents: Collective Intelligence Improves LLM Predictions</h1>
+
+    <div class="authors">
+      <a href="https://www.linkedin.com/in/aanisha-bhattacharyya/">Aanisha Bhattacharyya<sup>*1</sup></a>,
+      <a href="https://www.linkedin.com/in/abhilekh-borah-aa758a15a/">Abhilekh Borah<sup>*1</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla<sup>*1</sup></a>,
+      <a href="https://www.linkedin.com/in/rajivratn">Rajiv Ratn Shah<sup>2</sup></a>,
+      <a href="https://cse.buffalo.edu/~changyou/">Changyou Chen<sup>3</sup></a>,
+      <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy<sup>1</sup></a>
+    </div>
+    <div class="equal-contrib">* Equal Contribution</div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe">
+      <sup>1</sup><a href="https://adobe.mdsr.live/" target="_blank">Adobe Media and Data Science Research (MDSR) Lab</a>
+      &nbsp;&nbsp;
+      <img src="images/iiitd-logo.png" alt="IIIT Delhi">
+      <sup>2</sup><a href="https://www.iiitd.ac.in/" target="_blank">IIIT Delhi</a>
+      &nbsp;&nbsp;
+      <img src="images/ub-logo.png" alt="SUNY Buffalo">
+      <sup>3</sup><a href="https://www.buffalo.edu/" target="_blank">SUNY at Buffalo</a>
+    </div>
+
+    <p class="venue">ICLR 2026</p>
+
+    <p>Accepted at <strong><a href="https://iclr.cc/" target="_blank">ICLR 2026</a></strong></p>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <a href="https://openreview.net/forum?id=73J3hsato3" target="_blank">Paper</a>
+    </div>
+
+    <ul>
+      <li>Introducing <strong>Social Agents</strong>, a multi-agent framework that operationalizes the principle of the <em>Wisdom of Crowds</em>, which outperforms baselines and trained experts across 11 diverse behavioural prediction tasks, achieving a 42.1% average improvement on low-level judgments (e.g., webpage likability and ad click-through rate prediction) and a 24% improvement on high-level reasoning tasks such as video persuasion classification and long-term memorability prediction.</li>
+      <li>Across 7 proprietary and open-source vision &amp; language backbones, Social Agents delivers consistent average improvements of 23.9% over baselines across 3 models and 11 diverse tasks, with clear gains even for smaller, lower-parameter models.</li>
+    </ul>
+
+    <blockquote>
+      "The many, of whom none is a good man, may yet, when joined together, be better than those few." — Aristotle
+    </blockquote>
+
+    <figure>
+      <img src="images/social-agents/herofigure.jpg" alt="Social Agents Framework Visualization">
+      <figcaption>Social Agents framework visualization.</figcaption>
+    </figure>
+
+    <h2>Abstract</h2>
+
+    <p>
+      In human society, collective decision making has often outperformed the judgment of individuals. Classic examples range from estimating livestock weights to predicting elections and financial markets, where averaging many independent guesses often yields results more accurate than experts. These successes arise because groups bring together diverse perspectives, independent voices, and distributed knowledge, combining them in ways that cancel individual biases. This principle, known as the Wisdom of Crowds, underpins practices in forecasting, marketing, and preference modeling. Large Language Models (LLMs), however, typically produce a single definitive answer. While effective in many settings, this uniformity overlooks the diversity of human judgments shaping responses to ads, videos, and webpages. Inspired by how societies benefit from diverse opinions, we ask whether LLM predictions can be improved by simulating not one answer but many. We introduce <strong>Social Agents</strong>, a multi-agent framework that instantiates a synthetic society of human-like personas with diverse demographic (e.g., age, gender) and psychographic (e.g., values, interests) attributes. Each persona independently appraises a stimulus such as an advertisement, video, or webpage, offering both a quantitative score (e.g., click-through likelihood, recall score, likability) and a qualitative rationale. Aggregating these opinions produces a distribution of preferences that more closely mirrors real human crowds. Across eleven behavioral prediction tasks, Social Agents outperforms single-LLM baselines by up to 67.45% on simple judgments (e.g. webpage likability) and 9.88% on complex interpretive reasoning (e.g. video memorability). Social Agents' individual persona predictions also align with human judgments, reaching Pearson correlations up to 0.71. These results position computational crowd simulation as a scalable, interpretable tool for improving behavioral prediction and supporting societal decision making.
+    </p>
+
+    <figure>
+      <img src="images/social-agents/workflow.jpg" alt="Overview of the Social Agents workflow for Ad Click-Through Rate (CTR) Prediction">
+      <figcaption>Overview of the Social Agents workflow for Ad Click-Through Rate (CTR) Prediction Task.</figcaption>
+    </figure>
+
+    <h2 id="results">Results</h2>
+
+    <figure>
+      <img src="images/social-agents/results.png" alt="Social Agents Results">
+      <figcaption>Social Agents results across 11 behavioral prediction tasks.</figcaption>
+    </figure>
+
+    <h2 id="BibTeX">BibTeX</h2>
+
+    <pre><code>@inproceedings{
+  bhattacharyya2026social,
+  title={Social Agents: Collective Intelligence Improves LLM Predictions},
+  author={Aanisha Bhattacharyya and Abhilekh Borah and Yaman Kumar Singla and Rajiv Ratn Shah and Changyou Chen and Balaji Krishnamurthy},
+  booktitle={The Fourteenth International Conference on Learning Representations},
+  year={2026},
+  url={https://openreview.net/forum?id=73J3hsato3}
+}</code></pre>
+
+    <h2>Acknowledgement</h2>
+
+    <p>
+      We thank Adobe for their generous sponsorship.
+      We thank the LLaMA and Qwen team for giving us access to their models, and open-source projects.
+    </p>
+
+    <hr>
+    <footer>
+      <strong>Social Agents</strong> by <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+    </footer>
+
+  </div>
+</body>
+</html>
