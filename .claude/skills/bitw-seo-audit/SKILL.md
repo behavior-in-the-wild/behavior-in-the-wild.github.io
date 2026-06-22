@@ -1,9 +1,9 @@
 ---
 name: bitw-seo-audit
-description: Audit and fix SEO, meta-tag, and structured-data completeness for the behavior-in-the-wild.github.io academic website. Checks all best practices established for the site. Use when adding new pages, reviewing PRs, or running a full site health check.
+description: Audit and fix SEO, meta-tag, and structured-data completeness for the behavior-in-the-wild.github.io academic website. Also the canonical reference for everything needed when adding a new page. Use when adding new pages, reviewing PRs, or running a full site health check.
 metadata:
   author: Yaman Kumar
-  version: 2.0.0
+  version: 3.0.0
   tags: [seo, structured-data, json-ld, academic, bitw]
 compatibility:
   agents: [claude-code]
@@ -12,11 +12,11 @@ compatibility:
     - Python 3
 ---
 
-# BITW SEO Audit
+# BITW SEO Audit & New Page Guide
 
-Canonical skill for auditing and fixing SEO and structured-data completeness across the `behavior-in-the-wild.github.io` academic research site.
+Canonical reference for the `behavior-in-the-wild.github.io` academic research site — both the automated audit tool and the human checklist for adding new pages.
 
-## Quick Start
+## Quick Start (audit)
 
 ```bash
 # Audit only — report all issues
@@ -26,31 +26,226 @@ python3 scripts/audit.py --repo ~/git/behavior-in-the-wild.github.io
 python3 scripts/audit.py --repo ~/git/behavior-in-the-wild.github.io --fix
 ```
 
+---
+
 ## Site Structure
 
-**Repository:** `behavior-in-the-wild/behavior-in-the-wild.github.io` (deploying org repo). PRs go here, not to the `yamanksingla` fork's main.
+**Repo:** `behavior-in-the-wild/behavior-in-the-wild.github.io` (deploying org repo). PRs go here from the `yamanksingla` fork — never directly to org main.
+
+**File naming:** preserve the original paper abbreviation casing (e.g. `LCBM.html`, `SDR-Bench.html`, `memorability.html`). No spaces; use hyphens for multi-word slugs.
 
 **Page types and their schema.org `@type`:**
 
-| Page | @type | Notes |
-|---|---|---|
-| `index.html` | `WebSite` | Homepage. og:type = website. No citation tags. |
-| Paper pages (most) | `ScholarlyArticle` | Highwire citation tags required. og:type = article. |
-| Benchmark/dataset pages | `Dataset` | `creator` (not `author`) required. isPartOf = DataCatalog. |
-| Dual paper+dataset pages | `["ScholarlyArticle","Dataset"]` | Both `author` and `creator` required. isPartOf = DataCatalog (serves Google Dataset Search). |
-| `PersuasionArena.html` | `SoftwareApplication` | Tool, not a paper. No citation tags. og:type = website. |
-| `the-culture-repository.html` | `Dataset` | Cultural dataset. og:type = website. |
-| Redirect pages | — | `cultural-alignment.html`, `transsuasion.html` — skip entirely. |
+| Page | `@type` | og:type | Citation tags? |
+|---|---|---|---|
+| `index.html` | `WebSite` | website | No |
+| Paper pages (most) | `ScholarlyArticle` | article | Yes |
+| Benchmark/dataset pages | `Dataset` | article | Yes |
+| Dual paper+dataset | `["ScholarlyArticle","Dataset"]` | article | Yes |
+| `PersuasionArena.html` | `SoftwareApplication` | website | No |
+| `the-culture-repository.html` | `Dataset` | website | No |
+| Redirect pages (`cultural-alignment.html`, `transsuasion.html`) | — | — | Skip entirely |
 
-**Publisher (all pages):** `{"@type": "Organization", "name": "Behavior In The Wild Research Group", "url": "https://behavior-in-the-wild.github.io"}`. This is the entity making the published representation available — do NOT change this to a conference or journal name.
+**Publisher (all pages):** `{"@type": "Organization", "name": "Behavior In The Wild Research Group", "url": "https://behavior-in-the-wild.github.io"}` — this is the entity making *this HTML representation* available. Do not change to a conference/journal publisher.
 
 **Canonical URL format:** `https://behavior-in-the-wild.github.io/{PageNameNoExtension}` (case-preserved, no trailing slash). Exception: `index.html` → `https://behavior-in-the-wild.github.io/`.
 
-**OG image fallback:** `https://behavior-in-the-wild.github.io/images/Human-Behavior.png`
+**Contact email:** `behavior-in-the-wild@googlegroups.com` — include on every paper page.
 
-**SEO keyword strategy:** Every title and meta description must pair "Behavior in the Wild" with AI/LLM/agentic qualifiers to avoid ambiguous n-gram matches (human behavior, in the wild) that attract unrelated traffic.
+---
 
-## What Is Checked
+## Adding a New Page — Complete Checklist
+
+### 1. File setup
+- Copy the most structurally similar existing page as a template.
+- Place at repo root: `{Slug}.html`
+- Place paper-specific images in `images/{slug}/` (lowercase slug for the directory).
+- Use `images/Human-Behavior.png` as og/twitter image fallback if no paper teaser exists.
+
+### 2. `<head>` — required elements in order
+
+```html
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="...AI/LLM/behavior keywords...">
+  <meta name="keywords" content="...">
+
+  <title>Full Paper Title — Behavior in the Wild</title>
+  <link rel="canonical" href="https://behavior-in-the-wild.github.io/{Slug}">
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">   <!-- or "website" for non-paper pages -->
+  <meta property="og:title" content="...">
+  <meta property="og:description" content="...">
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/{Slug}">
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/{slug}/teaser.png">
+  <!-- ↑ use paper teaser if available; fallback: images/Human-Behavior.png -->
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="...">
+  <meta name="twitter:description" content="...">
+  <meta name="twitter:image" content="...same as og:image...">
+
+  <!-- JSON-LD (see section below) -->
+  <script type="application/ld+json">...</script>
+
+  <!-- Google Scholar / Highwire citation tags (paper pages only) -->
+  <meta name="citation_title" content="Full Paper Title">
+  <meta name="citation_author" content="Last, First">   <!-- one tag per author -->
+  <meta name="citation_publication_date" content="YYYY">
+  <meta name="citation_conference_title" content="Full Conference Name">  <!-- if published -->
+  <meta name="citation_arxiv_id" content="XXXX.XXXXX">    <!-- if on arXiv -->
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/XXXX.XXXXX">
+</head>
+```
+
+**SEO rule:** every `<title>` and `<meta name="description">` must contain AI/LLM/agentic qualifiers alongside "Behavior in the Wild" to prevent ambiguous n-gram matches (human behavior, in the wild) from attracting unrelated traffic.
+
+### 3. Page body — section order
+
+```
+<nav class="site-nav">
+  <a href="./index.html">← Behavior in the Wild</a>
+</nav>
+
+<div class="page">
+  <h1>Full Paper Title</h1>
+
+  <div class="authors">
+    <a href="https://author-homepage.com/">Author Name<sup>*</sup></a>, ...
+  </div>
+  <div class="equal-contrib">* Equal Contribution</div>   <!-- omit if not applicable -->
+
+  <div class="affiliation">
+    <img src="images/adobe-logo.png" alt="Adobe">
+    <a href="https://adobe.mdsr.live/" target="_blank">Media and Data Science Research (MDSR) Lab, Adobe</a>
+  </div>
+
+  <p class="venue">ICLR 2025</p>   <!-- abbreviated venue + year, shown in red -->
+
+  <p>Get in touch at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/...">Paper</a>
+    <a href="https://github.com/behavior-in-the-wild/...">Code</a>
+    <a href="https://huggingface.co/datasets/behavior-in-the-wild/...">Dataset</a>  <!-- if applicable -->
+    <a href="https://...demo...">Demo</a>  <!-- if applicable -->
+  </div>
+
+  <!-- ... content sections (Abstract, Method, Results, etc.) ... -->
+
+  <h2 id="BibTeX">BibTeX</h2>
+  <pre>@inproceedings{...}</pre>
+
+  <hr>
+  <footer>...</footer>
+</div>
+```
+
+**Author links:** all authors must have clickable `<a href>` links to their personal/academic pages. Use Google Scholar or personal homepage — not LinkedIn where avoidable (LinkedIn URLs change; personal sites are stable).
+
+**Affiliation logos:** the `<div class="affiliation">` block may include logo `<img>` tags but they are optional and can be omitted for cleaner pages. The text link to the lab is required.
+
+**BibTeX:** required on every paper page — Google Scholar scrapes it. Use `<h2 id="BibTeX">` exactly so anchor links work.
+
+### 4. JSON-LD block
+
+Minimum complete example for a published `ScholarlyArticle`:
+
+```json
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Full Paper Title",
+  "name": "Full Paper Title",
+  "url": "https://behavior-in-the-wild.github.io/{Slug}",
+  "image": "https://behavior-in-the-wild.github.io/images/{slug}/teaser.png",
+  "description": "One-sentence abstract with AI/LLM keywords.",
+  "datePublished": "2025",
+  "author": [
+    { "@type": "Person", "name": "Author Name", "url": "https://author-homepage.com/" }
+  ],
+  "keywords": ["keyword1", "keyword2"],
+  "isPartOf": {
+    "@type": "CreativeWork",
+    "name": "Proceedings of the International Conference on Learning Representations (ICLR) 2025"
+  },
+  "publication": {
+    "@type": "PublicationEvent",
+    "name": "International Conference on Learning Representations (ICLR) 2025",
+    "startDate": "2025"
+  },
+  "sameAs": "https://arxiv.org/abs/XXXX.XXXXX",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+```
+
+**Field rules:**
+- `headline` = same value as `name` (required by Google for Article types)
+- `image` = paper teaser URL; use og:image fallback if no teaser
+- `author[].url` = personal/academic homepage per author (improves entity disambiguation in Scholar)
+- `isPartOf` for published paper: `{"@type": "CreativeWork", "name": "Proceedings of {Full Conference Name} {Year}"}` — `CreativeWork` is correct for proceedings (one-time publication), not `Periodical` (which implies a recurring journal)
+- `isPartOf` for preprint: **absent** — never invent a venue
+- `isPartOf` for Dataset: `{"@type": "DataCatalog", "name": "Behavior In The Wild", "url": "https://behavior-in-the-wild.github.io"}`
+- `publication`: `PublicationEvent` captures the actual conference event for semantic search; use the same full name as `isPartOf`
+- `sameAs`: arXiv canonical URL — required when arXiv ID is known; signals authoritative source to Google
+- `license`: always CC BY 4.0
+- `publisher`: always "Behavior In The Wild Research Group"
+
+For **Dataset** pages, replace `author` with `creator`. For **dual-type** `["ScholarlyArticle","Dataset"]`, include both `author` and `creator` (same people), and use `DataCatalog` for `isPartOf` (Google Dataset Search requires it).
+
+### 5. Add to `index.html` contributions list
+
+Entry format (newest papers go at the top):
+```html
+<li>
+  <a href="./{Slug}.html">Full Paper Title</a>
+  <span class="venue-year">— {VenueAbbr} {Year}</span>
+  <span class="award">· {Award Name} 🏆</span>   <!-- omit if no award -->
+  <span class="tag tag-{type}">{Tag Label}</span>
+  <!-- add multiple tags if the paper fits more than one -->
+</li>
+```
+
+**Available behavior tags:**
+
+| CSS class | Label | Color | Use when... |
+|---|---|---|---|
+| `tag-explain` | Explaining Behavior | blue (#5a7099) | Paper analyzes/models why humans behave a certain way |
+| `tag-predict` | Predicting Behavior | green (#5f8a62) | Paper predicts human responses, memorability, preferences |
+| `tag-optimize` | Interventions to Optimize Behavior | brown (#a8765f) | Paper generates/optimizes content to influence behavior |
+| `tag-understand` | Using Behavior To Understand Other Modalities Better | purple (#8a6fb0) | Behavior signal improves a non-behavior task (VLM, NLP, etc.) |
+| `tag-learn` | Learning from Human Digital Traces | olive (#7a6a3f) | Learning from implicit behavior signals (clicks, gaze, engagement) |
+
+**Venue abbreviation format:** use the widely recognized short form — ICLR, AAAI, NeurIPS, WACV, EMNLP, EACL, ECCV, CVPR, etc. Preprints → "Preprint". PhD thesis → "PhD Thesis".
+
+### 6. `sitemap.xml`
+The automated sitemap bot (`create-pull-request/sitemap` branch) usually updates this on merge. If adding manually, add an entry:
+```xml
+<url>
+  <loc>https://behavior-in-the-wild.github.io/{Slug}</loc>
+  <lastmod>{YYYY-MM-DD}</lastmod>
+</url>
+```
+Update `<lastmod>` to today's date for any page you touch.
+
+### 7. PR
+- Branch off `upstream/main`; PR target is `behavior-in-the-wild:main` (the org repo) from the `yamanksingla` fork
+- Run the audit script before opening: `python3 .claude/skills/bitw-seo-audit/scripts/audit.py --fix`
+- Review `git diff` — verify `isPartOf` name matches the exact conference from the Highwire tag, `sameAs` URL is correct
+
+---
+
+## Automated Audit — What Is Checked
 
 ### Every content page
 
@@ -59,62 +254,41 @@ python3 scripts/audit.py --repo ~/git/behavior-in-the-wild.github.io --fix
 | 1 | `<html lang="en">` | Must be present |
 | 2 | `<title>` | Present and non-empty |
 | 3 | `<meta name="description">` | Present; should contain AI/LLM keywords |
-| 4 | `<link rel="canonical">` | Must match expected URL pattern |
+| 4 | `<link rel="canonical">` | Must match `https://behavior-in-the-wild.github.io/{Slug}` |
 | 5 | og:title, og:description, og:url, og:image | All four required |
 | 6 | twitter:card, twitter:title, twitter:description | All three required |
-| 7 | `og:type` | `article` for papers; `website` for home/tool/dataset-only |
+| 7 | `og:type` | `article` for papers; `website` for home/tool/dataset-only pages |
 | 8 | JSON-LD present | At least one `<script type="application/ld+json">` block |
-| 9 | JSON-LD `license` | `"https://creativecommons.org/licenses/by/4.0/"` on every non-WebSite block |
-| 10 | JSON-LD `isPartOf` | See rules below |
+| 9 | JSON-LD `license` | CC BY 4.0 on every non-WebSite block |
+| 10 | JSON-LD `isPartOf` | See rules above |
 | 11 | JSON-LD `author` | Required on ScholarlyArticle |
 | 12 | JSON-LD `creator` | Required on Dataset |
 | 13 | JSON-LD `publisher` | Must be "Behavior In The Wild Research Group" |
-| 14 | JSON-LD `sameAs` | Required when `citation_arxiv_id` Highwire tag is present; value = `https://arxiv.org/abs/{id}` |
+| 14 | JSON-LD `sameAs` | Required when `citation_arxiv_id` Highwire tag is present |
 
-### Paper/benchmark pages only (not index, PersuasionArena, the-culture-repository)
+### Paper/benchmark pages only
 
 | # | Check | Rule |
 |---|---|---|
-| 15 | `citation_title` | Google Scholar Highwire tag required |
+| 15 | `citation_title` | Highwire tag required |
 | 16 | `citation_author` | At least one Highwire author tag |
 | 17 | `citation_publication_date` | Highwire date tag required |
 
-## JSON-LD `isPartOf` Rules (critical)
-
-| Page type | Highwire venue present? | `isPartOf` value |
-|---|---|---|
-| `ScholarlyArticle` (pure) | Yes | `{"@type": "Periodical", "name": "<citation_conference_title or citation_journal_title>"}` |
-| `ScholarlyArticle` (pure) | No (preprint) | **Absent** — do not invent a venue |
-| `Dataset` (pure or dual-type) | — | `{"@type": "DataCatalog", "name": "Behavior In The Wild", "url": "https://behavior-in-the-wild.github.io"}` |
-| `SoftwareApplication` | — | **Absent** |
-
-**Why Periodical improves SEO:** linking to the conference as a `Periodical` creates backlinks in Google Scholar and improves domain authority signals. The venue name must come from the actual `citation_conference_title` tag — never invent or shorten it.
-
-**Why DataCatalog for dual-type:** Google Dataset Search indexes `Dataset` pages. DataCatalog in `isPartOf` ensures the benchmark appears in Dataset Search results alongside Google Scholar.
-
-## What Is Auto-Fixed (`--fix` flag)
+## What Is Auto-Fixed (`--fix`)
 
 - Missing `license` → inserts CC BY 4.0
-- `isPartOf: Website` on ScholarlyArticle → replaced with `Periodical` (from Highwire venue tag) or removed (preprint)
+- `isPartOf: Website` on ScholarlyArticle → replaced with `CreativeWork` (from Highwire venue tag) or removed (preprint)
 - `isPartOf: Website` on Dataset → replaced with `DataCatalog`
 - Missing `creator` on Dataset/dual-type → copied from `author`
-- Missing `sameAs` when `citation_arxiv_id` present → adds `https://arxiv.org/abs/{id}`
+- Missing `sameAs` when `citation_arxiv_id` present → adds arXiv URL
 
-**Not auto-fixed** (require per-page content):
-- Missing/thin meta description, title, OG/Twitter tags
-- Missing Highwire citation tags
-- Wrong og:type
-- Missing lang="en"
+**Not auto-fixed** (require per-page content knowledge):
+- Missing/thin meta description, title, OG/Twitter tags, twitter:image
+- Missing Highwire citation tags or `citation_pdf_url`
+- Missing `headline`, `image`, `author[].url`, `publication` in JSON-LD
+- Wrong `og:type`, missing `lang="en"`, missing BibTeX section
 
-## Workflow for New Pages
-
-1. Create the HTML page following existing page structure (copy a similar page as template).
-2. Add Highwire `citation_*` tags (title, author×N, publication_date, conference_title if published, arxiv_id if available).
-3. Run `python3 scripts/audit.py --fix` to auto-apply JSON-LD fixes.
-4. Review `git diff` — check that `isPartOf` has the correct type and conference name, `sameAs` points to the right arXiv URL.
-5. Add the paper to `index.html` contributions list with venue tag and behavior tag.
-6. Update `sitemap.xml` lastmod for the new page.
-7. Open PR against `behavior-in-the-wild:main`.
+---
 
 ## Trigger Phrases
 
@@ -123,6 +297,7 @@ Should trigger:
 - "check SEO on behavior-in-the-wild"
 - "make sure all pages have uniform optimizations"
 - "new page added to BITW, check it"
+- "what do I need to do to add a new page to BITW?"
 - "run the SEO health check on the site"
 - "fix structured data issues on the academic site"
 - "does this new page follow all the BITW best practices?"
@@ -130,5 +305,4 @@ Should trigger:
 Should NOT trigger:
 - "review this PR for bugs"
 - "update the homepage copy"
-- "add a new paper page"
 - "fix merge conflicts"
