@@ -16,13 +16,13 @@
         "acc": 0.3,
         "correct": 3,
         "n": 10,
-        "brier": 0.3005
+        "brier": 0.2848
       },
       "fed": {
-        "acc": 0.8,
-        "correct": 8,
+        "acc": 0.7,
+        "correct": 7,
         "n": 10,
-        "brier": 0.1418
+        "brier": 0.1898
       },
       "episodes": [
         {
@@ -33,14 +33,14 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.58,
-            "yoy": 3.4,
+            "conf": 0.56,
+            "yoy": 4.1,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.75,
-            "yoy": 6.8,
+            "conf": 0.73,
+            "yoy": 5.9,
             "ok": true
           }
         },
@@ -53,13 +53,13 @@
           "blind": {
             "pred": "inline",
             "conf": 0.58,
-            "yoy": 2.2,
+            "yoy": 2.1,
             "ok": false
           },
           "fed": {
             "pred": "inline",
-            "conf": 0.67,
-            "yoy": 1.6,
+            "conf": 0.64,
+            "yoy": 1.8,
             "ok": false
           }
         },
@@ -71,37 +71,37 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.59,
+            "conf": 0.58,
             "yoy": 10.8,
             "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.66,
-            "yoy": 11.9,
-            "ok": true
-          }
-        },
-        {
-          "id": "ADBE.Q2-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q2 FY2026 (ended May 29 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.7,
-            "yoy": 10.0,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.78,
             "yoy": 12.1,
             "ok": true
           }
         },
         {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.69,
+            "yoy": 10.3,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.81,
+            "yoy": 12.6,
+            "ok": true
+          }
+        },
+        {
           "id": "TEAM.FY26-Q3",
           "company": "Atlassian",
           "ticker": "TEAM",
@@ -109,14 +109,14 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.56,
+            "conf": 0.55,
             "yoy": 28,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.84,
-            "yoy": 30.5,
+            "conf": 0.8,
+            "yoy": 32,
             "ok": true
           }
         },
@@ -128,15 +128,15 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.61,
+            "conf": 0.65,
             "yoy": 29,
             "ok": true
           },
           "fed": {
-            "pred": "beat",
-            "conf": 0.76,
-            "yoy": 31.6,
-            "ok": true
+            "pred": "inline",
+            "conf": 0.74,
+            "yoy": 26,
+            "ok": false
           }
         },
         {
@@ -147,454 +147,32 @@
           "actual": "inline",
           "blind": {
             "pred": "inline",
-            "conf": 0.55,
-            "yoy": 7.4,
+            "conf": 0.57,
+            "yoy": 8.7,
             "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.73,
+            "yoy": 9.4,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 8.4,
+            "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 8.4,
-            "ok": false
-          }
-        },
-        {
-          "id": "CMG.Q2-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.56,
-            "yoy": 10.4,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.79,
-            "yoy": 16.1,
-            "ok": true
-          }
-        },
-        {
-          "id": "DAL.Q1-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 2.8,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.78,
-            "yoy": 6.1,
-            "ok": true
-          }
-        },
-        {
-          "id": "DAL.Q2-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "beat",
-            "conf": 0.58,
-            "yoy": 3.8,
-            "ok": true
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.78,
-            "yoy": 13.1,
-            "ok": true
-          }
-        }
-      ]
-    },
-    "gpt-5.4-mini": {
-      "key": "gpt-5.4-mini",
-      "name": "gpt-5.4-mini",
-      "type": "LLM",
-      "route": "openai",
-      "avatar": "5m",
-      "blind": {
-        "acc": 0.1,
-        "correct": 1,
-        "n": 10,
-        "brier": 0.3413
-      },
-      "fed": {
-        "acc": 0.6,
-        "correct": 6,
-        "n": 10,
-        "brier": 0.2397
-      },
-      "episodes": [
-        {
-          "id": "IBM.Q1-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 4.2,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.66,
-            "yoy": 4.2,
-            "ok": true
-          }
-        },
-        {
-          "id": "IBM.Q2-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "miss",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.61,
-            "yoy": 4.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "inline",
-            "conf": 0.61,
-            "yoy": 5.0,
-            "ok": false
-          }
-        },
-        {
-          "id": "ADBE.Q1-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.68,
-            "yoy": 11.0,
-            "ok": false
-          },
-          "fed": {
-            "pred": "inline",
-            "conf": 0.63,
-            "yoy": 10.4,
-            "ok": false
-          }
-        },
-        {
-          "id": "ADBE.Q2-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q2 FY2026 (ended May 29 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.61,
-            "yoy": 10.1,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.74,
-            "yoy": 11.2,
-            "ok": true
-          }
-        },
-        {
-          "id": "TEAM.FY26-Q3",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 29.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.74,
-            "yoy": 31.5,
-            "ok": true
-          }
-        },
-        {
-          "id": "TEAM.FY26-Q4",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 30.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "inline",
-            "conf": 0.78,
-            "yoy": 31.5,
-            "ok": false
-          }
-        },
-        {
-          "id": "CMG.Q1-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "inline",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 4.5,
-            "ok": true
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.79,
-            "yoy": 10.2,
-            "ok": false
-          }
-        },
-        {
-          "id": "CMG.Q2-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 8.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.78,
-            "yoy": 12.4,
-            "ok": true
-          }
-        },
-        {
-          "id": "DAL.Q1-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.58,
-            "yoy": 4.2,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.78,
-            "yoy": 7.0,
-            "ok": true
-          }
-        },
-        {
-          "id": "DAL.Q2-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.59,
-            "yoy": 2.1,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.78,
-            "yoy": 6.5,
-            "ok": true
-          }
-        }
-      ]
-    },
-    "gpt-5.2": {
-      "key": "gpt-5.2",
-      "name": "gpt-5.2",
-      "type": "LLM",
-      "route": "openai",
-      "avatar": "5.2",
-      "blind": {
-        "acc": 0.3,
-        "correct": 3,
-        "n": 10,
-        "brier": 0.2323
-      },
-      "fed": {
-        "acc": 0.7,
-        "correct": 7,
-        "n": 10,
-        "brier": 0.2048
-      },
-      "episodes": [
-        {
-          "id": "IBM.Q1-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.38,
-            "yoy": 4.2,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.58,
-            "yoy": 7.0,
-            "ok": true
-          }
-        },
-        {
-          "id": "IBM.Q2-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "miss",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.56,
-            "yoy": 1.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "inline",
-            "conf": 0.56,
-            "yoy": 1.2,
-            "ok": false
-          }
-        },
-        {
-          "id": "ADBE.Q1-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.42,
-            "yoy": 11.0,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.56,
-            "yoy": 12.3,
-            "ok": true
-          }
-        },
-        {
-          "id": "ADBE.Q2-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q2 FY2026 (ended May 29 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.5,
-            "yoy": 10.0,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.62,
-            "yoy": 11.2,
-            "ok": true
-          }
-        },
-        {
-          "id": "TEAM.FY26-Q3",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.42,
-            "yoy": 29.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.62,
-            "yoy": 31.0,
-            "ok": true
-          }
-        },
-        {
-          "id": "TEAM.FY26-Q4",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
-          "actual": "beat",
-          "blind": {
-            "pred": "beat",
-            "conf": 0.56,
-            "yoy": 33.0,
-            "ok": true
-          },
-          "fed": {
-            "pred": "inline",
-            "conf": 0.56,
-            "yoy": 30.5,
-            "ok": false
-          }
-        },
-        {
-          "id": "CMG.Q1-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "inline",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.42,
-            "yoy": 10.5,
-            "ok": true
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.58,
-            "yoy": 12.2,
-            "ok": false
-          }
-        },
-        {
-          "id": "CMG.Q2-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "blind": {
-            "pred": "inline",
-            "conf": 0.48,
-            "yoy": 11.5,
-            "ok": false
-          },
-          "fed": {
-            "pred": "beat",
-            "conf": 0.63,
             "yoy": 15.2,
             "ok": true
           }
@@ -607,14 +185,14 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.53,
-            "yoy": 4.0,
+            "conf": 0.57,
+            "yoy": 2.6,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.62,
-            "yoy": 6.3,
+            "conf": 0.81,
+            "yoy": 6.2,
             "ok": true
           }
         },
@@ -626,9 +204,431 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.53,
-            "yoy": 4.5,
+            "conf": 0.63,
+            "yoy": 2.8,
             "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.83,
+            "yoy": 13.6,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "gpt-5.4-mini": {
+      "key": "gpt-5.4-mini",
+      "name": "gpt-5.4-mini",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "5m",
+      "blind": {
+        "acc": 0.3,
+        "correct": 3,
+        "n": 10,
+        "brier": 0.3001
+      },
+      "fed": {
+        "acc": 0.6,
+        "correct": 6,
+        "n": 10,
+        "brier": 0.2488
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 4.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.73,
+            "yoy": 5.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.61,
+            "yoy": 4.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.66,
+            "yoy": 3.4,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.63,
+            "yoy": 10.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.62,
+            "yoy": 10.8,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.61,
+            "yoy": 12.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.7,
+            "yoy": 10.4,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.57,
+            "yoy": 31.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 31.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.57,
+            "yoy": 30.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.88,
+            "yoy": 31.9,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.54,
+            "yoy": 6.0,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 12.8,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 4.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.77,
+            "yoy": 13.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 3.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 6.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.61,
+            "yoy": 4.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.82,
+            "yoy": 6.8,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "gpt-5.2": {
+      "key": "gpt-5.2",
+      "name": "gpt-5.2",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "5.2",
+      "blind": {
+        "acc": 0.2,
+        "correct": 2,
+        "n": 10,
+        "brier": 0.2157
+      },
+      "fed": {
+        "acc": 0.7,
+        "correct": 7,
+        "n": 10,
+        "brier": 0.2114
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.45,
+            "yoy": 3.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.56,
+            "yoy": 6.3,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.46,
+            "yoy": 1.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.54,
+            "yoy": 2.4,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.44,
+            "yoy": 10.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.56,
+            "yoy": 12.0,
+            "ok": true
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.44,
+            "yoy": 10.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 12.3,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.44,
+            "yoy": 29.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 31.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.55,
+            "yoy": 33.0,
+            "ok": true
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 31.5,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.44,
+            "yoy": 11.0,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 14.5,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.48,
+            "yoy": 13.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 12.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.48,
+            "yoy": 4.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.63,
+            "yoy": 7.0,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.43,
+            "yoy": 4.2,
+            "ok": false
           },
           "fed": {
             "pred": "beat",
@@ -646,16 +646,16 @@
       "route": "openai",
       "avatar": "5.3",
       "blind": {
-        "acc": 0.4,
-        "correct": 4,
+        "acc": 0.5,
+        "correct": 5,
         "n": 10,
-        "brier": 0.2746
+        "brier": 0.2576
       },
       "fed": {
-        "acc": 0.7,
-        "correct": 7,
+        "acc": 0.8,
+        "correct": 8,
         "n": 10,
-        "brier": 0.1724
+        "brier": 0.1433
       },
       "episodes": [
         {
@@ -666,14 +666,14 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.56,
+            "conf": 0.58,
             "yoy": 4.2,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.67,
-            "yoy": 7.4,
+            "conf": 0.64,
+            "yoy": 7.2,
             "ok": true
           }
         },
@@ -685,14 +685,14 @@
           "actual": "miss",
           "blind": {
             "pred": "inline",
-            "conf": 0.61,
-            "yoy": 3.1,
+            "conf": 0.57,
+            "yoy": 3.2,
             "ok": false
           },
           "fed": {
             "pred": "inline",
-            "conf": 0.63,
-            "yoy": 3.2,
+            "conf": 0.58,
+            "yoy": 3.9,
             "ok": false
           }
         },
@@ -704,15 +704,15 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.58,
-            "yoy": 10.8,
+            "conf": 0.63,
+            "yoy": 11.0,
             "ok": false
           },
           "fed": {
-            "pred": "inline",
+            "pred": "beat",
             "conf": 0.63,
-            "yoy": 11.3,
-            "ok": false
+            "yoy": 12.1,
+            "ok": true
           }
         },
         {
@@ -723,14 +723,14 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.62,
-            "yoy": 9.6,
+            "conf": 0.63,
+            "yoy": 11.8,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.8,
-            "yoy": 12.8,
+            "conf": 0.82,
+            "yoy": 12.4,
             "ok": true
           }
         },
@@ -741,15 +741,15 @@
           "quarter": "FY2026 Q3 (ended Mar 31 2026)",
           "actual": "beat",
           "blind": {
-            "pred": "inline",
-            "conf": 0.57,
-            "yoy": 24.0,
-            "ok": false
+            "pred": "beat",
+            "conf": 0.58,
+            "yoy": 27.0,
+            "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.82,
-            "yoy": 32,
+            "yoy": 31,
             "ok": true
           }
         },
@@ -761,14 +761,14 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.58,
-            "yoy": 28,
+            "conf": 0.63,
+            "yoy": 29,
             "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.72,
-            "yoy": 28.0,
+            "conf": 0.63,
+            "yoy": 26.0,
             "ok": true
           }
         },
@@ -780,14 +780,14 @@
           "actual": "inline",
           "blind": {
             "pred": "inline",
-            "conf": 0.55,
-            "yoy": 6.4,
+            "conf": 0.56,
+            "yoy": 4.8,
             "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.71,
-            "yoy": 9.2,
+            "conf": 0.67,
+            "yoy": 15.2,
             "ok": false
           }
         },
@@ -799,14 +799,14 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.57,
-            "yoy": 12.4,
+            "conf": 0.61,
+            "yoy": 11.2,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 14.6,
+            "yoy": 14.2,
             "ok": true
           }
         },
@@ -818,13 +818,13 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.56,
-            "yoy": 4.2,
+            "conf": 0.57,
+            "yoy": 5.8,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.79,
+            "conf": 0.77,
             "yoy": 6.3,
             "ok": true
           }
@@ -838,13 +838,13 @@
           "blind": {
             "pred": "beat",
             "conf": 0.63,
-            "yoy": 4.1,
+            "yoy": 5.8,
             "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.79,
-            "yoy": 13.8,
+            "conf": 0.78,
+            "yoy": 13.4,
             "ok": true
           }
         }
@@ -857,16 +857,16 @@
       "route": "openai",
       "avatar": "4o",
       "blind": {
-        "acc": 0.6,
-        "correct": 6,
+        "acc": 0.7,
+        "correct": 7,
         "n": 10,
-        "brier": 0.2658
+        "brier": 0.2125
       },
       "fed": {
-        "acc": 0.8,
-        "correct": 8,
+        "acc": 0.7,
+        "correct": 7,
         "n": 10,
-        "brier": 0.1473
+        "brier": 0.1753
       },
       "episodes": [
         {
@@ -878,14 +878,14 @@
           "blind": {
             "pred": "inline",
             "conf": 0.75,
-            "yoy": 4,
+            "yoy": 4.5,
             "ok": false
           },
           "fed": {
-            "pred": "beat",
+            "pred": "inline",
             "conf": 0.75,
-            "yoy": 5.2,
-            "ok": true
+            "yoy": 4,
+            "ok": false
           }
         },
         {
@@ -895,15 +895,15 @@
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "miss",
           "blind": {
-            "pred": "miss",
-            "conf": 0.7,
-            "yoy": 1.5,
-            "ok": true
+            "pred": "inline",
+            "conf": 0.75,
+            "yoy": 5.2,
+            "ok": false
           },
           "fed": {
             "pred": "miss",
-            "conf": 0.75,
-            "yoy": -2.5,
+            "conf": 0.7,
+            "yoy": 2.5,
             "ok": true
           }
         },
@@ -916,13 +916,13 @@
           "blind": {
             "pred": "inline",
             "conf": 0.75,
-            "yoy": 10.5,
+            "yoy": 11,
             "ok": false
           },
           "fed": {
             "pred": "miss",
-            "conf": 0.75,
-            "yoy": 8.5,
+            "conf": 0.6,
+            "yoy": 8,
             "ok": false
           }
         },
@@ -933,15 +933,15 @@
           "quarter": "Q2 FY2026 (ended May 29 2026)",
           "actual": "beat",
           "blind": {
-            "pred": "inline",
-            "conf": 0.8,
-            "yoy": 7.5,
-            "ok": false
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 12.5,
+            "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.8,
-            "yoy": 15.2,
+            "conf": 0.75,
+            "yoy": 14.5,
             "ok": true
           }
         },
@@ -954,13 +954,13 @@
           "blind": {
             "pred": "beat",
             "conf": 0.75,
-            "yoy": 32,
+            "yoy": 31,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.8,
-            "yoy": 31,
+            "yoy": 32,
             "ok": true
           }
         },
@@ -973,13 +973,13 @@
           "blind": {
             "pred": "beat",
             "conf": 0.75,
-            "yoy": 34,
+            "yoy": 33,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.8,
-            "yoy": 32,
+            "yoy": 31.5,
             "ok": true
           }
         },
@@ -990,15 +990,15 @@
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "inline",
           "blind": {
-            "pred": "miss",
-            "conf": 0.7,
+            "pred": "inline",
+            "conf": 0.75,
             "yoy": 3.5,
-            "ok": false
+            "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.75,
-            "yoy": 3.5,
+            "conf": 0.7,
+            "yoy": 8.5,
             "ok": false
           }
         },
@@ -1016,7 +1016,7 @@
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.8,
+            "conf": 0.75,
             "yoy": 12.5,
             "ok": true
           }
@@ -1030,13 +1030,13 @@
           "blind": {
             "pred": "beat",
             "conf": 0.75,
-            "yoy": 5.0,
+            "yoy": 6.5,
             "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.8,
-            "yoy": 6,
+            "conf": 0.85,
+            "yoy": 6.5,
             "ok": true
           }
         },
@@ -1049,7 +1049,7 @@
           "blind": {
             "pred": "beat",
             "conf": 0.75,
-            "yoy": 8.5,
+            "yoy": 10.5,
             "ok": true
           },
           "fed": {
@@ -1279,16 +1279,16 @@
       "route": "claude",
       "avatar": "Op",
       "blind": {
-        "acc": 0.3,
-        "correct": 3,
+        "acc": 0.4,
+        "correct": 4,
         "n": 10,
-        "brier": 0.2769
+        "brier": 0.2685
       },
       "fed": {
-        "acc": 0.8,
-        "correct": 8,
+        "acc": 0.9,
+        "correct": 9,
         "n": 10,
-        "brier": 0.1661
+        "brier": 0.1489
       },
       "episodes": [
         {
@@ -1344,7 +1344,7 @@
           "fed": {
             "pred": "beat",
             "conf": 0.6,
-            "yoy": 12.3,
+            "yoy": 11.5,
             "ok": true
           }
         },
@@ -1357,7 +1357,7 @@
           "blind": {
             "pred": "inline",
             "conf": 0.7,
-            "yoy": 9.5,
+            "yoy": 10.5,
             "ok": false
           },
           "fed": {
@@ -1376,7 +1376,7 @@
           "blind": {
             "pred": "beat",
             "conf": 0.6,
-            "yoy": 26.5,
+            "yoy": 25.0,
             "ok": true
           },
           "fed": {
@@ -1394,7 +1394,7 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.62,
+            "conf": 0.6,
             "yoy": 25,
             "ok": true
           },
@@ -1420,7 +1420,7 @@
           "fed": {
             "pred": "inline",
             "conf": 0.6,
-            "yoy": 6.5,
+            "yoy": 5.5,
             "ok": true
           }
         },
@@ -1452,14 +1452,14 @@
           "blind": {
             "pred": "inline",
             "conf": 0.55,
-            "yoy": 3.5,
+            "yoy": 3.2,
             "ok": false
           },
           "fed": {
-            "pred": "inline",
+            "pred": "beat",
             "conf": 0.6,
-            "yoy": 6.0,
-            "ok": false
+            "yoy": 6.5,
+            "ok": true
           }
         },
         {
@@ -1469,15 +1469,15 @@
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "beat",
           "blind": {
-            "pred": "inline",
+            "pred": "beat",
             "conf": 0.55,
             "yoy": 3.5,
-            "ok": false
+            "ok": true
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.66,
-            "yoy": 12.5,
+            "conf": 0.62,
+            "yoy": 11.5,
             "ok": true
           }
         }
@@ -1493,13 +1493,13 @@
         "acc": 0.8,
         "correct": 8,
         "n": 10,
-        "brier": 0.2088
+        "brier": 0.2044
       },
       "fed": {
         "acc": 0.7,
         "correct": 7,
         "n": 10,
-        "brier": 0.1788
+        "brier": 0.1706
       },
       "episodes": [
         {
@@ -1510,14 +1510,14 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.52,
-            "yoy": 4.5,
+            "conf": 0.55,
+            "yoy": 3.8,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.62,
-            "yoy": 3.8,
+            "yoy": 4.8,
             "ok": true
           }
         },
@@ -1529,14 +1529,14 @@
           "actual": "miss",
           "blind": {
             "pred": "inline",
-            "conf": 0.38,
-            "yoy": 3.2,
+            "conf": 0.42,
+            "yoy": 2.8,
             "ok": false
           },
           "fed": {
             "pred": "inline",
             "conf": 0.52,
-            "yoy": 4.8,
+            "yoy": 2.8,
             "ok": false
           }
         },
@@ -1548,13 +1548,13 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.55,
+            "conf": 0.52,
             "yoy": 10.3,
             "ok": true
           },
           "fed": {
             "pred": "inline",
-            "conf": 0.62,
+            "conf": 0.55,
             "yoy": 11.2,
             "ok": false
           }
@@ -1567,7 +1567,7 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.52,
+            "conf": 0.55,
             "yoy": 10.2,
             "ok": true
           },
@@ -1612,7 +1612,7 @@
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 34.2,
+            "yoy": 34.5,
             "ok": true
           }
         },
@@ -1624,8 +1624,8 @@
           "actual": "inline",
           "blind": {
             "pred": "inline",
-            "conf": 0.38,
-            "yoy": 14.2,
+            "conf": 0.42,
+            "yoy": 14.5,
             "ok": true
           },
           "fed": {
@@ -1650,7 +1650,7 @@
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 14.5,
+            "yoy": 14.2,
             "ok": true
           }
         },
@@ -1663,7 +1663,7 @@
           "blind": {
             "pred": "miss",
             "conf": 0.38,
-            "yoy": 3.2,
+            "yoy": 2.1,
             "ok": false
           },
           "fed": {
@@ -1682,13 +1682,13 @@
           "blind": {
             "pred": "beat",
             "conf": 0.55,
-            "yoy": 7.5,
+            "yoy": 7.2,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 13.5,
+            "yoy": 13.8,
             "ok": true
           }
         }
@@ -1701,16 +1701,16 @@
       "route": "claude",
       "avatar": "Ha",
       "blind": {
-        "acc": 0.5,
-        "correct": 5,
+        "acc": 0.4,
+        "correct": 4,
         "n": 10,
-        "brier": 0.2466
+        "brier": 0.282
       },
       "fed": {
-        "acc": 0.7,
-        "correct": 7,
+        "acc": 0.8,
+        "correct": 8,
         "n": 10,
-        "brier": 0.1874
+        "brier": 0.1578
       },
       "episodes": [
         {
@@ -1721,14 +1721,14 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.55,
-            "yoy": 3.2,
+            "conf": 0.65,
+            "yoy": 3.5,
             "ok": false
           },
           "fed": {
             "pred": "beat",
-            "conf": 0.72,
-            "yoy": 2.8,
+            "conf": 0.68,
+            "yoy": 5.2,
             "ok": true
           }
         },
@@ -1740,7 +1740,7 @@
           "actual": "miss",
           "blind": {
             "pred": "inline",
-            "conf": 0.55,
+            "conf": 0.62,
             "yoy": 2.1,
             "ok": false
           },
@@ -1759,15 +1759,15 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.6,
-            "yoy": 11.0,
-            "ok": false
-          },
-          "fed": {
-            "pred": "inline",
             "conf": 0.65,
             "yoy": 11.2,
             "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.68,
+            "yoy": 12.2,
+            "ok": true
           }
         },
         {
@@ -1796,10 +1796,10 @@
           "quarter": "FY2026 Q3 (ended Mar 31 2026)",
           "actual": "beat",
           "blind": {
-            "pred": "beat",
-            "conf": 0.62,
-            "yoy": 31.2,
-            "ok": true
+            "pred": "inline",
+            "conf": 0.65,
+            "yoy": 29.8,
+            "ok": false
           },
           "fed": {
             "pred": "beat",
@@ -1816,14 +1816,14 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.62,
+            "conf": 0.68,
             "yoy": 33.5,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 33.5,
+            "yoy": 32.5,
             "ok": true
           }
         },
@@ -1834,15 +1834,15 @@
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "inline",
           "blind": {
-            "pred": "inline",
-            "conf": 0.62,
-            "yoy": 3.2,
-            "ok": true
+            "pred": "miss",
+            "conf": 0.65,
+            "yoy": 2.8,
+            "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 8.2,
+            "yoy": 7.2,
             "ok": false
           }
         },
@@ -1853,10 +1853,10 @@
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "beat",
           "blind": {
-            "pred": "inline",
-            "conf": 0.65,
-            "yoy": 7.5,
-            "ok": false
+            "pred": "beat",
+            "conf": 0.68,
+            "yoy": 8.5,
+            "ok": true
           },
           "fed": {
             "pred": "beat",
@@ -1873,7 +1873,7 @@
           "actual": "beat",
           "blind": {
             "pred": "inline",
-            "conf": 0.65,
+            "conf": 0.6,
             "yoy": 2.8,
             "ok": false
           },
@@ -1892,14 +1892,14 @@
           "actual": "beat",
           "blind": {
             "pred": "beat",
-            "conf": 0.62,
-            "yoy": 4.2,
+            "conf": 0.68,
+            "yoy": 6.5,
             "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
-            "yoy": 7.8,
+            "yoy": 8.5,
             "ok": true
           }
         }

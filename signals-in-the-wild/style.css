@@ -204,6 +204,35 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .mining-reason { margin: 12px 0 0; font-size: 13px; color: var(--muted); }
 .mining-reason strong { color: var(--text); }
 
+/* ---------- Mining Recall / DDS (preliminary v1) ---------- */
+.mining-recall { margin-top: 18px; border-top: 1px dashed var(--border); padding-top: 14px; }
+.mining-recall-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.mining-recall-title { font-weight: 700; font-size: 14px; color: var(--text); display: inline-flex; align-items: center; gap: 8px; }
+.mining-recall-title::before { content: "⚑"; color: var(--inline); font-size: 15px; }
+.mining-recall-caveat {
+  display: flex; align-items: flex-start; gap: 10px;
+  background: rgba(245,178,61,0.08); border: 1px solid rgba(245,178,61,0.35);
+  border-radius: var(--radius); padding: 10px 12px; margin-bottom: 12px;
+  color: var(--muted); font-size: 12.5px; line-height: 1.5;
+}
+.mining-recall-caveat .mrc-icon { color: var(--inline); font-size: 16px; flex: 0 0 auto; }
+.mining-recall-caveat strong { color: var(--inline); }
+.mr-ep-label { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.mr-families { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.mr-families-l { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.04em; }
+.mr-fam-gold { font-family: var(--mono); font-size: 11px; color: var(--text); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; }
+.mr-fam-covered { font-family: var(--mono); font-size: 11px; color: var(--accent-2); background: rgba(124,92,255,0.12); border: 1px solid rgba(124,92,255,0.3); border-radius: 6px; padding: 2px 8px; }
+.mr-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.mr-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
+.mr-card-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.mr-cond { font-weight: 700; font-size: 13px; color: var(--text); }
+.mr-model { font-family: var(--mono); font-size: 11px; color: var(--muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; }
+.mr-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-bottom: 8px; }
+.mr-stat-v { font-size: 18px; font-weight: 800; letter-spacing: -0.01em; }
+.mr-stat-l { color: var(--muted); font-size: 10.5px; margin-top: 1px; text-transform: uppercase; letter-spacing: 0.03em; }
+.mr-fam-source { font-size: 11px; color: var(--muted); margin-top: 6px; }
+.mr-fam-source code { font-family: var(--mono); color: var(--text); }
+
 /* ---------- Callout / teaser ---------- */
 .callout {
   background: linear-gradient(120deg, rgba(124,92,255,0.14), rgba(61,220,151,0.08));
