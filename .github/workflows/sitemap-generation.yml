@@ -19,7 +19,7 @@ jobs:
       id: sitemap
       uses: cicirello/generate-sitemap@v1
       with:
-        base-url-path: http://behavior-in-the-wild.github.io
+        base-url-path: https://behavior-in-the-wild.github.io
     
     - name: Output stats
       run: |
