@@ -5,10 +5,10 @@
   "conditions": 2,
   "baselines": 1,
   "live_pending": 5,
-  "weekly_tracks": 6,
+  "weekly_tracks": 20,
   "outcomes": {
-    "beat": 8,
-    "inline": 1,
+    "beat": 7,
+    "inline": 2,
     "miss": 1
   }
 }

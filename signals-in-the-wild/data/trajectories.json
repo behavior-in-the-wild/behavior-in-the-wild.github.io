@@ -3,13 +3,21 @@
   "condition": "SITW format v2: sequential weekly forecast with carried state; date-capped self-mining; measures lead-time to correct",
   "config": {
     "models": [
-      "gpt-5.4",
-      "gpt-4o-mini"
+      "claude-opus-4-8",
+      "gpt-4o-mini",
+      "gpt-5.3-chat"
     ],
     "episodes": [
+      "ADBE.Q1-FY2026",
+      "ADBE.Q2-FY2026",
+      "CMG.Q1-2026",
+      "CMG.Q2-2026",
+      "DAL.Q1-2026",
       "DAL.Q2-2026",
+      "IBM.Q1-2026",
       "IBM.Q2-2026",
-      "CMG.Q2-2026"
+      "TEAM.FY26-Q3",
+      "TEAM.FY26-Q4"
     ],
     "week_offsets_weeks_before_cutoff": [
       5,
@@ -18,300 +26,28 @@
       0
     ],
     "queries_per_week": 3,
-    "serp_call_cap_per_week": 3,
+    "serp_call_cap_per_week": 2,
     "results_per_query": 6,
     "headlines_to_model": 6,
     "date_filter": "google tbs cd_max<=week_date (discovery-only)",
-    "chat_format": "OpenAI-route: /chat/completions, max_completion_tokens, no temperature",
+    "chat_format": "dual-route: OpenAI /chat/completions (max_completion_tokens) or Claude /anthropic (v1/messages)",
     "point_in_time_note": "Relies on Google cd_max filter only; Wayback verification of cited URLs is a later hardening step."
   },
   "items": [
     {
-      "model": "gpt-5.4",
-      "avatar": "5.4",
-      "id": "DAL.Q2-2026",
-      "company": "Delta Air Lines",
-      "ticker": "DAL",
-      "quarter": "Q2 2026 (Jun quarter)",
-      "quarter_short": "Q2 2026",
-      "cutoff_T": "2026-06-28",
-      "actual": "beat",
-      "final_correct": true,
-      "lead_time": {
-        "week_index": 0,
-        "week_date": "2026-05-24",
-        "weeks_before_cutoff": 5,
-        "approx_weeks_before_report": 6
-      },
-      "stability_changes": 0,
-      "earlier_differed": false,
-      "weeks": [
-        {
-          "week_index": 0,
-          "week_date": "2026-05-24",
-          "weeks_before_cutoff": 5,
-          "approx_weeks_before_report": 6,
-          "pred": "beat",
-          "conf": 0.61,
-          "ok": true,
-          "changed": false,
-          "n_docs": 12,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Delta Air Lines summer 2026 bookings demand premium international corporate travel",
-            "TSA checkpoint travel volumes April May 2026 airline fares jet fuel Delta",
-            "United American Southwest Alaska JetBlue Q2 2026 guidance demand pricing transatlantic domestic"
-          ]
-        },
-        {
-          "week_index": 1,
-          "week_date": "2026-06-07",
-          "weeks_before_cutoff": 3,
-          "approx_weeks_before_report": 4,
-          "pred": "beat",
-          "conf": 0.64,
-          "ok": true,
-          "changed": false,
-          "n_docs": 6,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Delta Air Lines June 2026 investor update summer bookings premium international corporate demand",
-            "TSA checkpoint throughput April May June 2026 domestic leisure business travel airfare card spend",
-            "United American Alaska JetBlue Southwest June 2026 demand pricing unit revenue transatlantic corporate"
-          ]
-        },
-        {
-          "week_index": 2,
-          "week_date": "2026-06-21",
-          "weeks_before_cutoff": 1,
-          "approx_weeks_before_report": 2,
-          "pred": "beat",
-          "conf": 0.58,
-          "ok": true,
-          "changed": true,
-          "n_docs": 12,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Delta Air Lines June 2026 Barclays investor conference Q2 demand unit revenue premium transatlantic",
-            "IATA June 2026 North Atlantic air travel demand fares load factor business travel",
-            "US airline June 2026 fare trends Hopper Airlines Reporting Corporation domestic international summer bookings"
-          ]
-        },
-        {
-          "week_index": 3,
-          "week_date": "2026-06-28",
-          "weeks_before_cutoff": 0,
-          "approx_weeks_before_report": 1,
-          "pred": "beat",
-          "conf": 0.57,
-          "ok": true,
-          "changed": false,
-          "n_docs": 18,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Delta Air Lines June 2026 investor conference Q2 2026 demand TRASM premium cabin corporate transatlantic",
-            "TSA checkpoint travel numbers June 2026 Memorial Day Delta Air Lines bookings fares",
-            "American United Southwest June 2026 investor update Q2 demand revenue PRASM domestic international"
-          ]
-        }
-      ]
-    },
-    {
-      "model": "gpt-5.4",
-      "avatar": "5.4",
-      "id": "IBM.Q2-2026",
-      "company": "IBM",
-      "ticker": "IBM",
-      "quarter": "Q2 2026 (Jun quarter)",
-      "quarter_short": "Q2 2026",
-      "cutoff_T": "2026-07-10",
-      "actual": "miss",
-      "final_correct": false,
-      "lead_time": null,
-      "stability_changes": 0,
-      "earlier_differed": false,
-      "weeks": [
-        {
-          "week_index": 0,
-          "week_date": "2026-06-05",
-          "weeks_before_cutoff": 5,
-          "approx_weeks_before_report": 6,
-          "pred": "inline",
-          "conf": 0.58,
-          "ok": false,
-          "changed": false,
-          "n_docs": 17,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "IBM Q2 2026 z17 mainframe launch bookings consulting demand Red Hat OpenShift AI",
-            "Accenture Q3 2026 consulting bookings cloud transformation demand June 2026 IBM read through",
-            "USD index Q2 2026 currency headwind enterprise software services Europe June 2026 IBM FX"
-          ]
-        },
-        {
-          "week_index": 1,
-          "week_date": "2026-06-19",
-          "weeks_before_cutoff": 3,
-          "approx_weeks_before_report": 4,
-          "pred": "inline",
-          "conf": 0.57,
-          "ok": false,
-          "changed": false,
-          "n_docs": 12,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "IBM watsonx consulting demand June 2026 enterprise AI services bookings",
-            "Kyndryl mainframe modernization z17 demand June 2026 IBM read through",
-            "Red Hat Summit 2026 OpenShift virtualization AI adoption customer demand June 2026"
-          ]
-        },
-        {
-          "week_index": 2,
-          "week_date": "2026-07-03",
-          "weeks_before_cutoff": 1,
-          "approx_weeks_before_report": 2,
-          "pred": "inline",
-          "conf": 0.59,
-          "ok": false,
-          "changed": false,
-          "n_docs": 6,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "IBM Q2 2026 revenue guidance currency headwind June 2026 USD consulting software",
-            "IBM z17 LinuxONE 5 launch client adoption backlog June 2026 mainframe demand",
-            "Accenture June 2026 consulting bookings AI demand enterprise spending IBM read through"
-          ]
-        },
-        {
-          "week_index": 3,
-          "week_date": "2026-07-10",
-          "weeks_before_cutoff": 0,
-          "approx_weeks_before_report": 1,
-          "pred": "inline",
-          "conf": 0.58,
-          "ok": false,
-          "changed": false,
-          "n_docs": 12,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "IBM Q2 2026 currency headwind dollar euro pound yen consulting software revenue June 2026",
-            "HCLTech TCS Infosys Wipro June 2026 quarter consulting demand discretionary spending AI read through IBM",
-            "IBM webMethods HashiCorp Apptio Q2 2026 integration demand client wins June 2026"
-          ]
-        }
-      ]
-    },
-    {
-      "model": "gpt-5.4",
-      "avatar": "5.4",
-      "id": "CMG.Q2-2026",
-      "company": "Chipotle",
-      "ticker": "CMG",
-      "quarter": "Q2 2026 (Jun quarter)",
-      "quarter_short": "Q2 2026",
-      "cutoff_T": "2026-07-17",
-      "actual": "beat",
-      "final_correct": false,
-      "lead_time": null,
-      "stability_changes": 0,
-      "earlier_differed": false,
-      "weeks": [
-        {
-          "week_index": 0,
-          "week_date": "2026-06-12",
-          "weeks_before_cutoff": 5,
-          "approx_weeks_before_report": 6,
-          "pred": "inline",
-          "conf": 0.55,
-          "ok": false,
-          "changed": false,
-          "n_docs": 0,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Chipotle Q2 2026 traffic trends throughput card spend menu price increase",
-            "Chipotle June 2026 limited time offer adobo ranch burrito launch unit openings",
-            "sweetgreen cava q2 2026 same store sales traffic fast casual burrito category demand"
-          ]
-        },
-        {
-          "week_index": 1,
-          "week_date": "2026-06-26",
-          "weeks_before_cutoff": 3,
-          "approx_weeks_before_report": 4,
-          "pred": "inline",
-          "conf": 0.56,
-          "ok": false,
-          "changed": false,
-          "n_docs": 18,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Chipotle June 2026 traffic Placer.ai foot traffic app downloads rewards members",
-            "Chipotle Q2 2026 menu price increase wage inflation avocado beef commodity costs",
-            "Taco Bell Q2 2026 burrito traffic CAVA Sweetgreen June 2026 card spend fast casual"
-          ]
-        },
-        {
-          "week_index": 2,
-          "week_date": "2026-07-10",
-          "weeks_before_cutoff": 1,
-          "approx_weeks_before_report": 2,
-          "pred": "inline",
-          "conf": 0.58,
-          "ok": false,
-          "changed": false,
-          "n_docs": 18,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Chipotle Q2 2026 openings remodels Chipotlane June 2026",
-            "Chipotle summer 2026 adobo ranch dip limited time June 2026",
-            "fast casual June 2026 card spending burrito Mexican restaurant traffic"
-          ]
-        },
-        {
-          "week_index": 3,
-          "week_date": "2026-07-17",
-          "weeks_before_cutoff": 0,
-          "approx_weeks_before_report": 1,
-          "pred": "inline",
-          "conf": 0.61,
-          "ok": false,
-          "changed": false,
-          "n_docs": 6,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Chipotle June 2026 traffic card spending fast casual burrito",
-            "Chipotle Q2 2026 menu price increase June 2026 avocado ranch launch",
-            "Q2 2026 restaurant foot traffic Mexican fast casual Placer.ai June 2026"
-          ]
-        }
-      ]
-    },
-    {
       "model": "gpt-4o-mini",
       "avatar": "4o",
-      "id": "DAL.Q2-2026",
-      "company": "Delta Air Lines",
-      "ticker": "DAL",
-      "quarter": "Q2 2026 (Jun quarter)",
-      "quarter_short": "Q2 2026",
-      "cutoff_T": "2026-06-28",
+      "id": "IBM.Q1-2026",
+      "company": "IBM",
+      "ticker": "IBM",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-04-10",
       "actual": "beat",
       "final_correct": true,
       "lead_time": {
         "week_index": 0,
-        "week_date": "2026-05-24",
+        "week_date": "2026-03-06",
         "weeks_before_cutoff": 5,
         "approx_weeks_before_report": 6
       },
@@ -320,9 +56,27 @@
       "weeks": [
         {
           "week_index": 0,
-          "week_date": "2026-05-24",
+          "week_date": "2026-03-06",
           "weeks_before_cutoff": 5,
           "approx_weeks_before_report": 6,
+          "pred": "beat",
+          "conf": 0.7,
+          "ok": true,
+          "changed": true,
+          "n_docs": 8,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "enterprise IT spending trends 2026 March",
+            "IBM Cloud Platform updates March 2026",
+            "cloud service provider earnings March 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-20",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
           "pred": "beat",
           "conf": 0.75,
           "ok": true,
@@ -331,63 +85,45 @@
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "Delta Airlines Q2 2026 revenue projections",
-            "airline passenger traffic trends summer 2026",
-            "Delta Air Lines pricing strategy June quarter"
-          ]
-        },
-        {
-          "week_index": 1,
-          "week_date": "2026-06-07",
-          "weeks_before_cutoff": 3,
-          "approx_weeks_before_report": 4,
-          "pred": "beat",
-          "conf": 0.8,
-          "ok": true,
-          "changed": true,
-          "n_docs": 8,
-          "serp_calls": 3,
-          "n_queries": 3,
-          "queries": [
-            "Delta Air Lines June 2026 pricing strategy",
-            "airline passenger traffic forecast summer 2026",
-            "fuel price impact on airline revenue Q2 2026"
+            "enterprise cloud adoption trends 2026",
+            "cloud services updates March 2026",
+            "macroeconomic impact IT budgets 2026"
           ]
         },
         {
           "week_index": 2,
-          "week_date": "2026-06-21",
+          "week_date": "2026-04-03",
           "weeks_before_cutoff": 1,
           "approx_weeks_before_report": 2,
           "pred": "beat",
-          "conf": 0.85,
+          "conf": 0.8,
           "ok": true,
           "changed": true,
-          "n_docs": 3,
+          "n_docs": 12,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "Delta airlines June 2026 ticket sales",
-            "airline fares summer 2026 trends",
-            "air travel demand recovery Q2 2026"
+            "large enterprise IT budgets 2026 adjustment",
+            "Q1 2026 tech company earnings reports",
+            "2026 global supply chain disruptions impact"
           ]
         },
         {
           "week_index": 3,
-          "week_date": "2026-06-28",
+          "week_date": "2026-04-10",
           "weeks_before_cutoff": 0,
           "approx_weeks_before_report": 1,
           "pred": "beat",
-          "conf": 0.9,
+          "conf": 0.85,
           "ok": true,
           "changed": true,
-          "n_docs": 8,
+          "n_docs": 6,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "Delta Air Lines Q2 2026 revenue growth signals",
-            "airline ticket prices June 2026",
-            "Delta Air Lines load factor trends Q2 2026"
+            "enterprise IT budgets 2026 adjustments",
+            "Q1 2026 tech earnings reports",
+            "2026 global IT spending forecast"
           ]
         }
       ]
@@ -404,12 +140,12 @@
       "actual": "miss",
       "final_correct": true,
       "lead_time": {
-        "week_index": 3,
-        "week_date": "2026-07-10",
-        "weeks_before_cutoff": 0,
-        "approx_weeks_before_report": 1
+        "week_index": 1,
+        "week_date": "2026-06-19",
+        "weeks_before_cutoff": 3,
+        "approx_weeks_before_report": 4
       },
-      "stability_changes": 2,
+      "stability_changes": 1,
       "earlier_differed": true,
       "weeks": [
         {
@@ -417,17 +153,17 @@
           "week_date": "2026-06-05",
           "weeks_before_cutoff": 5,
           "approx_weeks_before_report": 6,
-          "pred": "miss",
+          "pred": "inline",
           "conf": 0.7,
-          "ok": true,
+          "ok": false,
           "changed": false,
-          "n_docs": 12,
+          "n_docs": 10,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "IBM cloud growth trends 2026",
-            "IBM consulting segment performance Q2 2026",
-            "enterprise IT spending outlook June 2026"
+            "enterprise IT spending hybrid work 2026",
+            "IT services product launches 2026",
+            "global semiconductor supply chain issues 2026"
           ]
         },
         {
@@ -435,17 +171,17 @@
           "week_date": "2026-06-19",
           "weeks_before_cutoff": 3,
           "approx_weeks_before_report": 4,
-          "pred": "inline",
-          "conf": 0.6,
-          "ok": false,
+          "pred": "miss",
+          "conf": 0.8,
+          "ok": true,
           "changed": true,
-          "n_docs": 6,
+          "n_docs": 12,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "IBM software sales June 2026",
-            "IBM cloud partnerships Q2 2026",
-            "enterprise IT budgeting trends 2026"
+            "enterprise IT budget reallocations 2026",
+            "Accenture Q2 2026 earnings report analysis",
+            "cloud services adoption trends Q2 2026"
           ]
         },
         {
@@ -453,17 +189,17 @@
           "week_date": "2026-07-03",
           "weeks_before_cutoff": 1,
           "approx_weeks_before_report": 2,
-          "pred": "inline",
-          "conf": 0.65,
-          "ok": false,
-          "changed": false,
-          "n_docs": 6,
+          "pred": "miss",
+          "conf": 0.85,
+          "ok": true,
+          "changed": true,
+          "n_docs": 14,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "IBM Q2 2026 product launches",
-            "IBM consulting segment performance June 2026",
-            "enterprise software spending trends 2026"
+            "enterprise IT spending cuts 2026",
+            "Microsoft Q2 2026 earnings report analysis",
+            "2026 economic outlook technology spending"
           ]
         },
         {
@@ -472,16 +208,471 @@
           "weeks_before_cutoff": 0,
           "approx_weeks_before_report": 1,
           "pred": "miss",
-          "conf": 0.75,
+          "conf": 0.85,
           "ok": true,
-          "changed": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "CIO survey enterprise IT budget trends Q2 2026",
+            "2026 Q2 earnings Microsoft Oracle revenue impact",
+            "2026 economic outlook IT spending trends inflation effects"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "ADBE.Q1-FY2026",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+      "quarter_short": "Q1 FY2026",
+      "cutoff_T": "2026-02-28",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-01-24",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
           "n_docs": 18,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "IBM Q2 2026 software sales performance",
-            "enterprise AI adoption trends June 2026",
-            "IBM consulting segment clients feedback 2026"
+            "customer adoption trends Adobe 2026",
+            "Adobe product launches 2026",
+            "macro environment software spending 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-02-07",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 13,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "customer adoption trends creative software 2026",
+            "Q1 2026 earnings reports SaaS companies",
+            "macro indicators software spending February 2026"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-02-21",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "creative software customer trends 2026",
+            "Q1 2026 earnings reports SaaS companies early",
+            "macroeconomic conditions software spending February 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-02-28",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "SaaS customer acquisition retention trends 2026",
+            "2026 Q1 earnings reports software companies impact revenue",
+            "macroeconomic conditions tech spending February 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "ADBE.Q2-FY2026",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "quarter": "Q2 FY2026 (ended May 29 2026)",
+      "quarter_short": "Q2 FY2026",
+      "cutoff_T": "2026-05-30",
+      "actual": "beat",
+      "final_correct": true,
+      "lead_time": {
+        "week_index": 3,
+        "week_date": "2026-05-30",
+        "weeks_before_cutoff": 0,
+        "approx_weeks_before_report": 1
+      },
+      "stability_changes": 1,
+      "earlier_differed": true,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-04-25",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 8,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "Adobe Creative Cloud subscription growth April 2026",
+            "Adobe software updates new features April 2026",
+            "US economic forecast April 2026 consumer spending"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-05-09",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 13,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "business marketing budgets 2026 adjustment",
+            "consumer spending trends tech products May 2026",
+            "competitors software promotions May 2026"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-05-23",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 16,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "2026 business digital marketing budget adjustments",
+            "software competitors promotions Q2 2026",
+            "2026 consumer technology spending trends spring"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-05-30",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "beat",
+          "conf": 0.8,
+          "ok": true,
+          "changed": true,
+          "n_docs": 11,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "2026 digital marketing budgets adjustments Q2",
+            "2026 Q2 earnings reports digital marketing software",
+            "2026 consumer spending forecast spring"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "TEAM.FY26-Q3",
+      "company": "Atlassian",
+      "ticker": "TEAM",
+      "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+      "quarter_short": "FY2026 Q3",
+      "cutoff_T": "2026-04-18",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-03-14",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "cloud software customer adoption trends 2026",
+            "2026 economic outlook IT spending forecast",
+            "2026 competitors cloud collaboration tools launch"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-28",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "enterprise software adoption trends 2026",
+            "cloud software competitors earnings Q1 2026",
+            "cloud collaboration tools product launches features 2026"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-04-11",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 15,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "remote work tools trends 2026",
+            "cloud software vendors revenue growth forecast 2026",
+            "competitors cloud adoption strategies 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-04-18",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 9,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "enterprise collaboration tools adoption trends 2026",
+            "competitors cloud software earnings reports April 2026",
+            "cloud software new product launches updates April 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "TEAM.FY26-Q4",
+      "company": "Atlassian",
+      "ticker": "TEAM",
+      "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+      "quarter_short": "FY2026 Q4",
+      "cutoff_T": "2026-07-25",
+      "actual": "beat",
+      "final_correct": true,
+      "lead_time": {
+        "week_index": 0,
+        "week_date": "2026-06-20",
+        "weeks_before_cutoff": 5,
+        "approx_weeks_before_report": 6
+      },
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-06-20",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "beat",
+          "conf": 0.75,
+          "ok": true,
+          "changed": false,
+          "n_docs": 18,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "SMB adoption Atlassian tools",
+            "SaaS company earnings reports June 2026",
+            "collaboration software market share analysis 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-07-04",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "beat",
+          "conf": 0.8,
+          "ok": true,
+          "changed": true,
+          "n_docs": 6,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "Atlassian enterprise adoption rate 2026",
+            "June 2026 SaaS earnings collaboration software",
+            "Atlassian product updates pricing changes July 2026"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-07-18",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "beat",
+          "conf": 0.85,
+          "ok": true,
+          "changed": true,
+          "n_docs": 17,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "SaaS collaboration software earnings reports Q2 2026",
+            "enterprise adoption collaboration software trends 2026",
+            "competitor product launches collaboration software July 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-07-25",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "beat",
+          "conf": 0.9,
+          "ok": true,
+          "changed": true,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "enterprise software spending trends 2026",
+            "SaaS collaboration companies Q2 2026 earnings",
+            "SaaS tools pricing updates 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "CMG.Q1-2026",
+      "company": "Chipotle",
+      "ticker": "CMG",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-04-17",
+      "actual": "inline",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-03-13",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "miss",
+          "conf": 0.65,
+          "ok": false,
+          "changed": true,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "restaurant industry consumer spending March 2026",
+            "Chipotle promotions limited-time offers March 2026",
+            "fast casual restaurant earnings reports Q1 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-27",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "miss",
+          "conf": 0.7,
+          "ok": false,
+          "changed": true,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "fast casual dining consumer trends March 2026",
+            "restaurant chains earnings reports Q1 2026",
+            "macroeconomic indicators consumer spending March 2026"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-04-10",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "miss",
+          "conf": 0.75,
+          "ok": false,
+          "changed": true,
+          "n_docs": 8,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "consumer sentiment April 2026 fast casual dining",
+            "macroeconomic indicators consumer spending April 2026",
+            "fast casual restaurant sales trends Q1 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-04-17",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "miss",
+          "conf": 0.75,
+          "ok": false,
+          "changed": false,
+          "n_docs": 11,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "consumer sentiment April 2026",
+            "fast casual dining earnings reports Q1 2026",
+            "inflation consumer spending April 2026"
           ]
         }
       ]
@@ -495,7 +686,7 @@
       "quarter": "Q2 2026 (Jun quarter)",
       "quarter_short": "Q2 2026",
       "cutoff_T": "2026-07-17",
-      "actual": "beat",
+      "actual": "inline",
       "final_correct": false,
       "lead_time": null,
       "stability_changes": 1,
@@ -506,17 +697,17 @@
           "week_date": "2026-06-12",
           "weeks_before_cutoff": 5,
           "approx_weeks_before_report": 6,
-          "pred": "miss",
+          "pred": "beat",
           "conf": 0.7,
           "ok": false,
           "changed": true,
-          "n_docs": 7,
+          "n_docs": 5,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "Chipotle Q2 2026 menu innovations",
-            "Chipotle foot traffic trends June 2026",
-            "Q2 2026 consumer spending fast casual restaurants"
+            "consumer spending June 2026 dining out trends",
+            "restaurant earnings Q1 2026 trends",
+            "Chipotle new product launches summer 2026"
           ]
         },
         {
@@ -524,17 +715,17 @@
           "week_date": "2026-06-26",
           "weeks_before_cutoff": 3,
           "approx_weeks_before_report": 4,
-          "pred": "miss",
-          "conf": 0.7,
+          "pred": "beat",
+          "conf": 0.65,
           "ok": false,
           "changed": false,
-          "n_docs": 6,
+          "n_docs": 14,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "Chipotle June 2026 foot traffic analysis",
-            "Chipotle Q2 2026 pricing strategy",
-            "fast casual dining trends June 2026"
+            "consumer preferences fast-casual dining trends June 2026",
+            "fast-casual restaurant Q2 2026 earnings trends",
+            "inflation impact discretionary spending dining June 2026"
           ]
         },
         {
@@ -543,16 +734,1015 @@
           "weeks_before_cutoff": 1,
           "approx_weeks_before_report": 2,
           "pred": "miss",
+          "conf": 0.55,
+          "ok": false,
+          "changed": true,
+          "n_docs": 13,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "consumer dining preferences inflation impact June 2026",
+            "fast-casual restaurant promotions successful June 2026",
+            "fast-casual competitors strategies June 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-07-17",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "miss",
+          "conf": 0.65,
+          "ok": false,
+          "changed": true,
+          "n_docs": 18,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "consumer dining trends June 2026 home eating out",
+            "fast-casual restaurant promotional strategies June 2026",
+            "inflation consumer spending fast-casual restaurant June 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "DAL.Q1-2026",
+      "company": "Delta Air Lines",
+      "ticker": "DAL",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-03-27",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 2,
+      "earlier_differed": true,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-02-20",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 7,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "travel consumer preferences 2026 trends",
+            "oil prices airline operating costs February 2026",
+            "budget airlines strategies 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-06",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.7,
+          "ok": false,
+          "changed": false,
+          "n_docs": 10,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "2026 travel consumer preferences trends",
+            "oil prices trends March 2026",
+            "budget airlines capacity growth 2026"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-03-20",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "miss",
+          "conf": 0.6,
+          "ok": false,
+          "changed": true,
+          "n_docs": 16,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "business travel spending trends March 2026",
+            "budget airlines ticket prices March 2026",
+            "airline revenue reports March 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-03-27",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "travel demand higher-income groups spring 2026",
+            "budget airlines Q1 2026 revenue forecasts",
+            "economic indicators consumer spending March 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-4o-mini",
+      "avatar": "4o",
+      "id": "DAL.Q2-2026",
+      "company": "Delta Air Lines",
+      "ticker": "DAL",
+      "quarter": "Q2 2026 (Jun quarter)",
+      "quarter_short": "Q2 2026",
+      "cutoff_T": "2026-06-28",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 1,
+      "earlier_differed": true,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-05-24",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "beat",
+          "conf": 0.75,
+          "ok": true,
+          "changed": false,
+          "n_docs": 18,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "2026 travel trends consumer behavior",
+            "airline competition summer 2026 flight capacities",
+            "2026 summer fuel price forecasts"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-06-07",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "beat",
           "conf": 0.8,
+          "ok": true,
+          "changed": true,
+          "n_docs": 18,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "2026 summer travel consumer spending trends",
+            "2026 summer fuel prices forecast",
+            "2026 summer airline capacity low-cost carriers"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-06-21",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "beat",
+          "conf": 0.75,
+          "ok": true,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 3,
+          "n_queries": 3,
+          "queries": [
+            "summer 2026 travel consumer spending increase",
+            "airline earnings reports Q2 2026",
+            "summer 2026 fuel prices forecast"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-06-28",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "miss",
+          "conf": 0.65,
           "ok": false,
           "changed": true,
           "n_docs": 6,
           "serp_calls": 3,
           "n_queries": 3,
           "queries": [
-            "Chipotle Q2 2026 promotional offers",
-            "Chipotle competitor sales performance June 2026",
-            "fast casual dining consumer sentiment July 2026"
+            "consumer confidence travel spending June 2026",
+            "airline earnings forecasts Q2 2026",
+            "jet fuel prices forecast June 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "gpt-5.3-chat",
+      "avatar": "5.3",
+      "id": "IBM.Q1-2026",
+      "company": "IBM",
+      "ticker": "IBM",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-04-10",
+      "actual": "beat",
+      "final_correct": true,
+      "lead_time": {
+        "week_index": 0,
+        "week_date": "2026-03-06",
+        "weeks_before_cutoff": 5,
+        "approx_weeks_before_report": 6
+      },
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-03-06",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "beat",
+          "conf": 0.57,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture enterprise AI bookings cloud consulting demand January 2026",
+            "enterprise IT spending survey hybrid cloud modernization budgets 2026",
+            "US dollar index multinational software FX headwind March 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-20",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Oracle March 2026 cloud infrastructure AI demand enterprise spending hybrid cloud",
+            "enterprise mainframe modernization spending survey 2026 banking infrastructure refresh",
+            "US dollar index January February March 2026 multinational software FX headwind"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-04-03",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "beat",
+          "conf": 0.62,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture March 2026 generative AI bookings enterprise modernization consulting demand hybrid cloud",
+            "IBM z17 customer adoption banking telecom mainframe refresh April 2026",
+            "US dollar index Q1 2026 software services FX headwind multinational earnings"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-04-10",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "beat",
+          "conf": 0.64,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Oracle March 2026 cloud infrastructure demand AI enterprise spending Q1 2026",
+            "bank core modernization spending 2026 mainframe upgrade CIO survey financial services",
+            "Red Hat OpenShift adoption enterprise hybrid cloud Kubernetes demand 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "IBM.Q1-2026",
+      "company": "IBM",
+      "ticker": "IBM",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-04-10",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-03-06",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.45,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture earnings bookings enterprise IT spending February 2026",
+            "IBM watsonx AI bookings backlog growth early 2026",
+            "US dollar euro exchange rate trend first quarter 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-20",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.45,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture consulting bookings guidance March 2026 enterprise IT demand",
+            "IBM mainframe z17 refresh cycle revenue software growth early 2026",
+            "euro dollar exchange rate first quarter 2026 dollar weakness"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-04-03",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.5,
+          "ok": false,
+          "changed": true,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "IBM z17 mainframe adoption revenue momentum first quarter 2026",
+            "Microsoft Azure AWS enterprise AI hybrid cloud spending early 2026",
+            "US dollar index weakness Q1 2026 multinational revenue tailwind"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-04-10",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.5,
+          "ok": false,
+          "changed": false,
+          "n_docs": 3,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture March 2026 quarter bookings consulting demand outlook",
+            "Red Hat OpenShift enterprise adoption growth early 2026",
+            "US dollar euro exchange rate Q1 2026 weakness tech earnings tailwind"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "IBM.Q2-2026",
+      "company": "IBM",
+      "ticker": "IBM",
+      "quarter": "Q2 2026 (Jun quarter)",
+      "quarter_short": "Q2 2026",
+      "cutoff_T": "2026-07-10",
+      "actual": "miss",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-06-05",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.4,
+          "ok": false,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "IBM watsonx AI bookings growth enterprise adoption 2026",
+            "Accenture consulting bookings demand outlook Q2 2026",
+            "US dollar index weakness spring 2026 FX tailwind tech"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-06-19",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.4,
+          "ok": false,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture Q3 2026 bookings results revenue May June",
+            "IBM z17 mainframe adoption momentum sales 2026",
+            "US dollar index decline euro strength Q2 2026 tech revenue"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-07-03",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.42,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Accenture Cognizant Q2 2026 IT services demand bookings weak",
+            "euro dollar exchange rate Q2 2026 second quarter average strength",
+            "enterprise generative AI software spending Red Hat OpenShift adoption 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-07-10",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.42,
+          "ok": false,
+          "changed": false,
+          "n_docs": 0,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "euro dollar exchange rate April May June 2026 average dollar weakness",
+            "SAP cloud backlog Q2 2026 enterprise software demand results",
+            "IBM z17 mainframe launch 2026 adoption demand cycle"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "ADBE.Q1-FY2026",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+      "quarter_short": "Q1 FY2026",
+      "cutoff_T": "2026-02-28",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-01-24",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "enterprise software subscription demand January 2026 seat growth",
+            "Adobe Firefly AI monetization Creative Cloud adoption 2026",
+            "Canva Figma market share creative software budget 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-02-07",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 7,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Microsoft Salesforce enterprise cloud spending January 2026 earnings guidance",
+            "Adobe Firefly generative AI credits pricing enterprise deals early 2026",
+            "US dollar euro exchange rate January February 2026 software revenue headwind"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-02-21",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Canva enterprise growth Adobe Creative Cloud competition February 2026",
+            "Adobe Acrobat AI Assistant enterprise adoption early 2026",
+            "Figma Autodesk software subscription demand results February 2026"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-02-28",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Salesforce ServiceNow enterprise software spending guidance February 2026",
+            "Adobe Firefly generative AI credits pricing Creative Cloud upsell 2026",
+            "US dollar strength software revenue FX headwind first quarter 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "ADBE.Q2-FY2026",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "quarter": "Q2 FY2026 (ended May 29 2026)",
+      "quarter_short": "Q2 FY2026",
+      "cutoff_T": "2026-05-30",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-04-25",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 10,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Adobe Firefly enterprise adoption AI revenue growth 2026",
+            "Canva Midjourney market share creative software 2026",
+            "enterprise SaaS software spending trends Q1 2026 earnings"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-05-09",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Salesforce ServiceNow subscription billings growth Q1 2026 enterprise software demand",
+            "Adobe Firefly generative credits pricing tier ARR growth spring 2026",
+            "US dollar euro weakness April 2026 software revenue FX tailwind"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-05-23",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 7,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Canva Figma subscription growth enterprise seats May 2026",
+            "Adobe Firefly app subscription adoption GenStudio enterprise deals spring 2026",
+            "euro dollar exchange rate April May 2026 US software revenue currency tailwind"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-05-30",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.6,
+          "ok": false,
+          "changed": false,
+          "n_docs": 7,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Salesforce ServiceNow enterprise software spending Q1 2026 earnings demand",
+            "euro dollar exchange rate April May 2026 dollar weakness",
+            "enterprise generative AI creative software adoption spending survey spring 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "TEAM.FY26-Q3",
+      "company": "Atlassian",
+      "ticker": "TEAM",
+      "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+      "quarter_short": "FY2026 Q3",
+      "cutoff_T": "2026-04-18",
+      "actual": "beat",
+      "final_correct": true,
+      "lead_time": {
+        "week_index": 0,
+        "week_date": "2026-03-14",
+        "weeks_before_cutoff": 5,
+        "approx_weeks_before_report": 6
+      },
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-03-14",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 3,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "ServiceNow Q4 2025 earnings enterprise software demand seat growth",
+            "Atlassian Rovo AI adoption enterprise pricing 2026",
+            "Atlassian data center to cloud migration enterprise 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-28",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Microsoft Q2 2026 earnings enterprise seat growth collaboration software demand",
+            "Atlassian Rovo AI enterprise adoption pricing upsell March 2026",
+            "enterprise IT software budget spending outlook Q1 2026 macro"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-04-11",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 7,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "ServiceNow Q1 2026 earnings subscription revenue guidance enterprise demand",
+            "Microsoft Copilot GitHub Jira alternative developer tools spending 2026",
+            "enterprise IT software budget spending outlook Q1 2026 tariffs macro"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-04-18",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Microsoft Azure cloud growth March quarter 2026 enterprise seat expansion",
+            "Atlassian Rovo AI adoption enterprise pricing 2026",
+            "enterprise software IT budget growth Q1 2026 spending survey"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "TEAM.FY26-Q4",
+      "company": "Atlassian",
+      "ticker": "TEAM",
+      "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+      "quarter_short": "FY2026 Q4",
+      "cutoff_T": "2026-07-25",
+      "actual": "beat",
+      "final_correct": true,
+      "lead_time": {
+        "week_index": 0,
+        "week_date": "2026-06-20",
+        "weeks_before_cutoff": 5,
+        "approx_weeks_before_report": 6
+      },
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-06-20",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "ServiceNow Q2 2026 cloud seat expansion enterprise software demand",
+            "Atlassian Rovo AI adoption enterprise pricing traction 2026",
+            "Monday.com Microsoft Planner collaboration budget competition 2026"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-07-04",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Microsoft cloud enterprise seat growth Q2 2026 software spending",
+            "Atlassian cloud migration data center paid seats expansion 2026",
+            "enterprise IT software budget spending June 2026 macro"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-07-18",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 4,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "ServiceNow Q2 2026 earnings enterprise cloud subscription growth",
+            "Atlassian Rovo AI adoption pricing enterprise 2026",
+            "Monday.com GitLab enterprise seat growth mid 2026 competition"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-07-25",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "beat",
+          "conf": 0.6,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Microsoft Azure enterprise cloud spending June quarter 2026 growth",
+            "enterprise software IT budget spending trend mid 2026 macro",
+            "Monday.com Asana seat expansion enterprise demand Q2 2026"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "CMG.Q1-2026",
+      "company": "Chipotle",
+      "ticker": "CMG",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-04-17",
+      "actual": "inline",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 1,
+      "earlier_differed": true,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-03-13",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.55,
+          "ok": true,
+          "changed": false,
+          "n_docs": 11,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "restaurant foot traffic card spending February 2026 slowdown",
+            "fast casual restaurant same store sales January February 2026 traffic",
+            "consumer spending pullback dining out early 2026 inflation"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-27",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "miss",
+          "conf": 0.6,
+          "ok": false,
+          "changed": true,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "McDonald's Sweetgreen Cava first quarter 2026 same store sales traffic",
+            "Chipotle new menu limited time offer early 2026 launch",
+            "restaurant industry traffic decline March 2026 weather consumer spending"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-04-10",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "miss",
+          "conf": 0.58,
+          "ok": false,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "restaurant consumer card spending traffic March 2026 fast casual",
+            "McDonald's Wingstop first quarter 2026 same store sales traffic results",
+            "Chipotle new menu item limited time offer spring 2026 launch"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-04-17",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "miss",
+          "conf": 0.57,
+          "ok": false,
+          "changed": false,
+          "n_docs": 8,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "consumer spending restaurant traffic March 2026 card data slowdown",
+            "fast casual value perception consumer pullback dining 2026",
+            "Chipotle spring 2026 menu price increase limited time offering"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "CMG.Q2-2026",
+      "company": "Chipotle",
+      "ticker": "CMG",
+      "quarter": "Q2 2026 (Jun quarter)",
+      "quarter_short": "Q2 2026",
+      "cutoff_T": "2026-07-17",
+      "actual": "inline",
+      "final_correct": true,
+      "lead_time": {
+        "week_index": 0,
+        "week_date": "2026-06-12",
+        "weeks_before_cutoff": 5,
+        "approx_weeks_before_report": 6
+      },
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-06-12",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.4,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "restaurant foot traffic card spending trends May 2026",
+            "fast casual same store sales trends spring 2026 Sweetgreen Cava",
+            "Chipotle limited time menu launch spring 2026 traffic"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-06-26",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.4,
+          "ok": true,
+          "changed": false,
+          "n_docs": 0,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Cava Sweetgreen Q2 2026 same store sales results traffic",
+            "consumer restaurant spending pullback June 2026 dining out",
+            "Chipotle menu price increase summer 2026 new limited time offer"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-07-10",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.4,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "restaurant foot traffic card spending trend June 2026 fast casual",
+            "Cava Sweetgreen same store sales Q2 2026 traffic guidance",
+            "Chipotle summer 2026 limited time menu adobo new item pricing"
           ]
         },
         {
@@ -561,16 +1751,105 @@
           "weeks_before_cutoff": 0,
           "approx_weeks_before_report": 1,
           "pred": "inline",
-          "conf": 0.7,
-          "ok": false,
-          "changed": true,
-          "n_docs": 6,
-          "serp_calls": 3,
+          "conf": 0.4,
+          "ok": true,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
           "n_queries": 3,
           "queries": [
-            "Chipotle digital engagement June 2026",
-            "fast casual consumer spending July 2026",
-            "Q2 2026 menu innovation Chipotle"
+            "Sweetgreen Shake Shack Q2 2026 same store sales traffic results",
+            "restaurant card spending June 2026 consumer discretionary slowdown",
+            "Chipotle adobo ranch summer menu 2026 pricing customer response"
+          ]
+        }
+      ]
+    },
+    {
+      "model": "claude-opus-4-8",
+      "avatar": "Op",
+      "id": "DAL.Q1-2026",
+      "company": "Delta Air Lines",
+      "ticker": "DAL",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "quarter_short": "Q1 2026",
+      "cutoff_T": "2026-03-27",
+      "actual": "beat",
+      "final_correct": false,
+      "lead_time": null,
+      "stability_changes": 0,
+      "earlier_differed": false,
+      "weeks": [
+        {
+          "week_index": 0,
+          "week_date": "2026-02-20",
+          "weeks_before_cutoff": 5,
+          "approx_weeks_before_report": 6,
+          "pred": "inline",
+          "conf": 0.5,
+          "ok": false,
+          "changed": false,
+          "n_docs": 6,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "TSA checkpoint throughput January 2026 year over year",
+            "United Airlines Q4 2025 earnings first quarter demand outlook premium",
+            "corporate business travel bookings recovery early 2026 survey"
+          ]
+        },
+        {
+          "week_index": 1,
+          "week_date": "2026-03-06",
+          "weeks_before_cutoff": 3,
+          "approx_weeks_before_report": 4,
+          "pred": "inline",
+          "conf": 0.55,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "Delta January 2026 investor update Q1 revenue guidance TRASM premium",
+            "consumer spending travel weakness February 2026 airline demand slowdown",
+            "domestic airfare pricing trends February 2026 capacity discipline"
+          ]
+        },
+        {
+          "week_index": 2,
+          "week_date": "2026-03-20",
+          "weeks_before_cutoff": 1,
+          "approx_weeks_before_report": 2,
+          "pred": "inline",
+          "conf": 0.5,
+          "ok": false,
+          "changed": true,
+          "n_docs": 7,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "TSA checkpoint throughput March 2026 travel demand decline",
+            "United Airlines guidance cut March 2026 demand softness domestic",
+            "consumer confidence February 2026 discretionary spending pullback travel"
+          ]
+        },
+        {
+          "week_index": 3,
+          "week_date": "2026-03-27",
+          "weeks_before_cutoff": 0,
+          "approx_weeks_before_report": 1,
+          "pred": "inline",
+          "conf": 0.5,
+          "ok": false,
+          "changed": false,
+          "n_docs": 12,
+          "serp_calls": 2,
+          "n_queries": 3,
+          "queries": [
+            "American Airlines investor update March 2026 unit revenue TRASM guidance",
+            "airline premium cabin international demand strong March 2026 corporate travel",
+            "business travel corporate bookings recovery March 2026 managed travel spend"
           ]
         }
       ]

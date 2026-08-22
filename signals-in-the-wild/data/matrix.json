@@ -63,7 +63,7 @@
       "company": "Chipotle",
       "color": "#C0592B",
       "quarter_short": "Q2 2026",
-      "actual": "beat"
+      "actual": "inline"
     },
     {
       "id": "DAL.Q1-2026",
@@ -89,8 +89,8 @@
       "avatar": "5.4",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.3,
-      "fed_acc": 0.7,
+      "blind_acc": 0.4,
+      "fed_acc": 0.6,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -179,12 +179,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "inline",
-            "ok": false,
+            "ok": true,
             "conf": 0.56
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.72
           }
         },
@@ -220,8 +220,8 @@
       "avatar": "5m",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.3,
-      "fed_acc": 0.6,
+      "blind_acc": 0.4,
+      "fed_acc": 0.5,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -310,12 +310,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "inline",
-            "ok": false,
+            "ok": true,
             "conf": 0.56
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.77
           }
         },
@@ -351,8 +351,8 @@
       "avatar": "5.2",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.2,
-      "fed_acc": 0.7,
+      "blind_acc": 0.3,
+      "fed_acc": 0.6,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -441,12 +441,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "inline",
-            "ok": false,
+            "ok": true,
             "conf": 0.48
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.62
           }
         },
@@ -482,8 +482,8 @@
       "avatar": "5.3",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.5,
-      "fed_acc": 0.8,
+      "blind_acc": 0.4,
+      "fed_acc": 0.7,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -572,12 +572,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.61
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.72
           }
         },
@@ -613,8 +613,8 @@
       "avatar": "4o",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.7,
-      "fed_acc": 0.7,
+      "blind_acc": 0.6,
+      "fed_acc": 0.6,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -703,12 +703,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.75
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.75
           }
         },
@@ -875,8 +875,8 @@
       "avatar": "Op",
       "type": "LLM",
       "route": "claude",
-      "blind_acc": 0.4,
-      "fed_acc": 0.9,
+      "blind_acc": 0.5,
+      "fed_acc": 0.8,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -965,12 +965,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "inline",
-            "ok": false,
+            "ok": true,
             "conf": 0.55
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.6
           }
         },
@@ -1006,8 +1006,8 @@
       "avatar": "So",
       "type": "LLM",
       "route": "claude",
-      "blind_acc": 0.8,
-      "fed_acc": 0.7,
+      "blind_acc": 0.7,
+      "fed_acc": 0.6,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -1096,12 +1096,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.55
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.72
           }
         },
@@ -1137,8 +1137,8 @@
       "avatar": "Ha",
       "type": "LLM",
       "route": "claude",
-      "blind_acc": 0.4,
-      "fed_acc": 0.8,
+      "blind_acc": 0.3,
+      "fed_acc": 0.7,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -1227,12 +1227,12 @@
         "CMG.Q2-2026": {
           "blind": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.68
           },
           "fed": {
             "pred": "beat",
-            "ok": true,
+            "ok": false,
             "conf": 0.72
           }
         },

@@ -1318,10 +1318,10 @@
           "quarter": "Q2 2026 (Jun quarter)",
           "cutoff_T": "2026-07-17",
           "consensus_rev_b": 3.35,
-          "actual_rev_b": 3.4,
+          "actual_rev_b": 3.349,
           "actual_yoy_pct": 9.3,
           "prior_trend": "Q1 transaction inflection to positive; base recovering",
-          "surprise_actual": "beat",
+          "surprise_actual": "inline",
           "signals": [
             "Honey Chicken LTO relaunch + $0 delivery (Apr) -> top order-rate LTO ever, strong traffic",
             "Cava Q1 comps +9.7% and raised guide -> category demand firm (read-through)",
@@ -1338,7 +1338,7 @@
               "condition": "blind",
               "pred": "inline",
               "conf": 0.56,
-              "ok": false
+              "ok": true
             },
             {
               "key": "gpt-5.4",
@@ -1347,7 +1347,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.72,
-              "ok": true
+              "ok": false
             },
             {
               "key": "gpt-5.4-mini",
@@ -1356,7 +1356,7 @@
               "condition": "blind",
               "pred": "inline",
               "conf": 0.56,
-              "ok": false
+              "ok": true
             },
             {
               "key": "gpt-5.4-mini",
@@ -1365,7 +1365,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.77,
-              "ok": true
+              "ok": false
             },
             {
               "key": "gpt-5.2",
@@ -1374,7 +1374,7 @@
               "condition": "blind",
               "pred": "inline",
               "conf": 0.48,
-              "ok": false
+              "ok": true
             },
             {
               "key": "gpt-5.2",
@@ -1383,7 +1383,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.62,
-              "ok": true
+              "ok": false
             },
             {
               "key": "gpt-5.3-chat",
@@ -1392,7 +1392,7 @@
               "condition": "blind",
               "pred": "beat",
               "conf": 0.61,
-              "ok": true
+              "ok": false
             },
             {
               "key": "gpt-5.3-chat",
@@ -1401,7 +1401,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.72,
-              "ok": true
+              "ok": false
             },
             {
               "key": "gpt-4o-mini",
@@ -1410,7 +1410,7 @@
               "condition": "blind",
               "pred": "beat",
               "conf": 0.75,
-              "ok": true
+              "ok": false
             },
             {
               "key": "gpt-4o-mini",
@@ -1419,7 +1419,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.75,
-              "ok": true
+              "ok": false
             },
             {
               "key": "Kimi-K2.5",
@@ -1446,7 +1446,7 @@
               "condition": "blind",
               "pred": "inline",
               "conf": 0.55,
-              "ok": false
+              "ok": true
             },
             {
               "key": "claude-opus-4-8",
@@ -1455,7 +1455,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.6,
-              "ok": true
+              "ok": false
             },
             {
               "key": "claude-sonnet-4-6",
@@ -1464,7 +1464,7 @@
               "condition": "blind",
               "pred": "beat",
               "conf": 0.55,
-              "ok": true
+              "ok": false
             },
             {
               "key": "claude-sonnet-4-6",
@@ -1473,7 +1473,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.72,
-              "ok": true
+              "ok": false
             },
             {
               "key": "claude-haiku-4-5",
@@ -1482,7 +1482,7 @@
               "condition": "blind",
               "pred": "beat",
               "conf": 0.68,
-              "ok": true
+              "ok": false
             },
             {
               "key": "claude-haiku-4-5",
@@ -1491,7 +1491,7 @@
               "condition": "fed",
               "pred": "beat",
               "conf": 0.72,
-              "ok": true
+              "ok": false
             }
           ]
         }
