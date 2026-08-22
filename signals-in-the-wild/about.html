@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>About — SITW</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Cpolyline points='6,22 12,18 17,20 22,11 27,8' fill='none' stroke='%233DDC97' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%237C5CFF'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h2 class="page-title">About SITW</h2>
+    <p class="page-sub">Signals in the Wild (SITW) is a benchmark for <strong>demand anticipation from public signals</strong>. A model — or a human — is given only a target <code>(company, segment, fiscal quarter, cutoff date T)</code> and a point-in-time signal environment, and must mine the relevant signals itself, predict how segment revenue will actually come in versus consensus, cite the evidence it used, and calibrate its confidence.</p>
+
+    <section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin-top:0">What it measures</h3>
+          <p style="color:var(--muted)">Financial analysis is a forecasting-from-evidence task: good analysts read demand from the outside world and translate it into a revenue call weeks before the print. SITW measures exactly that capability, end-to-end, on clean public labels.</p>
+          <ul class="ep-signals">
+            <li><strong>Mine</strong> demand, selling, and exogenous signals — plus peer read-through and substitution.</li>
+            <li><strong>Predict</strong> direction and magnitude vs. point-in-time consensus, with a volume / price / FX / M&amp;A decomposition.</li>
+            <li><strong>Cite</strong> real, contemporaneous, load-bearing signals.</li>
+            <li><strong>Calibrate</strong> — express confidence and abstain when signals are insufficient.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">Why revenue, not stock</h3>
+          <p style="color:var(--muted)">Stock price is a noisy third-order effect. Revenue is the clean, audited, demand-driven line. We predict it and decompose the move by cause. The same signal&rarr;demand engine also powers go-to-market: account prioritization, buying intent, churn risk, and pipeline forecasting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h3>The causal ladder</h3>
+      <p class="page-sub">The chain SITW tests — and where it deliberately stops.</p>
+      <div id="ladder" class="card"></div>
+    </section>
+
+    <section>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="margin-top:0">Two tracks, one backbone</h3>
+          <ul class="ep-signals">
+            <li><strong>Live rolling track (flagship):</strong> freeze predictions before each report; resolve mechanically after — contamination is structurally impossible.</li>
+            <li><strong>Frozen historical track:</strong> replay past quarters against a date-pinned corpus for fast iteration. The pilot on this site is this track.</li>
+            <li><strong>Read-through track:</strong> late reporters get peer/customer read-through; first movers get none — a designed difficulty axis.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0">How it's scored</h3>
+          <ul class="ep-signals">
+            <li>Skill vs. consensus and naive persistence</li>
+            <li>Direction / magnitude / timing as separate axes</li>
+            <li>Driver decomposition (volume vs. price vs. FX)</li>
+            <li>Mining recall, feed-utilization, open-web lift</li>
+            <li>Temporal-availability provenance (retrievable &le; T)</li>
+            <li>Calibration (Brier / ECE) + selective prediction</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="callout">
+        <h3>Authors &amp; contact</h3>
+        <p><strong>Yaman Kumar Singla, Balaji Krishnamurthy</strong></p>
+        <p>Contact: <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+        <p>Paper and code: see the project repository. This site presents a 10-episode pilot; the live track begins at the next earnings season.</p>
+        <p class="notice">For research and illustration only. Not investment advice.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="about.js"></script>
+</body>
+</html>

@@ -1,0 +1,609 @@
+{
+  "generated": "2026-08-22",
+  "companies": [
+    {
+      "ticker": "IBM",
+      "name": "IBM",
+      "sector": "Enterprise IT & Consulting",
+      "color": "#4589FF",
+      "note": "FX-only decomposition; diffuse enterprise demand",
+      "quarters": 2,
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "cutoff_T": "2026-04-10",
+          "consensus_rev_b": 15.7,
+          "actual_rev_b": 15.917,
+          "actual_yoy_pct": 9,
+          "prior_trend": "total revenue YoY low-to-mid single digits, improving",
+          "surprise_actual": "beat",
+          "signals": [
+            "IBM z17 mainframe in strong ramp with easy YoY compare (Infrastructure tailwind)",
+            "Gartner: 2026 software spend +14.7% (supportive)",
+            "USD weakness -> ~2-3pt FX tailwind vs constant currency",
+            "Accenture 2QFY26 consulting soft (+1% LC bookings) -> mild consulting drag",
+            "Confluent (~$11B) acquisition closed mid-Mar -> small Software contribution"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "inline",
+              "conf": 0.75,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            }
+          ],
+          "mining": null
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "cutoff_T": "2026-07-10",
+          "consensus_rev_b": 17.8,
+          "actual_rev_b": 17.16,
+          "actual_yoy_pct": 1,
+          "prior_trend": "Q1 beat but management guided prudently; consulting soft",
+          "surprise_actual": "miss",
+          "signals": [
+            "IBM z17 now laps its launch quarter -> tough Infrastructure compare (headwind)",
+            "Accenture 3QFY26 bookings -3% LC, federal drag -> consulting soft",
+            "FX tailwind fading toward neutral",
+            "Confluent first full quarter -> small Software tailwind",
+            "Gartner IT spend revised UP to +13.5% (supportive macro backdrop)"
+          ],
+          "note": "Decisive miss driver (late-June client capex reprioritization to AI hardware) had NO public footprint before cutoff; disclosed only in a 2026-07-14 pre-announcement.",
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "miss",
+              "conf": 0.7,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "miss",
+              "conf": 0.7,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-webmined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-A \u00b7 open-web mining",
+              "avatar": "4o",
+              "pred": "miss",
+              "conf": 0.7,
+              "ok": true
+            }
+          ],
+          "mining": {
+            "serp_calls": 6,
+            "n_docs_retrieved": 11,
+            "cutoff_T": "2026-07-10",
+            "queries": [
+              {
+                "query": "IBM Q2 2026 revenue guidance",
+                "cd_max": "2026-07-10",
+                "n_results": 4
+              },
+              {
+                "query": "IBM consulting demand trends 2026",
+                "cd_max": "2026-07-10",
+                "n_results": 1
+              },
+              {
+                "query": "IBM product launches 2026",
+                "cd_max": "2026-07-10",
+                "n_results": 0
+              },
+              {
+                "query": "IBM consulting demand trends",
+                "cd_max": "2026-07-10",
+                "n_results": 0
+              },
+              {
+                "query": "IBM competitor earnings Q2 2026",
+                "cd_max": "2026-07-10",
+                "n_results": 6
+              }
+            ],
+            "cited_urls": [
+              "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-earnings-expected-grow-140010569.html",
+              "https://www.moomoo.com/news/post/72531070/ibm-seen-delivering-solid-q2-modestly-lifting-2026-outlook-bofa",
+              "https://tech-insider.org/ibm-q1-2026-earnings-revenue-software-growth/"
+            ],
+            "decomposition": {
+              "volume": "soft consulting demand",
+              "price": "stable",
+              "units_or_capacity": "consistent with prior trends",
+              "fx_or_other": "minimal impact expected"
+            },
+            "reasoning": "Given the cautious guidance from management and soft consulting demand, it is likely that IBM's Q2 2026 revenue will come in below the consensus estimate of $17.8B.",
+            "pred": "miss",
+            "conf": 0.7,
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "ticker": "ADBE",
+      "name": "Adobe",
+      "sector": "Software (SaaS)",
+      "color": "#FA0F00",
+      "note": "Price vs. volume not disclosed; M&A + FX read-through",
+      "quarters": 2,
+      "episodes": [
+        {
+          "id": "ADBE.Q1-FY2026",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "cutoff_T": "2026-02-28",
+          "consensus_rev_b": 6.29,
+          "actual_rev_b": 6.4,
+          "actual_yoy_pct": 12,
+          "prior_trend": "total revenue YoY ~+11%, steady; ARR growth decelerating slightly",
+          "surprise_actual": "beat",
+          "signals": [
+            "USD weakness -> ~+1pt FX tailwind on ~41% intl revenue",
+            "Creative Cloud Pro price increase (+16.7%) realizing through renewals",
+            "Ad-holdco read-through mixed: Publicis strong, Omnicom mixed, WPP negative",
+            "Competitor pressure: Figma (public, +40%), Canva ($4B ARR) -> churn/switching risk",
+            "Semrush acquisition ANNOUNCED (~$1.9B) but NOT closed -> $0 revenue this quarter"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "inline",
+              "conf": 0.75,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "miss",
+              "conf": 0.7,
+              "ok": false
+            }
+          ],
+          "mining": null
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "cutoff_T": "2026-05-30",
+          "consensus_rev_b": 6.46,
+          "actual_rev_b": 6.62,
+          "actual_yoy_pct": 13,
+          "prior_trend": "Q1 beat; guided Q2 $6.43-6.48B",
+          "surprise_actual": "beat",
+          "signals": [
+            "Semrush acquisition CLOSED Apr 28 (~$40M revenue / ~$480M ARR in-window) -> inorganic tailwind consensus under-counted",
+            "USD weakness -> ~+2pt FX tailwind",
+            "Creative Cloud Pro price realization continues",
+            "Figma Q1 re-accelerated (+46%) -> competitive pressure",
+            "Firefly/GenAI monetization ramping"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.8,
+              "ok": true
+            }
+          ],
+          "mining": null
+        }
+      ]
+    },
+    {
+      "ticker": "TEAM",
+      "name": "Atlassian",
+      "sector": "Software (SaaS)",
+      "color": "#2684FF",
+      "note": "Cloud migration + term-license front-loading",
+      "quarters": 2,
+      "episodes": [
+        {
+          "id": "TEAM.FY26-Q3",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "cutoff_T": "2026-04-18",
+          "consensus_rev_b": 1.69,
+          "actual_rev_b": 1.787,
+          "actual_yoy_pct": 32,
+          "prior_trend": "Cloud +26-29% YoY; total ~+30%; first $1B+ Cloud quarter prior",
+          "surprise_actual": "beat",
+          "signals": [
+            "Data Center end-of-life (new-customer sales end Mar 30) -> upfront term-license revenue front-loading (boost)",
+            "Cloud price increase (Oct 2025) in base all quarter",
+            "Data Center price increase +15% (Feb 2026) effective in-quarter",
+            "Management guided total ~$1.71B (above Street)",
+            "Rovo (AI) adoption scaling -> upsell"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.8,
+              "ok": true
+            }
+          ],
+          "mining": null
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "cutoff_T": "2026-07-25",
+          "consensus_rev_b": 1.66,
+          "actual_rev_b": 1.766,
+          "actual_yoy_pct": 28,
+          "prior_trend": "Q3 accelerated (Cloud +29%, total +32%); FY guide raised",
+          "surprise_actual": "beat",
+          "signals": [
+            "Management Q4 guide $1.653-1.661B; Cloud +25.5%",
+            "Data Center term-license front-loading (~$50M above plan) likely persists",
+            "Cloud price increase fully in base",
+            "ServiceNow Q2 (strong AI demand, cRPO +22%) reported BEFORE cutoff -> positive software-demand read-through",
+            "Rovo >5M MAU; Teamwork Collection upsell"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            }
+          ],
+          "mining": null
+        }
+      ]
+    },
+    {
+      "ticker": "CMG",
+      "name": "Chipotle",
+      "sector": "Restaurants",
+      "color": "#C0592B",
+      "note": "Comps = transactions x check, disclosed; clean decomposition",
+      "quarters": 2,
+      "episodes": [
+        {
+          "id": "CMG.Q1-2026",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "cutoff_T": "2026-04-17",
+          "consensus_rev_b": 3.1,
+          "actual_rev_b": 3.09,
+          "actual_yoy_pct": 7.4,
+          "prior_trend": "Q4 2025 comps -2.5% (transactions -3.2%), base improving; ~7pt unit growth",
+          "surprise_actual": "inline",
+          "signals": [
+            "Chicken al Pastor LTO relaunch (Feb) -> launch-month traffic spike",
+            "March 'Tatted Like a Chipotle Bag' BOGO -> record single-day visits",
+            "Menu price +1-2% -> modest/flat average check",
+            "Unit growth guidance 350-370 openings -> ~7pt revenue tailwind",
+            "Beef/avocado inflation surging (hits MARGIN, not revenue -- distractor)"
+          ],
+          "note": "Comps +0.5% (transactions +0.6%, check -0.1%); revenue growth mostly from unit expansion.",
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "inline",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": false
+            }
+          ],
+          "mining": null
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "cutoff_T": "2026-07-17",
+          "consensus_rev_b": 3.35,
+          "actual_rev_b": 3.4,
+          "actual_yoy_pct": 9.3,
+          "prior_trend": "Q1 transaction inflection to positive; base recovering",
+          "surprise_actual": "beat",
+          "signals": [
+            "Honey Chicken LTO relaunch + $0 delivery (Apr) -> top order-rate LTO ever, strong traffic",
+            "Cava Q1 comps +9.7% and raised guide -> category demand firm (read-through)",
+            "Q1 transaction inflection (+0.6%) confirmed positive",
+            "Menu price +1-2% phased -> positive check",
+            "Mid-July cyclospora scare moved stock -5% but CMG not implicated (stock noise -- distractor)"
+          ],
+          "note": "Comps +2.2% (transactions +1.0%, check +1.2%) + unit growth.",
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-webmined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-A \u00b7 open-web mining",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            }
+          ],
+          "mining": {
+            "serp_calls": 6,
+            "n_docs_retrieved": 10,
+            "cutoff_T": "2026-07-17",
+            "queries": [
+              {
+                "query": "Chipotle Q2 2026 revenue growth signals",
+                "cd_max": "2026-07-17",
+                "n_results": 0
+              },
+              {
+                "query": "Chipotle menu innovation limited time offers",
+                "cd_max": "2026-07-17",
+                "n_results": 6
+              },
+              {
+                "query": "restaurant industry foot traffic trends 2026",
+                "cd_max": "2026-07-17",
+                "n_results": 4
+              },
+              {
+                "query": "Chipotle menu innovation 2026",
+                "cd_max": "2026-07-17",
+                "n_results": 0
+              },
+              {
+                "query": "restaurant industry traffic trends 2026",
+                "cd_max": "2026-07-17",
+                "n_results": 0
+              },
+              {
+                "query": "limited time offers Chipotle sales impact",
+                "cd_max": "2026-07-17",
+                "n_results": 0
+              }
+            ],
+            "cited_urls": [
+              "https://www.restaurantdive.com/news/chipotle-testing-five-things-menu-catering-group-meals/822853/",
+              "https://www.businessinsider.com/limited-time-only-permanent-menu-strategy-2026-5",
+              "https://finance.yahoo.com/markets/stocks/articles/chipotle-traffic-turns-positive-menu-105300395.html"
+            ],
+            "decomposition": {
+              "volume": "positive transaction growth due to menu innovation",
+              "price": "stable pricing strategy with limited-time offers",
+              "units_or_capacity": "increased customer traffic",
+              "fx_or_other": "no significant foreign exchange impact noted"
+            },
+            "reasoning": "Chipotle's increased focus on menu innovation and successful limited-time offers has led to positive traffic trends, suggesting that revenue will exceed consensus expectations.",
+            "pred": "beat",
+            "conf": 0.75,
+            "ok": true
+          }
+        }
+      ]
+    },
+    {
+      "ticker": "DAL",
+      "name": "Delta Air Lines",
+      "sector": "Airlines",
+      "color": "#D4183D",
+      "note": "Revenue = capacity x load x yield; reconciles exactly",
+      "quarters": 2,
+      "episodes": [
+        {
+          "id": "DAL.Q1-2026",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "cutoff_T": "2026-03-27",
+          "consensus_rev_b": 14.05,
+          "actual_rev_b": 14.2,
+          "actual_yoy_pct": 9.4,
+          "prior_trend": "unit revenue (TRASM) positive; premium/loyalty leading",
+          "surprise_actual": "beat",
+          "signals": [
+            "TSA daily throughput at/above prior year; spring-break demand strong",
+            "Capacity guided ~flat/+1% with revenue guide +5-7% -> positive unit revenue",
+            "Premium + loyalty leading; double-digit Amex card-spend growth",
+            "Fares firming as jet fuel spiked (fuel = MARGIN, not revenue -- distractor)"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.8,
+              "ok": true
+            }
+          ],
+          "mining": null
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "cutoff_T": "2026-06-28",
+          "consensus_rev_b": 17.2,
+          "actual_rev_b": 17.666,
+          "actual_yoy_pct": 13.9,
+          "prior_trend": "Q1 beat; unit revenue accelerating",
+          "surprise_actual": "beat",
+          "signals": [
+            "TSA record travel forecast for July 4 week (announced Jun 25, pre-cutoff)",
+            "Management guided +low-teens revenue on FLAT capacity -> strong yield",
+            "Premium/Amex demand double-digit; corporate travel growing",
+            "Jet fuel eased after Jun 14 (helps margin, neutral-to-slight for revenue)"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-4o-mini-blind",
+              "name": "gpt-4o-mini",
+              "condition": "signal-blind",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-mined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-C \u00b7 feed-assisted",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.8,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini-webmined",
+              "name": "gpt-4o-mini",
+              "condition": "Tier-A \u00b7 open-web mining",
+              "avatar": "4o",
+              "pred": "beat",
+              "conf": 0.8,
+              "ok": true
+            }
+          ],
+          "mining": {
+            "serp_calls": 6,
+            "n_docs_retrieved": 6,
+            "cutoff_T": "2026-06-28",
+            "queries": [
+              {
+                "query": "Delta Air Lines Q2 2026 revenue guidance",
+                "cd_max": "2026-06-28",
+                "n_results": 0
+              },
+              {
+                "query": "airline industry demand trends summer 2026",
+                "cd_max": "2026-06-28",
+                "n_results": 6
+              },
+              {
+                "query": "TSA passenger traffic June 2026",
+                "cd_max": "2026-06-28",
+                "n_results": 0
+              },
+              {
+                "query": "Delta Air Lines Q2 2026 revenue forecast",
+                "cd_max": "2026-06-28",
+                "n_results": 0
+              }
+            ],
+            "cited_urls": [
+              "https://www.iata.org/en/publications/economics/reports/global-outlook-for-air-transport-june-2026/",
+              "https://dollarflightclub.com/articles/summer-2026-travel-report/",
+              "https://www.travelpulse.com/news/features/summer-travel-2026-will-be-most-expensive-in-years-airlines-aren-t-backing-off-high-prices",
+              "https://www.reuters.com/markets/see-how-much-pricier-summer-flights-are-this-year-2026-06-05/"
+            ],
+            "decomposition": {
+              "volume": "strong demand for air travel",
+              "price": "average fares up 10-31% year over year",
+              "units_or_capacity": "increased passenger numbers expected",
+              "fx_or_other": "n/a"
+            },
+            "reasoning": "With strong demand for air travel and significant year-over-year increases in airfare, Delta Air Lines is likely to outperform the consensus revenue estimate.",
+            "pred": "beat",
+            "conf": 0.8,
+            "ok": true
+          }
+        }
+      ]
+    }
+  ]
+}

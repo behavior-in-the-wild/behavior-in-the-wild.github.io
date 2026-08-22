@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>SITW — Signals in the Wild</title>
+  <meta name="description" content="A benchmark where AI and humans mine public signals before a company reports and predict its segment-revenue surprise." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Cpolyline points='6,22 12,18 17,20 22,11 27,8' fill='none' stroke='%233DDC97' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%237C5CFF'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner wrap">
+      <div>
+        <span class="eyebrow">AI + Human Forecasting Benchmark</span>
+        <h1>Predict revenue from <span class="grad">signals in the wild</span>.</h1>
+        <p class="lede">AI and humans mine public signals — hiring, launches, pricing, read-through — <em>before</em> a company reports, then predict how its segment revenue will actually come in.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="leaderboard.html">View the leaderboard</a>
+          <a class="btn btn-ghost" href="about.html">How it works</a>
+        </div>
+      </div>
+      <div class="hero-art" id="hero-art"></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="stats">
+      <div class="tiles" id="tiles"></div>
+    </section>
+
+    <section id="leaderboard">
+      <div class="section-head">
+        <div>
+          <h2>Aggregate leaderboard</h2>
+          <p class="sub" id="lb-sub">Surprise-direction accuracy across the pilot episodes.</p>
+        </div>
+        <a class="more" href="leaderboard.html">Full leaderboard →</a>
+      </div>
+      <div id="leaderboard-container"></div>
+      <p class="notice" id="lb-note"></p>
+    </section>
+
+    <section id="companies">
+      <div class="section-head">
+        <div>
+          <h2>Companies</h2>
+          <p class="sub">Five sellers across software, restaurants, and airlines.</p>
+        </div>
+        <a class="more" href="companies.html">All companies →</a>
+      </div>
+      <div id="company-strip" class="grid grid-3"></div>
+    </section>
+
+    <section id="arena">
+      <div class="callout">
+        <h3>Next-Quarter Arena <span class="tag tag-pending">Illustrative</span></h3>
+        <p>The flagship live track walks the earnings calendar forward: AI models <strong>and</strong> humans freeze a prediction for each upcoming print, then it resolves mechanically from SEC filings — contamination is structurally impossible.</p>
+        <p>The pilot below is the frozen historical track. Live-track rows will appear here once the next earnings season begins.</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
