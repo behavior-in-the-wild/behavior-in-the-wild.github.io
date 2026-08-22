@@ -10,7 +10,33 @@
       "color": "#FA0F00",
       "quarter": "Q3 FY2026",
       "report_date_est": "2026-09-11",
-      "status": "pending"
+      "status": "predicted",
+      "predictions": [
+        {
+          "model": "gpt-4o-mini",
+          "avatar": "4o",
+          "direction": "up",
+          "yoy_growth_pct": 10.5,
+          "confidence": 0.7,
+          "reasoning": "Adobe has a strong history of innovation and growth, particularly in its digital media and experience segments. Assuming continued adoption of cloud services and recurring revenue from subscriptions, I expect a year-over-year revenue increase for Q3 FY2026."
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "avatar": "So",
+          "direction": "up",
+          "yoy_growth_pct": 9.5,
+          "confidence": 0.72,
+          "reasoning": "Adobe has maintained consistent mid-to-high single-digit revenue growth driven by its Creative Cloud and Document Cloud subscriptions, with AI-powered features (Firefly) supporting pricing power and upsells; absent any major macro deterioration, a ~9-10% YoY growth rate is consistent with recent trends heading into Q3 FY2026."
+        },
+        {
+          "model": "gpt-5.4",
+          "avatar": "5.4",
+          "direction": "up",
+          "yoy_growth_pct": 10.6,
+          "confidence": 0.63,
+          "reasoning": "Adobe\u2019s revenue is typically driven by recurring Creative Cloud and Document Cloud subscriptions, which tend to produce durable high-single- to low-double-digit growth even in mixed macro conditions. For Q3 FY2026, a reasonable blind prior is continued steady enterprise and SMB demand plus modest pricing/mix support, leading to about 10.6% year-over-year growth."
+        }
+      ]
     },
     {
       "id": "DAL.Q3-2026",
@@ -19,7 +45,33 @@
       "color": "#D4183D",
       "quarter": "Q3 2026",
       "report_date_est": "2026-10-09",
-      "status": "pending"
+      "status": "predicted",
+      "predictions": [
+        {
+          "model": "gpt-4o-mini",
+          "avatar": "4o",
+          "direction": "up",
+          "yoy_growth_pct": 6.5,
+          "confidence": 0.7,
+          "reasoning": "Assuming continued recovery in the airline industry post-pandemic, with increased travel demand and higher ticket prices, it's likely Delta Air Lines will experience year-over-year revenue growth in Q3 2026."
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "avatar": "So",
+          "direction": "up",
+          "yoy_growth_pct": 3.5,
+          "confidence": 0.52,
+          "reasoning": "Delta typically benefits from strong summer travel demand in Q3, and modest capacity/yield growth trends suggest low-to-mid single digit revenue gains year-over-year, though macroeconomic uncertainty and potential fare pressure temper the upside outlook."
+        },
+        {
+          "model": "gpt-5.4",
+          "avatar": "5.4",
+          "direction": "up",
+          "yoy_growth_pct": 4.2,
+          "confidence": 0.43,
+          "reasoning": "For a large U.S. network airline like Delta, Q3 is seasonally strong, and absent company-specific information the base case is modest YoY revenue growth driven by slightly higher capacity and resilient passenger yields, partly offset by normal fare pressure. Airlines are cyclical and sensitive to macro demand, fuel pass-through, and pricing, so confidence is only moderate."
+        }
+      ]
     },
     {
       "id": "IBM.Q3-2026",
@@ -28,7 +80,33 @@
       "color": "#4589FF",
       "quarter": "Q3 2026",
       "report_date_est": "2026-10-22",
-      "status": "pending"
+      "status": "predicted",
+      "predictions": [
+        {
+          "model": "gpt-4o-mini",
+          "avatar": "4o",
+          "direction": "up",
+          "yoy_growth_pct": 4.5,
+          "confidence": 0.7,
+          "reasoning": "IBM has been focusing on strengthening its cloud and AI services, which are likely to contribute positively to revenue growth. Historical trends suggest a moderate upward trajectory as the company continues to transition from traditional hardware to software and services."
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "avatar": "So",
+          "direction": "up",
+          "yoy_growth_pct": 4.5,
+          "confidence": 0.68,
+          "reasoning": "IBM has been delivering steady mid-single-digit revenue growth driven by its hybrid cloud and AI segments (Red Hat, consulting, infrastructure modernization), with HashiCorp acquisition contributing incrementally. Consistent with recent quarterly trends of ~3-6% YoY growth, I estimate Q3 2026 at approximately +4.5% YoY."
+        },
+        {
+          "model": "gpt-5.4",
+          "avatar": "5.4",
+          "direction": "up",
+          "yoy_growth_pct": 3.2,
+          "confidence": 0.56,
+          "reasoning": "IBM\u2019s revenue profile is typically stable with modest growth, supported by software and consulting offsetting more mature infrastructure businesses. For Q3 2026, a low-single-digit YoY increase is the most likely base case given IBM\u2019s size, mix, and generally steady enterprise spending patterns."
+        }
+      ]
     },
     {
       "id": "CMG.Q3-2026",
@@ -37,7 +115,33 @@
       "color": "#C0592B",
       "quarter": "Q3 2026",
       "report_date_est": "2026-10-22",
-      "status": "pending"
+      "status": "predicted",
+      "predictions": [
+        {
+          "model": "gpt-4o-mini",
+          "avatar": "4o",
+          "direction": "up",
+          "yoy_growth_pct": 8.5,
+          "confidence": 0.75,
+          "reasoning": "Chipotle has consistently shown strong growth due to increasing consumer demand for its menu offerings and effective marketing strategies. Given general trends in the fast-casual dining sector and Chipotle's expansion initiatives, I anticipate a moderate year-over-year revenue increase for Q3 2026."
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "avatar": "So",
+          "direction": "up",
+          "yoy_growth_pct": 12.5,
+          "confidence": 0.72,
+          "reasoning": "Chipotle has consistently delivered high-single to low-double-digit revenue growth driven by new store openings and modest same-store sales gains; assuming continued unit expansion (~8-9% more restaurants YoY) and low-to-mid single digit comps from menu pricing and traffic, ~12-13% YoY growth is a reasonable base case for Q3 2026."
+        },
+        {
+          "model": "gpt-5.4",
+          "avatar": "5.4",
+          "direction": "up",
+          "yoy_growth_pct": 10.8,
+          "confidence": 0.63,
+          "reasoning": "Chipotle has historically paired steady unit growth with positive same-store sales, and fast-casual demand plus menu pricing typically support double-digit-ish revenue growth absent a major macro shock. For Q3 2026, a blend of mid-single-digit comps and high-single-digit new store contribution implies roughly 11% YoY total revenue growth."
+        }
+      ]
     },
     {
       "id": "TEAM.Q1-FY2027",
@@ -46,7 +150,33 @@
       "color": "#2684FF",
       "quarter": "Q1 FY2027",
       "report_date_est": "2026-10-30",
-      "status": "pending"
+      "status": "predicted",
+      "predictions": [
+        {
+          "model": "gpt-4o-mini",
+          "avatar": "4o",
+          "direction": "up",
+          "yoy_growth_pct": 12.5,
+          "confidence": 0.7,
+          "reasoning": "Atlassian has shown consistent growth in subscription-based revenue models and strong demand for its collaboration tools. Considering industry trends and the company's product expansions, a moderate increase in revenue is expected year-over-year."
+        },
+        {
+          "model": "claude-sonnet-4-6",
+          "avatar": "So",
+          "direction": "up",
+          "yoy_growth_pct": 17.5,
+          "confidence": 0.72,
+          "reasoning": "Atlassian has consistently delivered mid-to-high teens revenue growth driven by cloud migration tailwinds and expanding enterprise adoption; with no known material deterioration in fundamentals, I expect Q1 FY2027 to continue this trajectory around 17-18% YoY growth as cloud subscription revenue compounds and seat expansion continues."
+        },
+        {
+          "model": "gpt-5.4",
+          "avatar": "5.4",
+          "direction": "up",
+          "yoy_growth_pct": 17.5,
+          "confidence": 0.62,
+          "reasoning": "Atlassian\u2019s subscription-heavy software business should continue to grow year over year, supported by cloud migration, seat expansion, and pricing/mix, though growth is likely moderated from earlier hypergrowth levels by its larger revenue base. A mid-to-high teens growth rate is a reasonable blind prior for a scaled, durable collaboration software platform entering FY2027."
+        }
+      ]
     }
   ]
 }

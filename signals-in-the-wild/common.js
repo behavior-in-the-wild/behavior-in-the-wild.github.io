@@ -186,6 +186,93 @@
     return box;
   }
 
+  // ----- Mining Recall / Driver-Decomposition-Score (DDS) — PRELIMINARY v1 -----
+  function fmtPctOrDash(x) { return (x == null) ? "—" : Math.round(x * 100) + "%"; }
+
+  function mrCaveatBanner(caveatText) {
+    var b = el("div", "mining-recall-caveat");
+    var icon = el("span", "mrc-icon", "⚠");
+    b.appendChild(icon);
+    var body = el("div");
+    body.appendChild(el("strong", null, "Preliminary / v1 approximate scoring, small sample. "));
+    body.appendChild(document.createTextNode(caveatText || ""));
+    b.appendChild(body);
+    return b;
+  }
+
+  function mrStat(label, value) {
+    var s = el("div", "mr-stat");
+    s.appendChild(el("div", "mr-stat-v", value));
+    s.appendChild(el("div", "mr-stat-l", label));
+    return s;
+  }
+
+  function mrFamilyList(className, label, families) {
+    var wrap = el("div", "mr-families");
+    wrap.appendChild(el("span", "mr-families-l", label + ":"));
+    if (families && families.length) {
+      families.forEach(function (fam) {
+        wrap.appendChild(el("span", className, fam));
+      });
+    } else {
+      wrap.appendChild(el("span", "mr-families-l", "none"));
+    }
+    return wrap;
+  }
+
+  // one condition's card (e.g. "deep-mined" or "C6") within a mining-recall episode block
+  function mrConditionCard(condName, cond) {
+    var card = el("div", "mr-card");
+    var head = el("div", "mr-card-head");
+    head.appendChild(el("span", "mr-cond", condName));
+    if (cond.model) head.appendChild(el("span", "mr-model", cond.model));
+    card.appendChild(head);
+
+    var stats = el("div", "mr-stats");
+    stats.appendChild(mrStat("Family recall", fmtPctOrDash(cond.family_recall)));
+    stats.appendChild(mrStat("Source recall", fmtPctOrDash(cond.source_recall)));
+    stats.appendChild(mrStat("Source precision", fmtPctOrDash(cond.source_precision)));
+    stats.appendChild(mrStat("DDS", fmtPctOrDash(cond.dds)));
+    card.appendChild(stats);
+
+    card.appendChild(mrFamilyList("mr-fam-covered", "Families covered", cond.families_covered));
+
+    if (cond.family_source) {
+      var fs = el("div", "mr-fam-source");
+      fs.appendChild(el("span", null, "family source: "));
+      fs.appendChild(el("code", null, cond.family_source));
+      card.appendChild(fs);
+    }
+    return card;
+  }
+
+  // full "Mining Recall (preliminary)" section for one episode's mining_scores entry
+  // epScore = { id, ticker, company, quarter, gold_families, conditions: { condName: {...} } }
+  function miningRecallSection(epScore, caveatText, opts) {
+    if (!epScore) return null;
+    opts = opts || {};
+    var box = el("div", "mining-recall");
+    var head = el("div", "mining-recall-head");
+    head.appendChild(el("span", "mining-recall-title", "Mining Recall (preliminary)"));
+    box.appendChild(head);
+
+    if (opts.showCaveat !== false) box.appendChild(mrCaveatBanner(caveatText));
+
+    if (opts.showEpisode !== false) {
+      box.appendChild(el("div", "mr-ep-label", (epScore.company || epScore.ticker) + " · " + (epScore.quarter || epScore.id)));
+    }
+
+    box.appendChild(mrFamilyList("mr-fam-gold", "Gold demand-driver families", epScore.gold_families));
+
+    var grid = el("div", "mr-grid");
+    var conds = epScore.conditions || {};
+    Object.keys(conds).forEach(function (condName) {
+      grid.appendChild(mrConditionCard(condName, conds[condName]));
+    });
+    box.appendChild(grid);
+    return box;
+  }
+
   // ----- Weekly trajectory (SITW sequential forecast) -----
   var OUTCOME_HEX = { beat: "#3DDC97", miss: "#FF5C6C", inline: "#F5B23D" };
   function outcomeHex(p) { return OUTCOME_HEX[(p || "").toLowerCase()] || "#5B6577"; }
@@ -394,6 +481,7 @@
     avatar: avatar, avatarColor: avatarColor, chip: chip, pill: pill, typeTag: typeTag,
     accBar: accBar, barChart: barChart, heroArt: heroArt, brandMark: brandMark,
     miningPanel: miningPanel, trajChart: trajChart, trajCard: trajCard, leadBadge: leadBadge,
+    miningRecallSection: miningRecallSection,
     mountChrome: mountChrome, fetchJSON: fetchJSON,
     fmtPct: fmtPct, fmtSkill: fmtSkill, fmtBrier: fmtBrier,
     getParam: getParam, showError: showError,

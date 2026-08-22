@@ -90,18 +90,18 @@
       "type": "LLM",
       "route": "openai",
       "blind_acc": 0.3,
-      "fed_acc": 0.8,
+      "fed_acc": 0.7,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.58
+            "conf": 0.56
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.75
+            "conf": 0.73
           }
         },
         "IBM.Q2-2026": {
@@ -113,14 +113,14 @@
           "fed": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.67
+            "conf": 0.64
           }
         },
         "ADBE.Q1-FY2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.59
+            "conf": 0.58
           },
           "fed": {
             "pred": "beat",
@@ -132,15 +132,51 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.7
+            "conf": 0.69
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.78
+            "conf": 0.81
           }
         },
         "TEAM.FY26-Q3": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.55
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.8
+          }
+        },
+        "TEAM.FY26-Q4": {
+          "blind": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.65
+          },
+          "fed": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.74
+          }
+        },
+        "CMG.Q1-2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": true,
+            "conf": 0.57
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": false,
+            "conf": 0.73
+          }
+        },
+        "CMG.Q2-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
@@ -149,26 +185,121 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.84
+            "conf": 0.72
+          }
+        },
+        "DAL.Q1-2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.57
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.81
+          }
+        },
+        "DAL.Q2-2026": {
+          "blind": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.63
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.83
+          }
+        }
+      }
+    },
+    {
+      "key": "gpt-5.4-mini",
+      "name": "gpt-5.4-mini",
+      "avatar": "5m",
+      "type": "LLM",
+      "route": "openai",
+      "blind_acc": 0.3,
+      "fed_acc": 0.6,
+      "cells": {
+        "IBM.Q1-2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.58
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.73
+          }
+        },
+        "IBM.Q2-2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.61
+          },
+          "fed": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.66
+          }
+        },
+        "ADBE.Q1-FY2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.63
+          },
+          "fed": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.62
+          }
+        },
+        "ADBE.Q2-FY2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.61
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.7
+          }
+        },
+        "TEAM.FY26-Q3": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.57
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.78
           }
         },
         "TEAM.FY26-Q4": {
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.61
+            "conf": 0.57
           },
           "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.76
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.88
           }
         },
         "CMG.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": true,
-            "conf": 0.55
+            "conf": 0.54
           },
           "fed": {
             "pred": "beat",
@@ -185,7 +316,7 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.79
+            "conf": 0.77
           }
         },
         "DAL.Q1-2026": {
@@ -197,150 +328,19 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.78
+            "conf": 0.72
           }
         },
         "DAL.Q2-2026": {
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.78
-          }
-        }
-      }
-    },
-    {
-      "key": "gpt-5.4-mini",
-      "name": "gpt-5.4-mini",
-      "avatar": "5m",
-      "type": "LLM",
-      "route": "openai",
-      "blind_acc": 0.1,
-      "fed_acc": 0.6,
-      "cells": {
-        "IBM.Q1-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.66
-          }
-        },
-        "IBM.Q2-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.61
-          },
-          "fed": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.61
-          }
-        },
-        "ADBE.Q1-FY2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.68
-          },
-          "fed": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.63
-          }
-        },
-        "ADBE.Q2-FY2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
             "conf": 0.61
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.74
-          }
-        },
-        "TEAM.FY26-Q3": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.74
-          }
-        },
-        "TEAM.FY26-Q4": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.78
-          }
-        },
-        "CMG.Q1-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": true,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": false,
-            "conf": 0.79
-          }
-        },
-        "CMG.Q2-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.78
-          }
-        },
-        "DAL.Q1-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.58
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.78
-          }
-        },
-        "DAL.Q2-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.59
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.78
+            "conf": 0.82
           }
         }
       }
@@ -351,38 +351,38 @@
       "avatar": "5.2",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.3,
+      "blind_acc": 0.2,
       "fed_acc": 0.7,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.38
+            "conf": 0.45
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.58
+            "conf": 0.56
           }
         },
         "IBM.Q2-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.56
+            "conf": 0.46
           },
           "fed": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.56
+            "conf": 0.54
           }
         },
         "ADBE.Q1-FY2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.42
+            "conf": 0.44
           },
           "fed": {
             "pred": "beat",
@@ -394,7 +394,7 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.5
+            "conf": 0.44
           },
           "fed": {
             "pred": "beat",
@@ -406,7 +406,7 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.42
+            "conf": 0.44
           },
           "fed": {
             "pred": "beat",
@@ -418,24 +418,24 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.56
+            "conf": 0.55
           },
           "fed": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.56
+            "conf": 0.58
           }
         },
         "CMG.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": true,
-            "conf": 0.42
+            "conf": 0.44
           },
           "fed": {
             "pred": "beat",
             "ok": false,
-            "conf": 0.58
+            "conf": 0.62
           }
         },
         "CMG.Q2-2026": {
@@ -447,26 +447,26 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.63
+            "conf": 0.62
           }
         },
         "DAL.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.53
+            "conf": 0.48
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.62
+            "conf": 0.63
           }
         },
         "DAL.Q2-2026": {
           "blind": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.53
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.43
           },
           "fed": {
             "pred": "beat",
@@ -482,42 +482,42 @@
       "avatar": "5.3",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.4,
-      "fed_acc": 0.7,
+      "blind_acc": 0.5,
+      "fed_acc": 0.8,
       "cells": {
         "IBM.Q1-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.56
-          },
-          "fed": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.67
-          }
-        },
-        "IBM.Q2-2026": {
-          "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.61
-          },
-          "fed": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.63
-          }
-        },
-        "ADBE.Q1-FY2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
             "conf": 0.58
           },
           "fed": {
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.64
+          }
+        },
+        "IBM.Q2-2026": {
+          "blind": {
             "pred": "inline",
             "ok": false,
+            "conf": 0.57
+          },
+          "fed": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.58
+          }
+        },
+        "ADBE.Q1-FY2026": {
+          "blind": {
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.63
+          },
+          "fed": {
+            "pred": "beat",
+            "ok": true,
             "conf": 0.63
           }
         },
@@ -525,19 +525,19 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.62
+            "conf": 0.63
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.8
+            "conf": 0.82
           }
         },
         "TEAM.FY26-Q3": {
           "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.57
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.58
           },
           "fed": {
             "pred": "beat",
@@ -549,31 +549,31 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.58
+            "conf": 0.63
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.72
+            "conf": 0.63
           }
         },
         "CMG.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": true,
-            "conf": 0.55
+            "conf": 0.56
           },
           "fed": {
             "pred": "beat",
             "ok": false,
-            "conf": 0.71
+            "conf": 0.67
           }
         },
         "CMG.Q2-2026": {
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.57
+            "conf": 0.61
           },
           "fed": {
             "pred": "beat",
@@ -585,12 +585,12 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.56
+            "conf": 0.57
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.79
+            "conf": 0.77
           }
         },
         "DAL.Q2-2026": {
@@ -602,7 +602,7 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.79
+            "conf": 0.78
           }
         }
       }
@@ -613,8 +613,8 @@
       "avatar": "4o",
       "type": "LLM",
       "route": "openai",
-      "blind_acc": 0.6,
-      "fed_acc": 0.8,
+      "blind_acc": 0.7,
+      "fed_acc": 0.7,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -623,21 +623,21 @@
             "conf": 0.75
           },
           "fed": {
-            "pred": "beat",
-            "ok": true,
+            "pred": "inline",
+            "ok": false,
             "conf": 0.75
           }
         },
         "IBM.Q2-2026": {
           "blind": {
-            "pred": "miss",
-            "ok": true,
-            "conf": 0.7
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.75
           },
           "fed": {
             "pred": "miss",
             "ok": true,
-            "conf": 0.75
+            "conf": 0.7
           }
         },
         "ADBE.Q1-FY2026": {
@@ -649,19 +649,19 @@
           "fed": {
             "pred": "miss",
             "ok": false,
-            "conf": 0.75
+            "conf": 0.6
           }
         },
         "ADBE.Q2-FY2026": {
           "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.8
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.75
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.8
+            "conf": 0.75
           }
         },
         "TEAM.FY26-Q3": {
@@ -690,14 +690,14 @@
         },
         "CMG.Q1-2026": {
           "blind": {
-            "pred": "miss",
-            "ok": false,
-            "conf": 0.7
+            "pred": "inline",
+            "ok": true,
+            "conf": 0.75
           },
           "fed": {
             "pred": "beat",
             "ok": false,
-            "conf": 0.75
+            "conf": 0.7
           }
         },
         "CMG.Q2-2026": {
@@ -709,7 +709,7 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.8
+            "conf": 0.75
           }
         },
         "DAL.Q1-2026": {
@@ -721,7 +721,7 @@
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.8
+            "conf": 0.85
           }
         },
         "DAL.Q2-2026": {
@@ -875,8 +875,8 @@
       "avatar": "Op",
       "type": "LLM",
       "route": "claude",
-      "blind_acc": 0.3,
-      "fed_acc": 0.8,
+      "blind_acc": 0.4,
+      "fed_acc": 0.9,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
@@ -942,7 +942,7 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.62
+            "conf": 0.6
           },
           "fed": {
             "pred": "beat",
@@ -981,21 +981,21 @@
             "conf": 0.55
           },
           "fed": {
-            "pred": "inline",
-            "ok": false,
+            "pred": "beat",
+            "ok": true,
             "conf": 0.6
           }
         },
         "DAL.Q2-2026": {
           "blind": {
-            "pred": "inline",
-            "ok": false,
+            "pred": "beat",
+            "ok": true,
             "conf": 0.55
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.66
+            "conf": 0.62
           }
         }
       }
@@ -1013,7 +1013,7 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.52
+            "conf": 0.55
           },
           "fed": {
             "pred": "beat",
@@ -1025,7 +1025,7 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.38
+            "conf": 0.42
           },
           "fed": {
             "pred": "inline",
@@ -1037,19 +1037,19 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.55
+            "conf": 0.52
           },
           "fed": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.62
+            "conf": 0.55
           }
         },
         "ADBE.Q2-FY2026": {
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.52
+            "conf": 0.55
           },
           "fed": {
             "pred": "beat",
@@ -1085,7 +1085,7 @@
           "blind": {
             "pred": "inline",
             "ok": true,
-            "conf": 0.38
+            "conf": 0.42
           },
           "fed": {
             "pred": "beat",
@@ -1137,26 +1137,26 @@
       "avatar": "Ha",
       "type": "LLM",
       "route": "claude",
-      "blind_acc": 0.5,
-      "fed_acc": 0.7,
+      "blind_acc": 0.4,
+      "fed_acc": 0.8,
       "cells": {
         "IBM.Q1-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.55
+            "conf": 0.65
           },
           "fed": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.72
+            "conf": 0.68
           }
         },
         "IBM.Q2-2026": {
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.55
+            "conf": 0.62
           },
           "fed": {
             "pred": "inline",
@@ -1168,12 +1168,12 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.6
+            "conf": 0.65
           },
           "fed": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.65
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.68
           }
         },
         "ADBE.Q2-FY2026": {
@@ -1190,9 +1190,9 @@
         },
         "TEAM.FY26-Q3": {
           "blind": {
-            "pred": "beat",
-            "ok": true,
-            "conf": 0.62
+            "pred": "inline",
+            "ok": false,
+            "conf": 0.65
           },
           "fed": {
             "pred": "beat",
@@ -1204,7 +1204,7 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.62
+            "conf": 0.68
           },
           "fed": {
             "pred": "beat",
@@ -1214,9 +1214,9 @@
         },
         "CMG.Q1-2026": {
           "blind": {
-            "pred": "inline",
-            "ok": true,
-            "conf": 0.62
+            "pred": "miss",
+            "ok": false,
+            "conf": 0.65
           },
           "fed": {
             "pred": "beat",
@@ -1226,9 +1226,9 @@
         },
         "CMG.Q2-2026": {
           "blind": {
-            "pred": "inline",
-            "ok": false,
-            "conf": 0.65
+            "pred": "beat",
+            "ok": true,
+            "conf": 0.68
           },
           "fed": {
             "pred": "beat",
@@ -1240,7 +1240,7 @@
           "blind": {
             "pred": "inline",
             "ok": false,
-            "conf": 0.65
+            "conf": 0.6
           },
           "fed": {
             "pred": "beat",
@@ -1252,7 +1252,7 @@
           "blind": {
             "pred": "beat",
             "ok": true,
-            "conf": 0.62
+            "conf": 0.68
           },
           "fed": {
             "pred": "beat",
