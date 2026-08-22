@@ -28,25 +28,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.66,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.38,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.58,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.67,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "inline",
               "conf": 0.75,
               "ok": false
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
               "conf": 0.75,
               "ok": true
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.52,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
             }
-          ],
-          "mining": null
+          ]
         },
         {
           "id": "IBM.Q2-2026",
@@ -67,80 +210,168 @@
           "note": "Decisive miss driver (late-June client capex reprioritization to AI hardware) had NO public footprint before cutoff; disclosed only in a 2026-07-14 pre-announcement.",
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.67,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.61,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.61,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.61,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.63,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "miss",
               "conf": 0.7,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "miss",
-              "conf": 0.7,
+              "conf": 0.75,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-webmined",
-              "name": "gpt-4o-mini",
-              "condition": "Tier-A \u00b7 open-web mining",
-              "avatar": "4o",
-              "pred": "miss",
-              "conf": 0.7,
-              "ok": true
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.38,
+              "ok": false
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.52,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.62,
+              "ok": false
             }
-          ],
-          "mining": {
-            "serp_calls": 6,
-            "n_docs_retrieved": 11,
-            "cutoff_T": "2026-07-10",
-            "queries": [
-              {
-                "query": "IBM Q2 2026 revenue guidance",
-                "cd_max": "2026-07-10",
-                "n_results": 4
-              },
-              {
-                "query": "IBM consulting demand trends 2026",
-                "cd_max": "2026-07-10",
-                "n_results": 1
-              },
-              {
-                "query": "IBM product launches 2026",
-                "cd_max": "2026-07-10",
-                "n_results": 0
-              },
-              {
-                "query": "IBM consulting demand trends",
-                "cd_max": "2026-07-10",
-                "n_results": 0
-              },
-              {
-                "query": "IBM competitor earnings Q2 2026",
-                "cd_max": "2026-07-10",
-                "n_results": 6
-              }
-            ],
-            "cited_urls": [
-              "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-earnings-expected-grow-140010569.html",
-              "https://www.moomoo.com/news/post/72531070/ibm-seen-delivering-solid-q2-modestly-lifting-2026-outlook-bofa",
-              "https://tech-insider.org/ibm-q1-2026-earnings-revenue-software-growth/"
-            ],
-            "decomposition": {
-              "volume": "soft consulting demand",
-              "price": "stable",
-              "units_or_capacity": "consistent with prior trends",
-              "fx_or_other": "minimal impact expected"
-            },
-            "reasoning": "Given the cautious guidance from management and soft consulting demand, it is likely that IBM's Q2 2026 revenue will come in below the consensus estimate of $17.8B.",
-            "pred": "miss",
-            "conf": 0.7,
-            "ok": true
-          }
+          ]
         }
       ]
     },
@@ -171,25 +402,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.59,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.66,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.68,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.63,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.42,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.56,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.63,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "inline",
               "conf": 0.75,
               "ok": false
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "miss",
-              "conf": 0.7,
+              "conf": 0.75,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.55,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.62,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.6,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.65,
               "ok": false
             }
-          ],
-          "mining": null
+          ]
         },
         {
           "id": "ADBE.Q2-FY2026",
@@ -210,25 +584,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
-              "name": "gpt-4o-mini",
-              "condition": "signal-blind",
-              "avatar": "4o",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.7,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
               "pred": "beat",
-              "conf": 0.75,
+              "conf": 0.78,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
-              "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
-              "avatar": "4o",
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.61,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.74,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.5,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.62,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
               "pred": "beat",
               "conf": 0.8,
               "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.8,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.8,
+              "ok": true
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.7,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.7,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.52,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
             }
-          ],
-          "mining": null
+          ]
         }
       ]
     },
@@ -259,25 +776,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.84,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.74,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.42,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.57,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.82,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "beat",
               "conf": 0.75,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
               "conf": 0.8,
               "ok": true
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.55,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
             }
-          ],
-          "mining": null
+          ]
         },
         {
           "id": "TEAM.FY26-Q4",
@@ -298,25 +958,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.61,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.76,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.78,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.56,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.58,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "beat",
               "conf": 0.75,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
-              "conf": 0.75,
+              "conf": 0.8,
+              "ok": true
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.7,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
               "ok": true
             }
-          ],
-          "mining": null
+          ]
         }
       ]
     },
@@ -347,25 +1150,168 @@
           "note": "Comps +0.5% (transactions +0.6%, check -0.1%); revenue growth mostly from unit expansion.",
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
-              "name": "gpt-4o-mini",
-              "condition": "signal-blind",
-              "avatar": "4o",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
               "pred": "inline",
-              "conf": 0.75,
+              "conf": 0.55,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.79,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.42,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.71,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "blind",
+              "pred": "miss",
+              "conf": 0.7,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
               "conf": 0.75,
               "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "miss",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.38,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": false
             }
-          ],
-          "mining": null
+          ]
         },
         {
           "id": "CMG.Q2-2026",
@@ -386,85 +1332,168 @@
           "note": "Comps +2.2% (transactions +1.0%, check +1.2%) + unit growth.",
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.79,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.78,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.48,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.63,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.57,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "beat",
               "conf": 0.75,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
-              "conf": 0.75,
+              "conf": 0.8,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-webmined",
-              "name": "gpt-4o-mini",
-              "condition": "Tier-A \u00b7 open-web mining",
-              "avatar": "4o",
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
               "pred": "beat",
-              "conf": 0.75,
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.55,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.65,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
               "ok": true
             }
-          ],
-          "mining": {
-            "serp_calls": 6,
-            "n_docs_retrieved": 10,
-            "cutoff_T": "2026-07-17",
-            "queries": [
-              {
-                "query": "Chipotle Q2 2026 revenue growth signals",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              },
-              {
-                "query": "Chipotle menu innovation limited time offers",
-                "cd_max": "2026-07-17",
-                "n_results": 6
-              },
-              {
-                "query": "restaurant industry foot traffic trends 2026",
-                "cd_max": "2026-07-17",
-                "n_results": 4
-              },
-              {
-                "query": "Chipotle menu innovation 2026",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              },
-              {
-                "query": "restaurant industry traffic trends 2026",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              },
-              {
-                "query": "limited time offers Chipotle sales impact",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              }
-            ],
-            "cited_urls": [
-              "https://www.restaurantdive.com/news/chipotle-testing-five-things-menu-catering-group-meals/822853/",
-              "https://www.businessinsider.com/limited-time-only-permanent-menu-strategy-2026-5",
-              "https://finance.yahoo.com/markets/stocks/articles/chipotle-traffic-turns-positive-menu-105300395.html"
-            ],
-            "decomposition": {
-              "volume": "positive transaction growth due to menu innovation",
-              "price": "stable pricing strategy with limited-time offers",
-              "units_or_capacity": "increased customer traffic",
-              "fx_or_other": "no significant foreign exchange impact noted"
-            },
-            "reasoning": "Chipotle's increased focus on menu innovation and successful limited-time offers has led to positive traffic trends, suggesting that revenue will exceed consensus expectations.",
-            "pred": "beat",
-            "conf": 0.75,
-            "ok": true
-          }
+          ]
         }
       ]
     },
@@ -494,25 +1523,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.78,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.78,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.53,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.56,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.79,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "beat",
               "conf": 0.75,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
               "conf": 0.8,
               "ok": true
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "inline",
+              "conf": 0.6,
+              "ok": false
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "miss",
+              "conf": 0.38,
+              "ok": false
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.65,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
             }
-          ],
-          "mining": null
+          ]
         },
         {
           "id": "DAL.Q2-2026",
@@ -532,76 +1704,168 @@
           "note": null,
           "model_preds": [
             {
-              "key": "gpt-4o-mini-blind",
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.58,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.78,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.59,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.78,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.53,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.63,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.79,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "signal-blind",
               "avatar": "4o",
+              "condition": "blind",
               "pred": "beat",
               "conf": 0.75,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-mined",
+              "key": "gpt-4o-mini",
               "name": "gpt-4o-mini",
-              "condition": "Tier-C \u00b7 feed-assisted",
               "avatar": "4o",
+              "condition": "fed",
               "pred": "beat",
-              "conf": 0.8,
+              "conf": 0.85,
               "ok": true
             },
             {
-              "key": "gpt-4o-mini-webmined",
-              "name": "gpt-4o-mini",
-              "condition": "Tier-A \u00b7 open-web mining",
-              "avatar": "4o",
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.55,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
               "pred": "beat",
-              "conf": 0.8,
+              "conf": 0.66,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.55,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
               "ok": true
             }
-          ],
-          "mining": {
-            "serp_calls": 6,
-            "n_docs_retrieved": 6,
-            "cutoff_T": "2026-06-28",
-            "queries": [
-              {
-                "query": "Delta Air Lines Q2 2026 revenue guidance",
-                "cd_max": "2026-06-28",
-                "n_results": 0
-              },
-              {
-                "query": "airline industry demand trends summer 2026",
-                "cd_max": "2026-06-28",
-                "n_results": 6
-              },
-              {
-                "query": "TSA passenger traffic June 2026",
-                "cd_max": "2026-06-28",
-                "n_results": 0
-              },
-              {
-                "query": "Delta Air Lines Q2 2026 revenue forecast",
-                "cd_max": "2026-06-28",
-                "n_results": 0
-              }
-            ],
-            "cited_urls": [
-              "https://www.iata.org/en/publications/economics/reports/global-outlook-for-air-transport-june-2026/",
-              "https://dollarflightclub.com/articles/summer-2026-travel-report/",
-              "https://www.travelpulse.com/news/features/summer-travel-2026-will-be-most-expensive-in-years-airlines-aren-t-backing-off-high-prices",
-              "https://www.reuters.com/markets/see-how-much-pricier-summer-flights-are-this-year-2026-06-05/"
-            ],
-            "decomposition": {
-              "volume": "strong demand for air travel",
-              "price": "average fares up 10-31% year over year",
-              "units_or_capacity": "increased passenger numbers expected",
-              "fx_or_other": "n/a"
-            },
-            "reasoning": "With strong demand for air travel and significant year-over-year increases in airfare, Delta Air Lines is likely to outperform the consensus revenue estimate.",
-            "pred": "beat",
-            "conf": 0.8,
-            "ok": true
-          }
+          ]
         }
       ]
     }

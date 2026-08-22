@@ -1,9 +1,11 @@
 {
   "episodes": 10,
   "companies": 5,
-  "models_evaluated": 3,
-  "mining_episodes": 3,
-  "baselines": 2,
+  "models_evaluated": 9,
+  "conditions": 2,
+  "baselines": 1,
+  "live_pending": 5,
+  "weekly_tracks": 6,
   "outcomes": {
     "beat": 8,
     "inline": 1,
