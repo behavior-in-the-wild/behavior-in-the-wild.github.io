@@ -13,16 +13,16 @@
       "route": "openai",
       "avatar": "5.4",
       "blind": {
-        "acc": 0.3,
-        "correct": 3,
+        "acc": 0.4,
+        "correct": 4,
         "n": 10,
-        "brier": 0.2848
+        "brier": 0.2728
       },
       "fed": {
-        "acc": 0.7,
-        "correct": 7,
+        "acc": 0.6,
+        "correct": 6,
         "n": 10,
-        "brier": 0.1898
+        "brier": 0.2338
       },
       "episodes": [
         {
@@ -163,18 +163,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "inline",
             "conf": 0.56,
             "yoy": 8.4,
-            "ok": false
+            "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
             "yoy": 15.2,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -224,16 +224,16 @@
       "route": "openai",
       "avatar": "5m",
       "blind": {
-        "acc": 0.3,
-        "correct": 3,
+        "acc": 0.4,
+        "correct": 4,
         "n": 10,
-        "brier": 0.3001
+        "brier": 0.2881
       },
       "fed": {
-        "acc": 0.6,
-        "correct": 6,
+        "acc": 0.5,
+        "correct": 5,
         "n": 10,
-        "brier": 0.2488
+        "brier": 0.3028
       },
       "episodes": [
         {
@@ -374,18 +374,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "inline",
             "conf": 0.56,
             "yoy": 4.8,
-            "ok": false
+            "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.77,
             "yoy": 13.8,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -435,16 +435,16 @@
       "route": "openai",
       "avatar": "5.2",
       "blind": {
-        "acc": 0.2,
-        "correct": 2,
+        "acc": 0.3,
+        "correct": 3,
         "n": 10,
-        "brier": 0.2157
+        "brier": 0.2197
       },
       "fed": {
-        "acc": 0.7,
-        "correct": 7,
+        "acc": 0.6,
+        "correct": 6,
         "n": 10,
-        "brier": 0.2114
+        "brier": 0.2354
       },
       "episodes": [
         {
@@ -585,18 +585,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "inline",
             "conf": 0.48,
             "yoy": 13.5,
-            "ok": false
+            "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.62,
             "yoy": 12.5,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -646,16 +646,16 @@
       "route": "openai",
       "avatar": "5.3",
       "blind": {
-        "acc": 0.5,
-        "correct": 5,
+        "acc": 0.4,
+        "correct": 4,
         "n": 10,
-        "brier": 0.2576
+        "brier": 0.2796
       },
       "fed": {
-        "acc": 0.8,
-        "correct": 8,
+        "acc": 0.7,
+        "correct": 7,
         "n": 10,
-        "brier": 0.1433
+        "brier": 0.1873
       },
       "episodes": [
         {
@@ -796,18 +796,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "beat",
             "conf": 0.61,
             "yoy": 11.2,
-            "ok": true
+            "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
             "yoy": 14.2,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -857,16 +857,16 @@
       "route": "openai",
       "avatar": "4o",
       "blind": {
-        "acc": 0.7,
-        "correct": 7,
+        "acc": 0.6,
+        "correct": 6,
         "n": 10,
-        "brier": 0.2125
+        "brier": 0.2625
       },
       "fed": {
-        "acc": 0.7,
-        "correct": 7,
+        "acc": 0.6,
+        "correct": 6,
         "n": 10,
-        "brier": 0.1753
+        "brier": 0.2253
       },
       "episodes": [
         {
@@ -1007,18 +1007,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "beat",
             "conf": 0.75,
             "yoy": 8.5,
-            "ok": true
+            "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.75,
             "yoy": 12.5,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -1218,7 +1218,7 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": null,
             "conf": null,
@@ -1279,16 +1279,16 @@
       "route": "claude",
       "avatar": "Op",
       "blind": {
-        "acc": 0.4,
-        "correct": 4,
+        "acc": 0.5,
+        "correct": 5,
         "n": 10,
-        "brier": 0.2685
+        "brier": 0.2585
       },
       "fed": {
-        "acc": 0.9,
-        "correct": 9,
+        "acc": 0.8,
+        "correct": 8,
         "n": 10,
-        "brier": 0.1489
+        "brier": 0.1689
       },
       "episodes": [
         {
@@ -1429,18 +1429,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "inline",
             "conf": 0.55,
             "yoy": 8.5,
-            "ok": false
+            "ok": true
           },
           "fed": {
             "pred": "beat",
             "conf": 0.6,
             "yoy": 8.5,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -1490,16 +1490,16 @@
       "route": "claude",
       "avatar": "So",
       "blind": {
-        "acc": 0.8,
-        "correct": 8,
-        "n": 10,
-        "brier": 0.2044
-      },
-      "fed": {
         "acc": 0.7,
         "correct": 7,
         "n": 10,
-        "brier": 0.1706
+        "brier": 0.2144
+      },
+      "fed": {
+        "acc": 0.6,
+        "correct": 6,
+        "n": 10,
+        "brier": 0.2146
       },
       "episodes": [
         {
@@ -1640,18 +1640,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "beat",
             "conf": 0.55,
             "yoy": 14.2,
-            "ok": true
+            "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
             "yoy": 14.2,
-            "ok": true
+            "ok": false
           }
         },
         {
@@ -1701,16 +1701,16 @@
       "route": "claude",
       "avatar": "Ha",
       "blind": {
-        "acc": 0.4,
-        "correct": 4,
+        "acc": 0.3,
+        "correct": 3,
         "n": 10,
-        "brier": 0.282
+        "brier": 0.318
       },
       "fed": {
-        "acc": 0.8,
-        "correct": 8,
+        "acc": 0.7,
+        "correct": 7,
         "n": 10,
-        "brier": 0.1578
+        "brier": 0.2018
       },
       "episodes": [
         {
@@ -1851,18 +1851,18 @@
           "company": "Chipotle",
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
+          "actual": "inline",
           "blind": {
             "pred": "beat",
             "conf": 0.68,
             "yoy": 8.5,
-            "ok": true
+            "ok": false
           },
           "fed": {
             "pred": "beat",
             "conf": 0.72,
             "yoy": 3.8,
-            "ok": true
+            "ok": false
           }
         },
         {

@@ -5,11 +5,11 @@
   "gold_tier": "platinum (see data/gold_driver_map.json)",
   "caveat": "Preliminary, v1-approximate. These family-recall / source-recall / source-precision / Driver-Decomposition-Score (DDS) numbers come from a rule-based scorer (keyword and domain-string matching) \u2014 not the NLI / LLM-judge pipeline the benchmark design specifies long-term. The gold demand-driver map behind them is hand-researched and source-cited, but self-assessed and not yet independently audited by a second party or judge model. Coverage is currently 3 of 10 episodes, 1 model (gpt-4o-mini). Treat these as directional scratch numbers, not validated benchmark results.",
   "episodes": {
-    "DAL.Q2-2026": {
-      "id": "DAL.Q2-2026",
-      "ticker": "DAL",
-      "company": "Delta Air Lines",
-      "quarter": "Q2 2026 (Jun quarter)",
+    "IBM.Q1-2026": {
+      "id": "IBM.Q1-2026",
+      "ticker": "IBM",
+      "company": "IBM",
+      "quarter": "Q1 2026 (Mar quarter)",
       "gold_families": [
         "demand",
         "exogenous",
@@ -27,16 +27,16 @@
             "peers_readthrough",
             "products"
           ],
-          "source_recall": 0.0,
+          "source_recall": null,
           "source_precision": 0.0,
-          "n_gold_domains": 5,
-          "n_retrieved_domains": 17,
-          "dds": 0.3333333333333333,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 8,
+          "dds": 0.0,
           "dds_detail": {
             "volume": {
-              "gold_sign": 1,
-              "model_sign": 1,
-              "agree": 1
+              "gold_sign": -1,
+              "model_sign": 0,
+              "agree": null
             },
             "price": {
               "gold_sign": 1,
@@ -52,22 +52,20 @@
           "family_source": "model-reported"
         },
         "C6": {
-          "model": "gpt-4o-mini",
-          "family_recall": 0.25,
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
           "families_covered": [
             "customers",
-            "exogenous",
-            "peers_readthrough",
             "products"
           ],
-          "source_recall": 0.2,
-          "source_precision": 0.08333333333333333,
-          "n_gold_domains": 5,
-          "n_retrieved_domains": 12,
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 6,
           "dds": 0.0,
           "dds_detail": {
             "volume": {
-              "gold_sign": 1,
+              "gold_sign": -1,
               "model_sign": 0,
               "agree": null
             },
@@ -78,8 +76,8 @@
             },
             "fx_or_other": {
               "gold_sign": 1,
-              "model_sign": 0,
-              "agree": null
+              "model_sign": -1,
+              "agree": 0
             }
           },
           "family_source": "inferred (keyword classifier)"
@@ -112,34 +110,32 @@
           "source_recall": null,
           "source_precision": 0.0,
           "n_gold_domains": 0,
-          "n_retrieved_domains": 10,
+          "n_retrieved_domains": 11,
           "dds": 0.3333333333333333,
           "dds_detail": {
             "volume": {
               "gold_sign": -1,
-              "model_sign": 1,
-              "agree": 0
+              "model_sign": 0,
+              "agree": null
             },
             "price": {
               "gold_sign": 1,
-              "model_sign": 0,
-              "agree": null
+              "model_sign": 1,
+              "agree": 1
             }
           },
           "family_source": "model-reported"
         },
         "C6": {
-          "model": "gpt-4o-mini",
-          "family_recall": 0.2,
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
           "families_covered": [
-            "customers",
-            "exogenous",
-            "peers_readthrough"
+            "customers"
           ],
           "source_recall": null,
           "source_precision": 0.0,
           "n_gold_domains": 0,
-          "n_retrieved_domains": 8,
+          "n_retrieved_domains": 14,
           "dds": 0.0,
           "dds_detail": {
             "volume": {
@@ -151,6 +147,353 @@
               "gold_sign": 1,
               "model_sign": 0,
               "agree": null
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
+    },
+    "ADBE.Q1-FY2026": {
+      "id": "ADBE.Q1-FY2026",
+      "ticker": "ADBE",
+      "company": "Adobe",
+      "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling",
+        "substitution"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.2,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 18,
+          "dds": 0.0,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "fx_or_other": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [],
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 6,
+          "dds": 0.0,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "fx_or_other": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
+    },
+    "ADBE.Q2-FY2026": {
+      "id": "ADBE.Q2-FY2026",
+      "ticker": "ADBE",
+      "company": "Adobe",
+      "quarter": "Q2 FY2026 (ended May 29 2026)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling",
+        "substitution"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.2,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 11,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "fx_or_other": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [],
+          "source_recall": null,
+          "source_precision": null,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 0,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "fx_or_other": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
+    },
+    "TEAM.FY26-Q3": {
+      "id": "TEAM.FY26-Q3",
+      "ticker": "TEAM",
+      "company": "Atlassian",
+      "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling",
+        "substitution"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.2,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 7,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [
+            "customers"
+          ],
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 6,
+          "dds": 1.0,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
+    },
+    "TEAM.FY26-Q4": {
+      "id": "TEAM.FY26-Q4",
+      "ticker": "TEAM",
+      "company": "Atlassian",
+      "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.25,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": null,
+          "source_precision": 0.0,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 9,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [],
+          "source_recall": null,
+          "source_precision": null,
+          "n_gold_domains": 0,
+          "n_retrieved_domains": 0,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
+    },
+    "CMG.Q1-2026": {
+      "id": "CMG.Q1-2026",
+      "ticker": "CMG",
+      "company": "Chipotle",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.25,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": 0.0,
+          "source_precision": 0.0,
+          "n_gold_domains": 6,
+          "n_retrieved_domains": 15,
+          "dds": 0.0,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": -1,
+              "agree": 0
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [
+            "customers"
+          ],
+          "source_recall": 0.16666666666666666,
+          "source_precision": 0.06666666666666667,
+          "n_gold_domains": 6,
+          "n_retrieved_domains": 15,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": -1,
+              "agree": 0
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
             }
           },
           "family_source": "inferred (keyword classifier)"
@@ -179,10 +522,10 @@
             "peers_readthrough",
             "products"
           ],
-          "source_recall": 0.42857142857142855,
-          "source_precision": 0.15789473684210525,
+          "source_recall": 0.0,
+          "source_precision": 0.0,
           "n_gold_domains": 7,
-          "n_retrieved_domains": 19,
+          "n_retrieved_domains": 11,
           "dds": 0.0,
           "dds_detail": {
             "price": {
@@ -194,17 +537,15 @@
           "family_source": "model-reported"
         },
         "C6": {
-          "model": "gpt-4o-mini",
-          "family_recall": 0.25,
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
           "families_covered": [
-            "customers",
-            "exogenous",
-            "products"
+            "customers"
           ],
-          "source_recall": 0.2857142857142857,
-          "source_precision": 0.13333333333333333,
+          "source_recall": 0.14285714285714285,
+          "source_precision": 0.1,
           "n_gold_domains": 7,
-          "n_retrieved_domains": 15,
+          "n_retrieved_domains": 10,
           "dds": 0.0,
           "dds_detail": {
             "price": {
@@ -216,16 +557,452 @@
           "family_source": "inferred (keyword classifier)"
         }
       }
+    },
+    "DAL.Q1-2026": {
+      "id": "DAL.Q1-2026",
+      "ticker": "DAL",
+      "company": "Delta Air Lines",
+      "quarter": "Q1 2026 (Mar quarter)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.25,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": 0.2,
+          "source_precision": 0.1111111111111111,
+          "n_gold_domains": 5,
+          "n_retrieved_domains": 9,
+          "dds": 0.5,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [],
+          "source_recall": 0.0,
+          "source_precision": null,
+          "n_gold_domains": 5,
+          "n_retrieved_domains": 0,
+          "dds": 0.0,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
+    },
+    "DAL.Q2-2026": {
+      "id": "DAL.Q2-2026",
+      "ticker": "DAL",
+      "company": "Delta Air Lines",
+      "quarter": "Q2 2026 (Jun quarter)",
+      "gold_families": [
+        "demand",
+        "exogenous",
+        "read_through",
+        "selling"
+      ],
+      "conditions": {
+        "deep-mined": {
+          "model": "gpt-4o-mini",
+          "family_recall": 0.25,
+          "families_covered": [
+            "competitors",
+            "customers",
+            "exogenous",
+            "peers_readthrough",
+            "products"
+          ],
+          "source_recall": 0.0,
+          "source_precision": 0.0,
+          "n_gold_domains": 5,
+          "n_retrieved_domains": 7,
+          "dds": 0.3333333333333333,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "fx_or_other": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "model-reported"
+        },
+        "C6": {
+          "model": "gpt-5.3-chat",
+          "family_recall": 0.0,
+          "families_covered": [
+            "customers"
+          ],
+          "source_recall": 0.2,
+          "source_precision": 0.2,
+          "n_gold_domains": 5,
+          "n_retrieved_domains": 5,
+          "dds": 0.3333333333333333,
+          "dds_detail": {
+            "volume": {
+              "gold_sign": 1,
+              "model_sign": 1,
+              "agree": 1
+            },
+            "price": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            },
+            "fx_or_other": {
+              "gold_sign": 1,
+              "model_sign": 0,
+              "agree": null
+            }
+          },
+          "family_source": "inferred (keyword classifier)"
+        }
+      }
     }
   },
   "by_model": {
+    "gpt-5.4": [
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "C6"
+      }
+    ],
+    "claude-sonnet-4-6": [
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "C6"
+      }
+    ],
+    "gpt-5.3-chat": [
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "C6"
+      }
+    ],
+    "claude-opus-4-8": [
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "C6"
+      }
+    ],
     "gpt-4o-mini": [
       {
-        "episode": "DAL.Q2-2026",
+        "episode": "IBM.Q1-2026",
         "condition": "deep-mined"
       },
       {
-        "episode": "DAL.Q2-2026",
+        "episode": "IBM.Q1-2026",
         "condition": "C6"
       },
       {
@@ -237,11 +1014,67 @@
         "condition": "C6"
       },
       {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "C6"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "C6"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "CMG.Q1-2026",
+        "condition": "C6"
+      },
+      {
         "episode": "CMG.Q2-2026",
         "condition": "deep-mined"
       },
       {
         "episode": "CMG.Q2-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "C6"
+      },
+      {
+        "episode": "DAL.Q2-2026",
+        "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q2-2026",
         "condition": "C6"
       }
     ]
