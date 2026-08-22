@@ -13,7 +13,12 @@
     return s;
   }
 
-  S.fetchJSON("data/companies.json").then(function (data) {
+  var miningScoresPromise = S.fetchJSON("data/mining_scores.json")
+    .catch(function () { return null; });
+
+  Promise.all([S.fetchJSON("data/companies.json"), miningScoresPromise]).then(function (results) {
+    var data = results[0];
+    var miningScoresData = results[1];
     var co = null;
     data.companies.forEach(function (c) { if (c.ticker === ticker) co = c; });
 
@@ -92,6 +97,11 @@
 
       var mp = S.miningPanel(ep.mining);
       if (mp) card.appendChild(mp);
+
+      if (miningScoresData && miningScoresData.episodes && miningScoresData.episodes[ep.id]) {
+        var mrs = S.miningRecallSection(miningScoresData.episodes[ep.id], miningScoresData.caveat, { showEpisode: false });
+        if (mrs) card.appendChild(mrs);
+      }
 
       epsBox.appendChild(card);
     });

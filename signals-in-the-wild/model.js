@@ -59,7 +59,12 @@
     box.appendChild(table);
   }
 
-  S.fetchJSON("data/models.json").then(function (data) {
+  var miningScoresPromise = S.fetchJSON("data/mining_scores.json")
+    .catch(function () { return null; });
+
+  Promise.all([S.fetchJSON("data/models.json"), miningScoresPromise]).then(function (results) {
+    var data = results[0];
+    var miningScoresData = results[1];
     var m = data.models[key];
     var header = document.getElementById("model-header");
     var stats = document.getElementById("model-stats");
@@ -113,6 +118,29 @@
       mine.forEach(function (it) { wrap.appendChild(S.trajCard(it, { showModel: false })); });
       box.parentNode.insertBefore(wrap, box.nextSibling);
     }).catch(function (e) { console.error(e); });
+
+    // ---- Mining Recall / DDS (preliminary v1) for this model ----
+    if (miningScoresData && miningScoresData.episodes) {
+      var epScores = Object.keys(miningScoresData.episodes)
+        .map(function (id) { return miningScoresData.episodes[id]; })
+        .filter(function (es) {
+          var conds = es.conditions || {};
+          return Object.keys(conds).some(function (c) { return conds[c].model === m.name; });
+        });
+      if (epScores.length) {
+        var mwrap = document.createElement("div");
+        var mh = S.el("h3", null, "Mining Recall (preliminary)");
+        mh.style.marginTop = "40px";
+        mwrap.appendChild(mh);
+        mwrap.appendChild(S.el("p", "page-sub",
+          "v1 rule-based recall / Driver-Decomposition-Score against a hand-researched gold demand-driver "
+          + "map, per episode this model was scored on."));
+        epScores.forEach(function (es, i) {
+          mwrap.appendChild(S.miningRecallSection(es, miningScoresData.caveat, { showEpisode: true, showCaveat: i === 0 }));
+        });
+        box.parentNode.insertBefore(mwrap, box.nextSibling);
+      }
+    }
 
   }).catch(function (e) { console.error(e); S.showError(document.getElementById("model-episodes"), "data/models.json"); });
 })();

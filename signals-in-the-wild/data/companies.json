@@ -33,7 +33,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.58,
+              "conf": 0.56,
               "ok": false
             },
             {
@@ -42,7 +42,7 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.75,
+              "conf": 0.73,
               "ok": true
             },
             {
@@ -60,7 +60,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.66,
+              "conf": 0.73,
               "ok": true
             },
             {
@@ -69,7 +69,7 @@
               "avatar": "5.2",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.38,
+              "conf": 0.45,
               "ok": false
             },
             {
@@ -78,16 +78,16 @@
               "avatar": "5.2",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.58,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.3-chat",
-              "name": "gpt-5.3-chat",
-              "avatar": "5.3",
-              "condition": "blind",
-              "pred": "inline",
               "conf": 0.56,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.58,
               "ok": false
             },
             {
@@ -96,7 +96,7 @@
               "avatar": "5.3",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.67,
+              "conf": 0.64,
               "ok": true
             },
             {
@@ -113,9 +113,9 @@
               "name": "gpt-4o-mini",
               "avatar": "4o",
               "condition": "fed",
-              "pred": "beat",
+              "pred": "inline",
               "conf": 0.75,
-              "ok": true
+              "ok": false
             },
             {
               "key": "Kimi-K2.5",
@@ -159,7 +159,7 @@
               "avatar": "So",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.52,
+              "conf": 0.55,
               "ok": true
             },
             {
@@ -177,7 +177,7 @@
               "avatar": "Ha",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.55,
+              "conf": 0.65,
               "ok": false
             },
             {
@@ -186,7 +186,7 @@
               "avatar": "Ha",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.72,
+              "conf": 0.68,
               "ok": true
             }
           ]
@@ -224,7 +224,7 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.67,
+              "conf": 0.64,
               "ok": false
             },
             {
@@ -242,7 +242,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.61,
+              "conf": 0.66,
               "ok": false
             },
             {
@@ -251,7 +251,7 @@
               "avatar": "5.2",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.56,
+              "conf": 0.46,
               "ok": false
             },
             {
@@ -260,7 +260,7 @@
               "avatar": "5.2",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.56,
+              "conf": 0.54,
               "ok": false
             },
             {
@@ -269,7 +269,7 @@
               "avatar": "5.3",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.61,
+              "conf": 0.57,
               "ok": false
             },
             {
@@ -278,7 +278,7 @@
               "avatar": "5.3",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.63,
+              "conf": 0.58,
               "ok": false
             },
             {
@@ -286,17 +286,17 @@
               "name": "gpt-4o-mini",
               "avatar": "4o",
               "condition": "blind",
+              "pred": "inline",
+              "conf": 0.75,
+              "ok": false
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "fed",
               "pred": "miss",
               "conf": 0.7,
-              "ok": true
-            },
-            {
-              "key": "gpt-4o-mini",
-              "name": "gpt-4o-mini",
-              "avatar": "4o",
-              "condition": "fed",
-              "pred": "miss",
-              "conf": 0.75,
               "ok": true
             },
             {
@@ -341,7 +341,7 @@
               "avatar": "So",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.38,
+              "conf": 0.42,
               "ok": false
             },
             {
@@ -359,7 +359,7 @@
               "avatar": "Ha",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.55,
+              "conf": 0.62,
               "ok": false
             },
             {
@@ -407,7 +407,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.59,
+              "conf": 0.58,
               "ok": false
             },
             {
@@ -425,7 +425,7 @@
               "avatar": "5m",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.68,
+              "conf": 0.63,
               "ok": false
             },
             {
@@ -434,7 +434,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.63,
+              "conf": 0.62,
               "ok": false
             },
             {
@@ -443,7 +443,7 @@
               "avatar": "5.2",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.42,
+              "conf": 0.44,
               "ok": false
             },
             {
@@ -461,7 +461,7 @@
               "avatar": "5.3",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.58,
+              "conf": 0.63,
               "ok": false
             },
             {
@@ -469,9 +469,9 @@
               "name": "gpt-5.3-chat",
               "avatar": "5.3",
               "condition": "fed",
-              "pred": "inline",
+              "pred": "beat",
               "conf": 0.63,
-              "ok": false
+              "ok": true
             },
             {
               "key": "gpt-4o-mini",
@@ -488,7 +488,7 @@
               "avatar": "4o",
               "condition": "fed",
               "pred": "miss",
-              "conf": 0.75,
+              "conf": 0.6,
               "ok": false
             },
             {
@@ -533,16 +533,16 @@
               "avatar": "So",
               "condition": "blind",
               "pred": "beat",
+              "conf": 0.52,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "inline",
               "conf": 0.55,
-              "ok": true
-            },
-            {
-              "key": "claude-sonnet-4-6",
-              "name": "claude-sonnet-4-6",
-              "avatar": "So",
-              "condition": "fed",
-              "pred": "inline",
-              "conf": 0.62,
               "ok": false
             },
             {
@@ -550,18 +550,18 @@
               "name": "claude-haiku-4-5",
               "avatar": "Ha",
               "condition": "blind",
-              "pred": "inline",
-              "conf": 0.6,
-              "ok": false
-            },
-            {
-              "key": "claude-haiku-4-5",
-              "name": "claude-haiku-4-5",
-              "avatar": "Ha",
-              "condition": "fed",
               "pred": "inline",
               "conf": 0.65,
               "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.68,
+              "ok": true
             }
           ]
         },
@@ -589,7 +589,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.7,
+              "conf": 0.69,
               "ok": false
             },
             {
@@ -598,7 +598,7 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.78,
+              "conf": 0.81,
               "ok": true
             },
             {
@@ -616,7 +616,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.74,
+              "conf": 0.7,
               "ok": true
             },
             {
@@ -625,7 +625,7 @@
               "avatar": "5.2",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.5,
+              "conf": 0.44,
               "ok": false
             },
             {
@@ -643,7 +643,7 @@
               "avatar": "5.3",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.62,
+              "conf": 0.63,
               "ok": false
             },
             {
@@ -652,7 +652,7 @@
               "avatar": "5.3",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.8,
+              "conf": 0.82,
               "ok": true
             },
             {
@@ -660,9 +660,9 @@
               "name": "gpt-4o-mini",
               "avatar": "4o",
               "condition": "blind",
-              "pred": "inline",
-              "conf": 0.8,
-              "ok": false
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
             },
             {
               "key": "gpt-4o-mini",
@@ -670,7 +670,7 @@
               "avatar": "4o",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.8,
+              "conf": 0.75,
               "ok": true
             },
             {
@@ -715,7 +715,7 @@
               "avatar": "So",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.52,
+              "conf": 0.55,
               "ok": true
             },
             {
@@ -781,7 +781,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.56,
+              "conf": 0.55,
               "ok": false
             },
             {
@@ -790,7 +790,7 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.84,
+              "conf": 0.8,
               "ok": true
             },
             {
@@ -799,7 +799,7 @@
               "avatar": "5m",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.58,
+              "conf": 0.57,
               "ok": false
             },
             {
@@ -808,7 +808,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.74,
+              "conf": 0.78,
               "ok": true
             },
             {
@@ -817,7 +817,7 @@
               "avatar": "5.2",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.42,
+              "conf": 0.44,
               "ok": false
             },
             {
@@ -834,9 +834,9 @@
               "name": "gpt-5.3-chat",
               "avatar": "5.3",
               "condition": "blind",
-              "pred": "inline",
-              "conf": 0.57,
-              "ok": false
+              "pred": "beat",
+              "conf": 0.58,
+              "ok": true
             },
             {
               "key": "gpt-5.3-chat",
@@ -924,9 +924,9 @@
               "name": "claude-haiku-4-5",
               "avatar": "Ha",
               "condition": "blind",
-              "pred": "beat",
-              "conf": 0.62,
-              "ok": true
+              "pred": "inline",
+              "conf": 0.65,
+              "ok": false
             },
             {
               "key": "claude-haiku-4-5",
@@ -963,7 +963,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.61,
+              "conf": 0.65,
               "ok": true
             },
             {
@@ -971,18 +971,18 @@
               "name": "gpt-5.4",
               "avatar": "5.4",
               "condition": "fed",
-              "pred": "beat",
-              "conf": 0.76,
-              "ok": true
+              "pred": "inline",
+              "conf": 0.74,
+              "ok": false
             },
             {
               "key": "gpt-5.4-mini",
               "name": "gpt-5.4-mini",
               "avatar": "5m",
               "condition": "blind",
-              "pred": "inline",
-              "conf": 0.58,
-              "ok": false
+              "pred": "beat",
+              "conf": 0.57,
+              "ok": true
             },
             {
               "key": "gpt-5.4-mini",
@@ -990,7 +990,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.78,
+              "conf": 0.88,
               "ok": false
             },
             {
@@ -999,7 +999,7 @@
               "avatar": "5.2",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.56,
+              "conf": 0.55,
               "ok": true
             },
             {
@@ -1008,7 +1008,7 @@
               "avatar": "5.2",
               "condition": "fed",
               "pred": "inline",
-              "conf": 0.56,
+              "conf": 0.58,
               "ok": false
             },
             {
@@ -1017,7 +1017,7 @@
               "avatar": "5.3",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.58,
+              "conf": 0.63,
               "ok": true
             },
             {
@@ -1026,7 +1026,7 @@
               "avatar": "5.3",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.72,
+              "conf": 0.63,
               "ok": true
             },
             {
@@ -1071,7 +1071,7 @@
               "avatar": "Op",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.62,
+              "conf": 0.6,
               "ok": true
             },
             {
@@ -1107,7 +1107,7 @@
               "avatar": "Ha",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.62,
+              "conf": 0.68,
               "ok": true
             },
             {
@@ -1155,7 +1155,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.55,
+              "conf": 0.57,
               "ok": true
             },
             {
@@ -1164,34 +1164,34 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "beat",
+              "conf": 0.73,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.54,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
               "conf": 0.72,
               "ok": false
             },
             {
-              "key": "gpt-5.4-mini",
-              "name": "gpt-5.4-mini",
-              "avatar": "5m",
-              "condition": "blind",
-              "pred": "inline",
-              "conf": 0.58,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.4-mini",
-              "name": "gpt-5.4-mini",
-              "avatar": "5m",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.79,
-              "ok": false
-            },
-            {
               "key": "gpt-5.2",
               "name": "gpt-5.2",
               "avatar": "5.2",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.42,
+              "conf": 0.44,
               "ok": true
             },
             {
@@ -1200,7 +1200,7 @@
               "avatar": "5.2",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.58,
+              "conf": 0.62,
               "ok": false
             },
             {
@@ -1209,7 +1209,7 @@
               "avatar": "5.3",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.55,
+              "conf": 0.56,
               "ok": true
             },
             {
@@ -1218,7 +1218,7 @@
               "avatar": "5.3",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.71,
+              "conf": 0.67,
               "ok": false
             },
             {
@@ -1226,17 +1226,17 @@
               "name": "gpt-4o-mini",
               "avatar": "4o",
               "condition": "blind",
-              "pred": "miss",
-              "conf": 0.7,
-              "ok": false
-            },
-            {
-              "key": "gpt-4o-mini",
-              "name": "gpt-4o-mini",
-              "avatar": "4o",
-              "condition": "fed",
-              "pred": "beat",
+              "pred": "inline",
               "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.7,
               "ok": false
             },
             {
@@ -1281,7 +1281,7 @@
               "avatar": "So",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.38,
+              "conf": 0.42,
               "ok": true
             },
             {
@@ -1298,9 +1298,9 @@
               "name": "claude-haiku-4-5",
               "avatar": "Ha",
               "condition": "blind",
-              "pred": "inline",
-              "conf": 0.62,
-              "ok": true
+              "pred": "miss",
+              "conf": 0.65,
+              "ok": false
             },
             {
               "key": "claude-haiku-4-5",
@@ -1346,7 +1346,7 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.79,
+              "conf": 0.72,
               "ok": true
             },
             {
@@ -1355,7 +1355,7 @@
               "avatar": "5m",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.58,
+              "conf": 0.56,
               "ok": false
             },
             {
@@ -1364,7 +1364,7 @@
               "avatar": "5m",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.78,
+              "conf": 0.77,
               "ok": true
             },
             {
@@ -1382,7 +1382,7 @@
               "avatar": "5.2",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.63,
+              "conf": 0.62,
               "ok": true
             },
             {
@@ -1391,7 +1391,7 @@
               "avatar": "5.3",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.57,
+              "conf": 0.61,
               "ok": true
             },
             {
@@ -1418,7 +1418,7 @@
               "avatar": "4o",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.8,
+              "conf": 0.75,
               "ok": true
             },
             {
@@ -1480,9 +1480,9 @@
               "name": "claude-haiku-4-5",
               "avatar": "Ha",
               "condition": "blind",
-              "pred": "inline",
-              "conf": 0.65,
-              "ok": false
+              "pred": "beat",
+              "conf": 0.68,
+              "ok": true
             },
             {
               "key": "claude-haiku-4-5",
@@ -1528,7 +1528,7 @@
               "avatar": "5.4",
               "condition": "blind",
               "pred": "inline",
-              "conf": 0.58,
+              "conf": 0.57,
               "ok": false
             },
             {
@@ -1537,7 +1537,7 @@
               "avatar": "5.4",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.78,
+              "conf": 0.81,
               "ok": true
             },
             {
@@ -1553,215 +1553,25 @@
               "key": "gpt-5.4-mini",
               "name": "gpt-5.4-mini",
               "avatar": "5m",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.78,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.2",
-              "name": "gpt-5.2",
-              "avatar": "5.2",
-              "condition": "blind",
-              "pred": "inline",
-              "conf": 0.53,
-              "ok": false
-            },
-            {
-              "key": "gpt-5.2",
-              "name": "gpt-5.2",
-              "avatar": "5.2",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.62,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.3-chat",
-              "name": "gpt-5.3-chat",
-              "avatar": "5.3",
-              "condition": "blind",
-              "pred": "inline",
-              "conf": 0.56,
-              "ok": false
-            },
-            {
-              "key": "gpt-5.3-chat",
-              "name": "gpt-5.3-chat",
-              "avatar": "5.3",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.79,
-              "ok": true
-            },
-            {
-              "key": "gpt-4o-mini",
-              "name": "gpt-4o-mini",
-              "avatar": "4o",
-              "condition": "blind",
-              "pred": "beat",
-              "conf": 0.75,
-              "ok": true
-            },
-            {
-              "key": "gpt-4o-mini",
-              "name": "gpt-4o-mini",
-              "avatar": "4o",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.8,
-              "ok": true
-            },
-            {
-              "key": "Kimi-K2.5",
-              "name": "Kimi-K2.5",
-              "avatar": "K2",
-              "condition": "blind",
-              "pred": null,
-              "conf": null,
-              "ok": false
-            },
-            {
-              "key": "Kimi-K2.5",
-              "name": "Kimi-K2.5",
-              "avatar": "K2",
-              "condition": "fed",
-              "pred": null,
-              "conf": null,
-              "ok": false
-            },
-            {
-              "key": "claude-opus-4-8",
-              "name": "claude-opus-4-8",
-              "avatar": "Op",
-              "condition": "blind",
-              "pred": "inline",
-              "conf": 0.55,
-              "ok": false
-            },
-            {
-              "key": "claude-opus-4-8",
-              "name": "claude-opus-4-8",
-              "avatar": "Op",
-              "condition": "fed",
-              "pred": "inline",
-              "conf": 0.6,
-              "ok": false
-            },
-            {
-              "key": "claude-sonnet-4-6",
-              "name": "claude-sonnet-4-6",
-              "avatar": "So",
-              "condition": "blind",
-              "pred": "miss",
-              "conf": 0.38,
-              "ok": false
-            },
-            {
-              "key": "claude-sonnet-4-6",
-              "name": "claude-sonnet-4-6",
-              "avatar": "So",
               "condition": "fed",
               "pred": "beat",
               "conf": 0.72,
               "ok": true
             },
             {
-              "key": "claude-haiku-4-5",
-              "name": "claude-haiku-4-5",
-              "avatar": "Ha",
-              "condition": "blind",
-              "pred": "inline",
-              "conf": 0.65,
-              "ok": false
-            },
-            {
-              "key": "claude-haiku-4-5",
-              "name": "claude-haiku-4-5",
-              "avatar": "Ha",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.72,
-              "ok": true
-            }
-          ]
-        },
-        {
-          "id": "DAL.Q2-2026",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "cutoff_T": "2026-06-28",
-          "consensus_rev_b": 17.2,
-          "actual_rev_b": 17.666,
-          "actual_yoy_pct": 13.9,
-          "prior_trend": "Q1 beat; unit revenue accelerating",
-          "surprise_actual": "beat",
-          "signals": [
-            "TSA record travel forecast for July 4 week (announced Jun 25, pre-cutoff)",
-            "Management guided +low-teens revenue on FLAT capacity -> strong yield",
-            "Premium/Amex demand double-digit; corporate travel growing",
-            "Jet fuel eased after Jun 14 (helps margin, neutral-to-slight for revenue)"
-          ],
-          "note": null,
-          "model_preds": [
-            {
-              "key": "gpt-5.4",
-              "name": "gpt-5.4",
-              "avatar": "5.4",
-              "condition": "blind",
-              "pred": "beat",
-              "conf": 0.58,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.4",
-              "name": "gpt-5.4",
-              "avatar": "5.4",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.78,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.4-mini",
-              "name": "gpt-5.4-mini",
-              "avatar": "5m",
-              "condition": "blind",
-              "pred": "inline",
-              "conf": 0.59,
-              "ok": false
-            },
-            {
-              "key": "gpt-5.4-mini",
-              "name": "gpt-5.4-mini",
-              "avatar": "5m",
-              "condition": "fed",
-              "pred": "beat",
-              "conf": 0.78,
-              "ok": true
-            },
-            {
               "key": "gpt-5.2",
               "name": "gpt-5.2",
               "avatar": "5.2",
               "condition": "blind",
-              "pred": "beat",
-              "conf": 0.53,
-              "ok": true
+              "pred": "inline",
+              "conf": 0.48,
+              "ok": false
             },
             {
               "key": "gpt-5.2",
               "name": "gpt-5.2",
               "avatar": "5.2",
               "condition": "fed",
-              "pred": "beat",
-              "conf": 0.62,
-              "ok": true
-            },
-            {
-              "key": "gpt-5.3-chat",
-              "name": "gpt-5.3-chat",
-              "avatar": "5.3",
-              "condition": "blind",
               "pred": "beat",
               "conf": 0.63,
               "ok": true
@@ -1770,9 +1580,18 @@
               "key": "gpt-5.3-chat",
               "name": "gpt-5.3-chat",
               "avatar": "5.3",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.57,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.79,
+              "conf": 0.77,
               "ok": true
             },
             {
@@ -1826,7 +1645,188 @@
               "avatar": "Op",
               "condition": "fed",
               "pred": "beat",
-              "conf": 0.66,
+              "conf": 0.6,
+              "ok": true
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "blind",
+              "pred": "miss",
+              "conf": 0.38,
+              "ok": false
+            },
+            {
+              "key": "claude-sonnet-4-6",
+              "name": "claude-sonnet-4-6",
+              "avatar": "So",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.6,
+              "ok": false
+            },
+            {
+              "key": "claude-haiku-4-5",
+              "name": "claude-haiku-4-5",
+              "avatar": "Ha",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.72,
+              "ok": true
+            }
+          ]
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "cutoff_T": "2026-06-28",
+          "consensus_rev_b": 17.2,
+          "actual_rev_b": 17.666,
+          "actual_yoy_pct": 13.9,
+          "prior_trend": "Q1 beat; unit revenue accelerating",
+          "surprise_actual": "beat",
+          "signals": [
+            "TSA record travel forecast for July 4 week (announced Jun 25, pre-cutoff)",
+            "Management guided +low-teens revenue on FLAT capacity -> strong yield",
+            "Premium/Amex demand double-digit; corporate travel growing",
+            "Jet fuel eased after Jun 14 (helps margin, neutral-to-slight for revenue)"
+          ],
+          "note": null,
+          "model_preds": [
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.63,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4",
+              "name": "gpt-5.4",
+              "avatar": "5.4",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.83,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.61,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.4-mini",
+              "name": "gpt-5.4-mini",
+              "avatar": "5m",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.82,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "blind",
+              "pred": "inline",
+              "conf": 0.43,
+              "ok": false
+            },
+            {
+              "key": "gpt-5.2",
+              "name": "gpt-5.2",
+              "avatar": "5.2",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.63,
+              "ok": true
+            },
+            {
+              "key": "gpt-5.3-chat",
+              "name": "gpt-5.3-chat",
+              "avatar": "5.3",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.78,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.75,
+              "ok": true
+            },
+            {
+              "key": "gpt-4o-mini",
+              "name": "gpt-4o-mini",
+              "avatar": "4o",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.85,
+              "ok": true
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "blind",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "Kimi-K2.5",
+              "name": "Kimi-K2.5",
+              "avatar": "K2",
+              "condition": "fed",
+              "pred": null,
+              "conf": null,
+              "ok": false
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "blind",
+              "pred": "beat",
+              "conf": 0.55,
+              "ok": true
+            },
+            {
+              "key": "claude-opus-4-8",
+              "name": "claude-opus-4-8",
+              "avatar": "Op",
+              "condition": "fed",
+              "pred": "beat",
+              "conf": 0.62,
               "ok": true
             },
             {
@@ -1853,7 +1853,7 @@
               "avatar": "Ha",
               "condition": "blind",
               "pred": "beat",
-              "conf": 0.62,
+              "conf": 0.68,
               "ok": true
             },
             {
