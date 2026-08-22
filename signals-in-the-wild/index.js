@@ -10,10 +10,10 @@
   S.fetchJSON("data/summary.json").then(function (sm) {
     var tiles = document.getElementById("tiles");
     var items = [
-      { k: sm.episodes, l: "Frozen episodes", accent: true },
-      { k: sm.companies, l: "Companies · 3 sectors" },
-      { k: sm.models_evaluated, l: "Model conditions (blind · feed · open-web)" },
-      { k: sm.baselines, l: "Baselines (human + naive)" },
+      { k: sm.models_evaluated, l: "Models × blind + feed conditions", accent: true },
+      { k: sm.episodes, l: "Frozen episodes · " + sm.companies + " companies" },
+      { k: sm.weekly_tracks, l: "Weekly forecast trajectories" },
+      { k: sm.live_pending, l: "Live prints (predictions open)" },
     ];
     items.forEach(function (it) {
       var t = S.el("div", "tile");
@@ -32,9 +32,8 @@
     var scroll = S.el("div", "table-scroll");
     var table = S.el("table", "data-table");
     var thead = S.el("thead"), htr = S.el("tr");
-    ["#", "Model", "Type", "Accuracy", "Skill", "Brier", "n"].forEach(function (h, i) {
-      var th = S.el("th", i >= 4 || i === 3 ? null : null, h);
-      if (["Skill", "Brier", "n"].indexOf(h) >= 0) th.className = "num";
+    ["#", "Model", "Blind", "Feed", "Lift", "n"].forEach(function (h) {
+      var th = S.el("th", ["Lift", "n"].indexOf(h) >= 0 ? "num" : null, h);
       htr.appendChild(th);
     });
     thead.appendChild(htr); table.appendChild(thead);
@@ -42,11 +41,7 @@
     var tbody = S.el("tbody");
     data.rows.forEach(function (r) {
       var tr = S.el("tr", (r.is_baseline ? "baseline-row " : "") + "clickable");
-      if (!r.is_baseline) {
-        tr.addEventListener("click", function () { location.href = "model.html?m=" + encodeURIComponent(r.key); });
-      } else {
-        tr.addEventListener("click", function () { location.href = "model.html?m=" + encodeURIComponent(r.key); });
-      }
+      tr.addEventListener("click", function () { location.href = "model.html?m=" + encodeURIComponent(r.key); });
       var rk = S.el("td");
       rk.appendChild(S.el("span", "rank" + (r.rank === 1 ? " rank-1" : ""), String(r.rank)));
       tr.appendChild(rk);
@@ -56,15 +51,16 @@
       cell.appendChild(S.avatar(r.avatar, r.key));
       var nm = S.el("div");
       nm.appendChild(S.el("div", "mc-name", r.model));
-      nm.appendChild(S.el("div", "mc-cond", r.condition));
+      nm.appendChild(S.el("div", "mc-cond", r.route === "baseline" ? "condition-independent" : r.route));
       cell.appendChild(nm);
       mc.appendChild(cell); tr.appendChild(mc);
 
-      var tt = S.el("td"); tt.appendChild(S.typeTag(r.type)); tr.appendChild(tt);
-
-      var ac = S.el("td"); ac.appendChild(S.accBar(r.accuracy)); tr.appendChild(ac);
-      tr.appendChild(S.el("td", "num", S.fmtSkill(r.skill_pp)));
-      tr.appendChild(S.el("td", "num", S.fmtBrier(r.brier)));
+      var bc = S.el("td"); bc.appendChild(S.accBar(r.blind_acc)); tr.appendChild(bc);
+      var fc = S.el("td"); fc.appendChild(S.accBar(r.fed_acc)); tr.appendChild(fc);
+      var lc = S.el("td", "num");
+      if (r.lift_pp == null) { lc.textContent = "—"; }
+      else { lc.appendChild(S.el("span", "lift " + (r.lift_pp > 0 ? "lift-pos" : r.lift_pp < 0 ? "lift-neg" : "lift-zero"), (r.lift_pp > 0 ? "+" : "") + r.lift_pp + " pp")); }
+      tr.appendChild(lc);
       tr.appendChild(S.el("td", "num", String(r.n)));
       tbody.appendChild(tr);
     });

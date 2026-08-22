@@ -1,19 +1,29 @@
 {
   "generated": "2026-08-22",
-  "analyst_consensus_accuracy": 0.1,
+  "naive_baseline_accuracy": 0.8,
+  "conditions": {
+    "blind": "signal-blind (no external evidence)",
+    "fed": "feed-assisted (curated pre-cutoff signals supplied)"
+  },
   "models": {
-    "gpt-4o-mini-blind": {
-      "key": "gpt-4o-mini-blind",
-      "name": "gpt-4o-mini",
+    "gpt-5.4": {
+      "key": "gpt-5.4",
+      "name": "gpt-5.4",
       "type": "LLM",
-      "condition": "signal-blind",
-      "avatar": "4o",
-      "accuracy": 0.8,
-      "correct": 8,
-      "n": 10,
-      "skill_pp": 70,
-      "brier": 0.16525,
-      "is_baseline": false,
+      "route": "openai",
+      "avatar": "5.4",
+      "blind": {
+        "acc": 0.3,
+        "correct": 3,
+        "n": 10,
+        "brier": 0.3005
+      },
+      "fed": {
+        "acc": 0.8,
+        "correct": 8,
+        "n": 10,
+        "brier": 0.1418
+      },
       "episodes": [
         {
           "id": "IBM.Q1-2026",
@@ -21,416 +31,210 @@
           "ticker": "IBM",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": 0.75,
-          "ok": false
-        },
-        {
-          "id": "IBM.Q2-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "miss",
-          "pred": "miss",
-          "conf": 0.7,
-          "ok": true
-        },
-        {
-          "id": "ADBE.Q1-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
-          "actual": "beat",
-          "pred": "inline",
-          "conf": 0.75,
-          "ok": false
-        },
-        {
-          "id": "ADBE.Q2-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q2 FY2026 (ended May 29 2026)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "TEAM.FY26-Q3",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "TEAM.FY26-Q4",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "CMG.Q1-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "inline",
-          "pred": "inline",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "CMG.Q2-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "DAL.Q1-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "DAL.Q2-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        }
-      ]
-    },
-    "gpt-4o-mini-mined": {
-      "key": "gpt-4o-mini-mined",
-      "name": "gpt-4o-mini",
-      "type": "LLM",
-      "condition": "Tier-C \u00b7 feed-assisted",
-      "avatar": "4o",
-      "accuracy": 0.8,
-      "correct": 8,
-      "n": 10,
-      "skill_pp": 70,
-      "brier": 0.149,
-      "is_baseline": false,
-      "episodes": [
-        {
-          "id": "IBM.Q1-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "IBM.Q2-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "miss",
-          "pred": "miss",
-          "conf": 0.7,
-          "ok": true
-        },
-        {
-          "id": "ADBE.Q1-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
-          "actual": "beat",
-          "pred": "miss",
-          "conf": 0.7,
-          "ok": false
-        },
-        {
-          "id": "ADBE.Q2-FY2026",
-          "company": "Adobe",
-          "ticker": "ADBE",
-          "quarter": "Q2 FY2026 (ended May 29 2026)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.8,
-          "ok": true
-        },
-        {
-          "id": "TEAM.FY26-Q3",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.8,
-          "ok": true
-        },
-        {
-          "id": "TEAM.FY26-Q4",
-          "company": "Atlassian",
-          "ticker": "TEAM",
-          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "CMG.Q1-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "inline",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": false
-        },
-        {
-          "id": "CMG.Q2-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true
-        },
-        {
-          "id": "DAL.Q1-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q1 2026 (Mar quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.8,
-          "ok": true
-        },
-        {
-          "id": "DAL.Q2-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.8,
-          "ok": true
-        }
-      ]
-    },
-    "gpt-4o-mini-webmined": {
-      "key": "gpt-4o-mini-webmined",
-      "name": "gpt-4o-mini",
-      "type": "LLM",
-      "condition": "Tier-A \u00b7 open-web mining",
-      "avatar": "4o",
-      "accuracy": 1.0,
-      "correct": 3,
-      "n": 3,
-      "skill_pp": 100,
-      "brier": 0.06416666666666666,
-      "is_baseline": false,
-      "episodes": [
-        {
-          "id": "DAL.Q2-2026",
-          "company": "Delta Air Lines",
-          "ticker": "DAL",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.8,
-          "ok": true,
-          "mining": {
-            "serp_calls": 6,
-            "n_docs_retrieved": 6,
-            "cutoff_T": "2026-06-28",
-            "queries": [
-              {
-                "query": "Delta Air Lines Q2 2026 revenue guidance",
-                "cd_max": "2026-06-28",
-                "n_results": 0
-              },
-              {
-                "query": "airline industry demand trends summer 2026",
-                "cd_max": "2026-06-28",
-                "n_results": 6
-              },
-              {
-                "query": "TSA passenger traffic June 2026",
-                "cd_max": "2026-06-28",
-                "n_results": 0
-              },
-              {
-                "query": "Delta Air Lines Q2 2026 revenue forecast",
-                "cd_max": "2026-06-28",
-                "n_results": 0
-              }
-            ],
-            "cited_urls": [
-              "https://www.iata.org/en/publications/economics/reports/global-outlook-for-air-transport-june-2026/",
-              "https://dollarflightclub.com/articles/summer-2026-travel-report/",
-              "https://www.travelpulse.com/news/features/summer-travel-2026-will-be-most-expensive-in-years-airlines-aren-t-backing-off-high-prices",
-              "https://www.reuters.com/markets/see-how-much-pricier-summer-flights-are-this-year-2026-06-05/"
-            ],
-            "decomposition": {
-              "volume": "strong demand for air travel",
-              "price": "average fares up 10-31% year over year",
-              "units_or_capacity": "increased passenger numbers expected",
-              "fx_or_other": "n/a"
-            },
-            "reasoning": "With strong demand for air travel and significant year-over-year increases in airfare, Delta Air Lines is likely to outperform the consensus revenue estimate.",
-            "pred": "beat",
-            "conf": 0.8,
-            "ok": true
-          }
-        },
-        {
-          "id": "IBM.Q2-2026",
-          "company": "IBM",
-          "ticker": "IBM",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "miss",
-          "pred": "miss",
-          "conf": 0.7,
-          "ok": true,
-          "mining": {
-            "serp_calls": 6,
-            "n_docs_retrieved": 11,
-            "cutoff_T": "2026-07-10",
-            "queries": [
-              {
-                "query": "IBM Q2 2026 revenue guidance",
-                "cd_max": "2026-07-10",
-                "n_results": 4
-              },
-              {
-                "query": "IBM consulting demand trends 2026",
-                "cd_max": "2026-07-10",
-                "n_results": 1
-              },
-              {
-                "query": "IBM product launches 2026",
-                "cd_max": "2026-07-10",
-                "n_results": 0
-              },
-              {
-                "query": "IBM consulting demand trends",
-                "cd_max": "2026-07-10",
-                "n_results": 0
-              },
-              {
-                "query": "IBM competitor earnings Q2 2026",
-                "cd_max": "2026-07-10",
-                "n_results": 6
-              }
-            ],
-            "cited_urls": [
-              "https://finance.yahoo.com/markets/stocks/articles/ibm-ibm-earnings-expected-grow-140010569.html",
-              "https://www.moomoo.com/news/post/72531070/ibm-seen-delivering-solid-q2-modestly-lifting-2026-outlook-bofa",
-              "https://tech-insider.org/ibm-q1-2026-earnings-revenue-software-growth/"
-            ],
-            "decomposition": {
-              "volume": "soft consulting demand",
-              "price": "stable",
-              "units_or_capacity": "consistent with prior trends",
-              "fx_or_other": "minimal impact expected"
-            },
-            "reasoning": "Given the cautious guidance from management and soft consulting demand, it is likely that IBM's Q2 2026 revenue will come in below the consensus estimate of $17.8B.",
-            "pred": "miss",
-            "conf": 0.7,
-            "ok": true
-          }
-        },
-        {
-          "id": "CMG.Q2-2026",
-          "company": "Chipotle",
-          "ticker": "CMG",
-          "quarter": "Q2 2026 (Jun quarter)",
-          "actual": "beat",
-          "pred": "beat",
-          "conf": 0.75,
-          "ok": true,
-          "mining": {
-            "serp_calls": 6,
-            "n_docs_retrieved": 10,
-            "cutoff_T": "2026-07-17",
-            "queries": [
-              {
-                "query": "Chipotle Q2 2026 revenue growth signals",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              },
-              {
-                "query": "Chipotle menu innovation limited time offers",
-                "cd_max": "2026-07-17",
-                "n_results": 6
-              },
-              {
-                "query": "restaurant industry foot traffic trends 2026",
-                "cd_max": "2026-07-17",
-                "n_results": 4
-              },
-              {
-                "query": "Chipotle menu innovation 2026",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              },
-              {
-                "query": "restaurant industry traffic trends 2026",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              },
-              {
-                "query": "limited time offers Chipotle sales impact",
-                "cd_max": "2026-07-17",
-                "n_results": 0
-              }
-            ],
-            "cited_urls": [
-              "https://www.restaurantdive.com/news/chipotle-testing-five-things-menu-catering-group-meals/822853/",
-              "https://www.businessinsider.com/limited-time-only-permanent-menu-strategy-2026-5",
-              "https://finance.yahoo.com/markets/stocks/articles/chipotle-traffic-turns-positive-menu-105300395.html"
-            ],
-            "decomposition": {
-              "volume": "positive transaction growth due to menu innovation",
-              "price": "stable pricing strategy with limited-time offers",
-              "units_or_capacity": "increased customer traffic",
-              "fx_or_other": "no significant foreign exchange impact noted"
-            },
-            "reasoning": "Chipotle's increased focus on menu innovation and successful limited-time offers has led to positive traffic trends, suggesting that revenue will exceed consensus expectations.",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 3.4,
+            "ok": false
+          },
+          "fed": {
             "pred": "beat",
             "conf": 0.75,
+            "yoy": 6.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 2.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.67,
+            "yoy": 1.6,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.59,
+            "yoy": 10.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.66,
+            "yoy": 11.9,
+            "ok": true
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.7,
+            "yoy": 10.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 12.1,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 28,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.84,
+            "yoy": 30.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.61,
+            "yoy": 29,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.76,
+            "yoy": 31.6,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 7.4,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 8.4,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 10.4,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.79,
+            "yoy": 16.1,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 2.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 6.1,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.58,
+            "yoy": 3.8,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 13.1,
             "ok": true
           }
         }
       ]
     },
-    "human-consensus": {
-      "key": "human-consensus",
-      "name": "Human \u2014 analyst consensus",
-      "type": "Human",
-      "condition": "baseline (predicts inline)",
-      "avatar": "H",
-      "accuracy": 0.1,
-      "correct": 1,
-      "n": 10,
-      "skill_pp": 0,
-      "brier": null,
-      "is_baseline": true,
+    "gpt-5.4-mini": {
+      "key": "gpt-5.4-mini",
+      "name": "gpt-5.4-mini",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "5m",
+      "blind": {
+        "acc": 0.1,
+        "correct": 1,
+        "n": 10,
+        "brier": 0.3413
+      },
+      "fed": {
+        "acc": 0.6,
+        "correct": 6,
+        "n": 10,
+        "brier": 0.2397
+      },
       "episodes": [
         {
           "id": "IBM.Q1-2026",
@@ -438,9 +242,18 @@
           "ticker": "IBM",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 4.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.66,
+            "yoy": 4.2,
+            "ok": true
+          }
         },
         {
           "id": "IBM.Q2-2026",
@@ -448,9 +261,18 @@
           "ticker": "IBM",
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "miss",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.61,
+            "yoy": 4.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.61,
+            "yoy": 5.0,
+            "ok": false
+          }
         },
         {
           "id": "ADBE.Q1-FY2026",
@@ -458,9 +280,18 @@
           "ticker": "ADBE",
           "quarter": "Q1 FY2026 (ended Feb 27 2026)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.68,
+            "yoy": 11.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.63,
+            "yoy": 10.4,
+            "ok": false
+          }
         },
         {
           "id": "ADBE.Q2-FY2026",
@@ -468,9 +299,18 @@
           "ticker": "ADBE",
           "quarter": "Q2 FY2026 (ended May 29 2026)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.61,
+            "yoy": 10.1,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.74,
+            "yoy": 11.2,
+            "ok": true
+          }
         },
         {
           "id": "TEAM.FY26-Q3",
@@ -478,9 +318,18 @@
           "ticker": "TEAM",
           "quarter": "FY2026 Q3 (ended Mar 31 2026)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 29.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.74,
+            "yoy": 31.5,
+            "ok": true
+          }
         },
         {
           "id": "TEAM.FY26-Q4",
@@ -488,9 +337,18 @@
           "ticker": "TEAM",
           "quarter": "FY2026 Q4 (ended Jun 30 2026)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 30.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.78,
+            "yoy": 31.5,
+            "ok": false
+          }
         },
         {
           "id": "CMG.Q1-2026",
@@ -498,9 +356,18 @@
           "ticker": "CMG",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "inline",
-          "pred": "inline",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 4.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.79,
+            "yoy": 10.2,
+            "ok": false
+          }
         },
         {
           "id": "CMG.Q2-2026",
@@ -508,9 +375,18 @@
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 8.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 12.4,
+            "ok": true
+          }
         },
         {
           "id": "DAL.Q1-2026",
@@ -518,9 +394,18 @@
           "ticker": "DAL",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 4.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 7.0,
+            "ok": true
+          }
         },
         {
           "id": "DAL.Q2-2026",
@@ -528,24 +413,39 @@
           "ticker": "DAL",
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "beat",
-          "pred": "inline",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.59,
+            "yoy": 2.1,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.78,
+            "yoy": 6.5,
+            "ok": true
+          }
         }
       ]
     },
-    "naive-beat": {
-      "key": "naive-beat",
-      "name": "Naive (always-beat)",
-      "type": "Baseline",
-      "condition": "heuristic baseline",
-      "avatar": "N",
-      "accuracy": 0.8,
-      "correct": 8,
-      "n": 10,
-      "skill_pp": 70,
-      "brier": null,
-      "is_baseline": true,
+    "gpt-5.2": {
+      "key": "gpt-5.2",
+      "name": "gpt-5.2",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "5.2",
+      "blind": {
+        "acc": 0.3,
+        "correct": 3,
+        "n": 10,
+        "brier": 0.2323
+      },
+      "fed": {
+        "acc": 0.7,
+        "correct": 7,
+        "n": 10,
+        "brier": 0.2048
+      },
       "episodes": [
         {
           "id": "IBM.Q1-2026",
@@ -553,9 +453,18 @@
           "ticker": "IBM",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.38,
+            "yoy": 4.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.58,
+            "yoy": 7.0,
+            "ok": true
+          }
         },
         {
           "id": "IBM.Q2-2026",
@@ -563,9 +472,18 @@
           "ticker": "IBM",
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "miss",
-          "pred": "beat",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 1.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 1.2,
+            "ok": false
+          }
         },
         {
           "id": "ADBE.Q1-FY2026",
@@ -573,9 +491,18 @@
           "ticker": "ADBE",
           "quarter": "Q1 FY2026 (ended Feb 27 2026)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.42,
+            "yoy": 11.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.56,
+            "yoy": 12.3,
+            "ok": true
+          }
         },
         {
           "id": "ADBE.Q2-FY2026",
@@ -583,9 +510,18 @@
           "ticker": "ADBE",
           "quarter": "Q2 FY2026 (ended May 29 2026)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.5,
+            "yoy": 10.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 11.2,
+            "ok": true
+          }
         },
         {
           "id": "TEAM.FY26-Q3",
@@ -593,9 +529,18 @@
           "ticker": "TEAM",
           "quarter": "FY2026 Q3 (ended Mar 31 2026)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.42,
+            "yoy": 29.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 31.0,
+            "ok": true
+          }
         },
         {
           "id": "TEAM.FY26-Q4",
@@ -603,9 +548,18 @@
           "ticker": "TEAM",
           "quarter": "FY2026 Q4 (ended Jun 30 2026)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "beat",
+            "conf": 0.56,
+            "yoy": 33.0,
+            "ok": true
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 30.5,
+            "ok": false
+          }
         },
         {
           "id": "CMG.Q1-2026",
@@ -613,9 +567,18 @@
           "ticker": "CMG",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "inline",
-          "pred": "beat",
-          "conf": null,
-          "ok": false
+          "blind": {
+            "pred": "inline",
+            "conf": 0.42,
+            "yoy": 10.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.58,
+            "yoy": 12.2,
+            "ok": false
+          }
         },
         {
           "id": "CMG.Q2-2026",
@@ -623,9 +586,18 @@
           "ticker": "CMG",
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.48,
+            "yoy": 11.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.63,
+            "yoy": 15.2,
+            "ok": true
+          }
         },
         {
           "id": "DAL.Q1-2026",
@@ -633,9 +605,18 @@
           "ticker": "DAL",
           "quarter": "Q1 2026 (Mar quarter)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "inline",
+            "conf": 0.53,
+            "yoy": 4.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 6.3,
+            "ok": true
+          }
         },
         {
           "id": "DAL.Q2-2026",
@@ -643,9 +624,1284 @@
           "ticker": "DAL",
           "quarter": "Q2 2026 (Jun quarter)",
           "actual": "beat",
-          "pred": "beat",
-          "conf": null,
-          "ok": true
+          "blind": {
+            "pred": "beat",
+            "conf": 0.53,
+            "yoy": 4.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 7.0,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "gpt-5.3-chat": {
+      "key": "gpt-5.3-chat",
+      "name": "gpt-5.3-chat",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "5.3",
+      "blind": {
+        "acc": 0.4,
+        "correct": 4,
+        "n": 10,
+        "brier": 0.2746
+      },
+      "fed": {
+        "acc": 0.7,
+        "correct": 7,
+        "n": 10,
+        "brier": 0.1724
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 4.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.67,
+            "yoy": 7.4,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.61,
+            "yoy": 3.1,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.63,
+            "yoy": 3.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.58,
+            "yoy": 10.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.63,
+            "yoy": 11.3,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.62,
+            "yoy": 9.6,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.8,
+            "yoy": 12.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.57,
+            "yoy": 24.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.82,
+            "yoy": 32,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.58,
+            "yoy": 28,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 28.0,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 6.4,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.71,
+            "yoy": 9.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.57,
+            "yoy": 12.4,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 14.6,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.56,
+            "yoy": 4.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.79,
+            "yoy": 6.3,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.63,
+            "yoy": 4.1,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.79,
+            "yoy": 13.8,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "gpt-4o-mini": {
+      "key": "gpt-4o-mini",
+      "name": "gpt-4o-mini",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "4o",
+      "blind": {
+        "acc": 0.6,
+        "correct": 6,
+        "n": 10,
+        "brier": 0.2658
+      },
+      "fed": {
+        "acc": 0.8,
+        "correct": 8,
+        "n": 10,
+        "brier": 0.1473
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.75,
+            "yoy": 4,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 5.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "miss",
+            "conf": 0.7,
+            "yoy": 1.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "miss",
+            "conf": 0.75,
+            "yoy": -2.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.75,
+            "yoy": 10.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "miss",
+            "conf": 0.75,
+            "yoy": 8.5,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.8,
+            "yoy": 7.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.8,
+            "yoy": 15.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 32,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.8,
+            "yoy": 31,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 34,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.8,
+            "yoy": 32,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "miss",
+            "conf": 0.7,
+            "yoy": 3.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 3.5,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 8.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.8,
+            "yoy": 12.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 5.0,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.8,
+            "yoy": 6,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 8.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.85,
+            "yoy": 12.5,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "Kimi-K2.5": {
+      "key": "Kimi-K2.5",
+      "name": "Kimi-K2.5",
+      "type": "LLM",
+      "route": "openai",
+      "avatar": "K2",
+      "blind": {
+        "acc": 0.0,
+        "correct": 0,
+        "n": 10,
+        "brier": null
+      },
+      "fed": {
+        "acc": 0.0,
+        "correct": 0,
+        "n": 10,
+        "brier": null
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          },
+          "fed": {
+            "pred": null,
+            "conf": null,
+            "yoy": null,
+            "ok": false
+          }
+        }
+      ]
+    },
+    "claude-opus-4-8": {
+      "key": "claude-opus-4-8",
+      "name": "claude-opus-4-8",
+      "type": "LLM",
+      "route": "claude",
+      "avatar": "Op",
+      "blind": {
+        "acc": 0.3,
+        "correct": 3,
+        "n": 10,
+        "brier": 0.2769
+      },
+      "fed": {
+        "acc": 0.8,
+        "correct": 8,
+        "n": 10,
+        "brier": 0.1661
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 3.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.6,
+            "yoy": 6.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 3.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 4.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.6,
+            "yoy": 10.8,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.6,
+            "yoy": 12.3,
+            "ok": true
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.7,
+            "yoy": 9.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.7,
+            "yoy": 11.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.6,
+            "yoy": 26.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.75,
+            "yoy": 31.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 25,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.7,
+            "yoy": 26.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "miss",
+            "conf": 0.55,
+            "yoy": 4.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.6,
+            "yoy": 6.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 8.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.6,
+            "yoy": 8.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 3.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.6,
+            "yoy": 6.0,
+            "ok": false
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 3.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.66,
+            "yoy": 12.5,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "claude-sonnet-4-6": {
+      "key": "claude-sonnet-4-6",
+      "name": "claude-sonnet-4-6",
+      "type": "LLM",
+      "route": "claude",
+      "avatar": "So",
+      "blind": {
+        "acc": 0.8,
+        "correct": 8,
+        "n": 10,
+        "brier": 0.2088
+      },
+      "fed": {
+        "acc": 0.7,
+        "correct": 7,
+        "n": 10,
+        "brier": 0.1788
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.52,
+            "yoy": 4.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 3.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.38,
+            "yoy": 3.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.52,
+            "yoy": 4.8,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.55,
+            "yoy": 10.3,
+            "ok": true
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.62,
+            "yoy": 11.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.52,
+            "yoy": 10.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 11.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.55,
+            "yoy": 32.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 33.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 34,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 34.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.38,
+            "yoy": 14.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 14.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.55,
+            "yoy": 14.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 14.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "miss",
+            "conf": 0.38,
+            "yoy": 3.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 6.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.55,
+            "yoy": 7.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 13.5,
+            "ok": true
+          }
+        }
+      ]
+    },
+    "claude-haiku-4-5": {
+      "key": "claude-haiku-4-5",
+      "name": "claude-haiku-4-5",
+      "type": "LLM",
+      "route": "claude",
+      "avatar": "Ha",
+      "blind": {
+        "acc": 0.5,
+        "correct": 5,
+        "n": 10,
+        "brier": 0.2466
+      },
+      "fed": {
+        "acc": 0.7,
+        "correct": 7,
+        "n": 10,
+        "brier": 0.1874
+      },
+      "episodes": [
+        {
+          "id": "IBM.Q1-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 3.2,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 2.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "IBM.Q2-2026",
+          "company": "IBM",
+          "ticker": "IBM",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "miss",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.55,
+            "yoy": 2.1,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.62,
+            "yoy": 3.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q1-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q1 FY2026 (ended Feb 27 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.6,
+            "yoy": 11.0,
+            "ok": false
+          },
+          "fed": {
+            "pred": "inline",
+            "conf": 0.65,
+            "yoy": 11.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "ADBE.Q2-FY2026",
+          "company": "Adobe",
+          "ticker": "ADBE",
+          "quarter": "Q2 FY2026 (ended May 29 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 11.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 10.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q3",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q3 (ended Mar 31 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 31.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 31.2,
+            "ok": true
+          }
+        },
+        {
+          "id": "TEAM.FY26-Q4",
+          "company": "Atlassian",
+          "ticker": "TEAM",
+          "quarter": "FY2026 Q4 (ended Jun 30 2026)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 33.5,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 33.5,
+            "ok": true
+          }
+        },
+        {
+          "id": "CMG.Q1-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "inline",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.62,
+            "yoy": 3.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 8.2,
+            "ok": false
+          }
+        },
+        {
+          "id": "CMG.Q2-2026",
+          "company": "Chipotle",
+          "ticker": "CMG",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.65,
+            "yoy": 7.5,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 3.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q1-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q1 2026 (Mar quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "inline",
+            "conf": 0.65,
+            "yoy": 2.8,
+            "ok": false
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 5.8,
+            "ok": true
+          }
+        },
+        {
+          "id": "DAL.Q2-2026",
+          "company": "Delta Air Lines",
+          "ticker": "DAL",
+          "quarter": "Q2 2026 (Jun quarter)",
+          "actual": "beat",
+          "blind": {
+            "pred": "beat",
+            "conf": 0.62,
+            "yoy": 4.2,
+            "ok": true
+          },
+          "fed": {
+            "pred": "beat",
+            "conf": 0.72,
+            "yoy": 7.8,
+            "ok": true
+          }
         }
       ]
     }

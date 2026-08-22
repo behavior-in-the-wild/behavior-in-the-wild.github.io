@@ -58,8 +58,10 @@
   // ----- outcome pill -----
   function pill(outcome) {
     var s = (outcome || "").toLowerCase();
-    var cls = (s === "beat" || s === "miss" || s === "inline") ? s : "inline";
-    return el("span", "pill pill-" + cls, outcome || "n/a");
+    if (s !== "beat" && s !== "miss" && s !== "inline") {
+      return el("span", "pill pill-na", "n/a");
+    }
+    return el("span", "pill pill-" + s, outcome);
   }
 
   // ----- type tag -----
@@ -184,6 +186,118 @@
     return box;
   }
 
+  // ----- Weekly trajectory (SITW sequential forecast) -----
+  var OUTCOME_HEX = { beat: "#3DDC97", miss: "#FF5C6C", inline: "#F5B23D" };
+  function outcomeHex(p) { return OUTCOME_HEX[(p || "").toLowerCase()] || "#5B6577"; }
+
+  // small confidence line chart across weeks; points colored by prediction, flips ringed
+  function trajChart(weeks) {
+    var W = 520, H = 150, padL = 30, padR = 14, padT = 12, padB = 30;
+    var plotW = W - padL - padR, plotH = H - padT - padB;
+    var n = weeks.length;
+    var s = svg("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", role: "img",
+      "aria-label": "Weekly prediction confidence trajectory" });
+    function x(i) { return n <= 1 ? padL + plotW / 2 : padL + i * (plotW / (n - 1)); }
+    function y(c) { return padT + (1 - (c == null ? 0 : c)) * plotH; }
+    // horizontal guides at 0, .5, 1
+    [0, 0.5, 1].forEach(function (g) {
+      s.appendChild(svg("line", { x1: padL, y1: y(g), x2: W - padR, y2: y(g),
+        stroke: "#262E3D", "stroke-width": 1, "stroke-dasharray": g === 0.5 ? "3 4" : "0" }));
+      var yl = svg("text", { x: padL - 6, y: y(g) + 3, "text-anchor": "end", "font-size": 9,
+        fill: "#5B6577", "font-family": "ui-monospace, monospace" });
+      yl.textContent = Math.round(g * 100) + ""; s.appendChild(yl);
+    });
+    // connecting confidence polyline
+    var pts = weeks.map(function (w, i) { return x(i) + "," + y(w.conf); }).join(" ");
+    s.appendChild(svg("polyline", { points: pts, fill: "none", stroke: "#7C5CFF",
+      "stroke-width": 2, "stroke-linecap": "round", "stroke-linejoin": "round", opacity: 0.7 }));
+    // points + flip rings + x labels
+    weeks.forEach(function (w, i) {
+      if (w.changed) {
+        s.appendChild(svg("circle", { cx: x(i), cy: y(w.conf), r: 9, fill: "none",
+          stroke: "#7C5CFF", "stroke-width": 1.5, opacity: 0.9 }));
+      }
+      var c = svg("circle", { cx: x(i), cy: y(w.conf), r: 5, fill: outcomeHex(w.pred),
+        stroke: w.ok ? "#0B0E14" : "#0B0E14", "stroke-width": 1 });
+      var tt = svg("title");
+      tt.textContent = (w.pred || "n/a") + " @ " + (w.conf != null ? Math.round(w.conf * 100) + "%" : "—")
+        + " (" + w.weeks_before_cutoff + "w before cutoff)" + (w.changed ? " — flip" : "");
+      c.appendChild(tt); s.appendChild(c);
+      var xl = svg("text", { x: x(i), y: H - 14, "text-anchor": "middle", "font-size": 10,
+        fill: "#9AA4B2", "font-family": "ui-monospace, monospace" });
+      xl.textContent = w.weeks_before_cutoff + "w"; s.appendChild(xl);
+      var xl2 = svg("text", { x: x(i), y: H - 3, "text-anchor": "middle", "font-size": 8, fill: "#5B6577" });
+      xl2.textContent = w.week_date.slice(5); s.appendChild(xl2);
+    });
+    return s;
+  }
+
+  // lead-time badge
+  function leadBadge(item) {
+    var b = el("span", "lead-badge");
+    if (item.final_correct && item.lead_time) {
+      b.classList.add("lead-good");
+      b.textContent = "Locked correct " + item.lead_time.weeks_before_cutoff + "w before cutoff";
+    } else if (item.final_correct) {
+      b.classList.add("lead-good");
+      b.textContent = "Correct at cutoff";
+    } else {
+      b.classList.add("lead-bad");
+      b.textContent = "Never correct before print";
+    }
+    return b;
+  }
+
+  // full trajectory card (one model x one episode)
+  function trajCard(item, opts) {
+    opts = opts || {};
+    var card = el("div", "traj");
+
+    var head = el("div", "traj-head");
+    var who = el("div", "traj-who");
+    if (opts.showModel !== false) {
+      who.appendChild(avatar(item.avatar, item.model, 28));
+      var mn = el("a", "traj-model", item.model);
+      mn.href = "model.html?m=" + encodeURIComponent(item.model);
+      who.appendChild(mn);
+    }
+    var ep = el("a", "traj-ep");
+    ep.href = "company.html?c=" + encodeURIComponent(item.ticker);
+    ep.appendChild(document.createTextNode(item.company + " · " + item.quarter_short + " "));
+    who.appendChild(ep);
+    head.appendChild(who);
+
+    var right = el("div", "traj-right");
+    var act = el("span", "traj-actual");
+    act.appendChild(document.createTextNode("actual "));
+    act.appendChild(pill(item.actual));
+    right.appendChild(act);
+    right.appendChild(leadBadge(item));
+    head.appendChild(right);
+    card.appendChild(head);
+
+    card.appendChild(trajChart(item.weeks));
+
+    // per-week detail strip
+    var strip = el("div", "week-strip");
+    item.weeks.forEach(function (w) {
+      var cell = el("div", "week-cell" + (w.changed ? " flip" : ""));
+      var top = el("div", "week-top");
+      top.appendChild(el("span", "week-wbc", w.weeks_before_cutoff + "w"));
+      if (w.changed) top.appendChild(el("span", "flip-marker", "⟳ flip"));
+      cell.appendChild(top);
+      cell.appendChild(pill(w.pred));
+      var meta = el("div", "week-meta");
+      meta.appendChild(el("span", null, (w.conf != null ? Math.round(w.conf * 100) + "%" : "—") + " conf"));
+      meta.appendChild(el("span", null, w.n_queries + " queries"));
+      meta.appendChild(el("span", null, (w.n_docs || 0) + " docs"));
+      cell.appendChild(meta);
+      strip.appendChild(cell);
+    });
+    card.appendChild(strip);
+    return card;
+  }
+
   function brandMark() {
     var s = svg("svg", { width: 26, height: 26, viewBox: "0 0 32 32", "class": "brand-mark" });
     s.appendChild(svg("rect", { x: 1, y: 1, width: 30, height: 30, rx: 8, fill: "#151A23", stroke: "#262E3D" }));
@@ -203,7 +317,8 @@
     inner.appendChild(brand);
 
     var links = el("div", "nav-links");
-    [["index.html", "Home"], ["leaderboard.html", "Leaderboard"], ["companies.html", "Companies"], ["about.html", "About"]]
+    [["index.html", "Home"], ["leaderboard.html", "Leaderboard"], ["matrix.html", "Matrix"],
+     ["companies.html", "Companies"], ["live.html", "Live"], ["about.html", "About"]]
       .forEach(function (p) {
         var a = el("a", active === p[0] ? "active" : null, p[1]);
         a.href = p[0];
@@ -225,7 +340,8 @@
 
     var c2 = el("div");
     c2.appendChild(el("h4", null, "Explore"));
-    [["leaderboard.html", "Leaderboard"], ["companies.html", "Companies"], ["about.html", "About"]].forEach(function (p) {
+    [["leaderboard.html", "Leaderboard"], ["matrix.html", "Matrix"], ["companies.html", "Companies"],
+     ["live.html", "Live"], ["about.html", "About"]].forEach(function (p) {
       var a = el("a", null, p[1]); a.href = p[0]; c2.appendChild(a);
     });
 
@@ -277,7 +393,7 @@
     el: el, frag: frag, clear: clear, svg: svg,
     avatar: avatar, avatarColor: avatarColor, chip: chip, pill: pill, typeTag: typeTag,
     accBar: accBar, barChart: barChart, heroArt: heroArt, brandMark: brandMark,
-    miningPanel: miningPanel,
+    miningPanel: miningPanel, trajChart: trajChart, trajCard: trajCard, leadBadge: leadBadge,
     mountChrome: mountChrome, fetchJSON: fetchJSON,
     fmtPct: fmtPct, fmtSkill: fmtSkill, fmtBrier: fmtBrier,
     getParam: getParam, showError: showError,

@@ -95,5 +95,20 @@
 
       epsBox.appendChild(card);
     });
+
+    // ---- Weekly forecast trajectories for this company ----
+    S.fetchJSON("data/trajectories.json").then(function (tdata) {
+      var mine = tdata.items.filter(function (it) { return it.ticker === ticker; });
+      if (!mine.length) return;
+      var wrap = document.createElement("div");
+      var h = S.el("h3", null, "Weekly forecast trajectories");
+      h.style.marginTop = "36px";
+      wrap.appendChild(h);
+      wrap.appendChild(S.el("p", "page-sub",
+        "How each model's weekly call evolved as it self-mined date-capped signals toward the cutoff — "
+        + "revealing flips and how early the correct answer was locked in (lead-time)."));
+      mine.forEach(function (it) { wrap.appendChild(S.trajCard(it, { showModel: true })); });
+      epsBox.appendChild(wrap);
+    }).catch(function (e) { console.error(e); });
   }).catch(function (e) { console.error(e); S.showError(document.getElementById("episodes"), "data/companies.json"); });
 })();

@@ -1,0 +1,52 @@
+{
+  "generated": "2026-08-22",
+  "as_of": "2026-08-22",
+  "note": "Live rolling track: upcoming (not-yet-reported) quarters as of 2026-08-22. Report dates are ESTIMATES to verify against IR calendars. Models predict these now (mined at current date); resolved after each print.",
+  "episodes": [
+    {
+      "id": "ADBE.Q3-FY2026",
+      "company": "Adobe",
+      "ticker": "ADBE",
+      "color": "#FA0F00",
+      "quarter": "Q3 FY2026",
+      "report_date_est": "2026-09-11",
+      "status": "pending"
+    },
+    {
+      "id": "DAL.Q3-2026",
+      "company": "Delta Air Lines",
+      "ticker": "DAL",
+      "color": "#D4183D",
+      "quarter": "Q3 2026",
+      "report_date_est": "2026-10-09",
+      "status": "pending"
+    },
+    {
+      "id": "IBM.Q3-2026",
+      "company": "IBM",
+      "ticker": "IBM",
+      "color": "#4589FF",
+      "quarter": "Q3 2026",
+      "report_date_est": "2026-10-22",
+      "status": "pending"
+    },
+    {
+      "id": "CMG.Q3-2026",
+      "company": "Chipotle",
+      "ticker": "CMG",
+      "color": "#C0592B",
+      "quarter": "Q3 2026",
+      "report_date_est": "2026-10-22",
+      "status": "pending"
+    },
+    {
+      "id": "TEAM.Q1-FY2027",
+      "company": "Atlassian",
+      "ticker": "TEAM",
+      "color": "#2684FF",
+      "quarter": "Q1 FY2027",
+      "report_date_est": "2026-10-30",
+      "status": "pending"
+    }
+  ]
+}
