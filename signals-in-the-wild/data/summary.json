@@ -1,0 +1,12 @@
+{
+  "episodes": 10,
+  "companies": 5,
+  "models_evaluated": 3,
+  "mining_episodes": 3,
+  "baselines": 2,
+  "outcomes": {
+    "beat": 8,
+    "inline": 1,
+    "miss": 1
+  }
+}
