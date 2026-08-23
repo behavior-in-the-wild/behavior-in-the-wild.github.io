@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="LLAMIA: latent state internalization for LLM collaboration with non-language agents. Instead of verbalizing a subagent's state, LLAMIA projects its internal representations directly into the LLM's chain of thought, trained via DAPO on LLAMIA-Bench, a suite of six collaborative chess tasks.">
+    <meta name="keywords"
+        content="LLM agents, latent state internalization, non-language agents, chess, reinforcement learning, DAPO, verbalization debt, LLAMIA-Bench, tool use, multi-agent collaboration">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:url" content="https://behavior-in-the-wild.github.io/llamia">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Internalizing Heterogeneous Agents in Language Model Reasoning">
+    <meta property="og:description"
+        content="Replacing verbalized LLM-agent communication with direct latent-representation injection, trained with DAPO. A single 14B model, LLAMIA, matches or exceeds task-specific specialists and GPT-5 with tool access across six collaborative chess tasks.">
+    <meta property="og:image" content="https://behavior-in-the-wild.github.io/llamia/assets/img/llamia_architecture.png">
+    <title>Internalizing Heterogeneous Agents in Language Model Reasoning</title>
+    <link rel="canonical" href="https://behavior-in-the-wild.github.io/llamia">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Internalizing Heterogeneous Agents in Language Model Reasoning">
+    <meta name="twitter:description"
+        content="Replacing verbalized LLM-agent communication with direct latent-representation injection, trained with DAPO.">
+    <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/llamia/assets/img/llamia_architecture.png">
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "author": [
+    { "@type": "Person", "name": "Harini S I" },
+    { "@type": "Person", "name": "Somesh Singh" },
+    { "@type": "Person", "name": "Yaman K Singla" },
+    { "@type": "Person", "name": "Rajiv Ratn Shah" },
+    { "@type": "Person", "name": "David Doermann" },
+    { "@type": "Person", "name": "Balaji Krishnamurthy" }
+  ],
+  "datePublished": "2026",
+  "name": "Internalizing Heterogeneous Agents in Language Model Reasoning",
+  "url": "https://behavior-in-the-wild.github.io/llamia",
+  "description": "LLAMIA replaces verbalized LLM-subagent communication with direct projection of a non-language agent's latent representations into the LLM's chain of thought, trained via DAPO.",
+  "keywords": [
+    "LLM agents",
+    "latent state internalization",
+    "non-language agents",
+    "chess",
+    "reinforcement learning",
+    "verbalization debt"
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Behavior In The Wild Research Group",
+    "url": "https://behavior-in-the-wild.github.io"
+  }
+}
+</script>
+
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          font-family: Georgia, 'Times New Roman', serif;
+          font-size: 17px;
+          line-height: 1.7;
+          color: #1a1a1a;
+          background: #fff;
+        }
+        .site-nav {
+          border-bottom: 1px solid #ddd;
+          padding: 11px 24px;
+          font-size: 0.875rem;
+        }
+        .site-nav a { color: #0645ad; text-decoration: none; }
+        .site-nav a:hover { text-decoration: underline; }
+        .page {
+          max-width: 920px;
+          margin: 0 auto;
+          padding: 48px 24px 96px;
+        }
+        h1 {
+          font-size: 1.65rem;
+          font-weight: bold;
+          line-height: 1.35;
+          color: #111;
+          margin: 0 0 18px;
+        }
+        h2 {
+          font-size: 1.1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 44px 0 10px;
+          padding-bottom: 4px;
+          border-bottom: 1px solid #ccc;
+        }
+        h3 {
+          font-size: 1rem;
+          font-weight: bold;
+          color: #111;
+          margin: 28px 0 8px;
+        }
+        p { margin: 14px 0; }
+        a { color: #0645ad; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .authors {
+          font-size: 1rem;
+          margin: 4px 0 3px;
+          line-height: 1.65;
+        }
+        .authors a { color: #0645ad; }
+        .equal-contrib {
+          font-size: 0.8rem;
+          color: #777;
+          font-style: italic;
+          margin: 2px 0 8px;
+        }
+        .affiliation {
+          font-size: 0.9rem;
+          color: #444;
+          margin: 4px 0 14px;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 7px;
+        }
+        .affiliation img { width: 20px; height: 20px; object-fit: contain; }
+        .affiliation .sep { color: #bbb; margin: 0 2px; }
+        .paper-links {
+          margin: 14px 0 6px;
+        }
+        .paper-links a {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #0645ad;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #0645ad;
+          margin: 0 8px 8px 0;
+          font-family: Georgia, serif;
+        }
+        .paper-links a:hover {
+          background: #0645ad;
+          color: #fff;
+          text-decoration: none;
+        }
+        .paper-links span.disabled {
+          display: inline-block;
+          padding: 4px 14px;
+          border: 1px solid #bbb;
+          border-radius: 3px;
+          font-size: 0.875rem;
+          color: #999;
+          margin: 0 8px 8px 0;
+          font-family: Georgia, serif;
+          cursor: not-allowed;
+        }
+        ul.contributions { padding-left: 1.4em; margin: 12px 0; }
+        ul.contributions li { margin-bottom: 10px; line-height: 1.65; }
+        figure {
+          margin: 32px 0;
+          text-align: center;
+        }
+        figure img {
+          max-width: 100%;
+          border: 1px solid #ddd;
+        }
+        figcaption {
+          margin-top: 8px;
+          font-size: 0.875rem;
+          color: #666;
+          font-style: italic;
+          text-align: left;
+        }
+        pre {
+          background: #f6f6f6;
+          border: 1px solid #ddd;
+          border-radius: 3px;
+          padding: 16px;
+          font-size: 0.8rem;
+          line-height: 1.5;
+          overflow-x: auto;
+          font-family: 'Courier New', monospace;
+        }
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 48px 0 0;
+        }
+        footer {
+          font-size: 0.85rem;
+          color: #555;
+          margin-top: 16px;
+        }
+
+        /* Result tables */
+        .results-table-wrapper {
+            overflow-x: auto;
+            border-radius: 14px;
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.10), 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            font-size: 0.85rem;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+        .results-table thead th {
+            background: #2c3e5c;
+            color: #fff;
+            font-weight: 600;
+            padding: 11px 10px;
+            text-align: center;
+            border: none;
+            font-size: 0.76rem;
+            letter-spacing: 0.2px;
+        }
+        .results-table thead tr:first-child th { background: #24334c; }
+        .results-table thead th[colspan] {
+            border-left: 2px solid rgba(255, 255, 255, 0.18);
+            font-weight: 700;
+        }
+        .results-table thead th:first-child { text-align: left; padding-left: 18px; }
+        .results-table tbody td {
+            padding: 9px 10px;
+            text-align: center;
+            border-bottom: 1px solid #ebebeb;
+            font-variant-numeric: tabular-nums;
+            color: #555;
+            font-size: 0.82rem;
+        }
+        .results-table tbody td:first-child {
+            text-align: left;
+            font-weight: 600;
+            padding-left: 18px;
+            color: #333;
+        }
+        .results-table tbody tr:hover { background: #f5f7fa !important; }
+        .results-table tbody tr:last-child td { border-bottom: none; }
+        .results-table .section-row td {
+            background: #eef1f6;
+            font-style: italic;
+            font-weight: 600;
+            color: #556;
+            font-size: 0.74rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            padding: 6px 18px;
+        }
+        .results-table tbody tr.highlight-row { background: #f2f4f8; }
+        .results-table tbody tr.highlight-row:hover { background: #eaeef5 !important; }
+        .results-table tbody tr.highlight-row td { font-weight: 700; color: #222; }
+        .results-table .best-val {
+            background: #d9ead3;
+            color: #1a1a1a;
+            border-radius: 3px;
+            padding: 1px 6px;
+            font-weight: 700;
+        }
+        .results-table .second-val { text-decoration: underline; text-decoration-color: #99a; font-weight: 600; }
+        .results-caption {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.5;
+        }
+        .results-caption a {
+            color: #2c3e5c;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1.5px dashed #99a;
+        }
+        .results-caption a:hover { border-bottom: 1.5px solid #2c3e5c; }
+
+        /* Method steps */
+        .method-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .method-step {
+            padding: 0 0 0 14px;
+            border-left: 2px solid #ccc;
+        }
+        .method-step h4 { font-weight: 700; color: #333; margin: 0 0 6px; font-size: 0.95rem; }
+        .method-step p { color: #666; font-size: 0.88rem; line-height: 1.5; margin: 0; }
+
+        /* Gallery for human eval */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px 24px;
+            margin-top: 14px;
+        }
+        .gallery-card img { width: 100%; display: block; border: 1px solid #ddd; }
+        .gallery-card .gallery-cap { padding: 8px 2px 0; font-size: 0.83rem; color: #666; text-align: left; line-height: 1.45; font-style: italic; }
+
+        @media (max-width: 600px) {
+          .page { padding: 28px 16px 64px; }
+          h1 { font-size: 1.35rem; }
+        }
+    </style>
+  <meta name="citation_title" content="Internalizing Heterogeneous Agents in Language Model Reasoning">
+  <meta name="citation_author" content="Harini S I">
+  <meta name="citation_author" content="Somesh Singh">
+  <meta name="citation_author" content="Yaman K Singla">
+  <meta name="citation_author" content="Rajiv Ratn Shah">
+  <meta name="citation_author" content="David Doermann">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2026">
+</head>
+
+<body>
+
+  <nav class="site-nav">
+    <a href="./index.html">&larr; Behavior in the Wild</a>
+  </nav>
+
+  <div class="page">
+
+    <h1>Internalizing Heterogeneous Agents in Language Model Reasoning</h1>
+
+    <div class="authors">
+      <a href="https://harini-si.github.io/" target="_blank">Harini S I<sup>*</sup></a>,
+      <a href="https://someshsingh22.github.io/" target="_blank">Somesh Singh<sup>*</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/" target="_blank">Yaman K Singla</a>,
+      <a href="https://www.iiitd.edu.in/~rajivratn/" target="_blank">Rajiv Ratn Shah</a>,
+      <a href="https://cse.buffalo.edu/~doermann/" target="_blank">David Doermann</a>,
+      <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695" target="_blank">Balaji Krishnamurthy</a>
+    </div>
+    <div class="equal-contrib">* Equal Contribution</div>
+    <div class="affiliation">
+      <img src="images/adobe-logo.png" alt="Adobe"> Adobe Media and Data Science Research (MDSR)
+      <span class="sep">&middot;</span>
+      <img src="images/iiitd-logo.png" alt="IIIT-Delhi"> IIIT-Delhi
+      <span class="sep">&middot;</span>
+      <img src="images/ub-logo.png" alt="SUNY Buffalo"> SUNY at Buffalo
+    </div>
+
+    <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
+
+    <div class="paper-links">
+      <span class="disabled" title="Camera-ready forthcoming">Paper (Coming Soon)</span>
+      <a href="#Method">Method</a>
+      <a href="#Bench">LLAMIA-Bench</a>
+      <a href="#KeyResults">Key Results</a>
+      <a href="#VerbalizationDebt">Verbalization Debt</a>
+      <a href="#Strategies">Collaboration Strategies</a>
+      <a href="#HumanEval">Human Evaluation</a>
+      <a href="#BibTeX">BibTeX</a>
+    </div>
+
+    <figure>
+      <img src="llamia/assets/img/llamia_bench_radar.png" alt="LLAMIA-Bench performance across collaboration interfaces: LLAMIA matches or exceeds every baseline on all six tasks" style="max-width:420px;">
+      <figcaption><b>LLAMIA-Bench performance across collaboration interfaces.</b> Scores (&times;100) on six chess&ndash;LLM tasks. Methods are labeled by access type and backbone (OS = open-source, CS = closed-source): verbalized tool use (Qwen3-14B+Lc0, GPT-5+Lc0), per-task finetuned experts (Task-Finetune), and LLAMIA's latent integration. LLAMIA matches or exceeds every baseline on every task and is the only system to score on Puzzle Interest, where the engine signal has no text surrogate.</figcaption>
+    </figure>
+
+    <h2>Abstract</h2>
+
+    <p>
+      LLMs are increasingly deployed as orchestrators that coordinate specialized subagents to solve complex tasks
+      through natural language. However, in many important domains like game playing and robotics the strongest
+      available agents are not language models. Integrating non-language agents with LLMs would require
+      <b>verbalization</b> &mdash; compressing their rich continuous representations into sparse textual summaries at
+      each interaction step. In this work we introduce the concept of <b>latent state internalization</b>: instead of
+      verbalizing the non-language agent's state, we project its internal continuous representations directly into
+      the LLM's chain of thought as learned state tokens. We show that training LLMs and subagents through
+      internalization and reinforcement learning can solve previously unsolvable tasks, and a single model can
+      outperform existing state-of-the-art task-specific methods trained over 100&times; more data. To evaluate these
+      collaborative abilities, we introduce <b>LLAMIA-Bench</b>, a suite of six collaborative chess tasks from
+      prominent AI literature spanning behavior cloning, state understanding, and natural-language explanation of
+      actions and policies. These tasks cannot be solved by LLMs or subagents independently, making them a perfect
+      testbed for studying collaboration. Our experiments reveal a consistent <b>verbalization debt</b>: verbalizing
+      the subagent's state consistently trails internalizing it, and this gap does not shrink as the LLM scales from
+      4B to 14B parameters. A single 14B model, <b>LLAMIA</b> (Large Language and Action Models with Internal
+      Agents), trained under this paradigm matches or exceeds both dedicated task specialists and the strongest
+      verbalization-based pipeline, GPT-5.1 with tool access, across all benchmark tasks, and generalizes
+      out-of-distribution where these specialists collapse.
+    </p>
+
+    <ul class="contributions">
+      <li><b>Latent state internalization.</b> A paradigm for LLM&ndash;non-language-agent collaboration, enabling
+        LLMs to reason over an interleaved chain of language, action, and latent state tokens.</li>
+      <li><b>LLAMIA.</b> A two-stage training framework &mdash; self-supervised projector alignment followed by
+        end-to-end RL (DAPO) &mdash; yielding a single model that achieves state-of-the-art performance across
+        diverse collaborative tasks, giving closed-weight LLMs faithful access to a subagent's latent expertise.</li>
+      <li><b>Verbalization Debt.</b> Through controlled ablations against LLAMIA-Verb, we define and quantify the
+        performance gap between internalized and verbalized integration, showing it is suboptimal in both
+        performance and compute, and widens on tasks requiring deeper or multi-step collaboration.</li>
+      <li><b>LLAMIA-Bench.</b> A curated benchmark of six chess tasks spanning behavior cloning, puzzle
+        understanding, commentary, and planning &mdash; unsolvable by either the LLM or the subagent alone.</li>
+    </ul>
+
+    <h2 id="Method">Method: Latent State Internalization</h2>
+
+    <p>
+      An LLM plays chess with access to a pretrained engine exposed through a tool API: functions to read the board
+      and legal moves, advance the game, and &mdash; critically &mdash; query the engine's assessment of any position
+      via <code>get_policy</code>. What that call returns is the variable this paper studies. In the standard
+      verbalized setting, <code>get_policy</code> returns a text summary: the engine's top moves with prior
+      probabilities and value estimates. This captures the headline assessment but discards the rest of the engine's
+      internal state &mdash; the full distribution over legal moves, the value landscape across candidate
+      continuations, and positional features like piece coordination and king safety that interpretability work has
+      identified in engine hidden layers. Under internalization, the same call additionally projects the engine's
+      full latent state into <b>k=32</b> continuous tokens via a learned projection, <b>LatentBridge</b>, and appends
+      them to the LLM's reasoning trace alongside language and action tokens. The LLM attends over all three token
+      types jointly, so its attention can selectively read different aspects of the representation at each reasoning
+      step, rather than being handed one fixed summary regardless of what the step requires.
+    </p>
+
+    <figure>
+      <img src="llamia/assets/img/llamia_architecture.png" alt="Latent state internalization: a chain of thought interleaving language, action, and latent state tokens across subagent invocations and state transitions">
+      <figcaption><b>Latent State Internalization.</b> A single chain of thought rolled out over time. At
+        <i>t=0</i>, the LLM reasons in language and emits <code>&lt;invoke&gt;</code>; the current board is passed
+        through the frozen subagent (Lc0-BT4), and LatentBridge maps its hidden activations into k=32 continuous
+        latent-state tokens appended to the context. At <i>t=1</i>, conditioned on this state, the LLM emits an
+        action that advances the environment. At <i>t=2</i>, the LLM chooses to re-invoke, encoding the new board
+        into a fresh latent state &mdash; it decides when to re-invoke rather than re-encoding on every step. Stage 1
+        trains only LatentBridge on state&ndash;policy pairs; Stage 2 jointly fine-tunes it with the LLM via DAPO. The
+        subagent is frozen throughout.</figcaption>
+    </figure>
+
+    <div class="method-steps">
+      <div class="method-step">
+        <h4>1. Frozen subagent</h4>
+        <p>Lc0-BT4, the strongest open-source chess engine (a 240M-parameter transformer), encodes each board state
+          into a 1024-dim latent representation. It is never updated during training.</p>
+      </div>
+      <div class="method-step">
+        <h4>2. LatentBridge</h4>
+        <p>A three-layer MLP with GeLU activations projects the engine's latent state into k=32 tokens matching the
+          LLM's hidden size, following projector designs from vision-language models.</p>
+      </div>
+      <div class="method-step">
+        <h4>3. Stage 1 &mdash; projector alignment</h4>
+        <p>With the LLM (Qwen3) frozen, LatentBridge is trained on state&ndash;policy pairs from the subagent's
+          self-play, learning to project states the LLM can act on.</p>
+      </div>
+      <div class="method-step">
+        <h4>4. Stage 2 &mdash; DAPO</h4>
+        <p>The LLM and LatentBridge are jointly optimized end-to-end via DAPO. The subagent call is itself part of
+          the policy's action space, so RL also learns when and whether to query it.</p>
+      </div>
+    </div>
+
+    <h2 id="Bench">LLAMIA-Bench</h2>
+
+    <p>
+      Existing benchmarks test either the LLM or the subagent, never their collaboration. LLAMIA-Bench spans six
+      tasks drawn from four themes in how AI systems collaborate with domain-expert agents &mdash; behavioral
+      imitation, state assessment, comparative explanation, and rationale generation &mdash; each unsolvable by
+      either component alone: the subagent produces no language, and the LLM lacks the positional signals that make
+      chess-specific judgments possible. Three evaluation targets are new to this work: <b>Wild BC</b>, three
+      out-of-distribution splits probing generalization to grandmaster play (GM-25), time pressure (Low-Time), and
+      large skill gaps (&Delta;Elo); <b>Puzzle Interest</b>, ranking puzzles by community-derived interestingness
+      &mdash; a signal with no verbal proxy in any engine output; and <b>Agadmator-2K</b>, the first large-scale
+      dataset of game-level chess commentary, 1,900 narrated games (&sim;500 hours) from Agadmator's YouTube channel,
+      built by aligning Whisper transcripts to PGN move sequences and verifying move order with a GPT-4o judge.
+    </p>
+
+    <div class="results-table-wrapper">
+      <table class="results-table">
+        <thead>
+          <tr><th style="text-align:left;">Task</th><th style="text-align:left;">What it measures</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Behavior Cloning</td><td style="text-align:left;">Move-match accuracy against MAIA Elo buckets (1100&ndash;1900) and three OOD splits: GM-25, Low-Time, &Delta;Elo.</td></tr>
+          <tr><td>Puzzle Understanding</td><td style="text-align:left;">Spearman &rho; against Lichess-derived Difficulty (Glicko-2) and community-voted Interest.</td></tr>
+          <tr><td>Rationale Prediction</td><td style="text-align:left;">G-eval and BLEU-2 on natural-language move annotation across five semantic categories.</td></tr>
+          <tr><td>Game Commentary</td><td style="text-align:left;">G-eval and BLEU-2 on Agadmator-2K, held out by ascending view count to reduce contamination.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="KeyResults">Key Results</h2>
+
+    <p>
+      LLAMIA-14B achieves the highest score on all six LLAMIA-Bench tasks, surpassing frontier verbalized systems an
+      order of magnitude larger and remaining competitive with dedicated task-specific finetunes trained on
+      substantially more in-domain data. On behavior cloning, Maia-style experts are trained on tens of millions of
+      chess-specific games against LLAMIA's general-purpose backbone; LLAMIA-14B stays inside the expert band
+      in-distribution and surpasses the strongest expert by a wide margin on the OOD Wild splits. The advantage over
+      GPT-5+Lc0 does not require the 14B backbone &mdash; LLAMIA-8B already leads on all six tasks, and LLAMIA-4B on
+      four of six.
+    </p>
+
+    <div class="results-table-wrapper">
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align:middle;">System</th>
+            <th colspan="2">Behavior Cloning</th>
+            <th colspan="2">Puzzle Understanding</th>
+            <th rowspan="2" style="vertical-align:middle;">Rationale</th>
+            <th rowspan="2" style="vertical-align:middle;">Commentary</th>
+          </tr>
+          <tr>
+            <th>MAIA</th><th>Wild</th>
+            <th>Difficulty</th><th>Interest</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="section-row"><td colspan="7">Task-Specific Expert</td></tr>
+          <tr><td>Allie-Adaptive-Search</td><td><span class="best-val">55</span></td><td><span class="second-val">45</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+          <tr><td>SCC</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>34.5</td><td>&mdash;</td></tr>
+          <tr class="section-row"><td colspan="7">Frontier Baselines (5-shot)</td></tr>
+          <tr><td>GPT-5 (text only)</td><td>28</td><td>22</td><td>30</td><td><span class="second-val">12</span></td><td>27.0</td><td>23</td></tr>
+          <tr><td>GPT-5 + Lc0</td><td>45</td><td>40</td><td><span class="second-val">48</span></td><td>10</td><td><span class="second-val">37.5</span></td><td><span class="second-val">55</span></td></tr>
+          <tr><td>Qwen3-14B + Lc0</td><td>39</td><td>33</td><td>28</td><td>5</td><td>18.8</td><td>15</td></tr>
+          <tr class="section-row"><td colspan="7">Verbalized, DAPO</td></tr>
+          <tr><td>LLAMIA-Verb-4B</td><td>41</td><td>34</td><td>38</td><td>5</td><td>25.7</td><td>23</td></tr>
+          <tr><td>LLAMIA-Verb-8B</td><td>44</td><td>37</td><td>42</td><td>7</td><td>29.4</td><td>34</td></tr>
+          <tr><td>LLAMIA-Verb-14B</td><td>45</td><td>39</td><td>45</td><td>8</td><td>33.2</td><td>40</td></tr>
+          <tr class="section-row"><td colspan="7">Latent, DAPO (Ours)</td></tr>
+          <tr><td>LLAMIA-4B</td><td>50</td><td>43</td><td>58</td><td>38</td><td>36.0</td><td>52</td></tr>
+          <tr><td>LLAMIA-8B</td><td>52</td><td>46</td><td>65</td><td>45</td><td>42.1</td><td>66</td></tr>
+          <tr class="highlight-row"><td>LLAMIA-14B (ours)</td>
+            <td>53</td><td><span class="best-val">49</span></td><td><span class="best-val">71</span></td>
+            <td><span class="best-val">52</span></td><td><span class="best-val">45.8</span></td><td><span class="best-val">75</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="results-caption">
+      Each cell is a per-task score &times;100 (higher is better); Rationale is BLEU-2, Commentary is G-eval,
+      Puzzle Understanding is Spearman &rho; &times;100. <span class="best-val">bold</span>
+      = best overall in the column, <span class="second-val">underline</span> = best non-LLAMIA. Dedicated chess
+      finetunes show only the strongest published entry per task; off-task cells are blank. Full per-scale factorial,
+      confidence intervals, and additional metrics in the paper.
+    </p>
+
+    <p>
+      <b>Latent tokens enable new evaluation targets.</b> Puzzle Interest requires ranking positions by
+      community-derived interestingness, a signal that depends on the engine's full policy distribution and value
+      gradients across candidate moves &mdash; no verbalized engine output carries these features. Every verbalized
+      system scores &le;12 on Interest regardless of model scale or frontier capability; LLAMIA-14B reaches 52.
+      Verbalization carries zero useful signal for this task, while latent tokens give the LLM direct access to the
+      distributional structure that defines interestingness.
+    </p>
+
+    <figure>
+      <img src="llamia/assets/img/llamia_combined_training.png" alt="DAPO training dynamics across model scales and per-task reward curves comparing LLAMIA to LLAMIA-Verb">
+      <figcaption><b>DAPO training dynamics and LLAMIA-Bench evaluation.</b> <b>(a)</b> Aggregate reward vs.
+        training step at three backbone scales. Solid: LLAMIA (latent); dashed: LLAMIA-Verb (verbalized, identical
+        recipe and backbone). The debt widens throughout and reaches 2&ndash;3&times; by convergence; scaling the
+        backbone does not close it for LLAMIA-Verb. <b>(b)</b> Per-task reward curves at 14B. LLAMIA-Verb gains
+        partial signal on behavior cloning and difficulty (tasks with verbalizable proxies) but stays near-flat on
+        interest and commentary, where the reward requires non-verbalizable features or multi-step integration.
+        <b>(c)</b> LLAMIA-Bench scores (0&ndash;100) by task, latent vs. verbalized at 14B.</figcaption>
+    </figure>
+
+    <h2 id="VerbalizationDebt">Verbalization Debt</h2>
+
+    <p>
+      LLAMIA and LLAMIA-Verb share the same 14B backbone, Lc0-BT4 subagent, and DAPO recipe; the only difference is
+      whether the subagent's state reaches the LLM as latent tokens or as verbalized text. We define the resulting
+      performance gap as the <b>verbalization debt</b>. The debt is smallest where the engine's top-k moves already
+      approximate the answer (in-distribution behavior cloning) and largest where the target signal lives in the
+      engine's full policy distribution or value landscape, which has no faithful text equivalent (Interest,
+      Commentary). It persists at every backbone scale we test &mdash; on Interest, LLAMIA-Verb-14B scores 8 while
+      LLAMIA-4B already reaches 38 &mdash; and it widens throughout training, reaching 2&ndash;3&times; by
+      convergence.
+    </p>
+
+    <div class="results-table-wrapper">
+      <table class="results-table">
+        <thead>
+          <tr><th style="text-align:left;">Task (metric)</th><th>Verbalized</th><th>Latent</th><th>Debt (&Delta;)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Behavior Cloning, MAIA (move-match)</td><td>45</td><td>53</td><td>+8</td></tr>
+          <tr><td>Behavior Cloning, Wild (move-match)</td><td>39</td><td>49</td><td>+10</td></tr>
+          <tr><td>Rationale (BLEU-2)</td><td>33.2</td><td>45.8</td><td>+13</td></tr>
+          <tr><td>Puzzle Difficulty (Spearman &rho;&times;100)</td><td>45</td><td>71</td><td>+26</td></tr>
+          <tr><td>Commentary (G-eval&times;100)</td><td>40</td><td>75</td><td>+35</td></tr>
+          <tr class="highlight-row"><td>Puzzle Interest (Spearman &rho;&times;100)</td><td>8</td><td>52</td><td>+44</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="results-caption">
+      Rows are ordered by the size of the debt. It is smallest where the engine's top-k moves already approximate
+      the target (behavior cloning) and largest where the target signal lives entirely in the policy distribution and
+      value gradients across candidate moves, which text cannot carry (Puzzle Interest: &rho; 0.08&rarr;0.52, a
+      6.5&times; jump).
+    </p>
+
+    <h2 id="Strategies">Collaboration Strategies</h2>
+
+    <p>
+      Does the integration interface determine how the model learns to use the subagent, or only how well it
+      performs? We classify subagent invocations during evaluation into five recurring strategies and trace their
+      evolution during DAPO training: <b>engine-follow</b> (adopt the top recommendation), <b>consult-then-override</b>
+      (query then diverge), <b>counterfactual query</b> (play a hypothetical move, re-invoke, compare states),
+      <b>multi-step lookahead</b> (chain two or three counterfactual sequences), and <b>abstention</b> (act from
+      language knowledge alone). A GPT-4o judge classifies 500 episodes per task per system (&kappa;=0.78 vs. human
+      raters).
+    </p>
+
+    <figure>
+      <img src="llamia/assets/img/llamia_agency_heatmaps.png" alt="Heatmaps of collaboration strategy distribution per task for LLAMIA versus LLAMIA-Verb">
+      <figcaption><b>Collaboration strategy distribution (%) per task at convergence.</b> Fraction of 500 episodes
+        assigned to each strategy by a GPT-4o judge (&kappa;=0.78). <i>Left:</i> LLAMIA (latent). <i>Right:</i>
+        LLAMIA-Verb (verbalized). LLAMIA's dominant strategy shifts with the task &mdash; engine-follow for gameplay,
+        consult-then-override for behavior cloning, counterfactual query for commentary &mdash; while LLAMIA-Verb
+        collapses to engine-follow on every row (62&ndash;76%).</figcaption>
+    </figure>
+
+    <p>
+      <b>Internalization produces task-specific collaboration; verbalization collapses it.</b> LLAMIA adapts its
+      strategy to the task: engine-follow dominates gameplay (65%), consult-then-override dominates behavior cloning
+      (48%), and counterfactual query dominates commentary (40%). LLAMIA-Verb collapses to engine-follow on every
+      task (62&ndash;76%), regardless of what the task requires. The verbalized channel returns the same compressed
+      summary no matter how the model queries it, so RL converges on a single use pattern.
+    </p>
+
+    <h2 id="HumanEval">Human Evaluation</h2>
+
+    <p>
+      Skilled players (n=12, all &ge;1700 Elo) evaluated LLAMIA on gameplay indistinguishability and commentary
+      quality against LLAMIA-Verb, GPT-5.1+Lc0, and Maia.
+    </p>
+
+    <div class="gallery-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="gallery-card">
+        <img src="llamia/assets/img/llamia_human_gameplay.png" alt="Bot-detection rate: LLAMIA passes as human in 61% of trials versus 28% for LLAMIA-Verb">
+        <div class="gallery-cap"><b>Gameplay (Study 1).</b> LLAMIA-14B passes as human in 61% of trials (detection 39%, below chance); LLAMIA-Verb is detected in 72%.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="llamia/assets/img/llamia_human_survey.png" alt="Post-game Likert ratings placing LLAMIA alongside Maia on perceived human-likeness">
+        <div class="gallery-cap"><b>Post-game Likert.</b> LLAMIA matches Maia* (best Maia variant per Elo bucket) on human-likeness, without training on human-move distributions.</div>
+      </div>
+      <div class="gallery-card">
+        <img src="llamia/assets/img/llamia_human_commentary.png" alt="Commentary preference and Likert ratings on accuracy and insight, favoring LLAMIA">
+        <div class="gallery-cap"><b>Commentary (Study 2).</b> 72.2% of 180 judgments favor LLAMIA; the Insight gap (1.7 pts) exceeds the Accuracy gap (1.1 pts).</div>
+      </div>
+      <div class="gallery-card">
+        <img src="llamia/assets/img/llamia_attention_heatmap.png" alt="Attention over latent tokens on a back-rank mate position shifts with the target Elo instruction">
+        <div class="gallery-cap"><b>Instruction-modulated attention.</b> On a fixed back-rank mate position, conditioning on 2000 Elo concentrates attention on mating geometry; 1100 Elo disperses it to material. The latent state is identical &mdash; only the LLM's reading changes.</div>
+      </div>
+    </div>
+
+    <p>
+      Behavioral signatures such as time-pressure blunders and skill-appropriate piece saliency emerge from
+      latent-state conditioning alone; LLAMIA receives no human-move supervision, unlike Maia, which is trained
+      directly on millions of move distributions. On commentary, both systems achieve comparable factual accuracy,
+      but the gap concentrates on strategic insight: text preserves <i>what</i> is happening on the board, but
+      explaining <i>why</i> a move is strong requires representational features &mdash; policy gradients, value
+      topology, look-ahead depth &mdash; that do not survive verbal compression.
+    </p>
+
+    <h2 id="BibTeX">BibTeX</h2>
+
+    <pre><code>@inproceedings{harini2026llamia,
+  title={Internalizing Heterogeneous Agents in Language Model Reasoning},
+  author={Harini, S I and Singh, Somesh and Singla, Yaman K
+          and Shah, Rajiv Ratn and Doermann, David and Krishnamurthy, Balaji},
+  booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
+  year={2026}
+}</code></pre>
+
+    <hr>
+    <footer>
+      <strong>LLAMIA: Internalizing Heterogeneous Agents in Language Model Reasoning</strong> by
+      <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
+    </footer>
+
+  </div>
+</body>
+
+</html>
