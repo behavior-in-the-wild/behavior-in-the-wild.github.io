@@ -58,23 +58,45 @@
       <div class="section-head">
         <div>
           <h2>Companies</h2>
-          <p class="sub">Five sellers across software, restaurants, and airlines.</p>
+          <p class="sub" id="companies-sub">S&amp;P 500 scale-up coverage, plus 5 companies run at full pilot depth.</p>
         </div>
-        <a class="more" href="companies.html">All companies →</a>
+        <a class="more" href="companies.html">Browse companies →</a>
       </div>
-      <div id="company-strip" class="grid grid-3"></div>
     </section>
 
     <section id="arena">
       <div class="callout">
         <h3>Next-Quarter Arena</h3>
         <p>The flagship live track walks the earnings calendar forward: AI models <strong>and</strong> humans freeze a prediction for each upcoming print, then it resolves mechanically from SEC filings — contamination is structurally impossible.</p>
-        <p>Explore the full 9-model <a href="matrix.html">prediction matrix</a>, or see the upcoming prints where <a href="live.html">predictions are open now</a>.</p>
         <div class="btn-row" style="margin-top:14px">
           <a class="btn btn-primary" href="live.html">See live predictions</a>
-          <a class="btn btn-ghost" href="matrix.html">Open the matrix</a>
         </div>
       </div>
+    </section>
+
+    <section id="submit-model">
+      <div class="section-head">
+        <div>
+          <h2>Submit your model or implementation</h2>
+          <p class="sub">Have a mining agent, retrieval pipeline, or forecasting approach you'd like evaluated on SITW? Tell us about it.</p>
+        </div>
+      </div>
+      <form id="submit-form" class="card submit-form">
+        <label>Your name
+          <input type="text" id="sf-name" required />
+        </label>
+        <label>Email
+          <input type="email" id="sf-email" required />
+        </label>
+        <label>Model / framework name
+          <input type="text" id="sf-model" required />
+        </label>
+        <label>Description &amp; link (code repo, paper, or writeup)
+          <textarea id="sf-desc" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary">Submit via email</button>
+        <p class="page-sub" style="margin-top:8px">This opens your email client with a pre-filled message to the SITW team — nothing is sent from this page directly.</p>
+      </form>
     </section>
   </main>
 

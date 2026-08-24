@@ -69,24 +69,28 @@
     c.appendChild(scroll);
   }).catch(function (e) { console.error(e); S.showError(document.getElementById("leaderboard-container"), "data/leaderboard.json"); });
 
-  // companies strip
-  S.fetchJSON("data/companies.json").then(function (data) {
-    var strip = document.getElementById("company-strip");
-    data.companies.forEach(function (co) {
-      var a = S.el("a", "card company-card");
-      a.href = "company.html?c=" + encodeURIComponent(co.ticker);
-      var head = S.el("div", "cc-head");
-      var left = S.el("div");
-      left.appendChild(S.el("div", "cc-name", co.name));
-      left.appendChild(S.el("div", "cc-sector", co.sector));
-      head.appendChild(left);
-      head.appendChild(S.chip(co.ticker, co.color));
-      a.appendChild(head);
-      a.appendChild(S.el("div", "cc-note", co.quarters + " quarters · frozen historical"));
-      var qs = S.el("div", "cc-quarters");
-      co.episodes.forEach(function (ep) { qs.appendChild(S.pill(ep.surprise_actual)); });
-      a.appendChild(qs);
-      strip.appendChild(a);
-    });
+  // companies count teaser (full browsing lives on companies.html)
+  S.fetchJSON("data/companies_500.json").then(function (d) {
+    var sub = document.getElementById("companies-sub");
+    if (sub) sub.textContent = d.n_companies + " S&P 500 companies tracked, plus 5 run at full pilot depth (blind vs. feed, weekly trajectories).";
   }).catch(function (e) { console.error(e); });
+
+  // submit-model form -> opens a pre-filled mailto (no backend, nothing leaves the browser)
+  var CONTACT_EMAIL = "behavior-in-the-wild@googlegroups.com";
+  var form = document.getElementById("submit-form");
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("sf-name").value.trim();
+      var email = document.getElementById("sf-email").value.trim();
+      var modelName = document.getElementById("sf-model").value.trim();
+      var desc = document.getElementById("sf-desc").value.trim();
+      var subject = "SITW model submission: " + modelName;
+      var body = "Name: " + name + "\nEmail: " + email + "\nModel/framework: " + modelName +
+        "\n\nDescription & link:\n" + desc;
+      var url = "mailto:" + CONTACT_EMAIL +
+        "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+      window.location.href = url;
+    });
+  }
 })();

@@ -1,50 +1,95 @@
-/* companies.html */
+/* companies.html — unified searchable index: S&P 500 scale-up companies + the 5
+   deep-pilot companies (TEAM/Atlassian isn't an S&P 500 constituent, so it's merged
+   in separately rather than being silently dropped) */
 (function () {
   "use strict";
   var S = window.SITW;
   S.mountChrome("companies.html");
 
-  S.fetchJSON("data/companies.json").then(function (data) {
-    var grid = document.getElementById("companies-grid");
-    data.companies.forEach(function (co) {
-      var a = S.el("a", "card company-card");
-      a.href = "company.html?c=" + encodeURIComponent(co.ticker);
+  var allCompanies = [];
 
-      var head = S.el("div", "cc-head");
-      var left = S.el("div");
-      left.appendChild(S.el("div", "cc-name", co.name));
-      left.appendChild(S.el("div", "cc-sector", co.sector));
-      head.appendChild(left);
-      head.appendChild(S.chip(co.ticker, co.color));
-      a.appendChild(head);
+  function flag(has, label) {
+    var s = S.el("span", "co500-flag");
+    s.textContent = (has ? "✓ " : "— ") + label;
+    if (!has) s.style.opacity = "0.35";
+    return s;
+  }
 
-      // mini result: latest quarter outcome + YoY
-      var latest = co.episodes[co.episodes.length - 1];
-      var mini = S.el("div", "ep-meta");
-      var q = S.el("span");
-      q.appendChild(S.el("strong", null, "Latest: "));
-      q.appendChild(document.createTextNode(latest.quarter.split(" (")[0]));
-      mini.appendChild(q);
-      if (latest.actual_rev_b != null) {
-        var rv = S.el("span");
-        rv.appendChild(S.el("strong", null, "Actual: "));
-        rv.appendChild(document.createTextNode("$" + latest.actual_rev_b + "B"));
-        mini.appendChild(rv);
-      }
-      a.appendChild(mini);
-
-      a.appendChild(S.el("div", "cc-note", co.note));
-
-      var qs = S.el("div", "cc-quarters");
-      co.episodes.forEach(function (ep) {
-        var wrap = S.el("span");
-        wrap.style.display = "inline-flex";
-        wrap.appendChild(S.pill(ep.surprise_actual));
-        qs.appendChild(wrap);
-      });
-      a.appendChild(qs);
-
-      grid.appendChild(a);
+  function render(companies) {
+    var container = document.getElementById("co500-container");
+    S.clear(container);
+    var table = S.el("table", "co500-table");
+    var thead = S.el("tr");
+    ["Ticker", "Name", "Sector", "Latest Quarter", "Revenue", "Data available"].forEach(function (h) {
+      thead.appendChild(S.el("th", null, h));
     });
-  }).catch(function (e) { console.error(e); S.showError(document.getElementById("companies-grid"), "data/companies.json"); });
+    table.appendChild(thead);
+
+    companies.forEach(function (co) {
+      var tr = S.el("tr", "co500-row");
+      tr.addEventListener("click", function () {
+        window.location.href = "company.html?c=" + encodeURIComponent(co.ticker);
+      });
+      var tCell = S.el("td");
+      tCell.appendChild(document.createTextNode(co.ticker + " "));
+      if (co.pilot_depth) tCell.appendChild(S.el("span", "pilot-badge", "pilot"));
+      tr.appendChild(tCell);
+      tr.appendChild(S.el("td", null, co.name || ""));
+      tr.appendChild(S.el("td", null, co.sector || ""));
+      tr.appendChild(S.el("td", null, co.latest_quarter || "—"));
+      tr.appendChild(S.el("td", null, co.latest_rev_b != null ? "$" + co.latest_rev_b + "B" : "—"));
+      var flags = S.el("td");
+      var flagsWrap = S.el("div");
+      flagsWrap.style.display = "flex"; flagsWrap.style.gap = "8px"; flagsWrap.style.flexWrap = "wrap";
+      flagsWrap.appendChild(flag(co.has_qed_drivers, "calls"));
+      flagsWrap.appendChild(flag(co.has_segment_revenue, "segments"));
+      flagsWrap.appendChild(flag(co.has_real_consensus, "consensus"));
+      flagsWrap.appendChild(flag(co.has_ccnews_prediction, "CC-News"));
+      flagsWrap.appendChild(flag(co.pilot_depth, "blind/feed + weekly"));
+      flags.appendChild(flagsWrap);
+      tr.appendChild(flags);
+      table.appendChild(tr);
+    });
+    container.appendChild(table);
+  }
+
+  Promise.all([
+    S.fetchJSON("data/companies_500.json"),
+    S.fetchJSON("data/companies.json"),
+  ]).then(function (results) {
+    var d500 = results[0];
+    var pilot = results[1].companies;
+    var byTicker = {};
+    d500.companies.forEach(function (co) { byTicker[co.ticker] = co; });
+    pilot.forEach(function (p) {
+      var latest = p.episodes[p.episodes.length - 1];
+      if (byTicker[p.ticker]) {
+        byTicker[p.ticker].pilot_depth = true;
+      } else {
+        // not an S&P 500 constituent (e.g. Atlassian) -- add it in directly
+        byTicker[p.ticker] = {
+          ticker: p.ticker, name: p.name, sector: p.sector,
+          latest_quarter: latest.quarter.split(" (")[0],
+          latest_rev_b: latest.actual_rev_b,
+          has_qed_drivers: false, has_segment_revenue: false,
+          has_real_consensus: false, has_ccnews_prediction: false,
+          pilot_depth: true,
+        };
+      }
+    });
+    allCompanies = Object.keys(byTicker).sort().map(function (t) { return byTicker[t]; });
+
+    document.getElementById("co500-sub").textContent =
+      allCompanies.length + " companies (S&P 500 + the " + pilot.length + " deep-pilot companies). " +
+      "'pilot' = full blind/feed/weekly-trajectory benchmark depth; ✓ marks which additional data " +
+      "sources are available (earnings-call drivers, segment revenue, real analyst consensus, CC-News prediction).";
+    render(allCompanies);
+
+    document.getElementById("co500-search").addEventListener("input", function (e) {
+      var q = e.target.value.toLowerCase();
+      render(allCompanies.filter(function (co) {
+        return (co.ticker + " " + (co.name || "")).toLowerCase().indexOf(q) !== -1;
+      }));
+    });
+  }).catch(function (e) { S.showError(document.getElementById("co500-container"), e); });
 })();

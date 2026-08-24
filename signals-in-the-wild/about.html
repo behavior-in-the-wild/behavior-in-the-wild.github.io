@@ -52,6 +52,22 @@
     </section>
 
     <section>
+      <h3>What "blind", "feed", "C6", "CC-News" mean</h3>
+      <p class="page-sub">Every table on this site labels results by information-access condition. Here's what each one actually gives the model — the full ladder (with ablations) is in the paper.</p>
+      <div class="card">
+        <ul class="ep-signals">
+          <li><strong>Signal-blind (C0):</strong> the model is given only the target — company, quarter, cutoff date — no search, no signals. Isolates prior knowledge / base-rate reasoning.</li>
+          <li><strong>Signal-fed (C2):</strong> the model is handed the curated demand-driver signals directly, no mining required. Isolates reasoning quality once mining is solved.</li>
+          <li><strong>Deep-mined (C4):</strong> a fixed, non-agentic pipeline — decompose into demand-driver families, issue multi-queries, rerank, summarize, ensemble (Halawi-style fan-out).</li>
+          <li><strong>C6 (recent-SOTA agentic miner):</strong> a ReAct-interleaved, RL-agent-style miner with its own search budget that decides what to query next based on what it's already found — closest to "give it Google and a budget."</li>
+          <li><strong>CC-News:</strong> a separate, local-only point-in-time news index (Common Crawl News). Deliberately <em>not</em> mixed with live web search — it's a parallel condition compared against the web-search conditions above, not a hybrid of the two.</li>
+          <li><strong>Weekly / live track:</strong> a second axis, not a condition — any of the above can be run once at the cutoff, or repeated weekly in the runup to it, to measure how early a model locks in the correct call (lead-time).</li>
+        </ul>
+        <p class="page-sub" style="margin-top:10px">Not yet on this site: a human/analyst baseline, sell-side consensus as its own scored condition, and an AIA-Forecaster-style supervisor/calibration layer on top of C6 — these exist in the paper's design but aren't run at scale yet.</p>
+      </div>
+    </section>
+
+    <section>
       <div class="grid grid-2">
         <div class="card">
           <h3 style="margin-top:0">Two tracks, one backbone</h3>
@@ -76,12 +92,31 @@
     </section>
 
     <section>
+      <h3>Updates</h3>
+      <p class="page-sub">Dated changelog of methodology and infrastructure changes. Full technical rationale for every decision lives in the code repo's docs/DECISIONS.md.</p>
+      <div id="updates-list"></div>
+    </section>
+
+    <section>
       <div class="callout">
         <h3>Authors &amp; contact</h3>
         <p><strong>Yaman Kumar Singla, Balaji Krishnamurthy</strong></p>
         <p>Contact: <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
         <p>Paper and code: see the project repository. This site presents a 10-episode pilot; the live track begins at the next earnings season.</p>
         <p class="notice">For research and illustration only. Not investment advice.</p>
+      </div>
+    </section>
+
+    <section>
+      <h3>How to cite</h3>
+      <div class="card">
+        <pre class="citation-block">@misc{sitw2026,
+  title  = {Signals in the Wild (SITW): A Benchmark for Anticipating Company Demand from Public Signals},
+  author = {Singla, Yaman Kumar and Krishnamurthy, Balaji},
+  year   = {2026},
+  howpublished = {\url{https://behavior-in-the-wild.github.io/signals-in-the-wild/}},
+  note   = {behavior-in-the-wild@googlegroups.com}
+}</pre>
       </div>
     </section>
   </main>

@@ -5,29 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
   <title>Leaderboard — SITW</title>
-  <meta name="description" content="How LLMs and humans compare at mining public signals to forecast segment-revenue surprise." />
+  <meta name="description" content="How LLMs and humans compare at mining public signals to forecast segment-revenue surprise, from the 5-company deep pilot to the S&P-500 CC-News scale-up." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Cpolyline points='6,22 12,18 17,20 22,11 27,8' fill='none' stroke='%233DDC97' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%237C5CFF'/%3E%3C/svg%3E" />
-    <meta property="og:type" content="website" />
+  <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Signals in the Wild (SITW)" />
   <meta property="og:title" content="Leaderboard — SITW" />
-  <meta property="og:description" content="How LLMs and humans compare at mining public signals to forecast segment-revenue surprise." />
+  <meta property="og:description" content="How LLMs and humans compare at mining public signals to forecast segment-revenue surprise, from the 5-company deep pilot to the S&P-500 CC-News scale-up." />
   <meta property="og:url" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/leaderboard.html" />
   <meta property="og:image" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Leaderboard — SITW" />
-  <meta name="twitter:description" content="How LLMs and humans compare at mining public signals to forecast segment-revenue surprise." />
+  <meta name="twitter:description" content="How LLMs and humans compare at mining public signals to forecast segment-revenue surprise, from the 5-company deep pilot to the S&P-500 CC-News scale-up." />
   <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/images/og-image.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="wrap">
     <h2 class="page-title">Leaderboard</h2>
+
     <p class="page-sub" id="lb-metric"></p>
     <p class="page-sub" id="lb-note"></p>
     <div id="leaderboard-container" style="margin-top:18px"></div>
     <p class="notice">Click a column header to sort. Click a row to open the model page. Rows tagged <span class="tag tag-baseline">Baseline</span> are reference points, not evaluated models. Tier-A open-web mining is <span class="tag tag-pending">Pending</span>.</p>
+
+    <h3 style="margin-top:44px">Fortune-500 CC-News sweep (443 companies)</h3>
+    <p class="page-sub">A different, non-comparable evaluation from the table above: 3 agents predicting revenue surprise across ~443 S&amp;P 500 companies using only the local CC-News point-in-time corpus, against a naive prior-year-proxy label (not the pilot's curated consensus). Shown separately rather than merged into one ranking, since the labels and conditions differ.</p>
+    <div id="caveat-banner" class="callout" style="margin:16px 0"></div>
+    <div id="lb500-container"></div>
+    <p class="notice">Click <a href="companies.html">Companies</a> to browse every company's queries, retrieved evidence, and prediction.</p>
   </main>
 
   <script src="common.js"></script>
