@@ -28,13 +28,10 @@
     <p class="page-sub" id="lb-metric"></p>
     <p class="page-sub" id="lb-note"></p>
     <div id="leaderboard-container" style="margin-top:18px"></div>
-    <p class="notice">Click a column header to sort. Click a row to open the model page. Rows tagged <span class="tag tag-baseline">Baseline</span> are reference points, not evaluated models. Tier-A open-web mining is <span class="tag tag-pending">Pending</span>.</p>
-
-    <h3 style="margin-top:44px">Fortune-500 CC-News sweep (443 companies)</h3>
-    <p class="page-sub">A different, non-comparable evaluation from the table above: 3 agents predicting revenue surprise across ~443 S&amp;P 500 companies using only the local CC-News point-in-time corpus, against a naive prior-year-proxy label (not the pilot's curated consensus). Shown separately rather than merged into one ranking, since the labels and conditions differ.</p>
-    <div id="caveat-banner" class="callout" style="margin:16px 0"></div>
-    <div id="lb500-container"></div>
-    <p class="notice">Click <a href="companies.html">Companies</a> to browse every company's queries, retrieved evidence, and prediction.</p>
+    <div class="callout" style="margin-top:16px">
+      <p style="margin:0"><strong>Reading the CC-News column:</strong> it comes from a different evaluation — 443 S&amp;P 500 companies, CC-News-only retrieval, scored against a naive prior-year-proxy label (81.3% beat-heavy, shown as the baseline row) rather than the pilot's curated consensus. None of the 3 models run on it beat that naive baseline. A model's rank on the pilot columns (blind/feed/C4/C6) and its CC-News number are not meant to be compared 1:1 — see <a href="about.html">About</a> for the full condition-ladder explanation.</p>
+    </div>
+    <p class="notice">Click a column header to sort (hover a header for what it means). Click a row to open the model page. Rows tagged <span class="tag tag-baseline">Baseline</span> are reference points, not evaluated models.</p>
   </main>
 
   <script src="common.js"></script>
