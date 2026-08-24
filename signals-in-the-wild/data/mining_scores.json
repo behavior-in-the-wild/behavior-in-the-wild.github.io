@@ -792,36 +792,72 @@
         "condition": "deep-mined"
       },
       {
+        "episode": "IBM.Q1-2026",
+        "condition": "C6"
+      },
+      {
         "episode": "IBM.Q2-2026",
         "condition": "deep-mined"
+      },
+      {
+        "episode": "IBM.Q2-2026",
+        "condition": "C6"
       },
       {
         "episode": "ADBE.Q1-FY2026",
         "condition": "deep-mined"
       },
       {
+        "episode": "ADBE.Q1-FY2026",
+        "condition": "C6"
+      },
+      {
         "episode": "ADBE.Q2-FY2026",
         "condition": "deep-mined"
+      },
+      {
+        "episode": "ADBE.Q2-FY2026",
+        "condition": "C6"
       },
       {
         "episode": "TEAM.FY26-Q3",
         "condition": "deep-mined"
       },
       {
+        "episode": "TEAM.FY26-Q3",
+        "condition": "C6"
+      },
+      {
         "episode": "TEAM.FY26-Q4",
         "condition": "deep-mined"
+      },
+      {
+        "episode": "TEAM.FY26-Q4",
+        "condition": "C6"
       },
       {
         "episode": "CMG.Q1-2026",
         "condition": "deep-mined"
       },
       {
+        "episode": "CMG.Q1-2026",
+        "condition": "C6"
+      },
+      {
         "episode": "CMG.Q2-2026",
         "condition": "deep-mined"
       },
       {
+        "episode": "CMG.Q2-2026",
+        "condition": "C6"
+      },
+      {
         "episode": "DAL.Q1-2026",
         "condition": "deep-mined"
+      },
+      {
+        "episode": "DAL.Q1-2026",
+        "condition": "C6"
       },
       {
         "episode": "DAL.Q2-2026",

@@ -273,6 +273,73 @@
     return box;
   }
 
+  // ----- QED ground-truth mining recall (D50/D52/D58) -----
+  // Ground truth here is management's OWN post-report-call driver attribution (quote-
+  // audited against the transcript), not a hand-curated map -- richer than the older
+  // family/domain-recall scoring, so it gets its own renderer rather than being forced
+  // into mrConditionCard's shape.
+  function qedRecallSection(epScore, opts) {
+    if (!epScore) return null;
+    opts = opts || {};
+    var box = el("div", "mining-recall");
+    var head = el("div", "mining-recall-head");
+    head.appendChild(el("span", "mining-recall-title", "Mining Recall vs. Real Earnings-Call Drivers (QED)"));
+    box.appendChild(head);
+
+    var note = el("p", "muted");
+    note.style.fontSize = "12.5px";
+    note.appendChild(document.createTextNode(
+      "Ground truth = management's own attribution of what drove the quarter, from the post-report " +
+      "earnings call (never shown to the model). Every driver's quote is verified to appear in the " +
+      "transcript. qed_driver_recall (below) checks whether the model's retrieved evidence actually " +
+      "touched the SPECIFIC real driver, not just the broad topic family."));
+    box.appendChild(note);
+
+    if (opts.showEpisode !== false) {
+      box.appendChild(el("div", "mr-ep-label", (epScore.company || epScore.ticker) + " · " + (epScore.quarter || epScore.id)));
+    }
+
+    var grid = el("div", "mr-grid");
+    var conds = epScore.conditions || {};
+    Object.keys(conds).forEach(function (condName) {
+      var sc = conds[condName];
+      var card = el("div", "mr-card");
+      var head = el("div", "mr-card-head");
+      head.appendChild(el("span", "mr-cond", condName));
+      if (sc.model) head.appendChild(el("span", "mr-model", sc.model));
+      card.appendChild(head);
+
+      var stats = el("div", "mr-stats");
+      stats.appendChild(mrStat("Family recall", fmtPctOrDash(sc.qed_family_recall)));
+      stats.appendChild(mrStat("Driver recall", fmtPctOrDash(sc.qed_driver_recall) +
+        " (" + (sc.n_drivers_found || 0) + "/" + (sc.n_drivers_total || 0) + ")"));
+      if (sc.qed_dds != null) stats.appendChild(mrStat("DDS", fmtPctOrDash(sc.qed_dds)));
+      card.appendChild(stats);
+
+      if (sc.driver_detail && sc.driver_detail.length) {
+        var details = el("details", "mr-driver-details");
+        details.appendChild(el("summary", null, "show " + sc.driver_detail.length + " real drivers checked"));
+        var tbl = el("table", "mr-driver-table");
+        var thead = el("tr");
+        ["family", "driver", "direction", "found?"].forEach(function (h) { thead.appendChild(el("th", null, h)); });
+        tbl.appendChild(thead);
+        sc.driver_detail.forEach(function (d) {
+          var tr = el("tr");
+          tr.appendChild(el("td", null, d.family));
+          tr.appendChild(el("td", null, d.driver));
+          tr.appendChild(el("td", null, d.direction));
+          tr.appendChild(el("td", d.hit ? "mr-hit-yes" : "mr-hit-no", d.hit ? "✓" : "✗"));
+          tbl.appendChild(tr);
+        });
+        details.appendChild(tbl);
+        card.appendChild(details);
+      }
+      grid.appendChild(card);
+    });
+    box.appendChild(grid);
+    return box;
+  }
+
   // ----- Weekly trajectory (SITW sequential forecast) -----
   var OUTCOME_HEX = { beat: "#3DDC97", miss: "#FF5C6C", inline: "#F5B23D" };
   function outcomeHex(p) { return OUTCOME_HEX[(p || "").toLowerCase()] || "#5B6577"; }
@@ -405,7 +472,9 @@
 
     var links = el("div", "nav-links");
     [["index.html", "Home"], ["leaderboard.html", "Leaderboard"], ["matrix.html", "Matrix"],
-     ["companies.html", "Companies"], ["live.html", "Live"], ["about.html", "About"]]
+     ["companies.html", "Companies"], ["live.html", "Live"],
+     ["companies500.html", "Fortune 500"], ["leaderboard500.html", "500 Leaderboard"],
+     ["updates.html", "Updates"], ["about.html", "About"]]
       .forEach(function (p) {
         var a = el("a", active === p[0] ? "active" : null, p[1]);
         a.href = p[0];
@@ -428,7 +497,8 @@
     var c2 = el("div");
     c2.appendChild(el("h4", null, "Explore"));
     [["leaderboard.html", "Leaderboard"], ["matrix.html", "Matrix"], ["companies.html", "Companies"],
-     ["live.html", "Live"], ["about.html", "About"]].forEach(function (p) {
+     ["live.html", "Live"], ["companies500.html", "Fortune 500"], ["leaderboard500.html", "500 Leaderboard"],
+     ["updates.html", "Updates"], ["about.html", "About"]].forEach(function (p) {
       var a = el("a", null, p[1]); a.href = p[0]; c2.appendChild(a);
     });
 
@@ -481,7 +551,7 @@
     avatar: avatar, avatarColor: avatarColor, chip: chip, pill: pill, typeTag: typeTag,
     accBar: accBar, barChart: barChart, heroArt: heroArt, brandMark: brandMark,
     miningPanel: miningPanel, trajChart: trajChart, trajCard: trajCard, leadBadge: leadBadge,
-    miningRecallSection: miningRecallSection,
+    miningRecallSection: miningRecallSection, qedRecallSection: qedRecallSection,
     mountChrome: mountChrome, fetchJSON: fetchJSON,
     fmtPct: fmtPct, fmtSkill: fmtSkill, fmtBrier: fmtBrier,
     getParam: getParam, showError: showError,

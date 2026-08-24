@@ -1,0 +1,9 @@
+{
+  "updates": [
+    {
+      "date": "2026-08-24",
+      "title": "Fortune 500 scale-up infrastructure + QED ground-truth redesign",
+      "body": "Major methodology upgrade this session (see the code repo's docs/DECISIONS.md D41-D65 for full detail): (1) the gold demand-driver ground truth was redesigned around management's own post-report earnings-call attribution (QED) instead of a hand-curated, self-assessed map -- every driver now carries a verbatim quote programmatically verified against the transcript, and an initial spin-biased version (all-tailwind even on a miss quarter) was caught and fixed with a balance-forcing prompt. (2) CC-News was built out as a genuine, separate point-in-time retrieval condition (not a SERP substitute), with a real corpus (2 weeks, ~946K articles) and a serious silent-failure bug fixed (a database-lock error was being fabricated into a fake 'hit' record, invalidating an entire prior run without any visible sign of failure). (3) Scaled EDGAR ground truth, 10-K caching, segment/product-level revenue extraction (via SEC's auto-generated XBRL 'R-report' tables, not fragile prose parsing), and the QED driver extraction to the full S&P 500 universe. (4) Ran a 3-agent (gpt-4o-mini / gpt-5.3-chat / gpt-5.4) CC-News prediction pass across ~443 S&P 500 companies -- see the Fortune 500 pages. Important caveat carried through every page that uses it: that run's label is a naive prior-year-YoY proxy, not real analyst consensus (a real, free, point-in-time consensus source via CNBC/LSEG was found and partially wired up, ~9% coverage so far), and none of the 3 models beat a trivial always-predict-beat baseline on that label."
+    }
+  ]
+}

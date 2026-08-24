@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
+  <title>Companies (Fortune 500) — SITW</title>
+  <meta name="description" content="Browse all 503 S&P 500 companies: EDGAR revenue, earnings-call driver extraction, segment revenue, and CC-News predictions." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Cpolyline points='6,22 12,18 17,20 22,11 27,8' fill='none' stroke='%233DDC97' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%237C5CFF'/%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Signals in the Wild (SITW)" />
+  <meta property="og:title" content="Companies (Fortune 500) — SITW" />
+  <meta property="og:description" content="Browse all 503 S&P 500 companies: EDGAR revenue, earnings-call driver extraction, segment revenue, and CC-News predictions." />
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/companies500.html" />
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/images/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Companies (Fortune 500) — SITW" />
+  <meta name="twitter:description" content="Browse all 503 S&P 500 companies: EDGAR revenue, earnings-call driver extraction, segment revenue, and CC-News predictions." />
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/images/og-image.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <h2 class="page-title">Companies (Fortune 500)</h2>
+    <p class="page-sub" id="co500-sub"></p>
+    <input id="co500-search" class="co500-search" type="text" placeholder="Filter by ticker or name…" />
+    <div id="co500-container"></div>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="companies500.js"></script>
+</body>
+</html>

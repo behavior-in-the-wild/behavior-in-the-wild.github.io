@@ -15,10 +15,13 @@
 
   var miningScoresPromise = S.fetchJSON("data/mining_scores.json")
     .catch(function () { return null; });
+  var qedScoresPromise = S.fetchJSON("data/mining_scores_qed.json")
+    .catch(function () { return null; });
 
-  Promise.all([S.fetchJSON("data/companies.json"), miningScoresPromise]).then(function (results) {
+  Promise.all([S.fetchJSON("data/companies.json"), miningScoresPromise, qedScoresPromise]).then(function (results) {
     var data = results[0];
     var miningScoresData = results[1];
+    var qedScoresData = results[2];
     var co = null;
     data.companies.forEach(function (c) { if (c.ticker === ticker) co = c; });
 
@@ -101,6 +104,11 @@
       if (miningScoresData && miningScoresData.episodes && miningScoresData.episodes[ep.id]) {
         var mrs = S.miningRecallSection(miningScoresData.episodes[ep.id], miningScoresData.caveat, { showEpisode: false });
         if (mrs) card.appendChild(mrs);
+      }
+
+      if (qedScoresData && qedScoresData.episodes && qedScoresData.episodes[ep.id]) {
+        var qrs = S.qedRecallSection(qedScoresData.episodes[ep.id], { showEpisode: false });
+        if (qrs) card.appendChild(qrs);
       }
 
       epsBox.appendChild(card);

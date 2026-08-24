@@ -1,0 +1,35 @@
+{
+  "label_caveat": "Labels are a NAIVE prior-year-same-quarter proxy, NOT real analyst consensus (no point-in-time consensus provider at this scale yet -- see docs/DECISIONS.md D61/D62). The label set is beat-heavy (360/443 = 81.3%).",
+  "naive_always_beat_baseline": {
+    "correct": 360,
+    "total": 443,
+    "accuracy": 0.8126410835214447
+  },
+  "models": [
+    {
+      "model": "gpt-4o-mini",
+      "correct": 69,
+      "total": 443,
+      "accuracy": 0.15575620767494355,
+      "n_predicted_beat": 49,
+      "pct_predicted_beat": 0.11060948081264109
+    },
+    {
+      "model": "gpt-5.3-chat",
+      "correct": 244,
+      "total": 443,
+      "accuracy": 0.5507900677200903,
+      "n_predicted_beat": 263,
+      "pct_predicted_beat": 0.5936794582392777
+    },
+    {
+      "model": "gpt-5.4",
+      "correct": 79,
+      "total": 443,
+      "accuracy": 0.17832957110609482,
+      "n_predicted_beat": 47,
+      "pct_predicted_beat": 0.10609480812641084
+    }
+  ],
+  "warning": "None of the 3 models beat the trivial always-predict-beat baseline. Higher accuracy among the models largely reflects how often each one predicted 'beat' (closer to the label's true base rate), not necessarily better retrieval or reasoning -- see n_predicted_beat / pct_predicted_beat per model."
+}
