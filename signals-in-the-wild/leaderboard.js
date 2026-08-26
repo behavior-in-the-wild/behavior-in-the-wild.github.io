@@ -18,6 +18,8 @@
       help: "ReAct-interleaved, RL-agent-style miner with its own search budget. Same 10 episodes." },
     { key: "ccnews_acc", label: "CC-News (443 co.)", num: true, sortable: true,
       help: "A DIFFERENT evaluation: 443 S&P 500 companies, CC-News-only retrieval, scored against a NAIVE prior-year-proxy label (not real consensus, 81.3% beat-heavy). Not directly comparable to the columns to its left — see the note below the table." },
+    { key: "wchain_acc", label: "Weekly chain (100 co.)", num: true, sortable: true,
+      help: "ANOTHER different evaluation: 100 sector-stratified S&P 500 companies, live web-search retrieval, state carried week-to-week toward each company's most-recent-resolved quarter, naive prior-year-proxy label (81% beat-heavy on this sample). Also not directly comparable to the other columns." },
     { key: "lift_pp", label: "Lift (feed − blind)", num: true, sortable: true,
       help: "Feed accuracy minus blind accuracy, in percentage points — how much curated signals helped." },
     { key: "brier_fed", label: "Calibration (Brier↓)", num: true, sortable: true,
@@ -56,7 +58,18 @@
     return td;
   }
 
+  function wchainCell(r) {
+    var td = S.el("td", "num");
+    if (r.wchain_acc == null) { td.textContent = "—"; return td; }
+    var below = !r.is_baseline && wchainBaseline != null && r.wchain_acc < wchainBaseline;
+    var span = S.el("span", below ? "lb-below-baseline" : null,
+      Math.round(r.wchain_acc * 100) + "%" + (r.wchain_n ? " (" + r.wchain_n + ")" : ""));
+    td.appendChild(span);
+    return td;
+  }
+
   var ccnewsBaseline = null;
+  var wchainBaseline = null;
 
   function render() {
     var container = document.getElementById("leaderboard-container");
@@ -120,6 +133,7 @@
       var c4c = S.el("td"); c4c.appendChild(S.accBar(r.c4_acc)); tr.appendChild(c4c);
       var c6c = S.el("td"); c6c.appendChild(S.accBar(r.c6_acc)); tr.appendChild(c6c);
       tr.appendChild(ccnewsCell(r));
+      tr.appendChild(wchainCell(r));
       tr.appendChild(liftCell(r.lift_pp));
       tr.appendChild(S.el("td", "num", S.fmtBrier(r.brier_fed)));
       tr.appendChild(S.el("td", "num", String(r.n)));
@@ -134,6 +148,7 @@
     rows = data.rows;
     var baseline = rows.filter(function (r) { return r.is_baseline; })[0];
     ccnewsBaseline = baseline ? baseline.ccnews_acc : null;
+    wchainBaseline = baseline ? baseline.wchain_acc : null;
     var m = document.getElementById("lb-metric");
     if (m && data.metric) m.textContent = "Metric: " + data.metric;
     var n = document.getElementById("lb-note");
