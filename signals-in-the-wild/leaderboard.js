@@ -1,104 +1,72 @@
-/* leaderboard.html — full sortable multi-model table (blind + fed) */
+/* leaderboard.html — clean S&P-500-scale results table (mirrors the paper's scale table).
+   One row per (condition, model). No pilot-condition duplicity. */
 (function () {
   "use strict";
   var S = window.SITW;
   S.mountChrome("leaderboard.html");
 
-  var COLS = [
-    { key: "rank", label: "#", num: true, sortable: true },
-    { key: "model", label: "Model", num: false, sortable: true },
-    { key: "type", label: "Type", num: false, sortable: true },
-    { key: "blind_acc", label: "Blind accuracy", num: true, sortable: true, bar: true },
-    { key: "fed_acc", label: "Feed accuracy", num: true, sortable: true, bar: true },
-    { key: "lift_pp", label: "Lift (feed − blind)", num: true, sortable: true },
-    { key: "brier_fed", label: "Calibration (Brier↓)", num: true, sortable: true },
-    { key: "n", label: "Episodes", num: true, sortable: true },
-  ];
+  function pct(x) { return x == null ? "—" : Math.round(x * 100) + "%"; }
+  function num(x) { return x == null ? "—" : x; }
 
-  var rows = [];
-  var sortKey = "rank", sortDir = 1;
+  S.fetchJSON("data/scale_results.json").then(function (data) {
+    var rows = data.rows || [];
+    var naive = null;
+    rows.forEach(function (r) { if (r.is_baseline) naive = r.acc; });
 
-  function cmp(a, b, key) {
-    var av = a[key], bv = b[key];
-    if (av == null && bv == null) return 0;
-    if (av == null) return 1;
-    if (bv == null) return -1;
-    if (typeof av === "string") return av.localeCompare(bv);
-    return av - bv;
-  }
+    var metric = document.getElementById("lb-metric");
+    if (metric) metric.textContent =
+      "Metric: surprise-direction accuracy (beat / inline / miss) across 443 S&P 500 companies, 2026 quarters.";
+    var note = document.getElementById("lb-note");
+    if (note) note.textContent = data.label_note || "";
 
-  function liftCell(v) {
-    var td = S.el("td", "num");
-    if (v == null) { td.textContent = "—"; return td; }
-    var span = S.el("span", "lift " + (v > 0 ? "lift-pos" : v < 0 ? "lift-neg" : "lift-zero"),
-      (v > 0 ? "+" : "") + v + " pp");
-    td.appendChild(span);
-    return td;
-  }
-
-  function render() {
     var container = document.getElementById("leaderboard-container");
     S.clear(container);
-    var sorted = rows.slice().sort(function (a, b) {
-      var c = cmp(a, b, sortKey);
-      return sortDir === 1 ? c : -c;
-    });
 
     var scroll = S.el("div", "table-scroll");
-    var table = S.el("table", "data-table");
+    var table = S.el("table", "lb-table");
     var thead = S.el("thead"), htr = S.el("tr");
-    COLS.forEach(function (col) {
-      var th = S.el("th", (col.num ? "num " : "") + (col.sortable ? "sortable " : "") + (col.key === sortKey ? "sorted" : ""));
-      th.appendChild(document.createTextNode(col.label + " "));
-      if (col.sortable) {
-        th.appendChild(S.el("span", "arrow", col.key === sortKey ? (sortDir === 1 ? "▲" : "▼") : "↕"));
-        th.addEventListener("click", function () {
-          if (sortKey === col.key) { sortDir = -sortDir; }
-          else { sortKey = col.key; sortDir = (col.key === "model" || col.key === "type" || col.key === "brier_fed" || col.key === "rank") ? 1 : -1; }
-          render();
-        });
-      }
-      htr.appendChild(th);
-    });
+    ["Condition", "Corpus", "Model", "Dir. acc.", "Brier ↓", "ECE ↓", "Surprise MAE (pp) ↓", "n"]
+      .forEach(function (h) { htr.appendChild(S.el("th", null, h)); });
     thead.appendChild(htr); table.appendChild(thead);
 
     var tbody = S.el("tbody");
-    sorted.forEach(function (r) {
-      var tr = S.el("tr", (r.is_baseline ? "baseline-row " : "") + "clickable");
-      tr.addEventListener("click", function () { location.href = "model.html?m=" + encodeURIComponent(r.key); });
-
-      var rk = S.el("td", "num");
-      rk.appendChild(S.el("span", "rank" + (r.rank === 1 ? " rank-1" : ""), String(r.rank)));
-      tr.appendChild(rk);
+    rows.forEach(function (r) {
+      var tr = S.el("tr", r.is_baseline ? "lb-row-baseline" : null);
+      tr.appendChild(S.el("td", null, r.condition + (r.partial ? " *" : "")));
+      tr.appendChild(S.el("td", null, r.corpus || "—"));
 
       var mc = S.el("td");
-      var cell = S.el("div", "model-cell");
-      cell.appendChild(S.avatar(r.avatar, r.key));
-      var nm = S.el("div");
-      nm.appendChild(S.el("div", "mc-name", r.model));
-      nm.appendChild(S.el("div", "mc-cond", r.route === "baseline" ? "condition-independent" : r.route));
-      cell.appendChild(nm); mc.appendChild(cell); tr.appendChild(mc);
+      if (r.model && r.model !== "—") { mc.appendChild(S.el("code", null, r.model)); }
+      else { mc.textContent = "—"; }
+      tr.appendChild(mc);
 
-      var tt = S.el("td"); tt.appendChild(S.typeTag(r.type)); tr.appendChild(tt);
+      // accuracy — flag rows below the naive baseline
+      var ac = S.el("td");
+      var below = !r.is_baseline && naive != null && r.acc != null && r.acc < naive;
+      ac.appendChild(S.el("span", below ? "lb-below-baseline" : null, pct(r.acc)));
+      tr.appendChild(ac);
 
-      var bc = S.el("td"); bc.appendChild(S.accBar(r.blind_acc)); tr.appendChild(bc);
-      var fc = S.el("td"); fc.appendChild(S.accBar(r.fed_acc)); tr.appendChild(fc);
-      tr.appendChild(liftCell(r.lift_pp));
-      tr.appendChild(S.el("td", "num", S.fmtBrier(r.brier_fed)));
-      tr.appendChild(S.el("td", "num", String(r.n)));
+      tr.appendChild(S.el("td", null, num(r.brier)));
+      tr.appendChild(S.el("td", null, num(r.ece)));
+      tr.appendChild(S.el("td", null, r.mae == null ? "—" : r.mae));
+      tr.appendChild(S.el("td", null, num(r.n)));
       tbody.appendChild(tr);
     });
     table.appendChild(tbody);
     scroll.appendChild(table);
     container.appendChild(scroll);
-  }
 
-  S.fetchJSON("data/leaderboard.json").then(function (data) {
-    rows = data.rows;
-    var m = document.getElementById("lb-metric");
-    if (m && data.metric) m.textContent = "Metric: " + data.metric;
-    var n = document.getElementById("lb-note");
-    if (n && data.note) n.textContent = data.note;
-    render();
-  }).catch(function (e) { console.error(e); S.showError(document.getElementById("leaderboard-container"), "data/leaderboard.json"); });
+    var legend = S.el("p", "muted");
+    legend.style.marginTop = "12px";
+    legend.style.fontSize = "12.5px";
+    legend.textContent =
+      "No mining condition beats the naive always-beat baseline, and the wide spread across models on the " +
+      "same condition tracks each model's prediction distribution (how often it says “beat”), not its reasoning. " +
+      "Lower is better for Brier, ECE, and Surprise MAE. Rows marked * are still in progress. " +
+      "Agentic (both corpora), fan-out over live web for all models, and blind for all models fill in as runs complete.";
+    container.appendChild(legend);
+  }).catch(function (e) {
+    console.error(e);
+    S.showError(document.getElementById("leaderboard-container"), "data/scale_results.json");
+  });
 })();
