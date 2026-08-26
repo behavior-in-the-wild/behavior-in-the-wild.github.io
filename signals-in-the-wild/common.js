@@ -471,10 +471,8 @@
     inner.appendChild(brand);
 
     var links = el("div", "nav-links");
-    [["index.html", "Home"], ["leaderboard.html", "Leaderboard"], ["matrix.html", "Matrix"],
-     ["companies.html", "Companies"], ["live.html", "Live"],
-     ["companies500.html", "Fortune 500"], ["leaderboard500.html", "500 Leaderboard"],
-     ["updates.html", "Updates"], ["about.html", "About"]]
+    [["index.html", "Home"], ["leaderboard.html", "Leaderboard"],
+     ["companies.html", "Companies"], ["live.html", "Live"], ["about.html", "About"]]
       .forEach(function (p) {
         var a = el("a", active === p[0] ? "active" : null, p[1]);
         a.href = p[0];
@@ -496,9 +494,8 @@
 
     var c2 = el("div");
     c2.appendChild(el("h4", null, "Explore"));
-    [["leaderboard.html", "Leaderboard"], ["matrix.html", "Matrix"], ["companies.html", "Companies"],
-     ["live.html", "Live"], ["companies500.html", "Fortune 500"], ["leaderboard500.html", "500 Leaderboard"],
-     ["updates.html", "Updates"], ["about.html", "About"]].forEach(function (p) {
+    [["leaderboard.html", "Leaderboard"], ["companies.html", "Companies"],
+     ["live.html", "Live"], ["about.html", "About"]].forEach(function (p) {
       var a = el("a", null, p[1]); a.href = p[0]; c2.appendChild(a);
     });
 

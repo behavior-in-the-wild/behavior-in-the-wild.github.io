@@ -1,21 +1,21 @@
-/* SITW — Signals in the Wild. Shared dark theme. Vanilla CSS, no external deps. */
+/* SITW — Signals in the Wild. Shared light theme. Vanilla CSS, no external deps. */
 
 :root {
-  --bg: #0B0E14;
-  --surface: #151A23;
-  --surface-2: #1C2230;
-  --border: #262E3D;
-  --text: #E6EAF0;
-  --muted: #9AA4B2;
-  --accent: #3DDC97;      /* teal-green */
-  --accent-2: #7C5CFF;    /* violet */
-  --beat: #3DDC97;
-  --miss: #FF5C6C;
-  --inline: #F5B23D;
+  --bg: #F5F6F8;
+  --surface: #FFFFFF;
+  --surface-2: #EDEFF3;
+  --border: #DCE0E8;
+  --text: #14181F;
+  --muted: #5B6577;
+  --accent: #1F9D65;      /* teal-green, darkened for contrast on white */
+  --accent-2: #6142E0;    /* violet, darkened for contrast on white */
+  --beat: #1F9D65;
+  --miss: #D6304A;
+  --inline: #B8790A;
   --radius: 12px;
   --radius-sm: 8px;
-  --shadow: 0 8px 30px rgba(0,0,0,0.35);
-  --shadow-sm: 0 2px 10px rgba(0,0,0,0.25);
+  --shadow: 0 8px 30px rgba(20,24,31,0.08);
+  --shadow-sm: 0 2px 10px rgba(20,24,31,0.06);
   --maxw: 1140px;
   --font: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -42,7 +42,7 @@ a:hover { text-decoration: underline; }
 /* ---------- Nav ---------- */
 .nav {
   position: sticky; top: 0; z-index: 50;
-  background: rgba(11,14,20,0.85);
+  background: rgba(255,255,255,0.85);
   backdrop-filter: saturate(140%) blur(10px);
   border-bottom: 1px solid var(--border);
 }
@@ -67,9 +67,9 @@ a:hover { text-decoration: underline; }
   position: relative; overflow: hidden;
   border-bottom: 1px solid var(--border);
   background:
-    radial-gradient(1200px 500px at 80% -10%, rgba(124,92,255,0.22), transparent 60%),
-    radial-gradient(900px 500px at 10% 0%, rgba(61,220,151,0.12), transparent 55%),
-    linear-gradient(180deg, #0d1220 0%, var(--bg) 70%);
+    radial-gradient(1200px 500px at 80% -10%, rgba(97,66,224,0.14), transparent 60%),
+    radial-gradient(900px 500px at 10% 0%, rgba(31,157,101,0.10), transparent 55%),
+    linear-gradient(180deg, #FFFFFF 0%, var(--bg) 70%);
 }
 .hero-inner { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; padding: 64px 20px 56px; }
 .hero h1 { font-size: 46px; line-height: 1.05; margin: 0 0 16px; letter-spacing: -0.03em; font-weight: 800; }
@@ -83,7 +83,7 @@ a:hover { text-decoration: underline; }
   padding: 11px 18px; border-radius: 10px; font-weight: 700; font-size: 15px;
   border: 1px solid var(--border); cursor: pointer;
 }
-.btn-primary { background: var(--accent); color: #06231a; border-color: transparent; }
+.btn-primary { background: var(--accent); color: #FFFFFF; border-color: transparent; }
 .btn-primary:hover { filter: brightness(1.08); text-decoration: none; }
 .btn-ghost { background: var(--surface); color: var(--text); }
 .btn-ghost:hover { background: var(--surface-2); text-decoration: none; }
@@ -236,21 +236,32 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .mr-driver-table { width: 100%; border-collapse: collapse; font-size: 11.5px; margin-top: 6px; }
 .mr-driver-table th, .mr-driver-table td { padding: 4px 6px; border-bottom: 1px solid var(--border); text-align: left; }
 .mr-driver-table th { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: 0.03em; }
-.mr-hit-yes { color: #3DDC97; font-weight: 700; }
-.mr-hit-no { color: #FF5C6C; font-weight: 700; }
+.mr-hit-yes { color: var(--beat); font-weight: 700; }
+.mr-hit-no { color: var(--miss); font-weight: 700; }
 
 /* ---------- Fortune-500 scale-up pages ---------- */
 .lb-table, .co500-table { width: 100%; border-collapse: collapse; font-size: 13.5px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 .lb-table th, .lb-table td, .co500-table th, .co500-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); text-align: left; }
 .lb-table th, .co500-table th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
 .lb-row-baseline { background: rgba(124,92,255,0.08); font-style: italic; }
-.lb-below-baseline { color: #FF5C6C; }
+.lb-below-baseline { color: var(--miss); }
+.lb-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; font-size: 12px; color: var(--muted); }
+.lb-legend-item { max-width: 320px; }
+.lb-legend-item strong { color: var(--text); }
 .co500-search { width: 100%; max-width: 360px; padding: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-size: 13px; margin-bottom: 14px; }
 .co500-row { cursor: pointer; }
 .co500-row:hover { background: var(--surface-2); }
 .co500-flag { font-size: 11px; color: var(--accent-2); }
 .co500-detail-block { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 18px; margin: 12px 0; }
 .co500-quote { color: var(--muted); font-style: italic; font-size: 12.5px; }
+.pilot-badge { display: inline-block; font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--accent-2); background: rgba(61,220,151,0.14); border-radius: 8px; padding: 2px 7px; margin-left: 6px; vertical-align: middle; }
+
+/* ---------- Submit-model form ---------- */
+.submit-form { display: flex; flex-direction: column; gap: 14px; max-width: 520px; margin-top: 18px; }
+.submit-form label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; color: var(--muted); font-weight: 600; }
+.submit-form input, .submit-form textarea { padding: 10px 12px; background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); color: var(--text); font-size: 13.5px; font-family: inherit; }
+.submit-form textarea { resize: vertical; }
+.submit-form button { align-self: flex-start; }
 
 /* ---------- Callout / teaser ---------- */
 .callout {
@@ -261,6 +272,7 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .callout p { color: var(--muted); margin: 0 0 6px; }
 
 .notice { color: var(--muted); font-size: 13px; margin-top: 10px; }
+.citation-block { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; font-family: ui-monospace, monospace; font-size: 12.5px; color: var(--text); overflow-x: auto; white-space: pre; }
 .error { color: var(--miss); }
 
 .back-link { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-weight: 600; margin: 24px 0 0; }

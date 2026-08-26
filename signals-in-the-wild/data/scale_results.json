@@ -1,0 +1,98 @@
+{
+  "label_note": "Direction vs. prior-year quarter (proxy, NOT analyst consensus); beat-heavy at 81.3%. Naive always-beat is the baseline to beat.",
+  "rows": [
+    {
+      "condition": "Naive \u201calways beat\u201d",
+      "corpus": "\u2014",
+      "model": "\u2014",
+      "acc": 0.813,
+      "brier": null,
+      "ece": null,
+      "mae": null,
+      "n": 443,
+      "is_baseline": true
+    },
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-4o-mini",
+      "n": 443,
+      "acc": 0.104,
+      "brier": 0.482,
+      "ece": 0.621,
+      "mae": 17.0
+    },
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-5.3-chat",
+      "n": 443,
+      "acc": 0.255,
+      "brier": 0.264,
+      "ece": 0.29,
+      "mae": 15.9
+    },
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-5.4",
+      "n": 443,
+      "acc": 0.099,
+      "brier": 0.266,
+      "ece": 0.418,
+      "mae": 16.4
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-4o-mini",
+      "n": 441,
+      "acc": 0.156,
+      "brier": 0.463,
+      "ece": 0.572,
+      "mae": 16.9
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "n": 439,
+      "acc": 0.556,
+      "brier": 0.204,
+      "ece": 0.084,
+      "mae": 15.5
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.4",
+      "n": 443,
+      "acc": 0.178,
+      "brier": 0.283,
+      "ece": 0.373,
+      "mae": 16.4
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-4o-mini",
+      "partial": false,
+      "n": 442,
+      "acc": 0.328,
+      "brier": 0.406,
+      "ece": 0.461,
+      "mae": null
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-5.3-chat",
+      "partial": false,
+      "n": 443,
+      "acc": 0.386,
+      "brier": 0.28,
+      "ece": 0.225,
+      "mae": null
+    }
+  ]
+}
