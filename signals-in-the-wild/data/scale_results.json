@@ -93,6 +93,39 @@
       "brier": 0.28,
       "ece": 0.225,
       "mae": null
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "live web",
+      "model": "gpt-4o-mini",
+      "partial": false,
+      "n": 194,
+      "acc": 0.608,
+      "brier": 0.218,
+      "ece": 0.18,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "partial": true,
+      "n": 93,
+      "acc": 0.409,
+      "brier": 0.193,
+      "ece": 0.231,
+      "mae": 12.9
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.4",
+      "partial": true,
+      "n": 95,
+      "acc": 0.389,
+      "brier": 0.17,
+      "ece": 0.076,
+      "mae": 12.7
     }
   ]
 }
