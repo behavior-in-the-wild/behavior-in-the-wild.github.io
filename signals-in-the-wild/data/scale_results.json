@@ -77,10 +77,21 @@
       "corpus": "live web",
       "model": "gpt-4o-mini",
       "partial": false,
-      "n": 411,
-      "acc": 0.324,
-      "brier": 0.407,
-      "ece": 0.465,
+      "n": 442,
+      "acc": 0.328,
+      "brier": 0.406,
+      "ece": 0.461,
+      "mae": null
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-5.3-chat",
+      "partial": false,
+      "n": 443,
+      "acc": 0.386,
+      "brier": 0.28,
+      "ece": 0.225,
       "mae": null
     }
   ]
