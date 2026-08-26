@@ -1,4 +1,4 @@
-/* index.html page logic */
+/* index.html page logic — S&P-500-scale framing (no pilot duplicity). */
 (function () {
   "use strict";
   var S = window.SITW;
@@ -6,72 +6,70 @@
 
   document.getElementById("hero-art").appendChild(S.heroArt());
 
-  // summary tiles
-  S.fetchJSON("data/summary.json").then(function (sm) {
+  function pct(x) { return x == null ? "—" : Math.round(x * 100) + "%"; }
+
+  S.fetchJSON("data/scale_results.json").then(function (data) {
+    var rows = data.rows || [];
+    var naive = null, models = {}, conds = {};
+    rows.forEach(function (r) {
+      if (r.is_baseline) { naive = r.acc; return; }
+      if (r.model && r.model !== "—") models[r.model] = 1;
+      conds[r.condition + "|" + (r.corpus || "")] = 1;
+    });
+
+    // ----- summary tiles (scale, not pilot) -----
     var tiles = document.getElementById("tiles");
-    var items = [
-      { k: sm.models_evaluated, l: "Models × blind + feed conditions", accent: true },
-      { k: sm.episodes, l: "Frozen episodes · " + sm.companies + " companies" },
-      { k: sm.weekly_tracks, l: "Weekly forecast trajectories" },
-      { k: sm.live_pending, l: "Live prints (predictions open)" },
-    ];
-    items.forEach(function (it) {
-      var t = S.el("div", "tile");
-      t.appendChild(S.el("div", "k" + (it.accent ? " accent" : ""), String(it.k)));
-      t.appendChild(S.el("div", "l", it.l));
-      tiles.appendChild(t);
-    });
-  }).catch(function (e) { console.error(e); });
+    if (tiles) {
+      S.clear(tiles);
+      var items = [
+        { k: "443", l: "S&P 500 companies · 2026 quarters", accent: true },
+        { k: pct(naive), l: "Naive always-beat baseline (to beat)" },
+        { k: Object.keys(conds).length, l: "Prediction conditions evaluated" },
+        { k: Object.keys(models).length, l: "Models scored so far" },
+      ];
+      items.forEach(function (it) {
+        var t = S.el("div", "tile");
+        t.appendChild(S.el("div", "k" + (it.accent ? " accent" : ""), String(it.k)));
+        t.appendChild(S.el("div", "l", it.l));
+        tiles.appendChild(t);
+      });
+    }
 
-  // compact leaderboard
-  S.fetchJSON("data/leaderboard.json").then(function (data) {
+    // ----- compact scale leaderboard preview -----
     var c = document.getElementById("leaderboard-container");
-    var note = document.getElementById("lb-note");
-    if (note && data.note) note.textContent = data.note;
+    if (c) {
+      S.clear(c);
+      var note = document.getElementById("lb-note");
+      if (note) note.textContent = data.label_note || "";
+      var scroll = S.el("div", "table-scroll");
+      var table = S.el("table", "lb-table");
+      var thead = S.el("thead"), htr = S.el("tr");
+      ["Condition", "Corpus", "Model", "Dir. acc."].forEach(function (h) { htr.appendChild(S.el("th", null, h)); });
+      thead.appendChild(htr); table.appendChild(thead);
+      var tbody = S.el("tbody");
+      rows.forEach(function (r) {
+        var tr = S.el("tr", r.is_baseline ? "lb-row-baseline" : null);
+        tr.appendChild(S.el("td", null, r.condition + (r.partial ? " *" : "")));
+        tr.appendChild(S.el("td", null, r.corpus || "—"));
+        var mc = S.el("td");
+        if (r.model && r.model !== "—") mc.appendChild(S.el("code", null, r.model)); else mc.textContent = "—";
+        tr.appendChild(mc);
+        var ac = S.el("td");
+        var below = !r.is_baseline && naive != null && r.acc != null && r.acc < naive;
+        ac.appendChild(S.el("span", below ? "lb-below-baseline" : null, pct(r.acc)));
+        tr.appendChild(ac);
+        tbody.appendChild(tr);
+      });
+      table.appendChild(tbody);
+      scroll.appendChild(table);
+      c.appendChild(scroll);
+    }
+  }).catch(function (e) { console.error(e); S.showError(document.getElementById("leaderboard-container"), "data/scale_results.json"); });
 
-    var scroll = S.el("div", "table-scroll");
-    var table = S.el("table", "data-table");
-    var thead = S.el("thead"), htr = S.el("tr");
-    ["#", "Model", "Blind", "Feed", "Lift", "n"].forEach(function (h) {
-      var th = S.el("th", ["Lift", "n"].indexOf(h) >= 0 ? "num" : null, h);
-      htr.appendChild(th);
-    });
-    thead.appendChild(htr); table.appendChild(thead);
-
-    var tbody = S.el("tbody");
-    data.rows.forEach(function (r) {
-      var tr = S.el("tr", (r.is_baseline ? "baseline-row " : "") + "clickable");
-      tr.addEventListener("click", function () { location.href = "model.html?m=" + encodeURIComponent(r.key); });
-      var rk = S.el("td");
-      rk.appendChild(S.el("span", "rank" + (r.rank === 1 ? " rank-1" : ""), String(r.rank)));
-      tr.appendChild(rk);
-
-      var mc = S.el("td");
-      var cell = S.el("div", "model-cell");
-      cell.appendChild(S.avatar(r.avatar, r.key));
-      var nm = S.el("div");
-      nm.appendChild(S.el("div", "mc-name", r.model));
-      nm.appendChild(S.el("div", "mc-cond", r.route === "baseline" ? "condition-independent" : r.route));
-      cell.appendChild(nm);
-      mc.appendChild(cell); tr.appendChild(mc);
-
-      var bc = S.el("td"); bc.appendChild(S.accBar(r.blind_acc)); tr.appendChild(bc);
-      var fc = S.el("td"); fc.appendChild(S.accBar(r.fed_acc)); tr.appendChild(fc);
-      var lc = S.el("td", "num");
-      if (r.lift_pp == null) { lc.textContent = "—"; }
-      else { lc.appendChild(S.el("span", "lift " + (r.lift_pp > 0 ? "lift-pos" : r.lift_pp < 0 ? "lift-neg" : "lift-zero"), (r.lift_pp > 0 ? "+" : "") + r.lift_pp + " pp")); }
-      tr.appendChild(lc);
-      tr.appendChild(S.el("td", "num", String(r.n)));
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-    scroll.appendChild(table);
-    c.appendChild(scroll);
-  }).catch(function (e) { console.error(e); S.showError(document.getElementById("leaderboard-container"), "data/leaderboard.json"); });
-
-  // companies strip
+  // ----- companies strip (featured pilot examples with full episode detail) -----
   S.fetchJSON("data/companies.json").then(function (data) {
     var strip = document.getElementById("company-strip");
+    if (!strip) return;
     data.companies.forEach(function (co) {
       var a = S.el("a", "card company-card");
       a.href = "company.html?c=" + encodeURIComponent(co.ticker);
