@@ -98,6 +98,17 @@
       "mae": null
     },
     {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-5.4",
+      "partial": false,
+      "n": 443,
+      "acc": 0.244,
+      "brier": 0.334,
+      "ece": 0.387,
+      "mae": null
+    },
+    {
       "condition": "Agentic mining",
       "corpus": "live web",
       "model": "gpt-4o-mini",
@@ -114,11 +125,11 @@
       "model": "gpt-4o-mini",
       "scope": "in-window (cutoff >= 2026-06-24)",
       "partial": true,
-      "n": 71,
-      "acc": 0.563,
+      "n": 75,
+      "acc": 0.56,
       "brier": 0.271,
-      "ece": 0.252,
-      "mae": 9.7
+      "ece": 0.253,
+      "mae": 10.1
     },
     {
       "condition": "Agentic mining",
@@ -126,10 +137,10 @@
       "model": "gpt-5.3-chat",
       "scope": "in-window (cutoff >= 2026-06-24)",
       "partial": true,
-      "n": 142,
-      "acc": 0.479,
-      "brier": 0.216,
-      "ece": 0.231,
+      "n": 190,
+      "acc": 0.453,
+      "brier": 0.217,
+      "ece": 0.233,
       "mae": 13.3
     },
     {
@@ -138,11 +149,11 @@
       "model": "gpt-5.4",
       "scope": "in-window (cutoff >= 2026-06-24)",
       "partial": true,
-      "n": 153,
-      "acc": 0.431,
-      "brier": 0.152,
-      "ece": 0.107,
-      "mae": 12.9
+      "n": 196,
+      "acc": 0.383,
+      "brier": 0.157,
+      "ece": 0.138,
+      "mae": 13.6
     }
   ]
 }
