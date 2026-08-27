@@ -125,35 +125,35 @@
       "model": "gpt-4o-mini",
       "scope": "in-window (cutoff >= 2026-06-24)",
       "partial": true,
-      "n": 75,
-      "acc": 0.56,
-      "brier": 0.271,
-      "ece": 0.253,
-      "mae": 10.1
+      "n": 329,
+      "acc": 0.565,
+      "brier": 0.262,
+      "ece": 0.237,
+      "mae": 11.0
     },
     {
       "condition": "Agentic mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.3-chat",
       "scope": "in-window (cutoff >= 2026-06-24)",
-      "partial": true,
-      "n": 190,
-      "acc": 0.453,
-      "brier": 0.217,
-      "ece": 0.233,
-      "mae": 13.3
+      "partial": false,
+      "n": 341,
+      "acc": 0.478,
+      "brier": 0.219,
+      "ece": 0.213,
+      "mae": 11.9
     },
     {
       "condition": "Agentic mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.4",
       "scope": "in-window (cutoff >= 2026-06-24)",
-      "partial": true,
-      "n": 196,
-      "acc": 0.383,
-      "brier": 0.157,
-      "ece": 0.138,
-      "mae": 13.6
+      "partial": false,
+      "n": 341,
+      "acc": 0.396,
+      "brier": 0.166,
+      "ece": 0.125,
+      "mae": 12.5
     }
   ]
 }
