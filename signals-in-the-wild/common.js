@@ -397,7 +397,7 @@
       b.textContent = "Correct at cutoff";
     } else {
       b.classList.add("lead-bad");
-      b.textContent = "Never correct before print";
+      b.textContent = "Never correct before the report";
     }
     return b;
   }
