@@ -46,31 +46,34 @@
       "condition": "Fan-out mining",
       "corpus": "CC-News archive",
       "model": "gpt-4o-mini",
-      "n": 441,
-      "acc": 0.156,
-      "brier": 0.463,
-      "ece": 0.572,
-      "mae": 16.9
+      "scope": "in-window (cutoff >= 2026-06-24)",
+      "n": 339,
+      "acc": 0.183,
+      "brier": 0.438,
+      "ece": 0.536,
+      "mae": 15.2
     },
     {
       "condition": "Fan-out mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.3-chat",
-      "n": 439,
-      "acc": 0.556,
-      "brier": 0.204,
-      "ece": 0.084,
-      "mae": 15.5
+      "scope": "in-window (cutoff >= 2026-06-24)",
+      "n": 338,
+      "acc": 0.68,
+      "brier": 0.216,
+      "ece": 0.067,
+      "mae": 13.8
     },
     {
       "condition": "Fan-out mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.4",
-      "n": 443,
-      "acc": 0.178,
-      "brier": 0.283,
-      "ece": 0.373,
-      "mae": 16.4
+      "scope": "in-window (cutoff >= 2026-06-24)",
+      "n": 341,
+      "acc": 0.199,
+      "brier": 0.302,
+      "ece": 0.391,
+      "mae": 14.9
     },
     {
       "condition": "Fan-out mining",
@@ -108,24 +111,38 @@
     {
       "condition": "Agentic mining",
       "corpus": "CC-News archive",
-      "model": "gpt-5.3-chat",
+      "model": "gpt-4o-mini",
+      "scope": "in-window (cutoff >= 2026-06-24)",
       "partial": true,
-      "n": 93,
-      "acc": 0.409,
-      "brier": 0.193,
+      "n": 71,
+      "acc": 0.563,
+      "brier": 0.271,
+      "ece": 0.252,
+      "mae": 9.7
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "scope": "in-window (cutoff >= 2026-06-24)",
+      "partial": true,
+      "n": 142,
+      "acc": 0.479,
+      "brier": 0.216,
       "ece": 0.231,
-      "mae": 12.9
+      "mae": 13.3
     },
     {
       "condition": "Agentic mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.4",
+      "scope": "in-window (cutoff >= 2026-06-24)",
       "partial": true,
-      "n": 95,
-      "acc": 0.389,
-      "brier": 0.17,
-      "ece": 0.076,
-      "mae": 12.7
+      "n": 153,
+      "acc": 0.431,
+      "brier": 0.152,
+      "ece": 0.107,
+      "mae": 12.9
     }
   ]
 }
