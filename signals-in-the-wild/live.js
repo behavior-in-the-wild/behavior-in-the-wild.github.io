@@ -73,7 +73,7 @@
       var statusTd = S.el("td");
       var badge = S.el("span", "status-predicted");
       badge.appendChild(S.el("span", "live-dot"));
-      badge.appendChild(document.createTextNode("Predicted — awaiting print"));
+      badge.appendChild(document.createTextNode("Predicted — not yet reported"));
       statusTd.appendChild(badge);
       tr.appendChild(statusTd);
       table.appendChild(tr);
@@ -104,9 +104,9 @@
     var b = S.el("div", "live-banner");
     b.appendChild(S.el("span", "live-dot"));
     var txt = S.el("span");
-    txt.appendChild(S.el("strong", null, "Predictions open · resolves after print. "));
+    txt.appendChild(S.el("strong", null, "Predictions open · resolves once the company reports. "));
     txt.appendChild(document.createTextNode(
-      "Each row is frozen before its estimated report date, then scored mechanically once the company reports — contamination is structurally impossible. Click a row to see every model's call."));
+      "Each row is frozen before its estimated report date, then scored mechanically once the company reports its actual results — contamination is structurally impossible. Click a row to see every model's call."));
     b.appendChild(txt);
     banner.appendChild(b);
 
