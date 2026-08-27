@@ -1,86 +1,104 @@
-/* live.html — upcoming (not-yet-reported) prints; predictions open, resolve after print */
+/* live.html — genuinely open (not-yet-reported) predictions at S&P-500 scale.
+   Blind (no search) + fan-out over the frozen CC-News archive, 3 models each,
+   371 companies. No accuracy shown -- resolves mechanically once each reports. */
 (function () {
   "use strict";
   var S = window.SITW;
   S.mountChrome("live.html");
 
-  // direction -> {arrow, label, cls} (BLIND YoY revenue direction)
-  var DIR = {
-    up:   { arrow: "▲", label: "Up",   cls: "dir-up" },
-    down: { arrow: "▼", label: "Down", cls: "dir-down" },
-    flat: { arrow: "▬", label: "Flat", cls: "dir-flat" },
-  };
+  var CONDITION_LABEL = { blind: "Blind (no search)", ccnews: "Fan-out (CC-News)" };
+  var allRows = [];
 
-  function hasPreds(e) { return e.predictions && e.predictions.length > 0; }
-
-  function fmtYoy(v) {
-    if (typeof v !== "number") return "—";
-    return (v > 0 ? "+" : "") + v + "%";
-  }
   function fmtConf(v) {
     return typeof v === "number" ? Math.round(v * 100) + "%" : "—";
   }
 
-  // one model's prediction row inside a company card
-  function predRow(p) {
-    var row = S.el("div", "live-pred");
-
-    var who = S.el("div", "lp-model");
-    who.appendChild(S.avatar(p.avatar, p.model, 26));
-    who.appendChild(S.el("span", "lp-name", p.model));
-    row.appendChild(who);
-
-    var d = DIR[p.direction] || { arrow: "•", label: "n/a", cls: "dir-na" };
-    var dir = S.el("span", "dir-tag " + d.cls);
-    dir.appendChild(S.el("span", "dir-arrow", d.arrow));
-    dir.appendChild(document.createTextNode(" " + d.label));
-    row.appendChild(dir);
-
-    var yoy = S.el("span", "lp-yoy", fmtYoy(p.yoy_growth_pct));
-    yoy.title = "Predicted YoY revenue growth vs. the same quarter last year";
-    row.appendChild(yoy);
-
-    var conf = S.el("span", "lp-conf");
-    conf.appendChild(S.el("span", "lp-conf-label", "conf"));
-    conf.appendChild(document.createTextNode(" " + fmtConf(p.confidence)));
-    row.appendChild(conf);
-
-    if (p.reasoning) {
-      var r = S.el("p", "lp-reason", p.reasoning);
-      r.title = p.reasoning;
-      row.appendChild(r);
+  function predChip(pred, conf) {
+    var s = (pred || "").toLowerCase();
+    if (s !== "beat" && s !== "miss" && s !== "inline") {
+      return S.el("span", "pill pill-na", "n/a");
     }
-    return row;
+    var chip = S.el("span", "pill pill-" + s, pred + " ");
+    chip.appendChild(S.el("span", null, fmtConf(conf)));
+    return chip;
   }
 
-  // one company card with its blind model predictions
-  function companyCard(e) {
-    var card = S.el("div", "card live-card");
+  // expandable detail: every model x condition prediction for one company
+  function detailPanel(row) {
+    var box = S.el("div", "co500-detail-block");
+    var models = Object.keys(row.predictions).sort();
+    models.forEach(function (m) {
+      var mBlock = S.el("div");
+      mBlock.style.marginBottom = "12px";
+      var head = S.el("div", "model-cell");
+      head.appendChild(S.avatar(m, m, 24));
+      head.appendChild(S.el("strong", null, m));
+      mBlock.appendChild(head);
 
-    var head = S.el("div", "live-card-head");
-    var who = S.el("div", "model-cell");
-    who.appendChild(S.chip(e.ticker, e.color));
-    var nm = S.el("div");
-    nm.appendChild(S.el("div", "mc-name", e.company));
-    nm.appendChild(S.el("div", "mc-cond", e.quarter + " · est. " + e.report_date_est));
-    who.appendChild(nm);
-    head.appendChild(who);
-
-    var badge = S.el("span", "status-predicted");
-    badge.appendChild(S.el("span", "live-dot"));
-    badge.appendChild(document.createTextNode("Predicted — awaiting print"));
-    head.appendChild(badge);
-    card.appendChild(head);
-
-    var list = S.el("div", "live-pred-list");
-    e.predictions.forEach(function (p) { list.appendChild(predRow(p)); });
-    card.appendChild(list);
-    return card;
+      ["blind", "ccnews"].forEach(function (cond) {
+        var p = row.predictions[m][cond];
+        if (!p) return;
+        var line = S.el("div");
+        line.style.margin = "6px 0 6px 30px";
+        var labelRow = S.el("div");
+        labelRow.appendChild(S.el("span", "mc-cond", CONDITION_LABEL[cond] + ": "));
+        labelRow.appendChild(predChip(p.pred, p.conf));
+        line.appendChild(labelRow);
+        if (p.reasoning) {
+          line.appendChild(S.el("p", "co500-quote", p.reasoning));
+        }
+        mBlock.appendChild(line);
+      });
+      box.appendChild(mBlock);
+    });
+    return box;
   }
 
-  S.fetchJSON("data/live.json").then(function (data) {
+  function render(rows) {
+    var container = document.getElementById("live-container");
+    S.clear(container);
+    var table = S.el("table", "co500-table");
+    var thead = S.el("tr");
+    ["Ticker", "Company", "Quarter", "Est. report date", ""].forEach(function (h) {
+      thead.appendChild(S.el("th", null, h));
+    });
+    table.appendChild(thead);
+
+    rows.forEach(function (row) {
+      var tr = S.el("tr", "co500-row");
+      tr.appendChild(S.el("td", null, row.ticker || "—"));
+      tr.appendChild(S.el("td", null, row.company || "—"));
+      tr.appendChild(S.el("td", null, row.quarter || "—"));
+      tr.appendChild(S.el("td", null, row.next_report_date_est || "—"));
+      var statusTd = S.el("td");
+      var badge = S.el("span", "status-predicted");
+      badge.appendChild(S.el("span", "live-dot"));
+      badge.appendChild(document.createTextNode("Predicted — awaiting print"));
+      statusTd.appendChild(badge);
+      tr.appendChild(statusTd);
+      table.appendChild(tr);
+
+      var detailTr = S.el("tr");
+      detailTr.style.display = "none";
+      var detailTd = S.el("td");
+      detailTd.colSpan = 5;
+      detailTd.appendChild(detailPanel(row));
+      detailTr.appendChild(detailTd);
+      table.appendChild(detailTr);
+
+      tr.addEventListener("click", function () {
+        detailTr.style.display = detailTr.style.display === "none" ? "" : "none";
+      });
+    });
+    container.appendChild(table);
+  }
+
+  S.fetchJSON("data/live_scale_500.json").then(function (data) {
+    allRows = data.rows || [];
+
     document.getElementById("live-sub").textContent =
-      "Upcoming earnings prints where AI models and humans forecast the revenue surprise now — before the company reports.";
+      allRows.length + " S&P 500 companies with an upcoming, not-yet-reported quarter — " +
+      data.models.join(", ") + " × " + data.conditions.map(function (c) { return CONDITION_LABEL[c] || c; }).join(" & ") + ".";
 
     var banner = document.getElementById("live-banner");
     var b = S.el("div", "live-banner");
@@ -88,61 +106,23 @@
     var txt = S.el("span");
     txt.appendChild(S.el("strong", null, "Predictions open · resolves after print. "));
     txt.appendChild(document.createTextNode(
-      "Each row is frozen before its estimated report date, then scored mechanically from the SEC filing — contamination is structurally impossible."));
+      "Each row is frozen before its estimated report date, then scored mechanically once the company reports — contamination is structurally impossible. Click a row to see every model's call."));
     b.appendChild(txt);
     banner.appendChild(b);
 
-    var container = document.getElementById("live-container");
+    render(allRows);
 
-    // ---- summary table ----
-    var scroll = S.el("div", "table-scroll");
-    var table = S.el("table", "data-table");
-    var thead = S.el("thead"), htr = S.el("tr");
-    ["Company", "Quarter", "Est. report date", "Status"].forEach(function (h) {
-      htr.appendChild(S.el("th", null, h));
+    document.getElementById("live-search").addEventListener("input", function (e) {
+      var q = e.target.value.toLowerCase();
+      render(allRows.filter(function (r) {
+        return ((r.ticker || "") + " " + (r.company || "")).toLowerCase().indexOf(q) !== -1;
+      }));
     });
-    thead.appendChild(htr); table.appendChild(thead);
 
-    var tbody = S.el("tbody");
-    data.episodes.forEach(function (e) {
-      var tr = S.el("tr");
-      var cc = S.el("td");
-      var cell = S.el("div", "model-cell");
-      cell.appendChild(S.chip(e.ticker, e.color));
-      cell.appendChild(S.el("div", "mc-name", e.company));
-      cc.appendChild(cell); tr.appendChild(cc);
-
-      tr.appendChild(S.el("td", null, e.quarter));
-      tr.appendChild(S.el("td", null, e.report_date_est));
-
-      var sc = S.el("td");
-      var predicted = hasPreds(e);
-      var st = S.el("span", predicted ? "status-predicted" : "status-pending");
-      st.appendChild(S.el("span", "live-dot"));
-      st.appendChild(document.createTextNode(predicted ? "Predicted — awaiting print" : e.status));
-      sc.appendChild(st); tr.appendChild(sc);
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody);
-    scroll.appendChild(table);
-    container.appendChild(scroll);
-
-    // ---- per-company blind-prediction cards ----
-    var predicted = data.episodes.filter(hasPreds);
-    if (predicted.length) {
-      var secHead = S.el("div", "section-head");
-      secHead.appendChild(S.el("h3", null, "Model predictions (blind)"));
-      secHead.appendChild(S.el("p", "sub",
-        "Blind forecasts made as of " + (data.as_of || "today") +
-        " — no web search, no external signals. Direction is year-over-year vs. the same quarter last year."));
-      container.appendChild(secHead);
-
-      var grid = S.el("div", "live-grid");
-      predicted.forEach(function (e) { grid.appendChild(companyCard(e)); });
-      container.appendChild(grid);
-    }
-
-    var note = document.getElementById("live-note");
-    note.textContent = (data.note || "") + " Report dates are estimates to verify against IR calendars.";
-  }).catch(function (e) { console.error(e); S.showError(document.getElementById("live-container"), "data/live.json"); });
+    document.getElementById("live-note").textContent =
+      (data.note || "") + " Report dates are estimates to verify against IR calendars.";
+  }).catch(function (e) {
+    console.error(e);
+    S.showError(document.getElementById("live-container"), "data/live_scale_500.json");
+  });
 })();
