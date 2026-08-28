@@ -154,6 +154,36 @@
       "brier": 0.166,
       "ece": 0.125,
       "mae": 12.5
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-4o-mini",
+      "n": 401,
+      "acc": 0.484,
+      "brier": 0.291,
+      "ece": 0.238,
+      "mae": 16.7
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-5.3-chat",
+      "n": 401,
+      "acc": 0.516,
+      "brier": 0.26,
+      "ece": 0.133,
+      "mae": 15.3
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-5.4",
+      "n": 401,
+      "acc": 0.274,
+      "brier": 0.32,
+      "ece": 0.364,
+      "mae": 15.7
     }
   ]
 }
