@@ -1,6 +1,6 @@
 /* live.html — genuinely open (not-yet-reported) predictions at S&P-500 scale.
-   Blind (no search) + fan-out over the frozen CC-News archive + agentic mining
-   over the frozen CC-News archive, 3 models each, 371 companies. No accuracy
+   All 5 conditions (blind, fan-out-CC-News, agentic-CC-News, agentic-live-web,
+   fan-out-live-web), 3 models each, 371 companies, all complete. No accuracy
    shown -- resolves mechanically once each reports. */
 (function () {
   "use strict";
@@ -8,7 +8,8 @@
   S.mountChrome("live.html");
 
   var CONDITION_LABEL = { blind: "Blind (no search)", ccnews: "Fan-out (CC-News)",
-                           c6ccnews: "Agentic (CC-News)" };
+                           c6ccnews: "Agentic (CC-News)", c6live: "Agentic (live web)",
+                           fanoutlive: "Fan-out (live web)" };
   var allRows = [];
 
   function fmtConf(v) {
@@ -37,7 +38,7 @@
       head.appendChild(S.el("strong", null, m));
       mBlock.appendChild(head);
 
-      ["blind", "ccnews", "c6ccnews"].forEach(function (cond) {
+      ["blind", "ccnews", "c6ccnews", "c6live", "fanoutlive"].forEach(function (cond) {
         var p = row.predictions[m][cond];
         if (!p) return;
         var line = S.el("div");
