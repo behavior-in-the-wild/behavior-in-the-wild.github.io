@@ -6,6 +6,12 @@
       "corpus": "\u2014",
       "model": "\u2014",
       "acc": 0.813,
+      "acc_ci95": [
+        0.774,
+        0.846
+      ],
+      "balanced_acc": 0.333,
+      "macro_f1": 0.299,
       "brier": null,
       "ece": null,
       "mae": null,
@@ -18,6 +24,17 @@
       "model": "gpt-4o-mini",
       "n": 443,
       "acc": 0.104,
+      "acc_ci95": [
+        0.079,
+        0.136
+      ],
+      "balanced_acc": 0.348,
+      "macro_f1": 0.104,
+      "pred_dist": {
+        "beat": 0.002,
+        "miss": 0.131,
+        "inline": 0.867
+      },
       "brier": 0.482,
       "ece": 0.621,
       "mae": 17.0
@@ -28,6 +45,17 @@
       "model": "gpt-5.3-chat",
       "n": 443,
       "acc": 0.255,
+      "acc_ci95": [
+        0.217,
+        0.298
+      ],
+      "balanced_acc": 0.399,
+      "macro_f1": 0.204,
+      "pred_dist": {
+        "beat": 0.163,
+        "miss": 0.016,
+        "inline": 0.822
+      },
       "brier": 0.264,
       "ece": 0.29,
       "mae": 15.9
@@ -38,6 +66,17 @@
       "model": "gpt-5.4",
       "n": 443,
       "acc": 0.099,
+      "acc_ci95": [
+        0.075,
+        0.131
+      ],
+      "balanced_acc": 0.333,
+      "macro_f1": 0.06,
+      "pred_dist": {
+        "beat": 0.0,
+        "miss": 0.002,
+        "inline": 0.998
+      },
       "brier": 0.266,
       "ece": 0.418,
       "mae": 16.4
@@ -49,6 +88,17 @@
       "scope": "in-window (cutoff >= 2026-06-24)",
       "n": 339,
       "acc": 0.183,
+      "acc_ci95": [
+        0.145,
+        0.228
+      ],
+      "balanced_acc": 0.306,
+      "macro_f1": 0.172,
+      "pred_dist": {
+        "beat": 0.142,
+        "miss": 0.348,
+        "inline": 0.51
+      },
       "brier": 0.438,
       "ece": 0.536,
       "mae": 15.2
@@ -60,6 +110,17 @@
       "scope": "in-window (cutoff >= 2026-06-24)",
       "n": 338,
       "acc": 0.68,
+      "acc_ci95": [
+        0.629,
+        0.728
+      ],
+      "balanced_acc": 0.405,
+      "macro_f1": 0.4,
+      "pred_dist": {
+        "beat": 0.766,
+        "miss": 0.121,
+        "inline": 0.112
+      },
       "brier": 0.216,
       "ece": 0.067,
       "mae": 13.8
@@ -71,6 +132,17 @@
       "scope": "in-window (cutoff >= 2026-06-24)",
       "n": 341,
       "acc": 0.199,
+      "acc_ci95": [
+        0.16,
+        0.245
+      ],
+      "balanced_acc": 0.333,
+      "macro_f1": 0.172,
+      "pred_dist": {
+        "beat": 0.135,
+        "miss": 0.079,
+        "inline": 0.786
+      },
       "brier": 0.302,
       "ece": 0.391,
       "mae": 14.9
@@ -82,6 +154,17 @@
       "partial": false,
       "n": 442,
       "acc": 0.328,
+      "acc_ci95": [
+        0.286,
+        0.373
+      ],
+      "balanced_acc": 0.352,
+      "macro_f1": 0.257,
+      "pred_dist": {
+        "beat": 0.303,
+        "miss": 0.382,
+        "inline": 0.314
+      },
       "brier": 0.406,
       "ece": 0.461,
       "mae": null
@@ -93,6 +176,17 @@
       "partial": false,
       "n": 443,
       "acc": 0.386,
+      "acc_ci95": [
+        0.342,
+        0.432
+      ],
+      "balanced_acc": 0.425,
+      "macro_f1": 0.315,
+      "pred_dist": {
+        "beat": 0.334,
+        "miss": 0.074,
+        "inline": 0.591
+      },
       "brier": 0.28,
       "ece": 0.225,
       "mae": null
@@ -104,6 +198,17 @@
       "partial": false,
       "n": 443,
       "acc": 0.244,
+      "acc_ci95": [
+        0.206,
+        0.286
+      ],
+      "balanced_acc": 0.399,
+      "macro_f1": 0.236,
+      "pred_dist": {
+        "beat": 0.158,
+        "miss": 0.054,
+        "inline": 0.788
+      },
       "brier": 0.334,
       "ece": 0.387,
       "mae": null
@@ -115,8 +220,63 @@
       "partial": false,
       "n": 194,
       "acc": 0.608,
+      "acc_ci95": [
+        0.538,
+        0.674
+      ],
+      "balanced_acc": 0.376,
+      "macro_f1": 0.361,
+      "pred_dist": {
+        "beat": 0.696,
+        "miss": 0.165,
+        "inline": 0.139
+      },
       "brier": 0.218,
       "ece": 0.18,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "live web",
+      "model": "gpt-5.3-chat",
+      "partial": true,
+      "n": 193,
+      "acc": 0.653,
+      "acc_ci95": [
+        0.583,
+        0.716
+      ],
+      "balanced_acc": 0.477,
+      "macro_f1": 0.447,
+      "pred_dist": {
+        "beat": 0.637,
+        "miss": 0.067,
+        "inline": 0.295
+      },
+      "brier": 0.193,
+      "ece": 0.1,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "live web",
+      "model": "gpt-5.4",
+      "partial": false,
+      "n": 194,
+      "acc": 0.665,
+      "acc_ci95": [
+        0.596,
+        0.728
+      ],
+      "balanced_acc": 0.596,
+      "macro_f1": 0.541,
+      "pred_dist": {
+        "beat": 0.593,
+        "miss": 0.113,
+        "inline": 0.294
+      },
+      "brier": 0.157,
+      "ece": 0.155,
       "mae": null
     },
     {
@@ -127,6 +287,17 @@
       "partial": true,
       "n": 329,
       "acc": 0.565,
+      "acc_ci95": [
+        0.511,
+        0.618
+      ],
+      "balanced_acc": 0.399,
+      "macro_f1": 0.352,
+      "pred_dist": {
+        "beat": 0.571,
+        "miss": 0.283,
+        "inline": 0.146
+      },
       "brier": 0.262,
       "ece": 0.237,
       "mae": 11.0
@@ -139,6 +310,17 @@
       "partial": false,
       "n": 341,
       "acc": 0.478,
+      "acc_ci95": [
+        0.426,
+        0.531
+      ],
+      "balanced_acc": 0.449,
+      "macro_f1": 0.373,
+      "pred_dist": {
+        "beat": 0.446,
+        "miss": 0.032,
+        "inline": 0.522
+      },
       "brier": 0.219,
       "ece": 0.213,
       "mae": 11.9
@@ -151,6 +333,17 @@
       "partial": false,
       "n": 341,
       "acc": 0.396,
+      "acc_ci95": [
+        0.345,
+        0.449
+      ],
+      "balanced_acc": 0.441,
+      "macro_f1": 0.33,
+      "pred_dist": {
+        "beat": 0.326,
+        "miss": 0.047,
+        "inline": 0.628
+      },
       "brier": 0.166,
       "ece": 0.125,
       "mae": 12.5
@@ -161,6 +354,17 @@
       "model": "gpt-4o-mini",
       "n": 401,
       "acc": 0.484,
+      "acc_ci95": [
+        0.435,
+        0.533
+      ],
+      "balanced_acc": 0.396,
+      "macro_f1": 0.323,
+      "pred_dist": {
+        "beat": 0.499,
+        "miss": 0.389,
+        "inline": 0.112
+      },
       "brier": 0.291,
       "ece": 0.238,
       "mae": 16.7
@@ -171,6 +375,17 @@
       "model": "gpt-5.3-chat",
       "n": 401,
       "acc": 0.516,
+      "acc_ci95": [
+        0.467,
+        0.565
+      ],
+      "balanced_acc": 0.475,
+      "macro_f1": 0.379,
+      "pred_dist": {
+        "beat": 0.476,
+        "miss": 0.15,
+        "inline": 0.374
+      },
       "brier": 0.26,
       "ece": 0.133,
       "mae": 15.3
@@ -181,6 +396,17 @@
       "model": "gpt-5.4",
       "n": 401,
       "acc": 0.274,
+      "acc_ci95": [
+        0.233,
+        0.32
+      ],
+      "balanced_acc": 0.449,
+      "macro_f1": 0.265,
+      "pred_dist": {
+        "beat": 0.177,
+        "miss": 0.105,
+        "inline": 0.718
+      },
       "brier": 0.32,
       "ece": 0.364,
       "mae": 15.7
