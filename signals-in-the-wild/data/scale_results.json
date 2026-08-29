@@ -478,6 +478,28 @@
   "real_consensus_note": "Same predictions above, rescored against REAL analyst consensus (MarketBeat and CNBC-cited LSEG/Refinitiv, +-2% inline band) for 332 of 443 companies (75%) where we have it, instead of the naive vs-prior-year proxy every row above uses -- now most of the backtest cohort, not a small spot-check.",
   "real_consensus_rows": [
     {
+      "condition": "Human analyst consensus",
+      "corpus": "\u2014",
+      "model": "\u2014",
+      "n": 332,
+      "acc": 0.458,
+      "acc_ci95": [
+        0.405,
+        0.512
+      ],
+      "balanced_acc": 0.333,
+      "macro_f1": 0.209,
+      "pred_dist": {
+        "beat": 0.0,
+        "miss": 0.0,
+        "inline": 1.0
+      },
+      "brier": null,
+      "ece": null,
+      "mae": null,
+      "is_baseline": true
+    },
+    {
       "condition": "Blind (no search)",
       "corpus": "\u2014",
       "model": "gpt-4o-mini",
