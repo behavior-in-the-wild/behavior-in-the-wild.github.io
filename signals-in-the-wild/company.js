@@ -134,7 +134,7 @@
     h.style.margin = "0";
     titleRow.appendChild(h);
     titleRow.appendChild(S.chip(ticker, (pilotCo && pilotCo.color) || "#7C5CFF"));
-    if (pilotCo) titleRow.appendChild(S.el("span", "pilot-badge", "pilot depth"));
+    if (pilotCo) titleRow.appendChild(S.el("span", "pilot-badge", "case study"));
     header.appendChild(titleRow);
     header.appendChild(S.el("p", "page-sub", (d && d.sector) || (pilotCo && pilotCo.sector) || ""));
     if (pilotCo && pilotCo.note) {
@@ -256,7 +256,7 @@
     if (!d && pilotCo) {
       body.appendChild(S.el("p", "page-sub",
         "This company isn't in the S&P-500 scale-up dataset (e.g. not an S&P 500 constituent); " +
-        "showing pilot-depth data only below."));
+        "showing case-study data only below."));
     } else if (d && !d.qed && !d.segment_revenue && !d.consensus && !d.ccnews_predictions && !pilotCo) {
       body.appendChild(S.el("p", "page-sub",
         "No scale-up data (earnings-call drivers, segment revenue, real consensus, or CC-News prediction) available yet for this company."));

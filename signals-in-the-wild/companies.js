@@ -33,7 +33,7 @@
       });
       var tCell = S.el("td");
       tCell.appendChild(document.createTextNode(co.ticker + " "));
-      if (co.pilot_depth) tCell.appendChild(S.el("span", "pilot-badge", "pilot"));
+      if (co.pilot_depth) tCell.appendChild(S.el("span", "pilot-badge", "case study"));
       tr.appendChild(tCell);
       tr.appendChild(S.el("td", null, co.name || ""));
       tr.appendChild(S.el("td", null, co.sector || ""));
@@ -90,7 +90,7 @@
 
     document.getElementById("co500-sub").textContent =
       allCompanies.length + " companies (S&P 500 + the " + pilot.length + " original hand-curated case studies). " +
-      "'pilot' = one of the 5 original case-study companies (hand-curated signals, narrative writeup); " +
+      "'case study' = one of the 5 original hand-curated companies (signals, narrative writeup); " +
       "✓ marks which data sources/conditions are available at scale for that company (earnings-call " +
       "drivers, segment revenue, real analyst consensus, CC-News prediction, blind, feed, weekly-trajectory mining).";
     render(allCompanies);
