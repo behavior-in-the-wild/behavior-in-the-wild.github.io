@@ -77,7 +77,12 @@
         };
       }
     });
-    allCompanies = Object.keys(byTicker).sort().map(function (t) { return byTicker[t]; });
+    allCompanies = Object.keys(byTicker).map(function (t) { return byTicker[t]; }).sort(function (a, b) {
+      // pilot-depth companies first (otherwise they're invisible, scattered
+      // alphabetically among 500+ rows) -- ticker order within each group
+      if (!!a.pilot_depth !== !!b.pilot_depth) return a.pilot_depth ? -1 : 1;
+      return a.ticker.localeCompare(b.ticker);
+    });
 
     document.getElementById("co500-sub").textContent =
       allCompanies.length + " companies (S&P 500 + the " + pilot.length + " deep-pilot companies). " +
