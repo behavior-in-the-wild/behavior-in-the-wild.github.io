@@ -474,5 +474,449 @@
       "ece": 0.364,
       "mae": 15.7
     }
+  ],
+  "real_consensus_note": "Same predictions above, rescored against REAL analyst consensus (CNBC-cited LSEG/Refinitiv, +-2% inline band) for the n=43 companies where we have it, instead of the naive vs-prior-year proxy every row above uses. Not a full-coverage replacement for the proxy label -- a spot-check on the subset we can verify against a real human/expert baseline.",
+  "real_consensus_rows": [
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-4o-mini",
+      "n": 43,
+      "acc": 0.581,
+      "acc_ci95": [
+        0.433,
+        0.716
+      ],
+      "balanced_acc": 0.431,
+      "macro_f1": 0.376,
+      "pred_dist": {
+        "beat": 0.0,
+        "miss": 0.047,
+        "inline": 0.953
+      },
+      "brier": 0.263,
+      "ece": 0.144,
+      "mae": 21.0
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-4o-mini",
+      "n": 42,
+      "acc": 0.5,
+      "acc_ci95": [
+        0.355,
+        0.645
+      ],
+      "balanced_acc": 0.511,
+      "macro_f1": 0.408,
+      "pred_dist": {
+        "beat": 0.071,
+        "miss": 0.31,
+        "inline": 0.619
+      },
+      "brier": 0.294,
+      "ece": 0.232,
+      "mae": 22.1
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-4o-mini",
+      "n": 29,
+      "acc": 0.448,
+      "acc_ci95": [
+        0.284,
+        0.625
+      ],
+      "balanced_acc": 0.631,
+      "macro_f1": 0.447,
+      "pred_dist": {
+        "beat": 0.517,
+        "miss": 0.241,
+        "inline": 0.241
+      },
+      "brier": 0.373,
+      "ece": 0.397,
+      "mae": null
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-4o-mini",
+      "n": 41,
+      "acc": 0.146,
+      "acc_ci95": [
+        0.069,
+        0.284
+      ],
+      "balanced_acc": 0.142,
+      "macro_f1": 0.127,
+      "pred_dist": {
+        "beat": 0.463,
+        "miss": 0.439,
+        "inline": 0.098
+      },
+      "brier": 0.445,
+      "ece": 0.571,
+      "mae": 20.6
+    },
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-5.3-chat",
+      "n": 43,
+      "acc": 0.605,
+      "acc_ci95": [
+        0.456,
+        0.736
+      ],
+      "balanced_acc": 0.418,
+      "macro_f1": 0.412,
+      "pred_dist": {
+        "beat": 0.372,
+        "miss": 0.047,
+        "inline": 0.581
+      },
+      "brier": 0.258,
+      "ece": 0.104,
+      "mae": 18.8
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "n": 43,
+      "acc": 0.512,
+      "acc_ci95": [
+        0.368,
+        0.654
+      ],
+      "balanced_acc": 0.471,
+      "macro_f1": 0.448,
+      "pred_dist": {
+        "beat": 0.488,
+        "miss": 0.093,
+        "inline": 0.419
+      },
+      "brier": 0.284,
+      "ece": 0.192,
+      "mae": 18.8
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "n": 35,
+      "acc": 0.8,
+      "acc_ci95": [
+        0.641,
+        0.9
+      ],
+      "balanced_acc": 0.712,
+      "macro_f1": 0.751,
+      "pred_dist": {
+        "beat": 0.371,
+        "miss": 0.029,
+        "inline": 0.6
+      },
+      "brier": 0.305,
+      "ece": 0.353,
+      "mae": null
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-5.3-chat",
+      "n": 41,
+      "acc": 0.415,
+      "acc_ci95": [
+        0.278,
+        0.566
+      ],
+      "balanced_acc": 0.313,
+      "macro_f1": 0.321,
+      "pred_dist": {
+        "beat": 0.439,
+        "miss": 0.22,
+        "inline": 0.341
+      },
+      "brier": 0.301,
+      "ece": 0.228,
+      "mae": 20.5
+    },
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-5.4",
+      "n": 43,
+      "acc": 0.581,
+      "acc_ci95": [
+        0.433,
+        0.716
+      ],
+      "balanced_acc": 0.333,
+      "macro_f1": 0.245,
+      "pred_dist": {
+        "beat": 0.0,
+        "miss": 0.0,
+        "inline": 1.0
+      },
+      "brier": 0.241,
+      "ece": 0.121,
+      "mae": 20.2
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.4",
+      "n": 43,
+      "acc": 0.605,
+      "acc_ci95": [
+        0.456,
+        0.736
+      ],
+      "balanced_acc": 0.471,
+      "macro_f1": 0.456,
+      "pred_dist": {
+        "beat": 0.116,
+        "miss": 0.07,
+        "inline": 0.814
+      },
+      "brier": 0.251,
+      "ece": 0.17,
+      "mae": 19.9
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.4",
+      "n": 36,
+      "acc": 0.722,
+      "acc_ci95": [
+        0.56,
+        0.842
+      ],
+      "balanced_acc": 0.634,
+      "macro_f1": 0.686,
+      "pred_dist": {
+        "beat": 0.306,
+        "miss": 0.028,
+        "inline": 0.667
+      },
+      "brier": 0.397,
+      "ece": 0.461,
+      "mae": null
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-5.4",
+      "n": 41,
+      "acc": 0.463,
+      "acc_ci95": [
+        0.321,
+        0.613
+      ],
+      "balanced_acc": 0.278,
+      "macro_f1": 0.288,
+      "pred_dist": {
+        "beat": 0.098,
+        "miss": 0.195,
+        "inline": 0.707
+      },
+      "brier": 0.291,
+      "ece": 0.178,
+      "mae": 20.7
+    },
+    {
+      "condition": "Agentic mining (weekly)",
+      "corpus": "live web",
+      "model": "gpt-4o-mini",
+      "n": 21,
+      "acc": 0.571,
+      "acc_ci95": [
+        0.365,
+        0.755
+      ],
+      "balanced_acc": 0.458,
+      "macro_f1": 0.418,
+      "pred_dist": {
+        "beat": 0.619,
+        "miss": 0.048,
+        "inline": 0.333
+      },
+      "brier": 0.269,
+      "ece": 0.229,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining (weekly)",
+      "corpus": "live web",
+      "model": "gpt-5.3-chat",
+      "n": 21,
+      "acc": 0.476,
+      "acc_ci95": [
+        0.283,
+        0.676
+      ],
+      "balanced_acc": 0.392,
+      "macro_f1": 0.328,
+      "pred_dist": {
+        "beat": 0.762,
+        "miss": 0.0,
+        "inline": 0.238
+      },
+      "brier": 0.286,
+      "ece": 0.311,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining (weekly)",
+      "corpus": "live web",
+      "model": "gpt-5.4",
+      "n": 21,
+      "acc": 0.571,
+      "acc_ci95": [
+        0.365,
+        0.755
+      ],
+      "balanced_acc": 0.458,
+      "macro_f1": 0.411,
+      "pred_dist": {
+        "beat": 0.714,
+        "miss": 0.0,
+        "inline": 0.286
+      },
+      "brier": 0.361,
+      "ece": 0.364,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining (weekly)",
+      "corpus": "CC-News archive",
+      "model": "gpt-4o-mini",
+      "n": 14,
+      "acc": 0.5,
+      "acc_ci95": [
+        0.268,
+        0.732
+      ],
+      "balanced_acc": 0.333,
+      "macro_f1": 0.233,
+      "pred_dist": {
+        "beat": 0.929,
+        "miss": 0.071,
+        "inline": 0.0
+      },
+      "brier": 0.255,
+      "ece": 0.361,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining (weekly)",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "n": 14,
+      "acc": 0.571,
+      "acc_ci95": [
+        0.326,
+        0.786
+      ],
+      "balanced_acc": 0.657,
+      "macro_f1": 0.657,
+      "pred_dist": {
+        "beat": 0.5,
+        "miss": 0.143,
+        "inline": 0.357
+      },
+      "brier": 0.228,
+      "ece": 0.256,
+      "mae": null
+    },
+    {
+      "condition": "Agentic mining (weekly)",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.4",
+      "n": 14,
+      "acc": 0.714,
+      "acc_ci95": [
+        0.454,
+        0.883
+      ],
+      "balanced_acc": 0.752,
+      "macro_f1": 0.75,
+      "pred_dist": {
+        "beat": 0.643,
+        "miss": 0.143,
+        "inline": 0.214
+      },
+      "brier": 0.199,
+      "ece": 0.324,
+      "mae": null
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-4o-mini",
+      "n": 43,
+      "acc": 0.395,
+      "acc_ci95": [
+        0.264,
+        0.544
+      ],
+      "balanced_acc": 0.378,
+      "macro_f1": 0.356,
+      "pred_dist": {
+        "beat": 0.233,
+        "miss": 0.395,
+        "inline": 0.372
+      },
+      "brier": 0.4,
+      "ece": 0.381,
+      "mae": null
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-5.3-chat",
+      "n": 43,
+      "acc": 0.605,
+      "acc_ci95": [
+        0.456,
+        0.736
+      ],
+      "balanced_acc": 0.498,
+      "macro_f1": 0.48,
+      "pred_dist": {
+        "beat": 0.279,
+        "miss": 0.116,
+        "inline": 0.605
+      },
+      "brier": 0.255,
+      "ece": 0.107,
+      "mae": null
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "live web",
+      "model": "gpt-5.4",
+      "n": 43,
+      "acc": 0.512,
+      "acc_ci95": [
+        0.368,
+        0.654
+      ],
+      "balanced_acc": 0.302,
+      "macro_f1": 0.261,
+      "pred_dist": {
+        "beat": 0.093,
+        "miss": 0.047,
+        "inline": 0.86
+      },
+      "brier": 0.261,
+      "ece": 0.122,
+      "mae": null
+    }
   ]
 }
