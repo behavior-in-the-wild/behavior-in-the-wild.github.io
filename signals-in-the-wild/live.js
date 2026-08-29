@@ -26,18 +26,37 @@
     return chip;
   }
 
+  function consensusPill(z) {
+    var chip = S.el("span", "pill pill-inline", "consensus ");
+    chip.appendChild(S.el("span", null, "$" + z.consensus));
+    return chip;
+  }
+
   // expandable detail: every model x condition prediction for one company
   function detailPanel(row) {
     var box = S.el("div", "co500-detail-block");
     if (row.zacks_consensus) {
+      // same DOM shape as a model block below (avatar + name header, then an
+      // indented condition-label + pill line) -- so the human baseline reads
+      // visually the same as any model's row, not a smaller side-note.
       var z = row.zacks_consensus;
-      var zBox = S.el("div", "co500-quote");
-      zBox.style.marginBottom = "14px";
-      zBox.appendChild(S.el("strong", null, "Analyst consensus (Zacks, live): "));
-      zBox.appendChild(document.createTextNode(
-        "$" + z.consensus + " for " + z.period + " (" + z.n_estimates + " estimates, range $" +
-        z.low + "–$" + z.high + ", vs. $" + z.year_ago + " a year ago, " + z.yoy_growth_est + " YoY est.)"));
-      box.appendChild(zBox);
+      var zBlock = S.el("div");
+      zBlock.style.marginBottom = "12px";
+      var zHead = S.el("div", "model-cell");
+      zHead.appendChild(S.avatar("Human analyst consensus", "human", 24));
+      zHead.appendChild(S.el("strong", null, "Human analysts (Zacks, live)"));
+      zBlock.appendChild(zHead);
+      var zLine = S.el("div");
+      zLine.style.margin = "6px 0 6px 30px";
+      var zLabelRow = S.el("div");
+      zLabelRow.appendChild(S.el("span", "mc-cond", z.period + ": "));
+      zLabelRow.appendChild(consensusPill(z));
+      zLine.appendChild(zLabelRow);
+      zLine.appendChild(S.el("p", "co500-quote",
+        z.n_estimates + " estimates, range $" + z.low + "–$" + z.high +
+        " (vs. $" + z.year_ago + " a year ago, " + z.yoy_growth_est + " YoY est.)"));
+      zBlock.appendChild(zLine);
+      box.appendChild(zBlock);
     }
     var models = Object.keys(row.predictions).sort();
     models.forEach(function (m) {

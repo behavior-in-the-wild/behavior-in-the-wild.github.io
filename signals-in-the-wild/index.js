@@ -44,7 +44,8 @@
       var scroll = S.el("div", "table-scroll");
       var table = S.el("table", "lb-table");
       var thead = S.el("thead"), htr = S.el("tr");
-      ["Condition", "Corpus", "Model", "Dir. acc."].forEach(function (h) { htr.appendChild(S.el("th", null, h)); });
+      ["Condition", "Corpus", "Model", "Dir. acc. (proxy)", "Dir. acc. (real consensus)"]
+        .forEach(function (h) { htr.appendChild(S.el("th", null, h)); });
       thead.appendChild(htr); table.appendChild(thead);
       var tbody = S.el("tbody");
       rows.forEach(function (r) {
@@ -55,9 +56,14 @@
         if (r.model && r.model !== "—") mc.appendChild(S.el("code", null, r.model)); else mc.textContent = "—";
         tr.appendChild(mc);
         var ac = S.el("td");
-        var below = !r.is_baseline && naive != null && r.acc != null && r.acc < naive;
-        ac.appendChild(S.el("span", below ? "lb-below-baseline" : null, pct(r.acc)));
+        if (r.acc != null) {
+          var below = !r.is_baseline && naive != null && r.acc < naive;
+          ac.appendChild(S.el("span", below ? "lb-below-baseline" : null, pct(r.acc)));
+        } else {
+          ac.textContent = "—";
+        }
         tr.appendChild(ac);
+        tr.appendChild(S.el("td", null, pct(r.real_acc)));
         tbody.appendChild(tr);
       });
       table.appendChild(tbody);
