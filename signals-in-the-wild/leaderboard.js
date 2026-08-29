@@ -62,9 +62,44 @@
     legend.textContent =
       "No mining condition beats the naive always-beat baseline, and the wide spread across models on the " +
       "same condition tracks each model's prediction distribution (how often it says “beat”), not its reasoning. " +
-      "Lower is better for Brier, ECE, and Surprise MAE. Rows marked * are still in progress. " +
-      "Agentic (both corpora), fan-out over live web for all models, and blind for all models fill in as runs complete.";
+      "Lower is better for Brier, ECE, and Surprise MAE.";
     container.appendChild(legend);
+
+    // ---- real-consensus rescoring, where we have it (no new model calls -- same
+    // predictions above, scored against a real human/analyst number instead of proxy) ----
+    var realRows = data.real_consensus_rows || [];
+    if (realRows.length) {
+      var head2 = S.el("h3", null, "Scored against real analyst consensus");
+      head2.style.marginTop = "32px";
+      container.appendChild(head2);
+      var note2 = S.el("p", "muted");
+      note2.style.fontSize = "12.5px";
+      note2.textContent = data.real_consensus_note || "";
+      container.appendChild(note2);
+
+      var scroll2 = S.el("div", "table-scroll");
+      var table2 = S.el("table", "lb-table");
+      var thead2 = S.el("thead"), htr2 = S.el("tr");
+      ["Condition", "Corpus", "Model", "Dir. acc.", "Balanced acc.", "n"]
+        .forEach(function (h) { htr2.appendChild(S.el("th", null, h)); });
+      thead2.appendChild(htr2); table2.appendChild(thead2);
+      var tbody2 = S.el("tbody");
+      realRows.forEach(function (r) {
+        var tr = S.el("tr");
+        tr.appendChild(S.el("td", null, r.condition));
+        tr.appendChild(S.el("td", null, r.corpus || "—"));
+        var mc2 = S.el("td");
+        mc2.appendChild(S.el("code", null, r.model));
+        tr.appendChild(mc2);
+        tr.appendChild(S.el("td", null, pct(r.acc)));
+        tr.appendChild(S.el("td", null, r.balanced_acc == null ? "—" : r.balanced_acc));
+        tr.appendChild(S.el("td", null, num(r.n)));
+        tbody2.appendChild(tr);
+      });
+      table2.appendChild(tbody2);
+      scroll2.appendChild(table2);
+      container.appendChild(scroll2);
+    }
   }).catch(function (e) {
     console.error(e);
     S.showError(document.getElementById("leaderboard-container"), "data/scale_results.json");
