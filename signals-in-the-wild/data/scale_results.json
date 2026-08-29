@@ -475,321 +475,321 @@
       "mae": 15.7
     }
   ],
-  "real_consensus_note": "Same predictions above, rescored against REAL analyst consensus (CNBC-cited LSEG/Refinitiv, +-2% inline band) for the n=43 companies where we have it, instead of the naive vs-prior-year proxy every row above uses. Not a full-coverage replacement for the proxy label -- a spot-check on the subset we can verify against a real human/expert baseline.",
+  "real_consensus_note": "Same predictions above, rescored against REAL analyst consensus (CNBC-cited LSEG/Refinitiv, +-2% inline band) for the n=47 companies where we have it, instead of the naive vs-prior-year proxy every row above uses. Not a full-coverage replacement for the proxy label -- a spot-check on the subset we can verify against a real human/expert baseline.",
   "real_consensus_rows": [
     {
       "condition": "Blind (no search)",
       "corpus": "\u2014",
       "model": "gpt-4o-mini",
-      "n": 43,
-      "acc": 0.581,
+      "n": 47,
+      "acc": 0.553,
       "acc_ci95": [
-        0.433,
-        0.716
+        0.412,
+        0.686
       ],
-      "balanced_acc": 0.431,
-      "macro_f1": 0.376,
+      "balanced_acc": 0.432,
+      "macro_f1": 0.368,
       "pred_dist": {
         "beat": 0.0,
-        "miss": 0.047,
-        "inline": 0.953
+        "miss": 0.043,
+        "inline": 0.957
       },
-      "brier": 0.263,
-      "ece": 0.144,
+      "brier": 0.277,
+      "ece": 0.176,
       "mae": 21.0
     },
     {
       "condition": "Fan-out mining",
       "corpus": "CC-News archive",
       "model": "gpt-4o-mini",
-      "n": 42,
+      "n": 46,
       "acc": 0.5,
       "acc_ci95": [
-        0.355,
-        0.645
+        0.361,
+        0.639
       ],
-      "balanced_acc": 0.511,
-      "macro_f1": 0.408,
+      "balanced_acc": 0.523,
+      "macro_f1": 0.413,
       "pred_dist": {
-        "beat": 0.071,
-        "miss": 0.31,
-        "inline": 0.619
+        "beat": 0.087,
+        "miss": 0.304,
+        "inline": 0.609
       },
-      "brier": 0.294,
-      "ece": 0.232,
-      "mae": 22.1
+      "brier": 0.296,
+      "ece": 0.234,
+      "mae": 21.9
     },
     {
       "condition": "Agentic mining",
       "corpus": "CC-News archive",
       "model": "gpt-4o-mini",
-      "n": 29,
-      "acc": 0.448,
+      "n": 32,
+      "acc": 0.438,
       "acc_ci95": [
-        0.284,
-        0.625
+        0.282,
+        0.607
       ],
-      "balanced_acc": 0.631,
-      "macro_f1": 0.447,
+      "balanced_acc": 0.611,
+      "macro_f1": 0.437,
       "pred_dist": {
-        "beat": 0.517,
-        "miss": 0.241,
-        "inline": 0.241
+        "beat": 0.5,
+        "miss": 0.219,
+        "inline": 0.281
       },
-      "brier": 0.373,
-      "ece": 0.397,
+      "brier": 0.364,
+      "ece": 0.362,
       "mae": null
     },
     {
       "condition": "Oracle",
       "corpus": "leading-signal upper bound (no search)",
       "model": "gpt-4o-mini",
-      "n": 41,
-      "acc": 0.146,
+      "n": 44,
+      "acc": 0.182,
       "acc_ci95": [
-        0.069,
-        0.284
+        0.095,
+        0.32
       ],
-      "balanced_acc": 0.142,
-      "macro_f1": 0.127,
+      "balanced_acc": 0.168,
+      "macro_f1": 0.148,
       "pred_dist": {
-        "beat": 0.463,
-        "miss": 0.439,
-        "inline": 0.098
+        "beat": 0.5,
+        "miss": 0.409,
+        "inline": 0.091
       },
-      "brier": 0.445,
-      "ece": 0.571,
-      "mae": 20.6
-    },
-    {
-      "condition": "Blind (no search)",
-      "corpus": "\u2014",
-      "model": "gpt-5.3-chat",
-      "n": 43,
-      "acc": 0.605,
-      "acc_ci95": [
-        0.456,
-        0.736
-      ],
-      "balanced_acc": 0.418,
-      "macro_f1": 0.412,
-      "pred_dist": {
-        "beat": 0.372,
-        "miss": 0.047,
-        "inline": 0.581
-      },
-      "brier": 0.258,
-      "ece": 0.104,
-      "mae": 18.8
-    },
-    {
-      "condition": "Fan-out mining",
-      "corpus": "CC-News archive",
-      "model": "gpt-5.3-chat",
-      "n": 43,
-      "acc": 0.512,
-      "acc_ci95": [
-        0.368,
-        0.654
-      ],
-      "balanced_acc": 0.471,
-      "macro_f1": 0.448,
-      "pred_dist": {
-        "beat": 0.488,
-        "miss": 0.093,
-        "inline": 0.419
-      },
-      "brier": 0.284,
-      "ece": 0.192,
-      "mae": 18.8
-    },
-    {
-      "condition": "Agentic mining",
-      "corpus": "CC-News archive",
-      "model": "gpt-5.3-chat",
-      "n": 35,
-      "acc": 0.8,
-      "acc_ci95": [
-        0.641,
-        0.9
-      ],
-      "balanced_acc": 0.712,
-      "macro_f1": 0.751,
-      "pred_dist": {
-        "beat": 0.371,
-        "miss": 0.029,
-        "inline": 0.6
-      },
-      "brier": 0.305,
-      "ece": 0.353,
-      "mae": null
-    },
-    {
-      "condition": "Oracle",
-      "corpus": "leading-signal upper bound (no search)",
-      "model": "gpt-5.3-chat",
-      "n": 41,
-      "acc": 0.415,
-      "acc_ci95": [
-        0.278,
-        0.566
-      ],
-      "balanced_acc": 0.313,
-      "macro_f1": 0.321,
-      "pred_dist": {
-        "beat": 0.439,
-        "miss": 0.22,
-        "inline": 0.341
-      },
-      "brier": 0.301,
-      "ece": 0.228,
+      "brier": 0.428,
+      "ece": 0.537,
       "mae": 20.5
     },
     {
       "condition": "Blind (no search)",
       "corpus": "\u2014",
-      "model": "gpt-5.4",
-      "n": 43,
-      "acc": 0.581,
+      "model": "gpt-5.3-chat",
+      "n": 47,
+      "acc": 0.574,
       "acc_ci95": [
         0.433,
-        0.716
+        0.705
+      ],
+      "balanced_acc": 0.392,
+      "macro_f1": 0.391,
+      "pred_dist": {
+        "beat": 0.34,
+        "miss": 0.064,
+        "inline": 0.596
+      },
+      "brier": 0.262,
+      "ece": 0.123,
+      "mae": 19.0
+    },
+    {
+      "condition": "Fan-out mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "n": 47,
+      "acc": 0.532,
+      "acc_ci95": [
+        0.392,
+        0.667
+      ],
+      "balanced_acc": 0.481,
+      "macro_f1": 0.463,
+      "pred_dist": {
+        "beat": 0.489,
+        "miss": 0.085,
+        "inline": 0.426
+      },
+      "brier": 0.28,
+      "ece": 0.181,
+      "mae": 18.8
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "n": 38,
+      "acc": 0.763,
+      "acc_ci95": [
+        0.608,
+        0.87
+      ],
+      "balanced_acc": 0.677,
+      "macro_f1": 0.727,
+      "pred_dist": {
+        "beat": 0.368,
+        "miss": 0.026,
+        "inline": 0.605
+      },
+      "brier": 0.295,
+      "ece": 0.297,
+      "mae": null
+    },
+    {
+      "condition": "Oracle",
+      "corpus": "leading-signal upper bound (no search)",
+      "model": "gpt-5.3-chat",
+      "n": 44,
+      "acc": 0.432,
+      "acc_ci95": [
+        0.297,
+        0.578
+      ],
+      "balanced_acc": 0.328,
+      "macro_f1": 0.338,
+      "pred_dist": {
+        "beat": 0.455,
+        "miss": 0.227,
+        "inline": 0.318
+      },
+      "brier": 0.296,
+      "ece": 0.212,
+      "mae": 20.3
+    },
+    {
+      "condition": "Blind (no search)",
+      "corpus": "\u2014",
+      "model": "gpt-5.4",
+      "n": 47,
+      "acc": 0.553,
+      "acc_ci95": [
+        0.412,
+        0.686
       ],
       "balanced_acc": 0.333,
-      "macro_f1": 0.245,
+      "macro_f1": 0.237,
       "pred_dist": {
         "beat": 0.0,
         "miss": 0.0,
         "inline": 1.0
       },
-      "brier": 0.241,
-      "ece": 0.121,
+      "brier": 0.24,
+      "ece": 0.094,
       "mae": 20.2
     },
     {
       "condition": "Fan-out mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.4",
-      "n": 43,
-      "acc": 0.605,
+      "n": 47,
+      "acc": 0.596,
       "acc_ci95": [
-        0.456,
-        0.736
+        0.453,
+        0.724
       ],
-      "balanced_acc": 0.471,
-      "macro_f1": 0.456,
+      "balanced_acc": 0.48,
+      "macro_f1": 0.45,
       "pred_dist": {
-        "beat": 0.116,
-        "miss": 0.07,
-        "inline": 0.814
+        "beat": 0.128,
+        "miss": 0.085,
+        "inline": 0.787
       },
-      "brier": 0.251,
-      "ece": 0.17,
+      "brier": 0.248,
+      "ece": 0.167,
       "mae": 19.9
     },
     {
       "condition": "Agentic mining",
       "corpus": "CC-News archive",
       "model": "gpt-5.4",
-      "n": 36,
-      "acc": 0.722,
+      "n": 40,
+      "acc": 0.675,
       "acc_ci95": [
-        0.56,
-        0.842
+        0.52,
+        0.799
       ],
-      "balanced_acc": 0.634,
-      "macro_f1": 0.686,
+      "balanced_acc": 0.598,
+      "macro_f1": 0.65,
       "pred_dist": {
-        "beat": 0.306,
-        "miss": 0.028,
-        "inline": 0.667
+        "beat": 0.275,
+        "miss": 0.025,
+        "inline": 0.7
       },
-      "brier": 0.397,
-      "ece": 0.461,
+      "brier": 0.387,
+      "ece": 0.414,
       "mae": null
     },
     {
       "condition": "Oracle",
       "corpus": "leading-signal upper bound (no search)",
       "model": "gpt-5.4",
-      "n": 41,
-      "acc": 0.463,
+      "n": 44,
+      "acc": 0.455,
       "acc_ci95": [
-        0.321,
-        0.613
+        0.317,
+        0.599
       ],
-      "balanced_acc": 0.278,
-      "macro_f1": 0.288,
+      "balanced_acc": 0.285,
+      "macro_f1": 0.302,
       "pred_dist": {
-        "beat": 0.098,
-        "miss": 0.195,
-        "inline": 0.707
+        "beat": 0.114,
+        "miss": 0.205,
+        "inline": 0.682
       },
-      "brier": 0.291,
-      "ece": 0.178,
-      "mae": 20.7
+      "brier": 0.295,
+      "ece": 0.19,
+      "mae": 20.5
     },
     {
       "condition": "Agentic mining (weekly)",
       "corpus": "live web",
       "model": "gpt-4o-mini",
-      "n": 21,
-      "acc": 0.571,
+      "n": 22,
+      "acc": 0.591,
       "acc_ci95": [
-        0.365,
-        0.755
+        0.387,
+        0.767
       ],
-      "balanced_acc": 0.458,
-      "macro_f1": 0.418,
+      "balanced_acc": 0.473,
+      "macro_f1": 0.433,
       "pred_dist": {
-        "beat": 0.619,
-        "miss": 0.048,
-        "inline": 0.333
+        "beat": 0.591,
+        "miss": 0.045,
+        "inline": 0.364
       },
-      "brier": 0.269,
-      "ece": 0.229,
+      "brier": 0.261,
+      "ece": 0.205,
       "mae": null
     },
     {
       "condition": "Agentic mining (weekly)",
       "corpus": "live web",
       "model": "gpt-5.3-chat",
-      "n": 21,
-      "acc": 0.476,
+      "n": 22,
+      "acc": 0.5,
       "acc_ci95": [
-        0.283,
-        0.676
+        0.307,
+        0.693
       ],
-      "balanced_acc": 0.392,
-      "macro_f1": 0.328,
+      "balanced_acc": 0.413,
+      "macro_f1": 0.351,
       "pred_dist": {
-        "beat": 0.762,
+        "beat": 0.727,
         "miss": 0.0,
-        "inline": 0.238
+        "inline": 0.273
       },
-      "brier": 0.286,
-      "ece": 0.311,
+      "brier": 0.289,
+      "ece": 0.324,
       "mae": null
     },
     {
       "condition": "Agentic mining (weekly)",
       "corpus": "live web",
       "model": "gpt-5.4",
-      "n": 21,
-      "acc": 0.571,
+      "n": 22,
+      "acc": 0.545,
       "acc_ci95": [
-        0.365,
-        0.755
+        0.347,
+        0.731
       ],
-      "balanced_acc": 0.458,
-      "macro_f1": 0.411,
+      "balanced_acc": 0.443,
+      "macro_f1": 0.399,
       "pred_dist": {
-        "beat": 0.714,
-        "miss": 0.0,
-        "inline": 0.286
+        "beat": 0.682,
+        "miss": 0.045,
+        "inline": 0.273
       },
-      "brier": 0.361,
-      "ece": 0.364,
+      "brier": 0.36,
+      "ece": 0.323,
       "mae": null
     },
     {
@@ -859,63 +859,63 @@
       "condition": "Fan-out mining",
       "corpus": "live web",
       "model": "gpt-4o-mini",
-      "n": 43,
-      "acc": 0.395,
+      "n": 47,
+      "acc": 0.362,
       "acc_ci95": [
-        0.264,
-        0.544
+        0.24,
+        0.505
       ],
-      "balanced_acc": 0.378,
-      "macro_f1": 0.356,
+      "balanced_acc": 0.35,
+      "macro_f1": 0.323,
       "pred_dist": {
-        "beat": 0.233,
-        "miss": 0.395,
-        "inline": 0.372
+        "beat": 0.234,
+        "miss": 0.404,
+        "inline": 0.362
       },
-      "brier": 0.4,
-      "ece": 0.381,
+      "brier": 0.411,
+      "ece": 0.411,
       "mae": null
     },
     {
       "condition": "Fan-out mining",
       "corpus": "live web",
       "model": "gpt-5.3-chat",
-      "n": 43,
-      "acc": 0.605,
+      "n": 47,
+      "acc": 0.574,
       "acc_ci95": [
-        0.456,
-        0.736
+        0.433,
+        0.705
       ],
-      "balanced_acc": 0.498,
-      "macro_f1": 0.48,
+      "balanced_acc": 0.479,
+      "macro_f1": 0.45,
       "pred_dist": {
-        "beat": 0.279,
-        "miss": 0.116,
-        "inline": 0.605
+        "beat": 0.255,
+        "miss": 0.128,
+        "inline": 0.617
       },
-      "brier": 0.255,
-      "ece": 0.107,
+      "brier": 0.261,
+      "ece": 0.121,
       "mae": null
     },
     {
       "condition": "Fan-out mining",
       "corpus": "live web",
       "model": "gpt-5.4",
-      "n": 43,
-      "acc": 0.512,
+      "n": 47,
+      "acc": 0.489,
       "acc_ci95": [
-        0.368,
-        0.654
+        0.353,
+        0.628
       ],
-      "balanced_acc": 0.302,
-      "macro_f1": 0.261,
+      "balanced_acc": 0.301,
+      "macro_f1": 0.253,
       "pred_dist": {
-        "beat": 0.093,
-        "miss": 0.047,
-        "inline": 0.86
+        "beat": 0.085,
+        "miss": 0.064,
+        "inline": 0.851
       },
-      "brier": 0.261,
-      "ece": 0.122,
+      "brier": 0.265,
+      "ece": 0.143,
       "mae": null
     }
   ]
