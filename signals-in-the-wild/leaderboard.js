@@ -85,11 +85,12 @@
       thead2.appendChild(htr2); table2.appendChild(thead2);
       var tbody2 = S.el("tbody");
       realRows.forEach(function (r) {
-        var tr = S.el("tr");
+        var tr = S.el("tr", r.is_baseline ? "lb-row-baseline" : null);
         tr.appendChild(S.el("td", null, r.condition));
         tr.appendChild(S.el("td", null, r.corpus || "—"));
         var mc2 = S.el("td");
-        mc2.appendChild(S.el("code", null, r.model));
+        if (r.model && r.model !== "—") { mc2.appendChild(S.el("code", null, r.model)); }
+        else { mc2.textContent = "—"; }
         tr.appendChild(mc2);
         tr.appendChild(S.el("td", null, pct(r.acc)));
         tr.appendChild(S.el("td", null, r.balanced_acc == null ? "—" : r.balanced_acc));
