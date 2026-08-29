@@ -29,6 +29,16 @@
   // expandable detail: every model x condition prediction for one company
   function detailPanel(row) {
     var box = S.el("div", "co500-detail-block");
+    if (row.zacks_consensus) {
+      var z = row.zacks_consensus;
+      var zBox = S.el("div", "co500-quote");
+      zBox.style.marginBottom = "14px";
+      zBox.appendChild(S.el("strong", null, "Analyst consensus (Zacks, live): "));
+      zBox.appendChild(document.createTextNode(
+        "$" + z.consensus + " for " + z.period + " (" + z.n_estimates + " estimates, range $" +
+        z.low + "–$" + z.high + ", vs. $" + z.year_ago + " a year ago, " + z.yoy_growth_est + " YoY est.)"));
+      box.appendChild(zBox);
+    }
     var models = Object.keys(row.predictions).sort();
     models.forEach(function (m) {
       var mBlock = S.el("div");
@@ -99,9 +109,11 @@
   S.fetchJSON("data/live_scale_500.json").then(function (data) {
     allRows = data.rows || [];
 
+    var nZacks = allRows.filter(function (r) { return r.zacks_consensus; }).length;
     document.getElementById("live-sub").textContent =
       allRows.length + " S&P 500 companies with an upcoming, not-yet-reported quarter — " +
-      data.models.join(", ") + " × " + data.conditions.map(function (c) { return CONDITION_LABEL[c] || c; }).join(" & ") + ".";
+      data.models.join(", ") + " × " + data.conditions.map(function (c) { return CONDITION_LABEL[c] || c; }).join(" & ") +
+      ". " + nZacks + " rows also carry a live Zacks analyst-consensus revenue estimate — click a row to see it.";
 
     var banner = document.getElementById("live-banner");
     var b = S.el("div", "live-banner");

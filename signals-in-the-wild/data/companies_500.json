@@ -16,7 +16,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AAPL",
@@ -32,7 +36,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ABBV",
@@ -48,7 +56,11 @@
       "n_segment_rows": 55,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ABNB",
@@ -64,7 +76,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ABT",
@@ -80,7 +96,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ACGL",
@@ -96,7 +116,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ACN",
@@ -112,7 +136,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ADBE",
@@ -128,7 +156,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ADI",
@@ -144,7 +176,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ADM",
@@ -160,7 +196,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ADP",
@@ -176,7 +216,11 @@
       "n_segment_rows": 24,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ADSK",
@@ -192,7 +236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AEE",
@@ -208,7 +256,11 @@
       "n_segment_rows": 59,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AEP",
@@ -224,7 +276,11 @@
       "n_segment_rows": 185,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "AES",
@@ -240,7 +296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AFL",
@@ -256,7 +316,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AIG",
@@ -272,7 +336,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AIZ",
@@ -288,7 +356,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AJG",
@@ -304,7 +376,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AKAM",
@@ -320,7 +396,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ALB",
@@ -336,7 +416,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ALGN",
@@ -352,7 +436,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ALL",
@@ -368,7 +456,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ALLE",
@@ -384,7 +476,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AMAT",
@@ -400,7 +496,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AMCR",
@@ -416,7 +516,11 @@
       "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "AMD",
@@ -432,7 +536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AME",
@@ -448,7 +556,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AMGN",
@@ -464,7 +576,11 @@
       "n_segment_rows": 54,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AMP",
@@ -480,7 +596,11 @@
       "n_segment_rows": 87,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AMT",
@@ -496,7 +616,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "AMZN",
@@ -512,7 +636,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ANET",
@@ -528,7 +656,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AON",
@@ -544,7 +676,11 @@
       "n_segment_rows": 34,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AOS",
@@ -560,7 +696,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "APA",
@@ -576,7 +716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "APD",
@@ -592,7 +736,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "APH",
@@ -608,7 +756,11 @@
       "n_segment_rows": 24,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "APO",
@@ -624,7 +776,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "APP",
@@ -640,7 +796,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "APTV",
@@ -656,7 +816,11 @@
       "n_segment_rows": 24,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ARE",
@@ -672,7 +836,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ARES",
@@ -688,7 +856,11 @@
       "n_segment_rows": 11,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ATO",
@@ -704,7 +876,11 @@
       "n_segment_rows": 16,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AVGO",
@@ -720,7 +896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AVY",
@@ -736,7 +916,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AWK",
@@ -752,7 +936,11 @@
       "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AXON",
@@ -768,7 +956,11 @@
       "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "AXP",
@@ -784,7 +976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "AZO",
@@ -800,7 +996,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BA",
@@ -816,7 +1016,11 @@
       "n_segment_rows": 18,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BAC",
@@ -832,7 +1036,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BALL",
@@ -848,7 +1056,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BAX",
@@ -864,7 +1076,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BBY",
@@ -880,7 +1096,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BDX",
@@ -896,7 +1116,11 @@
       "n_segment_rows": 37,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BEN",
@@ -912,7 +1136,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BF-B",
@@ -928,7 +1156,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "BG",
@@ -944,7 +1176,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "BIIB",
@@ -960,7 +1196,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "BKNG",
@@ -976,7 +1216,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BKR",
@@ -992,7 +1236,11 @@
       "n_segment_rows": 17,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BLDR",
@@ -1008,7 +1256,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BLK",
@@ -1024,7 +1276,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BMY",
@@ -1040,7 +1296,11 @@
       "n_segment_rows": 25,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BNY",
@@ -1056,7 +1316,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "BR",
@@ -1072,7 +1336,11 @@
       "n_segment_rows": 17,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "BRK-B",
@@ -1088,7 +1356,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "BRO",
@@ -1104,7 +1376,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BSX",
@@ -1120,7 +1396,11 @@
       "n_segment_rows": 32,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BX",
@@ -1136,7 +1416,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "BXP",
@@ -1152,7 +1436,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "C",
@@ -1168,7 +1456,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CAH",
@@ -1184,7 +1476,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CARR",
@@ -1200,7 +1496,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CASY",
@@ -1216,7 +1516,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CAT",
@@ -1232,7 +1536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CB",
@@ -1248,7 +1556,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CBOE",
@@ -1264,7 +1576,11 @@
       "n_segment_rows": 66,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CBRE",
@@ -1280,7 +1596,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CCI",
@@ -1296,7 +1616,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CCL",
@@ -1312,7 +1636,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CDNS",
@@ -1328,7 +1656,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CDW",
@@ -1344,7 +1676,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CEG",
@@ -1360,7 +1696,11 @@
       "n_segment_rows": 47,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CF",
@@ -1376,7 +1716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CFG",
@@ -1392,7 +1736,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CHD",
@@ -1408,7 +1756,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CHRW",
@@ -1424,7 +1776,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CHTR",
@@ -1440,7 +1796,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CI",
@@ -1456,7 +1816,11 @@
       "n_segment_rows": 22,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CIEN",
@@ -1472,7 +1836,11 @@
       "n_segment_rows": 49,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CINF",
@@ -1488,7 +1856,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CL",
@@ -1504,7 +1876,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CLX",
@@ -1520,7 +1896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CMCSA",
@@ -1536,7 +1916,11 @@
       "n_segment_rows": 23,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CME",
@@ -1552,7 +1936,11 @@
       "n_segment_rows": 18,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CMG",
@@ -1568,7 +1956,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CMI",
@@ -1584,7 +1976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CMS",
@@ -1600,7 +1996,11 @@
       "n_segment_rows": 20,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CNC",
@@ -1616,7 +2016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CNP",
@@ -1632,7 +2036,11 @@
       "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "COF",
@@ -1648,7 +2056,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "COHR",
@@ -1664,7 +2076,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "COIN",
@@ -1680,7 +2096,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "COO",
@@ -1696,7 +2116,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "COP",
@@ -1712,7 +2136,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "COR",
@@ -1728,7 +2156,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "COST",
@@ -1744,7 +2176,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CPAY",
@@ -1760,7 +2196,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CPRT",
@@ -1776,7 +2216,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CPT",
@@ -1792,7 +2236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CRH",
@@ -1808,7 +2256,11 @@
       "n_segment_rows": 25,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CRL",
@@ -1824,7 +2276,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CRM",
@@ -1840,7 +2296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CRWD",
@@ -1856,7 +2316,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CSCO",
@@ -1872,7 +2336,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CSGP",
@@ -1888,7 +2356,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CSX",
@@ -1904,7 +2376,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CTAS",
@@ -1920,7 +2396,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CTSH",
@@ -1936,7 +2416,11 @@
       "n_segment_rows": 54,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "CTVA",
@@ -1952,7 +2436,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CVNA",
@@ -1968,7 +2456,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CVS",
@@ -1984,7 +2476,11 @@
       "n_segment_rows": 39,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "CVX",
@@ -2000,7 +2496,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "D",
@@ -2016,7 +2516,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "DAL",
@@ -2032,7 +2536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DASH",
@@ -2048,7 +2556,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DD",
@@ -2064,7 +2576,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DDOG",
@@ -2080,7 +2596,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DE",
@@ -2096,7 +2616,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DECK",
@@ -2112,7 +2636,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DELL",
@@ -2128,7 +2656,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DG",
@@ -2144,7 +2676,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DGX",
@@ -2160,7 +2696,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DHI",
@@ -2176,7 +2716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DHR",
@@ -2192,7 +2736,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DIS",
@@ -2208,7 +2756,11 @@
       "n_segment_rows": 28,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DLR",
@@ -2224,7 +2776,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "DLTR",
@@ -2240,7 +2796,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DOC",
@@ -2256,7 +2816,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DOV",
@@ -2272,7 +2836,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DOW",
@@ -2288,7 +2856,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "DPZ",
@@ -2304,7 +2876,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DRI",
@@ -2320,7 +2896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "DTE",
@@ -2336,7 +2916,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "DUK",
@@ -2352,7 +2936,11 @@
       "n_segment_rows": 118,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "DVA",
@@ -2368,7 +2956,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DVN",
@@ -2384,7 +2976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "DXCM",
@@ -2400,7 +2996,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EBAY",
@@ -2416,7 +3016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ECHO",
@@ -2432,7 +3036,11 @@
       "n_segment_rows": 23,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ECL",
@@ -2448,7 +3056,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ED",
@@ -2464,7 +3076,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "EFX",
@@ -2480,7 +3096,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EG",
@@ -2496,7 +3116,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EIX",
@@ -2512,7 +3136,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "EL",
@@ -2528,7 +3156,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ELV",
@@ -2544,7 +3176,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EME",
@@ -2560,7 +3196,11 @@
       "n_segment_rows": 39,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EMR",
@@ -2576,7 +3216,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EOG",
@@ -2592,7 +3236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EQIX",
@@ -2608,7 +3256,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EQT",
@@ -2624,7 +3276,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ERIE",
@@ -2640,7 +3296,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ES",
@@ -2656,7 +3316,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ESS",
@@ -2672,7 +3336,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ETN",
@@ -2688,7 +3356,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ETR",
@@ -2704,7 +3376,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "EVRG",
@@ -2720,7 +3396,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "EW",
@@ -2736,7 +3416,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EXC",
@@ -2752,7 +3436,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "EXE",
@@ -2768,7 +3456,11 @@
       "n_segment_rows": 20,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "EXPD",
@@ -2784,7 +3476,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EXPE",
@@ -2800,7 +3496,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "EXR",
@@ -2816,7 +3516,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "F",
@@ -2832,7 +3536,11 @@
       "n_segment_rows": 23,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FANG",
@@ -2848,7 +3556,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FAST",
@@ -2864,7 +3576,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FCX",
@@ -2880,7 +3596,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FDS",
@@ -2896,7 +3616,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FDX",
@@ -2912,7 +3636,11 @@
       "n_segment_rows": 17,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FDXF",
@@ -2928,7 +3656,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FE",
@@ -2944,7 +3676,11 @@
       "n_segment_rows": 40,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FERG",
@@ -2960,7 +3696,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FFIV",
@@ -2973,10 +3713,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 24,
       "has_segment_revenue": true,
-      "n_segment_rows": 5,
+      "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FICO",
@@ -2992,7 +3736,11 @@
       "n_segment_rows": 22,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FIS",
@@ -3008,7 +3756,11 @@
       "n_segment_rows": 41,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FISV",
@@ -3024,7 +3776,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FITB",
@@ -3040,7 +3796,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FIX",
@@ -3056,7 +3816,11 @@
       "n_segment_rows": 16,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FLEX",
@@ -3072,7 +3836,11 @@
       "n_segment_rows": 11,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FOX",
@@ -3088,7 +3856,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FOXA",
@@ -3104,7 +3876,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FRT",
@@ -3120,7 +3896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "FSLR",
@@ -3136,7 +3916,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FTNT",
@@ -3152,7 +3936,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "FTV",
@@ -3168,7 +3956,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GD",
@@ -3184,7 +3976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GDDY",
@@ -3200,7 +3996,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GE",
@@ -3216,7 +4016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GEHC",
@@ -3232,7 +4036,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GEN",
@@ -3248,7 +4056,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GEV",
@@ -3264,7 +4076,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GILD",
@@ -3280,7 +4096,11 @@
       "n_segment_rows": 99,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GIS",
@@ -3296,7 +4116,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GL",
@@ -3312,7 +4136,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GLW",
@@ -3328,7 +4156,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GM",
@@ -3344,7 +4176,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GNRC",
@@ -3360,7 +4196,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GOOG",
@@ -3376,7 +4216,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GOOGL",
@@ -3392,7 +4236,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GPC",
@@ -3408,7 +4256,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GPN",
@@ -3424,7 +4276,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "GRMN",
@@ -3440,7 +4296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GS",
@@ -3456,7 +4316,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "GWW",
@@ -3472,7 +4336,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HAL",
@@ -3488,7 +4356,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HAS",
@@ -3504,7 +4376,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HBAN",
@@ -3520,7 +4396,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "HCA",
@@ -3536,7 +4416,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "HD",
@@ -3552,7 +4436,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "HIG",
@@ -3568,7 +4456,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HII",
@@ -3584,7 +4476,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HLT",
@@ -3600,7 +4496,11 @@
       "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HON",
@@ -3616,7 +4516,11 @@
       "n_segment_rows": 20,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HONA",
@@ -3632,7 +4536,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": false,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "HOOD",
@@ -3648,7 +4556,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HPE",
@@ -3664,7 +4576,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HPQ",
@@ -3680,7 +4596,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HRL",
@@ -3696,7 +4616,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HSIC",
@@ -3712,7 +4636,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HST",
@@ -3728,7 +4656,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HSY",
@@ -3744,7 +4676,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "HUBB",
@@ -3760,7 +4696,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "HUM",
@@ -3776,7 +4716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "HWM",
@@ -3792,7 +4736,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IBKR",
@@ -3808,7 +4756,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IBM",
@@ -3824,7 +4776,11 @@
       "n_segment_rows": 15,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ICE",
@@ -3840,7 +4796,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IDXX",
@@ -3856,7 +4816,11 @@
       "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IEX",
@@ -3872,7 +4836,11 @@
       "n_segment_rows": 30,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "IFF",
@@ -3888,7 +4856,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "INCY",
@@ -3904,7 +4876,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "INTC",
@@ -3920,7 +4896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "INTU",
@@ -3936,7 +4916,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "INVH",
@@ -3952,7 +4936,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IP",
@@ -3968,7 +4956,11 @@
       "n_segment_rows": 20,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IQV",
@@ -3984,7 +4976,11 @@
       "n_segment_rows": 16,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "IR",
@@ -4000,7 +4996,11 @@
       "n_segment_rows": 35,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IRM",
@@ -4016,7 +5016,11 @@
       "n_segment_rows": 19,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ISRG",
@@ -4032,7 +5036,11 @@
       "n_segment_rows": 11,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IT",
@@ -4045,10 +5053,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 24,
       "has_segment_revenue": true,
-      "n_segment_rows": 19,
+      "n_segment_rows": 14,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ITW",
@@ -4064,7 +5076,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "IVZ",
@@ -4080,7 +5096,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "J",
@@ -4096,7 +5116,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "JBHT",
@@ -4112,7 +5136,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "JBL",
@@ -4128,7 +5156,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "JCI",
@@ -4144,7 +5176,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "JKHY",
@@ -4160,7 +5196,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "JNJ",
@@ -4176,7 +5216,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "JPM",
@@ -4192,7 +5236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "KDP",
@@ -4208,7 +5256,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KEY",
@@ -4224,7 +5276,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KEYS",
@@ -4240,7 +5296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "KHC",
@@ -4256,7 +5316,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KIM",
@@ -4272,7 +5336,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KKR",
@@ -4288,7 +5356,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KLAC",
@@ -4304,7 +5376,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "KMB",
@@ -4320,7 +5396,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KMI",
@@ -4336,7 +5416,11 @@
       "n_segment_rows": 61,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "KO",
@@ -4352,7 +5436,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "KR",
@@ -4368,7 +5456,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "KVUE",
@@ -4384,7 +5476,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "L",
@@ -4400,7 +5496,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LDOS",
@@ -4416,7 +5516,11 @@
       "n_segment_rows": 44,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LEN",
@@ -4432,7 +5536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LH",
@@ -4448,7 +5556,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LHX",
@@ -4464,7 +5576,11 @@
       "n_segment_rows": 34,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LII",
@@ -4480,7 +5596,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "LIN",
@@ -4496,7 +5616,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LITE",
@@ -4509,10 +5633,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 16,
       "has_segment_revenue": true,
-      "n_segment_rows": 13,
+      "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "LLY",
@@ -4528,7 +5656,11 @@
       "n_segment_rows": 44,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LMT",
@@ -4544,7 +5676,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LNT",
@@ -4560,7 +5696,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "LOW",
@@ -4576,7 +5716,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "LRCX",
@@ -4592,7 +5736,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "LULU",
@@ -4608,7 +5756,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LUV",
@@ -4624,7 +5776,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LVS",
@@ -4640,7 +5796,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LYB",
@@ -4656,7 +5816,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "LYV",
@@ -4669,10 +5833,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 21,
       "has_segment_revenue": true,
-      "n_segment_rows": 4,
+      "n_segment_rows": 1,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MA",
@@ -4688,7 +5856,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MAA",
@@ -4704,7 +5876,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MAR",
@@ -4720,7 +5896,11 @@
       "n_segment_rows": 20,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MAS",
@@ -4736,7 +5916,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MCD",
@@ -4752,7 +5936,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MCHP",
@@ -4768,7 +5956,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MCK",
@@ -4784,7 +5976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MCO",
@@ -4800,7 +5996,11 @@
       "n_segment_rows": 47,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MDLZ",
@@ -4816,7 +6016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MDT",
@@ -4832,7 +6036,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MET",
@@ -4848,7 +6056,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "META",
@@ -4864,7 +6076,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MGM",
@@ -4880,7 +6096,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MKC",
@@ -4896,7 +6116,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MLM",
@@ -4912,7 +6136,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MMM",
@@ -4928,7 +6156,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MNST",
@@ -4944,7 +6176,11 @@
       "n_segment_rows": 25,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MO",
@@ -4960,7 +6196,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MOS",
@@ -4976,7 +6216,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MPC",
@@ -4992,7 +6236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MPWR",
@@ -5008,7 +6256,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MRK",
@@ -5024,7 +6276,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MRNA",
@@ -5040,7 +6296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MRSH",
@@ -5056,7 +6316,11 @@
       "n_segment_rows": 19,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MRVL",
@@ -5072,7 +6336,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MS",
@@ -5088,7 +6356,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MSCI",
@@ -5104,7 +6376,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MSFT",
@@ -5120,7 +6396,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MSI",
@@ -5136,7 +6416,11 @@
       "n_segment_rows": 23,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MTB",
@@ -5152,7 +6436,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "MTD",
@@ -5168,7 +6456,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "MU",
@@ -5184,7 +6476,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NCLH",
@@ -5200,7 +6496,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NDAQ",
@@ -5216,7 +6516,11 @@
       "n_segment_rows": 8,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NDSN",
@@ -5232,7 +6536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NEE",
@@ -5248,7 +6556,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "NEM",
@@ -5264,7 +6576,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NFLX",
@@ -5280,7 +6596,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NI",
@@ -5296,7 +6616,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NKE",
@@ -5312,7 +6636,11 @@
       "n_segment_rows": 62,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "NOC",
@@ -5328,7 +6656,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NOW",
@@ -5344,7 +6676,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NRG",
@@ -5360,7 +6696,11 @@
       "n_segment_rows": 56,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NSC",
@@ -5376,7 +6716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NTAP",
@@ -5392,7 +6736,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "NTRS",
@@ -5408,7 +6756,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NUE",
@@ -5424,7 +6776,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NVDA",
@@ -5437,10 +6793,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 14,
       "has_segment_revenue": true,
-      "n_segment_rows": 5,
+      "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "NVR",
@@ -5456,7 +6816,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "NWS",
@@ -5472,7 +6836,11 @@
       "n_segment_rows": 35,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "NWSA",
@@ -5488,7 +6856,11 @@
       "n_segment_rows": 35,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "NXPI",
@@ -5504,7 +6876,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "O",
@@ -5520,7 +6896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ODFL",
@@ -5536,7 +6916,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "OKE",
@@ -5552,7 +6936,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "OMC",
@@ -5568,7 +6956,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ON",
@@ -5584,7 +6976,11 @@
       "n_segment_rows": 31,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ORCL",
@@ -5600,7 +6996,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ORLY",
@@ -5616,7 +7016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "OTIS",
@@ -5632,7 +7036,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "OXY",
@@ -5648,7 +7056,11 @@
       "n_segment_rows": 31,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PANW",
@@ -5661,10 +7073,14 @@
       "has_qed_drivers": false,
       "n_qed_drivers": 0,
       "has_segment_revenue": true,
-      "n_segment_rows": 6,
+      "n_segment_rows": 5,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PAYX",
@@ -5680,7 +7096,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PCAR",
@@ -5696,7 +7116,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PCG",
@@ -5712,7 +7136,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PEG",
@@ -5728,7 +7156,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PEP",
@@ -5744,7 +7176,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PFE",
@@ -5760,7 +7196,11 @@
       "n_segment_rows": 1,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PFG",
@@ -5776,7 +7216,11 @@
       "n_segment_rows": 22,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PG",
@@ -5792,7 +7236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PGR",
@@ -5808,7 +7256,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PH",
@@ -5824,7 +7276,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PHM",
@@ -5840,7 +7296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PKG",
@@ -5856,7 +7316,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PLD",
@@ -5872,7 +7336,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PLTR",
@@ -5888,7 +7356,11 @@
       "n_segment_rows": 3,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PM",
@@ -5904,7 +7376,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PNC",
@@ -5920,7 +7396,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PNR",
@@ -5936,7 +7416,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PNW",
@@ -5952,7 +7436,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PODD",
@@ -5968,7 +7456,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PPG",
@@ -5984,7 +7476,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PPL",
@@ -6000,7 +7496,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PRU",
@@ -6016,7 +7516,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PSA",
@@ -6032,7 +7536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PSKY",
@@ -6048,7 +7556,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "PSX",
@@ -6064,7 +7576,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PTC",
@@ -6077,10 +7593,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 21,
       "has_segment_revenue": true,
-      "n_segment_rows": 4,
+      "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PWR",
@@ -6096,7 +7616,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "PYPL",
@@ -6112,7 +7636,11 @@
       "n_segment_rows": 4,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "Q",
@@ -6128,7 +7656,11 @@
       "n_segment_rows": 32,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "QCOM",
@@ -6144,7 +7676,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RCL",
@@ -6160,7 +7696,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RDDT",
@@ -6176,7 +7716,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "REG",
@@ -6192,7 +7736,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "REGN",
@@ -6208,7 +7756,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RF",
@@ -6224,7 +7776,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "RJF",
@@ -6240,7 +7796,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RL",
@@ -6256,7 +7816,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RMD",
@@ -6272,7 +7836,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ROK",
@@ -6288,7 +7856,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ROL",
@@ -6304,7 +7876,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "ROP",
@@ -6320,7 +7896,11 @@
       "n_segment_rows": 23,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ROST",
@@ -6336,7 +7916,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RSG",
@@ -6352,7 +7936,11 @@
       "n_segment_rows": 17,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RTX",
@@ -6368,7 +7956,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "RVTY",
@@ -6384,7 +7976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SBAC",
@@ -6400,7 +7996,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SBUX",
@@ -6416,7 +8016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SCHW",
@@ -6432,7 +8036,11 @@
       "n_segment_rows": 10,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SHW",
@@ -6448,7 +8056,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SJM",
@@ -6464,7 +8076,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SLB",
@@ -6480,7 +8096,11 @@
       "n_segment_rows": 34,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SMCI",
@@ -6496,7 +8116,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SNA",
@@ -6512,7 +8136,11 @@
       "n_segment_rows": 58,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SNDK",
@@ -6528,7 +8156,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SNPS",
@@ -6544,7 +8176,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SO",
@@ -6560,7 +8196,11 @@
       "n_segment_rows": 74,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SOLV",
@@ -6576,7 +8216,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SPG",
@@ -6592,7 +8236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SPGI",
@@ -6608,7 +8256,11 @@
       "n_segment_rows": 68,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SRE",
@@ -6624,7 +8276,11 @@
       "n_segment_rows": 33,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "STE",
@@ -6640,7 +8296,11 @@
       "n_segment_rows": 17,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "STLD",
@@ -6656,7 +8316,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "STT",
@@ -6672,7 +8336,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "STX",
@@ -6688,7 +8356,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "STZ",
@@ -6704,7 +8376,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SW",
@@ -6720,7 +8396,11 @@
       "n_segment_rows": 11,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SWK",
@@ -6736,7 +8416,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SWKS",
@@ -6752,7 +8436,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SYF",
@@ -6768,7 +8456,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "SYK",
@@ -6784,7 +8476,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "SYY",
@@ -6800,7 +8496,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "T",
@@ -6816,7 +8516,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TAP",
@@ -6832,7 +8536,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TDG",
@@ -6848,7 +8556,11 @@
       "n_segment_rows": 15,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TDY",
@@ -6864,7 +8576,11 @@
       "n_segment_rows": 34,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TECH",
@@ -6880,7 +8596,11 @@
       "n_segment_rows": 11,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "TEL",
@@ -6896,7 +8616,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TER",
@@ -6912,7 +8636,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TFC",
@@ -6928,7 +8656,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "TGT",
@@ -6944,7 +8676,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "TJX",
@@ -6960,7 +8696,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "TKO",
@@ -6976,7 +8716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TMO",
@@ -6992,7 +8736,11 @@
       "n_segment_rows": 36,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TMUS",
@@ -7008,7 +8756,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TPL",
@@ -7024,7 +8776,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TPR",
@@ -7040,7 +8796,11 @@
       "n_segment_rows": 19,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "TRGP",
@@ -7056,7 +8816,11 @@
       "n_segment_rows": 32,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TRMB",
@@ -7072,7 +8836,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TROW",
@@ -7088,7 +8856,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TRV",
@@ -7104,7 +8876,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TSCO",
@@ -7120,7 +8896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TSLA",
@@ -7136,7 +8916,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TSN",
@@ -7152,7 +8936,11 @@
       "n_segment_rows": 38,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TT",
@@ -7168,7 +8956,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TTD",
@@ -7184,7 +8976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TTWO",
@@ -7200,7 +8996,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TXN",
@@ -7216,7 +9016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TXT",
@@ -7232,7 +9036,11 @@
       "n_segment_rows": 41,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "TYL",
@@ -7248,7 +9056,11 @@
       "n_segment_rows": 35,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "UAL",
@@ -7264,7 +9076,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "UBER",
@@ -7280,7 +9096,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "UDR",
@@ -7296,7 +9116,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "UHS",
@@ -7312,7 +9136,11 @@
       "n_segment_rows": 28,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ULTA",
@@ -7328,7 +9156,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "UNH",
@@ -7344,7 +9176,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "UNP",
@@ -7360,7 +9196,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "UPS",
@@ -7376,7 +9216,11 @@
       "n_segment_rows": 13,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "URI",
@@ -7392,7 +9236,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "USB",
@@ -7408,7 +9256,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "V",
@@ -7424,7 +9276,11 @@
       "n_segment_rows": 7,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "VEEV",
@@ -7440,7 +9296,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VICI",
@@ -7456,7 +9316,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VLO",
@@ -7472,7 +9336,11 @@
       "n_segment_rows": 12,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VLTO",
@@ -7488,7 +9356,11 @@
       "n_segment_rows": 20,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "VMC",
@@ -7504,7 +9376,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "VMRK",
@@ -7520,7 +9396,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "VRSK",
@@ -7536,7 +9416,11 @@
       "n_segment_rows": 5,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "VRSN",
@@ -7552,7 +9436,11 @@
       "n_segment_rows": 2,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VRT",
@@ -7568,7 +9456,11 @@
       "n_segment_rows": 19,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VRTX",
@@ -7584,7 +9476,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VST",
@@ -7600,7 +9496,11 @@
       "n_segment_rows": 107,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VTR",
@@ -7616,7 +9516,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VTRS",
@@ -7632,7 +9536,11 @@
       "n_segment_rows": 28,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "VZ",
@@ -7648,7 +9556,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WAB",
@@ -7664,7 +9576,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WAT",
@@ -7680,7 +9596,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WBD",
@@ -7696,7 +9616,11 @@
       "n_segment_rows": 24,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WDAY",
@@ -7712,7 +9636,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "WDC",
@@ -7728,7 +9656,11 @@
       "n_segment_rows": 6,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "WEC",
@@ -7744,7 +9676,11 @@
       "n_segment_rows": 45,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WELL",
@@ -7760,7 +9696,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "WFC",
@@ -7776,7 +9716,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "WM",
@@ -7792,7 +9736,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WMB",
@@ -7808,7 +9756,11 @@
       "n_segment_rows": 63,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WMT",
@@ -7824,7 +9776,11 @@
       "n_segment_rows": 9,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WRB",
@@ -7840,7 +9796,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WSM",
@@ -7856,7 +9816,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WST",
@@ -7872,7 +9836,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WTW",
@@ -7888,7 +9856,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WY",
@@ -7904,7 +9876,11 @@
       "n_segment_rows": 24,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "WYNN",
@@ -7920,7 +9896,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "XEL",
@@ -7936,7 +9916,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "XOM",
@@ -7949,10 +9933,14 @@
       "has_qed_drivers": true,
       "n_qed_drivers": 20,
       "has_segment_revenue": true,
-      "n_segment_rows": 4,
+      "n_segment_rows": 3,
       "has_real_consensus": false,
       "has_10k": false,
-      "has_ccnews_prediction": false
+      "has_ccnews_prediction": false,
+      "has_blind_scale": false,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": false
     },
     {
       "ticker": "XYL",
@@ -7968,7 +9956,11 @@
       "n_segment_rows": 24,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": true,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "XYZ",
@@ -7984,7 +9976,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "YUM",
@@ -8000,7 +9996,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": true,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ZBH",
@@ -8016,7 +10016,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ZBRA",
@@ -8032,7 +10036,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": true,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     },
     {
       "ticker": "ZTS",
@@ -8048,7 +10056,11 @@
       "n_segment_rows": 0,
       "has_real_consensus": false,
       "has_10k": true,
-      "has_ccnews_prediction": true
+      "has_ccnews_prediction": true,
+      "has_blind_scale": true,
+      "has_feed_scale": false,
+      "has_weekly_scale": false,
+      "has_zacks_live_consensus": true
     }
   ]
 }

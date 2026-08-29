@@ -266,11 +266,13 @@
     if (pilotCo) {
       var pilotWrap = S.el("div");
       pilotWrap.style.marginTop = "28px";
-      var ph = S.el("h3", null, "Pilot benchmark: blind vs. feed-assisted, weekly-tracked");
+      var ph = S.el("h3", null, "Original case study: blind vs. feed-assisted, weekly-tracked (hand-curated)");
       pilotWrap.appendChild(ph);
       pilotWrap.appendChild(S.el("p", "page-sub",
-        "This is one of the 5 deep-pilot companies: every quarter below was also run signal-blind vs. " +
-        "feed-assisted across 9 models, with weekly re-forecasting for lead-time measurement."));
+        "This is one of the 5 original case-study companies: every quarter below was also run signal-blind vs. " +
+        "hand-curated-feed-assisted across 9 models, with weekly re-forecasting for lead-time measurement. " +
+        "(Blind, feed, and search-driven weekly-trajectory mining are also run at S&P-500 scale -- see the " +
+        "flags on the companies page and the leaderboard.)"));
       pilotCo.episodes.forEach(function (ep) {
         pilotWrap.appendChild(renderPilotEpisode(ep, miningScoresData, qedScoresData));
       });

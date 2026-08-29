@@ -239,7 +239,7 @@
       "condition": "Agentic mining",
       "corpus": "live web",
       "model": "gpt-5.3-chat",
-      "partial": true,
+      "partial": false,
       "n": 193,
       "acc": 0.653,
       "acc_ci95": [
@@ -284,7 +284,7 @@
       "corpus": "CC-News archive",
       "model": "gpt-4o-mini",
       "scope": "in-window (cutoff >= 2026-06-24)",
-      "partial": true,
+      "partial": false,
       "n": 329,
       "acc": 0.565,
       "acc_ci95": [

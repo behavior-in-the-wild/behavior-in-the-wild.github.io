@@ -1,5 +1,5 @@
 {
-  "note": "Genuinely open predictions on each company's NEXT (not-yet-reported) quarter. No accuracy shown -- these resolve mechanically once each company actually reports. Conditions: blind (no search), ccnews (fan-out mining over the frozen CC-News archive), c6ccnews (agentic mining over the frozen CC-News archive), c6live (agentic mining over the live web), and fanoutlive (fan-out mining over the live web) -- all 5 conditions, all 3 models, complete.",
+  "note": "Genuinely open predictions on each company's NEXT (not-yet-reported) quarter. No accuracy shown -- these resolve mechanically once each company actually reports. Conditions: blind (no search), ccnews (fan-out mining over the frozen CC-News archive), c6ccnews (agentic mining over the frozen CC-News archive), c6live (agentic mining over the live web), and fanoutlive (fan-out mining over the live web) -- all 5 conditions, all 3 models, complete. Each row also carries the current Zacks analyst consensus revenue estimate -- a real, live human/analyst baseline, available for 365/371 companies -- click a row to see it.",
   "n_companies": 371,
   "models": [
     "gpt-4o-mini",
@@ -20,6 +20,15 @@
       "company": "Deere & Company",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-08-26",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "10.44B",
+        "n_estimates": "6",
+        "high": "10.85B",
+        "low": "10.22B",
+        "year_ago": "10.58B",
+        "yoy_growth_est": "-1.31%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -110,6 +119,15 @@
       "company": "Ross Stores",
       "quarter": "Q2 2026",
       "next_report_date_est": "2026-08-26",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "6.13B",
+        "n_estimates": "5",
+        "high": "6.23B",
+        "low": "5.82B",
+        "year_ago": "5.60B",
+        "yoy_growth_est": "9.51%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -200,6 +218,15 @@
       "company": "Walmart",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-08-26",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "186.29B",
+        "n_estimates": "8",
+        "high": "188.17B",
+        "low": "185.30B",
+        "year_ago": "179.50B",
+        "yoy_growth_est": "3.78%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -290,6 +317,15 @@
       "company": "Williams-Sonoma, Inc.",
       "quarter": "Q2 2026",
       "next_report_date_est": "2026-08-26",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "1.95B",
+        "n_estimates": "6",
+        "high": "1.99B",
+        "low": "1.90B",
+        "year_ago": "1.88B",
+        "yoy_growth_est": "3.82%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -380,6 +416,15 @@
       "company": "Copart",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-08-30",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "1.14B",
+        "n_estimates": "3",
+        "high": "1.15B",
+        "low": "1.12B",
+        "year_ago": "1.13B",
+        "yoy_growth_est": "1.23%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -470,6 +515,15 @@
       "company": "AutoZone",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-08-31",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "6.71B",
+        "n_estimates": "8",
+        "high": "6.82B",
+        "low": "6.64B",
+        "year_ago": "6.24B",
+        "yoy_growth_est": "7.52%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -560,6 +614,15 @@
       "company": "Agilent Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-01",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "1.97B",
+        "n_estimates": "3",
+        "high": "1.97B",
+        "low": "1.97B",
+        "year_ago": "1.86B",
+        "yoy_growth_est": "6.05%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -650,6 +713,15 @@
       "company": "HP Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-01",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "14.80B",
+        "n_estimates": "3",
+        "high": "15.50B",
+        "low": "13.99B",
+        "year_ago": "14.64B",
+        "yoy_growth_est": "1.09%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -740,6 +812,15 @@
       "company": "Marvell Technology",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-09-01",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "3.03B",
+        "n_estimates": "10",
+        "high": "3.10B",
+        "low": "3.00B",
+        "year_ago": "2.07B",
+        "yoy_growth_est": "46.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -830,6 +911,15 @@
       "company": "Synopsys",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-01",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "2.56B",
+        "n_estimates": "6",
+        "high": "2.58B",
+        "low": "2.55B",
+        "year_ago": "2.25B",
+        "yoy_growth_est": "13.53%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -920,6 +1010,15 @@
       "company": "Autodesk",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-09-02",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "2.08B",
+        "n_estimates": "9",
+        "high": "2.10B",
+        "low": "2.07B",
+        "year_ago": "1.85B",
+        "yoy_growth_est": "12.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1010,6 +1109,15 @@
       "company": "Costco",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-09-02",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "94.46B",
+        "n_estimates": "9",
+        "high": "96.68B",
+        "low": "91.87B",
+        "year_ago": "86.16B",
+        "yoy_growth_est": "9.64%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1100,6 +1208,15 @@
       "company": "Dell Technologies",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-09-02",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "45.34B",
+        "n_estimates": "5",
+        "high": "47.12B",
+        "low": "44.55B",
+        "year_ago": "29.78B",
+        "yoy_growth_est": "52.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1190,6 +1307,15 @@
       "company": "Hormel Foods",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-02",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "3.18B",
+        "n_estimates": "4",
+        "high": "3.22B",
+        "low": "3.15B",
+        "year_ago": "3.19B",
+        "yoy_growth_est": "-0.09%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1280,6 +1406,15 @@
       "company": "Salesforce",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-09-02",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "11.45B",
+        "n_estimates": "9",
+        "high": "11.55B",
+        "low": "11.36B",
+        "year_ago": "10.26B",
+        "yoy_growth_est": "11.58%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1370,6 +1505,15 @@
       "company": "Best Buy",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-09-03",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "9.66B",
+        "n_estimates": "9",
+        "high": "9.84B",
+        "low": "9.55B",
+        "year_ago": "9.67B",
+        "yoy_growth_est": "-0.07%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1460,6 +1604,15 @@
       "company": "Dollar Tree",
       "quarter": "Q2 2026",
       "next_report_date_est": "2026-09-03",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "5.05B",
+        "n_estimates": "7",
+        "high": "5.06B",
+        "low": "5.02B",
+        "year_ago": "4.75B",
+        "yoy_growth_est": "6.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1550,6 +1703,15 @@
       "company": "Hewlett Packard Enterprise",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-06",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "12.12B",
+        "n_estimates": "5",
+        "high": "12.74B",
+        "low": "11.63B",
+        "year_ago": "9.14B",
+        "yoy_growth_est": "32.62%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1640,6 +1802,15 @@
       "company": "Dollar General",
       "quarter": "Q2 2026",
       "next_report_date_est": "2026-09-07",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "11.10B",
+        "n_estimates": "25",
+        "high": "11.15B",
+        "low": "11.04B",
+        "year_ago": "10.65B",
+        "yoy_growth_est": "4.20%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1730,6 +1901,15 @@
       "company": "Palo Alto Networks",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-09-07",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "3.35B",
+        "n_estimates": "12",
+        "high": "3.35B",
+        "low": "3.35B",
+        "year_ago": "2.54B",
+        "yoy_growth_est": "32.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1820,6 +2000,15 @@
       "company": "Broadcom",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-08",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "29.47B",
+        "n_estimates": "7",
+        "high": "29.69B",
+        "low": "29.40B",
+        "year_ago": "15.95B",
+        "yoy_growth_est": "84.74%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -1910,6 +2099,15 @@
       "company": "Ulta Beauty",
       "quarter": "Q2 2026",
       "next_report_date_est": "2026-09-08",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "3.00B",
+        "n_estimates": "10",
+        "high": "3.04B",
+        "low": "2.97B",
+        "year_ago": "2.86B",
+        "yoy_growth_est": "4.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2000,6 +2198,15 @@
       "company": "Lululemon Athletica",
       "quarter": "Q2 2026",
       "next_report_date_est": "2026-09-09",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "2.47B",
+        "n_estimates": "11",
+        "high": "2.50B",
+        "low": "2.45B",
+        "year_ago": "2.53B",
+        "yoy_growth_est": "-2.31%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2090,6 +2297,15 @@
       "company": "Veeva Systems",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-09-09",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "933.57M",
+        "n_estimates": "6",
+        "high": "934.70M",
+        "low": "932.60M",
+        "year_ago": "811.24M",
+        "yoy_growth_est": "15.08%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2180,6 +2396,15 @@
       "company": "Ciena",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-10",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "1.64B",
+        "n_estimates": "7",
+        "high": "1.70B",
+        "low": "1.63B",
+        "year_ago": "1.22B",
+        "yoy_growth_est": "34.63%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2270,6 +2495,15 @@
       "company": "Cooper Companies (The)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-10",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "1.10B",
+        "n_estimates": "6",
+        "high": "1.10B",
+        "low": "1.09B",
+        "year_ago": "1.06B",
+        "yoy_growth_est": "3.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2360,6 +2594,15 @@
       "company": "Casey's",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-09-15",
+      "zacks_consensus": {
+        "period": "7/2026",
+        "consensus": "5.65B",
+        "n_estimates": "7",
+        "high": "5.90B",
+        "low": "5.19B",
+        "year_ago": "4.57B",
+        "yoy_growth_est": "23.80%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2450,6 +2693,15 @@
       "company": "Adobe Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-16",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "6.69B",
+        "n_estimates": "10",
+        "high": "6.70B",
+        "low": "6.67B",
+        "year_ago": "5.99B",
+        "yoy_growth_est": "11.75%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2540,6 +2792,15 @@
       "company": "Lennar",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-09-17",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "8.33B",
+        "n_estimates": "4",
+        "high": "8.50B",
+        "low": "8.20B",
+        "year_ago": "8.81B",
+        "yoy_growth_est": "-5.42%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2630,6 +2891,15 @@
       "company": "Micron Technology",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-09-28",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "50.76B",
+        "n_estimates": "10",
+        "high": "52.12B",
+        "low": "50.01B",
+        "year_ago": "11.32B",
+        "yoy_growth_est": "348.58%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2720,6 +2990,15 @@
       "company": "Accenture",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-01",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "18.01B",
+        "n_estimates": "6",
+        "high": "18.12B",
+        "low": "17.90B",
+        "year_ago": "17.60B",
+        "yoy_growth_est": "2.36%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2810,6 +3089,15 @@
       "company": "Carnival Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-01",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "8.36B",
+        "n_estimates": "7",
+        "high": "8.40B",
+        "low": "8.28B",
+        "year_ago": "8.15B",
+        "yoy_growth_est": "2.59%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2900,6 +3188,15 @@
       "company": "Constellation Brands",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-10-01",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "2.57B",
+        "n_estimates": "6",
+        "high": "2.61B",
+        "low": "2.54B",
+        "year_ago": "2.48B",
+        "yoy_growth_est": "3.74%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -2990,6 +3287,15 @@
       "company": "Jabil",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-01",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "9.61B",
+        "n_estimates": "4",
+        "high": "9.64B",
+        "low": "9.60B",
+        "year_ago": "8.25B",
+        "yoy_growth_est": "16.51%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3080,6 +3386,15 @@
       "company": "McCormick & Company",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-01",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "1.98B",
+        "n_estimates": "4",
+        "high": "2.00B",
+        "low": "1.97B",
+        "year_ago": "1.72B",
+        "yoy_growth_est": "14.93%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3170,6 +3485,15 @@
       "company": "FactSet",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-06",
+      "zacks_consensus": {
+        "period": "8/2026",
+        "consensus": "627.68M",
+        "n_estimates": "6",
+        "high": "632.62M",
+        "low": "625.35M",
+        "year_ago": "596.90M",
+        "yoy_growth_est": "5.16%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3260,6 +3584,15 @@
       "company": "PepsiCo",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-14",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "24.92B",
+        "n_estimates": "6",
+        "high": "25.05B",
+        "low": "24.70B",
+        "year_ago": "23.94B",
+        "yoy_growth_est": "4.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3350,6 +3683,15 @@
       "company": "Domino's",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.17B",
+        "n_estimates": "6",
+        "high": "1.18B",
+        "low": "1.15B",
+        "year_ago": "1.15B",
+        "yoy_growth_est": "1.65%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3440,6 +3782,15 @@
       "company": "Elevance Health",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-20",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "48.63B",
+        "n_estimates": "17",
+        "high": "50.47B",
+        "low": "47.16B",
+        "year_ago": "50.09B",
+        "yoy_growth_est": "-2.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3530,6 +3881,15 @@
       "company": "M&T Bank",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-20",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.53B",
+        "n_estimates": "2",
+        "high": "2.53B",
+        "low": "2.53B",
+        "year_ago": "2.51B",
+        "yoy_growth_est": "0.87%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3620,6 +3980,15 @@
       "company": "UnitedHealth Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-21",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "111.38B",
+        "n_estimates": "9",
+        "high": "112.95B",
+        "low": "109.54B",
+        "year_ago": "113.16B",
+        "yoy_growth_est": "-1.57%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3710,6 +4079,15 @@
       "company": "Bank of America",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-26",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "31.07B",
+        "n_estimates": "5",
+        "high": "32.05B",
+        "low": "30.40B",
+        "year_ago": "28.09B",
+        "yoy_growth_est": "10.63%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3800,6 +4178,15 @@
       "company": "Charles Schwab Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-26",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.20B",
+        "n_estimates": "8",
+        "high": "7.25B",
+        "low": "7.14B",
+        "year_ago": "6.14B",
+        "yoy_growth_est": "17.32%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3890,6 +4277,15 @@
       "company": "Danaher Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-26",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.51B",
+        "n_estimates": "7",
+        "high": "6.57B",
+        "low": "6.30B",
+        "year_ago": "6.05B",
+        "yoy_growth_est": "7.60%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -3980,6 +4376,15 @@
       "company": "Fastenal",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-26",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.45B",
+        "n_estimates": "5",
+        "high": "2.50B",
+        "low": "2.37B",
+        "year_ago": "2.13B",
+        "yoy_growth_est": "14.89%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4070,6 +4475,15 @@
       "company": "Halliburton",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-26",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.59B",
+        "n_estimates": "8",
+        "high": "5.70B",
+        "low": "5.55B",
+        "year_ago": "5.60B",
+        "yoy_growth_est": "-0.13%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4160,6 +4574,15 @@
       "company": "Interactive Brokers",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-26",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.85B",
+        "n_estimates": "2",
+        "high": "1.90B",
+        "low": "1.81B",
+        "year_ago": "1.61B",
+        "yoy_growth_est": "14.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4250,6 +4673,15 @@
       "company": "BlackRock",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.44B",
+        "n_estimates": "4",
+        "high": "7.49B",
+        "low": "7.38B",
+        "year_ago": "6.51B",
+        "yoy_growth_est": "14.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4340,6 +4772,15 @@
       "company": "D. R. Horton",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.05B",
+        "n_estimates": "13",
+        "high": "9.19B",
+        "low": "8.89B",
+        "year_ago": "9.68B",
+        "yoy_growth_est": "-6.52%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4430,6 +4871,15 @@
       "company": "Flex Ltd.",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.18B",
+        "n_estimates": "4",
+        "high": "8.30B",
+        "low": "8.10B",
+        "year_ago": "6.80B",
+        "yoy_growth_est": "20.16%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4520,6 +4970,15 @@
       "company": "J.B. Hunt",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.51B",
+        "n_estimates": "7",
+        "high": "3.63B",
+        "low": "3.36B",
+        "year_ago": "3.05B",
+        "yoy_growth_est": "15.09%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4610,6 +5069,15 @@
       "company": "Northern Trust",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.26B",
+        "n_estimates": "3",
+        "high": "2.28B",
+        "low": "2.23B",
+        "year_ago": "2.03B",
+        "yoy_growth_est": "11.58%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4700,6 +5168,15 @@
       "company": "Otis Worldwide",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.85B",
+        "n_estimates": "4",
+        "high": "3.90B",
+        "low": "3.79B",
+        "year_ago": "3.69B",
+        "yoy_growth_est": "4.20%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4790,6 +5267,15 @@
       "company": "PNC Financial Services",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.61B",
+        "n_estimates": "6",
+        "high": "6.62B",
+        "low": "6.60B",
+        "year_ago": "5.95B",
+        "yoy_growth_est": "11.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4880,6 +5366,15 @@
       "company": "TE Connectivity",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.26B",
+        "n_estimates": "2",
+        "high": "5.26B",
+        "low": "5.26B",
+        "year_ago": "4.75B",
+        "yoy_growth_est": "10.78%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -4970,6 +5465,15 @@
       "company": "Teledyne Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-27",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.66B",
+        "n_estimates": "2",
+        "high": "1.67B",
+        "low": "1.65B",
+        "year_ago": "1.54B",
+        "yoy_growth_est": "7.83%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5060,6 +5564,15 @@
       "company": "Allegion",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.13B",
+        "n_estimates": "3",
+        "high": "1.13B",
+        "low": "1.12B",
+        "year_ago": "1.07B",
+        "yoy_growth_est": "5.46%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5150,6 +5663,15 @@
       "company": "Citizens Financial Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.33B",
+        "n_estimates": "3",
+        "high": "2.34B",
+        "low": "2.30B",
+        "year_ago": "2.12B",
+        "yoy_growth_est": "9.96%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5240,6 +5762,15 @@
       "company": "Comcast",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "29.65B",
+        "n_estimates": "8",
+        "high": "29.90B",
+        "low": "29.35B",
+        "year_ago": "31.20B",
+        "yoy_growth_est": "-4.95%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5330,6 +5861,15 @@
       "company": "GE Aerospace",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "12.57B",
+        "n_estimates": "4",
+        "high": "12.88B",
+        "low": "12.19B",
+        "year_ago": "11.31B",
+        "yoy_growth_est": "11.17%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5420,6 +5960,15 @@
       "company": "Honeywell Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.09B",
+        "n_estimates": "3",
+        "high": "5.20B",
+        "low": "5.03B",
+        "year_ago": "10.41B",
+        "yoy_growth_est": "-51.13%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5510,6 +6059,15 @@
       "company": "Intel",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "16.36B",
+        "n_estimates": "11",
+        "high": "16.60B",
+        "low": "16.21B",
+        "year_ago": "13.65B",
+        "yoy_growth_est": "19.85%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5600,6 +6158,15 @@
       "company": "Kraft Heinz",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.03B",
+        "n_estimates": "6",
+        "high": "6.07B",
+        "low": "5.99B",
+        "year_ago": "6.24B",
+        "yoy_growth_est": "-3.31%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5690,6 +6257,15 @@
       "company": "Nasdaq, Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.47B",
+        "n_estimates": "7",
+        "high": "1.50B",
+        "low": "1.46B",
+        "year_ago": "1.32B",
+        "yoy_growth_est": "12.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5780,6 +6356,15 @@
       "company": "Norfolk Southern",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.44B",
+        "n_estimates": "5",
+        "high": "3.50B",
+        "low": "3.39B",
+        "year_ago": "3.10B",
+        "yoy_growth_est": "10.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5870,6 +6455,15 @@
       "company": "PG&E Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.66B",
+        "n_estimates": "3",
+        "high": "6.92B",
+        "low": "6.50B",
+        "year_ago": "6.25B",
+        "yoy_growth_est": "6.55%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -5960,6 +6554,15 @@
       "company": "State Street Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.02B",
+        "n_estimates": "4",
+        "high": "4.07B",
+        "low": "3.95B",
+        "year_ago": "3.55B",
+        "yoy_growth_est": "13.32%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6050,6 +6653,15 @@
       "company": "Thermo Fisher Scientific",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "11.91B",
+        "n_estimates": "7",
+        "high": "12.02B",
+        "low": "11.70B",
+        "year_ago": "11.12B",
+        "yoy_growth_est": "7.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6140,6 +6752,15 @@
       "company": "Tractor Supply",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.81B",
+        "n_estimates": "8",
+        "high": "3.87B",
+        "low": "3.78B",
+        "year_ago": "3.72B",
+        "yoy_growth_est": "2.50%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6230,6 +6851,15 @@
       "company": "U.S. Bancorp",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-28",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.99B",
+        "n_estimates": "6",
+        "high": "8.10B",
+        "low": "7.90B",
+        "year_ago": "7.33B",
+        "yoy_growth_est": "9.07%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6320,6 +6950,15 @@
       "company": "Hasbro",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.48B",
+        "n_estimates": "5",
+        "high": "1.65B",
+        "low": "1.40B",
+        "year_ago": "1.39B",
+        "yoy_growth_est": "6.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6410,6 +7049,15 @@
       "company": "Johnson & Johnson",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "25.36B",
+        "n_estimates": "5",
+        "high": "25.72B",
+        "low": "25.18B",
+        "year_ago": "23.99B",
+        "yoy_growth_est": "5.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6500,6 +7148,15 @@
       "company": "Kenvue",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.89B",
+        "n_estimates": "3",
+        "high": "3.90B",
+        "low": "3.88B",
+        "year_ago": "3.76B",
+        "yoy_growth_est": "3.33%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6590,6 +7247,15 @@
       "company": "Kinder Morgan",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.49B",
+        "n_estimates": "3",
+        "high": "4.60B",
+        "low": "4.38B",
+        "year_ago": "4.15B",
+        "yoy_growth_est": "8.33%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6680,6 +7346,15 @@
       "company": "Lockheed Martin",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "20.33B",
+        "n_estimates": "5",
+        "high": "20.45B",
+        "low": "20.19B",
+        "year_ago": "18.61B",
+        "yoy_growth_est": "9.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6770,6 +7445,15 @@
       "company": "RTX Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "23.84B",
+        "n_estimates": "4",
+        "high": "24.01B",
+        "low": "23.60B",
+        "year_ago": "22.48B",
+        "yoy_growth_est": "6.06%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6860,6 +7544,15 @@
       "company": "Teradyne",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-29",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.27B",
+        "n_estimates": "4",
+        "high": "1.28B",
+        "low": "1.25B",
+        "year_ago": "769.21M",
+        "yoy_growth_est": "64.67%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -6950,6 +7643,15 @@
       "company": "3M",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.63B",
+        "n_estimates": "4",
+        "high": "6.70B",
+        "low": "6.54B",
+        "year_ago": "6.32B",
+        "yoy_growth_est": "4.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7040,6 +7742,15 @@
       "company": "AES Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.60B",
+        "n_estimates": "1",
+        "high": "3.60B",
+        "low": "3.60B",
+        "year_ago": "3.35B",
+        "yoy_growth_est": "7.43%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7130,6 +7841,15 @@
       "company": "Air Products",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.29B",
+        "n_estimates": "6",
+        "high": "3.37B",
+        "low": "3.10B",
+        "year_ago": "3.17B",
+        "yoy_growth_est": "3.96%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7220,6 +7940,15 @@
       "company": "Alexandria Real Estate Equities",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "644.23M",
+        "n_estimates": "3",
+        "high": "670.76M",
+        "low": "626.90M",
+        "year_ago": "751.94M",
+        "yoy_growth_est": "-14.32%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7310,6 +8039,15 @@
       "company": "Alphabet Inc.(Class A)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "110.84B",
+        "n_estimates": "9",
+        "high": "112.86B",
+        "low": "108.96B",
+        "year_ago": "87.47B",
+        "yoy_growth_est": "26.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7400,6 +8138,15 @@
       "company": "Alphabet Inc.(Class C)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "110.84B",
+        "n_estimates": "9",
+        "high": "112.86B",
+        "low": "108.96B",
+        "year_ago": "87.47B",
+        "yoy_growth_est": "26.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7490,6 +8237,15 @@
       "company": "Ameren",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.82B",
+        "n_estimates": "4",
+        "high": "2.94B",
+        "low": "2.70B",
+        "year_ago": "2.70B",
+        "yoy_growth_est": "4.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7580,6 +8336,15 @@
       "company": "American Express",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "20.09B",
+        "n_estimates": "7",
+        "high": "20.23B",
+        "low": "20.00B",
+        "year_ago": "18.43B",
+        "yoy_growth_est": "9.05%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7670,6 +8435,15 @@
       "company": "Ameriprise Financial",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.04B",
+        "n_estimates": "5",
+        "high": "5.15B",
+        "low": "4.93B",
+        "year_ago": "4.61B",
+        "yoy_growth_est": "9.32%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7760,6 +8534,15 @@
       "company": "AppLovin",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.08B",
+        "n_estimates": "9",
+        "high": "2.10B",
+        "low": "2.06B",
+        "year_ago": "1.41B",
+        "yoy_growth_est": "47.73%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7850,6 +8633,15 @@
       "company": "Arch Capital Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.47B",
+        "n_estimates": "5",
+        "high": "4.52B",
+        "low": "4.40B",
+        "year_ago": "4.72B",
+        "yoy_growth_est": "-5.22%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -7940,6 +8732,15 @@
       "company": "AT&T",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "31.74B",
+        "n_estimates": "6",
+        "high": "32.10B",
+        "low": "31.41B",
+        "year_ago": "30.71B",
+        "yoy_growth_est": "3.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8030,6 +8831,7 @@
       "company": "Axon Enterprise",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": null,
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8120,6 +8922,15 @@
       "company": "Baker Hughes",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.93B",
+        "n_estimates": "5",
+        "high": "7.10B",
+        "low": "6.87B",
+        "year_ago": "7.01B",
+        "yoy_growth_est": "-1.18%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8210,6 +9021,15 @@
       "company": "Baxter International",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.90B",
+        "n_estimates": "6",
+        "high": "2.92B",
+        "low": "2.89B",
+        "year_ago": "2.84B",
+        "yoy_growth_est": "2.41%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8300,6 +9120,7 @@
       "company": "Berkshire Hathaway",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": null,
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8390,6 +9211,15 @@
       "company": "Blackstone Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.43B",
+        "n_estimates": "6",
+        "high": "3.62B",
+        "low": "3.22B",
+        "year_ago": "3.30B",
+        "yoy_growth_est": "3.73%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8480,6 +9310,15 @@
       "company": "Boeing",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "24.88B",
+        "n_estimates": "6",
+        "high": "25.60B",
+        "low": "23.87B",
+        "year_ago": "23.27B",
+        "yoy_growth_est": "6.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8570,6 +9409,15 @@
       "company": "Booking Holdings",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.57B",
+        "n_estimates": "8",
+        "high": "9.76B",
+        "low": "9.47B",
+        "year_ago": "9.01B",
+        "yoy_growth_est": "6.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8660,6 +9508,15 @@
       "company": "Brown & Brown",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.79B",
+        "n_estimates": "5",
+        "high": "1.90B",
+        "low": "1.72B",
+        "year_ago": "1.61B",
+        "yoy_growth_est": "11.17%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8750,6 +9607,15 @@
       "company": "Builders FirstSource",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.80B",
+        "n_estimates": "5",
+        "high": "3.85B",
+        "low": "3.74B",
+        "year_ago": "3.94B",
+        "yoy_growth_est": "-3.62%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8840,6 +9706,15 @@
       "company": "C.H. Robinson",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.76B",
+        "n_estimates": "5",
+        "high": "4.95B",
+        "low": "4.34B",
+        "year_ago": "4.14B",
+        "yoy_growth_est": "15.09%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -8930,6 +9805,15 @@
       "company": "Carvana",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.63B",
+        "n_estimates": "6",
+        "high": "8.00B",
+        "low": "7.20B",
+        "year_ago": "5.65B",
+        "yoy_growth_est": "35.14%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9020,6 +9904,15 @@
       "company": "Charter Communications",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "13.54B",
+        "n_estimates": "6",
+        "high": "13.59B",
+        "low": "13.50B",
+        "year_ago": "13.67B",
+        "yoy_growth_est": "-0.96%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9110,6 +10003,15 @@
       "company": "Cigna",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "73.45B",
+        "n_estimates": "6",
+        "high": "74.28B",
+        "low": "70.89B",
+        "year_ago": "69.57B",
+        "yoy_growth_est": "5.57%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9200,6 +10102,15 @@
       "company": "Cincinnati Financial",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.03B",
+        "n_estimates": "3",
+        "high": "3.04B",
+        "low": "3.02B",
+        "year_ago": "2.87B",
+        "yoy_growth_est": "5.49%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9290,6 +10201,15 @@
       "company": "CME Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.69B",
+        "n_estimates": "6",
+        "high": "1.71B",
+        "low": "1.68B",
+        "year_ago": "1.54B",
+        "yoy_growth_est": "10.12%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9380,6 +10300,15 @@
       "company": "CMS Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.14B",
+        "n_estimates": "4",
+        "high": "2.23B",
+        "low": "2.10B",
+        "year_ago": "2.02B",
+        "yoy_growth_est": "5.99%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9470,6 +10399,15 @@
       "company": "Colgate-Palmolive",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.34B",
+        "n_estimates": "7",
+        "high": "5.43B",
+        "low": "5.29B",
+        "year_ago": "5.13B",
+        "yoy_growth_est": "4.12%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9560,6 +10498,15 @@
       "company": "Comfort Systems USA",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.19B",
+        "n_estimates": "5",
+        "high": "3.36B",
+        "low": "2.95B",
+        "year_ago": "2.45B",
+        "yoy_growth_est": "30.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9650,6 +10597,15 @@
       "company": "CoStar Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "939.99M",
+        "n_estimates": "3",
+        "high": "940.51M",
+        "low": "939.00M",
+        "year_ago": "833.60M",
+        "yoy_growth_est": "12.76%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9740,6 +10696,7 @@
       "company": "Crown Castle",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": null,
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9830,6 +10787,15 @@
       "company": "CSX Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.96B",
+        "n_estimates": "6",
+        "high": "4.03B",
+        "low": "3.90B",
+        "year_ago": "3.59B",
+        "yoy_growth_est": "10.29%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -9920,6 +10886,15 @@
       "company": "Deckers Brands",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.51B",
+        "n_estimates": "8",
+        "high": "1.54B",
+        "low": "1.50B",
+        "year_ago": "1.43B",
+        "yoy_growth_est": "5.58%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10010,6 +10985,15 @@
       "company": "Delta Air Lines",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "17.67B",
+        "n_estimates": "5",
+        "high": "17.79B",
+        "low": "17.52B",
+        "year_ago": "16.67B",
+        "yoy_growth_est": "6.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10100,6 +11084,15 @@
       "company": "Dover Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.20B",
+        "n_estimates": "5",
+        "high": "2.22B",
+        "low": "2.19B",
+        "year_ago": "2.08B",
+        "yoy_growth_est": "6.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10190,6 +11183,15 @@
       "company": "Ecolab",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.68B",
+        "n_estimates": "8",
+        "high": "4.81B",
+        "low": "4.40B",
+        "year_ago": "4.17B",
+        "yoy_growth_est": "12.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10280,6 +11282,15 @@
       "company": "Edwards Lifesciences",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.68B",
+        "n_estimates": "8",
+        "high": "1.70B",
+        "low": "1.66B",
+        "year_ago": "1.55B",
+        "yoy_growth_est": "7.99%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10370,6 +11381,15 @@
       "company": "EQT Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.84B",
+        "n_estimates": "4",
+        "high": "1.97B",
+        "low": "1.77B",
+        "year_ago": "1.75B",
+        "yoy_growth_est": "5.11%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10460,6 +11480,15 @@
       "company": "Equifax",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.69B",
+        "n_estimates": "8",
+        "high": "1.70B",
+        "low": "1.67B",
+        "year_ago": "1.54B",
+        "yoy_growth_est": "9.65%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10550,6 +11579,15 @@
       "company": "Erie Indemnity",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.09B",
+        "n_estimates": "1",
+        "high": "1.09B",
+        "low": "1.09B",
+        "year_ago": "1.07B",
+        "yoy_growth_est": "2.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10640,6 +11678,15 @@
       "company": "Expeditors International",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.48B",
+        "n_estimates": "3",
+        "high": "3.65B",
+        "low": "3.37B",
+        "year_ago": "2.89B",
+        "yoy_growth_est": "20.24%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10730,6 +11777,15 @@
       "company": "Extra Space Storage",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "881.72M",
+        "n_estimates": "3",
+        "high": "890.91M",
+        "low": "874.42M",
+        "year_ago": "858.46M",
+        "yoy_growth_est": "2.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10820,6 +11876,15 @@
       "company": "F5, Inc.",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "884.38M",
+        "n_estimates": "6",
+        "high": "887.10M",
+        "low": "881.99M",
+        "year_ago": "810.09M",
+        "yoy_growth_est": "9.17%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -10910,6 +11975,15 @@
       "company": "First Solar",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.32B",
+        "n_estimates": "8",
+        "high": "1.60B",
+        "low": "1.21B",
+        "year_ago": "1.59B",
+        "yoy_growth_est": "-17.36%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11000,6 +12074,15 @@
       "company": "Franklin Resources",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.35B",
+        "n_estimates": "2",
+        "high": "2.42B",
+        "low": "2.28B",
+        "year_ago": "2.34B",
+        "yoy_growth_est": "0.40%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11090,6 +12173,15 @@
       "company": "Freeport-McMoRan",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.07B",
+        "n_estimates": "5",
+        "high": "7.40B",
+        "low": "6.77B",
+        "year_ago": "6.97B",
+        "yoy_growth_est": "1.40%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11180,6 +12272,15 @@
       "company": "GE Vernova",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "12.07B",
+        "n_estimates": "6",
+        "high": "12.38B",
+        "low": "11.87B",
+        "year_ago": "9.97B",
+        "yoy_growth_est": "21.05%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11270,6 +12371,15 @@
       "company": "General Motors",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "48.22B",
+        "n_estimates": "7",
+        "high": "49.96B",
+        "low": "46.23B",
+        "year_ago": "48.59B",
+        "yoy_growth_est": "-0.77%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11360,6 +12470,15 @@
       "company": "Genuine Parts Company",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.49B",
+        "n_estimates": "4",
+        "high": "6.54B",
+        "low": "6.46B",
+        "year_ago": "6.26B",
+        "yoy_growth_est": "3.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11450,6 +12569,15 @@
       "company": "Gilead Sciences",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.79B",
+        "n_estimates": "4",
+        "high": "7.90B",
+        "low": "7.70B",
+        "year_ago": "7.77B",
+        "yoy_growth_est": "0.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11540,6 +12668,15 @@
       "company": "Globe Life",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.61B",
+        "n_estimates": "4",
+        "high": "1.62B",
+        "low": "1.60B",
+        "year_ago": "1.52B",
+        "yoy_growth_est": "6.09%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11630,6 +12767,15 @@
       "company": "GoDaddy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.33B",
+        "n_estimates": "8",
+        "high": "1.33B",
+        "low": "1.32B",
+        "year_ago": "1.27B",
+        "yoy_growth_est": "4.87%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11720,6 +12866,15 @@
       "company": "Hartford (The)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.29B",
+        "n_estimates": "2",
+        "high": "5.30B",
+        "low": "5.27B",
+        "year_ago": "5.11B",
+        "yoy_growth_est": "3.38%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11810,6 +12965,15 @@
       "company": "Hilton Worldwide",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.99B",
+        "n_estimates": "5",
+        "high": "3.42B",
+        "low": "1.39B",
+        "year_ago": "3.12B",
+        "yoy_growth_est": "-4.24%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11900,6 +13064,15 @@
       "company": "IBM",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "16.88B",
+        "n_estimates": "6",
+        "high": "17.14B",
+        "low": "16.69B",
+        "year_ago": "16.33B",
+        "yoy_growth_est": "3.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -11990,6 +13163,15 @@
       "company": "Illinois Tool Works",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.23B",
+        "n_estimates": "5",
+        "high": "4.29B",
+        "low": "4.20B",
+        "year_ago": "4.06B",
+        "yoy_growth_est": "4.24%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12080,6 +13262,15 @@
       "company": "Intuitive Surgical",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.88B",
+        "n_estimates": "8",
+        "high": "2.92B",
+        "low": "2.85B",
+        "year_ago": "2.51B",
+        "yoy_growth_est": "14.98%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12170,6 +13361,15 @@
       "company": "Invesco",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.39B",
+        "n_estimates": "4",
+        "high": "1.40B",
+        "low": "1.38B",
+        "year_ago": "1.19B",
+        "yoy_growth_est": "17.40%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12260,6 +13460,15 @@
       "company": "KeyCorp",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.01B",
+        "n_estimates": "3",
+        "high": "2.02B",
+        "low": "2.00B",
+        "year_ago": "1.89B",
+        "yoy_growth_est": "6.60%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12350,6 +13559,15 @@
       "company": "Las Vegas Sands",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.40B",
+        "n_estimates": "7",
+        "high": "3.42B",
+        "low": "3.39B",
+        "year_ago": "3.33B",
+        "yoy_growth_est": "2.15%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12440,6 +13658,15 @@
       "company": "Live Nation Entertainment",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.56B",
+        "n_estimates": "6",
+        "high": "9.80B",
+        "low": "9.39B",
+        "year_ago": "8.50B",
+        "yoy_growth_est": "12.46%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12530,6 +13757,15 @@
       "company": "Loews Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "ND",
+        "consensus": "NA",
+        "n_estimates": "NA",
+        "high": "NA",
+        "low": "NA",
+        "year_ago": "NA",
+        "yoy_growth_est": "NA"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12620,6 +13856,15 @@
       "company": "Marathon Petroleum",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "32.84B",
+        "n_estimates": "2",
+        "high": "40.00B",
+        "low": "25.68B",
+        "year_ago": "35.85B",
+        "yoy_growth_est": "-8.39%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12710,6 +13955,15 @@
       "company": "Marsh McLennan",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.63B",
+        "n_estimates": "8",
+        "high": "6.67B",
+        "low": "6.59B",
+        "year_ago": "6.35B",
+        "yoy_growth_est": "4.38%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12800,6 +14054,15 @@
       "company": "McKesson Corporation",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "110.14B",
+        "n_estimates": "4",
+        "high": "110.90B",
+        "low": "109.13B",
+        "year_ago": "103.15B",
+        "yoy_growth_est": "6.78%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12890,6 +14153,15 @@
       "company": "Moody's Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.07B",
+        "n_estimates": "7",
+        "high": "2.10B",
+        "low": "2.05B",
+        "year_ago": "2.01B",
+        "yoy_growth_est": "3.14%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -12980,6 +14252,15 @@
       "company": "MSCI",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "879.98M",
+        "n_estimates": "5",
+        "high": "894.00M",
+        "low": "872.04M",
+        "year_ago": "793.43M",
+        "yoy_growth_est": "10.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13070,6 +14351,15 @@
       "company": "Netflix",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "12.88B",
+        "n_estimates": "11",
+        "high": "12.97B",
+        "low": "12.86B",
+        "year_ago": "11.51B",
+        "yoy_growth_est": "11.90%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13160,6 +14450,15 @@
       "company": "Newmont",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.92B",
+        "n_estimates": "3",
+        "high": "6.03B",
+        "low": "5.70B",
+        "year_ago": "5.52B",
+        "yoy_growth_est": "7.15%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13250,6 +14549,15 @@
       "company": "Northrop Grumman",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "11.06B",
+        "n_estimates": "5",
+        "high": "11.18B",
+        "low": "10.90B",
+        "year_ago": "10.42B",
+        "yoy_growth_est": "6.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13340,6 +14648,15 @@
       "company": "Norwegian Cruise Line Holdings",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.87B",
+        "n_estimates": "6",
+        "high": "3.00B",
+        "low": "2.82B",
+        "year_ago": "2.94B",
+        "yoy_growth_est": "-2.19%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13430,6 +14747,15 @@
       "company": "NVR, Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.64B",
+        "n_estimates": "2",
+        "high": "2.67B",
+        "low": "2.62B",
+        "year_ago": "2.56B",
+        "yoy_growth_est": "3.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13520,6 +14846,15 @@
       "company": "Packaging Corporation of America",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.56B",
+        "n_estimates": "5",
+        "high": "2.64B",
+        "low": "2.50B",
+        "year_ago": "2.31B",
+        "yoy_growth_est": "10.73%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13610,6 +14945,15 @@
       "company": "Philip Morris International",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "11.31B",
+        "n_estimates": "4",
+        "high": "12.10B",
+        "low": "10.83B",
+        "year_ago": "10.85B",
+        "yoy_growth_est": "4.29%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13700,6 +15044,15 @@
       "company": "Phillips 66",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "37.24B",
+        "n_estimates": "4",
+        "high": "46.54B",
+        "low": "33.00B",
+        "year_ago": "34.98B",
+        "yoy_growth_est": "6.45%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13790,6 +15143,15 @@
       "company": "Progressive Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "23.29B",
+        "n_estimates": "5",
+        "high": "23.85B",
+        "low": "22.93B",
+        "year_ago": "22.22B",
+        "yoy_growth_est": "4.83%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13880,6 +15242,15 @@
       "company": "PTC Inc.",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "661.18M",
+        "n_estimates": "5",
+        "high": "679.10M",
+        "low": "653.00M",
+        "year_ago": "893.79M",
+        "yoy_growth_est": "-26.03%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -13970,6 +15341,15 @@
       "company": "Public Storage",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.26B",
+        "n_estimates": "5",
+        "high": "1.30B",
+        "low": "1.23B",
+        "year_ago": "1.22B",
+        "yoy_growth_est": "3.33%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14060,6 +15440,15 @@
       "company": "PulteGroup",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.14B",
+        "n_estimates": "4",
+        "high": "4.18B",
+        "low": "4.07B",
+        "year_ago": "4.40B",
+        "yoy_growth_est": "-5.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14150,6 +15539,15 @@
       "company": "Quanta Services",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "10.97B",
+        "n_estimates": "7",
+        "high": "11.12B",
+        "low": "10.60B",
+        "year_ago": "7.63B",
+        "yoy_growth_est": "43.75%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14240,6 +15638,15 @@
       "company": "Quest Diagnostics",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.04B",
+        "n_estimates": "7",
+        "high": "3.09B",
+        "low": "3.00B",
+        "year_ago": "2.82B",
+        "yoy_growth_est": "8.11%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14330,6 +15737,15 @@
       "company": "Raymond James Financial",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.18B",
+        "n_estimates": "4",
+        "high": "4.24B",
+        "low": "4.10B",
+        "year_ago": "3.73B",
+        "yoy_growth_est": "12.18%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14420,6 +15836,7 @@
       "company": "Rollins, Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": null,
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14510,6 +15927,15 @@
       "company": "Roper Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.18B",
+        "n_estimates": "7",
+        "high": "2.20B",
+        "low": "2.16B",
+        "year_ago": "2.02B",
+        "yoy_growth_est": "7.89%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14600,6 +16026,15 @@
       "company": "Royal Caribbean Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.57B",
+        "n_estimates": "7",
+        "high": "5.60B",
+        "low": "5.50B",
+        "year_ago": "5.14B",
+        "yoy_growth_est": "8.41%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14690,6 +16125,15 @@
       "company": "Schlumberger",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.29B",
+        "n_estimates": "8",
+        "high": "9.31B",
+        "low": "9.28B",
+        "year_ago": "8.93B",
+        "yoy_growth_est": "4.04%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14780,6 +16224,15 @@
       "company": "ServiceNow",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.10B",
+        "n_estimates": "11",
+        "high": "4.14B",
+        "low": "4.09B",
+        "year_ago": "3.41B",
+        "yoy_growth_est": "20.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14870,6 +16323,15 @@
       "company": "Sherwin-Williams",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.80B",
+        "n_estimates": "5",
+        "high": "6.83B",
+        "low": "6.77B",
+        "year_ago": "6.36B",
+        "yoy_growth_est": "6.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -14960,6 +16422,15 @@
       "company": "Southwest Airlines",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.23B",
+        "n_estimates": "7",
+        "high": "8.40B",
+        "low": "8.15B",
+        "year_ago": "6.95B",
+        "yoy_growth_est": "18.47%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15050,6 +16521,15 @@
       "company": "Steel Dynamics",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.15B",
+        "n_estimates": "3",
+        "high": "6.71B",
+        "low": "5.46B",
+        "year_ago": "4.83B",
+        "yoy_growth_est": "27.40%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15140,6 +16620,15 @@
       "company": "Steris",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.57B",
+        "n_estimates": "1",
+        "high": "1.57B",
+        "low": "1.57B",
+        "year_ago": "1.46B",
+        "yoy_growth_est": "7.60%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15230,6 +16719,15 @@
       "company": "T-Mobile US",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "23.15B",
+        "n_estimates": "7",
+        "high": "23.80B",
+        "low": "21.95B",
+        "year_ago": "21.96B",
+        "yoy_growth_est": "5.42%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15320,6 +16818,15 @@
       "company": "Texas Instruments",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.91B",
+        "n_estimates": "8",
+        "high": "5.96B",
+        "low": "5.90B",
+        "year_ago": "4.74B",
+        "yoy_growth_est": "24.69%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15410,6 +16917,15 @@
       "company": "Travelers Companies (The)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "12.38B",
+        "n_estimates": "10",
+        "high": "12.60B",
+        "low": "12.31B",
+        "year_ago": "12.44B",
+        "yoy_growth_est": "-0.53%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15500,6 +17016,15 @@
       "company": "Union Pacific Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.88B",
+        "n_estimates": "5",
+        "high": "7.05B",
+        "low": "6.60B",
+        "year_ago": "6.24B",
+        "yoy_growth_est": "10.15%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15590,6 +17115,15 @@
       "company": "United Airlines Holdings",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "17.76B",
+        "n_estimates": "6",
+        "high": "17.98B",
+        "low": "17.50B",
+        "year_ago": "15.23B",
+        "yoy_growth_est": "16.68%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15680,6 +17214,15 @@
       "company": "United Parcel Service",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "22.11B",
+        "n_estimates": "8",
+        "high": "22.40B",
+        "low": "21.89B",
+        "year_ago": "21.42B",
+        "yoy_growth_est": "3.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15770,6 +17313,15 @@
       "company": "Universal Health Services",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.74B",
+        "n_estimates": "7",
+        "high": "4.84B",
+        "low": "4.70B",
+        "year_ago": "4.50B",
+        "yoy_growth_est": "5.36%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15860,6 +17412,15 @@
       "company": "Verisign",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "441.15M",
+        "n_estimates": "2",
+        "high": "444.10M",
+        "low": "438.20M",
+        "year_ago": "419.10M",
+        "yoy_growth_est": "5.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -15950,6 +17511,15 @@
       "company": "Verizon",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "34.67B",
+        "n_estimates": "7",
+        "high": "35.10B",
+        "low": "34.23B",
+        "year_ago": "33.82B",
+        "yoy_growth_est": "2.52%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16040,6 +17610,15 @@
       "company": "Vertex Pharmaceuticals",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.40B",
+        "n_estimates": "7",
+        "high": "3.46B",
+        "low": "3.36B",
+        "year_ago": "3.08B",
+        "yoy_growth_est": "10.36%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16130,6 +17709,15 @@
       "company": "W. R. Berkley Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.80B",
+        "n_estimates": "4",
+        "high": "3.84B",
+        "low": "3.79B",
+        "year_ago": "3.69B",
+        "yoy_growth_est": "3.09%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16220,6 +17808,15 @@
       "company": "Wabtec",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.16B",
+        "n_estimates": "2",
+        "high": "3.16B",
+        "low": "3.15B",
+        "year_ago": "2.89B",
+        "yoy_growth_est": "9.42%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16310,6 +17907,15 @@
       "company": "Waste Management",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.79B",
+        "n_estimates": "8",
+        "high": "6.85B",
+        "low": "6.70B",
+        "year_ago": "6.44B",
+        "yoy_growth_est": "5.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16400,6 +18006,15 @@
       "company": "West Pharmaceutical Services",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "826.46M",
+        "n_estimates": "5",
+        "high": "830.04M",
+        "low": "821.36M",
+        "year_ago": "804.60M",
+        "yoy_growth_est": "2.72%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16490,6 +18105,15 @@
       "company": "Xylem Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-10-31",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.28B",
+        "n_estimates": "6",
+        "high": "2.30B",
+        "low": "2.25B",
+        "year_ago": "2.27B",
+        "yoy_growth_est": "0.62%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16580,6 +18204,15 @@
       "company": "Centene Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-02",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "47.06B",
+        "n_estimates": "5",
+        "high": "48.50B",
+        "low": "46.23B",
+        "year_ago": "49.69B",
+        "yoy_growth_est": "-5.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16670,6 +18303,15 @@
       "company": "Paccar",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-02",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.54B",
+        "n_estimates": "4",
+        "high": "7.72B",
+        "low": "7.14B",
+        "year_ago": "6.11B",
+        "yoy_growth_est": "23.48%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16760,6 +18402,15 @@
       "company": "L3Harris",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-03",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.01B",
+        "n_estimates": "5",
+        "high": "6.30B",
+        "low": "5.87B",
+        "year_ago": "5.66B",
+        "yoy_growth_est": "6.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16850,6 +18501,7 @@
       "company": "Skyworks Solutions",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-03",
+      "zacks_consensus": null,
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -16940,6 +18592,15 @@
       "company": "A. O. Smith",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "965.91M",
+        "n_estimates": "5",
+        "high": "982.27M",
+        "low": "938.40M",
+        "year_ago": "942.50M",
+        "yoy_growth_est": "2.48%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17030,6 +18691,15 @@
       "company": "Arthur J. Gallagher & Co.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.97B",
+        "n_estimates": "6",
+        "high": "4.08B",
+        "low": "3.84B",
+        "year_ago": "3.33B",
+        "yoy_growth_est": "19.12%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17120,6 +18790,15 @@
       "company": "Avery Dennison",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.30B",
+        "n_estimates": "5",
+        "high": "2.32B",
+        "low": "2.30B",
+        "year_ago": "2.22B",
+        "yoy_growth_est": "4.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17210,6 +18889,15 @@
       "company": "Coinbase",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.11B",
+        "n_estimates": "7",
+        "high": "1.17B",
+        "low": "1.07B",
+        "year_ago": "1.87B",
+        "yoy_growth_est": "-40.84%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17300,6 +18988,15 @@
       "company": "Dexcom",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.32B",
+        "n_estimates": "8",
+        "high": "1.34B",
+        "low": "1.30B",
+        "year_ago": "1.21B",
+        "yoy_growth_est": "9.38%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17390,6 +19087,15 @@
       "company": "Hershey Company (The)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.26B",
+        "n_estimates": "5",
+        "high": "3.30B",
+        "low": "3.24B",
+        "year_ago": "3.18B",
+        "yoy_growth_est": "2.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17480,6 +19186,15 @@
       "company": "Huntington Ingalls Industries",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.38B",
+        "n_estimates": "9",
+        "high": "3.46B",
+        "low": "3.32B",
+        "year_ago": "3.19B",
+        "yoy_growth_est": "5.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17570,6 +19285,15 @@
       "company": "Intercontinental Exchange",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.68B",
+        "n_estimates": "5",
+        "high": "2.72B",
+        "low": "2.60B",
+        "year_ago": "2.41B",
+        "yoy_growth_est": "11.20%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17660,6 +19384,15 @@
       "company": "KKR & Co.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.71B",
+        "n_estimates": "4",
+        "high": "1.77B",
+        "low": "1.65B",
+        "year_ago": "1.46B",
+        "yoy_growth_est": "17.07%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17750,6 +19483,15 @@
       "company": "Labcorp",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.77B",
+        "n_estimates": "5",
+        "high": "3.80B",
+        "low": "3.75B",
+        "year_ago": "3.56B",
+        "yoy_growth_est": "5.72%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17840,6 +19582,15 @@
       "company": "Martin Marietta Materials",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.17B",
+        "n_estimates": "6",
+        "high": "2.21B",
+        "low": "2.14B",
+        "year_ago": "1.85B",
+        "yoy_growth_est": "17.33%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -17930,6 +19681,15 @@
       "company": "Monolithic Power Systems",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.15B",
+        "n_estimates": "4",
+        "high": "1.16B",
+        "low": "1.15B",
+        "year_ago": "737.18M",
+        "yoy_growth_est": "56.41%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18020,6 +19780,15 @@
       "company": "Nucor",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "10.43B",
+        "n_estimates": "5",
+        "high": "10.94B",
+        "low": "9.40B",
+        "year_ago": "8.52B",
+        "yoy_growth_est": "22.40%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18110,6 +19879,15 @@
       "company": "Reddit",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "886.87M",
+        "n_estimates": "10",
+        "high": "950.00M",
+        "low": "865.00M",
+        "year_ago": "584.91M",
+        "yoy_growth_est": "51.62%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18200,6 +19978,15 @@
       "company": "Regeneron Pharmaceuticals",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.43B",
+        "n_estimates": "5",
+        "high": "4.65B",
+        "low": "3.90B",
+        "year_ago": "3.75B",
+        "yoy_growth_est": "17.96%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18290,6 +20077,15 @@
       "company": "Snap-on",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.23B",
+        "n_estimates": "4",
+        "high": "1.24B",
+        "low": "1.22B",
+        "year_ago": "1.19B",
+        "yoy_growth_est": "3.10%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18380,6 +20176,15 @@
       "company": "Textron",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.76B",
+        "n_estimates": "2",
+        "high": "3.78B",
+        "low": "3.74B",
+        "year_ago": "3.60B",
+        "yoy_growth_est": "4.31%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18470,6 +20275,15 @@
       "company": "Valero Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "36.53B",
+        "n_estimates": "4",
+        "high": "38.51B",
+        "low": "32.10B",
+        "year_ago": "32.17B",
+        "yoy_growth_est": "13.55%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18560,6 +20374,15 @@
       "company": "Willis Towers Watson",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-04",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.48B",
+        "n_estimates": "6",
+        "high": "2.51B",
+        "low": "2.45B",
+        "year_ago": "2.29B",
+        "yoy_growth_est": "8.28%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18650,6 +20473,15 @@
       "company": "AbbVie",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "17.36B",
+        "n_estimates": "5",
+        "high": "17.46B",
+        "low": "17.24B",
+        "year_ago": "15.78B",
+        "yoy_growth_est": "10.02%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18740,6 +20572,15 @@
       "company": "Altria",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.33B",
+        "n_estimates": "3",
+        "high": "5.34B",
+        "low": "5.30B",
+        "year_ago": "5.25B",
+        "yoy_growth_est": "1.49%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18830,6 +20671,15 @@
       "company": "Ares Management",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.34B",
+        "n_estimates": "5",
+        "high": "1.53B",
+        "low": "1.26B",
+        "year_ago": "1.16B",
+        "yoy_growth_est": "15.29%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -18920,6 +20770,15 @@
       "company": "Bristol Myers Squibb",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "12.46B",
+        "n_estimates": "7",
+        "high": "12.69B",
+        "low": "12.10B",
+        "year_ago": "12.22B",
+        "yoy_growth_est": "1.93%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19010,6 +20869,15 @@
       "company": "Chevron Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "55.07B",
+        "n_estimates": "4",
+        "high": "59.82B",
+        "low": "47.50B",
+        "year_ago": "49.73B",
+        "yoy_growth_est": "10.74%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19100,6 +20968,15 @@
       "company": "Emcor",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.21B",
+        "n_estimates": "4",
+        "high": "5.33B",
+        "low": "5.11B",
+        "year_ago": "4.30B",
+        "yoy_growth_est": "21.04%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19190,6 +21067,15 @@
       "company": "International Paper",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.34B",
+        "n_estimates": "5",
+        "high": "6.43B",
+        "low": "6.22B",
+        "year_ago": "6.22B",
+        "yoy_growth_est": "1.97%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19280,6 +21166,15 @@
       "company": "Linde plc",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.13B",
+        "n_estimates": "5",
+        "high": "9.36B",
+        "low": "8.94B",
+        "year_ago": "8.62B",
+        "yoy_growth_est": "6.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19370,6 +21265,15 @@
       "company": "LyondellBasell",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.89B",
+        "n_estimates": "3",
+        "high": "10.11B",
+        "low": "8.16B",
+        "year_ago": "7.73B",
+        "yoy_growth_est": "15.08%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19460,6 +21364,15 @@
       "company": "Stryker Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.66B",
+        "n_estimates": "7",
+        "high": "6.72B",
+        "low": "6.50B",
+        "year_ago": "6.06B",
+        "yoy_growth_est": "10.01%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19550,6 +21463,15 @@
       "company": "Trane Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-08",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.35B",
+        "n_estimates": "4",
+        "high": "6.50B",
+        "low": "6.10B",
+        "year_ago": "5.74B",
+        "yoy_growth_est": "10.61%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19640,6 +21562,15 @@
       "company": "Leidos",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-09",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.72B",
+        "n_estimates": "4",
+        "high": "4.76B",
+        "low": "4.66B",
+        "year_ago": "4.47B",
+        "yoy_growth_est": "5.52%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19730,6 +21661,15 @@
       "company": "Tesla, Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-10",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "27.96B",
+        "n_estimates": "11",
+        "high": "30.57B",
+        "low": "26.69B",
+        "year_ago": "28.10B",
+        "yoy_growth_est": "-0.50%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19820,6 +21760,15 @@
       "company": "Align Technology",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.01B",
+        "n_estimates": "4",
+        "high": "1.01B",
+        "low": "1.01B",
+        "year_ago": "995.69M",
+        "yoy_growth_est": "1.43%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -19910,6 +21859,15 @@
       "company": "Amazon",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "201.93B",
+        "n_estimates": "11",
+        "high": "204.30B",
+        "low": "200.00B",
+        "year_ago": "180.17B",
+        "yoy_growth_est": "12.08%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20000,6 +21958,15 @@
       "company": "American Water Works",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.47B",
+        "n_estimates": "2",
+        "high": "1.50B",
+        "low": "1.44B",
+        "year_ago": "1.45B",
+        "yoy_growth_est": "1.46%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20090,6 +22057,15 @@
       "company": "Amphenol",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.30B",
+        "n_estimates": "2",
+        "high": "9.36B",
+        "low": "9.25B",
+        "year_ago": "6.19B",
+        "yoy_growth_est": "50.17%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20180,6 +22156,15 @@
       "company": "Aon plc",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.09B",
+        "n_estimates": "8",
+        "high": "4.18B",
+        "low": "4.00B",
+        "year_ago": "4.00B",
+        "yoy_growth_est": "2.43%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20270,6 +22255,15 @@
       "company": "Apple Inc.",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "112.84B",
+        "n_estimates": "5",
+        "high": "113.04B",
+        "low": "112.67B",
+        "year_ago": "102.47B",
+        "yoy_growth_est": "10.12%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20360,6 +22354,15 @@
       "company": "Boston Scientific",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.28B",
+        "n_estimates": "7",
+        "high": "5.40B",
+        "low": "5.24B",
+        "year_ago": "5.07B",
+        "yoy_growth_est": "4.22%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20450,6 +22453,15 @@
       "company": "Cboe Global Markets",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "697.52M",
+        "n_estimates": "5",
+        "high": "706.00M",
+        "low": "684.42M",
+        "year_ago": "605.50M",
+        "yoy_growth_est": "15.20%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20540,6 +22552,15 @@
       "company": "CBRE Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "11.65B",
+        "n_estimates": "3",
+        "high": "11.87B",
+        "low": "11.44B",
+        "year_ago": "10.26B",
+        "yoy_growth_est": "13.60%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20630,6 +22651,15 @@
       "company": "Chipotle Mexican Grill",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.28B",
+        "n_estimates": "10",
+        "high": "3.40B",
+        "low": "3.26B",
+        "year_ago": "3.00B",
+        "yoy_growth_est": "9.35%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20720,6 +22750,15 @@
       "company": "Church & Dwight",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.58B",
+        "n_estimates": "6",
+        "high": "1.60B",
+        "low": "1.57B",
+        "year_ago": "1.59B",
+        "yoy_growth_est": "-0.32%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20810,6 +22849,15 @@
       "company": "Corteva",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.65B",
+        "n_estimates": "6",
+        "high": "2.76B",
+        "low": "2.55B",
+        "year_ago": "2.62B",
+        "yoy_growth_est": "1.17%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20900,6 +22948,15 @@
       "company": "CRH plc",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "11.60B",
+        "n_estimates": "2",
+        "high": "11.75B",
+        "low": "11.46B",
+        "year_ago": "11.07B",
+        "yoy_growth_est": "4.83%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -20990,6 +23047,15 @@
       "company": "Eaton Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.39B",
+        "n_estimates": "8",
+        "high": "8.57B",
+        "low": "8.02B",
+        "year_ago": "6.99B",
+        "yoy_growth_est": "20.03%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21080,6 +23146,15 @@
       "company": "Equinix",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.56B",
+        "n_estimates": "6",
+        "high": "2.57B",
+        "low": "2.55B",
+        "year_ago": "2.32B",
+        "yoy_growth_est": "10.73%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21170,6 +23245,15 @@
       "company": "Essex Property Trust",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "493.71M",
+        "n_estimates": "7",
+        "high": "495.04M",
+        "low": "491.30M",
+        "year_ago": "473.30M",
+        "yoy_growth_est": "4.31%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21260,6 +23344,15 @@
       "company": "Everest Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.86B",
+        "n_estimates": "4",
+        "high": "3.91B",
+        "low": "3.78B",
+        "year_ago": "4.32B",
+        "yoy_growth_est": "-10.67%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21350,6 +23443,15 @@
       "company": "Eversource Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.50B",
+        "n_estimates": "4",
+        "high": "3.73B",
+        "low": "3.29B",
+        "year_ago": "3.22B",
+        "yoy_growth_est": "8.57%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21440,6 +23542,15 @@
       "company": "Fair Isaac",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "657.52M",
+        "n_estimates": "4",
+        "high": "673.03M",
+        "low": "650.00M",
+        "year_ago": "515.75M",
+        "yoy_growth_est": "27.49%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21530,6 +23641,15 @@
       "company": "Fortinet",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.06B",
+        "n_estimates": "11",
+        "high": "2.08B",
+        "low": "2.05B",
+        "year_ago": "1.72B",
+        "yoy_growth_est": "19.47%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21620,6 +23740,15 @@
       "company": "Generac",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.32B",
+        "n_estimates": "6",
+        "high": "1.33B",
+        "low": "1.30B",
+        "year_ago": "1.11B",
+        "yoy_growth_est": "18.36%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21710,6 +23839,7 @@
       "company": "IDEX Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": null,
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21800,6 +23930,15 @@
       "company": "Ingersoll Rand",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.04B",
+        "n_estimates": "4",
+        "high": "2.05B",
+        "low": "2.02B",
+        "year_ago": "1.96B",
+        "yoy_growth_est": "4.11%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21890,6 +24029,15 @@
       "company": "Invitation Homes",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "739.54M",
+        "n_estimates": "5",
+        "high": "755.33M",
+        "low": "724.36M",
+        "year_ago": "688.17M",
+        "yoy_growth_est": "7.46%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -21980,6 +24128,15 @@
       "company": "Mastercard",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.62B",
+        "n_estimates": "9",
+        "high": "9.73B",
+        "low": "9.50B",
+        "year_ago": "8.60B",
+        "yoy_growth_est": "11.86%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22070,6 +24227,15 @@
       "company": "Meta Platforms",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "63.17B",
+        "n_estimates": "10",
+        "high": "63.90B",
+        "low": "62.00B",
+        "year_ago": "51.24B",
+        "yoy_growth_est": "23.28%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22160,6 +24326,15 @@
       "company": "MGM Resorts",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.30B",
+        "n_estimates": "7",
+        "high": "4.36B",
+        "low": "4.22B",
+        "year_ago": "4.25B",
+        "yoy_growth_est": "1.13%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22250,6 +24425,15 @@
       "company": "Moderna",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "917.35M",
+        "n_estimates": "7",
+        "high": "1.10B",
+        "low": "836.00M",
+        "year_ago": "1.02B",
+        "yoy_growth_est": "-9.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22340,6 +24524,15 @@
       "company": "O'Reilly Automotive",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.99B",
+        "n_estimates": "8",
+        "high": "5.04B",
+        "low": "4.94B",
+        "year_ago": "4.71B",
+        "yoy_growth_est": "5.98%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22430,6 +24623,15 @@
       "company": "Old Dominion",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.54B",
+        "n_estimates": "6",
+        "high": "1.56B",
+        "low": "1.50B",
+        "year_ago": "1.41B",
+        "yoy_growth_est": "9.74%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22520,6 +24722,15 @@
       "company": "Qualcomm",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "10.18B",
+        "n_estimates": "8",
+        "high": "10.40B",
+        "low": "10.08B",
+        "year_ago": "11.27B",
+        "yoy_growth_est": "-9.68%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22610,6 +24821,15 @@
       "company": "Robinhood Markets",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.31B",
+        "n_estimates": "8",
+        "high": "1.40B",
+        "low": "1.24B",
+        "year_ago": "1.27B",
+        "yoy_growth_est": "3.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22700,6 +24920,15 @@
       "company": "Smurfit Westrock",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.39B",
+        "n_estimates": "4",
+        "high": "8.62B",
+        "low": "8.28B",
+        "year_ago": "8.00B",
+        "yoy_growth_est": "4.79%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22790,6 +25019,15 @@
       "company": "Stanley Black & Decker",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.69B",
+        "n_estimates": "5",
+        "high": "3.78B",
+        "low": "3.63B",
+        "year_ago": "3.76B",
+        "yoy_growth_est": "-1.77%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22880,6 +25118,15 @@
       "company": "Starbucks",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.32B",
+        "n_estimates": "6",
+        "high": "9.41B",
+        "low": "9.24B",
+        "year_ago": "9.57B",
+        "yoy_growth_est": "-2.62%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -22970,6 +25217,15 @@
       "company": "T. Rowe Price",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.97B",
+        "n_estimates": "4",
+        "high": "2.03B",
+        "low": "1.90B",
+        "year_ago": "1.89B",
+        "yoy_growth_est": "3.87%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23060,6 +25316,15 @@
       "company": "Tyler Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "651.14M",
+        "n_estimates": "8",
+        "high": "656.86M",
+        "low": "645.85M",
+        "year_ago": "595.88M",
+        "yoy_growth_est": "9.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23150,6 +25415,15 @@
       "company": "Ventas",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.76B",
+        "n_estimates": "3",
+        "high": "1.80B",
+        "low": "1.73B",
+        "year_ago": "1.49B",
+        "yoy_growth_est": "18.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23240,6 +25514,15 @@
       "company": "Vertiv",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.75B",
+        "n_estimates": "6",
+        "high": "3.78B",
+        "low": "3.72B",
+        "year_ago": "2.68B",
+        "yoy_growth_est": "40.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23330,6 +25613,15 @@
       "company": "Vici Properties",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.06B",
+        "n_estimates": "5",
+        "high": "1.07B",
+        "low": "1.06B",
+        "year_ago": "1.01B",
+        "yoy_growth_est": "5.44%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23420,6 +25712,15 @@
       "company": "WEC Energy Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.23B",
+        "n_estimates": "3",
+        "high": "2.28B",
+        "low": "2.20B",
+        "year_ago": "2.10B",
+        "yoy_growth_est": "6.18%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23510,6 +25811,15 @@
       "company": "Weyerhaeuser",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.80B",
+        "n_estimates": "4",
+        "high": "1.95B",
+        "low": "1.70B",
+        "year_ago": "1.72B",
+        "yoy_growth_est": "4.68%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23600,6 +25910,15 @@
       "company": "Yum! Brands",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-12",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.11B",
+        "n_estimates": "7",
+        "high": "2.20B",
+        "low": "1.98B",
+        "year_ago": "1.98B",
+        "yoy_growth_est": "6.53%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23690,6 +26009,15 @@
       "company": "Camden Property Trust",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-13",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "390.83M",
+        "n_estimates": "6",
+        "high": "398.45M",
+        "low": "379.12M",
+        "year_ago": "395.68M",
+        "yoy_growth_est": "-1.23%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23780,6 +26108,15 @@
       "company": "Global Payments",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-13",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.18B",
+        "n_estimates": "10",
+        "high": "3.21B",
+        "low": "3.17B",
+        "year_ago": "2.43B",
+        "yoy_growth_est": "30.96%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23870,6 +26207,15 @@
       "company": "Diamondback Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.31B",
+        "n_estimates": "7",
+        "high": "5.25B",
+        "low": "3.48B",
+        "year_ago": "3.92B",
+        "yoy_growth_est": "9.83%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -23960,6 +26306,15 @@
       "company": "EchoStar",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.46B",
+        "n_estimates": "3",
+        "high": "3.50B",
+        "low": "3.44B",
+        "year_ago": "3.61B",
+        "yoy_growth_est": "-4.24%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24050,6 +26405,15 @@
       "company": "Marriott International",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.02B",
+        "n_estimates": "6",
+        "high": "7.14B",
+        "low": "6.77B",
+        "year_ago": "6.49B",
+        "yoy_growth_est": "8.23%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24140,6 +26504,15 @@
       "company": "Oneok",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "11.77B",
+        "n_estimates": "3",
+        "high": "14.21B",
+        "low": "9.10B",
+        "year_ago": "8.63B",
+        "yoy_growth_est": "36.34%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24230,6 +26603,15 @@
       "company": "Palantir Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.17B",
+        "n_estimates": "8",
+        "high": "2.21B",
+        "low": "2.16B",
+        "year_ago": "1.18B",
+        "yoy_growth_est": "83.95%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24320,6 +26702,15 @@
       "company": "SBA Communications",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "726.23M",
+        "n_estimates": "3",
+        "high": "730.32M",
+        "low": "724.02M",
+        "year_ago": "732.33M",
+        "yoy_growth_est": "-0.83%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24410,6 +26801,15 @@
       "company": "TKO Group Holdings",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.40B",
+        "n_estimates": "5",
+        "high": "1.42B",
+        "low": "1.38B",
+        "year_ago": "1.12B",
+        "yoy_growth_est": "24.99%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24500,6 +26900,15 @@
       "company": "Tyson Foods",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "14.40B",
+        "n_estimates": "3",
+        "high": "14.86B",
+        "low": "14.13B",
+        "year_ago": "13.86B",
+        "yoy_growth_est": "3.86%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24590,6 +26999,15 @@
       "company": "Williams Companies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-15",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.16B",
+        "n_estimates": "4",
+        "high": "3.60B",
+        "low": "2.87B",
+        "year_ago": "2.92B",
+        "yoy_growth_est": "8.16%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24680,6 +27098,15 @@
       "company": "Advanced Micro Devices",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "13.07B",
+        "n_estimates": "11",
+        "high": "13.40B",
+        "low": "12.98B",
+        "year_ago": "9.25B",
+        "yoy_growth_est": "41.38%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24770,6 +27197,15 @@
       "company": "Ametek",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.05B",
+        "n_estimates": "4",
+        "high": "2.08B",
+        "low": "2.00B",
+        "year_ago": "1.89B",
+        "yoy_growth_est": "8.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24860,6 +27296,15 @@
       "company": "Amgen",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.91B",
+        "n_estimates": "7",
+        "high": "10.09B",
+        "low": "9.80B",
+        "year_ago": "9.56B",
+        "yoy_growth_est": "3.68%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -24950,6 +27395,15 @@
       "company": "Apollo Global Management",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.36B",
+        "n_estimates": "6",
+        "high": "1.37B",
+        "low": "1.33B",
+        "year_ago": "1.15B",
+        "yoy_growth_est": "18.04%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25040,6 +27494,15 @@
       "company": "Aptiv",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.20B",
+        "n_estimates": "5",
+        "high": "3.30B",
+        "low": "3.16B",
+        "year_ago": "5.21B",
+        "yoy_growth_est": "-38.64%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25130,6 +27593,15 @@
       "company": "Archer Daniels Midland",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "21.85B",
+        "n_estimates": "3",
+        "high": "23.44B",
+        "low": "20.70B",
+        "year_ago": "20.37B",
+        "yoy_growth_est": "7.24%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25220,6 +27692,15 @@
       "company": "Arista Networks",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.31B",
+        "n_estimates": "6",
+        "high": "3.34B",
+        "low": "3.30B",
+        "year_ago": "2.31B",
+        "yoy_growth_est": "43.51%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25310,6 +27791,15 @@
       "company": "Assurant",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.42B",
+        "n_estimates": "4",
+        "high": "3.55B",
+        "low": "3.35B",
+        "year_ago": "3.25B",
+        "yoy_growth_est": "5.40%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25400,6 +27890,15 @@
       "company": "Ball Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.69B",
+        "n_estimates": "5",
+        "high": "3.95B",
+        "low": "3.50B",
+        "year_ago": "3.38B",
+        "yoy_growth_est": "9.26%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25490,6 +27989,15 @@
       "company": "Caterpillar Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "20.06B",
+        "n_estimates": "6",
+        "high": "20.66B",
+        "low": "19.39B",
+        "year_ago": "17.64B",
+        "yoy_growth_est": "13.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25580,6 +28088,15 @@
       "company": "Cummins",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "9.87B",
+        "n_estimates": "6",
+        "high": "10.10B",
+        "low": "9.60B",
+        "year_ago": "8.32B",
+        "yoy_growth_est": "18.63%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25670,6 +28187,15 @@
       "company": "DaVita",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.53B",
+        "n_estimates": "1",
+        "high": "3.53B",
+        "low": "3.53B",
+        "year_ago": "3.42B",
+        "yoy_growth_est": "3.23%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25760,6 +28286,15 @@
       "company": "Devon Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.16B",
+        "n_estimates": "6",
+        "high": "7.84B",
+        "low": "6.40B",
+        "year_ago": "4.33B",
+        "yoy_growth_est": "65.42%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25850,6 +28385,15 @@
       "company": "DuPont",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.85B",
+        "n_estimates": "4",
+        "high": "1.89B",
+        "low": "1.84B",
+        "year_ago": "3.07B",
+        "yoy_growth_est": "-39.67%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -25940,6 +28484,15 @@
       "company": "Emerson Electric",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.11B",
+        "n_estimates": "5",
+        "high": "5.20B",
+        "low": "5.06B",
+        "year_ago": "4.86B",
+        "yoy_growth_est": "5.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26030,6 +28583,15 @@
       "company": "EOG Resources",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.44B",
+        "n_estimates": "7",
+        "high": "8.08B",
+        "low": "7.00B",
+        "year_ago": "5.85B",
+        "yoy_growth_est": "27.19%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26120,6 +28682,15 @@
       "company": "Fidelity National Information Services",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.43B",
+        "n_estimates": "8",
+        "high": "3.44B",
+        "low": "3.40B",
+        "year_ago": "2.72B",
+        "yoy_growth_est": "26.14%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26210,6 +28781,15 @@
       "company": "Gartner",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.48B",
+        "n_estimates": "3",
+        "high": "1.50B",
+        "low": "1.48B",
+        "year_ago": "1.52B",
+        "yoy_growth_est": "-2.64%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26300,6 +28880,15 @@
       "company": "Healthpeak Properties",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "758.62M",
+        "n_estimates": "4",
+        "high": "773.00M",
+        "low": "746.11M",
+        "year_ago": "705.87M",
+        "yoy_growth_est": "7.47%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26390,6 +28979,15 @@
       "company": "Henry Schein",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.47B",
+        "n_estimates": "7",
+        "high": "3.50B",
+        "low": "3.45B",
+        "year_ago": "3.34B",
+        "yoy_growth_est": "3.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26480,6 +29078,15 @@
       "company": "Idexx Laboratories",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.19B",
+        "n_estimates": "5",
+        "high": "1.19B",
+        "low": "1.18B",
+        "year_ago": "1.11B",
+        "yoy_growth_est": "7.42%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26570,6 +29177,15 @@
       "company": "International Flavors & Fragrances",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.92B",
+        "n_estimates": "5",
+        "high": "1.94B",
+        "low": "1.90B",
+        "year_ago": "2.69B",
+        "yoy_growth_est": "-28.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26660,6 +29276,15 @@
       "company": "Jacobs Solutions",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.61B",
+        "n_estimates": "1",
+        "high": "3.61B",
+        "low": "3.61B",
+        "year_ago": "3.15B",
+        "yoy_growth_est": "14.58%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26750,6 +29375,15 @@
       "company": "Kimberly-Clark",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.20B",
+        "n_estimates": "4",
+        "high": "4.27B",
+        "low": "4.16B",
+        "year_ago": "4.15B",
+        "yoy_growth_est": "1.18%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26840,6 +29474,15 @@
       "company": "Kimco Realty",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "554.12M",
+        "n_estimates": "7",
+        "high": "563.23M",
+        "low": "547.60M",
+        "year_ago": "535.86M",
+        "yoy_growth_est": "3.41%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -26930,6 +29573,15 @@
       "company": "McDonald's",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.27B",
+        "n_estimates": "8",
+        "high": "7.38B",
+        "low": "7.15B",
+        "year_ago": "7.08B",
+        "yoy_growth_est": "2.69%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27020,6 +29672,15 @@
       "company": "Merck & Co.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "17.61B",
+        "n_estimates": "3",
+        "high": "17.80B",
+        "low": "17.39B",
+        "year_ago": "17.28B",
+        "yoy_growth_est": "1.94%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27110,6 +29771,15 @@
       "company": "Mosaic Company (The)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.03B",
+        "n_estimates": "4",
+        "high": "3.14B",
+        "low": "2.87B",
+        "year_ago": "3.45B",
+        "yoy_growth_est": "-12.12%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27200,6 +29870,15 @@
       "company": "NRG Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.29B",
+        "n_estimates": "2",
+        "high": "9.35B",
+        "low": "5.22B",
+        "year_ago": "7.64B",
+        "yoy_growth_est": "-4.57%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27290,6 +29969,15 @@
       "company": "ON Semiconductor",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.70B",
+        "n_estimates": "6",
+        "high": "1.70B",
+        "low": "1.70B",
+        "year_ago": "1.55B",
+        "yoy_growth_est": "9.65%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27380,6 +30068,15 @@
       "company": "Pfizer",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "16.25B",
+        "n_estimates": "3",
+        "high": "16.50B",
+        "low": "15.77B",
+        "year_ago": "16.65B",
+        "yoy_growth_est": "-2.45%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27470,6 +30167,15 @@
       "company": "Pinnacle West Capital",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.88B",
+        "n_estimates": "3",
+        "high": "1.90B",
+        "low": "1.87B",
+        "year_ago": "1.82B",
+        "yoy_growth_est": "3.30%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27560,6 +30266,15 @@
       "company": "Prudential Financial",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "14.62B",
+        "n_estimates": "5",
+        "high": "15.07B",
+        "low": "14.13B",
+        "year_ago": "16.24B",
+        "yoy_growth_est": "-9.96%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27650,6 +30365,15 @@
       "company": "Public Service Enterprise Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.31B",
+        "n_estimates": "4",
+        "high": "3.50B",
+        "low": "3.11B",
+        "year_ago": "3.23B",
+        "yoy_growth_est": "2.61%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27740,6 +30464,15 @@
       "company": "Revvity",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "699.36M",
+        "n_estimates": "2",
+        "high": "706.65M",
+        "low": "692.06M",
+        "year_ago": "698.95M",
+        "yoy_growth_est": "0.06%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27830,6 +30563,15 @@
       "company": "Rockwell Automation",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.38B",
+        "n_estimates": "8",
+        "high": "2.50B",
+        "low": "2.32B",
+        "year_ago": "2.32B",
+        "yoy_growth_est": "2.69%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -27920,6 +30662,15 @@
       "company": "TransDigm Group",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.92B",
+        "n_estimates": "5",
+        "high": "2.97B",
+        "low": "2.88B",
+        "year_ago": "2.44B",
+        "yoy_growth_est": "20.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28010,6 +30761,15 @@
       "company": "W. W. Grainger",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.05B",
+        "n_estimates": "6",
+        "high": "5.08B",
+        "low": "4.98B",
+        "year_ago": "4.66B",
+        "yoy_growth_est": "8.44%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28100,6 +30860,15 @@
       "company": "Waters Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.75B",
+        "n_estimates": "6",
+        "high": "1.76B",
+        "low": "1.75B",
+        "year_ago": "799.89M",
+        "yoy_growth_est": "119.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28190,6 +30959,15 @@
       "company": "Wynn Resorts",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.83B",
+        "n_estimates": "7",
+        "high": "1.86B",
+        "low": "1.80B",
+        "year_ago": "1.83B",
+        "yoy_growth_est": "-0.35%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28280,6 +31058,15 @@
       "company": "Zebra Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-16",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.56B",
+        "n_estimates": "2",
+        "high": "1.57B",
+        "low": "1.56B",
+        "year_ago": "1.32B",
+        "yoy_growth_est": "18.49%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28370,6 +31157,15 @@
       "company": "Allstate",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "17.84B",
+        "n_estimates": "3",
+        "high": "18.10B",
+        "low": "17.50B",
+        "year_ago": "17.00B",
+        "yoy_growth_est": "4.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28460,6 +31256,15 @@
       "company": "Atmos Energy",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "946.04M",
+        "n_estimates": "3",
+        "high": "1.03B",
+        "low": "800.00M",
+        "year_ago": "NA",
+        "yoy_growth_est": "NA"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28550,6 +31355,15 @@
       "company": "Block, Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.61B",
+        "n_estimates": "9",
+        "high": "6.72B",
+        "low": "6.41B",
+        "year_ago": "6.11B",
+        "yoy_growth_est": "8.04%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28640,6 +31454,15 @@
       "company": "CDW Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.12B",
+        "n_estimates": "5",
+        "high": "6.23B",
+        "low": "5.92B",
+        "year_ago": "5.74B",
+        "yoy_growth_est": "6.63%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28730,6 +31553,15 @@
       "company": "Cencora",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "88.09B",
+        "n_estimates": "3",
+        "high": "88.26B",
+        "low": "87.90B",
+        "year_ago": "83.73B",
+        "yoy_growth_est": "5.21%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28820,6 +31652,15 @@
       "company": "CF Industries",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.74B",
+        "n_estimates": "4",
+        "high": "1.89B",
+        "low": "1.63B",
+        "year_ago": "1.66B",
+        "yoy_growth_est": "4.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -28910,6 +31751,15 @@
       "company": "Charles River Laboratories",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "955.20M",
+        "n_estimates": "6",
+        "high": "964.70M",
+        "low": "949.65M",
+        "year_ago": "1.00B",
+        "yoy_growth_est": "-4.94%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29000,6 +31850,15 @@
       "company": "Corpay",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.36B",
+        "n_estimates": "6",
+        "high": "1.37B",
+        "low": "1.35B",
+        "year_ago": "1.17B",
+        "yoy_growth_est": "15.81%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29090,6 +31949,15 @@
       "company": "CVS Health",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "104.82B",
+        "n_estimates": "7",
+        "high": "107.94B",
+        "low": "101.61B",
+        "year_ago": "102.87B",
+        "yoy_growth_est": "1.90%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29180,6 +32048,15 @@
       "company": "DoorDash",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.54B",
+        "n_estimates": "12",
+        "high": "4.62B",
+        "low": "4.39B",
+        "year_ago": "3.45B",
+        "yoy_growth_est": "31.68%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29270,6 +32147,15 @@
       "company": "eBay Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.13B",
+        "n_estimates": "5",
+        "high": "3.20B",
+        "low": "3.10B",
+        "year_ago": "2.82B",
+        "yoy_growth_est": "10.97%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29360,6 +32246,15 @@
       "company": "Expedia Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.73B",
+        "n_estimates": "7",
+        "high": "4.75B",
+        "low": "4.70B",
+        "year_ago": "4.41B",
+        "yoy_growth_est": "7.15%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29450,6 +32345,15 @@
       "company": "Host Hotels & Resorts",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.37B",
+        "n_estimates": "6",
+        "high": "1.40B",
+        "low": "1.35B",
+        "year_ago": "1.33B",
+        "yoy_growth_est": "3.27%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29540,6 +32444,15 @@
       "company": "Insulet Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "833.80M",
+        "n_estimates": "7",
+        "high": "838.10M",
+        "low": "830.90M",
+        "year_ago": "706.30M",
+        "yoy_growth_est": "18.05%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29630,6 +32543,15 @@
       "company": "Iron Mountain",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.98B",
+        "n_estimates": "2",
+        "high": "1.99B",
+        "low": "1.98B",
+        "year_ago": "1.75B",
+        "yoy_growth_est": "13.06%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29720,6 +32642,15 @@
       "company": "Lilly (Eli)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "22.08B",
+        "n_estimates": "3",
+        "high": "23.35B",
+        "low": "20.90B",
+        "year_ago": "17.60B",
+        "yoy_growth_est": "25.46%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29810,6 +32741,15 @@
       "company": "Motorola Solutions",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.26B",
+        "n_estimates": "6",
+        "high": "3.30B",
+        "low": "3.25B",
+        "year_ago": "3.01B",
+        "yoy_growth_est": "8.38%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29900,6 +32840,15 @@
       "company": "NiSource",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.35B",
+        "n_estimates": "3",
+        "high": "1.37B",
+        "low": "1.30B",
+        "year_ago": "1.27B",
+        "yoy_growth_est": "5.99%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -29990,6 +32939,15 @@
       "company": "Occidental Petroleum",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "6.69B",
+        "n_estimates": "3",
+        "high": "6.83B",
+        "low": "6.43B",
+        "year_ago": "6.72B",
+        "yoy_growth_est": "-0.46%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30080,6 +33038,15 @@
       "company": "Realty Income",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.58B",
+        "n_estimates": "5",
+        "high": "1.59B",
+        "low": "1.55B",
+        "year_ago": "1.47B",
+        "yoy_growth_est": "7.19%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30170,6 +33137,15 @@
       "company": "Solventum",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.98B",
+        "n_estimates": "4",
+        "high": "2.10B",
+        "low": "1.92B",
+        "year_ago": "2.10B",
+        "yoy_growth_est": "-5.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30260,6 +33236,15 @@
       "company": "Texas Pacific Land Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "264.00M",
+        "n_estimates": "1",
+        "high": "264.00M",
+        "low": "264.00M",
+        "year_ago": "203.09M",
+        "yoy_growth_est": "29.99%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30350,6 +33335,15 @@
       "company": "Uber",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "14.76B",
+        "n_estimates": "11",
+        "high": "15.20B",
+        "low": "14.27B",
+        "year_ago": "13.47B",
+        "yoy_growth_est": "9.60%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30440,6 +33434,15 @@
       "company": "Walt Disney Company (The)",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "24.94B",
+        "n_estimates": "6",
+        "high": "25.88B",
+        "low": "23.96B",
+        "year_ago": "22.46B",
+        "yoy_growth_est": "11.03%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30530,6 +33533,15 @@
       "company": "Zimmer Biomet",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-17",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.05B",
+        "n_estimates": "7",
+        "high": "2.10B",
+        "low": "2.03B",
+        "year_ago": "2.00B",
+        "yoy_growth_est": "2.24%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30620,6 +33632,15 @@
       "company": "Aflac",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.20B",
+        "n_estimates": "3",
+        "high": "4.28B",
+        "low": "4.09B",
+        "year_ago": "4.74B",
+        "yoy_growth_est": "-11.33%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30710,6 +33731,15 @@
       "company": "Airbnb",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.74B",
+        "n_estimates": "7",
+        "high": "4.77B",
+        "low": "4.72B",
+        "year_ago": "4.10B",
+        "yoy_growth_est": "15.79%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30800,6 +33830,15 @@
       "company": "Akamai Technologies",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.12B",
+        "n_estimates": "8",
+        "high": "1.13B",
+        "low": "1.12B",
+        "year_ago": "1.05B",
+        "yoy_growth_est": "6.39%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30890,6 +33929,15 @@
       "company": "Albemarle Corporation",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.52B",
+        "n_estimates": "5",
+        "high": "1.58B",
+        "low": "1.39B",
+        "year_ago": "1.31B",
+        "yoy_growth_est": "16.07%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -30980,6 +34028,15 @@
       "company": "American International Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.46B",
+        "n_estimates": "4",
+        "high": "7.60B",
+        "low": "7.40B",
+        "year_ago": "7.06B",
+        "yoy_growth_est": "5.69%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31070,6 +34127,15 @@
       "company": "Becton Dickinson",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "5.12B",
+        "n_estimates": "5",
+        "high": "5.20B",
+        "low": "5.07B",
+        "year_ago": "5.89B",
+        "yoy_growth_est": "-13.04%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31160,6 +34226,15 @@
       "company": "ConocoPhillips",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "17.30B",
+        "n_estimates": "5",
+        "high": "18.69B",
+        "low": "15.71B",
+        "year_ago": "15.52B",
+        "yoy_growth_est": "11.47%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31250,6 +34325,15 @@
       "company": "Constellation Energy",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.65B",
+        "n_estimates": "3",
+        "high": "11.29B",
+        "low": "5.45B",
+        "year_ago": "6.57B",
+        "yoy_growth_est": "31.65%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31340,6 +34424,15 @@
       "company": "Datadog",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.14B",
+        "n_estimates": "8",
+        "high": "1.15B",
+        "low": "1.14B",
+        "year_ago": "885.65M",
+        "yoy_growth_est": "28.90%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31430,6 +34523,15 @@
       "company": "Fiserv",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.99B",
+        "n_estimates": "9",
+        "high": "6.06B",
+        "low": "4.80B",
+        "year_ago": "4.92B",
+        "yoy_growth_est": "1.44%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31520,6 +34622,15 @@
       "company": "Gen Digital",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.33B",
+        "n_estimates": "2",
+        "high": "1.34B",
+        "low": "1.33B",
+        "year_ago": "1.22B",
+        "yoy_growth_est": "9.38%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31610,6 +34721,15 @@
       "company": "Howmet Aerospace",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.59B",
+        "n_estimates": "2",
+        "high": "2.59B",
+        "low": "2.58B",
+        "year_ago": "2.09B",
+        "yoy_growth_est": "23.86%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31700,6 +34820,15 @@
       "company": "Keurig Dr Pepper",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.35B",
+        "n_estimates": "5",
+        "high": "7.50B",
+        "low": "7.18B",
+        "year_ago": "4.31B",
+        "yoy_growth_est": "70.80%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31790,6 +34919,15 @@
       "company": "MetLife",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "19.56B",
+        "n_estimates": "5",
+        "high": "20.58B",
+        "low": "18.10B",
+        "year_ago": "17.90B",
+        "yoy_growth_est": "9.25%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31880,6 +35018,15 @@
       "company": "Microchip Technology",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.60B",
+        "n_estimates": "7",
+        "high": "1.61B",
+        "low": "1.60B",
+        "year_ago": "1.14B",
+        "yoy_growth_est": "40.55%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -31970,6 +35117,15 @@
       "company": "Molson Coors Beverage Company",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.95B",
+        "n_estimates": "5",
+        "high": "2.97B",
+        "low": "2.94B",
+        "year_ago": "2.97B",
+        "yoy_growth_est": "-0.71%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32060,6 +35216,15 @@
       "company": "Monster Beverage",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.48B",
+        "n_estimates": "7",
+        "high": "2.53B",
+        "low": "2.40B",
+        "year_ago": "2.20B",
+        "yoy_growth_est": "12.90%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32150,6 +35315,15 @@
       "company": "Ralph Lauren Corporation",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.13B",
+        "n_estimates": "5",
+        "high": "2.20B",
+        "low": "2.11B",
+        "year_ago": "2.01B",
+        "yoy_growth_est": "5.92%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32240,6 +35414,15 @@
       "company": "Republic Services",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.39B",
+        "n_estimates": "8",
+        "high": "4.45B",
+        "low": "4.30B",
+        "year_ago": "4.21B",
+        "yoy_growth_est": "4.21%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32330,6 +35513,15 @@
       "company": "Targa Resources",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "4.91B",
+        "n_estimates": "4",
+        "high": "5.47B",
+        "low": "4.29B",
+        "year_ago": "4.15B",
+        "yoy_growth_est": "18.20%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32420,6 +35612,15 @@
       "company": "Trade Desk (The)",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "650.67M",
+        "n_estimates": "6",
+        "high": "651.02M",
+        "low": "650.00M",
+        "year_ago": "739.43M",
+        "yoy_growth_est": "-12.00%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32510,6 +35711,15 @@
       "company": "Viatris",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "3.82B",
+        "n_estimates": "3",
+        "high": "3.86B",
+        "low": "3.80B",
+        "year_ago": "3.76B",
+        "yoy_growth_est": "1.70%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32600,6 +35810,15 @@
       "company": "Warner Bros. Discovery",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "8.84B",
+        "n_estimates": "7",
+        "high": "9.06B",
+        "low": "8.47B",
+        "year_ago": "9.05B",
+        "yoy_growth_est": "-2.28%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32690,6 +35909,15 @@
       "company": "Zoetis",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-18",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "2.31B",
+        "n_estimates": "6",
+        "high": "2.40B",
+        "low": "2.26B",
+        "year_ago": "2.40B",
+        "yoy_growth_est": "-3.66%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32780,6 +36008,15 @@
       "company": "Take-Two Interactive",
       "quarter": "Q2 2027",
       "next_report_date_est": "2026-11-19",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.66B",
+        "n_estimates": "10",
+        "high": "1.67B",
+        "low": "1.63B",
+        "year_ago": "1.96B",
+        "yoy_growth_est": "-15.53%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32870,6 +36107,15 @@
       "company": "Vistra Corp.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-19",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "7.75B",
+        "n_estimates": "2",
+        "high": "7.93B",
+        "low": "7.56B",
+        "year_ago": "4.97B",
+        "yoy_growth_est": "55.81%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -32960,6 +36206,15 @@
       "company": "Simon Property Group",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-22",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "1.74B",
+        "n_estimates": "2",
+        "high": "1.76B",
+        "low": "1.72B",
+        "year_ago": "1.60B",
+        "yoy_growth_est": "8.91%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -33050,6 +36305,15 @@
       "company": "Analog Devices",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-24",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "4.31B",
+        "n_estimates": "7",
+        "high": "4.33B",
+        "low": "4.30B",
+        "year_ago": "3.08B",
+        "yoy_growth_est": "39.98%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -33140,6 +36404,15 @@
       "company": "Trimble Inc.",
       "quarter": "Q3 2026",
       "next_report_date_est": "2026-11-24",
+      "zacks_consensus": {
+        "period": "9/2026",
+        "consensus": "964.20M",
+        "n_estimates": "5",
+        "high": "966.58M",
+        "low": "957.43M",
+        "year_ago": "901.20M",
+        "yoy_growth_est": "6.99%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -33230,6 +36503,15 @@
       "company": "Applied Materials",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-11-25",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "10.29B",
+        "n_estimates": "8",
+        "high": "10.50B",
+        "low": "10.25B",
+        "year_ago": "6.80B",
+        "yoy_growth_est": "51.28%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {
@@ -33320,6 +36602,15 @@
       "company": "Nordson Corporation",
       "quarter": "Q4 2026",
       "next_report_date_est": "2026-12-01",
+      "zacks_consensus": {
+        "period": "10/2026",
+        "consensus": "828.00M",
+        "n_estimates": "2",
+        "high": "829.00M",
+        "low": "827.00M",
+        "year_ago": "751.82M",
+        "yoy_growth_est": "10.13%"
+      },
       "predictions": {
         "gpt-4o-mini": {
           "blind": {

@@ -1,6 +1,7 @@
-/* companies.html — unified searchable index: S&P 500 scale-up companies + the 5
-   deep-pilot companies (TEAM/Atlassian isn't an S&P 500 constituent, so it's merged
-   in separately rather than being silently dropped) */
+/* companies.html — unified searchable index: S&P 500 scale-up companies (blind,
+   feed, and weekly-trajectory mining all run at scale -- see the flags column) +
+   the 5 original hand-curated case-study companies (TEAM/Atlassian isn't an S&P
+   500 constituent, so it's merged in separately rather than being silently dropped) */
 (function () {
   "use strict";
   var S = window.SITW;
@@ -45,7 +46,10 @@
       flagsWrap.appendChild(flag(co.has_segment_revenue, "segments"));
       flagsWrap.appendChild(flag(co.has_real_consensus, "consensus"));
       flagsWrap.appendChild(flag(co.has_ccnews_prediction, "CC-News"));
-      flagsWrap.appendChild(flag(co.pilot_depth, "blind/feed + weekly"));
+      flagsWrap.appendChild(flag(co.has_blind_scale, "blind"));
+      flagsWrap.appendChild(flag(co.has_feed_scale, "feed"));
+      flagsWrap.appendChild(flag(co.has_weekly_scale, "weekly"));
+      flagsWrap.appendChild(flag(co.has_zacks_live_consensus, "Zacks (live)"));
       flags.appendChild(flagsWrap);
       tr.appendChild(flags);
       table.appendChild(tr);
@@ -77,12 +81,18 @@
         };
       }
     });
-    allCompanies = Object.keys(byTicker).sort().map(function (t) { return byTicker[t]; });
+    allCompanies = Object.keys(byTicker).map(function (t) { return byTicker[t]; }).sort(function (a, b) {
+      // pilot-depth companies first (otherwise they're invisible, scattered
+      // alphabetically among 500+ rows) -- ticker order within each group
+      if (!!a.pilot_depth !== !!b.pilot_depth) return a.pilot_depth ? -1 : 1;
+      return a.ticker.localeCompare(b.ticker);
+    });
 
     document.getElementById("co500-sub").textContent =
-      allCompanies.length + " companies (S&P 500 + the " + pilot.length + " deep-pilot companies). " +
-      "'pilot' = full blind/feed/weekly-trajectory benchmark depth; ✓ marks which additional data " +
-      "sources are available (earnings-call drivers, segment revenue, real analyst consensus, CC-News prediction).";
+      allCompanies.length + " companies (S&P 500 + the " + pilot.length + " original hand-curated case studies). " +
+      "'pilot' = one of the 5 original case-study companies (hand-curated signals, narrative writeup); " +
+      "✓ marks which data sources/conditions are available at scale for that company (earnings-call " +
+      "drivers, segment revenue, real analyst consensus, CC-News prediction, blind, feed, weekly-trajectory mining).";
     render(allCompanies);
 
     document.getElementById("co500-search").addEventListener("input", function (e) {
