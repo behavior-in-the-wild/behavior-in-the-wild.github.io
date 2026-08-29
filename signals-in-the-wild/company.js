@@ -1,10 +1,11 @@
 /* company.html?c=TICKER — unified per-company detail page.
    Base: S&P-500 scale-up sections (EDGAR history, real consensus, segment revenue,
    QED drivers, CC-News predictions), rendered for any of the 503+ tracked tickers.
-   Extra: for the 5 deep-pilot companies (data/companies.json), also render the
-   blind/feed episode cards, weekly forecast trajectories, and the v1 mining-recall /
-   QED-recall scoring -- gated purely on whether that ticker has pilot-depth data,
-   so one template serves every company without a second page. */
+   Extra: for the 5 companies with a hand-curated 9-model comparison
+   (data/companies.json), also render the blind/feed episode cards, weekly
+   forecast trajectories, and the v1 mining-recall/QED-recall scoring -- gated
+   purely on whether that ticker has this extra data, so one template serves
+   every company without a second page or a special-cased row anywhere. */
 (function () {
   "use strict";
   var S = window.SITW;
@@ -134,7 +135,6 @@
     h.style.margin = "0";
     titleRow.appendChild(h);
     titleRow.appendChild(S.chip(ticker, (pilotCo && pilotCo.color) || "#7C5CFF"));
-    if (pilotCo) titleRow.appendChild(S.el("span", "pilot-badge", "case study"));
     header.appendChild(titleRow);
     header.appendChild(S.el("p", "page-sub", (d && d.sector) || (pilotCo && pilotCo.sector) || ""));
     if (pilotCo && pilotCo.note) {
@@ -266,13 +266,13 @@
     if (pilotCo) {
       var pilotWrap = S.el("div");
       pilotWrap.style.marginTop = "28px";
-      var ph = S.el("h3", null, "Original case study: blind vs. feed-assisted, weekly-tracked (hand-curated)");
+      var ph = S.el("h3", null, "9-model comparison: blind vs. feed-assisted, weekly-tracked (hand-curated signals)");
       pilotWrap.appendChild(ph);
       pilotWrap.appendChild(S.el("p", "page-sub",
-        "This is one of the 5 original case-study companies: every quarter below was also run signal-blind vs. " +
-        "hand-curated-feed-assisted across 9 models, with weekly re-forecasting for lead-time measurement. " +
-        "(Blind, feed, and search-driven weekly-trajectory mining are also run at S&P-500 scale -- see the " +
-        "flags on the companies page and the leaderboard.)"));
+        "For this company, every quarter below was also run signal-blind vs. hand-curated-feed-assisted " +
+        "across 9 models (vs. 3 elsewhere on the site), with weekly re-forecasting for lead-time measurement. " +
+        "(Blind, feed, and search-driven weekly-trajectory mining are also run at S&P-500 scale with 3 models " +
+        "-- see the flags on the companies page and the leaderboard.)"));
       pilotCo.episodes.forEach(function (ep) {
         pilotWrap.appendChild(renderPilotEpisode(ep, miningScoresData, qedScoresData));
       });

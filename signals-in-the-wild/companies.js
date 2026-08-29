@@ -1,7 +1,9 @@
 /* companies.html — unified searchable index: S&P 500 scale-up companies (blind,
-   feed, and weekly-trajectory mining all run at scale -- see the flags column) +
-   the 5 original hand-curated case-study companies (TEAM/Atlassian isn't an S&P
-   500 constituent, so it's merged in separately rather than being silently dropped) */
+   feed, and weekly-trajectory mining all run at scale -- see the flags column),
+   plus 5 of them also have a hand-curated 9-model comparison (TEAM/Atlassian
+   isn't an S&P 500 constituent, so it's merged in separately rather than being
+   silently dropped). No special row treatment -- same table, same sort, just
+   one more flag. */
 (function () {
   "use strict";
   var S = window.SITW;
@@ -32,8 +34,7 @@
         window.location.href = "company.html?c=" + encodeURIComponent(co.ticker);
       });
       var tCell = S.el("td");
-      tCell.appendChild(document.createTextNode(co.ticker + " "));
-      if (co.pilot_depth) tCell.appendChild(S.el("span", "pilot-badge", "case study"));
+      tCell.appendChild(document.createTextNode(co.ticker));
       tr.appendChild(tCell);
       tr.appendChild(S.el("td", null, co.name || ""));
       tr.appendChild(S.el("td", null, co.sector || ""));
@@ -50,6 +51,7 @@
       flagsWrap.appendChild(flag(co.has_feed_scale, "feed"));
       flagsWrap.appendChild(flag(co.has_weekly_scale, "weekly"));
       flagsWrap.appendChild(flag(co.has_zacks_live_consensus, "Zacks (live)"));
+      flagsWrap.appendChild(flag(co.pilot_depth, "9-model comparison"));
       flags.appendChild(flagsWrap);
       tr.appendChild(flags);
       table.appendChild(tr);
@@ -81,18 +83,14 @@
         };
       }
     });
-    allCompanies = Object.keys(byTicker).map(function (t) { return byTicker[t]; }).sort(function (a, b) {
-      // pilot-depth companies first (otherwise they're invisible, scattered
-      // alphabetically among 500+ rows) -- ticker order within each group
-      if (!!a.pilot_depth !== !!b.pilot_depth) return a.pilot_depth ? -1 : 1;
-      return a.ticker.localeCompare(b.ticker);
-    });
+    allCompanies = Object.keys(byTicker).map(function (t) { return byTicker[t]; })
+      .sort(function (a, b) { return a.ticker.localeCompare(b.ticker); });
 
     document.getElementById("co500-sub").textContent =
-      allCompanies.length + " companies (S&P 500 + the " + pilot.length + " original hand-curated case studies). " +
-      "'case study' = one of the 5 original hand-curated companies (signals, narrative writeup); " +
-      "✓ marks which data sources/conditions are available at scale for that company (earnings-call " +
-      "drivers, segment revenue, real analyst consensus, CC-News prediction, blind, feed, weekly-trajectory mining).";
+      allCompanies.length + " companies. ✓ marks which data sources/conditions are available for that " +
+      "company (earnings-call drivers, segment revenue, real analyst consensus, CC-News prediction, " +
+      "blind, feed, weekly-trajectory mining, and a hand-curated 9-model comparison for " + pilot.length +
+      " of them).";
     render(allCompanies);
 
     document.getElementById("co500-search").addEventListener("input", function (e) {
