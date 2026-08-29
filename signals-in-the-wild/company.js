@@ -100,11 +100,12 @@
   var miningScoresPromise = S.fetchJSON("data/mining_scores.json").catch(function () { return null; });
   var qedScoresPromise = S.fetchJSON("data/mining_scores_qed.json").catch(function () { return null; });
   var trajPromise = S.fetchJSON("data/trajectories.json").catch(function () { return null; });
+  var trajScalePromise = S.fetchJSON("data/trajectories_scale.json").catch(function () { return null; });
 
   Promise.all([
     S.fetchJSON("data/company_500_detail.json"),
     S.fetchJSON("data/companies_500.json"),
-    pilotPromise, miningScoresPromise, qedScoresPromise, trajPromise,
+    pilotPromise, miningScoresPromise, qedScoresPromise, trajPromise, trajScalePromise,
   ]).then(function (results) {
     var detailAll = results[0];
     var summaryAll = results[1].companies;
@@ -112,6 +113,7 @@
     var miningScoresData = results[3];
     var qedScoresData = results[4];
     var trajData = results[5];
+    var trajScaleData = results[6];
 
     var d = detailAll[ticker];
     var summary = null;
@@ -291,6 +293,28 @@
           mine.forEach(function (it) { wrap.appendChild(S.trajCard(it, { showModel: true })); });
           body.appendChild(wrap);
         }
+      }
+    }
+
+    // ---- Scale-level weekly trajectories (any company, not just the 9-model ones) ----
+    if (trajScaleData) {
+      var mineScale = trajScaleData.items.filter(function (it) { return it.ticker === ticker; });
+      if (mineScale.length) {
+        var scaleWrap = S.el("div");
+        scaleWrap.style.marginTop = "28px";
+        scaleWrap.appendChild(S.el("h3", null, "Weekly forecast trajectories (S&P-500 scale)"));
+        scaleWrap.appendChild(S.el("p", "page-sub",
+          "How each model's weekly call evolved as it self-mined date-capped signals toward the cutoff, " +
+          "over both the live web and the frozen CC-News archive. There is no week-by-week human/analyst " +
+          "consensus to compare against here -- only a single final pre-report consensus figure exists " +
+          "(see the real-consensus table on the leaderboard); this trajectory data is model predictions only."));
+        ["live web", "CC-News archive"].forEach(function (corpus) {
+          var group = mineScale.filter(function (it) { return it.corpus === corpus; });
+          if (!group.length) return;
+          scaleWrap.appendChild(S.el("div", "cc-sector", corpus));
+          group.forEach(function (it) { scaleWrap.appendChild(S.trajCard(it, { showModel: true })); });
+        });
+        body.appendChild(scaleWrap);
       }
     }
   }).catch(function (e) { S.showError(document.getElementById("co500-body"), e); });
