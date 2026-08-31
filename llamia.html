@@ -10,15 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:url" content="https://behavior-in-the-wild.github.io/llamia">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Internalizing Heterogeneous Agents in Language Model Reasoning">
+    <meta property="og:title" content="Exploring Collaboration between a language and a non-language agent">
     <meta property="og:description"
         content="Replacing verbalized LLM-agent communication with direct latent-representation injection, trained with DAPO. A single 14B model, LLAMIA, matches or exceeds task-specific specialists and GPT-5 with tool access across six collaborative chess tasks.">
     <meta property="og:image" content="https://behavior-in-the-wild.github.io/llamia/assets/img/llamia_architecture.png">
-    <title>Internalizing Heterogeneous Agents in Language Model Reasoning</title>
+    <title>Exploring Collaboration between a language and a non-language agent</title>
     <link rel="canonical" href="https://behavior-in-the-wild.github.io/llamia">
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Internalizing Heterogeneous Agents in Language Model Reasoning">
+    <meta name="twitter:title" content="Exploring Collaboration between a language and a non-language agent">
     <meta name="twitter:description"
         content="Replacing verbalized LLM-agent communication with direct latent-representation injection, trained with DAPO.">
     <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/llamia/assets/img/llamia_architecture.png">
@@ -36,7 +36,7 @@
     { "@type": "Person", "name": "Balaji Krishnamurthy" }
   ],
   "datePublished": "2026",
-  "name": "Internalizing Heterogeneous Agents in Language Model Reasoning",
+  "name": "Exploring Collaboration between a language and a non-language agent",
   "url": "https://behavior-in-the-wild.github.io/llamia",
   "description": "LLAMIA replaces verbalized LLM-subagent communication with direct projection of a non-language agent's latent representations into the LLM's chain of thought, trained via DAPO.",
   "keywords": [
@@ -303,7 +303,7 @@
           h1 { font-size: 1.35rem; }
         }
     </style>
-  <meta name="citation_title" content="Internalizing Heterogeneous Agents in Language Model Reasoning">
+  <meta name="citation_title" content="Exploring Collaboration between a language and a non-language agent">
   <meta name="citation_author" content="Harini S I">
   <meta name="citation_author" content="Somesh Singh">
   <meta name="citation_author" content="Yaman K Singla">
@@ -321,7 +321,7 @@
 
   <div class="page">
 
-    <h1>Internalizing Heterogeneous Agents in Language Model Reasoning</h1>
+    <h1>Exploring Collaboration between a language and a non-language agent</h1>
 
     <div class="authors">
       <a href="https://harini-si.github.io/" target="_blank">Harini S I<sup>*</sup></a>,
@@ -336,6 +336,8 @@
       <img src="images/adobe-logo.png" alt="Adobe"> Adobe Media and Data Science Research (MDSR)
       <span class="sep">&middot;</span>
       <img src="images/iiitd-logo.png" alt="IIIT-Delhi"> IIIT-Delhi
+      <span class="sep">&middot;</span>
+      <img src="images/iitk-logo.png" alt="IIT Kanpur"> IIT Kanpur
       <span class="sep">&middot;</span>
       <img src="images/ub-logo.png" alt="SUNY Buffalo"> SUNY at Buffalo
     </div>
@@ -362,23 +364,21 @@
 
     <p>
       LLMs are increasingly deployed as orchestrators that coordinate specialized subagents to solve complex tasks
-      through natural language. However, in many important domains like game playing and robotics the strongest
+      through natural language. However, in many important domains like game playing and robotics, the strongest
       available agents are not language models. Integrating non-language agents with LLMs would require
-      <b>verbalization</b> &mdash; compressing their rich continuous representations into sparse textual summaries at
-      each interaction step. In this work we introduce the concept of <b>latent state internalization</b>: instead of
-      verbalizing the non-language agent's state, we project its internal continuous representations directly into
-      the LLM's chain of thought as learned state tokens. We show that training LLMs and subagents through
-      internalization and reinforcement learning can solve previously unsolvable tasks, and a single model can
-      outperform existing state-of-the-art task-specific methods trained over 100&times; more data. To evaluate these
-      collaborative abilities, we introduce <b>LLAMIA-Bench</b>, a suite of six collaborative chess tasks from
-      prominent AI literature spanning behavior cloning, state understanding, and natural-language explanation of
-      actions and policies. These tasks cannot be solved by LLMs or subagents independently, making them a perfect
-      testbed for studying collaboration. Our experiments reveal a consistent <b>verbalization debt</b>: verbalizing
-      the subagent's state consistently trails internalizing it, and this gap does not shrink as the LLM scales from
-      4B to 14B parameters. A single 14B model, <b>LLAMIA</b> (Large Language and Action Models with Internal
-      Agents), trained under this paradigm matches or exceeds both dedicated task specialists and the strongest
-      verbalization-based pipeline, GPT-5.1 with tool access, across all benchmark tasks, and generalizes
-      out-of-distribution where these specialists collapse.
+      <b>verbalization</b>: compressing their rich continuous representations into sparse textual summaries at
+      each interaction step. To study whether verbalization constitutes a bottleneck, we introduce
+      <b>LLAMIA-Bench</b>, a suite of six diverse collaborative chess tasks spanning three facets: behavioral
+      imitation, state assessment, and natural-language explanation. Each task instantiates a well-established chess
+      problem that neither the LLM nor the chess engine can solve alone. To solve LLM collaboration with
+      non-language agents, we introduce <b>latent state internalization</b>, which projects the subagent's
+      continuous representations directly into the LLM's token stream as learned state tokens, with dynamic
+      re-encoding as actions advance the environment state. Comparing internalization to verbalized integration,
+      our experiments reveal a consistent <b>verbalization debt</b>: the performance gap widens throughout training
+      and persists as the LLM scales from 4B to 14B parameters. A single 14B model, <b>LLAMIA</b>, trained with
+      latent state internalization, matches or exceeds task specialists and frontier models including GPT-5.1 with
+      tool access across all benchmark tasks, and generalizes out-of-distribution where task-specific finetunes
+      collapse.
     </p>
 
     <ul class="contributions">
@@ -653,7 +653,7 @@
     <h2 id="BibTeX">BibTeX</h2>
 
     <pre><code>@inproceedings{harini2026llamia,
-  title={Internalizing Heterogeneous Agents in Language Model Reasoning},
+  title={Exploring Collaboration between a language and a non-language agent},
   author={Harini, S I and Singh, Somesh and Singla, Yaman K
           and Shah, Rajiv Ratn and Doermann, David and Krishnamurthy, Balaji},
   booktitle={Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP)},
@@ -662,7 +662,7 @@
 
     <hr>
     <footer>
-      <strong>LLAMIA: Internalizing Heterogeneous Agents in Language Model Reasoning</strong> by
+      <strong>LLAMIA: Exploring Collaboration between a language and a non-language agent</strong> by
       <a href="https://behavior-in-the-wild.github.io">Behavior in the Wild</a>.
     </footer>
 
