@@ -245,6 +245,9 @@ table.data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
 .lb-table th, .co500-table th { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
 .lb-row-baseline { background: rgba(124,92,255,0.08); font-style: italic; }
 .lb-below-baseline { color: var(--miss); }
+.lb-model-row td { background: var(--surface-2); }
+.lb-model-row:hover td { background: var(--border); }
+.lb-caret { display: inline-block; width: 14px; color: var(--muted); font-size: 11px; }
 .lb-legend { display: flex; flex-wrap: wrap; gap: 6px 18px; margin-bottom: 12px; font-size: 12px; color: var(--muted); }
 .lb-legend-item { max-width: 320px; }
 .lb-legend-item strong { color: var(--text); }

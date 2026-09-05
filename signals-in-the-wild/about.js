@@ -35,7 +35,7 @@
       var tx = S.svg("text", { x: x + boxW / 2, y: 60 + (li - (lines.length - 1) / 2) * 15,
         "text-anchor": "middle", "dominant-baseline": "central", "font-size": 13,
         "font-family": "system-ui", "font-weight": st.target ? "800" : "600",
-        fill: st.out ? "#5B6577" : "#E6EAF0", "text-decoration": st.out ? "line-through" : "none" });
+        fill: st.out ? "#5B6577" : "#14181F", "text-decoration": st.out ? "line-through" : "none" });
       tx.textContent = ln;
       g.appendChild(tx);
     });

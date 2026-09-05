@@ -626,7 +626,7 @@
       "condition": "Human analyst consensus",
       "corpus": "\u2014",
       "model": "\u2014",
-      "is_baseline": true,
+      "is_human_baseline": true,
       "acc": null,
       "n": null,
       "real_acc": 0.458,

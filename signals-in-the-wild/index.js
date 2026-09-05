@@ -12,10 +12,11 @@
     var rows = data.rows || [];
     var naive = null, models = {}, conds = {};
     rows.forEach(function (r) {
-      if (r.is_baseline) { naive = r.acc; return; }
+      if (r.is_baseline && r.acc != null) naive = r.acc;
       if (r.model && r.model !== "—") models[r.model] = 1;
       conds[r.condition + "|" + (r.corpus || "")] = 1;
     });
+    var modelList = Object.keys(models);
 
     // ----- summary tiles (scale, not pilot) -----
     var tiles = document.getElementById("tiles");
@@ -25,7 +26,7 @@
         { k: "443", l: "S&P 500 companies · 2026 quarters", accent: true },
         { k: pct(naive), l: "Naive always-beat baseline (to beat)" },
         { k: Object.keys(conds).length, l: "Prediction conditions evaluated" },
-        { k: Object.keys(models).length, l: "Models scored so far" },
+        { k: modelList.length, l: "Models scored so far" },
       ];
       items.forEach(function (it) {
         var t = S.el("div", "tile");
@@ -35,37 +36,48 @@
       });
     }
 
-    // ----- compact scale leaderboard preview -----
+    // ----- compact preview: baselines + each model's single best row --
+    // the full breakdown (23 rows) lives on the leaderboard page, not here ----
     var c = document.getElementById("leaderboard-container");
     if (c) {
       S.clear(c);
       var note = document.getElementById("lb-note");
-      if (note) note.textContent = data.label_note || "";
+      if (note) note.textContent = "Best result per model, real-consensus balanced accuracy where available. Full breakdown on the leaderboard.";
       var scroll = S.el("div", "table-scroll");
       var table = S.el("table", "lb-table");
       var thead = S.el("thead"), htr = S.el("tr");
-      ["Condition", "Corpus", "Model", "Dir. acc. (proxy)", "Dir. acc. (real consensus)"]
+      ["Condition", "Corpus", "Model", "Dir. acc.", "Bal. acc."]
         .forEach(function (h) { htr.appendChild(S.el("th", null, h)); });
       thead.appendChild(htr); table.appendChild(thead);
       var tbody = S.el("tbody");
-      rows.forEach(function (r) {
-        var tr = S.el("tr", r.is_baseline ? "lb-row-baseline" : null);
-        tr.appendChild(S.el("td", null, r.condition + (r.partial ? " *" : "")));
+
+      function addRow(r, acc, bal) {
+        var tr = S.el("tr", (r.is_baseline || r.is_human_baseline) ? "lb-row-baseline" : null);
+        tr.appendChild(S.el("td", null, r.condition));
         tr.appendChild(S.el("td", null, r.corpus || "—"));
         var mc = S.el("td");
         if (r.model && r.model !== "—") mc.appendChild(S.el("code", null, r.model)); else mc.textContent = "—";
         tr.appendChild(mc);
-        var ac = S.el("td");
-        if (r.acc != null) {
-          var below = !r.is_baseline && naive != null && r.acc < naive;
-          ac.appendChild(S.el("span", below ? "lb-below-baseline" : null, pct(r.acc)));
-        } else {
-          ac.textContent = "—";
-        }
-        tr.appendChild(ac);
-        tr.appendChild(S.el("td", null, pct(r.real_acc)));
+        tr.appendChild(S.el("td", null, pct(acc)));
+        tr.appendChild(S.el("td", null, bal == null ? "—" : bal));
         tbody.appendChild(tr);
+      }
+
+      rows.filter(function (r) { return r.is_baseline || r.is_human_baseline; }).forEach(function (r) {
+        addRow(r, r.is_human_baseline ? r.real_acc : r.acc, r.is_human_baseline ? r.real_balanced_acc : r.balanced_acc);
       });
+      modelList.forEach(function (m) {
+        var best = null;
+        rows.filter(function (r) { return r.model === m; }).forEach(function (r) {
+          var score = r.real_balanced_acc != null ? r.real_balanced_acc : r.balanced_acc;
+          if (score == null) return;
+          var topScore = best ? (best.real_balanced_acc != null ? best.real_balanced_acc : best.balanced_acc) : -1;
+          if (score > topScore) best = r;
+        });
+        if (best) addRow(best, best.real_acc != null ? best.real_acc : best.acc,
+          best.real_balanced_acc != null ? best.real_balanced_acc : best.balanced_acc);
+      });
+
       table.appendChild(tbody);
       scroll.appendChild(table);
       c.appendChild(scroll);
