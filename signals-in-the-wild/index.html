@@ -29,8 +29,8 @@
         <h1>Predict revenue from <span class="grad">signals in the wild</span>.</h1>
         <p class="lede">AI and humans mine public signals — hiring, launches, pricing, read-through — <em>before</em> a company reports, then predict how its segment revenue will actually come in.</p>
         <div class="btn-row">
-          <a class="btn btn-primary" href="leaderboard.html">View the leaderboard</a>
-          <a class="btn btn-ghost" href="about.html">How it works</a>
+          <a class="btn btn-primary" href="#live-preview">See live predictions</a>
+          <a class="btn btn-ghost" href="#leaderboard">Frozen-historical leaderboard</a>
         </div>
       </div>
       <div class="hero-art" id="hero-art"></div>
@@ -38,6 +38,20 @@
   </header>
 
   <main class="wrap">
+    <section id="live-preview">
+      <div class="section-head">
+        <div>
+          <h2><span class="live-dot" style="margin-right:8px"></span>Live — Next-Quarter Arena (flagship)</h2>
+          <p class="sub" id="live-preview-sub">Pre-registered predictions on real, not-yet-reported quarters — frozen before the outcome exists, so leakage is structurally impossible.</p>
+        </div>
+        <a class="more" href="live.html">All live predictions →</a>
+      </div>
+      <div id="live-preview-table"></div>
+      <h3 id="live-lb-title" style="margin-top:28px"></h3>
+      <p class="page-sub" id="live-lb-sub"></p>
+      <div id="live-preview-leaderboard" style="margin-top:10px"></div>
+    </section>
+
     <section id="stats">
       <div class="tiles" id="tiles"></div>
     </section>
@@ -45,12 +59,17 @@
     <section id="leaderboard">
       <div class="section-head">
         <div>
-          <h2>S&amp;P-500 leaderboard</h2>
-          <p class="sub" id="lb-sub">Surprise-direction accuracy across 443 companies — no-search, single-web-search, and agentic mining, vs. the naive always-beat baseline.</p>
+          <h2>S&amp;P-500 leaderboard (frozen historical)</h2>
+          <p class="sub" id="lb-sub">Surprise-direction accuracy across 443 companies — no-search, single-web-search, and agentic mining, vs. the naive always-beat baseline. Click a model to expand its rows.</p>
         </div>
-        <a class="more" href="leaderboard.html">Full leaderboard →</a>
       </div>
-      <div id="leaderboard-container"></div>
+      <div class="lb-legend">
+        <div class="lb-legend-item"><strong>Dir. acc.</strong> — % of companies where beat/miss/inline was called correctly.</div>
+        <div class="lb-legend-item"><strong>Bal. acc.</strong> — average per-class recall; 0.333 = no better than guessing the majority class. The baseline rows always land exactly on 0.333 since they always output the same class (see Dir. acc. for their real number).</div>
+        <div class="lb-legend-item"><strong>Growth error (pp)</strong> — mean error in predicted YoY revenue growth, in percentage points. Lower is better. This is the fair humans-vs-LLMs comparison (🥇🥈🥉 = lowest 3 overall, analysts included) since it needs no analyst/consensus reference point on either side.</div>
+        <div class="lb-legend-item"><strong>Mining recall</strong> — % of a company's real driving signals the search actually found; only computed so far for agentic mining over CC-News (other conditions show —).</div>
+      </div>
+      <div id="leaderboard-container" style="margin-top:14px"></div>
       <p class="notice" id="lb-note"></p>
     </section>
 
@@ -64,21 +83,9 @@
       </div>
       <div id="company-strip" class="grid grid-3"></div>
     </section>
-
-    <section id="arena">
-      <div class="callout">
-        <h3>Next-Quarter Arena</h3>
-        <p>The flagship live track walks the earnings calendar forward: AI models <strong>and</strong> humans freeze a prediction for each upcoming earnings report, then it resolves mechanically from SEC filings — contamination is structurally impossible.</p>
-        <p>Explore the full 9-model <a href="matrix.html">prediction matrix</a>, or see the upcoming reports where <a href="live.html">predictions are open now</a>.</p>
-        <div class="btn-row" style="margin-top:14px">
-          <a class="btn btn-primary" href="live.html">See live predictions</a>
-          <a class="btn btn-ghost" href="matrix.html">Open the matrix</a>
-        </div>
-      </div>
-    </section>
   </main>
 
-  <script src="common.js"></script>
-  <script src="index.js?v=scale1"></script>
+  <script src="common.js?v=scale16"></script>
+  <script src="index.js?v=scale10"></script>
 </body>
 </html>
