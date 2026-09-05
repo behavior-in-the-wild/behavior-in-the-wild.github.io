@@ -4,33 +4,36 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'" />
-  <title>Model — SITW</title>
-  <meta name="description" content="A model's blind, fed, and mined predictions across every SITW episode." />
+  <title>Live Predictions — SITW</title>
+  <meta name="description" content="Live, unresolved predictions for upcoming quarters — mined and scored before the earnings report." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B0E14'/%3E%3Cpolyline points='6,22 12,18 17,20 22,11 27,8' fill='none' stroke='%233DDC97' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='27' cy='8' r='3' fill='%237C5CFF'/%3E%3C/svg%3E" />
     <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Signals in the Wild (SITW)" />
-  <meta property="og:title" content="Model — SITW" />
-  <meta property="og:description" content="A model's blind, fed, and mined predictions across every SITW episode." />
-  <meta property="og:url" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/model.html" />
+  <meta property="og:title" content="Live Predictions — SITW" />
+  <meta property="og:description" content="Live, unresolved predictions for upcoming quarters — mined and scored before the earnings report." />
+  <meta property="og:url" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/live.html" />
   <meta property="og:image" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/images/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Model — SITW" />
-  <meta name="twitter:description" content="A model's blind, fed, and mined predictions across every SITW episode." />
+  <meta name="twitter:title" content="Live Predictions — SITW" />
+  <meta name="twitter:description" content="Live, unresolved predictions for upcoming quarters — mined and scored before the earnings report." />
   <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/signals-in-the-wild/images/og-image.png" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="wrap">
-    <div id="model-header"></div>
-    <div id="model-stats" class="tiles" style="margin-top:18px"></div>
-    <h3 id="ep-title" style="margin-top:34px"></h3>
-    <div id="model-episodes" class="table-scroll"></div>
-    <a class="back-link" href="index.html#leaderboard">← Back to leaderboard</a>
+    <h2 class="page-title">Live predictions</h2>
+    <p class="page-sub">Full company-by-company list. Summary stats and the leaderboard breakdown are on the <a href="index.html#live-preview">homepage</a>.</p>
+    <div id="live-banner"></div>
+    <p class="notice" id="live-scoring-note"></p>
+    <input id="live-search" class="co500-search" type="text" placeholder="Filter by ticker or company…" style="margin-top:20px" />
+    <div id="live-container" style="margin-top:18px"></div>
+    <p class="notice" id="live-note"></p>
+    <a class="back-link" href="index.html">← Back to home</a>
   </main>
 
   <script src="common.js?v=scale15"></script>
-  <script src="model.js?v=scale4"></script>
+  <script src="live.js?v=scale1"></script>
 </body>
 </html>
