@@ -137,7 +137,9 @@
         0.448
       ],
       "real_balanced_acc": 0.395,
-      "real_n": 330
+      "real_n": 330,
+      "mining_recall": 0.0,
+      "mining_recall_n": 401
     },
     {
       "condition": "Fan-out mining",
@@ -166,7 +168,9 @@
         0.543
       ],
       "real_balanced_acc": 0.373,
-      "real_n": 329
+      "real_n": 329,
+      "mining_recall": 0.003,
+      "mining_recall_n": 401
     },
     {
       "condition": "Fan-out mining",
@@ -195,7 +199,9 @@
         0.491
       ],
       "real_balanced_acc": 0.33,
-      "real_n": 332
+      "real_n": 332,
+      "mining_recall": 0.002,
+      "mining_recall_n": 400
     },
     {
       "condition": "Fan-out mining",
