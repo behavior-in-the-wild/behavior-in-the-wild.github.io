@@ -83,7 +83,7 @@ a:hover { text-decoration: underline; }
   padding: 11px 18px; border-radius: 10px; font-weight: 700; font-size: 15px;
   border: 1px solid var(--border); cursor: pointer;
 }
-.btn-primary { background: var(--accent); color: #FFFFFF; border-color: transparent; }
+.btn-primary { background: #178055; color: #FFFFFF; border-color: transparent; } /* darker than --accent: needs 4.5:1 for white text, --accent only clears 3:1 */
 .btn-primary:hover { filter: brightness(1.08); text-decoration: none; }
 .btn-ghost { background: var(--surface); color: var(--text); }
 .btn-ghost:hover { background: var(--surface-2); text-decoration: none; }

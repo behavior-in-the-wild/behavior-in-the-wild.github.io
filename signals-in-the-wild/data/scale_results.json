@@ -15,7 +15,7 @@
       "macro_f1": 0.299,
       "brier": null,
       "ece": null,
-      "mae": null,
+      "mae": 13.4,
       "n": 443,
       "is_baseline": true,
       "real_acc": 0.479,
@@ -642,6 +642,7 @@
       "is_human_baseline": true,
       "acc": null,
       "n": null,
+      "mae": 5.3,
       "real_acc": 0.458,
       "real_acc_ci95": [
         0.405,

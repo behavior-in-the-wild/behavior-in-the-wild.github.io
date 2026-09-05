@@ -1,4 +1,6 @@
-/* index.html page logic — S&P-500-scale framing (no pilot duplicity). */
+/* index.html page logic — the whole site lives on one page now: live
+   predictions (flagship) + the frozen-historical leaderboard, no separate
+   leaderboard.html to drift out of sync with. */
 (function () {
   "use strict";
   var S = window.SITW;
@@ -8,20 +10,28 @@
 
   function pct(x) { return x == null ? "—" : Math.round(x * 100) + "%"; }
 
-  Promise.all([
-    S.fetchJSON("data/scale_results.json"),
-    S.fetchJSON("data/mining_recall_scale.json").catch(function () { return null; }),
-  ]).then(function (results) {
-    var data = results[0];
+  // ----- live-track preview (the flagship track) -----
+  S.fetchJSON("data/live_scale_500.json").then(function (data) {
+    var box = document.getElementById("live-preview-table");
+    if (!box) return;
+    box.appendChild(S.liveMetricsTable(data));
+    var sub = document.getElementById("live-preview-sub");
+    if (sub) {
+      sub.textContent = data.rows.length + " S&P 500 companies with an upcoming, not-yet-reported quarter, " +
+        "pre-registered before the outcome exists — frozen before the outcome exists, so leakage is structurally impossible.";
+    }
+  }).catch(function (e) { console.error(e); S.showError(document.getElementById("live-preview-table"), "data/live_scale_500.json"); });
+
+  // ----- frozen-historical leaderboard (full table, right here on home) -----
+  S.fetchJSON("data/scale_results.json").then(function (data) {
     var rows = data.rows || [];
     var conds = {};
     rows.forEach(function (r) { conds[r.condition + "|" + (r.corpus || "")] = 1; });
 
-    data.rows.forEach(function (r) {
+    rows.forEach(function (r) {
       if (r.is_human_baseline) r.condition = "Analysts themselves (baseline)";
     });
 
-    // ----- summary tiles (scale, not pilot) -----
     var tiles = document.getElementById("tiles");
     var render = S.renderScaleLeaderboard(document.getElementById("leaderboard-container"), data, { expanded: false });
     if (tiles) {
@@ -40,7 +50,7 @@
       });
     }
     var note = document.getElementById("lb-note");
-    if (note) note.textContent = "This is the same leaderboard as the dedicated page -- click a model to expand its rows.";
+    if (note) note.textContent = "Scored against real analyst consensus, recovered for 332 of 443 companies (75%).";
   }).catch(function (e) { console.error(e); S.showError(document.getElementById("leaderboard-container"), "data/scale_results.json"); });
 
   // ----- companies strip (featured pilot examples with full episode detail) -----

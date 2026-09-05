@@ -128,51 +128,25 @@
   S.fetchJSON("data/live_scale_500.json").then(function (data) {
     allRows = data.rows || [];
 
-    var nZacks = allRows.filter(function (r) { return r.zacks_consensus; }).length;
-    document.getElementById("live-sub").textContent =
-      allRows.length + " S&P 500 companies with an upcoming, not-yet-reported quarter — " +
-      data.models.join(", ") + " × " + data.conditions.map(function (c) { return CONDITION_LABEL[c] || c; }).join(" & ") +
-      ". " + nZacks + " rows also carry a live Zacks analyst-consensus revenue estimate — click a row to see it.";
-
-    var nCells = data.models.length * data.conditions.length;
-    var metricsTable = document.getElementById("live-metrics-table");
-    if (metricsTable) {
-      [
-        ["Companies tracked", String(allRows.length)],
-        ["With live analyst consensus (Zacks)", nZacks + " / " + allRows.length + " (" + Math.round(100 * nZacks / allRows.length) + "%)"],
-        ["Model × condition cells complete", nCells + " / " + nCells + " (100%)"],
-        ["Resolved so far", "0 / " + allRows.length + " — all still open, pending each company's next report"],
-      ].forEach(function (pair) {
-        var tr = S.el("tr");
-        tr.appendChild(S.el("td", null, pair[0]));
-        var td = S.el("td");
-        td.style.textAlign = "right";
-        td.style.fontWeight = "600";
-        td.textContent = pair[1];
-        tr.appendChild(td);
-        metricsTable.appendChild(tr);
-      });
+    var metricsBox = document.getElementById("live-metrics-table");
+    if (metricsBox) {
+      metricsBox.appendChild(S.liveMetricsTable(data));
     }
 
     var banner = document.getElementById("live-banner");
     var b = S.el("div", "live-banner");
     b.appendChild(S.el("span", "live-dot"));
     var txt = S.el("span");
-    txt.appendChild(S.el("strong", null, "Predictions open · resolves once the company reports. "));
+    txt.appendChild(S.el("strong", null, "Predictions open: "));
     txt.appendChild(document.createTextNode(
-      "Each row is frozen before its estimated report date, then scored mechanically once the company reports its actual results — contamination is structurally impossible. Click a row to see every model's call."));
+      "each row is frozen before its estimated report date and scored mechanically once results land — click a row to see every model's call."));
     b.appendChild(txt);
+    banner.appendChild(b);
 
     var scoringNote = document.getElementById("live-scoring-note");
-    scoringNote.appendChild(S.el("strong", null, "This track is pre-registered, not backtested — the scoring is different."));
-    scoringNote.appendChild(S.el("p", "page-sub",
-      "On the leaderboard (frozen historical track), every prediction is scored after the fact against a label — " +
-      "either a naive proxy or a real consensus figure recovered after the quarter already reported. Here, the " +
-      "prediction is committed and timestamped before the outcome exists at all, so there is no proxy: once a " +
-      "company files, we score it directly against the real, then-current sell-side consensus (Zacks, shown per " +
-      "row where available) and the actual reported revenue — the same standard a real analyst is held to, with " +
-      "no leakage possible by construction, since the ground truth did not exist when the call was made."));
-    banner.appendChild(b);
+    scoringNote.textContent =
+      "Unlike the leaderboard's historical proxy scoring, this track is pre-registered before outcomes exist, so " +
+      "each prediction is scored directly against real analyst consensus and actual results — no leakage possible by construction.";
 
     render(allRows);
 

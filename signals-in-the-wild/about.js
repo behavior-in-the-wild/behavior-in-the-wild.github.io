@@ -60,19 +60,4 @@
     svg.appendChild(g);
   });
   box.appendChild(svg);
-
-  // updates changelog -- add new entries in data/updates.json, not here
-  S.fetchJSON("data/updates.json").then(function (d) {
-    var list = document.getElementById("updates-list");
-    d.updates.slice().reverse().forEach(function (u) {
-      var card = S.el("div", "co500-detail-block");
-      card.style.marginTop = "12px";
-      var head = S.el("div", "ep-head");
-      head.appendChild(S.el("span", "ep-title", u.title));
-      head.appendChild(S.el("span", "muted", u.date));
-      card.appendChild(head);
-      card.appendChild(S.el("p", "page-sub", u.body));
-      list.appendChild(card);
-    });
-  }).catch(function (e) { S.showError(document.getElementById("updates-list"), e); });
 })();
