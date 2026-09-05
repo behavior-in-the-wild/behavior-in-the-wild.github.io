@@ -588,6 +588,33 @@
 
   var RANK_MEDALS = ["🥇", "🥈", "🥉"];
 
+  // the 4 value cells (acc/bal/mae/mining-recall) -- shared by a normal data
+  // row and by a model's collapsed header row (which promotes its top row's
+  // numbers so the summary isn't blank before you expand)
+  function lbValueCells(r, naive) {
+    var tds = [];
+    var ac = el("td");
+    var below = !r.is_baseline && !r.is_human_baseline && naive != null && r.real_acc != null && r.real_acc < naive;
+    var span = el("span", below ? "lb-below-baseline" : null);
+    span.appendChild(lbAccCell(r.real_acc, r.real_acc_ci95, r.real_n));
+    ac.appendChild(span);
+    tds.push(ac);
+    // a constant-output baseline (always "beat", or always "inline" -- an
+    // analyst consensus estimate IS an implicit inline call) is mathematically
+    // forced to land on 0.333 here regardless of real skill -- shown plainly,
+    // with the legend explaining why, rather than hidden behind a dash
+    var balTd = el("td", null, r.real_balanced_acc == null ? "—" : r.real_balanced_acc);
+    if (r.is_baseline || r.is_human_baseline) {
+      balTd.title = "This baseline always outputs the same class, so balanced accuracy is mathematically forced to 0.333 regardless of real skill -- see Dir. acc. for the meaningful number.";
+    }
+    tds.push(balTd);
+    tds.push(el("td", null, r.mae == null ? "—" : r.mae));
+    var mrTd = el("td");
+    mrTd.textContent = r.mining_recall != null ? Math.round(r.mining_recall * 100) + "%" : "—";
+    tds.push(mrTd);
+    return tds;
+  }
+
   function lbDataRow(r, naive) {
     var tr = el("tr", (r.is_baseline || r.is_human_baseline) ? "lb-row-baseline" : null);
     var condTd = el("td");
@@ -598,41 +625,34 @@
     }
     condTd.appendChild(document.createTextNode(lbConditionLabel(r) + (r.partial ? " *" : "")));
     tr.appendChild(condTd);
-    var ac = el("td");
-    var below = !r.is_baseline && !r.is_human_baseline && naive != null && r.real_acc != null && r.real_acc < naive;
-    var span = el("span", below ? "lb-below-baseline" : null);
-    span.appendChild(lbAccCell(r.real_acc, r.real_acc_ci95, r.real_n));
-    ac.appendChild(span);
-    tr.appendChild(ac);
-    // a constant-output baseline (always "beat", or always "inline" -- an
-    // analyst consensus estimate IS an implicit inline call) is mathematically
-    // forced to land on 0.333 here regardless of real skill -- shown plainly,
-    // with the legend explaining why, rather than hidden behind a dash
-    var balTd = el("td", null, r.real_balanced_acc == null ? "—" : r.real_balanced_acc);
-    if (r.is_baseline || r.is_human_baseline) {
-      balTd.title = "This baseline always outputs the same class, so balanced accuracy is mathematically forced to 0.333 regardless of real skill -- see Dir. acc. for the meaningful number.";
-    }
-    tr.appendChild(balTd);
-    tr.appendChild(el("td", null, r.mae == null ? "—" : r.mae));
-    var mrTd = el("td");
-    mrTd.textContent = r.mining_recall != null ? Math.round(r.mining_recall * 100) + "%" : "—";
-    tr.appendChild(mrTd);
+    lbValueCells(r, naive).forEach(function (td) { tr.appendChild(td); });
     return tr;
   }
 
   // model group-header row: SAME number of cells as a data row (no colspan),
   // so columns always stay aligned with the header regardless of which rows
-  // are expanded/collapsed
-  function lbModelHeaderRow(model, expanded) {
+  // are expanded/collapsed. Promotes its best row's numbers onto the header
+  // itself (no condition label -- just the numbers) so collapsing doesn't
+  // hide everything about the model behind a click.
+  function lbModelHeaderRow(model, expanded, bestRow, naive) {
     var tr = el("tr", "co500-row lb-model-row");
     var first = el("td");
     var line = el("div", "model-cell");
     line.appendChild(el("span", "lb-caret", expanded ? "▾" : "▸"));
     line.appendChild(avatar(model, model, 20));
+    if (bestRow && bestRow._rank != null && RANK_MEDALS[bestRow._rank]) {
+      var headMedal = el("span", null, RANK_MEDALS[bestRow._rank]);
+      headMedal.title = "#" + (bestRow._rank + 1) + " lowest growth error, from this model's best condition -- the fair humans-vs-LLMs comparison.";
+      line.appendChild(headMedal);
+    }
     line.appendChild(el("strong", null, model));
     first.appendChild(line);
     tr.appendChild(first);
-    for (var i = 1; i < LB_COLS.length; i++) tr.appendChild(el("td"));
+    if (bestRow) {
+      lbValueCells(bestRow, naive).forEach(function (td) { tr.appendChild(td); });
+    } else {
+      for (var i = 1; i < LB_COLS.length; i++) tr.appendChild(el("td"));
+    }
     return tr;
   }
 
@@ -650,13 +670,14 @@
     // actual growth, a fact), so it's the fair apples-to-apples comparison --
     // rank the 2 baselines against each model's own best (lowest-error) row
     var candidates = rows.filter(function (r) { return r.is_baseline || r.is_human_baseline; });
+    var bestByModel = {};
     models.forEach(function (m) {
       var best = null;
       rows.forEach(function (r) {
         if (r.model !== m || r.mae == null) return;
         if (best == null || r.mae < best.mae) best = r;
       });
-      if (best) candidates.push(best);
+      if (best) { candidates.push(best); bestByModel[m] = best; }
     });
     candidates.filter(function (r) { return r.mae != null; })
       .sort(function (a, b) { return a.mae - b.mae; })
@@ -674,7 +695,7 @@
 
     models.forEach(function (m) {
       var modelRows = rows.filter(function (r) { return r.model === m; });
-      var header = lbModelHeaderRow(m, opts.expanded);
+      var header = lbModelHeaderRow(m, opts.expanded, bestByModel[m], naive);
       tbody.appendChild(header);
       var detailTrs = modelRows.map(function (r) {
         var dt = lbDataRow(r, naive);
