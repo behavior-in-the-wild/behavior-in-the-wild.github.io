@@ -217,14 +217,17 @@
       },
       "brier": 0.406,
       "ece": 0.461,
-      "mae": null,
+      "mae": 16.7,
       "real_acc": 0.372,
       "real_acc_ci95": [
         0.321,
         0.425
       ],
       "real_balanced_acc": 0.409,
-      "real_n": 331
+      "real_n": 331,
+      "mining_recall": 0.122,
+      "mining_recall_n": 401,
+      "mining_recall_note": "query+reasoning text only, no retrieved-snippet contents (none were logged for this condition)"
     },
     {
       "condition": "Fan-out mining",
@@ -246,14 +249,17 @@
       },
       "brier": 0.28,
       "ece": 0.225,
-      "mae": null,
+      "mae": 15.8,
       "real_acc": 0.488,
       "real_acc_ci95": [
         0.435,
         0.542
       ],
       "real_balanced_acc": 0.377,
-      "real_n": 332
+      "real_n": 332,
+      "mining_recall": 0.178,
+      "mining_recall_n": 401,
+      "mining_recall_note": "query+reasoning text only, no retrieved-snippet contents (none were logged for this condition)"
     },
     {
       "condition": "Fan-out mining",
@@ -275,14 +281,17 @@
       },
       "brier": 0.334,
       "ece": 0.387,
-      "mae": null,
+      "mae": 16.2,
       "real_acc": 0.476,
       "real_acc_ci95": [
         0.423,
         0.53
       ],
       "real_balanced_acc": 0.371,
-      "real_n": 332
+      "real_n": 332,
+      "mining_recall": 0.137,
+      "mining_recall_n": 400,
+      "mining_recall_note": "query+reasoning text only, no retrieved-snippet contents (none were logged for this condition)"
     },
     {
       "condition": "Agentic mining (weekly)",
@@ -304,7 +313,7 @@
       },
       "brier": 0.218,
       "ece": 0.18,
-      "mae": null,
+      "mae": 14.2,
       "real_acc": 0.452,
       "real_acc_ci95": [
         0.374,
@@ -333,7 +342,7 @@
       },
       "brier": 0.193,
       "ece": 0.1,
-      "mae": null,
+      "mae": 13.4,
       "real_acc": 0.49,
       "real_acc_ci95": [
         0.41,
@@ -362,7 +371,7 @@
       },
       "brier": 0.157,
       "ece": 0.155,
-      "mae": null,
+      "mae": 12.0,
       "real_acc": 0.432,
       "real_acc_ci95": [
         0.354,
