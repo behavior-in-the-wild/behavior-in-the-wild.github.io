@@ -788,13 +788,18 @@
       return { acc: n ? Math.round((correct / n) * 1000) / 1000 : null, ci: wilsonCi(correct, n), n: n, bal: balancedAcc(pairs) };
     }
 
+    var geBaselines = data.growth_error_baselines || {};
+    var geByModel = data.growth_error || {};
+
     var naive = scoreConstant("beat");
     out.push({ condition: "Naive “always beat”", corpus: "—", model: "—", is_baseline: true,
-      real_acc: naive.acc, real_acc_ci95: naive.ci, real_n: naive.n, real_balanced_acc: naive.bal, mae: null, mining_recall: null });
+      real_acc: naive.acc, real_acc_ci95: naive.ci, real_n: naive.n, real_balanced_acc: naive.bal,
+      mae: (geBaselines.naive || {}).mae, mining_recall: null });
 
     var analysts = scoreConstant("inline");
     out.push({ condition: "Analysts themselves (baseline)", corpus: "—", model: "—", is_human_baseline: true,
-      real_acc: analysts.acc, real_acc_ci95: analysts.ci, real_n: analysts.n, real_balanced_acc: analysts.bal, mae: null, mining_recall: null });
+      real_acc: analysts.acc, real_acc_ci95: analysts.ci, real_n: analysts.n, real_balanced_acc: analysts.bal,
+      mae: (geBaselines.analysts || {}).mae, mining_recall: null });
 
     models.forEach(function (m) {
       conditions.forEach(function (cond) {
@@ -808,13 +813,14 @@
         });
         if (!pairs.length) return;
         var correct = pairs.filter(function (p) { return p[0] === p[1]; }).length;
+        var ge = (geByModel[m] || {})[cond];
         out.push({
           condition: meta[0], corpus: meta[1], model: m,
           real_acc: Math.round((correct / pairs.length) * 1000) / 1000,
           real_acc_ci95: wilsonCi(correct, pairs.length),
           real_n: pairs.length,
           real_balanced_acc: balancedAcc(pairs),
-          mae: null, mining_recall: null,
+          mae: ge ? ge.mae : null, mining_recall: null,
         });
       });
     });
