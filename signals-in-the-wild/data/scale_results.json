@@ -17,7 +17,14 @@
       "ece": null,
       "mae": null,
       "n": 443,
-      "is_baseline": true
+      "is_baseline": true,
+      "real_acc": 0.479,
+      "real_acc_ci95": [
+        0.426,
+        0.533
+      ],
+      "real_balanced_acc": 0.333,
+      "real_n": 332
     },
     {
       "condition": "Blind (no search)",
@@ -392,7 +399,9 @@
         0.532
       ],
       "real_balanced_acc": 0.521,
-      "real_n": 261
+      "real_n": 261,
+      "mining_recall": 0.172,
+      "mining_recall_n": 46
     },
     {
       "condition": "Agentic mining",
@@ -422,7 +431,9 @@
         0.556
       ],
       "real_balanced_acc": 0.431,
-      "real_n": 306
+      "real_n": 306,
+      "mining_recall": 0.223,
+      "mining_recall_n": 50
     },
     {
       "condition": "Agentic mining",
@@ -452,7 +463,9 @@
         0.597
       ],
       "real_balanced_acc": 0.419,
-      "real_n": 310
+      "real_n": 310,
+      "mining_recall": 0.186,
+      "mining_recall_n": 50
     },
     {
       "condition": "Agentic mining (weekly)",

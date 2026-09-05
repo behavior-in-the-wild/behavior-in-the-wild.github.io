@@ -543,12 +543,111 @@
       "Could not load " + path + ". Serve the folder over HTTP (see README): python3 -m http.server"));
   }
 
+  // ---- shared scale-leaderboard table: used identically by the homepage and
+  // the leaderboard page, so there is exactly one leaderboard, not a "preview"
+  // and a "full" version that can drift apart or look different. Scored
+  // against real analyst consensus (the meaningful ground truth) -- the proxy
+  // vs-prior-year label used to build these is documented in the paper, not
+  // duplicated here as a second set of columns. ----
+  var LB_COLS = ["Condition", "Corpus", "Model", "Dir. acc.", "Bal. acc.", "Growth error (pp)", "Mining recall"];
+
+  function lbAccCell(acc, ci, n) {
+    var wrap = el("span");
+    if (acc == null) { wrap.textContent = "—"; return wrap; }
+    wrap.appendChild(document.createTextNode(Math.round(acc * 100) + "%"));
+    var small = el("span", "muted");
+    small.style.fontSize = "10.5px"; small.style.marginLeft = "4px";
+    small.textContent = "(n=" + n + (ci ? ", " + Math.round(ci[0] * 100) + "–" + Math.round(ci[1] * 100) + "%" : "") + ")";
+    wrap.appendChild(small);
+    return wrap;
+  }
+
+  function lbDataRow(r, naive) {
+    var tr = el("tr", (r.is_baseline || r.is_human_baseline) ? "lb-row-baseline" : null);
+    tr.appendChild(el("td", null, r.condition + (r.partial ? " *" : "")));
+    tr.appendChild(el("td", null, r.corpus || "—"));
+    var mc = el("td");
+    if (r.model && r.model !== "—") mc.appendChild(el("code", null, r.model)); else mc.textContent = "—";
+    tr.appendChild(mc);
+    var ac = el("td");
+    var below = !r.is_baseline && !r.is_human_baseline && naive != null && r.real_acc != null && r.real_acc < naive;
+    var span = el("span", below ? "lb-below-baseline" : null);
+    span.appendChild(lbAccCell(r.real_acc, r.real_acc_ci95, r.real_n));
+    ac.appendChild(span);
+    tr.appendChild(ac);
+    tr.appendChild(el("td", null, r.real_balanced_acc == null ? "—" : r.real_balanced_acc));
+    tr.appendChild(el("td", null, r.mae == null ? "—" : r.mae));
+    var mrTd = el("td");
+    mrTd.textContent = r.mining_recall != null ? Math.round(r.mining_recall * 100) + "%" : "—";
+    tr.appendChild(mrTd);
+    return tr;
+  }
+
+  // model group-header row: SAME number of cells as a data row (no colspan),
+  // so columns always stay aligned with the header regardless of which rows
+  // are expanded/collapsed
+  function lbModelHeaderRow(model, expanded) {
+    var tr = el("tr", "co500-row lb-model-row");
+    var first = el("td");
+    var line = el("div", "model-cell");
+    line.appendChild(el("span", "lb-caret", expanded ? "▾" : "▸"));
+    line.appendChild(avatar(model, model, 20));
+    line.appendChild(el("strong", null, model));
+    first.appendChild(line);
+    tr.appendChild(first);
+    for (var i = 1; i < LB_COLS.length; i++) tr.appendChild(el("td"));
+    return tr;
+  }
+
+  function renderScaleLeaderboard(container, data, opts) {
+    opts = opts || {};
+    clear(container);
+    var rows = data.rows || [];
+    var naive = null;
+    rows.forEach(function (r) { if (r.is_baseline && r.real_acc != null) naive = r.real_acc; });
+    var models = [];
+    rows.forEach(function (r) { if (r.model && r.model !== "—" && models.indexOf(r.model) === -1) models.push(r.model); });
+
+    var scroll = el("div", "table-scroll");
+    var table = el("table", "lb-table");
+    var thead = el("thead"), htr = el("tr");
+    LB_COLS.forEach(function (h) { htr.appendChild(el("th", null, h)); });
+    thead.appendChild(htr); table.appendChild(thead);
+    var tbody = el("tbody");
+
+    rows.filter(function (r) { return r.is_baseline || r.is_human_baseline; })
+      .forEach(function (r) { tbody.appendChild(lbDataRow(r, naive)); });
+
+    models.forEach(function (m) {
+      var modelRows = rows.filter(function (r) { return r.model === m; });
+      var header = lbModelHeaderRow(m, opts.expanded);
+      tbody.appendChild(header);
+      var detailTrs = modelRows.map(function (r) {
+        var dt = lbDataRow(r, naive);
+        dt.style.display = opts.expanded ? "" : "none";
+        return dt;
+      });
+      detailTrs.forEach(function (dt) { tbody.appendChild(dt); });
+      header.addEventListener("click", function () {
+        var showing = detailTrs[0].style.display !== "none";
+        detailTrs.forEach(function (dt) { dt.style.display = showing ? "none" : ""; });
+        header.querySelector(".lb-caret").textContent = showing ? "▸" : "▾";
+      });
+    });
+
+    table.appendChild(tbody);
+    scroll.appendChild(table);
+    container.appendChild(scroll);
+    return { naive: naive, models: models };
+  }
+
   global.SITW = {
     el: el, frag: frag, clear: clear, svg: svg,
     avatar: avatar, avatarColor: avatarColor, chip: chip, pill: pill, typeTag: typeTag,
     accBar: accBar, barChart: barChart, heroArt: heroArt, brandMark: brandMark,
     miningPanel: miningPanel, trajChart: trajChart, trajCard: trajCard, leadBadge: leadBadge,
     miningRecallSection: miningRecallSection, qedRecallSection: qedRecallSection,
+    renderScaleLeaderboard: renderScaleLeaderboard,
     mountChrome: mountChrome, fetchJSON: fetchJSON,
     fmtPct: fmtPct, fmtSkill: fmtSkill, fmtBrier: fmtBrier,
     getParam: getParam, showError: showError,

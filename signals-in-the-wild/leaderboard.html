@@ -24,14 +24,18 @@
 <body>
   <main class="wrap">
     <h2 class="page-title">Leaderboard</h2>
-    <p class="page-sub" id="lb-metric"></p>
     <p class="page-sub" id="lb-note"></p>
-    <div id="leaderboard-container" style="margin-top:18px"></div>
-    <p class="notice">Column definitions: <a href="about.html#metrics">glossary</a>.</p>
-    <div id="lb-mining-recall" style="margin-top:32px"></div>
+    <div class="lb-legend">
+      <div class="lb-legend-item"><strong>Dir. acc.</strong> — % of companies where beat/miss/inline was called correctly.</div>
+      <div class="lb-legend-item"><strong>Bal. acc.</strong> — average per-class recall; 0.333 = no better than guessing the majority class.</div>
+      <div class="lb-legend-item"><strong>Growth error (pp)</strong> — mean error in predicted YoY revenue growth, in percentage points. Lower is better.</div>
+      <div class="lb-legend-item"><strong>Mining recall</strong> — % of a company's real driving signals the search actually found (not just whether the final call was right).</div>
+    </div>
+    <div id="leaderboard-container" style="margin-top:14px"></div>
+    <p class="notice" id="lb-mining-recall-note"></p>
   </main>
 
-  <script src="common.js"></script>
-  <script src="leaderboard.js?v=scale1"></script>
+  <script src="common.js?v=scale3"></script>
+  <script src="leaderboard.js?v=scale2"></script>
 </body>
 </html>

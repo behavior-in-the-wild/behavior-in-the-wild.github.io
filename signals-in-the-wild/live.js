@@ -134,6 +134,26 @@
       data.models.join(", ") + " × " + data.conditions.map(function (c) { return CONDITION_LABEL[c] || c; }).join(" & ") +
       ". " + nZacks + " rows also carry a live Zacks analyst-consensus revenue estimate — click a row to see it.";
 
+    var nCells = data.models.length * data.conditions.length;
+    var metricsTable = document.getElementById("live-metrics-table");
+    if (metricsTable) {
+      [
+        ["Companies tracked", String(allRows.length)],
+        ["With live analyst consensus (Zacks)", nZacks + " / " + allRows.length + " (" + Math.round(100 * nZacks / allRows.length) + "%)"],
+        ["Model × condition cells complete", nCells + " / " + nCells + " (100%)"],
+        ["Resolved so far", "0 / " + allRows.length + " — all still open, pending each company's next report"],
+      ].forEach(function (pair) {
+        var tr = S.el("tr");
+        tr.appendChild(S.el("td", null, pair[0]));
+        var td = S.el("td");
+        td.style.textAlign = "right";
+        td.style.fontWeight = "600";
+        td.textContent = pair[1];
+        tr.appendChild(td);
+        metricsTable.appendChild(tr);
+      });
+    }
+
     var banner = document.getElementById("live-banner");
     var b = S.el("div", "live-banner");
     b.appendChild(S.el("span", "live-dot"));
