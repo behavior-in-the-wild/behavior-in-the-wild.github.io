@@ -722,14 +722,11 @@
     var rows = data.rows || [];
     var nZacks = rows.filter(function (r) { return r.zacks_consensus; }).length;
     var nCells = (data.models || []).length * (data.conditions || []).length;
-    var nResolved = rows.filter(function (r) { return r.resolved; }).length;
     var table = el("table", "lb-table");
     [
       ["Companies tracked", String(rows.length)],
       ["With live analyst consensus (Zacks)", nZacks + " / " + rows.length + " (" + Math.round(100 * nZacks / rows.length) + "%)"],
       ["Model × condition cells complete", nCells + " / " + nCells + " (100%)"],
-      ["Resolved so far", nResolved + " / " + rows.length +
-        (nResolved ? "" : " — all still open, pending each company's next report")],
     ].forEach(function (pair) {
       var tr = el("tr");
       tr.appendChild(el("td", null, pair[0]));

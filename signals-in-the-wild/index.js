@@ -10,7 +10,9 @@
 
   function pct(x) { return x == null ? "—" : Math.round(x * 100) + "%"; }
 
-  // ----- live-track preview (the flagship track) -----
+  // ----- live-track preview (the flagship track) -- same leaderboard table
+  // as live.html, not just the stats summary, so this page isn't a second-
+  // class teaser of the real thing -----
   S.fetchJSON("data/live_scale_500.json").then(function (data) {
     var box = document.getElementById("live-preview-table");
     if (!box) return;
@@ -19,6 +21,11 @@
     if (sub) {
       sub.textContent = data.rows.length + " S&P 500 companies with an upcoming, not-yet-reported quarter, " +
         "pre-registered before the outcome exists — frozen before the outcome exists, so leakage is structurally impossible.";
+    }
+    var nResolved = data.rows.filter(function (r) { return r.resolved; }).length;
+    var lbBox = document.getElementById("live-preview-leaderboard");
+    if (nResolved && lbBox) {
+      S.renderScaleLeaderboard(lbBox, S.buildLiveLeaderboardData(data), { expanded: false });
     }
   }).catch(function (e) { console.error(e); S.showError(document.getElementById("live-preview-table"), "data/live_scale_500.json"); });
 
