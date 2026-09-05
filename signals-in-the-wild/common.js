@@ -718,16 +718,38 @@
 
   // ---- live-track stats table: shared by index.html's homepage teaser and
   // live.html's full page, so the two can never show different numbers ----
+  // per-model accuracy across every resolved company/condition pair so far --
+  // the real, live equivalent of the frozen leaderboard's Dir. acc. column
+  function liveModelAccuracy(rows) {
+    var acc = {}; // model -> {correct, total}
+    rows.forEach(function (r) {
+      if (!r.resolved) return;
+      var preds = r.predictions || {};
+      Object.keys(preds).forEach(function (m) {
+        Object.keys(preds[m]).forEach(function (cond) {
+          var p = preds[m][cond];
+          if (p.correct == null) return;
+          acc[m] = acc[m] || { correct: 0, total: 0 };
+          acc[m].total++;
+          if (p.correct) acc[m].correct++;
+        });
+      });
+    });
+    return acc;
+  }
+
   function liveMetricsTable(data) {
     var rows = data.rows || [];
     var nZacks = rows.filter(function (r) { return r.zacks_consensus; }).length;
     var nCells = (data.models || []).length * (data.conditions || []).length;
+    var nResolved = rows.filter(function (r) { return r.resolved; }).length;
     var table = el("table", "lb-table");
     [
       ["Companies tracked", String(rows.length)],
       ["With live analyst consensus (Zacks)", nZacks + " / " + rows.length + " (" + Math.round(100 * nZacks / rows.length) + "%)"],
       ["Model × condition cells complete", nCells + " / " + nCells + " (100%)"],
-      ["Resolved so far", "0 / " + rows.length + " — all still open, pending each company's next report"],
+      ["Resolved so far", nResolved + " / " + rows.length +
+        (nResolved ? "" : " — all still open, pending each company's next report")],
     ].forEach(function (pair) {
       var tr = el("tr");
       tr.appendChild(el("td", null, pair[0]));
@@ -738,6 +760,23 @@
       tr.appendChild(td);
       table.appendChild(tr);
     });
+    if (nResolved) {
+      var acc = liveModelAccuracy(rows);
+      Object.keys(acc).sort().forEach(function (m) {
+        var a = acc[m];
+        var tr = el("tr");
+        var nameTd = el("td");
+        nameTd.appendChild(el("code", null, m));
+        nameTd.appendChild(document.createTextNode(" accuracy (resolved so far)"));
+        tr.appendChild(nameTd);
+        var td = el("td");
+        td.style.textAlign = "right";
+        td.style.fontWeight = "600";
+        td.textContent = Math.round(100 * a.correct / a.total) + "% (" + a.correct + "/" + a.total + ")";
+        tr.appendChild(td);
+        table.appendChild(tr);
+      });
+    }
     return table;
   }
 

@@ -16,13 +16,19 @@
     return typeof v === "number" ? Math.round(v * 100) + "%" : "—";
   }
 
-  function predChip(pred, conf) {
+  function predChip(pred, conf, correct) {
     var s = (pred || "").toLowerCase();
     if (s !== "beat" && s !== "miss" && s !== "inline") {
       return S.el("span", "pill pill-na", "n/a");
     }
     var chip = S.el("span", "pill pill-" + s, pred + " ");
     chip.appendChild(S.el("span", null, fmtConf(conf)));
+    if (correct != null) {
+      var mark = S.el("span", null, correct ? " ✓" : " ✗");
+      mark.style.color = correct ? "var(--beat)" : "var(--miss)";
+      mark.style.fontWeight = "700";
+      chip.appendChild(mark);
+    }
     return chip;
   }
 
@@ -74,7 +80,7 @@
         line.style.margin = "6px 0 6px 30px";
         var labelRow = S.el("div");
         labelRow.appendChild(S.el("span", "mc-cond", CONDITION_LABEL[cond] + ": "));
-        labelRow.appendChild(predChip(p.pred, p.conf));
+        labelRow.appendChild(predChip(p.pred, p.conf, p.correct));
         line.appendChild(labelRow);
         if (p.reasoning) {
           line.appendChild(S.el("p", "co500-quote", p.reasoning));
@@ -103,10 +109,19 @@
       tr.appendChild(S.el("td", null, row.quarter || "—"));
       tr.appendChild(S.el("td", null, row.next_report_date_est || "—"));
       var statusTd = S.el("td");
-      var badge = S.el("span", "status-predicted");
-      badge.appendChild(S.el("span", "live-dot"));
-      badge.appendChild(document.createTextNode("Predicted — not yet reported"));
-      statusTd.appendChild(badge);
+      if (row.resolved) {
+        statusTd.appendChild(S.pill(row.real_label));
+        var note = S.el("span", "muted", " reported " + (row.actual_report_date || ""));
+        note.style.fontSize = "11px";
+        note.style.marginLeft = "6px";
+        statusTd.appendChild(note);
+      } else {
+        var badge = S.el("span", row.report_slipped ? "status-pending" : "status-predicted");
+        badge.appendChild(S.el("span", "live-dot"));
+        badge.appendChild(document.createTextNode(
+          row.report_slipped ? "Report date slipped — not yet reported" : "Predicted — not yet reported"));
+        statusTd.appendChild(badge);
+      }
       tr.appendChild(statusTd);
       table.appendChild(tr);
 
