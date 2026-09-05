@@ -718,26 +718,6 @@
 
   // ---- live-track stats table: shared by index.html's homepage teaser and
   // live.html's full page, so the two can never show different numbers ----
-  // per-model accuracy across every resolved company/condition pair so far --
-  // the real, live equivalent of the frozen leaderboard's Dir. acc. column
-  function liveModelAccuracy(rows) {
-    var acc = {}; // model -> {correct, total}
-    rows.forEach(function (r) {
-      if (!r.resolved) return;
-      var preds = r.predictions || {};
-      Object.keys(preds).forEach(function (m) {
-        Object.keys(preds[m]).forEach(function (cond) {
-          var p = preds[m][cond];
-          if (p.correct == null) return;
-          acc[m] = acc[m] || { correct: 0, total: 0 };
-          acc[m].total++;
-          if (p.correct) acc[m].correct++;
-        });
-      });
-    });
-    return acc;
-  }
-
   function liveMetricsTable(data) {
     var rows = data.rows || [];
     var nZacks = rows.filter(function (r) { return r.zacks_consensus; }).length;
@@ -760,24 +740,88 @@
       tr.appendChild(td);
       table.appendChild(tr);
     });
-    if (nResolved) {
-      var acc = liveModelAccuracy(rows);
-      Object.keys(acc).sort().forEach(function (m) {
-        var a = acc[m];
-        var tr = el("tr");
-        var nameTd = el("td");
-        nameTd.appendChild(el("code", null, m));
-        nameTd.appendChild(document.createTextNode(" accuracy (resolved so far)"));
-        tr.appendChild(nameTd);
-        var td = el("td");
-        td.style.textAlign = "right";
-        td.style.fontWeight = "600";
-        td.textContent = Math.round(100 * a.correct / a.total) + "% (" + a.correct + "/" + a.total + ")";
-        tr.appendChild(td);
-        table.appendChild(tr);
-      });
-    }
     return table;
+  }
+
+  var LIVE_CONDITION_META = {
+    blind: ["Blind (no search)", "—"],
+    ccnews: ["Fan-out mining", "CC-News archive"],
+    c6ccnews: ["Agentic mining", "CC-News archive"],
+    c6live: ["Agentic mining", "live web"],
+    fanoutlive: ["Fan-out mining", "live web"],
+  };
+
+  function wilsonCi(k, n) {
+    if (!n) return null;
+    var z = 1.96, p = k / n;
+    var denom = 1 + (z * z) / n;
+    var center = (p + (z * z) / (2 * n)) / denom;
+    var half = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / denom;
+    return [Math.max(0, center - half), Math.min(1, center + half)];
+  }
+
+  function balancedAcc(pairs) {
+    // pairs = [[pred, actual], ...] over beat/miss/inline
+    var classes = ["beat", "miss", "inline"], recalls = [];
+    classes.forEach(function (c) {
+      var tp = 0, n_c = 0;
+      pairs.forEach(function (pr) {
+        if (pr[1] === c) { n_c++; if (pr[0] === c) tp++; }
+      });
+      if (n_c) recalls.push(tp / n_c);
+    });
+    if (!recalls.length) return null;
+    return Math.round((recalls.reduce(function (a, b) { return a + b; }, 0) / recalls.length) * 1000) / 1000;
+  }
+
+  // builds a rows[] in the exact same shape as the frozen leaderboard's
+  // scale_results.json, from the live track's resolved companies only, so the
+  // identical renderScaleLeaderboard can draw both -- same columns, same
+  // model-grouping, same medals, not just visually similar.
+  function buildLiveLeaderboardData(data) {
+    var resolvedRows = (data.rows || []).filter(function (r) { return r.resolved; });
+    var models = data.models || [];
+    var conditions = data.conditions || [];
+    var out = [];
+
+    function scoreConstant(constantPred) {
+      var pairs = resolvedRows.map(function (r) { return [constantPred, r.real_label]; });
+      var correct = pairs.filter(function (p) { return p[0] === p[1]; }).length;
+      var n = pairs.length;
+      return { acc: n ? Math.round((correct / n) * 1000) / 1000 : null, ci: wilsonCi(correct, n), n: n, bal: balancedAcc(pairs) };
+    }
+
+    var naive = scoreConstant("beat");
+    out.push({ condition: "Naive “always beat”", corpus: "—", model: "—", is_baseline: true,
+      real_acc: naive.acc, real_acc_ci95: naive.ci, real_n: naive.n, real_balanced_acc: naive.bal, mae: null, mining_recall: null });
+
+    var analysts = scoreConstant("inline");
+    out.push({ condition: "Analysts themselves (baseline)", corpus: "—", model: "—", is_human_baseline: true,
+      real_acc: analysts.acc, real_acc_ci95: analysts.ci, real_n: analysts.n, real_balanced_acc: analysts.bal, mae: null, mining_recall: null });
+
+    models.forEach(function (m) {
+      conditions.forEach(function (cond) {
+        var meta = LIVE_CONDITION_META[cond];
+        if (!meta) return;
+        var pairs = [];
+        resolvedRows.forEach(function (r) {
+          var p = (r.predictions[m] || {})[cond];
+          if (!p || p.correct == null) return;
+          pairs.push([(p.pred || "").toLowerCase(), r.real_label]);
+        });
+        if (!pairs.length) return;
+        var correct = pairs.filter(function (p) { return p[0] === p[1]; }).length;
+        out.push({
+          condition: meta[0], corpus: meta[1], model: m,
+          real_acc: Math.round((correct / pairs.length) * 1000) / 1000,
+          real_acc_ci95: wilsonCi(correct, pairs.length),
+          real_n: pairs.length,
+          real_balanced_acc: balancedAcc(pairs),
+          mae: null, mining_recall: null,
+        });
+      });
+    });
+    return { rows: out };
   }
 
   global.SITW = {
@@ -787,6 +831,7 @@
     miningPanel: miningPanel, trajChart: trajChart, trajCard: trajCard, leadBadge: leadBadge,
     miningRecallSection: miningRecallSection, qedRecallSection: qedRecallSection,
     renderScaleLeaderboard: renderScaleLeaderboard, liveMetricsTable: liveMetricsTable,
+    buildLiveLeaderboardData: buildLiveLeaderboardData,
     mountChrome: mountChrome, fetchJSON: fetchJSON,
     fmtPct: fmtPct, fmtSkill: fmtSkill, fmtBrier: fmtBrier,
     getParam: getParam, showError: showError,

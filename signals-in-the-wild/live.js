@@ -148,6 +148,19 @@
       metricsBox.appendChild(S.liveMetricsTable(data));
     }
 
+    var nResolved = allRows.filter(function (r) { return r.resolved; }).length;
+    var lbTitle = document.getElementById("live-lb-title");
+    var lbSub = document.getElementById("live-lb-sub");
+    var lbContainer = document.getElementById("live-leaderboard-container");
+    if (nResolved && lbContainer) {
+      if (lbTitle) lbTitle.textContent = "Live leaderboard (resolved so far)";
+      if (lbSub) lbSub.textContent = "Same columns as the frozen-historical leaderboard, scored on just the " +
+        nResolved + " companies that have actually reported so far — small samples, so treat these as early reads, not final results.";
+      S.renderScaleLeaderboard(lbContainer, S.buildLiveLeaderboardData(data), { expanded: false });
+    } else if (lbTitle) {
+      lbTitle.textContent = "";
+    }
+
     var banner = document.getElementById("live-banner");
     var b = S.el("div", "live-banner");
     b.appendChild(S.el("span", "live-dot"));
