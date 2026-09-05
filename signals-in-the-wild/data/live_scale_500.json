@@ -37483,5 +37483,73 @@
       "mae": 2.2,
       "n": 14
     }
+  },
+  "mining_recall": {
+    "gpt-4o-mini": {
+      "blind": {
+        "mean_recall": 0.0,
+        "n": 13
+      },
+      "ccnews": {
+        "mean_recall": 0.057,
+        "n": 14
+      },
+      "c6ccnews": {
+        "mean_recall": 0.013,
+        "n": 13
+      },
+      "c6live": {
+        "mean_recall": 0.007,
+        "n": 13
+      },
+      "fanoutlive": {
+        "mean_recall": 0.018,
+        "n": 14
+      }
+    },
+    "gpt-5.3-chat": {
+      "blind": {
+        "mean_recall": 0.014,
+        "n": 14
+      },
+      "ccnews": {
+        "mean_recall": 0.258,
+        "n": 14
+      },
+      "c6ccnews": {
+        "mean_recall": 0.066,
+        "n": 14
+      },
+      "c6live": {
+        "mean_recall": 0.06,
+        "n": 14
+      },
+      "fanoutlive": {
+        "mean_recall": 0.18,
+        "n": 13
+      }
+    },
+    "gpt-5.4": {
+      "blind": {
+        "mean_recall": 0.0,
+        "n": 14
+      },
+      "ccnews": {
+        "mean_recall": 0.208,
+        "n": 14
+      },
+      "c6ccnews": {
+        "mean_recall": 0.032,
+        "n": 13
+      },
+      "c6live": {
+        "mean_recall": 0.029,
+        "n": 14
+      },
+      "fanoutlive": {
+        "mean_recall": 0.118,
+        "n": 14
+      }
+    }
   }
 }

@@ -790,6 +790,7 @@
 
     var geBaselines = data.growth_error_baselines || {};
     var geByModel = data.growth_error || {};
+    var mrByModel = data.mining_recall || {};
 
     var naive = scoreConstant("beat");
     out.push({ condition: "Naive “always beat”", corpus: "—", model: "—", is_baseline: true,
@@ -814,13 +815,15 @@
         if (!pairs.length) return;
         var correct = pairs.filter(function (p) { return p[0] === p[1]; }).length;
         var ge = (geByModel[m] || {})[cond];
+        var mr = (mrByModel[m] || {})[cond];
         out.push({
           condition: meta[0], corpus: meta[1], model: m,
           real_acc: Math.round((correct / pairs.length) * 1000) / 1000,
           real_acc_ci95: wilsonCi(correct, pairs.length),
           real_n: pairs.length,
           real_balanced_acc: balancedAcc(pairs),
-          mae: ge ? ge.mae : null, mining_recall: null,
+          mae: ge ? ge.mae : null,
+          mining_recall: mr ? mr.mean_recall : null,
         });
       });
     });
