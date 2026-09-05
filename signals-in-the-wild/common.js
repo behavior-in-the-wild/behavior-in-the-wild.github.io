@@ -487,7 +487,7 @@
 
     var links = el("div", "nav-links");
     [["index.html", "Home"],
-     ["companies.html", "Companies"], ["live.html", "Live"], ["about.html", "About"]]
+     ["companies.html", "Companies"], ["about.html", "About"]]
       .forEach(function (p) {
         var a = el("a", active === p[0] ? "active" : null, p[1]);
         a.href = p[0];
@@ -510,7 +510,7 @@
     var c2 = el("div");
     c2.appendChild(el("h4", null, "Explore"));
     [["index.html", "Home"], ["companies.html", "Companies"],
-     ["live.html", "Live"], ["about.html", "About"]].forEach(function (p) {
+     ["about.html", "About"]].forEach(function (p) {
       var a = el("a", null, p[1]); a.href = p[0]; c2.appendChild(a);
     });
 
@@ -716,8 +716,8 @@
     return { naive: naive, models: models };
   }
 
-  // ---- live-track stats table: shared by index.html's homepage teaser and
-  // live.html's full page, so the two can never show different numbers ----
+  // ---- live-track stats table, shown on the homepage (the whole live track
+  // lives there now, no separate page) ----
   function liveMetricsTable(data) {
     var rows = data.rows || [];
     var nZacks = rows.filter(function (r) { return r.zacks_consensus; }).length;
