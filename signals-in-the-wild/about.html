@@ -63,7 +63,24 @@
           <li><strong>CC-News:</strong> a separate, local-only point-in-time news index (Common Crawl News). Deliberately <em>not</em> mixed with live web search — it's a parallel condition compared against the web-search conditions above, not a hybrid of the two.</li>
           <li><strong>Weekly / live track:</strong> a second axis, not a condition — any of the above can be run once at the cutoff, or repeated weekly in the runup to it, to measure how early a model locks in the correct call (lead-time).</li>
         </ul>
-        <p class="page-sub" style="margin-top:10px">A real human/analyst baseline (live Zacks sell-side consensus, 365 of the 371 live-track companies) is on the <a href="live.html">Live</a> page — click a row to see it alongside each model's call. Not yet on this site: sell-side consensus as its own scored condition (it resolves too recently to score against yet), and an AIA-Forecaster-style supervisor/calibration layer on top of C6 — these exist in the paper's design but aren't run at scale yet.</p>
+        <p class="page-sub" style="margin-top:10px">A real human/analyst baseline is scored two ways: for the frozen historical track, every condition above is rescored against real sell-side consensus recovered for 332 of 443 companies (75%) — see the <a href="leaderboard.html">leaderboard</a>'s "real consensus" columns; for the standing live track, current Zacks consensus (365 of 371 companies) is shown alongside each model's call on the <a href="live.html">Live</a> page. Not yet on this site: an AIA-Forecaster-style supervisor/calibration layer on top of C6 — this exists in the paper's design but isn't run at scale yet.</p>
+      </div>
+    </section>
+
+    <section id="metrics">
+      <h3>What the metrics mean</h3>
+      <p class="page-sub">Every number on the leaderboard, defined plainly.</p>
+      <div class="card">
+        <ul class="ep-signals">
+          <li><strong>Dir. acc. (direction accuracy):</strong> the fraction of companies where the model's beat/miss/inline call matched the actual outcome. Shown with a 95% Wilson confidence interval in parentheses — the range the true accuracy plausibly falls in, given the sample size.</li>
+          <li><strong>Proxy label:</strong> for the 443-company frozen historical track, "actual" means revenue vs. the same quarter one year prior (±2% = inline) — a free, always-available substitute for real analyst consensus, which no provider publishes in bulk for already-reported quarters. This label is heavily skewed toward "beat" (81.3%), so a model that always guesses "beat" scores 81.3% by luck alone.</li>
+          <li><strong>Real consensus:</strong> for 332 of the 443 companies (75%), we separately recovered a real, human-cited analyst consensus figure (MarketBeat, and CNBC citing LSEG/Refinitiv) and rescore the same predictions against it. This is harder to get right than the proxy and directly comparable to how a human analyst would be judged — see "Human analyst consensus" below.</li>
+          <li><strong>Balanced acc. (balanced accuracy):</strong> the average of per-class recall across beat/miss/inline, instead of raw accuracy. A model that always guesses the majority class scores 0.333 by construction (the floor), regardless of the label's skew — this is what actually separates genuine skill from exploiting a skewed label.</li>
+          <li><strong>Human analyst consensus:</strong> the consensus figure itself is the analyst pool's implicit forecast (predicting the actual will land within the same ±2% band). Scoring that against the real-consensus label measures how often professional analysts are right, by the identical standard every model is judged on: 45.8% (n=332).</li>
+          <li><strong>Brier score / ECE:</strong> both grade the model's stated confidence, not just its call. Brier is the mean squared error between confidence and correctness (0 = perfect, 1 = worst). ECE (expected calibration error) checks whether "80% confident" predictions are actually right about 80% of the time. Lower is better for both.</li>
+          <li><strong>Surprise MAE:</strong> mean absolute error, in percentage points, between the model's predicted year-over-year revenue growth and the actual growth — a magnitude check beyond the three-way beat/miss/inline call.</li>
+          <li><strong>Mining recall:</strong> a completely different axis — not "was the final call right," but "did the model's search actually find the real signals that drove the outcome," scored against the gold demand-driver map. See the leaderboard's mining-recall section.</li>
+        </ul>
       </div>
     </section>
 

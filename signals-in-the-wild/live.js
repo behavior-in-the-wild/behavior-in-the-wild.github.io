@@ -142,6 +142,16 @@
     txt.appendChild(document.createTextNode(
       "Each row is frozen before its estimated report date, then scored mechanically once the company reports its actual results — contamination is structurally impossible. Click a row to see every model's call."));
     b.appendChild(txt);
+
+    var scoringNote = document.getElementById("live-scoring-note");
+    scoringNote.appendChild(S.el("strong", null, "This track is pre-registered, not backtested — the scoring is different."));
+    scoringNote.appendChild(S.el("p", "page-sub",
+      "On the leaderboard (frozen historical track), every prediction is scored after the fact against a label — " +
+      "either a naive proxy or a real consensus figure recovered after the quarter already reported. Here, the " +
+      "prediction is committed and timestamped before the outcome exists at all, so there is no proxy: once a " +
+      "company files, we score it directly against the real, then-current sell-side consensus (Zacks, shown per " +
+      "row where available) and the actual reported revenue — the same standard a real analyst is held to, with " +
+      "no leakage possible by construction, since the ground truth did not exist when the call was made."));
     banner.appendChild(b);
 
     render(allRows);
