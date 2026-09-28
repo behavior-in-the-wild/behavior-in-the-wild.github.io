@@ -1,0 +1,26 @@
+{
+  "note": "Mining recall: of a company's real leading demand-driver signals, what fraction did the model's actual search queries or retrieved snippets touch? Scored on an already-collected 50-company sample, no new model calls. Only available where per-query search logs were retained (agentic mining over CC-News) -- structurally inapplicable to no-search conditions (blind, Oracle), and not yet computed for conditions whose logs only kept query counts, not text (fan-out, weekly, live-web).",
+  "entries": [
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-4o-mini",
+      "mean_recall": 0.172,
+      "n_companies": 46
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.3-chat",
+      "mean_recall": 0.223,
+      "n_companies": 50
+    },
+    {
+      "condition": "Agentic mining",
+      "corpus": "CC-News archive",
+      "model": "gpt-5.4",
+      "mean_recall": 0.186,
+      "n_companies": 50
+    }
+  ]
+}
