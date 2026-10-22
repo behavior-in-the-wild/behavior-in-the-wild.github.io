@@ -3,26 +3,63 @@
 
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="SDR-Bench: a behavior-centric benchmark evaluating how well large language models (LLMs) personalize to individual human preferences and behavior.">
-  <meta name="keywords" content="LLM personalization, benchmark, language model evaluation, behavior modeling, SDR-Bench, large language models">
+  <meta name="description" content="SDR-Bench and SDR-Arena: benchmarking two-party generative personalization of large language models (LLMs) and deep-research agents on 50,000 real-world sales success stories, revealing a personalization plateau driven by retrieval, not reasoning.">
+  <meta name="keywords" content="LLM personalization, generative personalization, benchmark, language model evaluation, deep research agents, sales outreach, SDR-Bench, SDR-Arena, large language models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:url" content="https://behavior-in-the-wild.github.io/SDR-Bench">
   <meta property="og:type" content="article">
   <meta property="og:title" content="SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models">
-  <meta property="og:description" content="SDR-Bench evaluates personalization capabilities of large language models with behavior-centric benchmarks.">
+  <meta property="og:description" content="SDR-Arena benchmarks two-party generative personalization of LLMs on SDR-Bench, 50,000 customer success stories: the best model, Claude Sonnet 4.6, recovers only about half of the winning content.">
   <title>SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models</title>
   <link rel="canonical" href="https://behavior-in-the-wild.github.io/SDR-Bench">
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/954/954591.png">
-  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <meta property="og:image" content="https://behavior-in-the-wild.github.io/images/SDR-Bench/fig1_paper.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models">
-  <meta name="twitter:description" content="SDR-Bench evaluates personalization capabilities of large language models with behavior-centric benchmarks.">
-  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/Human-Behavior.png">
+  <meta name="twitter:description" content="SDR-Arena benchmarks two-party generative personalization of LLMs on SDR-Bench, 50,000 customer success stories: the best model, Claude Sonnet 4.6, recovers only about half of the winning content.">
+  <meta name="twitter:image" content="https://behavior-in-the-wild.github.io/images/SDR-Bench/fig1_paper.png">
 
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Dataset",
+  "@type": ["ScholarlyArticle", "Dataset"],
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Ashutosh Srivastava",
+      "url": "https://h4shk4t.github.io"
+    },
+    {
+      "@type": "Person",
+      "name": "Siddharth Yedlapati",
+      "url": "https://www.linkedin.com/in/siddharthyedlapati/"
+    },
+    {
+      "@type": "Person",
+      "name": "Vinay Aggarwal",
+      "url": "https://scholar.google.co.in/citations?user=o4rExGkAAAAJ&hl=en"
+    },
+    {
+      "@type": "Person",
+      "name": "Yaman Kumar Singla",
+      "url": "https://sites.google.com/view/yaman-kumar/"
+    },
+    {
+      "@type": "Person",
+      "name": "Shashwat Dixit",
+      "url": "https://www.linkedin.com/in/shashwatdixit3112/"
+    },
+    {
+      "@type": "Person",
+      "name": "Jitendra Ajmera",
+      "url": "https://scholar.google.com/citations?hl=en&user=u7NNClAAAAAJ&view_op=list_works&sortby=pubdate"
+    },
+    {
+      "@type": "Person",
+      "name": "Balaji Krishnamurthy",
+      "url": "https://www.linkedin.com/in/balaji-krishnamurthy-4241695"
+    }
+  ],
   "creator": [
     {
       "@type": "Person",
@@ -41,26 +78,40 @@
     },
     {
       "@type": "Person",
+      "name": "Yaman Kumar Singla",
+      "url": "https://sites.google.com/view/yaman-kumar/"
+    },
+    {
+      "@type": "Person",
       "name": "Shashwat Dixit",
       "url": "https://www.linkedin.com/in/shashwatdixit3112/"
     },
     {
       "@type": "Person",
-      "name": "Yaman Kumar Singla",
-      "url": "https://sites.google.com/view/yaman-kumar/"
+      "name": "Jitendra Ajmera",
+      "url": "https://scholar.google.com/citations?hl=en&user=u7NNClAAAAAJ&view_op=list_works&sortby=pubdate"
+    },
+    {
+      "@type": "Person",
+      "name": "Balaji Krishnamurthy",
+      "url": "https://www.linkedin.com/in/balaji-krishnamurthy-4241695"
     }
   ],
   "datePublished": "2026",
   "name": "SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models",
-  "image": "https://behavior-in-the-wild.github.io/images/Human-Behavior.png",
+  "headline": "SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models",
+  "image": "https://behavior-in-the-wild.github.io/images/SDR-Bench/fig1_paper.png",
   "url": "https://behavior-in-the-wild.github.io/SDR-Bench",
-  "description": "SDR-Bench evaluates personalization capabilities of large language models with behavior-centric benchmarks.",
+  "description": "SDR-Arena benchmarks two-party generative personalization of large language models on SDR-Bench, a public corpus of 50,000 customer success stories across 22 industries and 3,500 enterprises.",
   "keywords": [
     "LLM personalization",
+    "generative personalization",
     "benchmark",
-    "behavior modeling",
-    "SDR-Bench"
+    "deep research agents",
+    "SDR-Bench",
+    "SDR-Arena"
   ],
+  "sameAs": "https://arxiv.org/abs/2607.20471",
   "isPartOf": {
     "@type": "DataCatalog",
     "url": "https://behavior-in-the-wild.github.io",
@@ -69,8 +120,8 @@
   "license": "https://creativecommons.org/licenses/by/4.0/",
   "publisher": {
     "@type": "Organization",
-    "name": "Behavior In The Wild Research Group",
-    "url": "https://behavior-in-the-wild.github.io"
+    "name": "arXiv",
+    "url": "https://arxiv.org"
   }
 }
 </script>
@@ -113,6 +164,19 @@
       border-bottom: 1px solid #ccc;
     }
     p { margin: 14px 0; }
+    h3 {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #111;
+      margin: 32px 0 8px;
+    }
+    .table-note {
+      margin-top: -6px;
+      font-size: 0.875rem;
+      color: #666;
+      font-style: italic;
+      text-align: center;
+    }
     a { color: #0645ad; text-decoration: none; }
     a:hover { text-decoration: underline; }
     .authors {
@@ -208,14 +272,17 @@
       h1 { font-size: 1.35rem; }
     }
   </style>
-  <meta name="citation_title" content="SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models">
+  <meta name="citation_title" content="Benchmarking the Personalization Capabilities of Large Language Models">
   <meta name="citation_author" content="Ashutosh Srivastava">
   <meta name="citation_author" content="Siddharth Yedlapati">
   <meta name="citation_author" content="Vinay Aggarwal">
-  <meta name="citation_author" content="Shashwat Dixit">
   <meta name="citation_author" content="Yaman Kumar Singla">
-  <meta name="citation_publication_date" content="2026">
-  <meta name="citation_pdf_url" content="https://behavior-in-the-wild.github.io/Benchmarking_the_Personalization_Capabilities_of_Large_Language_Models%20Preprint.pdf">
+  <meta name="citation_author" content="Shashwat Dixit">
+  <meta name="citation_author" content="Jitendra Ajmera">
+  <meta name="citation_author" content="Balaji Krishnamurthy">
+  <meta name="citation_publication_date" content="2026/05/23">
+  <meta name="citation_arxiv_id" content="2607.20471">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2607.20471">
 </head>
 
 <body>
@@ -232,8 +299,10 @@
       <a href="https://h4shk4t.github.io">Ashutosh Srivastava<sup>*</sup></a>,
       <a href="https://www.linkedin.com/in/siddharthyedlapati/">Siddharth Yedlapati<sup>*</sup></a>,
       <a href="https://scholar.google.co.in/citations?user=o4rExGkAAAAJ&hl=en">Vinay Aggarwal<sup>*</sup></a>,
+      <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla</a>,
       <a href="https://www.linkedin.com/in/shashwatdixit3112/">Shashwat Dixit</a>,
-      <a href="https://sites.google.com/view/yaman-kumar/">Yaman Kumar Singla</a>
+      <a href="https://scholar.google.com/citations?hl=en&user=u7NNClAAAAAJ&view_op=list_works&sortby=pubdate">Jitendra Ajmera</a>,
+      <a href="https://www.linkedin.com/in/balaji-krishnamurthy-4241695">Balaji Krishnamurthy</a>
     </div>
     <div class="equal-contrib">* Equal Contribution</div>
     <div class="affiliation">
@@ -244,129 +313,65 @@
     <p>Get in touch with us at <a href="mailto:behavior-in-the-wild@googlegroups.com">behavior-in-the-wild@googlegroups.com</a></p>
 
     <div class="paper-links">
-      <a href="./Benchmarking_the_Personalization_Capabilities_of_Large_Language_Models Preprint.pdf" target="_blank">Paper</a>
+      <a href="https://arxiv.org/abs/2607.20471" target="_blank">Paper</a>
       <a href="https://huggingface.co/datasets/behavior-in-the-wild/SDR-Bench">SDR-Bench Dataset</a>
     </div>
 
     <figure>
-      <img src="images/SDR-Bench/fig1_paper.png" alt="SDR-Arena">
+      <img src="images/SDR-Bench/fig1_paper.png" alt="Overview of SDR-Arena">
       <figcaption>Figure 1: Overview of SDR-Arena showcasing how LLM generated output is compared with artifacts like Sales Emails, Transcripts &amp; Success Stories to benchmark their personalization capability.</figcaption>
     </figure>
 
     <h2>Abstract</h2>
 
     <p>
-      Personalization serves as the bridge between generic information and high-impact engagement, yet the manual effort required to craft tailored content has historically precluded its use at scale. The emergence of Large Language Models (LLMs) represents a paradigm shift toward "Generative Personalization at Scale", offering profound opportunities in domains such as marketing, sales, and education. While existing research has discussed the potential of generative AI for personalization, they have mostly relied on small scale human studies to present their findings, leaving it unproven whether LLM personalization has reached a level of maturity viable for high-stakes business operations or not. To address this substantial gap, we develop SDR-Arena - the first framework that enables a scalable way for automated personalization benchmarking. We adapt the Bayesian Persuasion model to formally define personalization. We select sales as our primary case study due to its direct economic utility and rigorously test our framework by curating a dual-layered dataset consisting of proprietary outreach emails sent by real sales people and public scale data comprising of 6,279 articles spanning over 20 industries. We benchmark the ability of frontier LLMs in translating these complex business contexts into personalized value propositions for individual prospects. We find that even though the current models demonstrate progress in personalization, a substantial gap remains before achieving the human-level proficiency required to reliably drive revenue. We publicly release our framework and datasets to facilitate reproducible research in autonomous personalization.
+      Personalization is classically a two-party problem: a sender chooses what to say, and a receiver with independent objectives decides whether to act. A salesperson pitching the same analytics product leads with HIPAA compliance for a hospital and real-time reporting for a retailer, expecting a different argument to work on each. Existing LLM personalization benchmarks measure a narrower, one-party property: whether output matches the preferences of the same user it serves&mdash;sender and receiver being the same, as when RLHF aligns an assistant to its own user. The two-party case is harder to study automatically, since it needs ground truth linking specific content to an observed receiver action.
+    </p>
+
+    <p>
+      Sales outreach provides this: a message written for one prospect, recorded against whether it produced a reply, a call, or a closed deal. We introduce SDR-Arena, a framework for benchmarking two-party generative personalization at scale, and SDR-Bench, a public corpus of 50,000 customer success stories across 22 industries and 3500 enterprises. Given only pre-outcome information, an agent must reconstruct the arguments that won the deal, scored by a weighted nugget-recall metric (WCS). The best model, Claude Sonnet 4.6, reaches 55.8% WCS indicating it recovers only half the winning content&mdash;a plateau we observe across model families that costly deep-research pipelines do not close. An ablation shows the cause is retrieval, not reasoning: models improve substantially given the facts a human researcher would gather, but rarely find them through web search alone. Two studies with professional SDRs support the metric: only 48% of generated pitches were rated usable without editing, and WCS yields model rankings consistent with evaluation against expert strategies authored independently of any model output.
     </p>
 
     <h2>SDR-Leaderboard</h2>
 
-    <p>Values reported as Coverage Percentage</p>
+    <p>Values reported as Weighted Coverage Score (WCS, %). <em>Search</em> rows use the time-restricted web-search tool; <em>Direct</em> rows are the same LLMs with search disabled. STORM and ODR are deep-research agents built on Qwen2.5-72B.</p>
 
     <div style="overflow-x: auto;">
       <table>
         <thead>
           <tr>
-            <th rowspan="3" style="vertical-align: middle;">Model</th>
-            <th colspan="5" style="text-align: center;">Ground Truth Artifacts</th>
-            <th colspan="6" style="text-align: center;">Success Stories</th>
+            <th rowspan="2" style="vertical-align: middle;">Model</th>
+            <th colspan="5" style="text-align: center;">SDR-Bench Success Stories</th>
+            <th colspan="3" style="text-align: center;">Private Enterprise Dataset</th>
           </tr>
           <tr>
-            <th colspan="2" style="text-align: center;">Healthcare (&lt;1B)</th>
-            <th colspan="2" style="text-align: center;">Tech (&gt;10B)</th>
-            <th style="text-align: center;">Other</th>
             <th style="text-align: center;">Tech.</th>
             <th style="text-align: center;">Mfg.</th>
             <th style="text-align: center;">Energy</th>
             <th style="text-align: center;">IT</th>
             <th style="text-align: center;">Agg.</th>
-            <th style="text-align: center;">Subset</th>
-          </tr>
-          <tr>
-            <th>Unsucc<br>(50)</th>
-            <th>Succ<br>(50)</th>
-            <th>Unsucc<br>(50)</th>
-            <th>Succ<br>(50)</th>
-            <th>Sales Trans.</th>
-            <th>(30)</th>
-            <th>(30)</th>
-            <th>(30)</th>
-            <th>(30)</th>
-            <th>(180)</th>
-            <th>(25)</th>
+            <th style="text-align: center;">Health. Emails<br>(&lt;$1B)</th>
+            <th style="text-align: center;">Tech. Emails<br>(&gt;$10B)</th>
+            <th style="text-align: center;">Sales Calls</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>STORM-QWEN-2.5</td>
-            <td>22.46</td>
-            <td>32.27</td>
-            <td>43.15</td>
-            <td>39.24</td>
-            <td><b>30.43</b></td>
-            <td><b>43.40</b></td>
-            <td><b>41.59</b></td>
-            <td><b>39.24</b></td>
-            <td><b>44.60</b></td>
-            <td><b>42.51</b></td>
-            <td>41.54</td>
-          </tr>
-          <tr>
-            <td>ODR-QWEN-2.5</td>
-            <td>15.40</td>
-            <td>30.41</td>
-            <td>38.51</td>
-            <td>39.82</td>
-            <td>22.55</td>
-            <td>30.16</td>
-            <td>30.95</td>
-            <td>35.28</td>
-            <td>35.33</td>
-            <td>33.53</td>
-            <td>31.20</td>
-          </tr>
-          <tr>
-            <td>QWEN2.5-72B (WEB)</td>
-            <td>32.11</td>
-            <td>36.72</td>
-            <td>39.53</td>
-            <td>36.43</td>
-            <td>25.34</td>
-            <td>32.09</td>
-            <td>36.75</td>
-            <td>37.04</td>
-            <td>38.21</td>
-            <td>36.84</td>
-            <td>37.84</td>
-          </tr>
-          <tr>
-            <td>GPT-4o (WEB)</td>
-            <td>33.70</td>
-            <td>39.17</td>
-            <td>42.01</td>
-            <td>44.61</td>
-            <td>23.5</td>
-            <td>30.73</td>
-            <td>39.77</td>
-            <td>32.42</td>
-            <td>35.85</td>
-            <td>36.38</td>
-            <td>32.70</td>
-          </tr>
-          <tr>
-            <td>GEMINI-2.5-PRO-DR</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td>--</td>
-            <td><b>62.63</b></td>
-          </tr>
+          <tr><td colspan="9"><em>Search</em></td></tr>
+          <tr><td><b>Claude Sonnet 4.6</b></td><td><b>52.6</b></td><td><b>60.5</b></td><td><b>54.0</b></td><td><b>54.9</b></td><td><b>55.8</b></td><td><b>60.89</b></td><td><b>61.33</b></td><td><b>42.85</b></td></tr>
+          <tr><td>GPT-5.4-mini</td><td>40.99</td><td>46.02</td><td>41.18</td><td>45.39</td><td>44.63</td><td>43.67</td><td>52.66</td><td>35.72</td></tr>
+          <tr><td>GPT-5.4</td><td>38.21</td><td>45.46</td><td>42.90</td><td>46.67</td><td>44.32</td><td>48.71</td><td>53.02</td><td>33.61</td></tr>
+          <tr><td>STORM-QWEN-2.5</td><td>43.40</td><td>41.59</td><td>39.24</td><td>44.60</td><td>42.51</td><td>32.27</td><td>39.24</td><td>33.80</td></tr>
+          <tr><td>GPT-4o-mini</td><td>33.30</td><td>38.54</td><td>37.07</td><td>38.05</td><td>37.46</td><td>39.14</td><td>45.63</td><td>29.68</td></tr>
+          <tr><td>QWEN2.5-72B</td><td>32.09</td><td>36.75</td><td>37.04</td><td>38.21</td><td>36.84</td><td>36.72</td><td>36.43</td><td>29.57</td></tr>
+          <tr><td>GPT-4o</td><td>33.50</td><td>38.93</td><td>32.26</td><td>36.01</td><td>35.42</td><td>40.62</td><td>45.17</td><td>26.19</td></tr>
+          <tr><td>ODR-QWEN-2.5</td><td>30.16</td><td>30.95</td><td>35.28</td><td>35.33</td><td>33.53</td><td>30.41</td><td>39.82</td><td>26.92</td></tr>
+          <tr><td colspan="9"><em>Direct</em></td></tr>
+          <tr><td>Claude Sonnet 4.6</td><td>52.14</td><td>51.47</td><td>41.29</td><td>48.99</td><td>49.88</td><td>42.93</td><td>54.26</td><td>39.71</td></tr>
+          <tr><td>GPT-5.4-mini</td><td>42.60</td><td>42.28</td><td>42.39</td><td>46.43</td><td>44.10</td><td>42.01</td><td>54.09</td><td>34.53</td></tr>
+          <tr><td>GPT-5.4</td><td>39.69</td><td>42.69</td><td>42.14</td><td>45.81</td><td>43.95</td><td>46.53</td><td>55.01</td><td>36.03</td></tr>
+          <tr><td>GPT-4o</td><td>35.52</td><td>38.15</td><td>36.62</td><td>37.44</td><td>38.15</td><td>45.09</td><td>46.40</td><td>32.59</td></tr>
+          <tr><td>QWEN2.5-72B</td><td>31.28</td><td>33.09</td><td>36.28</td><td>38.19</td><td>35.67</td><td>25.57</td><td>41.24</td><td>31.34</td></tr>
+          <tr><td>GPT-4o-mini</td><td>33.09</td><td>33.98</td><td>30.52</td><td>32.44</td><td>33.88</td><td>30.15</td><td>42.95</td><td>30.05</td></tr>
         </tbody>
       </table>
     </div>
@@ -374,7 +379,7 @@
     <h2>SDR-Arena</h2>
 
     <p>
-      Figure 1 provides an overview of <b>SDR-Arena</b>, the first framework to systematically benchmark the generative personalization capabilities of LLMs. SDR-Arena utilizes a high-fidelity dataset from the domain of sales capturing human-generated personalized content, including historical sales emails, sales call transcripts, and customer success stories, to evaluate an agent's ability to drive revenue via generating personalized value propositions (pitch points) tailored according for the recipient. The dataset is built on three pillars to ensure comprehensive benchmarking: the proprietary sales emails and transcripts provide an internal view of how the sales people in a company utilize personalization to drive revenue. Second, we curate <b>SDR-Bench</b>, a scalable corpus of publicly documented success stories that detail how sellers' products addressed specific customer needs. Spanning a diverse array of industries, geographies, and use cases, SDR-Bench provides a comprehensive and scalable testbed for evaluating generative personalization capabilities of LLMs.
+      Each stage of the sales funnel leaves a human-authored artifact at a known successful transition: an outreach email that secured a call, a call transcript that opened deal discussions, and a customer success story that documents a closed deal. Because every artifact is logged against the specific (seller, prospect, product) interaction that produced it, the funnel yields ground truth for what content actually induced a receiver to act, at scale (Figure 2).
     </p>
 
     <figure>
@@ -382,39 +387,132 @@
       <figcaption>Figure 2: Sales Journey: From Prospecting to Outreach to Call and eventual Deal Closure leading to Success Story publication</figcaption>
     </figure>
 
+    <p>
+      <b>SDR-Arena</b> casts two-party personalization as a historical back-testing problem: can an agent, standing in for the Sales Development Representative (SDR), reconstruct the arguments that historically induced a successful outcome, using only information available before that outcome was known? Each evaluation instance is a tuple (<i>S</i>, <i>C</i>, <i>P</i>, <i>t</i>) of a seller, a prospective customer, the product(s) being pitched, and the historical timestamp. The agent researches the prospect and produces a set of <em>pitch points</em>: atomic arguments that link a product capability to a specific need of the prospect through a concrete value proposition.
+    </p>
+
+    <ul>
+      <li><b>Weighted Coverage Score (WCS).</b> Pitch points are extracted from the human-authored outreach that induced the action (precision 0.92, recall 0.97 against human annotation). An LLM Coverage Judge grades how well the agent's output covers each ground-truth pitch point on a 0&ndash;5 scale, from <em>Miss / Irrelevant</em> to <em>Strategic Bullseye</em>, and WCS is the normalized coverage. Since it credits only content matching the recorded winner, WCS is a lower bound on personalization ability.</li>
+      <li><b>Historical Internet Simulator (<i>W<sub>t</sub></i>).</b> Every run is served through a web view restricted to information available at time <i>t</i>, so an agent can never retrieve the not-yet-published record of the deal's success.</li>
+      <li><b>Agent configurations.</b> Closed-book LLMs (<em>Direct</em>), the same LLMs with time-restricted web search (<em>Search</em>), and deep-research agents that plan, search iteratively, and synthesize a report.</li>
+    </ul>
+
+    <h2>Datasets</h2>
+
+    <p>
+      <b>SDR-Bench</b> is a public corpus of 50,000 customer success stories from 3500 global enterprises across 22 industries. Starting from 7 million crawled webpages, a multi-stage filtering pipeline removed non-text formats, generic landing pages, articles without verifiable publication dates or identifiable products, and anonymized stories, followed by URL and locale-based de-duplication. Each story is paired with the seller, prospect, product, and historical timestamp needed for evaluation.
+    </p>
+
+    <p>
+      The <b>Private Enterprise Dataset</b> contains real human-authored outreach paired with downstream prospect actions from two organizations: roughly 90k outreach emails by 124 SDRs and 5,435 sales call transcripts from a Fortune 100 technology company (2023&ndash;2025), and 24,506 outreach emails from a mid-sized healthcare firm. This data is used for evaluation only and is not released.
+    </p>
+
     <h2>Results</h2>
 
     <ul>
-      <li><b>STORM-QWEN-2.5</b> achieves the highest aggregate scores on SDR-Bench.</li>
-      <li>Deep research agents excel in <em>Healthcare</em>; a "personalization plateau" exists in <em>Tech</em> when compared against e-mails as ground truth.</li>
-      <li><b>GEMINI-2.5-PRO-DR</b> scores highest on the subset but risks data leakage.</li>
-      <li>Deep research agents offer superior resolution but at significantly higher inference costs.</li>
+      <li><b>A personalization plateau.</b> Claude Sonnet 4.6 leads with an aggregate WCS of 55.8 on SDR-Bench, yet recovers only about half of the winning content; the GPT family clusters between 35.4 and 44.6, and the deep-research agents STORM (42.5) and ODR (33.5) do not escape the plateau despite much higher cost.</li>
+      <li><b>The same plateau holds on enterprise outreach.</b> Even the strongest model recovers only about 60% of the winning content on emails and well under half on sales call transcripts.</li>
+      <li><b>The bottleneck is retrieval, not reasoning.</b> Models improve substantially when handed the facts an expert researcher would gather, but fail to surface them through web search on their own.</li>
+      <li><b>The plateau persists in a discriminative task.</b> Picking the one successful email out of five, the best model is right only 45.8% of the time.</li>
+      <li><b>WCS tracks expert judgment.</b> Judge scores correlate with human raters (Spearman &rho; = 0.74) and with senior-SDR gold-standard strategies (Pearson <i>r</i> = 0.82).</li>
     </ul>
 
+    <h3>The Bottleneck Is Retrieval, Not Reasoning</h3>
+
     <p>
-      The experimental results across various ground truth artifacts reveal distinct performance patterns between standard LLMs and deep research agents. <b>STORM-QWEN-2.5</b> emerged as the most robust performer for the <b>SDR-Bench</b> testbed, achieving an aggregate Weighted Coverage Score (WCS) of <b>42.51</b> for success stories and <b>30.43</b> for sales transcripts (proprietary data). This suggests that multi-turn, search-augmented research workflows are particularly effective at synthesizing the strategic alignment necessary to reconstruct the logic of complex, real-world deal closures. We observe the trend remains consistent across different industries, suggesting that multi-turn research workflows are uniquely capable of reconstructing the complex logic of real-world deal closures. Notably, for a public dataset, we find a narrow performance margin between <b>GPT-4o with web-search</b> (<b>39.77</b>) and <b>STORM</b> (<b>41.59</b>). Despite this small delta in strategic coverage, GPT-4o required a significantly lower token budget. For enterprise scale deployments, where latency and cost are critical—leveraging high-performing LLMs with direct tool-calling represents a more computationally efficient frontier than the marginal gains offered by high-overhead research agents.
+      Removing web search changes WCS by less than one point for GPT-5.4 (44.32 &rarr; 43.95), GPT-5.4-mini (44.63 &rarr; 44.10), and Qwen2.5-72B (36.84 &rarr; 35.67), and even <em>improves</em> GPT-4o (35.42 &rarr; 38.15): these models fall back on prior knowledge or generic firmographic content rather than converting search into strategic content. Claude is the exception, losing 17.96 points on Healthcare email outreach, 7.07 on Tech, and dropping from 55.80 to 49.88 on success stories without search. A memorization probe splitting SDR-Bench at GPT-4o's training cutoff shows negligible WCS differences, ruling out pre-training leakage as a confound.
     </p>
 
     <p>
-      When analyzing the Enterprise Sales Email dataset (SDR-Leaderboard), a notable divergence appears between industry sectors. In the <em>Healthcare</em> cohort, deep research agents like <b>STORM</b> and <b>ODR</b> demonstrated a significant performance delta, scoring notably higher on successful outreach emails (e.g., STORM at <b>32.27</b>) compared to unsuccessful outreach emails (<b>22.46</b>). This indicates that these agents are proficient at capturing the specific personalization cues that drive engagement in specialized, high-stakes sectors.
+      To separate retrieval from reasoning, expert SDRs supplied 50 questions they routinely ask when researching a deal. These were issued through the temporally constrained simulator and compiled into expert-curated research reports on the customer, the seller, the product, or all three. Supplying these reports lifts WCS well beyond what the model's own search achieves, even when the model already has live web access. Seller and product evidence drive the gain; customer evidence alone is flat-to-negative.
     </p>
+
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align: middle;">Report supplied</th>
+            <th colspan="2" style="text-align: center;">QWEN-2.5-72B</th>
+            <th colspan="2" style="text-align: center;">Claude Sonnet 4.6</th>
+          </tr>
+          <tr>
+            <th style="text-align: center;">Direct</th>
+            <th style="text-align: center;">+Search</th>
+            <th style="text-align: center;">Direct</th>
+            <th style="text-align: center;">+Search</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>+ Customer</td><td>&minus;2.5</td><td>&minus;3.6</td><td>+0.9</td><td>&minus;2.4</td></tr>
+          <tr><td>+ Seller</td><td>+5.2</td><td>+1.8</td><td>+5.9</td><td>+1.1</td></tr>
+          <tr><td>+ Product</td><td><b>+5.5</b></td><td>+2.8</td><td>+5.7</td><td>+1.7</td></tr>
+          <tr><td>+ All</td><td>+5.3</td><td><b>+3.3</b></td><td><b>+7.0</b></td><td><b>+6.6</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">&Delta;WCS from expert-curated research reports, relative to each configuration's no-report baseline (averages over 3 runs).</p>
+
+    <h3>The Plateau Persists in a Discriminative Task</h3>
 
     <p>
-      Conversely, in the Tech cohort, performance scores remained relatively uniform across all models and outcomes. This exhibit a "personalization plateau", showing no statistically significant performance difference between successful and unsuccessful outreach sets. This suggests that while models generate coherent content, there remains a critical gap in their ability to produce the strategic depth required to drive real-world revenue in highly competitive markets.
+      A low WCS could in principle reflect a valid but different winning argument. To rule this out, each instance presents five real cold outbound emails sent to prospects in the same industry, exactly one of which received a positive response, and the agent must identify it (random chance: 20%). Even the best model picks the winner less than half the time, and discrimination accuracy is rank-correlated with WCS (Spearman &rho; = 0.97 against enterprise-email WCS, 0.84 against SDR-Bench WCS).
     </p>
+
+    <div style="overflow-x: auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th style="text-align: center;">5-way Acc. (%)</th>
+            <th style="text-align: center;">Email-Succ. WCS</th>
+            <th style="text-align: center;">Story-Agg. WCS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Claude Sonnet 4.6</td><td>45.8</td><td>61.11</td><td>55.80</td></tr>
+          <tr><td>GPT-5.4</td><td>40.5</td><td>50.87</td><td>44.32</td></tr>
+          <tr><td>GPT-5.4-mini</td><td>39.0</td><td>48.17</td><td>44.63</td></tr>
+          <tr><td>GPT-4o</td><td>37.0</td><td>42.90</td><td>35.42</td></tr>
+          <tr><td>GPT-4o-mini</td><td>37.0</td><td>42.39</td><td>37.46</td></tr>
+          <tr><td>STORM</td><td>36.2</td><td>35.76</td><td>42.51</td></tr>
+          <tr><td>QWEN-2.5-72B</td><td>35.0</td><td>36.58</td><td>36.84</td></tr>
+          <tr><td>ODR</td><td>32.2</td><td>35.12</td><td>33.53</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Token Usage, Cost, and Performance</h3>
 
     <p>
-      While <b>GEMINI-2.5-PRO-DR</b> achieved the highest score on the 25-story subset (<b>62.63</b>), it is critical to note that this model was evaluated outside the strict enforcement of the <em>SDR-Playground's</em> historical internet constraints. Consequently, the risk of "future data leakage", where the model accesses post-hoc analyses or the success story itself, is substantially higher. This underscores the necessity of our time-restricted simulation (<i>W<sub>t</sub></i>) for valid benchmarking. Finally, while deep research agents provide superior strategic resolution, they involve a significant computational trade-off. The iterative nature of STORM and ODR requires substantially higher inference costs compared to standard LLM-plus-web-search configurations, presenting a clear bottleneck for personalization at enterprise scale.
+      GPT-5.4-mini is the most efficient frontier model (44.6 WCS at ~8k tokens per query), whereas the deep-research agents spend one to two orders of magnitude more tokens than LLM + search baselines without escaping the personalization plateau. Claude Sonnet 4.6 achieves the highest WCS (55.8) at a token budget comparable to STORM and ODR, both of which trail it by more than 13 points.
     </p>
 
-    <h2>BibTeX</h2>
+    <figure>
+      <img src="images/SDR-Bench/tokens.png" alt="Token usage vs. performance on SDR-Bench" style="max-width: 520px; width: 100%;">
+      <figcaption>Figure 3: Token usage vs. performance on SDR-Bench. Each point is a configuration; the x-axis is total tokens per query (log scale), the y-axis is WCS, and bubble area encodes inference cost per query.</figcaption>
+    </figure>
 
-    <pre><code>@misc{sdrbench2026,
-  author = {Srivastava, Ashutosh and Yedlapati, Siddharth and Aggarwal, Vinay and Dixit, Shashwat and Singla, Yaman Kumar},
-  title = {SDR-Bench: Benchmarking the Personalization Capabilities of Large Language Models},
-  year = {2026},
-  publisher = {Behavior in the Wild},
-  howpublished = {\url{https://behavior-in-the-wild.github.io/SDR-Bench.html}},
+    <h3>Human Alignment and Validation</h3>
+
+    <p>
+      Three blinded annotators scored 100 model responses on 20 success stories following the Coverage Judge protocol. The judge tracks human scores (Spearman &rho; = 0.74, <i>p</i> &lt; 0.0001), preserves the human model ordering (Claude &gt; STORM &asymp; GPT &gt; Qwen &gt; ODR), and is systematically more conservative than human raters. In a field deployment, 12 professional SDRs used Claude Sonnet 4.6 with SDR-Arena on 200+ live prospects: <b>48.2%</b> of generated pitch points both reflected a genuine understanding of the prospect's pain points and were usable without rewriting. Separately, senior SDRs from five enterprises authored gold-standard strategies for 30 products without seeing any model output; expert-overlap scores correlate with WCS at Pearson <i>r</i> = 0.816.
+    </p>
+
+    <figure>
+      <img src="images/SDR-Bench/qualitative.png" alt="Qualitative example of the Coverage Judge">
+      <figcaption>Figure 4: Qualitative example of the Coverage Judge: ground-truth pitch points matched against the agent's generated pitch points and scored on the 0&ndash;5 rubric, illustrating how partial topic matches are separated from strategic bullseyes.</figcaption>
+    </figure>
+
+    <h2 id="BibTeX">BibTeX</h2>
+
+    <pre><code>@misc{srivastava2026benchmarkingpersonalizationcapabilitieslarge,
+      title={Benchmarking the Personalization Capabilities of Large Language Models},
+      author={Ashutosh Srivastava and Siddharth Yedlapati and Vinay Aggarwal and Yaman Kumar Singla and Shashwat Dixit and Jitendra Ajmera and Balaji Krishnamurthy},
+      year={2026},
+      eprint={2607.20471},
+      archivePrefix={arXiv},
+      primaryClass={cs.AI},
+      url={https://arxiv.org/abs/2607.20471},
 }</code></pre>
 
     <hr>
