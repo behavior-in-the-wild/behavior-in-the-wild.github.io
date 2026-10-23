@@ -2,7 +2,7 @@
 (function () {
   "use strict";
   var S = window.SITW;
-  S.mountChrome("leaderboard.html");
+  S.mountChrome("index.html");
 
   var key = S.getParam("m") || "";
   var cond = "fed"; // active condition toggle

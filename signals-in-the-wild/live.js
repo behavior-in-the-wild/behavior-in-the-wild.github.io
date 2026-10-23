@@ -1,7 +1,6 @@
-/* live.html — genuinely open (not-yet-reported) predictions at S&P-500 scale.
-   All 5 conditions (blind, fan-out-CC-News, agentic-CC-News, agentic-live-web,
-   fan-out-live-web), 3 models each, 371 companies, all complete. No accuracy
-   shown -- resolves mechanically once each reports. */
+/* live.html — the full per-company live-track list (371 rows, expandable
+   per-model/per-condition detail). Summary stats + the leaderboard breakdown
+   live on the homepage instead; this page is just the detail table. */
 (function () {
   "use strict";
   var S = window.SITW;
@@ -16,13 +15,19 @@
     return typeof v === "number" ? Math.round(v * 100) + "%" : "—";
   }
 
-  function predChip(pred, conf) {
+  function predChip(pred, conf, correct) {
     var s = (pred || "").toLowerCase();
     if (s !== "beat" && s !== "miss" && s !== "inline") {
       return S.el("span", "pill pill-na", "n/a");
     }
     var chip = S.el("span", "pill pill-" + s, pred + " ");
     chip.appendChild(S.el("span", null, fmtConf(conf)));
+    if (correct != null) {
+      var mark = S.el("span", null, correct ? " ✓" : " ✗");
+      mark.style.color = correct ? "var(--beat)" : "var(--miss)";
+      mark.style.fontWeight = "700";
+      chip.appendChild(mark);
+    }
     return chip;
   }
 
@@ -36,9 +41,6 @@
   function detailPanel(row) {
     var box = S.el("div", "co500-detail-block");
     if (row.zacks_consensus) {
-      // same DOM shape as a model block below (avatar + name header, then an
-      // indented condition-label + pill line) -- so the human baseline reads
-      // visually the same as any model's row, not a smaller side-note.
       var z = row.zacks_consensus;
       var zBlock = S.el("div");
       zBlock.style.marginBottom = "12px";
@@ -74,7 +76,7 @@
         line.style.margin = "6px 0 6px 30px";
         var labelRow = S.el("div");
         labelRow.appendChild(S.el("span", "mc-cond", CONDITION_LABEL[cond] + ": "));
-        labelRow.appendChild(predChip(p.pred, p.conf));
+        labelRow.appendChild(predChip(p.pred, p.conf, p.correct));
         line.appendChild(labelRow);
         if (p.reasoning) {
           line.appendChild(S.el("p", "co500-quote", p.reasoning));
@@ -103,10 +105,19 @@
       tr.appendChild(S.el("td", null, row.quarter || "—"));
       tr.appendChild(S.el("td", null, row.next_report_date_est || "—"));
       var statusTd = S.el("td");
-      var badge = S.el("span", "status-predicted");
-      badge.appendChild(S.el("span", "live-dot"));
-      badge.appendChild(document.createTextNode("Predicted — not yet reported"));
-      statusTd.appendChild(badge);
+      if (row.resolved) {
+        statusTd.appendChild(S.pill(row.real_label));
+        var note = S.el("span", "muted", " reported " + (row.actual_report_date || ""));
+        note.style.fontSize = "11px";
+        note.style.marginLeft = "6px";
+        statusTd.appendChild(note);
+      } else {
+        var badge = S.el("span", row.report_slipped ? "status-pending" : "status-predicted");
+        badge.appendChild(S.el("span", "live-dot"));
+        badge.appendChild(document.createTextNode(
+          row.report_slipped ? "Report date slipped — not yet reported" : "Predicted — not yet reported"));
+        statusTd.appendChild(badge);
+      }
       tr.appendChild(statusTd);
       table.appendChild(tr);
 
@@ -128,21 +139,20 @@
   S.fetchJSON("data/live_scale_500.json").then(function (data) {
     allRows = data.rows || [];
 
-    var nZacks = allRows.filter(function (r) { return r.zacks_consensus; }).length;
-    document.getElementById("live-sub").textContent =
-      allRows.length + " S&P 500 companies with an upcoming, not-yet-reported quarter — " +
-      data.models.join(", ") + " × " + data.conditions.map(function (c) { return CONDITION_LABEL[c] || c; }).join(" & ") +
-      ". " + nZacks + " rows also carry a live Zacks analyst-consensus revenue estimate — click a row to see it.";
-
     var banner = document.getElementById("live-banner");
     var b = S.el("div", "live-banner");
     b.appendChild(S.el("span", "live-dot"));
     var txt = S.el("span");
-    txt.appendChild(S.el("strong", null, "Predictions open · resolves once the company reports. "));
+    txt.appendChild(S.el("strong", null, "Predictions open: "));
     txt.appendChild(document.createTextNode(
-      "Each row is frozen before its estimated report date, then scored mechanically once the company reports its actual results — contamination is structurally impossible. Click a row to see every model's call."));
+      "each row is frozen before its estimated report date and scored mechanically once results land — click a row to see every model's call."));
     b.appendChild(txt);
     banner.appendChild(b);
+
+    var scoringNote = document.getElementById("live-scoring-note");
+    scoringNote.textContent =
+      "Unlike the leaderboard's historical proxy scoring, this track is pre-registered before outcomes exist, so " +
+      "each prediction is scored directly against real analyst consensus and actual results — no leakage possible by construction.";
 
     render(allRows);
 

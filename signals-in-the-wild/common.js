@@ -49,9 +49,24 @@
   }
 
   // ----- ticker chip -----
+  // brand ticker colors vary wildly in lightness, so the label color is picked
+  // per-chip (WCAG relative-luminance check) instead of assuming white always reads.
+  function relLuminance(hex) {
+    var n = parseInt(hex.replace("#", ""), 16);
+    var rgb = [(n >> 16) & 255, (n >> 8) & 255, n & 255].map(function (v) {
+      v /= 255;
+      return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+    });
+    return 0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2];
+  }
   function chip(ticker, color) {
+    var bg = color || "#5B6577";
     var c = el("span", "chip", ticker);
-    c.style.background = color || "#5B6577";
+    c.style.background = bg;
+    var L = relLuminance(bg);
+    var ratioWhite = 1.05 / (L + 0.05);
+    var ratioBlack = (L + 0.05) / 0.05;
+    c.style.color = ratioBlack > ratioWhite ? "#000000" : "#FFFFFF";
     return c;
   }
 
@@ -471,8 +486,8 @@
     inner.appendChild(brand);
 
     var links = el("div", "nav-links");
-    [["index.html", "Home"], ["leaderboard.html", "Leaderboard"],
-     ["companies.html", "Companies"], ["live.html", "Live"], ["about.html", "About"]]
+    [["index.html", "Home"], ["companies.html", "Companies"],
+     ["live.html", "Live"], ["about.html", "About"]]
       .forEach(function (p) {
         var a = el("a", active === p[0] ? "active" : null, p[1]);
         a.href = p[0];
@@ -494,7 +509,7 @@
 
     var c2 = el("div");
     c2.appendChild(el("h4", null, "Explore"));
-    [["leaderboard.html", "Leaderboard"], ["companies.html", "Companies"],
+    [["index.html", "Home"], ["companies.html", "Companies"],
      ["live.html", "Live"], ["about.html", "About"]].forEach(function (p) {
       var a = el("a", null, p[1]); a.href = p[0]; c2.appendChild(a);
     });
@@ -543,12 +558,286 @@
       "Could not load " + path + ". Serve the folder over HTTP (see README): python3 -m http.server"));
   }
 
+  // ---- shared scale-leaderboard table: used identically by the homepage and
+  // the leaderboard page, so there is exactly one leaderboard, not a "preview"
+  // and a "full" version that can drift apart or look different. Scored
+  // against real analyst consensus (the meaningful ground truth) -- the proxy
+  // vs-prior-year label used to build these is documented in the paper, not
+  // duplicated here as a second set of columns. ----
+  var LB_COLS = ["Condition", "Dir. acc.", "Bal. acc.", "Growth error (pp)", "Mining recall"];
+
+  // merge condition+corpus into one cell -- "CC-News archive" / "live web" are
+  // real corpus names worth showing; Oracle's corpus field is actually a
+  // parenthetical definition, not a corpus name, so don't repeat it per-row
+  function lbConditionLabel(r) {
+    var corpus = r.corpus;
+    if (!corpus || corpus === "—" || corpus.indexOf("no search") !== -1) return r.condition;
+    return r.condition + " · " + corpus;
+  }
+
+  function lbAccCell(acc, ci, n) {
+    var wrap = el("span");
+    if (acc == null) { wrap.textContent = "—"; return wrap; }
+    wrap.appendChild(document.createTextNode(Math.round(acc * 100) + "%"));
+    var small = el("span", "muted");
+    small.style.fontSize = "10.5px"; small.style.marginLeft = "4px";
+    small.textContent = "(n=" + n + (ci ? ", " + Math.round(ci[0] * 100) + "–" + Math.round(ci[1] * 100) + "%" : "") + ")";
+    wrap.appendChild(small);
+    return wrap;
+  }
+
+  var RANK_MEDALS = ["🥇", "🥈", "🥉"];
+
+  // the 4 value cells (acc/bal/mae/mining-recall) -- shared by a normal data
+  // row and by a model's collapsed header row (which promotes its top row's
+  // numbers so the summary isn't blank before you expand)
+  function lbValueCells(r, naive) {
+    var tds = [];
+    var ac = el("td");
+    var below = !r.is_baseline && !r.is_human_baseline && naive != null && r.real_acc != null && r.real_acc < naive;
+    var span = el("span", below ? "lb-below-baseline" : null);
+    span.appendChild(lbAccCell(r.real_acc, r.real_acc_ci95, r.real_n));
+    ac.appendChild(span);
+    tds.push(ac);
+    // a constant-output baseline (always "beat", or always "inline" -- an
+    // analyst consensus estimate IS an implicit inline call) is mathematically
+    // forced to land on 0.333 here regardless of real skill -- shown plainly,
+    // with the legend explaining why, rather than hidden behind a dash
+    var balTd = el("td", null, r.real_balanced_acc == null ? "—" : r.real_balanced_acc);
+    if (r.is_baseline || r.is_human_baseline) {
+      balTd.title = "This baseline always outputs the same class, so balanced accuracy is mathematically forced to 0.333 regardless of real skill -- see Dir. acc. for the meaningful number.";
+    }
+    tds.push(balTd);
+    tds.push(el("td", null, r.mae == null ? "—" : r.mae));
+    var mrTd = el("td");
+    mrTd.textContent = r.mining_recall != null ? Math.round(r.mining_recall * 100) + "%" : "—";
+    tds.push(mrTd);
+    return tds;
+  }
+
+  function lbDataRow(r, naive) {
+    var tr = el("tr", (r.is_baseline || r.is_human_baseline) ? "lb-row-baseline" : null);
+    var condTd = el("td");
+    if (r._rank != null && RANK_MEDALS[r._rank]) {
+      var medal = el("span", null, RANK_MEDALS[r._rank] + " ");
+      medal.title = "#" + (r._rank + 1) + " lowest growth error -- the fair humans-vs-LLMs comparison, since it needs no analyst/consensus reference point.";
+      condTd.appendChild(medal);
+    }
+    condTd.appendChild(document.createTextNode(lbConditionLabel(r) + (r.partial ? " *" : "")));
+    tr.appendChild(condTd);
+    lbValueCells(r, naive).forEach(function (td) { tr.appendChild(td); });
+    return tr;
+  }
+
+  // model group-header row: SAME number of cells as a data row (no colspan),
+  // so columns always stay aligned with the header regardless of which rows
+  // are expanded/collapsed. Promotes its best row's numbers onto the header
+  // itself (no condition label -- just the numbers) so collapsing doesn't
+  // hide everything about the model behind a click.
+  function lbModelHeaderRow(model, expanded, bestRow, naive) {
+    var tr = el("tr", "co500-row lb-model-row");
+    var first = el("td");
+    var line = el("div", "model-cell");
+    line.appendChild(el("span", "lb-caret", expanded ? "▾" : "▸"));
+    line.appendChild(avatar(model, model, 20));
+    if (bestRow && bestRow._rank != null && RANK_MEDALS[bestRow._rank]) {
+      var headMedal = el("span", null, RANK_MEDALS[bestRow._rank]);
+      headMedal.title = "#" + (bestRow._rank + 1) + " lowest growth error, from this model's best condition -- the fair humans-vs-LLMs comparison.";
+      line.appendChild(headMedal);
+    }
+    line.appendChild(el("strong", null, model));
+    first.appendChild(line);
+    tr.appendChild(first);
+    if (bestRow) {
+      lbValueCells(bestRow, naive).forEach(function (td) { tr.appendChild(td); });
+    } else {
+      for (var i = 1; i < LB_COLS.length; i++) tr.appendChild(el("td"));
+    }
+    return tr;
+  }
+
+  function renderScaleLeaderboard(container, data, opts) {
+    opts = opts || {};
+    clear(container);
+    var rows = data.rows || [];
+    var naive = null;
+    rows.forEach(function (r) { if (r.is_baseline && r.real_acc != null) naive = r.real_acc; });
+    var models = [];
+    rows.forEach(function (r) { if (r.model && r.model !== "—" && models.indexOf(r.model) === -1) models.push(r.model); });
+
+    // humans-vs-LLMs ranking: Growth error (pp) is the one metric that needs no
+    // analyst/consensus reference point on either side (predicted growth vs.
+    // actual growth, a fact), so it's the fair apples-to-apples comparison --
+    // rank the 2 baselines against each model's own best (lowest-error) row
+    var candidates = rows.filter(function (r) { return r.is_baseline || r.is_human_baseline; });
+    var bestByModel = {};
+    models.forEach(function (m) {
+      var best = null;
+      rows.forEach(function (r) {
+        if (r.model !== m || r.mae == null) return;
+        if (best == null || r.mae < best.mae) best = r;
+      });
+      if (best) { candidates.push(best); bestByModel[m] = best; }
+    });
+    candidates.filter(function (r) { return r.mae != null; })
+      .sort(function (a, b) { return a.mae - b.mae; })
+      .forEach(function (r, i) { r._rank = i; });
+
+    var scroll = el("div", "table-scroll");
+    var table = el("table", "lb-table");
+    var thead = el("thead"), htr = el("tr");
+    LB_COLS.forEach(function (h) { htr.appendChild(el("th", null, h)); });
+    thead.appendChild(htr); table.appendChild(thead);
+    var tbody = el("tbody");
+
+    rows.filter(function (r) { return r.is_baseline || r.is_human_baseline; })
+      .forEach(function (r) { tbody.appendChild(lbDataRow(r, naive)); });
+
+    models.forEach(function (m) {
+      var modelRows = rows.filter(function (r) { return r.model === m; });
+      var header = lbModelHeaderRow(m, opts.expanded, bestByModel[m], naive);
+      tbody.appendChild(header);
+      var detailTrs = modelRows.map(function (r) {
+        var dt = lbDataRow(r, naive);
+        dt.style.display = opts.expanded ? "" : "none";
+        return dt;
+      });
+      detailTrs.forEach(function (dt) { tbody.appendChild(dt); });
+      header.addEventListener("click", function () {
+        var showing = detailTrs[0].style.display !== "none";
+        detailTrs.forEach(function (dt) { dt.style.display = showing ? "none" : ""; });
+        header.querySelector(".lb-caret").textContent = showing ? "▸" : "▾";
+      });
+    });
+
+    table.appendChild(tbody);
+    scroll.appendChild(table);
+    container.appendChild(scroll);
+    return { naive: naive, models: models };
+  }
+
+  // ---- live-track stats table, shown on the homepage (the whole live track
+  // lives there now, no separate page) ----
+  function liveMetricsTable(data) {
+    var rows = data.rows || [];
+    var nZacks = rows.filter(function (r) { return r.zacks_consensus; }).length;
+    var nCells = (data.models || []).length * (data.conditions || []).length;
+    var table = el("table", "lb-table");
+    [
+      ["Companies tracked", String(rows.length)],
+      ["With live analyst consensus (Zacks)", nZacks + " / " + rows.length + " (" + Math.round(100 * nZacks / rows.length) + "%)"],
+      ["Model × condition cells complete", nCells + " / " + nCells + " (100%)"],
+    ].forEach(function (pair) {
+      var tr = el("tr");
+      tr.appendChild(el("td", null, pair[0]));
+      var td = el("td");
+      td.style.textAlign = "right";
+      td.style.fontWeight = "600";
+      td.textContent = pair[1];
+      tr.appendChild(td);
+      table.appendChild(tr);
+    });
+    return table;
+  }
+
+  var LIVE_CONDITION_META = {
+    blind: ["Blind (no search)", "—"],
+    ccnews: ["Fan-out mining", "CC-News archive"],
+    c6ccnews: ["Agentic mining", "CC-News archive"],
+    c6live: ["Agentic mining", "live web"],
+    fanoutlive: ["Fan-out mining", "live web"],
+  };
+
+  function wilsonCi(k, n) {
+    if (!n) return null;
+    var z = 1.96, p = k / n;
+    var denom = 1 + (z * z) / n;
+    var center = (p + (z * z) / (2 * n)) / denom;
+    var half = (z * Math.sqrt((p * (1 - p)) / n + (z * z) / (4 * n * n))) / denom;
+    return [Math.max(0, center - half), Math.min(1, center + half)];
+  }
+
+  function balancedAcc(pairs) {
+    // pairs = [[pred, actual], ...] over beat/miss/inline
+    var classes = ["beat", "miss", "inline"], recalls = [];
+    classes.forEach(function (c) {
+      var tp = 0, n_c = 0;
+      pairs.forEach(function (pr) {
+        if (pr[1] === c) { n_c++; if (pr[0] === c) tp++; }
+      });
+      if (n_c) recalls.push(tp / n_c);
+    });
+    if (!recalls.length) return null;
+    return Math.round((recalls.reduce(function (a, b) { return a + b; }, 0) / recalls.length) * 1000) / 1000;
+  }
+
+  // builds a rows[] in the exact same shape as the frozen leaderboard's
+  // scale_results.json, from the live track's resolved companies only, so the
+  // identical renderScaleLeaderboard can draw both -- same columns, same
+  // model-grouping, same medals, not just visually similar.
+  function buildLiveLeaderboardData(data) {
+    var resolvedRows = (data.rows || []).filter(function (r) { return r.resolved; });
+    var models = data.models || [];
+    var conditions = data.conditions || [];
+    var out = [];
+
+    function scoreConstant(constantPred) {
+      var pairs = resolvedRows.map(function (r) { return [constantPred, r.real_label]; });
+      var correct = pairs.filter(function (p) { return p[0] === p[1]; }).length;
+      var n = pairs.length;
+      return { acc: n ? Math.round((correct / n) * 1000) / 1000 : null, ci: wilsonCi(correct, n), n: n, bal: balancedAcc(pairs) };
+    }
+
+    var geBaselines = data.growth_error_baselines || {};
+    var geByModel = data.growth_error || {};
+    var mrByModel = data.mining_recall || {};
+
+    var naive = scoreConstant("beat");
+    out.push({ condition: "Naive “always beat”", corpus: "—", model: "—", is_baseline: true,
+      real_acc: naive.acc, real_acc_ci95: naive.ci, real_n: naive.n, real_balanced_acc: naive.bal,
+      mae: (geBaselines.naive || {}).mae, mining_recall: null });
+
+    var analysts = scoreConstant("inline");
+    out.push({ condition: "Analysts themselves (baseline)", corpus: "—", model: "—", is_human_baseline: true,
+      real_acc: analysts.acc, real_acc_ci95: analysts.ci, real_n: analysts.n, real_balanced_acc: analysts.bal,
+      mae: (geBaselines.analysts || {}).mae, mining_recall: null });
+
+    models.forEach(function (m) {
+      conditions.forEach(function (cond) {
+        var meta = LIVE_CONDITION_META[cond];
+        if (!meta) return;
+        var pairs = [];
+        resolvedRows.forEach(function (r) {
+          var p = (r.predictions[m] || {})[cond];
+          if (!p || p.correct == null) return;
+          pairs.push([(p.pred || "").toLowerCase(), r.real_label]);
+        });
+        if (!pairs.length) return;
+        var correct = pairs.filter(function (p) { return p[0] === p[1]; }).length;
+        var ge = (geByModel[m] || {})[cond];
+        var mr = (mrByModel[m] || {})[cond];
+        out.push({
+          condition: meta[0], corpus: meta[1], model: m,
+          real_acc: Math.round((correct / pairs.length) * 1000) / 1000,
+          real_acc_ci95: wilsonCi(correct, pairs.length),
+          real_n: pairs.length,
+          real_balanced_acc: balancedAcc(pairs),
+          mae: ge ? ge.mae : null,
+          mining_recall: mr ? mr.mean_recall : null,
+        });
+      });
+    });
+    return { rows: out };
+  }
+
   global.SITW = {
     el: el, frag: frag, clear: clear, svg: svg,
     avatar: avatar, avatarColor: avatarColor, chip: chip, pill: pill, typeTag: typeTag,
     accBar: accBar, barChart: barChart, heroArt: heroArt, brandMark: brandMark,
     miningPanel: miningPanel, trajChart: trajChart, trajCard: trajCard, leadBadge: leadBadge,
     miningRecallSection: miningRecallSection, qedRecallSection: qedRecallSection,
+    renderScaleLeaderboard: renderScaleLeaderboard, liveMetricsTable: liveMetricsTable,
+    buildLiveLeaderboardData: buildLiveLeaderboardData,
     mountChrome: mountChrome, fetchJSON: fetchJSON,
     fmtPct: fmtPct, fmtSkill: fmtSkill, fmtBrier: fmtBrier,
     getParam: getParam, showError: showError,
