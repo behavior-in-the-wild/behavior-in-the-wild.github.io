@@ -10,7 +10,7 @@
 ## Papers
 
 ### Memorable Media Generation
-- [**Long-Term Ad Memorability: Understanding & Generating Memorable Ads**](https://arxiv.org/abs/2309.00378)
+- [**Long-Term Ad Memorability: Understanding & Generating Memorable Ads**](https://openaccess.thecvf.com/content/WACV2025/html/Si_Long-Term_Ad_Memorability_Understanding__Generating_Memorable_Ads_WACV_2025_paper.html)
 
   *Harini S I, Somesh Singh, Yaman K Singla, Aanisha Bhattacharyya, Veeky Baths, Changyou Chen, Rajiv Ratn Shah, Balaji Krishnamurthy* (WACV 2025)
 
@@ -24,7 +24,7 @@
 
 ### Media Memorability Prediction
 
-- [**Long-Term Ad Memorability: Understanding & Generating Memorable Ads**](https://arxiv.org/abs/2309.00378)
+- [**Long-Term Ad Memorability: Understanding & Generating Memorable Ads**](https://openaccess.thecvf.com/content/WACV2025/html/Si_Long-Term_Ad_Memorability_Understanding__Generating_Memorable_Ads_WACV_2025_paper.html)
   
   *Harini S I, Somesh Singh, Yaman K Singla, Aanisha Bhattacharyya, Veeky Baths, Changyou Chen, Rajiv Ratn Shah, Balaji Krishnamurthy* (WACV 2025)
   
